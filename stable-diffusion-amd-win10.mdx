@@ -1,8 +1,10 @@
 ---
+id: 'stable-diffusion-amd-win10'
 title: 'How to use Stable Diffusion on Windows 10 with an AMD GPU'
 excerpt: 'This simple step-by-step guide will show you how you can run the Stable Diffusion AI model with your AMD GPU on a Windows 10 machine.'
 coverImage: '/assets/blog/stable-diffusion-amd-win10/cover.png'
 date: '2022-09-01'
+tags: ['ai']
 author:
   name: 'Josip'
   picture: '/assets/blog/authors/jl.jpg'
@@ -17,6 +19,8 @@ ogImage:
 <Video id="ngVBjeu66QI" />
 
 ## Dependencies & Preparation
+=======
+
 Before starting make sure you have a decent AMD GPU, at least something like an RX480 with 8GB of VRAM or else you'll run out of memory pretty often or it may not even work at all (you'll just get gray pictures as outputs).
 
 1. You'll need a recent Python 3 version installed on your machine.
@@ -25,34 +29,36 @@ In this guide I'm using Python version `3.10.2`.
 2. You'll also need a [huggingface](https://huggingface.co) account as well as an API access key from the huggingface settings, to download the latest version of the Stable Diffusion model (1.4 as of writing this blog post).
 
 3. Make sure `python` and `pip` are defined in your PATH:
-```
+```bash
 > python --version
 Python 3.10.2
 ```
+
 4. Open your Windows Terminal or cmd (as an administrator)
 
 5. Go to Harish Anand's _Diffusers_ repository, clone it into a folder you've created for this little project and pip install its contents. You'll also need ftfy and scipy, so pip install those as well:
-```
+
+```bash
 git clone https://github.com/harishanand95/diffusers.git
 cd diffusers && git checkout dml && pip install -e .
 pip install transformers ftfy scipy
 ```
 
 6. The trick that makes this work is to use the latest nightly build of Onnx. You can download it [here](https://aiinfra.visualstudio.com/PublicPackages/_artifacts/feed/ORT-Nightly/PyPI/ort-nightly-directml/overview/). Make sure the downloaded version matches your python version. In my case I have to download the file `ort_nightly_directml-1.13.0.dev20220901005-cp310-cp310-win_amd64.whl` since I'm on python version 3.10.2. Once you've downloaded it to your project folder do a:
-```
+```bash
 pip install ort_nightly_directml-1.13.0.dev20220901005-cp310-cp310-win_amd64.whl
 ```
 Make sure you're *not using* the "dot slash" (`pip install ./ort_...`) relative path syntax here as this is a common mistake that prevents the pip install command from finding the local file because Windows has issues with forward slashes.
 
 7. Now you have to generate a Onnx version of the Stable Diffusion model. To do so run
-```
+```bash
 cd ./diffusers/examples/inference
 huggingface-cli login
 ```
 and paste in your [huggingface API](https://huggingface.co/settings/tokens) token when prompted for it.
 >If this step fails, you probably didn't accept the terms and conditions of the Stable Diffusion model yet so head over [to the model](https://huggingface.co/CompVis/stable-diffusion-v1-4) and do so before retrying the step above.
 Then run the `./save_onnx.py` script
-```
+```bash
 python ./save_onnx.py
 ```
 
