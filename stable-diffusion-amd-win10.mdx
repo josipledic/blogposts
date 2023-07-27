@@ -18,20 +18,20 @@ author:
 
 Before starting make sure you have a decent AMD GPU, at least something like an RX480 with 8GB of VRAM or else you'll run out of memory pretty often or it may not even work at all (you'll just get gray pictures as outputs).
 
-* You'll need a recent Python 3 version installed on your machine.
+- You'll need a recent Python 3 version installed on your machine.
 In this guide I'm using Python version `3.10.2`.
 
-* You'll also need a [huggingface](https://huggingface.co) account as well as an API access key from the huggingface settings, to download the latest version of the Stable Diffusion model (1.4 as of writing this blog post).
+- You'll also need a [huggingface](https://huggingface.co) account as well as an API access key from the huggingface settings, to download the latest version of the Stable Diffusion model (1.4 as of writing this blog post).
 
-* Make sure `python` and `pip` are defined in your PATH:
+- Make sure `python` and `pip` are defined in your PATH:
 ```bash
 > python --version
 Python 3.10.2
 ```
 
-* Open your Windows Terminal or cmd (as an administrator)
+- Open your Windows Terminal or cmd (as an administrator)
 
-* Go to Harish Anand's _Diffusers_ repository, clone it into a folder you've created for this little project and pip install its contents. You'll also need ftfy and scipy, so pip install those as well:
+- Go to Harish Anand's _Diffusers_ repository, clone it into a folder you've created for this little project and pip install its contents. You'll also need ftfy and scipy, so pip install those as well:
 
 ```bash
 git clone https://github.com/harishanand95/diffusers.git
@@ -39,7 +39,7 @@ cd diffusers && git checkout dml && pip install -e .
 pip install transformers ftfy scipy
 ```
 
-* The trick that makes this work is to use the latest nightly build of Onnx. You can download it [here](https://aiinfra.visualstudio.com/PublicPackages/_artifacts/feed/ORT-Nightly/PyPI/ort-nightly-directml/overview/). Make sure the downloaded version matches your python version. In my case I have to download the file `ort_nightly_directml-1.13.0.dev20220901005-cp310-cp310-win_amd64.whl` since I'm on python version 3.10.2. Once you've downloaded it to your project folder do a:
+- The trick that makes this work is to use the latest nightly build of Onnx. You can download it [here](https://aiinfra.visualstudio.com/PublicPackages/_artifacts/feed/ORT-Nightly/PyPI/ort-nightly-directml/overview/). Make sure the downloaded version matches your python version. In my case I have to download the file `ort_nightly_directml-1.13.0.dev20220901005-cp310-cp310-win_amd64.whl` since I'm on python version 3.10.2. Once you've downloaded it to your project folder do a:
 ```bash
 pip install ort_nightly_directml-1.13.0.dev20220901005-cp310-cp310-win_amd64.whl
 ```
