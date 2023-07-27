@@ -1,4 +1,5 @@
 ---
+id: 'stable-diffusion-amd-win10'
 title: 'How to use Stable Diffusion on Windows 10 with an AMD GPU'
 excerpt: 'This simple step-by-step guide will show you how you can run the Stable Diffusion AI model with your AMD GPU on a Windows 10 machine.'
 coverImage: '/assets/blog/stable-diffusion-amd-win10/cover.png'
@@ -39,7 +40,7 @@ pip install transformers ftfy scipy
 ```
 
 6. **VI.** The trick that makes this work is to use the latest nightly build of Onnx. You can download it [here](https://aiinfra.visualstudio.com/PublicPackages/_artifacts/feed/ORT-Nightly/PyPI/ort-nightly-directml/overview/). Make sure the downloaded version matches your python version. In my case I have to download the file `ort_nightly_directml-1.13.0.dev20220901005-cp310-cp310-win_amd64.whl` since I'm on python version 3.10.2. Once you've downloaded it to your project folder do a:
-```
+```python
 pip install ort_nightly_directml-1.13.0.dev20220901005-cp310-cp310-win_amd64.whl
 ```
 Make sure you're *not using* the "dot slash" (`pip install ./ort_...`) relative path syntax here as this is a common mistake that prevents the pip install command from finding the local file because Windows has issues with forward slashes.
