@@ -25,6 +25,8 @@ let decimal: number = 6;
 let color: string = "blue";
 ```
 
+![Insert a humorous image here](path/to/image.jpg)
+
 ### TypeScript Supports Advanced JavaScript Features
 
 TypeScript supports modern and advanced JavaScript features like decorators, async/await, and ES6 import/export syntax, which makes it a better choice for modern web development.
@@ -43,21 +45,54 @@ function calculateTotal(quantity: number, price: number): number {
 }
 ```
 
-In this function, the types make it clear that `quantity` and `price` should be numbers, and the function will return a number.
+![Insert a humorous image here](path/to/image.jpg)
+
+### TypeScript Offers Better Tooling
+
+Due to static typing, TypeScript offers better autocompletion, type checking, and tooling for integrated development environments (IDEs) and editors. This drastically improves the developer experience, making it easier to write and refactor the code.
+
+### TypeScript Supports Interfaces
+
+TypeScript supports interfaces, a powerful way to define contracts within your code. Interfaces in TypeScript have many uses, including defining the shape of an object, acting as type aliases, and defining indexable types.
+
+```typescript
+interface LabelledValue {
+    label: string;
+}
+
+function printLabel(labelledObj: LabelledValue) {
+    console.log(labelledObj.label);
+}
+
+let myObj = {size: 10, label: "Size 10 Object"};
+printLabel(myObj);
+```
 
 ### TypeScript Supports Generics
 
 Generics in TypeScript allow you to write reusable code that can work over several types. Generics are a powerful feature that sets TypeScript apart from JavaScript.
 
 ```typescript
-function identity<T>(arg: T): T {
-    return arg;
+interface ApiResponse<T> {
+    status: number;
+    type: string;
+    data: T;
 }
 
-let output = identity<string>("myString");
+function handleResponse<T>(response: ApiResponse<T>): T {
+    if (response.status !== 200) {
+        throw new Error(`Request failed with status code ${response.status}`);
+    }
+
+    return response.data;
+}
+
+// Usage:
+let userResponse: ApiResponse<User> = /* some response */;
+let user = handleResponse(userResponse);
 ```
 
-In this generic function `identity`, `T` is a type variable that works as a placeholder for any type. The function can handle and return any type, which is specified when the function is called.
+![Insert a humorous image here](path/to/image.jpg)
 
 ### TypeScript Encourages Better Development Practices
 
@@ -75,4 +110,7 @@ Learning TypeScript first can offer several advantages over the conventional app
 
 Are you ready to take the TypeScript plunge? The world of static typing, advanced JavaScript features, and better development practices awaits you. And remember, even when you transition back to JavaScript, your TypeScript skills will continue to serve you well.
 
+![Insert a humorous image here](path/to/image.jpg)
+
 Happy coding!
+
