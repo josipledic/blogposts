@@ -4,8 +4,7 @@ title: 'How to use Stable Diffusion on Windows 10 with an AMD GPU'
 excerpt: 'This simple step-by-step guide will show you how you can run the Stable Diffusion AI model with your AMD GPU on a Windows 10 machine.'
 date: '2022-09-01'
 tags: ['ai']
-author:
-  name: 'Josip'
+authorName: 'Josip Ledic'
 ---
 
 If you're on a unix-based system, this guide won't work for you, search for "SD AMD ROCm" guide instead. No ROCm does not work in combination with Windows Subsystem for Linux, at least I didn't get it to run with my AMD GPU.
@@ -24,7 +23,7 @@ In this guide I'm using Python version `3.10.2`.
 - You'll also need a [huggingface](https://huggingface.co) account as well as an API access key from the huggingface settings, to download the latest version of the Stable Diffusion model (1.4 as of writing this blog post).
 
 - Make sure `python` and `pip` are defined in your PATH:
-```bash
+```bash showLineNumbers
 > python --version
 Python 3.10.2
 ```
