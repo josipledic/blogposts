@@ -1,0 +1,70 @@
+
+# An Unconventional Approach: Learning TypeScript Before JavaScript
+
+Traditionally, JavaScript is the starting point for web developers. However, this post aims to challenge that conventional wisdom and make a case for learning TypeScript before diving into JavaScript.
+
+## The Upside of Learning TypeScript First
+
+TypeScript, a statically typed superset of JavaScript, provides several benefits over JavaScript that can prove advantageous for developers, especially those at the beginning of their coding journey.
+
+### TypeScript Enhances JavaScript with Static Types
+
+TypeScript introduces static types, a feature that can significantly reduce runtime errors. With TypeScript, we explicitly define the type of each variable, enabling the TypeScript compiler to check for type-related errors.
+
+```typescript
+let isDone: boolean = false;
+let decimal: number = 6;
+let color: string = "blue";
+```
+
+### TypeScript Supports Advanced JavaScript Features
+
+TypeScript supports modern and advanced JavaScript features like decorators, async/await, and ES6 import/export syntax, which makes it a better choice for modern web development.
+
+### TypeScript Promotes Bug-Free Code
+
+TypeScript's static type checking catches errors at compile-time, preventing bugs that would otherwise emerge at runtime in JavaScript. This not only reduces debugging time but also encourages the development of more robust and reliable code.
+
+### TypeScript Improves Code Readability and Maintainability
+
+With TypeScript, code readability and maintainability are improved. Types provide clear expectations about the variables and function parameters, which aids in understanding the code.
+
+```typescript
+function calculateTotal(quantity: number, price: number): number {
+    return quantity * price;
+}
+```
+
+In this function, the types make it clear that `quantity` and `price` should be numbers, and the function will return a number.
+
+### TypeScript Supports Generics
+
+Generics in TypeScript allow you to write reusable code that can work over several types. Generics are a powerful feature that sets TypeScript apart from JavaScript.
+
+```typescript
+function identity<T>(arg: T): T {
+    return arg;
+}
+
+let output = identity<string>("myString");
+```
+
+In this generic function `identity`, `T` is a type variable that works as a placeholder for any type. The function can handle and return any type, which is specified when the function is called.
+
+### TypeScript Encourages Better Development Practices
+
+TypeScript encourages developers to follow better development practices, such as favoring immutability and using pure functions. These practices can lead to cleaner, more efficient code that's easier to test and debug.
+
+## The Aftereffect of Learning TypeScript First
+
+After learning TypeScript and then transitioning to JavaScript, you might initially feel a bit lost. You may find yourself instinctively wanting to type your variables and getting frustrated when you don't get the same level of autocompletion and tooling support that TypeScript offers.
+
+However, this discomfort doesn't last long. As you get used to JavaScript, you'll realize that your TypeScript knowledge has made you a faster and more efficient JavaScript developer. You'll know how to structure your code better, have fewer bugs, and spend less time debugging – all thanks to your TypeScript background.
+
+## Conclusion
+
+Learning TypeScript first can offer several advantages over the conventional approach. It gives you exposure to static typing, generics, and other features that TypeScript brings to the table. Though it might seem counterintuitive, there's no one-size-fits-all path in programming.
+
+Are you ready to take the TypeScript plunge? The world of static typing, advanced JavaScript features, and better development practices awaits you. And remember, even when you transition back to JavaScript, your TypeScript skills will continue to serve you well.
+
+Happy coding!
