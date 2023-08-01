@@ -1,0 +1,96 @@
+---
+id: 'rust-mindblowing-journey'
+title: 'Rust: A Deep Dive into the Fascinating World Beyond TypeScript'
+authorName: 'Josip Ledić'
+date: '2023-08-01'
+tags: ['programming', 'rust', 'typescript']
+---
+
+# Rust: A Deep Dive into the Fascinating World Beyond TypeScript
+
+As a TypeScript developer, I've enjoyed the comfort and security provided by its static typing and seamless integration with JavaScript. However, the ever-evolving landscape of software development constantly beckons us to explore beyond our comfort zones. Recently, I heeded this call and embarked on a journey of exploration into Rust, a language that has been making waves in the programming world. The journey has been enlightening and, dare I say, mind-blowing.
+
+<RemoteImage
+  alt="primeagen licking rust crab"
+  img="primeagen-licking-rust-crab.jpg"
+/>
+
+With its focus on memory safety without garbage collection, concurrency without data races, and zero-cost abstractions, Rust is the talk of the town, especially among the tech giants. It piqued my curiosity and led me to question: What does Rust offer to a TypeScript developer like me, and why should I care?
+
+## What Makes Rust Stand Out
+
+Rust started as a research project at Mozilla to help eliminate the C++ legacy code in Firefox. While C++ offers extensive freedom in handling system-level resources like memory, it demands a high level of discipline and overview from developers to prevent security vulnerabilities and crashes due to memory errors.
+
+In the world of JavaScript and TypeScript, developers are free from these concerns. The code executes in a runtime environment where a garbage collector handles memory management, allowing developers to focus on the core logic without worrying about the nitty-gritty details of memory allocation and deallocation.
+
+However, this convenience comes at a cost. The garbage collector's cleanup activities consume time, and managed-memory programming languages reserve more memory than strictly necessary, which can slow down programs. Moreover, there's the risk of memory leaks, where the garbage collector fails to release memory, causing the program to consume increasing amounts of memory and potentially crash.
+
+This is where Rust steps in, offering a compelling alternative.
+
+## Memory Safety Without Garbage Collection
+
+Rust provides memory safety without a garbage collector. It accomplishes this through a system of ownership rules that the compiler checks at compile time. With Rust, developers can manage memory efficiently without worrying about the overhead of a garbage collector.
+
+```rust
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1;
+    println!("{}, world!", s1);
+}
+```
+
+In this Rust code, the last line will result in a compile-time error because `s1` has been moved to `s2` and is no longer valid. This system prevents common programming errors such as null pointer dereferencing, double free, and many others.
+
+## Fearless Concurrency
+
+While TypeScript offers asynchronous programming paradigms like `async`/`await` and Promises, it doesn't support true concurrency. Rust, on the other hand, was designed with concurrency in mind. It allows developers to execute multiple threads in parallel, thereby leveraging the power of modern multi-core processors.
+
+```rust
+use std::thread;
+use std::time::Duration;
+
+fn main() {
+    let handle = thread::spawn(|| {
+        for i in 1..10 {
+            println!("hi number {} from the spawned thread!", i);
+            thread::sleep(Duration::from_millis(1));
+        }
+    });
+
+    for i in 1..5 {
+        println!("hi number {} from the main thread!", i);
+        thread::sleep(Duration::from_millis(1));
+    }
+
+    handle.join().unwrap();
+}
+```
+
+In this Rust code, we spawn a new thread and run code in parallel with the main thread. Rust's ownership model and borrowing mechanism make managing this kind of concurrency safe and intuitive.
+
+## Zero-Cost Abstractions and High Performance
+
+Every layer of abstraction in TypeScript adds a bit of overhead, both in terms of performance and code complexity. Rust, however, promises zero-cost abstractions, enabling developers to write high-level code without worrying about performance penalties.
+
+```rust
+fn add<T: std::ops::Add<Output=T>>(a: T, b: T) -> T {
+    a + b
+}
+
+fn main() {
+    let a = 2; // i32 by default
+    let b = 3;
+    let c = add(a, b);
+    println!("{}", c);
+}
+```
+
+In this Rust code, we define a generic function `add` that works on any type that implements the `Add` trait. Despite the high level of abstraction, there's no runtime overhead.
+
+## Conclusion
+
+Rust offers a wealth of features that make it an exciting alternative for TypeScript developers, especially those who are working on performance-critical server-side code or serverless functions. Its focus on memory safety, high performance, and concurrency, along with its strict type system, provide a refreshing change from the managed-memory world of TypeScript.
+
+While the learning curve is steep and the compiler can seem overbearing, the rewards are rich for those who persevere. As a TypeScript developer, exploring Rust will not only expand your programming horizons, but also give you valuable insights that can enhance your TypeScript skills.
+
+So, if you're up for a challenge, give Rust a try. It might seem daunting at first, but with time and practice, you'll discover a powerful language that can transform your approach to software development. Remember, the goal is not to replace TypeScript with Rust, but to enhance your skills, broaden your perspective, and become a more versatile developer. Dive in and let the journey begin!
