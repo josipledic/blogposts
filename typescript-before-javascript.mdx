@@ -52,16 +52,36 @@ Due to static typing, TypeScript offers better autocompletion, type checking, an
 TypeScript supports interfaces, a powerful way to define contracts within your code. Interfaces in TypeScript have many uses, including defining the shape of an object, acting as type aliases, and defining indexable types.
 
 ```typescript
-interface LabelledValue {
-  label: string;
+// 1. Defining the shape of an object
+interface Person {
+    name: string;
+    age: number;
 }
 
-function printLabel(labelledObj: LabelledValue) {
-  console.log(labelledObj.label);
+let john: Person = {
+    name: 'John',
+    age: 30
+};
+
+// 2. Defining indexable types
+interface StringArray {
+    [index: number]: string;
 }
 
-let myObj = { size: 10, label: 'Size 10 Object' };
-printLabel(myObj);
+let fruits: StringArray;
+fruits = ['Apple', 'Banana', 'Mango'];
+
+// 3. Acting as type aliases
+type Dictionary = {
+    [index: string]: any;
+}
+
+let person: Dictionary = {
+    name: 'John',
+    age: 30,
+    address: '123 Main St'
+};
+
 ```
 
 ### TypeScript Supports Generics
