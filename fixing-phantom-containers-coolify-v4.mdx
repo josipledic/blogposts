@@ -1,0 +1,63 @@
+---
+id: 'fixing-phantom-containers-coolify-v4'
+title: 'Fixing Phantom Container Issues in Coolify v4'
+authorName: 'Josip Ledić'
+date: '2025-05-20'
+tags: ['programming']
+---
+
+# Fixing Phantom Container Issues in Coolify v4: A Tale of Ghost Applications and Port Conflicts
+
+When you're managing your own infrastructure, sometimes the most perplexing issues have surprisingly simple explanations. I recently encountered a head-scratching problem with my NextJS application hosted on Coolify v4, and thought I'd share the investigation and solution for anyone experiencing similar symptoms.
+
+## The Mystery of the Time-Traveling Website
+
+I had set up a NextJS application on my Coolify v4 instance, and everything seemed to be working fine initially. However, I started noticing something bizarre: occasionally when refreshing the page, I'd see an ancient version of my site from months ago.
+
+My first instinct was to blame caching. Maybe Cloudflare was holding onto old versions? I disabled all caching, but the problem persisted.
+
+Growing increasingly frustrated, I took the nuclear option:
+- Deleted the entire project in Coolify
+- Recreated the application from scratch
+- Reconfigured all settings
+- Redeployed the application
+
+And yet, somehow, this mysterious old version would still occasionally appear. It was as if my website had a temporal glitch, randomly serving content from the past.
+
+## The Investigation Deepens
+
+After wrestling with this issue for longer than I'd like to admit, I decided to try changing the exposed port of the application. And suddenly, everything worked perfectly.
+
+This gave me a critical clue: if changing the port fixed the issue, then something else must have been bound to the original port.
+
+## The Solution: Ghost Containers
+
+I SSHed into my Coolify server and ran `docker ps -a` to list all containers. To my surprise, several containers from 7 months ago were still running, exposing themselves on the same port I was trying to use for my new application!
+
+These phantom containers weren't visible in the Coolify dashboard but were still taking up resources and, more importantly, still responding to traffic. When Traefik (the reverse proxy Coolify uses) received requests, it would sometimes route them to these old containers instead of my new application.
+
+The fix was straightforward:
+
+1. Identified the old containers:
+```bash
+docker ps -a
+```
+
+2. Stopped and removed them with:
+```bash
+docker ps -a --filter "name=oldcontainerprefix" -q | xargs -r docker rm -f
+```
+
+Once these ghost containers were exorcised from my system, Traefik properly routed all traffic to my current application, and the time-traveling website issue disappeared completely.
+
+## Lessons Learned
+
+This experience taught me a few valuable lessons about managing containerized applications:
+
+1. **Always check for orphaned containers** when experiencing mysterious behavior
+2. **Port conflicts** can cause intermittent and confusing issues
+3. **Docker's persistence** means containers can outlive their parent applications if not properly cleaned up
+
+If you're using Coolify or any container orchestration platform and experiencing similar weird behavior, take a moment to check for ghost containers. They might be haunting your infrastructure too!
+
+Hope this helps anyone experiencing similar issues. Happy deploying!
