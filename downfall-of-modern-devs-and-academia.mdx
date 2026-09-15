@@ -1,56 +1,59 @@
 ---
-id: 'downfall-of-modern-devs-and-academia'
-title: 'The Downfall of Modern Devs and Academia'
-authorName: 'Josip Ledić'
-date: '2023-09-15'
-tags: ['programming', 'academia', 'software engineering']
+id: "downfall-of-modern-devs-and-academia"
+title: "Software Abstraction, Academia, and the Loss of Depth"
+authorName: "Josip Ledić"
+date: "2023-09-15"
+tags: ["programming", "academia", "software engineering"]
+excerpt: "A personal argument for learning the layers beneath frameworks, APIs, and coding assistants."
 ---
 
-# The Downfall of Modern Devs and Academia
+# Software Abstraction, Academia, and the Loss of Depth
 
 <RemoteImage
-  alt="A macbook in the center of a dark room"
+  alt="A MacBook in the center of a dark room"
   src="macbook-dark-room.jpeg"
 />
 
-There's a storm brewing, and it's one we can't afford to ignore. As we scroll through the annals of software history, a discernible decline punctuates the narrative. It's not just about the quality of software, though that's a significant part of the puzzle. The root of the issue? A complex web that intertwines over-academization, diluted credentials, and a looming reliance on LLMs.
+I worry that software development is becoming easier to enter while becoming harder to understand deeply. Frameworks, hosted services, package ecosystems, and coding assistants let one person assemble a useful application quickly. They also make it possible to work for years without examining the layers underneath.
 
-The allure of the tech world has seen droves flocking to its gates. But with this surge, there's been an inevitable dilution. University degrees, once considered badges of honor, indicators of rigorous intellectual cultivation, now often feel like mere participation certificates. The essence of true learning, the spirit of inquiry, seems overshadowed by the rat race to secure that piece of paper. This phenomenon of over-academization has led to an influx of individuals who might be technically qualified but lack the depth and nuance that once defined a cultivated individual.
+This concern extends to computer science education. A curriculum has limited time and an expanding list of technologies it could cover. Courses often survey many tools, while operating systems, compilers, networking, data structures, and programming language theory compete for depth. Graduates may know the vocabulary of current development without having spent enough time tracing a system when its abstractions fail.
 
-Echoing this sentiment, Oswald Spengler's insights on the cyclical nature of civilizations come to mind. He postulated that cultures rise, thrive, and eventually enter phases of decline. One telling sign of a civilization's wane, according to Spengler, is when its creative outputs start becoming imitations of past works, reflecting a stagnation of original thought and innovation. Drawing parallels to software development, a similar trend emerges. Rather than groundbreaking innovations, there seems to be a loop of rehashed ideas, signaling a potential stagnation in creativity and forward thinking.
+## Abstraction carries a cost
 
-But it's not just about the people. The software itself is feeling the strain. The decline is palpable, and if unchecked, we're on a trajectory that could see software quality dip to alarming levels. And the band-aid solution? Turning to Large Language Models (LLMs) as the crutch. While LLMs have their merits, an over-reliance on them could be our undoing. There's a very real risk of losing control, of handing over the reins to these models. Instead of developers dictating the terms, the tables might turn, with the machine setting the rules.
+Abstraction is necessary. Few product teams should write a database, TLS stack, or UI renderer from scratch. The danger appears when a developer cannot tell which layer owns a failure.
 
-Imagine a world where the art of direct communication with machines becomes obsolete. A world where the nuanced dance of writing software is reduced to mere prompts to an LLM. The essence of software development, the joy of crafting code, might be at risk. There's something uniquely satisfying about manipulating text in Vim, executing a shell command directly on a selection with a simple !!, and seeing the immediate output replace your selected text. It's moments like these that remind us of the power and flexibility at our fingertips, asserting our command over the machine.
+A framework can route requests until an edge case depends on HTTP caching semantics. An ORM can simplify queries until a transaction crosses an isolation boundary. A cloud API can provision infrastructure until latency, consistency, or billing behavior no longer matches the product's assumptions.
 
-The implications are profound. If we continue down this path, we're not just risking the quality of software. We're risking the very essence of what it means to be a developer. The balance of power could shift, with machines not just as tools but as the puppet masters.
+The same pattern applies to coding assistants. Generated code can save time on familiar work. Accepting it without reading the result transfers understanding away from the person responsible for the system. That gap becomes expensive during incidents and migrations.
 
-It's clear that we're at a crossroads. The challenges posed by over-academization, the dilution of degrees, and the looming shadow of LLMs are very real. But with awareness comes the potential for change. It's a call to action, a reminder that while machines are incredible tools, the human element—the art, the craft, the passion—must always take center stage.
+## Direct contact with the machine
 
-As we step into this new era, it's essential to reflect on the journey of software development over the past few decades. A mere 15 years ago, developers had fewer tools, yet the quality of their work often surpassed what we see today. They navigated challenges with raw skill, limited resources, and a profound understanding of their craft. It was an era where knowledge was hard-earned, and each tool, each language, was mastered with dedication.
+Some of my favorite programming moments are small and direct. In Vim, I can select text, run a shell command over it with `!!`, and replace the selection with the command's output. The operation is transparent. I know which process runs, what input it receives, and where its output goes.
 
-Today's developers find themselves in a paradox. While they have an abundance of tools and resources at their fingertips, the depth of understanding and the essence of craftsmanship seem to be diminishing. It's not just about writing code anymore; it's about understanding the soul of the machine, the spirit of the code. And this is where modern academia has faltered.
+Modern tools often wrap that sequence in several layers of configuration. The wrapper may improve ergonomics, but learning the underlying operation creates a durable mental model. Once the wrapper breaks, the command line remains understandable.
 
-Universities and educational institutions were once the bastions of deep learning and innovation. Now, many seem to have adopted a factory approach—mass-producing graduates who can code but often lack the depth of understanding that sets great developers apart from good ones. This mass production of technically-equipped yet fundamentally-shallow developers is a recipe for mediocrity. The outcome? Software that's good enough but rarely great, innovations that tweak around the edges but seldom break new ground.
+This is why exercises such as writing a small interpreter, building a TCP server, implementing a data structure, or reading generated assembly still matter. Their production versions already exist and are usually better. The exercise develops the ability to reason across layers.
 
-But, for those developers who still feel the fire, who yearn for the days of true craftsmanship, there's a path forward. The first step is recognizing the pitfalls of today's ecosystem. Challenge the norms. Go beyond what's taught in classrooms and online tutorials. Seek the wisdom of the old guard, understand the foundations, and build upon them.
+## Academia and credentials
 
-Yes, the tools of today offer incredible power, but they're just that—tools. It's up to you to wield them with mastery. As tempting as it is to let LLMs take the reins, remember that there's a unique satisfaction in truly understanding your craft, in bending the machine to your will rather than being led by it.
+A degree can provide sustained access to theory, demanding exercises, and people who know the field. The credential itself does not guarantee depth. Large programs also face pressure to increase throughput, keep curricula current, and prepare students for immediate employment.
 
-The modern development landscape presents a dichotomy. On one hand, we have access to unparalleled technological advancements that promise to make our jobs easier. On the other, there's a palpable shift in the quality of output and the depth of understanding, especially among those fresh in the field. This isn't a mere observation—it's a clarion call for introspection and action.
+When courses optimize for tool familiarity, students lose time with the principles that outlive those tools. Teaching React may help with a first job. Teaching state, evaluation, concurrency, protocols, and algorithmic cost helps across many jobs. A strong program can connect both, but breadth should not displace foundations.
 
-Let's face it; we're in an age of convenience. Want to develop a web application? There's a library or framework for that. Need to implement machine learning? There's an API for that. These tools, while undeniably powerful, have inadvertently fostered a culture of surface-level understanding. The "why" and "how" behind these tools—the very essence of understanding—often get overshadowed by the "what," leading to a generation of developers proficient in using tools but not necessarily understanding them.
+Oswald Spengler wrote about cultures moving from creative growth toward repetition and administration. His historical model is not a technical law. It still offers a useful warning: a field can accumulate more output while producing fewer new ideas. Software has its own versions of repetition, including another thin wrapper, another framework with familiar tradeoffs, and another product assembled from the same hosted components.
 
-Contrast this with the developers of yore. They operated in an era with limited resources, where every line of code was meticulously crafted, every byte was precious, and every cycle counted. They didn't have the luxury of expansive frameworks that hid the complexity. They faced it head-on, understood it, and tamed it. It was an era of true craftsmanship, where the journey was as important, if not more so, than the destination.
+## Coding assistants and responsibility
 
-And here lies the crux of the issue. Today's academia, in its quest to keep up with the rapid pace of technological advancement, often prioritizes breadth over depth. Students are introduced to a plethora of tools and technologies, with the curriculum skimming the surface, rarely diving deep. While this approach produces graduates familiar with the latest tools, it often fails to instill a deep understanding of the underlying principles. The result? Developers who can make things work but are often stumped when things break.
+Large language models make existing patterns cheap to reproduce. That is useful for boilerplate, exploration, and unfamiliar APIs. They can also produce plausible code whose assumptions are difficult to see.
 
-But all is not lost. For those developers hungry for knowledge, yearning to not just know but understand, there's a roadmap to excellence. It begins with acknowledging the gaps in one's knowledge. Embrace the philosophy of "knowing what you don't know." Seek out resources—be it books, courses, or mentors—that delve deep. Understand the history of software development, the evolution of languages, the principles that have stood the test of time.
+Responsibility stays with the developer who ships the result. That requires reading generated changes, testing behavior, checking dependencies, and understanding the failure modes. Prompting skill cannot compensate for missing knowledge of the system being changed.
 
-Dare to step outside the comfort zone. Instead of relying on high-level frameworks, try building from scratch. Instead of using an API, delve into the algorithm. Rediscover the joy of problem-solving, the thrill of optimization, the satisfaction of crafting efficient, elegant solutions.
+The risk is gradual. A developer who always delegates the first draft may stop practicing decomposition. Someone who accepts explanations without checking sources may lose the habit of investigation. Teams can keep assistants inside an engineering process, with human judgment retaining authority.
 
-Moreover, find a community. Surround yourself with like-minded individuals, those who challenge the status quo, who value depth over breadth, who understand the importance of foundations. Engage in discussions, debates, code reviews. Learn from others' experiences, their successes, and their failures. Remember, in the realm of software development, continuous learning isn't just a trait—it's a necessity.
+## Recovering depth
 
-Lastly, mentor and be mentored. Share your knowledge, your insights, your experiences. By teaching, you not only solidify your understanding but also give back to the community. At the same time, seek out those who can guide you, who can challenge your beliefs, who can introduce you to new perspectives.
+Depth grows through contact with limits. Read the implementation behind a familiar API. Trace a request through the network stack. Profile code before optimizing it. Build a small version of a component you normally import. Study old systems whose constraints forced explicit decisions.
 
-As we stand at this juncture, with the past behind and the future ahead, the path forward is clear. While challenges abound, so do opportunities. The decline we observe isn't a destiny set in stone; it's a trend, and trends can be reversed. With dedication, perseverance, and a relentless pursuit of knowledge, today's developers can not only match but surpass the giants whose shoulders they stand upon. The tools, the resources, the knowledge—it's all out there. The question is, are you ready to seize it?
+Books and courses help, but depth also depends on communities that reward careful explanations and honest uncertainty. Code review should examine reasoning and failure modes alongside style. Mentoring should show how an experienced engineer investigates, including the paths that lead nowhere.
+
+Software development has more capable tools than ever. Their value increases when the person using them understands where the abstraction ends. The goal is competent control of the system, especially when the convenient path stops working.

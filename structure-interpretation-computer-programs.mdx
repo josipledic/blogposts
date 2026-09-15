@@ -1,36 +1,47 @@
 ---
-id: 'structure-interpretation-computer-programs'
-title: '"Structure and Interpretation of Computer Programs": An Epic Journey Back to the Essence of Code'
-excerpt: 'A nostalgic revisit to "Structure and Interpretation of Computer Programs", and how it can transform the way you view code'
-date: '2023-07-29'
-tags: ['programming', 'computer science', 'education']
-authorName: 'Josip Ledić'
+id: "structure-interpretation-computer-programs"
+title: "Reading Structure and Interpretation of Computer Programs Again"
+excerpt: "A return to SICP and its practical lessons about abstraction, evaluation, state, and the way programs are designed."
+date: "2023-07-29"
+tags: ["programming", "computer science", "education"]
+authorName: "Josip Ledić"
 ---
 
-# "Structure and Interpretation of Computer Programs": An Epic Journey Back to the Essence of Code
+# Reading Structure and Interpretation of Computer Programs Again
 
-<RemoteImage src='sicp-something-wrong-with-you.jpg' alt='is there something wrong with you?' />
+<RemoteImage
+  src="sicp-something-wrong-with-you.jpg"
+  alt="A meme asking whether something is wrong with readers who choose SICP"
+/>
 
-Dear friends and travelers in the land of code, gather 'round, for I have a tale to share. Recently, in a bout of nostalgia, I revisited the hallowed halls of my college days. It wasn't the cheap pizza or the sleepless nights before exams that I was seeking. Instead, I found myself drawn to the arcane wisdom of a book, a tome that has been both a source of joy and terror for many a computer science student: the "Structure and Interpretation of Computer Programs" (SICP).
+I recently picked up _Structure and Interpretation of Computer Programs_ again. I first read it at university, when Scheme felt remote from the software I expected to write. Returning to it with professional experience made the book much more useful.
 
-## A Trip Down Memory Lane: The Ghosts of CS Past
+SICP is often treated as a difficult classic or an internet meme. Its real value is the way it separates programming from the surface details of a language. The examples use Scheme, but the subject is how programs are assembled from smaller ideas.
 
-Now, I know what you're thinking. "Isn't that the book that became a meme? The one that's touted as the Holy Grail of coding books?" Yes, my friends, it is. But SICP is far more than an internet sensation. It's a magical journey that can transform the way you view code.
+<RemoteImage
+  src="please-read.png"
+  alt="A meme encouraging people to read SICP"
+/>
 
-<RemoteImage src='please-read.png' alt='please read the book meme' />
+## Programs as processes
 
-This ain't no ordinary "learn to code" book. Nope. It doesn't hold your hand with 'Hello, World!' or send you on a wild goose chase for missing semicolons. Instead, SICP whispers arcane secrets in your ear, guiding you on an epic quest through the enchanted forest of computer science, where each concept is a magical creature waiting to be discovered. 
+The book spends time on substitution, recursion, higher-order procedures, state, streams, and interpreters. These topics force the reader to trace a program's execution. Familiar syntax and frameworks cannot carry the explanation.
 
-## Beyond the Meme: The Magic of SICP
+That approach changed how I read code. An abstraction is useful when it hides the right detail and preserves the behavior a caller needs. State is easier to reason about when its lifetime and owner are explicit. A language feature becomes less mysterious once you can build a small version of it yourself.
 
-The magic of SICP lies not in its meme status, but in the way it cracks open the world of code, revealing the underlying principles of computation, abstraction, and problem-solving. It's like diving into the Matrix, seeing the world in lines of code, and realizing, "Hey, I can shape this."
+## Scheme is part of the lesson
 
-<RemoteImage src='two-wizards.jpg' alt='two wizards casting lambda spells' />
+Scheme initially makes the book look dated. Its small core is precisely what lets the examples focus on evaluation and composition. There is little syntax between the reader and the idea.
 
-And let's be real, picking up SICP again wasn't just a trip down memory lane. It was like being handed a spellbook, a guide to the essence of code. It rekindled the sense of wonder and curiosity that drew me to computer science in the first place. It reminded me that coding isn't just about typing out lines of instructions. It's a craft, an art, an act of creation. 
+<RemoteImage
+  src="two-wizards.jpg"
+  alt="Two wizards casting spells made from lambda symbols"
+/>
 
-## Transforming the Way We See Code
+The exercises also reward experimentation. Changing an evaluator or implementing a stream makes the material concrete in a way that a summary cannot. Some chapters are slow, especially after years of working in languages with large standard libraries, but the difficulty is productive.
 
-Sure, SICP was published in the '80s, and yes, it uses Scheme, a language that might seem as ancient as your grandpa's old record player. But the principles it teaches are timeless. They're the universal truths of computer science, as relevant today as they were decades ago.
+## Why I returned to it
 
-So, my friends, if you're yearning for a fresh perspective, if you're seeking the true essence of code, I urge you to journey with me. Pick up a copy of SICP. It might not be the easiest journey, but I promise it will be worth it. And who knows? By the end, you might find yourself transformed, seeing the world of code in a whole new light.
+Daily product work encourages local thinking: finish the feature, fix the incident, update the dependency. SICP pulls the view back toward the structure of computation. It reminded me why I enjoyed computer science before deadlines and frameworks occupied most of the day.
+
+The book will not teach a current web stack, and it is a poor choice for someone who only needs a quick introduction to programming. It is valuable for a programmer who wants to examine familiar ideas from first principles. Read it with a Scheme interpreter open and work through the exercises. The code is where the book earns its reputation.

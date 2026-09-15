@@ -1,35 +1,26 @@
 ---
-id: 'rust-mindblowing-journey'
-title: 'Rust: A Deep Dive into the Fascinating World Beyond TypeScript'
-authorName: 'Josip Ledić'
-date: '2023-08-01'
-tags: ['programming', 'rust', 'typescript']
+id: "rust-mindblowing-journey"
+title: "Rust for a TypeScript Developer"
+authorName: "Josip Ledić"
+date: "2023-08-01"
+tags: ["programming", "rust", "typescript"]
+excerpt: "What ownership, native threads, and zero-cost abstractions felt like after years of TypeScript."
 ---
 
-# Rust: A Deep Dive into the Fascinating World Beyond TypeScript
+# Rust for a TypeScript Developer
 
-As a TypeScript developer, I've enjoyed the comfort and security provided by its static typing and seamless integration with JavaScript. However, the ever-evolving landscape of software development constantly pushes us to explore beyond our comfort zones. Recently, I heeded this call and embarked on a journey of exploration into Rust, a language that has been making waves in the programming world. The journey has been enlightening and, dare I say, mind-blowing.
+I came to Rust after years of TypeScript. TypeScript gives JavaScript projects useful static checks while keeping the runtime and ecosystem familiar. Rust asks for more precision, especially around ownership and lifetimes, and returns tighter control over memory and execution.
 
 <RemoteImage
-  alt="primeagen licking rust crab"
+  alt="ThePrimeagen holding a Rust crab plush"
   src="primeagen-licking-rust-crab.jpg"
 />
 
-With its focus on memory safety without garbage collection, concurrency without data races, and zero-cost abstractions, Rust is the talk of the town, especially among the tech giants. It piqued my curiosity and led me to question: What does Rust offer to a TypeScript developer like me, and why should I care?
+The first weeks were slower than working in TypeScript. The compiler rejected programs that looked reasonable to me, and many errors concerned values I had stopped thinking about after handing memory management to a garbage collector. Following those errors was the useful part of learning the language.
 
-## What Makes Rust Stand Out
+## Ownership makes lifetime visible
 
-Rust started as a research project at Mozilla to help eliminate the C++ legacy code in Firefox. While C++ offers extensive freedom in handling system-level resources like memory, it demands a high level of discipline and overview from developers to prevent security vulnerabilities and crashes due to memory errors.
-
-In the world of JavaScript and TypeScript, developers are free from these concerns. The code executes in a runtime environment where a garbage collector handles memory management, allowing developers to focus on the core logic without worrying about the nitty-gritty details of memory allocation and deallocation.
-
-However, this convenience comes at a cost. The garbage collector's cleanup activities consume time, and managed-memory programming languages reserve more memory than strictly necessary, which can slow down programs. Moreover, there's the risk of memory leaks, where the garbage collector fails to release memory, causing the program to consume increasing amounts of memory and potentially crash.
-
-This is where Rust steps in, offering a compelling alternative.
-
-## Memory Safety Without Garbage Collection
-
-Rust provides memory safety without a garbage collector. It accomplishes this through a system of ownership rules that the compiler checks at compile time. With Rust, developers can manage memory efficiently without worrying about the overhead of a garbage collector.
+Rust enforces ownership rules at compile time. A value has an owner, moving it transfers that ownership, and borrowing gives temporary access under rules checked by the compiler.
 
 ```rust
 fn main() {
@@ -39,11 +30,15 @@ fn main() {
 }
 ```
 
-In this Rust code, the last line will result in a compile-time error because `s1` has been moved to `s2` and is no longer valid. This system prevents common programming errors such as null pointer dereferencing, double free, and many others.
+This program does not compile because assigning `s1` to `s2` moves the `String`. The final line tries to use a value that no longer owns its allocation.
 
-## Fearless Concurrency
+The rule felt restrictive at first. It also made resource lifetime visible in ordinary code. The compiler catches use-after-free, double-free, and many invalid cross-thread accesses before the program runs.
 
-While TypeScript offers asynchronous programming paradigms like `async`/`await` and Promises, it doesn't support true concurrency. Rust, on the other hand, was designed with concurrency in mind. It allows developers to execute multiple threads in parallel, thereby leveraging the power of modern multi-core processors.
+TypeScript developers usually rely on garbage collection and rarely choose when an object is released. That is the right tradeoff for many applications. Rust becomes interesting when predictable memory use, low latency, or direct control over resources matters.
+
+## Native concurrency
+
+JavaScript commonly coordinates asynchronous work on an event loop, with workers available when code needs parallel execution. Rust supports native threads directly and checks how data crosses thread boundaries.
 
 ```rust
 use std::thread;
@@ -66,31 +61,31 @@ fn main() {
 }
 ```
 
-In this Rust code, we spawn a new thread and run code in parallel with the main thread. Rust's ownership model and borrowing mechanism make managing this kind of concurrency safe and intuitive.
+The example starts one thread, continues on the main thread, and waits for the spawned work before exiting. More interesting programs share data, which is where Rust's `Send` and `Sync` traits and ownership rules prevent a large class of races.
 
-## Zero-Cost Abstractions and High Performance
+## Abstractions without runtime bookkeeping
 
-Every layer of abstraction in TypeScript adds a bit of overhead, both in terms of performance and code complexity. Rust, however, promises zero-cost abstractions, enabling developers to write high-level code without worrying about performance penalties.
+Rust monomorphizes many generic functions at compile time. A generic helper can retain a high-level interface without introducing dynamic dispatch or boxing unless the program asks for them.
 
 ```rust
-fn add<T: std::ops::Add<Output=T>>(a: T, b: T) -> T {
+fn add<T: std::ops::Add<Output = T>>(a: T, b: T) -> T {
     a + b
 }
 
 fn main() {
-    let a = 2; // i32 by default
+    let a = 2;
     let b = 3;
     let c = add(a, b);
     println!("{}", c);
 }
 ```
 
-In this Rust code, we define a generic function `add` that works on any type that implements the `Add` trait. Despite the high level of abstraction, there's no runtime overhead.
+The compiler generates code for the concrete type used at the call site. The abstraction helps the source code without requiring a generic runtime representation.
 
-## Conclusion
+## What carried back to TypeScript
 
-Rust offers a wealth of features that make it an exciting alternative for TypeScript developers, especially those who are working on performance-critical server-side code or serverless functions. Its focus on memory safety, high performance, and concurrency, along with its strict type system, provide a refreshing change from the managed-memory world of TypeScript.
+Rust made me more deliberate about ownership even in garbage-collected programs. I pay closer attention to who may mutate data, how long a resource should live, and whether concurrency is explicit in an interface. Those questions improve TypeScript services too.
 
-While the learning curve is steep and the compiler can seem overbearing, the rewards are rich for those who persevere. As a TypeScript developer, exploring Rust will not only expand your programming horizons, but also give you valuable insights that can enhance your TypeScript skills.
+I would choose TypeScript for many web products because iteration speed, browser support, and its package ecosystem are valuable. Rust is a better fit when the runtime budget is tight, native integration matters, or a service benefits from stronger control over memory and concurrency.
 
-So, if you're up for a challenge, give Rust a try. It might seem daunting at first, but with time and practice, you'll discover a powerful language that can transform your approach to software development. Remember, the goal is not to replace TypeScript with Rust, but to enhance your skills, broaden your perspective, and become a more versatile developer. Dive in and let the journey begin!
+Learning Rust did not replace TypeScript in my work. It gave me another model for reading systems code and a better vocabulary for tradeoffs that managed runtimes usually hide.

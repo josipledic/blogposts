@@ -1,41 +1,31 @@
 ---
-id: 'typescript-before-javascript'
-title: 'An Unconventional Approach: Learning TypeScript Before JavaScript'
-excerpt: 'Why you should learn TypeScript before you learn JavaScript'
-date: '2021-06-01'
-tags: ['programming', 'web dev']
-authorName: 'Josip Ledić'
+id: "typescript-before-javascript"
+title: "Learning TypeScript Before JavaScript"
+excerpt: "The benefits and blind spots of starting web development with TypeScript, with examples of types, interfaces, and generics."
+date: "2021-06-01"
+tags: ["programming", "web dev"]
+authorName: "Josip Ledić"
 ---
 
-# An Unconventional Approach: Learning TypeScript Before JavaScript
+# Learning TypeScript Before JavaScript
 
-Traditionally, JavaScript is the starting point for web developers. However, this post aims to challenge that conventional wisdom and make a case for learning TypeScript before diving into JavaScript.
+JavaScript is the usual starting point for web development. I think a beginner can start with TypeScript instead, provided the course or project still teaches the JavaScript runtime underneath it.
 
-## The Upside of Learning TypeScript First
+TypeScript adds a static analysis layer. It catches some mistakes before execution and gives editors more information for navigation, completion, and refactoring. Those benefits are useful from the first small program.
 
-TypeScript, a statically typed superset of JavaScript, provides several benefits over JavaScript that can prove advantageous for developers, especially those at the beginning of their coding journey.
+## Basic type errors become visible
 
-### Enhanced JavaScript with Static Types
-
-TypeScript introduces static types, a feature that can significantly reduce runtime errors. With TypeScript, we explicitly define the type of each variable, enabling the TypeScript compiler to check for type-related errors.
+Type annotations state what a variable or function accepts:
 
 ```typescript
 let isDone: boolean = false;
 let decimal: number = 6;
-let color: string = 'BlanchedAlmond';
+let color: string = "BlanchedAlmond";
 ```
 
-### Advanced JavaScript Features Are Supported Out of the Box
+The compiler can reject an accidental string assignment to `decimal` without waiting for the affected code path to run.
 
-TypeScript supports modern and advanced JavaScript features like decorators, async/await, and ES6 import/export syntax, which makes it a better choice for modern web development.
-
-### TypeScript Promotes Bug-Free Code
-
-TypeScript's static type checking catches errors at compile-time, preventing bugs that would otherwise emerge at runtime in JavaScript. This not only reduces debugging time but also encourages the development of more robust and reliable code.
-
-### TypeScript Improves Code Readability and Maintainability
-
-With TypeScript, code readability and maintainability are improved. Types provide clear expectations about the variables and function parameters, which aids in understanding the code.
+Function signatures are even more useful because they describe the contract at the call site:
 
 ```typescript
 function calculateTotal(quantity: number, price: number): number {
@@ -43,109 +33,87 @@ function calculateTotal(quantity: number, price: number): number {
 }
 ```
 
-### Better Tooling
+An editor can show that contract during completion and rename references across a project with much more confidence than it can in untyped JavaScript.
 
-Due to static typing, TypeScript offers better autocompletion, type checking, and tooling for integrated development environments (IDEs) and editors. This drastically improves the developer experience, making it easier to write and refactor the code.
+## Interfaces and type aliases
 
-### Interfaces
+Interfaces and type aliases can both describe object shapes. Interfaces support declaration merging and are commonly used for object-oriented APIs. Type aliases can also represent primitives, unions, intersections, mapped types, and conditional types.
 
-Interfaces and types in TypeScript are similar in that they both provide ways to define custom data structures. While they largely overlap in functionality, there are some subtle differences that distinguish them.
-
-Interfaces are designed primarily for declaring the shapes of objects, defining what properties and methods should exist on the object. They are excellent when you want to define complex, hierarchical structures, as they allow for a high degree of specificity.
-
-They have many uses, including defining the shape of an object, acting as type aliases, and defining indexable types (see example below).
-
-On the other hand, types are more flexible and can represent not just the shape of an object, but also primitive types (like string, number, boolean), union types, intersection types, mapped types, conditional types, and more. Essentially, types offer a wider array of possibilities.
-
-However, for a newcomer to TypeScript, the distinction between interfaces and types is not overly crucial. Both are tools to achieve similar outcomes: better structure, increased readability, and enhanced reliability in your code. The choice between interfaces and types often comes down to personal preference, project requirements, and the specific use-case at hand.
-
-As you delve deeper into TypeScript, you'll naturally gain a better understanding of when to use an interface and when to use a type. But in the beginning, don't worry too much about the distinction. Instead, focus on the benefits they both provide: clarity in your code, fewer bugs, and a smoother coding experience. Whether you choose to use an interface or a type, you're taking a step towards writing more reliable and maintainable code. And that's what truly matters!
+A beginner does not need a complete decision table. Pick the convention used by the project and learn the distinctions when a concrete use case appears.
 
 ```typescript
-// 1. Defining the shape of an object
 interface Person {
-    name: string;
-    age: number;
+  name: string;
+  age: number;
 }
 
-let john: Person = {
-    name: 'John',
-    age: 30
+const john: Person = {
+  name: "John",
+  age: 30,
 };
 
-// 2. Defining indexable types
 interface StringArray {
-    [index: number]: string;
+  [index: number]: string;
 }
 
-let fruits: StringArray;
-fruits = ['Apple', 'Banana', 'Mango'];
+const fruits: StringArray = ["Apple", "Banana", "Mango"];
 
-// 3. Acting as type aliases
 type Dictionary = {
-    [index: string]: any;
-}
-
-let person: Dictionary = {
-    name: 'John',
-    age: 30,
-    address: '123 Main St'
+  [index: string]: unknown;
 };
 
+const person: Dictionary = {
+  name: "John",
+  age: 30,
+  address: "123 Main St",
+};
 ```
 
-### TypeScript Supports Generics
+The important lesson is structural typing. A value satisfies the contract when its shape is compatible, even if it was not created from a named class.
 
-Generics are an incredibly useful feature in TypeScript that allow you to create reusable code which can work over several types. The concept of generics might be a bit tricky for newcomers, especially those coming from a JavaScript background, as JavaScript doesn't have this feature. 
+## Generics preserve relationships between types
 
-Think of generics as a kind of variable for types. Just like variables in your code can hold different values at different times, generics allow your types to hold different other types. 
-
-Consider the `ApiResponse<T>` interface in the provided example. The `<T>` is a placeholder for any type. This means that `ApiResponse` is a kind of object that includes a status (a number), a type (a string), and data of any type `T`. This `T` could be a string, a number, a custom interface — anything.
-
-The function `handleResponse<T>(response: ApiResponse<T>): T` utilizes this generic interface. Here, the `<T>` again indicates that this is a generic function. The function argument `response` is of the generic type `ApiResponse<T>`, and the function returns a value of type `T`. 
-
-This function checks the status of the response, and if it's not 200 (which usually stands for a successful HTTP request), it throws an error. Otherwise, it returns the `data` from the response, which is of type `T`.
-
-In the usage example, `userResponse` is declared as being of type `ApiResponse<User>`. This means that the `data` within this response is expected to be of type `User`. When `handleResponse(userResponse)` is called, the function expects an `ApiResponse<User>` and will return a `User`. 
-
-This mechanism allows TypeScript to keep track of the types within your code, providing type safety and autocompletion, while still allowing for reusability and flexibility. It's one of the key features that make TypeScript a powerful tool for developing large scale applications.
+A generic type captures a relationship without replacing everything with `any`. In this example, the response body and return type stay connected:
 
 ```typescript
 interface ApiResponse<T> {
-    status: number;
-    type: string;
-    data: T;
+  status: number;
+  type: string;
+  data: T;
 }
 
 function handleResponse<T>(response: ApiResponse<T>): T {
-    if (response.status !== 200) {
-        throw new Error(`Request failed with status code ${response.status}`);
-    }
+  if (response.status !== 200) {
+    throw new Error(`Request failed with status code ${response.status}`);
+  }
 
-    return response.data;
+  return response.data;
 }
 
-// Usage:
-let userResponse: ApiResponse<User> = /* some response */;
-let user = handleResponse(userResponse);
+declare const userResponse: ApiResponse<User>;
+const user = handleResponse(userResponse);
 ```
 
-### TypeScript Encourages Better Development Practices
+Because `userResponse` contains `User` data, `handleResponse` returns a `User`. The compiler retains that information through the function instead of widening the result.
 
-TypeScript encourages developers to follow better development practices, such as favoring immutability and using pure functions. These practices can lead to cleaner, more efficient code that's easier to test and debug.
+## Modern syntax and tooling
 
-## The Aftereffect of Learning TypeScript First
+TypeScript understands current JavaScript syntax and can target older runtime versions when a project requires it. Its language server provides completion, reference search, inline documentation, and refactoring based on the inferred type graph.
 
-After learning TypeScript and then transitioning to JavaScript, you might initially feel a bit lost. You may find yourself instinctively wanting to type your variables and getting frustrated when you don't get the same level of autocompletion and tooling support that TypeScript offers. An analogy I like to use is that someone who learned to ride a motorcycle before they learn how to ride a bicycle will at first struggle to maintain balance but in the long run, feel much more comfortable on a two-wheeler during speedy descents.
+These tools shorten the feedback loop, especially in a codebase with many modules. They do not prove that a program is correct. Network responses, user input, database contents, and other runtime values still need validation.
 
-<RemoteImage src="bicycle.jpg" alt="AI generated image of a retro mountainbike" />
+## The JavaScript underneath still matters
 
-However, this discomfort doesn't last long. As you get used to JavaScript, you'll realize that your TypeScript knowledge has made you a faster and more efficient JavaScript developer. You'll know how to structure your code better, have fewer bugs, and spend less time debugging – all thanks to your TypeScript background.
+Starting with TypeScript has a risk: the type system can hide gaps in a beginner's understanding of JavaScript. Types disappear during compilation. The runtime still has coercion, prototypes, closures, an event loop, promises, modules, and platform-specific APIs.
 
-## Conclusion
+A TypeScript-first path should therefore include plain JavaScript exercises and regular inspection of emitted code. Learn which checks exist only in the editor and which guarantees survive at runtime.
 
-Learning TypeScript first can offer several advantages over the conventional approach. It gives you exposure to static typing, generics, and other features that TypeScript brings to the table. Though it might seem counterintuitive, there's no one-size-fits-all path in programming.
+<RemoteImage src="bicycle.jpg" alt="A retro mountain bike on a trail" />
 
-Are you ready to take the TypeScript plunge? The world of static typing, advanced JavaScript features, and better development practices awaits you. And remember, even when you transition back to JavaScript, your TypeScript skills will continue to serve you well.
+I compare the transition to learning a motorcycle before a bicycle. Some controls and instincts transfer, but the simpler machine exposes balance more directly. Moving from TypeScript to JavaScript can feel similarly bare because annotations and editor guidance disappear.
 
-Happy coding!
+## A reasonable learning order
+
+Start with TypeScript syntax, basic values, functions, objects, arrays, and unions. Run the resulting JavaScript and use browser or Node.js debugging tools from the beginning. Add interfaces and generics when the program contains a relationship they can express.
+
+This route gives a beginner early compiler feedback without pretending that TypeScript replaces JavaScript. The strongest outcome is fluency in both: TypeScript for static analysis and JavaScript for the runtime that executes the program.
