@@ -1,0 +1,142 @@
+---
+id: "ai-for-home-care-scheduling"
+title: "AI for Home Care Scheduling: Catch the Conflict Before the Missed Visit"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Healthcare", "Home care agencies", "Caregiver scheduling", "AI for small business"]
+description: "Sick calls, travel times, skills and continuity: home care schedules break every morning. Where AI helps, which kind to use, and what stays with the coordinator."
+excerpt: "Sick calls, travel times, skills and continuity: home care schedules break every morning. Where AI helps, which kind to use, and what stays with the coordinator."
+---
+
+At 6:10 in the morning the on-call coordinator's phone buzzes. Maria, one of the agency's most reliable caregivers, has a sick child and can't make her 7:30 or her 9:00. The 7:30 is Mr. Albers, who has dementia and gets anxious with new faces. The 9:00 is Mrs. Kaya, who needs an insulin injection at a fixed time and a two-person hoist transfer.
+
+By 7:15 the coordinator has solved it: a caregiver who knows Mr. Albers is moved over, and a qualified colleague takes Mrs. Kaya. What nobody noticed in the rush is that the second change leaves fifteen minutes between two visits that are thirty-five minutes apart. At 11:00, another client waits, and a family member calls the office to ask where everyone is.
+
+This is the daily reality of home care scheduling. The schedule is a web of constraints, and a change in one place breaks something three steps away. That makes it a genuinely good candidate for AI, as long as you use the right kind of AI for each part of the problem.
+
+## Why the schedule breaks so often
+
+Home care runs on people, and the workforce is under constant strain.
+
+<Stats title="The pressure on home care schedules">
+  <Stat value="75%" label="median caregiver turnover at US home care agencies in 2024, down from 79.2% in 2023" source="Activated Insights benchmarking, via McKnight's" href="https://www.mcknightshomecare.com/news/home-care-revenues-rise-as-client-caregiver-turnover-rates-drop-activated-insights-reports/" />
+  <Stat value="1.1 million" label="people in Germany were cared for at home by or with an outpatient care service at the end of 2023" source="Destatis care statistics" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_478_224.html" />
+  <Stat value="Since 2024" label="Medicaid-funded home health visits in the US must be electronically verified, after personal care services" source="Medicaid.gov on EVV" href="https://www.medicaid.gov/medicaid/home-community-based-services/home-community-based-services-guidance-additional-resources/electronic-visit-verification" />
+</Stats>
+
+With turnover near 75%, a typical agency replaces most of its caregivers every year. Every departure means clients meeting new faces, rebuilt routes, and coordinators relearning who can do what. On top of that, electronic visit verification in the US means a visit that happens at the wrong time or not at all is no longer just a service problem. It becomes a billing problem.
+
+## Two kinds of AI, two different jobs
+
+The phrase "AI scheduling" hides two very different technologies, and mixing them up is the most common mistake I see in this area.
+
+<Split title="Use each tool for what it's good at" leftTitle="Optimization solvers" rightTitle="Language models" left={[
+  "Assigning visits under hard constraints: skills, time windows, travel",
+  "Proposing the best replacement when someone calls in sick",
+  "Checking a whole day for knock-on conflicts after a change",
+  "Respecting overtime and rest-period rules exactly",
+  "Doing the arithmetic, every time, without getting tired"
+]} right={[
+  "Reading a sick call sent as a text, voicemail, or app message",
+  "Pulling client preferences out of free-text care notes",
+  "Explaining a proposed change in plain words to the coordinator",
+  "Drafting messages to caregivers and families",
+  "Summarising what changed today for the next shift"
+]} />
+
+Optimization solvers are the older, less glamorous part of AI, and they are excellent at exactly this kind of puzzle. Open-source tools like Google's OR-Tools solve vehicle routing with time windows and skills routinely. Language models, on the other hand, are good at messy human input and poor at reliable arithmetic across dozens of constraints.
+
+So a sensible setup uses a language model at the edges, where people talk to the system, and a solver in the middle, where the schedule is actually computed. When a vendor demo shows a chatbot "rescheduling your week", it's worth asking which of the two is doing the math.
+
+## The conflicts worth catching
+
+Before building anything, list the conflicts that hurt you. Here's the list I would start with. Each one has a different detection method, which is why the rules, the solver, and the model all have a place.
+
+| Conflict | Example | How it's caught |
+| --- | --- | --- |
+| Skill mismatch | A caregiver without insulin training assigned to an insulin visit | Rule: required skills per visit |
+| Continuity break | A client with dementia gets a caregiver they've never met | Solver: strong preference for familiar caregivers |
+| Impossible travel | 15 minutes scheduled between visits 35 minutes apart | Solver with real travel times, not straight-line distance |
+| Fixed-time visit moved | Medication due at 9:00 pushed to 10:30 | Rule: hard time windows per visit |
+| Hours limits | Overtime, or too little rest between a late and an early shift | Rule: labour law and your own policies |
+| Authorised hours exceeded | More hours scheduled than the payer or care plan covers | Rule: hours per client per period |
+| Preference ignored | A client who asked for a female caregiver | Model extracts it from notes, rule enforces it |
+
+The last row shows how the pieces fit together. The preference lives in a free-text note from an intake conversation two years ago. A model can find it and turn it into a structured field. From then on, a plain rule enforces it every time.
+
+## What to automate, and what not to
+
+Not every scheduling task deserves automation. I sort them by how often they happen and how bad a mistake would be.
+
+<Matrix title="Where automation belongs in scheduling" xLabel="How often it happens" yLabel="Cost of a mistake" quadrants={[
+  { title: "Keep it human", text: "Matching a new client with a caregiver, safeguarding concerns, family conflicts." },
+  { title: "Assist, then approve", text: "Sick-call replacements and knock-on conflicts. The system proposes, the coordinator decides.", highlight: true },
+  { title: "Leave it alone", text: "One-off special requests that take longer to configure than to handle." },
+  { title: "Automate fully", text: "Visit reminders, schedule confirmations, nudges for missing visit check-ins." }
+]} />
+
+The top-right quadrant is where the real value sits. Sick calls happen every week and a bad replacement hurts a vulnerable person. That's exactly where you want a system that does the heavy lifting in seconds and a coordinator who makes the final call.
+
+## Handling a sick call, step by step
+
+Here is the flow for Maria's text at 6:10.
+
+<Flow title="From sick call to a checked, confirmed plan" caption="The model reads and writes. The solver computes. The coordinator decides.">
+<Step title="Sick call arrives" who="Caregiver" time="6:10">A text, voicemail, or app message. No special format required.</Step>
+<Step title="Read the message" who="AI" tone="ai" time="seconds">The model identifies the caregiver, the day, and which visits are affected, and asks back if the message is ambiguous.</Step>
+<Step title="Propose replacements" who="Solver" time="seconds">For each visit, the best options ranked by skills, continuity, travel, and hours, with the full day re-checked for knock-on conflicts.</Step>
+<Step title="Explain the options" who="AI" tone="ai">"Anna knows Mr. Albers and is 10 minutes away. This moves her 8:30 to 9:15, which is inside that client's window."</Step>
+<Step title="Coordinator decides" who="Coordinator" tone="human" time="6:20">One tap to accept, or a different choice. The coordinator can see why each option was ranked.</Step>
+<Step title="Messages go out" who="System">Drafted messages to Anna, to Mr. Albers's daughter, and to the 11:00 client if their time moved. The schedule and visit verification system are updated.</Step>
+</Flow>
+
+The step I'd pay most attention to is the re-check of the whole day. Humans are good at solving the problem in front of them and bad at seeing the consequence three visits later. Software is the opposite. That's the whole argument for letting it look.
+
+## The easiest first step: a nightly schedule audit
+
+If I were starting with an agency tomorrow, I wouldn't touch the sick-call flow first. I'd build a nightly audit.
+
+Every evening at five, the system checks tomorrow's schedule against all the rules above and sends the coordinator a short list: "Three issues for tomorrow. Mrs. Kaya's insulin visit is assigned to someone without the training. Two visits for Anna overlap once travel is included. Mr. Albers has a caregiver he hasn't met." Nothing changes automatically. The coordinator fixes what matters before the day starts.
+
+It's cheap, it can't make anything worse, and it gives you a precise count of how often your schedule contains avoidable conflicts. That number tells you whether the bigger system is worth building.
+
+<Timeline title="From audit to assisted scheduling">
+<Phase when="Weeks 1 to 2" title="Export and rules">Export schedules, caregiver skills, and client requirements from your scheduling software. Write the rules with the coordinators.</Phase>
+<Phase when="Weeks 3 to 4" title="Nightly audit live">The audit runs every evening. Coordinators mark each issue as real or false alarm, and the rules improve.</Phase>
+<Phase when="Weeks 5 to 8" title="Sick-call proposals">Replacement proposals are added, with the coordinator approving every change.</Phase>
+<Phase when="Week 9" title="Review">Compare missed and late visits, overtime, and continuity with the weeks before the audit.</Phase>
+</Timeline>
+
+## Data, privacy, and the people involved
+
+Care notes contain health information. In the US, if your agency bills Medicaid or insurers electronically, you are likely a HIPAA covered entity and need Business Associate Agreements with any service that touches that data. In the EU, care information is [special category data under the GDPR](https://gdpr-info.eu/art-9-gdpr/), which means a data processing agreement, a known data location, and access limited to people who need it.
+
+Caregiver data deserves care too. A system that ranks caregivers for replacements must not quietly become a system that scores them as people. I would keep the ranking transparent (skills, distance, hours, continuity) and never feed it performance judgments without a very deliberate decision by the agency and its staff.
+
+<Callout title="The human part of continuity">
+For many clients, especially people living with dementia, the familiar face is part of the care. Any automated proposal should treat continuity as close to a hard rule, and a coordinator should be the one to explain changes to families.
+</Callout>
+
+## Questions agency owners ask
+
+### Does this replace AxisCare, WellSky, or AlayaCare?
+
+No. Those systems stay the source of truth for clients, caregivers, visits, and billing. The audit and the proposal engine read from them and write confirmed changes back, through an API where one exists or through exports and imports where it doesn't.
+
+### Can it handle call-offs automatically at 6 a.m.?
+
+It can do everything except the decision: read the message, compute options, check the day, and draft messages. A coordinator approves with one tap. Fully automatic reassignment is possible for low-risk visits later, but I would never start there.
+
+### What data does it need?
+
+Visits with time windows and required skills, caregivers with skills and availability, addresses for travel times, client preferences, and your labour rules. Most of this already exists in your scheduling software. The preferences often hide in free text, and extracting them is one of the first useful jobs for the language model.
+
+### Is this worth it for a small agency?
+
+The nightly audit is worth it for almost any agency with more than a handful of caregivers, because it costs little and catches expensive mistakes. The full sick-call flow pays off once call-offs are a daily event rather than a weekly one.
+
+## The division of labour in one line
+
+Let the solver do the math, let the model read the messages, and let the coordinator make the call. When each part does its own job, the 11:00 client doesn't wait.
+
+If your mornings start with a phone full of call-offs, [tell me which scheduling software you use](/contact?intent=improve) and how changes are handled today. I'll suggest whether a nightly audit, a proposal engine, or something simpler is the right place to start. Route planning with messy real-world constraints shows up in other fields too; I've written about it for [pest control technicians](/posts/ai-for-pest-control-routing), and about reading messy intake documents in [specialist referral letters](/posts/ai-for-medical-practices-referrals).
