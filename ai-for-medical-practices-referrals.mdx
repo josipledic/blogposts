@@ -1,0 +1,147 @@
+---
+id: "ai-for-medical-practices-referrals"
+title: "Referral Letters, Faxes and Waiting Lists: AI for Specialist Practices"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Healthcare", "Specialist practices", "Referral management", "AI for small business"]
+description: "Specialist practices drown in referral letters. How AI can read, match and pre-sort them so clinicians see urgent ones first, without deciding urgency itself."
+excerpt: "Specialist practices drown in referral letters. How AI can read, match and pre-sort them so clinicians see urgent ones first, without deciding urgency itself."
+---
+
+Every specialist practice has a pile. In a small cardiology, dermatology, or orthopaedic practice it might be a fax tray, a shared inbox, a portal, or all three. Each item in it is a referral: a letter from a GP, a scanned form, sometimes a lab report with a sticky note that says "please see". Somebody at the front desk reads each one, finds or creates the patient, checks what is missing, puts it in front of a clinician for urgency, and eventually books an appointment.
+
+On a quiet day that works. On a normal day the pile grows faster than one person can read it, and the scary part is not the delay itself. It's that the referral for the patient with a suspicious lesion or a worrying ECG looks exactly like the other thirty until somebody reads it.
+
+This is a good place for AI in a specialist practice, with one firm rule that I'll repeat throughout: software can read, match, and surface. It does not decide who is urgent.
+
+## A process that loses patients in transit
+
+The referral process has been studied for a long time, and the results are sobering.
+
+<Stats title="The referral loop, measured">
+  <Stat value="34.8%" label="of 103,737 primary care referral attempts in one US health system ended in a completed visit with a report back to the GP" source="Patel et al., J Gen Intern Med 2018" href="https://link.springer.com/article/10.1007/s11606-018-4392-z" />
+  <Stat value="31 days" label="average wait for a new-patient appointment across six specialties in 15 large US metro areas, up 19% since 2022" source="AMN Healthcare survey, 2025" href="https://www.amnhealthcare.com/amn-insights/physician/whitepapers/survey-of-physician-appointment-wait-times/" />
+  <Stat value="69% vs 35%" label="of GPs said they usually send history and reason for referral; of specialists, how many said they usually receive it" source="O'Malley & Reschovsky, Arch Intern Med 2011" href="https://www.researchgate.net/publication/49742253_Referral_and_Consultation_Communication_Between_Primary_Care_and_Specialist_Physicians" />
+</Stats>
+
+The first number is the one I keep coming back to. In a large, well-resourced health system, only about a third of referrals made it all the way through to a completed specialist visit with a report back to the referring doctor. Some of the rest are patients who decide not to go, which no software fixes. But many are lost in handoffs: a fax that nobody matched, a referral missing information that nobody chased, a patient who was never called.
+
+The third number describes the other half of the problem. The referring doctor believes the clinical question was sent. The specialist believes it never arrived. Both can be right, because the information got lost in a scan, a cover sheet, or an attachment nobody opened.
+
+## What the front desk actually does with each referral
+
+When I map a process like this, I start by writing down every piece of information someone extracts by hand, and who decides what happens with it.
+
+| Information | Where it usually hides | Who decides what to do with it |
+| --- | --- | --- |
+| Patient identity, date of birth, contact details | Header of the letter, a cover sheet, or a scanned form | Front desk: match to an existing patient or create a new one |
+| Referring clinician and practice | Letterhead, signature, fax header | Front desk |
+| The clinical question | Somewhere in the body of the letter, if at all | Clinician |
+| Relevant findings and attached results | Free text, attachments, lab printouts | Clinician |
+| Insurance, authorization, or referral form requirements | Forms, payer letters | Front desk |
+| Warning signs that suggest urgency | Anywhere in the text | Clinician, always |
+
+Most of the rows are information work that a language model is well suited for: reading unstructured letters, including poor scans, and turning them into fields. The last row is different. It is clinical judgment, and it stays with a clinician.
+
+## The intake pipeline I would build
+
+Here's the shape of it. The practice management system or EHR stays the system of record. The pipeline sits in front of it and prepares work for people.
+
+<Flow title="From incoming referral to booked appointment" caption="The model extracts and surfaces. Urgency is set by a clinician, and the model may only raise a flag, never lower one.">
+<Step title="Referral arrives" who="Fax, email, portal" time="any time">A fax-to-email service or fax server, the shared inbox, and portal exports all feed one intake queue.</Step>
+<Step title="Read and extract" who="AI" tone="ai" time="seconds">Text recognition plus a language model turn the document into fields: patient, referrer, clinical question, findings, attachments. Unsure fields are marked.</Step>
+<Step title="Match the patient" who="System">Match against existing patients on name and date of birth. Near-matches go to a person, never auto-merged.</Step>
+<Step title="Check completeness" who="Rules">Per specialty, the practice defines what a usable referral contains. A cardiology referral without an ECG gets a request drafted to the referrer.</Step>
+<Step title="Surface warning signs" who="AI" tone="ai">Phrases from a list the clinicians wrote are highlighted and move the referral to the top of the review queue.</Step>
+<Step title="Clinician sets urgency" who="Clinician" tone="human" time="daily or twice daily">The clinician sees a one-screen summary with the original letter beside it and assigns a priority and appointment type.</Step>
+<Step title="Book and acknowledge" who="Front desk" tone="human">The appointment is booked, and both the patient and the referrer get a short acknowledgement.</Step>
+</Flow>
+
+A few design rules make the difference between a helpful pipeline and a risky one.
+
+**The model may raise a flag, never lower one.** If the model spots a phrase from the warning list, the referral moves up for human review. If it sees nothing, the referral keeps its normal place in line. It is never pushed down because the model "thought" it was routine. That asymmetry is the whole safety design in one sentence.
+
+**The original document is always one click away.** The clinician reviews a summary, but the source letter sits next to it. Summaries are for speed, not a replacement for reading when it matters.
+
+**Near-matches go to a person.** Two patients with the same name and a similar date of birth are exactly where automated matching causes harm. The pipeline proposes, a person confirms.
+
+## Completeness, specialty by specialty
+
+The completeness check only works if "usable referral" is defined by the people who use it. That definition is different for every specialty, and writing it down is often the most valuable hour of the whole project. Here is the kind of table I would draft with the clinicians, as a starting point for them to correct.
+
+| Specialty | A referral is usable when it includes | Typical follow-up request |
+| --- | --- | --- |
+| Cardiology | Clinical question, current medication, a recent ECG, relevant labs such as lipids or troponin if done | "Could you send the ECG from the visit on the 12th?" |
+| Dermatology | Location and duration of the lesion, changes noticed, a photo if the referrer has one | "Is there a photo of the lesion, and has it changed in size?" |
+| Orthopaedics | Mechanism of injury or onset, previous imaging and where it was done, previous treatment | "Where was the MRI done, so we can request the images?" |
+
+Two things happen once this table exists. The front desk stops guessing what a clinician will want, and referrers get specific, answerable requests instead of a generic "please send more information". Over time, the practices that refer to you most often start sending complete referrals because they know what you will ask for.
+
+## Closing the loop costs one message
+
+The cheapest improvement in the whole pipeline is the acknowledgement at the end. A short message to the referring practice, "we received your referral for this patient, they will be contacted within five working days", removes the "did you get our fax?" calls. A similar message to the patient cuts the "I was told to expect a call" calls.
+
+It sounds trivial. In most practices I would expect it to remove a noticeable share of inbound phone traffic, and it directly addresses the problem in the stats above: referrals that disappear without anyone noticing.
+
+## Where the regulatory line sits
+
+Referrals are health data, so the usual rules apply: a Business Associate Agreement for US practices under HIPAA, a data processing agreement and an agreed data location for EU practices under the GDPR, where health data is a [special category](https://gdpr-info.eu/art-9-gdpr/).
+
+There is a second line that is easy to miss.
+
+<Callout title="Administrative help, not a triage device" tone="warning">
+If software itself decides a patient's clinical priority, regulators may treat it as medical device software: in the EU under the Medical Device Regulation, in the US under the FDA's rules for clinical decision support. Keeping the model administrative (extract, match, highlight phrases the clinicians chose) and leaving the urgency decision to a clinician is safer for patients and keeps the project out of certification territory. Check this with your own compliance advisor before you go live.
+</Callout>
+
+That line also happens to be good design. Clinicians trust a tool that shows them the letter faster. They don't trust one that tells them what to think.
+
+## What changes for the team
+
+<Split title="Before and after" leftTitle="Today" rightTitle="With the pipeline" left={[
+  "Someone reads every letter in arrival order",
+  "Urgent referrals wait in line until they are read",
+  "Missing information is noticed when the patient is already booked",
+  "Referrers and patients call to ask whether anything arrived",
+  "Duplicate patient records creep in"
+]} right={[
+  "Letters arrive as structured summaries with the source attached",
+  "Anything matching the clinicians' warning list reaches the top of the review queue",
+  "A request for missing results goes out the same day",
+  "Acknowledgements go out automatically after booking",
+  "Near-matches are resolved by a person before a record is created"
+]} />
+
+## A pilot that runs alongside the pile
+
+<Timeline title="Six weeks to a working intake pipeline">
+<Phase when="Week 1" title="Measure the pile">Count referrals per day, time from arrival to clinician review, time to booking, and how many need follow-up for missing information.</Phase>
+<Phase when="Week 2" title="Write the rules with clinicians">Completeness criteria per specialty, the warning-sign list, and the appointment types.</Phase>
+<Phase when="Weeks 3 to 4" title="Shadow extraction">The pipeline processes every referral in parallel. Staff keep working as usual and compare the extracted fields with their own entry.</Phase>
+<Phase when="Weeks 5 to 6" title="Live, with review">Clinicians review from the summary screen. Every correction is logged and fed back into the rules.</Phase>
+</Timeline>
+
+The numbers to compare at the end are time from arrival to clinician review, time from review to booking, and the share of referrals that needed a second round with the referrer. If the first number doesn't drop, the pipeline is not worth keeping, whatever the demo looked like.
+
+## Questions practices ask me
+
+### Can it read faxed referrals?
+
+Yes, within limits. Current text recognition handles typical fax quality well, and a language model is good at pulling fields out of letters that all look different. Poor scans are flagged as uncertain rather than guessed.
+
+### Does it work with our EHR?
+
+Most EHRs and practice management systems offer some interface, often HL7 or FHIR, sometimes only a document import. If there is no usable interface, the pipeline can still run as a work queue next to the EHR, with staff copying confirmed data across. That is less elegant but still much faster than reading from scratch.
+
+### Could the AI decide urgency on its own later?
+
+I wouldn't build that for a small practice. It moves the software into medical device territory and puts a model's judgment between the referral and the clinician. Highlighting agreed warning signs gets most of the benefit with a fraction of the risk.
+
+### What about referrals with no clinical question at all?
+
+Those are exactly the ones the completeness check catches. The pipeline drafts a short request to the referrer for the question and any missing results, and a person sends it.
+
+## The one-sentence version
+
+Let software read the pile and let clinicians decide what matters: the model may raise a flag, never lower one.
+
+If your referral inbox has become a daily worry, [describe how referrals reach you today](/contact?intent=improve) and I'll tell you what a small first step would look like. The same pattern of "read, structure, let a person decide" shows up in other practices too, from [dental practices' phone lines](/posts/ai-for-dentists) to [home care scheduling](/posts/ai-for-home-care-scheduling).

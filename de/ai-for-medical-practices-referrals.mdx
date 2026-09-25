@@ -1,0 +1,147 @@
+---
+id: "de-ai-for-medical-practices-referrals"
+title: "Überweisungen in der Facharztpraxis: Mit KI schneller zum passenden Termin"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Gesundheit", "Facharztpraxen", "Überweisungsmanagement", "KI für kleine Unternehmen"]
+description: "Arztbriefe, Faxe, Überweisungen: Wie KI eingehende Anfragen liest, zuordnet und vorsortiert, damit Ärzte dringende Fälle zuerst sehen. Entscheiden tut die Software nicht."
+excerpt: "Arztbriefe, Faxe, Überweisungen: Wie KI eingehende Anfragen liest, zuordnet und vorsortiert, damit Ärzte dringende Fälle zuerst sehen. Entscheiden tut die Software nicht."
+---
+
+Jede Facharztpraxis hat einen Stapel. In einer kleinen kardiologischen, dermatologischen oder orthopädischen Praxis ist das ein Faxeingang, ein gemeinsames Postfach, ein KIM-Postfach für eArztbriefe oder alles zusammen. Jedes Dokument darin ist eine Anfrage: ein Brief vom Hausarzt, ein eingescanntes Formular, ein Laborbefund mit dem handschriftlichen Vermerk „bitte ansehen“. An der Anmeldung liest jemand jedes einzelne, sucht den Patienten oder legt ihn an, prüft, was fehlt, legt es einer Ärztin zur Einschätzung vor und vergibt irgendwann einen Termin.
+
+An ruhigen Tagen funktioniert das. An normalen Tagen wächst der Stapel schneller, als eine Person lesen kann. Das Gefährliche ist dabei nicht die Verzögerung an sich. Es ist, dass die Anfrage zur Patientin mit dem auffälligen Leberfleck oder dem besorgniserregenden EKG genauso aussieht wie die anderen dreißig, bis jemand sie liest.
+
+Genau hier ist KI in der Facharztpraxis sinnvoll, mit einer festen Regel, die sich durch diesen ganzen Artikel zieht: Software darf lesen, zuordnen und hervorheben. Wer dringend ist, entscheidet sie nicht.
+
+## Warten, verlorene Befunde, Nachfragen
+
+Die Engpässe sind bekannt, und Zahlen dazu gibt es auf beiden Seiten des Atlantiks.
+
+<Stats title="Überweisungen und Wartezeiten in Zahlen">
+  <Stat value="≈ 1 von 3" label="gesetzlich Versicherten wartete 2024 länger als drei Wochen auf einen Facharzttermin" source="KBV-Versichertenbefragung, via esanum" href="https://www.esanum.de/today/posts/drittel-der-kassenversicherten-wartet-ueber-drei-wochen-auf-facharzttermin" />
+  <Stat value="34,8 %" label="von 103.737 Überweisungen in einem US-Gesundheitsverbund endeten mit Termin und Bericht an den Hausarzt" source="Patel et al., J Gen Intern Med 2018" href="https://link.springer.com/article/10.1007/s11606-018-4392-z" />
+  <Stat value="2029" label="ab 1. September werden elektronische Überweisungen für Vertragsärzte verpflichtend" source="Deutsches Ärzteblatt" href="https://www.aerzteblatt.de/news/elektronische-uberweisungen-sollen-ab-2029-verpflichtend-sein-82cf11e6-f322-4750-83ec-2755630de80e" />
+</Stats>
+
+Die US-Zahl stammt aus einem anderen Gesundheitssystem, aber sie beschreibt ein Muster, das auch deutsche Praxen kennen. Nur etwa ein Drittel der Überweisungen kam vollständig durch: Termin wahrgenommen, Bericht zurück beim überweisenden Arzt. Manche Patienten entscheiden sich bewusst dagegen, das löst keine Software. Viele gehen aber schlicht bei der Übergabe verloren: ein Fax, das niemand zugeordnet hat, eine Überweisung ohne Fragestellung, bei der niemand nachgehakt hat, ein Patient, der nie angerufen wurde.
+
+Die dritte Zahl ist wichtig, weil sie zeigt, dass sich das Papierproblem nicht von selbst erledigt. Die elektronische Überweisung kommt, aber verpflichtend erst 2029, und selbst dann bleibt die Frage, wer die eingehenden Informationen liest und einordnet. Dazu plant die Bundesregierung ein verbindliches Primärarztsystem, ein [Gesetzentwurf war für 2026 angekündigt](https://www.bundestag.de/presse/hib/kurzmeldungen-1115234). Kommt es, werden Überweisungen eher mehr als weniger.
+
+## Was die Anmeldung mit jeder Überweisung tut
+
+Wenn ich einen Ablauf wie diesen aufnehme, schreibe ich zuerst jede Information auf, die jemand von Hand herausliest, und wer entscheidet, was damit passiert.
+
+| Information | Wo sie meistens steckt | Wer entscheidet |
+| --- | --- | --- |
+| Name, Geburtsdatum, Kontaktdaten, Versicherung | Kopf des Briefs, Überweisungsschein (Muster 6), Faxdeckblatt | Anmeldung: vorhandenem Patienten zuordnen oder neu anlegen |
+| Überweisender Arzt und Praxis | Briefkopf, Stempel, Faxkennung | Anmeldung |
+| Die Fragestellung | Irgendwo im Brief oder als Stichwort auf dem Schein, wenn überhaupt | Ärztin |
+| Befunde und Anhänge | Freitext, Anlagen, Laborausdrucke | Ärztin |
+| Dringlichkeitsvermerk oder Code für die Terminservicestelle | Auf dem Überweisungsschein | Anmeldung, in Rücksprache mit der Ärztin |
+| Warnzeichen, die auf Dringlichkeit hindeuten | Überall im Text | Immer die Ärztin |
+
+Die meisten Zeilen sind Informationsarbeit, für die sich ein Sprachmodell gut eignet: unstrukturierte Briefe lesen, auch schlecht gescannte, und daraus Felder machen. Die letzte Zeile ist anders. Sie ist ärztliches Urteil und bleibt bei der Ärztin.
+
+## Die Eingangsstrecke, die ich bauen würde
+
+So sieht der Aufbau aus. Das Praxisverwaltungssystem bleibt das führende System. Die Strecke sitzt davor und bereitet Arbeit für Menschen vor.
+
+<Flow title="Von der eingehenden Überweisung zum Termin" caption="Das Modell liest und hebt hervor. Die Dringlichkeit legt eine Ärztin fest, und das Modell darf eine Markierung nur setzen, nie entfernen.">
+<Step title="Überweisung geht ein" who="Fax, KIM, E-Mail, Papier" time="jederzeit">Fax-zu-Mail, KIM-Postfach, Praxispostfach und gescannte Papierüberweisungen landen in einer gemeinsamen Eingangsliste.</Step>
+<Step title="Lesen und übertragen" who="KI" tone="ai" time="Sekunden">Texterkennung und Sprachmodell machen aus dem Dokument Felder: Patient, Überweiser, Fragestellung, Befunde, Anlagen. Unsichere Felder werden markiert.</Step>
+<Step title="Patient zuordnen" who="System">Abgleich mit vorhandenen Patienten über Name und Geburtsdatum. Beinahe-Treffer gehen an einen Menschen und werden nie automatisch zusammengeführt.</Step>
+<Step title="Vollständigkeit prüfen" who="Regeln">Pro Fachrichtung legt die Praxis fest, was eine brauchbare Überweisung enthält. Fehlt bei einer kardiologischen Anfrage das EKG, wird eine Nachfrage an den Überweiser vorbereitet.</Step>
+<Step title="Warnzeichen hervorheben" who="KI" tone="ai">Formulierungen aus einer Liste, die die Ärzte selbst geschrieben haben, werden markiert und schieben die Anfrage in der Prüfliste nach oben.</Step>
+<Step title="Ärztin legt Dringlichkeit fest" who="Ärztin" tone="human" time="ein- oder zweimal täglich">Die Ärztin sieht eine Zusammenfassung auf einem Bildschirm, das Originaldokument daneben, und vergibt Priorität und Terminart.</Step>
+<Step title="Termin und Eingangsbestätigung" who="Anmeldung" tone="human">Der Termin wird vergeben, Patient und überweisende Praxis erhalten eine kurze Bestätigung.</Step>
+</Flow>
+
+Ein paar Regeln entscheiden darüber, ob so eine Strecke hilft oder Risiken schafft.
+
+**Das Modell darf eine Markierung setzen, nie entfernen.** Erkennt es eine Formulierung aus der Warnliste, rückt die Anfrage zur ärztlichen Prüfung nach oben. Erkennt es nichts, bleibt die Anfrage an ihrem normalen Platz. Sie wird nie nach hinten geschoben, weil das Modell sie für Routine „hielt“. Diese Asymmetrie ist das ganze Sicherheitskonzept in einem Satz.
+
+**Das Original ist immer einen Klick entfernt.** Die Ärztin liest eine Zusammenfassung, aber der Brief liegt daneben. Zusammenfassungen sind für Tempo gedacht, nicht als Ersatz für das Lesen, wenn es darauf ankommt.
+
+**Beinahe-Treffer gehen an einen Menschen.** Zwei Patienten mit gleichem Namen und ähnlichem Geburtsdatum sind genau der Fall, in dem automatische Zuordnung Schaden anrichtet. Die Strecke schlägt vor, ein Mensch bestätigt.
+
+## Vollständigkeit, Fachrichtung für Fachrichtung
+
+Die Vollständigkeitsprüfung funktioniert nur, wenn „brauchbare Überweisung“ von den Menschen definiert wird, die damit arbeiten. Diese Definition ist in jeder Fachrichtung anders, und sie aufzuschreiben ist oft die wertvollste Stunde des ganzen Projekts. So könnte ein erster Entwurf aussehen, den die Ärzte dann korrigieren.
+
+| Fachrichtung | Brauchbar, wenn enthalten | Typische Nachfrage |
+| --- | --- | --- |
+| Kardiologie | Fragestellung, aktuelle Medikation, ein aktuelles EKG, relevante Laborwerte wie Lipide, falls vorhanden | „Können Sie uns das EKG vom 12. schicken?“ |
+| Dermatologie | Lage und Dauer der Hautveränderung, beobachtete Veränderungen, ein Foto, falls vorhanden | „Gibt es ein Foto, und hat sich die Größe verändert?“ |
+| Orthopädie | Unfallhergang oder Beginn der Beschwerden, Vorbefunde der Bildgebung und wo sie gemacht wurde, bisherige Therapie | „Wo wurde das MRT gemacht, damit wir die Bilder anfordern können?“ |
+
+Sobald diese Tabelle existiert, passieren zwei Dinge. Die Anmeldung muss nicht mehr raten, was eine Ärztin sehen will, und überweisende Praxen bekommen konkrete, beantwortbare Nachfragen statt eines pauschalen „bitte weitere Unterlagen senden“. Mit der Zeit schicken gerade die Praxen, die am häufigsten überweisen, vollständige Unterlagen, weil sie wissen, wonach Sie fragen werden.
+
+## Den Kreis schließen kostet eine Nachricht
+
+Die günstigste Verbesserung der ganzen Strecke ist die Bestätigung am Ende. Eine kurze Nachricht an die überweisende Praxis („Die Überweisung für Frau M. ist eingegangen, sie wird innerhalb von fünf Werktagen kontaktiert“) beendet die Anrufe mit der Frage, ob das Fax angekommen ist. Eine ähnliche Nachricht an den Patienten spart die Anrufe mit „Mir wurde gesagt, Sie melden sich“.
+
+Das klingt banal. In den meisten Praxen würde ich erwarten, dass es einen spürbaren Teil der eingehenden Anrufe wegnimmt, und es trifft genau das Problem aus den Zahlen oben: Überweisungen, die verschwinden, ohne dass es jemand merkt. Über KIM lässt sich die Bestätigung an die überweisende Praxis sogar direkt aus der Praxissoftware verschicken.
+
+## Wo die rechtliche Grenze verläuft
+
+Überweisungen enthalten Gesundheitsdaten. Es gelten also die bekannten Regeln: Art. 9 DSGVO für [besondere Kategorien personenbezogener Daten](https://gdpr-info.eu/art-9-gdpr/), ein Auftragsverarbeitungsvertrag, ein vereinbarter Datenstandort in der EU und die ärztliche Schweigepflicht nach § 203 StGB. Externe Dienstleister dürfen als „mitwirkende Personen“ eingebunden werden, wenn sie vertraglich zur Verschwiegenheit verpflichtet sind.
+
+Es gibt eine zweite Grenze, die leicht übersehen wird.
+
+<Callout title="Verwaltungshilfe, kein Triage-Produkt" tone="warning">
+Entscheidet eine Software selbst über die medizinische Dringlichkeit, kann sie als Medizinprodukt-Software im Sinne der Medizinprodukte-Verordnung gelten, mit allem, was an Zertifizierung daran hängt. Bleibt das Modell in der Verwaltung (lesen, zuordnen, von Ärzten festgelegte Formulierungen hervorheben) und entscheidet die Ärztin über die Dringlichkeit, ist das sicherer für Patienten und hält das Projekt außerhalb der Zertifizierungspflicht. Klären Sie das vor dem Start mit Ihrer eigenen Rechts- oder Regulierungsberatung.
+</Callout>
+
+Diese Grenze ist zugleich gutes Design. Ärzte vertrauen einem Werkzeug, das ihnen den Brief schneller zeigt. Einem, das ihnen sagt, was sie denken sollen, vertrauen sie nicht.
+
+## Was sich für das Team ändert
+
+<Split title="Vorher und nachher" leftTitle="Heute" rightTitle="Mit der Eingangsstrecke" left={[
+  "Jemand liest jeden Brief in der Reihenfolge des Eingangs",
+  "Dringende Überweisungen warten, bis sie gelesen werden",
+  "Fehlende Befunde fallen auf, wenn der Termin schon steht",
+  "Überweiser und Patienten rufen an und fragen, ob etwas angekommen ist",
+  "Doppelte Patientenakten schleichen sich ein"
+]} right={[
+  "Briefe kommen als strukturierte Zusammenfassung mit Originaldokument",
+  "Alles, was zur Warnliste der Ärzte passt, steht oben in der Prüfliste",
+  "Die Nachfrage nach fehlenden Befunden geht am selben Tag raus",
+  "Nach der Terminvergabe gehen Bestätigungen automatisch raus",
+  "Beinahe-Treffer klärt ein Mensch, bevor eine Akte angelegt wird"
+]} />
+
+## Ein Pilot neben dem Stapel
+
+<Timeline title="In sechs Wochen zur funktionierenden Eingangsstrecke">
+<Phase when="Woche 1" title="Den Stapel vermessen">Überweisungen pro Tag zählen, Zeit vom Eingang bis zur ärztlichen Sichtung, Zeit bis zum Termin, Anteil mit Nachfrage wegen fehlender Unterlagen.</Phase>
+<Phase when="Woche 2" title="Regeln mit den Ärzten schreiben">Vollständigkeitskriterien pro Fachrichtung, die Warnliste und die Terminarten.</Phase>
+<Phase when="Woche 3 bis 4" title="Schattenbetrieb">Die Strecke verarbeitet jede Überweisung parallel. Das Team arbeitet wie gewohnt und vergleicht die übertragenen Felder mit der eigenen Erfassung.</Phase>
+<Phase when="Woche 5 bis 6" title="Live mit Prüfung">Die Ärzte sichten über die Zusammenfassung. Jede Korrektur wird notiert und fließt in die Regeln zurück.</Phase>
+</Timeline>
+
+Am Ende vergleiche ich drei Werte: Zeit vom Eingang bis zur ärztlichen Sichtung, Zeit von der Sichtung bis zum Termin und den Anteil der Überweisungen mit zweiter Runde beim Überweiser. Sinkt der erste Wert nicht, lohnt sich die Strecke nicht, egal wie gut die Vorführung aussah.
+
+## Fragen, die Praxen mir stellen
+
+### Kann das gefaxte Überweisungen lesen?
+
+Ja, mit Grenzen. Aktuelle Texterkennung kommt mit üblicher Faxqualität gut zurecht, und ein Sprachmodell zieht Felder zuverlässig aus Briefen, die alle unterschiedlich aussehen. Schlechte Scans werden als unsicher markiert statt geraten.
+
+### Funktioniert das mit unserem Praxisverwaltungssystem?
+
+Die meisten Praxisverwaltungssysteme bieten irgendeine Schnittstelle, manchmal nur einen Dokumentenimport. Gibt es keine brauchbare Schnittstelle, läuft die Strecke als Arbeitsliste neben dem PVS, und das Team überträgt bestätigte Daten. Das ist weniger elegant, aber immer noch viel schneller als jedes Mal bei null anzufangen.
+
+### Kann die KI später selbst über die Dringlichkeit entscheiden?
+
+Für eine kleine Praxis würde ich das nicht bauen. Es macht die Software zum möglichen Medizinprodukt und stellt das Urteil eines Modells zwischen Überweisung und Ärztin. Vereinbarte Warnzeichen hervorzuheben bringt den größten Teil des Nutzens bei einem Bruchteil des Risikos.
+
+### Was ist mit der eÜberweisung ab 2029?
+
+Sie wird den Eingang strukturierter machen, und das ist gut. Die Fragestellung, die Befunde und die Frage, wer zuerst drankommt, bleiben aber Lesearbeit und ärztliche Entscheidung. Eine Eingangsstrecke, die heute mit Faxen und KIM funktioniert, profitiert von strukturierten Daten, sie wird durch sie nicht überflüssig.
+
+## Die Kurzfassung
+
+Software liest den Stapel, Ärztinnen entscheiden, was zählt: Das Modell darf eine Markierung setzen, nie entfernen.
+
+Wenn Ihr Überweisungseingang zur täglichen Sorge geworden ist, [beschreiben Sie mir, wie Überweisungen heute bei Ihnen ankommen](/contact?intent=improve), und ich sage Ihnen, wie ein kleiner erster Schritt aussähe. Dasselbe Muster aus Lesen, Strukturieren und menschlicher Entscheidung taucht auch anderswo auf, vom [Telefon in der Zahnarztpraxis](/de/posts/ai-for-dentists) bis zur [Tourenplanung im Pflegedienst](/de/posts/ai-for-home-care-scheduling).
