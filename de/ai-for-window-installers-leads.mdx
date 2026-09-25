@@ -1,0 +1,166 @@
+---
+id: "de-ai-for-window-installers-leads"
+title: "Fensterbau: Aus vagen Anfragen besichtigungsreife Leads machen"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Handwerk & Bau", "Fensterbauer", "Anfragen qualifizieren", "KI für kleine Unternehmen"]
+description: "„Brauche Preis für neue Fenster, bitte zurückrufen“ ist noch kein Auftrag. Wie KI aus vagen Anfragen besichtigungsreife macht: mit Fotos, Stückzahl, Spanne."
+excerpt: "„Brauche Preis für neue Fenster, bitte zurückrufen“ ist noch kein Auftrag. Wie KI aus vagen Anfragen besichtigungsreife macht: mit Fotos, Stückzahl, Spanne."
+---
+
+Im Kontaktformular steht: „Brauche Preis für neue Fenster. Bitte zurückrufen.“ Dazu ein Name und eine Telefonnummer. Nach zweimal Telefonpingpong vereinbart der Außendienst einen Termin und fährt vierzig Minuten hin. Vor Ort stellt sich heraus: Es geht um ein einziges Badfenster, die Eigentümer denken an „vielleicht nächstes Jahr“, und der Ehemann, der mitentscheidet, ist nicht da.
+
+Dieser Termin hat den Betrieb zwei Stunden Außendienstzeit und den Sprit gekostet. Ein paar solcher Termine pro Woche ergeben eine echte Position in der Kalkulation, und die guten Anfragen haben länger gewartet, weil der Kalender voll mit schwachen war.
+
+Fenstertausch ist ein Geschäft, in dem der erste Besuch teuer ist und die Informationen, die man für die Entscheidung über diesen Besuch braucht, leicht zu bekommen sind. Genau hier passt KI: nicht als Ersatz für das Aufmaß, sondern damit sich die Fahrt zum Aufmaß lohnt.
+
+## Die Lage im Jahr 2026
+
+Zwei Entwicklungen prägen gerade, wie Eigentümer an ein Fensterprojekt herangehen.
+
+<Stats title="Warum Eigentümer genauer rechnen">
+  <Stat value="15 %" label="Grundförderung für Fenster in der BEG-Einzelmaßnahmenförderung, bei höchstens 30.000 € förderfähigen Kosten pro Wohneinheit und Jahr" source="Nachhaltiges Zuhause" href="https://www.nachhaltiges-zuhause.de/bafa-foerderung-einzelmassnahmen" />
+  <Stat value="21.07.2026" label="seit diesem Tag gibt es den iSFP-Bonus von 5 % bei der Gebäudehülle erst ab 30.000 € Investition, und nur auf den Teil darüber" source="Nachhaltiges Zuhause" href="https://www.nachhaltiges-zuhause.de/bafa-foerderung-einzelmassnahmen" />
+  <Stat value="Bis 13 %" label="niedrigere Energiekosten beim Ersatz von Einfachverglasung durch zertifizierte Fenster, laut US-Programm ENERGY STAR" source="ENERGY STAR" href="https://www.energystar.gov/products/res_windows_doors_skylights" />
+</Stats>
+
+Für einen reinen Fenstertausch bedeutet die Änderung vom Juli 2026 meist: 15 Prozent Zuschuss, aber kein iSFP-Bonus mehr, weil typische Fensterprojekte unter der Schwelle bleiben. Viele Eigentümer wissen das noch nicht und fragen nach Förderungen, die es in dieser Form nicht mehr gibt. Gleichzeitig ist das Energieargument bei alten Fenstern stark. Ein Betrieb, der früh eine ehrliche Preisspanne nennt und sauber erklärt, was Förderung und neue Verglasung realistisch bringen, verdient sich den Termin, statt um ihn zu werben.
+
+## Was im Formular steht und was Sie brauchen
+
+Die Lücke, direkt nebeneinander:
+
+<Split title="Die Anfrage und eine besichtigungsreife Anfrage" leftTitle="Was meistens im Formular steht" rightTitle="Was Sie vor der Anfahrt wissen sollten" left={[
+  "Name und Telefonnummer",
+  "„Neue Fenster“",
+  "Vielleicht eine Postleitzahl",
+  "„Bitte zurückrufen“"
+]} right={[
+  "Wie viele Fenster, in welchen Räumen",
+  "Heutige Rahmen und Verglasung: Holz, Kunststoff, Alu; einfach, zweifach, dreifach",
+  "Warum jetzt: Zugluft, beschlagene Scheiben, Lärm, Optik, Verkauf",
+  "Eigentum oder Miete, Eigentümergemeinschaft, Denkmalschutz",
+  "Grober Zeitrahmen und Budget, Interesse an Förderung",
+  "Ein Foto von jedem Fenster und eines vom ganzen Haus",
+  "Wer beim Termin dabei sein muss"
+]} />
+
+Nichts in der rechten Spalte ist geheim oder schwer zu beantworten. Die meisten Eigentümer können das in fünf Minuten vom Handy aus liefern. Sie werden nur nicht gefragt, oder sie werden am Telefon nach einem Skript gefragt, und das dauert für alle länger.
+
+## Der Ablauf, den ich bauen würde
+
+<Flow title="Von der vagen Anfrage zum vorbereiteten Termin" caption="Der Assistent fragt und ordnet. Vor jedem Termin prüft ein Mensch die Anfrage.">
+<Step title="Anfrage geht ein" who="Web, Telefon, E-Mail" time="jederzeit">Ein Formular, eine Sprachnachricht, eine E-Mail. Egal wie wenig drinsteht, es reicht für den Anfang.</Step>
+<Step title="Antwort in Minuten" who="KI" tone="ai" time="2 Min.">Eine freundliche Nachricht mit vier, fünf Fragen und einem Link zum Hochladen von Fotos, samt kurzer Anleitung.</Step>
+<Step title="Antworten und Fotos auswerten" who="KI" tone="ai">Der Assistent zählt Fenster, notiert vermutliche Rahmenarten und markiert Auffälligkeiten wie Kondensat zwischen den Scheiben. Alles ist als Schätzung anhand von Fotos gekennzeichnet.</Step>
+<Step title="Grobe Spanne aus Ihrer Preisliste" who="System">Ihre eigenen Preise nach Fenstertyp und Größenklasse ergeben eine Spanne, klar als vorläufig bis zum Aufmaß gekennzeichnet.</Step>
+<Step title="Anfrage einordnen" who="KI" tone="ai">Besichtigungsreif, fehlt noch eine Antwort, später oder passt nicht. Jeweils mit einer Zusammenfassung in einem Absatz.</Step>
+<Step title="Außendienst prüft und bucht" who="Vertrieb" tone="human" time="am selben Tag">Der Außendienst liest die Zusammenfassung, ruft an und vereinbart einen Termin mit passenden Mustern und Notizen.</Step>
+</Flow>
+
+Der zweite Schritt macht den größten Unterschied. Eine Antwort nach wenigen Minuten mit guten Fragen erreicht die Eigentümer, solange sie noch über Fenster nachdenken. Dieselben Fragen zwei Tage später am Telefon bekommen oft ein „Ich melde mich“.
+
+## Die erste Antwort
+
+Der Ton dieser ersten Nachricht entscheidet, ob Eigentümer antworten. Sie sollte klingen wie ein hilfsbereiter Mensch aus einem Betrieb vor Ort, nicht wie ein Formular. Etwa so, angepasst an das, was in der Anfrage stand:
+
+> Guten Tag Frau Kraus, danke für Ihre Anfrage zu neuen Fenstern. Damit wir Ihnen vor einem Termin eine realistische Preisspanne nennen können, würden uns ein paar Angaben helfen:
+>
+> 1. Ungefähr wie viele Fenster, und in welchen Räumen?
+> 2. Was stört Sie an den jetzigen: Zugluft, beschlagene Scheiben, Lärm oder einfach das Alter?
+> 3. Gehört Ihnen das Haus, oder ist es eine Eigentumswohnung?
+> 4. Wann soll es idealerweise losgehen?
+>
+> Wenn es einfacher ist, laden Sie [hier ein paar Fotos hoch], dann zählen wir selbst. Lieber telefonieren? Antworten Sie einfach mit einer passenden Uhrzeit.
+
+Vier Fragen, alle vom Sofa aus zu beantworten. Die Fotos ersetzen die Frage, die den meisten am schwersten fällt: die eigenen Fenster zu beschreiben. Und der letzte Satz ist wichtig. Wer mit einem Menschen sprechen will, darf sich nie in einem automatischen Austausch gefangen fühlen.
+
+## Gute Fotos bekommen
+
+Eigentümer schicken gern Fotos, wenn man ihnen genau sagt, was sie fotografieren sollen. Diese kurze Anleitung würde ich hinter den Upload-Link legen.
+
+<Checklist title="So fotografieren Sie Ihre Fenster für ein Angebot" items={[
+  "Ein Foto der Vorderseite des Hauses und eines der Rückseite",
+  "Jedes Fenster von innen, gerade von vorn, mit dem ganzen Rahmen im Bild",
+  "Eine Nahaufnahme jedes Problems: beschlagene Scheiben, Fäulnis, Risse, defekte Griffe",
+  "Bei einem typischen Fenster ein Zollstock über Breite und Höhe",
+  "Das Baujahr des Hauses, falls bekannt",
+  "Alles, was den Zugang erschwert: Obergeschoss, Erker, Rollladenkästen, Balkon"
+]} />
+
+Das Foto mit dem Zollstock ist wichtig. Es ersetzt kein Aufmaß, macht die Spanne aber realistisch statt geraten.
+
+## Was KI auf einem Foto erkennt und was nicht
+
+Hier lohnt Ehrlichkeit, denn man überverkauft das leicht.
+
+| Auf Fotos kann KI | Auf Fotos kann KI nicht |
+| --- | --- |
+| Fenster zählen und nach Typ gruppieren | Fenster genau genug für die Bestellung ausmessen |
+| Gängige Rahmenmaterialien grob erkennen | Fäulnis hinter Verkleidungen oder Feuchteschäden im Mauerwerk sehen |
+| Kondensat zwischen den Scheiben erkennen, ein Zeichen für defekten Randverbund | Schiefe Laibungen oder Probleme am Anschluss beurteilen |
+| Offensichtliche Schäden wie Glasbruch oder morsche Fensterbänke bemerken | Die Anschlusssituation für einen fachgerechten Einbau beurteilen |
+| Mit Zollstock im Bild grobe Größenklassen schätzen | Das Urteil des Monteurs vor Ort ersetzen |
+
+Zwei Fragen gehören in Deutschland in jede erste Antwort, weil sie das Projekt grundsätzlich verändern können. Erstens: Eigentumswohnung? In einer Eigentümergemeinschaft gehören die Fenster in aller Regel zum Gemeinschaftseigentum, und für den Austausch braucht es einen Beschluss. Zweitens: Denkmalschutz? Dann entscheidet die Denkmalbehörde mit, oft bis zur Sprossenteilung. Beides früh zu wissen, erspart einen Termin, der sonst ins Leere läuft.
+
+## Preisspanne vor dem Termin?
+
+Ich finde: ja. Hier widersprechen mir viele Fensterbauer. Die Sorge ist, dass eine Spanne abschreckt. Meiner Meinung nach schreckt sie die Falschen ab: Eigentümer, die ein einzelnes billiges Fenster wollten, und solche, die ohnehin nie unterschrieben hätten. Die Richtigen schätzen es, die Größenordnung zu kennen, bevor sie einen Abend für den Termin opfern.
+
+Die Spanne muss aus Ihrer eigenen Preisliste stammen, nicht aus der Fantasie eines Modells. Eine Regel wie „Kunststofffenster, Dreifachverglasung, Standardgrößenklasse, inklusive Montage und Entsorgung: diese Spanne“, multipliziert mit der gezählten Stückzahl und mit Aufschlag für Unbekanntes, ist einfach und ehrlich. Die Nachricht sagt klar, dass der endgültige Preis nach dem Aufmaß feststeht.
+
+Zur Förderung darf der Assistent den Rahmen erklären, aber keine verbindliche Förderberatung geben. Für die BEG-Förderung der Gebäudehülle ist ein Energieeffizienz-Experte einzubinden, und der Antrag muss vor Vertragsschluss gestellt werden. Das gehört in die Antwort, damit niemand aus Versehen seinen Zuschuss verliert.
+
+## Anfragen nach Reife sortieren
+
+<Calc title="Überschlag: was leere Termine kosten" caption="Annahmen, keine Messwerte. Setzen Sie Ihre eigenen Zahlen für Termine, Abschlussquote und Außendienstzeit ein." rows={[
+  ["Vor-Ort-Termine pro Woche", "15"],
+  ["Davon ohne jede Kaufabsicht", "× 30 %"],
+  ["Leere Termine pro Woche", "≈ 4,5"],
+  ["Stunden pro Termin inklusive Fahrt", "× 2"],
+  ["Wochen pro Jahr", "× 46"]
+]} result={["Verlorene Außendienststunden pro Jahr", "≈ 410"]} />
+
+Das sind rund zehn Wochen Außendienstzeit in Wohnzimmern, aus denen nie ein Auftrag geworden wäre. Schon die Hälfte davon zurückzugewinnen, schafft Platz für die Anfragen, die bereit sind. Das Sortieren selbst ist einfach:
+
+- **Besichtigungsreif:** Eigentum, klarer Umfang, Fotos, Zeitrahmen in den nächsten Monaten. Termin vereinbaren.
+- **Fehlt eine Antwort:** fast so weit. Der Assistent stellt die fehlende Frage.
+- **Später:** echtes Interesse, aber „nächstes Frühjahr“. Eine Nachfrage zum genannten Zeitpunkt, keine wöchentliche Berieselung.
+- **Passt nicht:** eine einzelne Isolierglasscheibe oder eine Leistung, die Sie nicht anbieten. Eine schnelle, freundliche Empfehlung an einen Glaser oder ein anderes Gewerk.
+
+## Was sich beim Termin ändert
+
+Wenn eine Anfrage vorbereitet ankommt, wird der Termin selbst besser, nicht nur seltener. Der Außendienst weiß, dass es elf Fenster sind, drei davon beschlagen, das Haus von 1962 stammt und die Eigentümer vor allem der Straßenlärm stört. Er bringt die richtigen Muster mit, inklusive Schallschutzverglasung. Beide Entscheider sind da, weil die Terminbestätigung darum gebeten hat.
+
+Die Eigentümer merken das auch. Das Gespräch beginnt bei ihrer Situation statt bei einem allgemeinen Verkaufsgespräch, und der Preis am Ende liegt in der Spanne, die sie schon kannten. Diese Verlässlichkeit macht aus einem Termin einen Auftrag: keine Überraschungen, kein Druck, und ein Betrieb, der offensichtlich zugehört hat, bevor er vor der Tür stand.
+
+## Software und Daten
+
+Viele Fensterbauer arbeiten mit Branchensoftware wie KLAES oder Orgadata LogiKal für Konstruktion und Kalkulation, dazu mit Handwerkersoftware oder einem CRM für Anfragen. Der Assistent legt die Anfrage dort an oder ergänzt sie, hängt Fotos und Zusammenfassung an und bereitet den Termin vor. Ihre Preisspannen können anfangs in einer Tabelle liegen; wichtig ist nur, dass Assistent und Außendienst dieselbe Quelle nutzen.
+
+Eigentümer schicken Fotos aus ihrem Zuhause, das verdient Sorgfalt: Speicherung bei der Anfrage, Zugriff nur für den Vertrieb, Löschung nach einer sinnvollen Frist, wenn aus der Anfrage nichts wird. Die DSGVO gilt, und nach [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) müssen Menschen seit August 2026 erfahren, wenn sie mit einer KI schreiben.
+
+## Fragen, die Fensterbauer stellen
+
+### Schrecken Fragen vorab Interessenten nicht ab?
+
+Einige springen ab. Das sind überwiegend die, die zu leeren Terminen geworden wären. Halten Sie die Fragen kurz, im Gesprächston und freiwillig, und bieten Sie immer einen Anruf an für alle, die lieber telefonieren.
+
+### Kann KI Fenster auf Fotos ausmessen?
+
+Nicht genau genug für die Bestellung. Mit Zollstock im Bild schätzt sie eine Größenklasse, und das reicht für eine Spanne. Bestellt wird immer nach einem richtigen Aufmaß durch Ihren Monteur.
+
+### Sollten wir nicht einfach Preise auf die Website stellen?
+
+Ein Preisleitfaden auf der Website hilft, kann aber Anzahl und Art der Fenster in einem konkreten Haus nicht berücksichtigen. Die Spanne des Assistenten ist nützlicher, weil sie auf dem beruht, was diese Eigentümer tatsächlich geschickt haben.
+
+### Was, wenn jemand keine Fotos schicken will?
+
+Dann bleibt die Anfrage bei „fehlt eine Antwort“, und ein Mensch ruft an. Manche Leute telefonieren einfach lieber. Es geht nicht darum, alle durch ein Formular zu zwingen, sondern darum, nicht mehr blind loszufahren.
+
+## Die Faustregel
+
+Fahren Sie zum Aufmaß, nicht zum Kennenlernen. Alles, was Eigentümer vom Handy aus erzählen können, sollte bekannt sein, bevor jemand ins Auto steigt.
+
+Wenn Ihr Außendienstkalender voller Termine ist, aus denen nichts wird, [schreiben Sie mir, wie Anfragen heute bei Ihnen ankommen](/contact?intent=improve) und mit welcher Software Sie arbeiten. Ich schlage Ihnen einen kleinen Assistenten vor, den Sie innerhalb eines Monats testen können. Dieselbe Logik gilt für [PV-Betriebe, die entscheiden, welche Vor-Ort-Termine sich lohnen](/de/posts/ai-for-solar-installers-lead-screening), und für [Errichter von Sicherheitstechnik bei der Begehung](/de/posts/ai-for-security-installers-surveys).
