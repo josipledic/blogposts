@@ -1,0 +1,165 @@
+---
+id: "ai-for-moving-companies-inventory"
+title: "Moving Estimates From a Video Call: How AI Builds the Inventory"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Field services", "Moving companies", "Virtual surveys", "AI for small business"]
+description: "Bad inventories cause wrong trucks, second trips and final-bill fights. How AI turns a customer’s walkthrough video into an inventory your estimator reviews."
+excerpt: "Bad inventories cause wrong trucks, second trips and final-bill fights. How AI turns a customer’s walkthrough video into an inventory your estimator reviews."
+---
+
+A customer fills in the online form: "3-bedroom house, local move, about 20 boxes." The office sends a quote based on a typical three-bedroom home. On moving day, the crew finds a garage full of tools, a basement with a treadmill and a chest freezer, a piano nobody mentioned, and closer to sixty boxes than twenty. The truck is too small, the day runs long, and the final bill is much higher than the quote. The customer feels cheated. The company feels lied to. Both are a little bit right.
+
+The alternative has always been the in-home survey: an estimator drives out, walks through every room, and builds a cube sheet line by line. It's accurate, and it costs an hour or two of a skilled person's time per estimate, most of it driving. Video surveys helped, but someone still has to watch the video and type the inventory.
+
+This is a very natural job for AI. The customer records a walkthrough on their phone, the software proposes an inventory, and the estimator reviews and corrects it instead of building it from scratch.
+
+## The rules and the market
+
+<Stats title="Moving estimates in context">
+  <Stat value="Video counts" label="US interstate movers may base estimates on a virtual survey, with live or pre-recorded video that clearly shows the goods" source="FMCSA, Your Rights and Responsibilities" href="https://www.fmcsa.dot.gov/sites/fmcsa.dot.gov/files/2023-10/FMCSA_R&R_Handbook_Web_v1.pdf" />
+  <Stat value="110%" label="the most a mover can require at delivery on a non-binding interstate estimate; the rest waits" source="FMCSA" href="https://www.fmcsa.dot.gov/sites/fmcsa.dot.gov/files/2023-10/FMCSA_R&R_Handbook_Web_v1.pdf" />
+  <Stat value="8 million+" label="people move home in Germany every year, about one in ten" source="Deutsche Post Adress moving study, via eurotransport" href="https://www.eurotransport.de/logistik/spedition-und-logistik/jeder-10-zieht-jedes-jahr-in-deutschland-um-wo-das-kommen-und-gehen-besonders-hoch-ist/" />
+</Stats>
+
+The 110% rule is worth dwelling on. For US interstate moves, a non-binding estimate that turns out 30% low doesn't just annoy the customer; the mover can't collect the difference on delivery day. An accurate inventory isn't a nice-to-have. It's the estimate. And across the industry, the most common complaints are about final bills above the estimate and damaged goods, which is exactly what a precise, agreed inventory helps prevent.
+
+## Four ways to build an estimate
+
+| Method | Accuracy | Estimator time | Customer effort | Where it fits |
+| --- | --- | --- | --- | --- |
+| Online form ("3-bed house") | Low | Minutes | Low | Rough ballpark only |
+| In-home survey | High | 1 to 2 hours including travel | Be home for the visit | Large, complex, or high-value moves |
+| Live video call | Good | 30 to 45 minutes live | Walk the estimator through on a call | When the customer prefers a conversation |
+| Recorded video plus AI inventory | Good, after review | 10 to 20 minutes of review | Record a guided walkthrough when it suits them | Most residential moves |
+
+The last row is where I think most residential moves will end up. The customer records whenever it suits them, the software does the first pass, and the estimator's time goes into judgment rather than typing.
+
+## From walkthrough video to confirmed inventory
+
+<Flow title="From a phone video to a confirmed, priced inventory" caption="The model proposes an inventory from video. The estimator reviews and prices it. The customer confirms it before the move.">
+<Step title="Customer gets a guided link" who="Customer" time="day 0">A link with short prompts, room by room: open the closets, show the garage and the attic, say out loud what's staying behind.</Step>
+<Step title="Detect and list items" who="AI" tone="ai" time="minutes">The model lists furniture, appliances, and boxes by room, with counts and size classes, and turns spoken comments into notes.</Step>
+<Step title="Estimate volume and weight" who="System">Your own item table gives cubic feet per item; totals and a weight estimate follow from your rules.</Step>
+<Step title="Flag what needs a human" who="AI" tone="ai">Unclear box counts, closed cabinets, specialty items like pianos, safes, artwork, aquariums, and anything that needs disassembly or crating.</Step>
+<Step title="Estimator reviews" who="Estimator" tone="human" time="10 to 20 min">Watches the video at speed with the draft inventory beside it, corrects, adds, and prices truck, crew, hours, and materials.</Step>
+<Step title="Customer confirms the inventory" who="Customer" tone="human">The customer checks the list and signs it. What's on it is what the price covers.</Step>
+</Flow>
+
+The confirmation step at the end is the one that prevents most disputes. A customer who has seen and signed a room-by-room inventory can't later say they weren't told the piano was extra, and a crew that finds a garage full of tools that isn't on the list has a clear, fair basis for a conversation.
+
+Here's what the estimator sees for one room: the draft on one side, the video on the other.
+
+```text
+BEDROOM 2 (video 04:12 to 06:40)
+Queen bed with headboard .............. 1   (disassembly: yes)
+Dresser, 6 drawers .................... 1
+Nightstands ........................... 2
+Wardrobe, freestanding ................ 1   ⚑ contents not visible
+Desk and office chair ................. 1 + 1
+Boxes, packed ......................... 7   ⚑ more in closet? count unclear
+Customer note: "the desk stays, it's the landlord's"
+Flags: wardrobe contents · closet boxes · desk marked as staying
+```
+
+The estimator skips to 05:30 in the video, sees the closet has another six boxes on the floor, removes the desk because the customer said it stays, and marks the wardrobe for a wardrobe carton. That's two minutes of review for a room that would take ten minutes to inventory from scratch, and the corrections are exactly the kind of judgment a model can't make.
+
+## The volume arithmetic
+
+Behind every quote is a cube sheet: items times volumes, summed. Doing it by hand is slow and error-prone. Here's one room, using the kind of standard volumes most movers work with.
+
+<Calc title="Cube sheet for one living room" caption="Illustrative volumes per item. Use your own item table; the weight rule of thumb of about 7 lbs per cubic foot is common in the industry but varies with contents." rows={[
+  ["Sofa, 3-seat", "50 cu ft"],
+  ["Armchairs × 2", "50 cu ft"],
+  ["Coffee table and side tables", "15 cu ft"],
+  ["TV and stand", "20 cu ft"],
+  ["Bookshelves × 2", "40 cu ft"],
+  ["Book boxes × 12 (small)", "18 cu ft"],
+  ["Lamps, rug, decor", "12 cu ft"]
+]} result={["Living room total", "≈ 205 cu ft"]} />
+
+Repeat that for every room, garage, and basement, and a typical three-bedroom home lands somewhere between 1,000 and 1,500 cubic feet, which decides the truck, the crew size, and the hours. An online form that says "3 bedrooms" can't tell whether it's 900 or 1,800.
+
+## From inventory to price
+
+The inventory drives every line of the quote, and most of those lines follow rules you already use, whether or not they're written down.
+
+| Quote line | Driven by | Typical rule |
+| --- | --- | --- |
+| Truck size | Total volume | Next truck size up from the total, with a margin for awkward items |
+| Crew size | Heaviest and bulkiest items | Pianos, safes, and large appliances need extra hands |
+| Hours | Volume, access, distance | Stairs, long carries, and elevator bookings add time |
+| Materials | Rooms and item types | Wardrobe cartons for full wardrobes, mattress bags, dish packs |
+| Extras | Flags | Crating, disassembly, specialty handling, storage |
+
+Writing these rules down is part of the project, and it's worth doing anyway: it means two estimators looking at the same video produce the same quote. The model supplies the inventory; the rules and your estimator turn it into a price.
+
+## What the model sees, and what it doesn't
+
+<Split title="Being honest about video inventories" leftTitle="Video and AI handle well" rightTitle="Needs the estimator or the customer" left={[
+  "Beds, sofas, tables, chairs, and wardrobes",
+  "Large appliances and electronics",
+  "Visible boxes and bins, roughly counted",
+  "Room-by-room structure of the move",
+  "The customer's spoken notes, like “this stays”"
+]} right={[
+  "Contents of closed cabinets, closets, and drawers",
+  "How heavy the boxes really are, books versus linens",
+  "Fragile or valuable items that need crating",
+  "Disassembly needs, like bed frames and wall-mounted TVs",
+  "Access: stairs, elevators, parking distance, narrow doors"
+]} />
+
+This is why the review step isn't optional. The model gets the bulk of the inventory right and fast, and flags what it can't see. The estimator's experience fills in the rest, especially access, which often matters more to the price than the furniture does.
+
+## The guide that makes videos useful
+
+Customers produce much better videos when they're told exactly what to film. The prompts in the link do most of the work.
+
+<Checklist title="Filming your home for a moving estimate" items={[
+  "Go room by room, and say the room's name as you enter",
+  "Pan slowly around each room, including corners and behind doors",
+  "Open closets and cabinets briefly so we can see how full they are",
+  "Include the garage, attic, basement, shed, and balcony",
+  "Say out loud anything that's staying behind or going elsewhere",
+  "Point out anything fragile, valuable, or very heavy",
+  "Film the entrance, stairs, and where a truck would park"
+]} />
+
+## Trust is the product
+
+The moving industry has a reputation problem. Hostage-load scams, where goods are loaded and then held until the customer pays far more than quoted, have made people wary of every mover. An honest company can use that.
+
+<Callout title="The inventory as a promise">
+Tell customers plainly: "This is the list your price is based on. If something isn't on it, we'll talk about it before we load it, not after." Keep the video and the signed inventory with the job. It protects the customer from surprises and your crew from arguments, and it's the clearest way to show you're not one of the bad actors.
+</Callout>
+
+## Tools that fit
+
+Moving companies typically run CRM and operations software such as SmartMoving, MoveitPro, or Supermove. Specialised AI survey products, Yembo being a well-known example, already offer video-based inventories. If you'd rather keep things lighter, a simpler version can sit on top of your existing CRM: collect the video, produce a draft inventory, and hand it to your estimator in the format your quoting uses.
+
+Walkthrough videos show the inside of people's homes, sometimes their documents and family photos. Treat them carefully: store them with the job, restrict access, and delete them after the move and any claims period. In the EU, that's a GDPR obligation, and customers should know an automated system reviews their video.
+
+## Questions moving company owners ask
+
+### Is a video inventory accurate enough for a binding estimate?
+
+After an estimator's review, it can be, and US rules explicitly allow virtual surveys for interstate moves. For complex or high-value moves, I'd still consider an in-home visit, or a live call to go through the flagged items.
+
+### Will customers actually record a video?
+
+Most will if you explain that it replaces a home visit and gets them an accurate price faster. Keep the instructions short and let them record at a time that suits them.
+
+### What about boxes that aren't packed yet?
+
+That's the most common unknown. The model counts what's visible and the estimator adds a packing estimate based on the rooms, closets, and bookshelves. If you offer packing services, the video is also your best tool for quoting them.
+
+### Can it handle offices and commercial moves?
+
+The same approach works, with a different item table: desks, chairs, filing cabinets, IT equipment. Commercial moves also involve access windows and building rules, which the estimator handles.
+
+## The rule of thumb
+
+Estimate what you've seen, get the customer to confirm it, and let the inventory settle the arguments before they start.
+
+If wrong trucks and final-bill disputes are part of your season, [tell me how you build estimates today](/contact?intent=improve) and which software you use. I'll suggest how a video inventory pilot could work. The same idea of measuring before pricing shows up in [landscaping estimates](/posts/ai-for-landscapers-estimates) and [commercial cleaning bids](/posts/ai-for-cleaning-companies-scope).
