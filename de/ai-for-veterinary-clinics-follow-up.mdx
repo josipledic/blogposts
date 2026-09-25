@@ -1,0 +1,165 @@
+---
+id: "de-ai-for-veterinary-clinics-follow-up"
+title: "Tierarztpraxis: Nachsorge, die im Praxisalltag nicht untergeht"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Gesundheit", "Tierarztpraxen", "Kundenkommunikation", "KI für kleine Unternehmen"]
+description: "Ob Tierhalter nach einer OP von der Praxis hören, hängt oft davon ab, wer Dienst hat. Wie KI Entlassungsbriefe schreibt, nachfragt und Sorgen an die TFA gibt."
+excerpt: "Ob Tierhalter nach einer OP von der Praxis hören, hängt oft davon ab, wer Dienst hat. Wie KI Entlassungsbriefe schreibt, nachfragt und Sorgen an die TFA gibt."
+---
+
+Balu ist ein neunjähriger Labrador, dem heute Vormittag drei Zähne gezogen wurden. Um 17 Uhr holt ihn seine Halterin ab, noch etwas benommen, zusammen mit einer Tüte Medikamente und einem ausgedruckten Merkblatt. Die TFA erklärt alles am Tresen, während das Telefon klingelt und der nächste Patient wartet. Die Halterin nickt, nimmt das Blatt und hat die Hälfte vergessen, bevor sie am Auto ist.
+
+Geplant ist, dass morgen jemand anruft und fragt, wie es Balu geht. Manchmal klappt das. An einem Tag mit zwei Notfällen und einer kranken Kollegin klappt es nicht. Balu geht es vermutlich so oder so gut. Aber ob seine Halterin von der Praxis hört, hängt weniger von Balu ab als davon, wer gerade Dienst hatte.
+
+Genau diese Ungleichmäßigkeit würde ich in einer Tierarztpraxis als Erstes mit KI angehen. Keine Diagnosen, kein Chatbot, der Tierarzt spielt, sondern die schlichte, wiederkehrende Arbeit, dafür zu sorgen, dass jeder Patient dieselbe Nachsorge bekommt, wenn die Tür hinter ihm zugeht.
+
+## In der Nachsorge versickert gute Medizin
+
+Die Arbeit im Behandlungsraum ist meist hervorragend. Was zu Hause passiert, steht auf einem anderen Blatt.
+
+<Stats title="Was nach dem Praxisbesuch passiert">
+  <Stat value="39 %" label="der Katzenhalter in einer aktuellen Studie gaben Medikamente zu Hause nicht wie verordnet" source="Journal of Veterinary Internal Medicine, 2025" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11724197/" />
+  <Stat value="17 %" label="der Kunden, die eine Empfehlung zur Zahnbehandlung bekamen, setzten sie in der Compliance-Studie der AAHA um" source="AAHA via dvm360" href="https://www.dvm360.com/view/aaha-unveils-details-client-compliance-study" />
+  <Stat value="33,9 Mio." label="Hunde, Katzen, Kleintiere und Ziervögel lebten 2024 in 44 % der deutschen Haushalte" source="IVH und ZZF" href="https://www.zzf.de/pressemeldung/der-deutsche-heimtiermarkt-2024" />
+</Stats>
+
+Die Medikamentenstudie ist klein, aber ihr Ergebnis ist unbequem: Ausgerechnet orale Antibiotika hingen am stärksten damit zusammen, dass Halter die Anweisungen nicht befolgten. Das hat Folgen für das einzelne Tier und für Antibiotikaresistenzen. Die Empfehlung der Autoren ist einfach: Haltern zeigen, wie man das Medikament gibt, und Alternativen erwägen, wenn Tabletten ein Kampf sind.
+
+Die AAHA-Studie ist älter, aber ihr Kernpunkt gilt weiter. Viel Nichtbefolgung entsteht, weil die Empfehlung nie klar beim Halter ankam oder nie wiederholt wurde. Menschen befolgen keinen Rat, an den sie sich nicht erinnern.
+
+Dazu kommt die Lage in deutschen Praxen: Tiermedizinische Fachangestellte werden überall gesucht, der Notdienst ist vielerorts kaum noch zu besetzen, und seit der neuen Gebührenordnung für Tierärzte vom November 2022 schauen viele Halter genauer auf die Rechnung. Wer mehr zahlt, erwartet auch, dass sich die Praxis nach einer Operation meldet.
+
+Die meisten Praxen verschicken Impf- und Kontrollerinnerungen längst automatisch aus der Praxissoftware. Dieser Teil ist gelöst. Die Lücke ist die fallbezogene Nachsorge nach einer OP, einer Zahnbehandlung oder einer neuen Diagnose, bei der die Nachricht zu genau diesem Tier und diesem Halter passen muss.
+
+## Wie verlässliche Nachsorge aussieht
+
+So würde ich den Ablauf für einen OP- oder Zahnpatienten anlegen. Die Zeitpunkte sind ein Vorschlag, den die Tierärzte anpassen. Entscheidend ist, dass er für jeden Patienten läuft, nicht nur, wenn gerade Zeit ist.
+
+<Timeline title="Nachsorge nach einer Zahnbehandlung mit Extraktionen">
+<Phase when="Tag 0" title="Entlassungsbrief in klarer Sprache">Noch am Abend per SMS oder E-Mail: was gemacht wurde, wann welches Medikament wie gegeben wird, was normal ist, was nicht, und die Notdienstnummer.</Phase>
+<Phase when="Tag 1" title="Nachfrage mit drei Fragen">Frisst Balu? Trinkt er? Gibt es Blutungen, Schwellungen oder Anzeichen von Schmerzen? Antworten werden sortiert, alles Beunruhigende geht an eine TFA.</Phase>
+<Phase when="Tag 3" title="Erinnerung und Foto">Der Hinweis, dass die Antibiotikagabe noch nicht vorbei ist, und das Angebot, ein Foto vom Zahnfleisch zu schicken, falls etwas seltsam aussieht.</Phase>
+<Phase when="Tag 7 bis 10" title="Kontrolltermin">Kontrolltermin buchen oder bestätigen, mit einem kurzen Hinweis, worauf die Tierärztin achten wird.</Phase>
+<Phase when="Tag 30" title="Zahnpflege zu Hause">Tipps zum Zähneputzen oder Kauartikel, die die Praxis empfiehlt, und wann die nächste Kontrolle fällig ist.</Phase>
+</Timeline>
+
+Keine dieser Nachrichten ist raffiniert. Wertvoll werden sie dadurch, dass sie bei jedem Patienten pünktlich rausgehen und dass die Antworten gelesen werden.
+
+## Wo die KI arbeitet
+
+In diesem Ablauf stecken drei Aufgaben, die viel Zeit kosten, und alle drei passen gut zu einem Sprachmodell mit einem Menschen in der Schleife.
+
+**Den Entlassungsbrief schreiben.** Die Notizen der Tierärztin sind für die Patientenakte geschrieben, nicht für eine besorgte Halterin zu Hause. Ein Modell macht daraus einen klaren, freundlichen Text in der Sprache des Halters, mit den Formulierungen, die die Praxis für Medikamente und Warnzeichen freigegeben hat. Tierärztin oder TFA lesen und geben frei. Das dauert eine Minute statt zehn.
+
+**Die Antworten lesen.** Halter antworten auf jede erdenkliche Weise: „alles gut!“, ein Absatz über die Stimmung des Hundes, ein unscharfes Foto, „ist es normal, dass er so viel trinkt?“. Ein Modell sortiert das in „in Ordnung“, „Frage“ und „Sorge“ und zieht die wichtigsten Fakten für die TFA heraus.
+
+**Antworten auf Routinefragen vorbereiten.** Viele Fragen beantwortet der Entlassungsbrief schon. Ein Antwortentwurf, der die passende Stelle zitiert, erspart der TFA das Abtippen. Abschicken tut sie ihn trotzdem selbst.
+
+So sieht die erste Aufgabe konkret aus. Die klinische Notiz ist für Kollegen geschrieben:
+
+```text
+ZST mit Extraktion 108, 208, 309 (Triadan). Nähte 5-0 resorbierbar.
+Meloxicam 1x tgl. x 4 d ab morgen früh. Clindamycin 2x tgl. x 7 d.
+Weichfutter 7 d. Keine Kauartikel/Spielzeug 10 d. Kontrolle in 10 d.
+```
+
+Der Entwurf, den die Halterin nach Freigabe durch die Tierärztin bekommt, liest sich so:
+
+> Bei Balu wurden heute unter Narkose die Zähne gereinigt, und wir haben drei beschädigte Zähne entfernt: zwei hinten im Oberkiefer und einen hinten im Unterkiefer. Das Zahnfleisch ist mit Fäden verschlossen, die sich von selbst auflösen.
+>
+> **Medikamente:** Das Schmerzmittel (Meloxicam) geben Sie einmal täglich mit dem Futter, ab morgen früh, vier Tage lang. Vom Antibiotikum (Clindamycin) bekommt Balu morgens und abends je eine Kapsel, sieben Tage lang, bis die Packung leer ist, auch wenn es ihm schon wieder richtig gut geht.
+>
+> **Futter:** Eine Woche nur weiches Futter. Zehn Tage keine Kauknochen, Kauartikel oder harten Spielzeuge.
+>
+> **Normal:** Heute Abend etwas Müdigkeit, ein oder zwei Tage ein wenig Blut im Speichel.
+>
+> **Melden Sie sich, wenn** er länger als einen Tag nicht frisst, die Blutung nicht aufhört, das Gesicht anschwillt oder er trotz Schmerzmittel Schmerzen zu haben scheint. Außerhalb der Sprechzeiten rufen Sie bitte die Notdienstnummer unten an.
+
+In der zweiten Fassung steht keine neue medizinische Information. Es ist derselbe Inhalt, sortiert nach den Fragen der Halterin und übersetzt aus dem Fachkürzel. Genau solche Umformulierungen kann ein Sprachmodell gut, und genau deshalb gibt ein Mensch sie frei: Das Modell darf nichts hinzufügen, weglassen oder abschwächen.
+
+<Split title="Wer was macht" leftTitle="Automatisiert" rightTitle="Bleibt beim Team" left={[
+  "Aus der klinischen Notiz einen verständlichen Entlassungsbrief entwerfen, zur Freigabe",
+  "Nachrichten pünktlich verschicken",
+  "Antworten sortieren: in Ordnung, Frage, Sorge",
+  "Antworten aus dem freigegebenen Entlassungsbrief vorbereiten",
+  "Jede Nachricht und Antwort in der Patientenakte ablegen"
+]} right={[
+  "Jeden Entlassungsbrief vor dem Versand freigeben",
+  "Jeden Halter zurückrufen, dessen Antwort beunruhigend klingt",
+  "Jede medizinische Frage, die der Brief nicht beantwortet",
+  "Entscheiden, ob ein Tier noch einmal kommen muss",
+  "Notfälle außerhalb der Sprechzeiten, immer über den Notdienst"
+]} />
+
+## Wie Antworten weitergeleitet werden
+
+In der Weiterleitung steckt die Sicherheit, deshalb bekommt sie ein eigenes Schaubild.
+
+<Flow title="Was passiert, wenn ein Halter antwortet" caption="Das Modell sortiert und entwirft. Alles, was nach einem Problem klingt, landet schnell bei einem Menschen.">
+<Step title="Halter antwortet auf die Nachfrage" who="Halter" time="jederzeit">Per SMS, E-Mail oder über den Nachrichtendienst der Praxis, manchmal mit Foto.</Step>
+<Step title="Zuerst auf Warnzeichen prüfen" who="KI" tone="ai" time="Sekunden">Die Liste der Tierärzte (frisst seit 24 Stunden nicht, Erbrechen, Blutung, Teilnahmslosigkeit, Schwellung, Atemprobleme) hat immer Vorrang.</Step>
+<Step title="Den Rest sortieren" who="KI" tone="ai">In Ordnung: wird in der Akte vermerkt. Frage: Antwortentwurf aus dem Entlassungsbrief. Unklar: geht als Frage an eine TFA.</Step>
+<Step title="Sorgen gehen an eine TFA" who="TFA" tone="human" time="innerhalb einer Stunde">Die TFA sieht Antwort, Entlassungsbrief und Akte und ruft den Halter an.</Step>
+<Step title="Fragen bekommen eine freigegebene Antwort" who="TFA" tone="human">Die TFA prüft den Entwurf, ändert bei Bedarf und schickt ihn ab.</Step>
+<Step title="Außerhalb der Sprechzeiten" who="System">Jede automatische Nachricht enthält die Notdienstnummer. Nachts wird nie versucht, ein Tier einzuschätzen.</Step>
+</Flow>
+
+Zwei Regeln machen das sicher. Erstens gewinnen Warnzeichen immer: Enthält eine Antwort etwas von der Liste der Tierärzte, geht sie an einen Menschen, egal wie der Rest klingt. Zweitens beantwortet der Assistent eine medizinische Frage nie mit etwas, das nicht im freigegebenen Entlassungsbrief steht. Steht es dort nicht, schreibt eine TFA die Antwort.
+
+## Was in einen guten Entlassungsbrief gehört
+
+Diese Checkliste lohnt sich auch ganz ohne Automatisierung. Ein Entlassungsbrief, der diese Punkte abdeckt, verhindert die meisten „Ist das normal?“-Anrufe.
+
+<Checklist title="Der Entlassungsbrief, jedes Mal" items={[
+  "Was gemacht wurde, in ein oder zwei einfachen Sätzen",
+  "Jedes Medikament: wofür, wann, wie viel und wie man es gibt (ein kurzes Video hilft bei Tabletten)",
+  "Was in den nächsten Tagen normal ist, etwa Müdigkeit oder etwas Blut im Speichel",
+  "Was nicht normal ist, und was dann zu tun ist",
+  "Hinweise zu Futter, Wasser und Bewegung, mit Datum",
+  "Wann die Kontrolle ist und worauf geachtet wird",
+  "Wer während der Sprechzeiten erreichbar ist, und die Notdienstnummer"
+]} />
+
+## Software und Anbindung
+
+Die meisten Praxen arbeiten mit einer Praxissoftware wie easyVET, VETERA oder Provet Cloud, oft ergänzt um ein Werkzeug für Erinnerungen und Terminbuchung. Die Nachsorge ersetzt nichts davon. Sie liest die Entlassungsdaten aus der Akte, verschickt Nachrichten über den Kanal, den die Praxis ohnehin nutzt, und schreibt Antworten zurück in die Akte, damit die nächste Kollegin den ganzen Verlauf sieht.
+
+Wie tief die Anbindung geht, hängt von der Software ab. Manche Systeme haben eine dokumentierte Schnittstelle, andere erlauben nur Exporte oder E-Mail-basierte Abläufe. Das würde ich in der ersten Woche klären, denn es entscheidet, ob der Pilot zwei oder sechs Wochen dauert.
+
+Zum Datenschutz: Tierbefunde sind keine Gesundheitsdaten im Sinne von Art. 9 DSGVO. Name, Telefonnummer und Nachrichten des Halters sind aber personenbezogene Daten. Sie brauchen also einen Anbieter mit Auftragsverarbeitungsvertrag und Datenverarbeitung in der EU. Bei WhatsApp als Kanal würde ich genau hinschauen, weil dort Kontaktdaten und Metadaten an einen Dienst außerhalb Ihrer Kontrolle gehen; SMS, E-Mail oder ein Nachrichtendienst mit europäischem Hosting sind die ruhigere Wahl. Und sagen Sie Haltern, wenn eine Nachricht aus einem automatischen System kommt. Für dialogfähige Assistenten ist das seit August 2026 nach [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) Pflicht.
+
+## Woran man sieht, dass es wirkt
+
+Ich würde einen Monat vorher und einen Monat nachher vier Werte messen:
+
+- Anteil der OP- und Zahnpatienten mit Nachfrage innerhalb von 24 Stunden.
+- Erscheinungsquote zur Kontrolle bei diesen Patienten.
+- Eingehende „Ist das normal?“-Anrufe in den ersten drei Tagen nach der Entlassung.
+- Komplikationen, die durch die Nachfrage früh auffielen und sonst später als Notfall gekommen wären.
+
+Den letzten Wert kann man schwer zählen und leicht übertreiben. Ich würde jeden Fall mit einer kurzen Notiz festhalten, statt eine Prozentzahl daraus zu machen.
+
+## Fragen, die Praxisinhaber stellen
+
+### Wirken automatische Nachfragen nicht unpersönlich?
+
+Eine Nachricht, die pünktlich kommt und nach der Praxis klingt, wirkt persönlicher als ein Anruf, der nie stattfindet. Entscheidend ist, dass Antworten gelesen werden und beunruhigende Antworten einen Anruf von jemandem auslösen, der den Patienten kennt.
+
+### Darf der Assistent medizinische Fragen beantworten?
+
+Nur mit Informationen, die bereits im freigegebenen Entlassungsbrief stehen. Alles andere geht an eine TFA. Diese Grenze macht den Ablauf sicher genug für den täglichen Einsatz.
+
+### Was ist mit Notfällen in der Nacht?
+
+Die übernimmt der Assistent nicht. Jede Nachricht enthält die Notdienstnummer, und nächtliche Antworten mit Warnzeichen lösen den Hinweis aus, sofort den Notdienst anzurufen, statt das Tier einschätzen zu wollen.
+
+### Geht das nur nach Operationen?
+
+OPs und Zahnbehandlungen sind der beste Einstieg, weil die Nachsorge vorhersehbar ist. Neue chronische Diagnosen wie Diabetes oder Niereninsuffizienz sind ein guter zweiter Schritt, weil regelmäßige Nachfragen Haltern durch eine anfangs schwierige Routine helfen.
+
+## Die Regel für die Pinnwand
+
+Jedes Tier, das nach einer Narkose nach Hause geht, bekommt dieselbe Nachsorge, egal wer Dienst hatte. Das „jedes“ kann Software garantieren. Die Fürsorge bringt Ihr Team mit.
+
+Wenn Sie das zuerst für OP-Patienten ausprobieren möchten, [schreiben Sie mir, welche Praxissoftware Sie nutzen](/contact?intent=improve) und wie die Nachsorge heute läuft. Ich schlage Ihnen die kleinste Lösung vor, die einen Test wert ist. Wie dieselbe Idee in der Humanmedizin aussieht, lesen Sie in den Beiträgen zum [Telefon in der Zahnarztpraxis](/de/posts/ai-for-dentists) und zu [Überweisungen in der Facharztpraxis](/de/posts/ai-for-medical-practices-referrals).
