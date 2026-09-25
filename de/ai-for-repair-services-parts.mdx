@@ -1,0 +1,162 @@
+---
+id: "de-ai-for-repair-services-parts"
+title: "Hausgeräte-Reparatur: Beim ersten Besuch das richtige Ersatzteil dabei"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Dienstleistungen vor Ort", "Hausgeräte-Reparatur", "Erstlösungsquote", "KI für kleine Unternehmen"]
+description: "Die meisten zweiten Anfahrten in der Hausgeräte-Reparatur liegen am fehlenden Ersatzteil. Wie KI Typenschild, Fehlercode und Ihre Reparaturhistorie vorab auswertet."
+excerpt: "Die meisten zweiten Anfahrten in der Hausgeräte-Reparatur liegen am fehlenden Ersatzteil. Wie KI Typenschild, Fehlercode und Ihre Reparaturhistorie vorab auswertet."
+---
+
+Der Anruf kommt am Montag: „Meine Waschmaschine pumpt nicht ab, und im Display steht ein Fehler.“ Das Büro vergibt einen Termin für Mittwoch. Am Mittwoch liest der Techniker die Typennummer am Türrahmen ab, schlägt den Fehlercode nach und bestätigt, was er vermutet hatte: die Laugenpumpe. Eine Pumpe hat er im Wagen, nur keine, die in dieses Modell passt. Er bestellt die richtige, und die Kundin nimmt sich am Freitag noch einen Vormittag frei.
+
+Die Reparatur selbst hat zwanzig Minuten gedauert. Der Betrieb hat zwei Anfahrten bezahlt, die Kundin hat zwei Vormittage verloren, und der Freitagstermin des Technikers ging an einen Auftrag, der am Mittwoch hätte fertig sein können.
+
+Fast alles, was der Techniker an der Haustür erfahren hat, hätte man am Montag wissen können. Die Typennummer steht auf einem Schild. Der Fehlercode steht im Display. Und die eigenen Unterlagen des Betriebs zeigen wahrscheinlich, was bei diesem Code an diesem Modell meistens hilft. Genau diese Vorbereitung kann KI in einem Reparaturbetrieb gut übernehmen.
+
+## Warum die Erstlösungsquote jetzt noch wichtiger wird
+
+<Stats title="Erstlösungsquote und Reparaturmarkt">
+  <Stat value="≈ 77 %" label="beträgt die durchschnittliche Erstlösungsquote im technischen Außendienst; die besten Betriebe erreichen etwa 88 %" source="Service Council und Aberdeen, via ServicePower" href="https://www.servicepower.com/blog/how-to-improve-your-first-time-fix-rate" />
+  <Stat value="31.07.2026" label="seitdem gilt das EU-Recht auf Reparatur: Hersteller müssen auch nach der Gewährleistung reparieren und Ersatzteile zu angemessenen Preisen an alle Reparaturbetriebe verkaufen" source="Europäische Kommission" href="https://commission.europa.eu/news-and-media/news/right-repair-new-consumer-rights-easy-and-attractive-repairs-2026-07-31_en" />
+  <Stat value="50 %, bis 200 €" label="der Reparaturkosten erstattet der wieder aufgelegte Reparaturbonus in Sachsen, ein bundesweiter Bonus ist gescheitert" source="Deutsche Handwerks Zeitung" href="https://www.deutsche-handwerks-zeitung.de/bundesweiter-reparaturbonus-gescheitert-das-tut-sich-in-den-laendern-378638/" />
+</Stats>
+
+Eine Erstlösungsquote um drei Viertel heißt: Jeder vierte Einsatz braucht eine zweite Anfahrt. Die Forschung dazu zeigt seit Jahren auf dieselbe Ursache. [Die Aberdeen-Studie zur Erstlösung](https://www.concerttech.com/wp-content/uploads/2021/05/Aberdeen_Fixing_First_Time_Fix_2013.pdf) nennt Ersatzteile als wichtigste Zutat, und Informationen, mit denen Techniker das richtige Teil vorab bestimmen können, als das, was die besten Betriebe von den übrigen unterscheidet.
+
+Gleichzeitig verschiebt sich der Markt in Richtung Reparatur. Die EU-Richtlinie umfasst Waschmaschinen, Geschirrspüler, Kühl- und Gefriergeräte, Staubsauger und mehrere Elektronikkategorien und macht Ersatzteile für freie Werkstätten leichter zugänglich. In Berlin wurden mit dem Reparaturbonus in den ersten neun Monaten über 14.000 Reparaturen gefördert, die Mittel für 2026 waren schon im Juni ausgeschöpft. Die Nachfrage ist also da. Sie lohnt sich für einen Betrieb aber nur, wenn nicht jeder vierte Auftrag zweimal angefahren wird.
+
+## Was eine zweite Anfahrt kostet
+
+<Calc title="Überschlag: zweite Anfahrten wegen fehlender Teile" caption="Annahmen, keine Messwerte. Ihre Auftragszahl, Ihre Erstlösungsquote und Ihre Kosten pro Anfahrt werden abweichen." rows={[
+  ["Aufträge pro Monat", "300"],
+  ["Erstlösungsquote heute", "75 %"],
+  ["Zweite Anfahrten pro Monat", "75"],
+  ["Kosten einer zweiten Anfahrt (Technikerzeit, Fahrt, Verwaltung)", "× 90 €"],
+  ["Vermiedene Anfahrten bei 85 % Erstlösung", "30"]
+]} result={["Direkte Ersparnis pro Monat", "≈ 2.700 €"]} />
+
+Dazu kommt, was die freie Kapazität wert ist. Dreißig vermiedene zweite Anfahrten sind dreißig Termine für neue, bezahlte Aufträge, und in einem Betrieb mit mehr Nachfrage als Technikern ist das oft die größere Zahl.
+
+## Was das Ersatzteil vorhersagt
+
+Vor dem Einsatz grenzen vier Informationen den wahrscheinlichen Fehler stark ein.
+
+| Information | Woher sie kommt | Was sie verrät |
+| --- | --- | --- |
+| Marke, Typennummer, Seriennummer | Das Typenschild, fotografiert von der Kundschaft | Welche Teile passen; Probleme einzelner Baureihen |
+| Fehlercode | Das Display, fotografiert oder vorgelesen | Die Fehlerkategorie des Herstellers für dieses Modell |
+| Symptome | Beschreibung oder kurzes Video | Geräusch, Geruch, Leck, startet nicht, pumpt nicht ab |
+| Ihre Reparaturhistorie | Ihre eigenen Auftragsdaten | Was bei diesem Code an diesem Modell wirklich geholfen hat |
+
+Die ersten drei liefert die Kundschaft. Die vierte haben die meisten Betriebe längst und nutzen sie nie: Jahre an Aufträgen mit „Modell X, Code Y, Teil Z getauscht“. Diese Historie ist oft nützlicher als die Fehlertabelle des Herstellers, weil sie zeigt, was im Feld tatsächlich kaputtgeht.
+
+## Die eigene Historie richtig nutzen
+
+So kann diese Historie für ein Modell und einen Fehlercode aussehen, und so ändert sie, was in den Wagen kommt.
+
+<Bars title="Was bei einem Waschmaschinenmodell mit Abpumpfehler geholfen hat" unit=" %" caption="Beispielhafte Verteilung aus der Auftragshistorie eines Reparaturbetriebs für ein Modell und einen Fehlercode. Echte Werte kommen aus Ihren Daten." data={[
+  { label: "Laugenpumpe getauscht", value: 58, highlight: true },
+  { label: "Flusensieb oder Schlauch gereinigt, kein Teil", value: 27 },
+  { label: "Ablaufschlauch getauscht", value: 9 },
+  { label: "Elektronik getauscht", value: 6 }
+]} />
+
+Mit diesem Bild ist die Entscheidung einfach: die passende Pumpe und einen Ablaufschlauch mitnehmen und eine Reinigung einplanen. Die Elektronik, selten die Ursache und teuer im Lager, wird erst bestellt, wenn der Techniker sie vor Ort bestätigt. So entscheiden gute Techniker aus Erfahrung. Software kann das bei jedem Auftrag tun, mit der Erfahrung aller.
+
+## Der Ablauf der Vorbereitung
+
+<Flow title="Von der Terminbuchung zum Wagen mit dem richtigen Teil" caption="Das Modell liest Fotos und Historie und ordnet wahrscheinliche Ursachen. Lager und Techniker entscheiden, was mitkommt. Jede Reparatur verbessert die Historie.">
+<Step title="Kundin bucht" who="Kundin" time="Tag 0">Telefonisch oder online. Die Bestätigung bittet um zwei Fotos: Typenschild und Display mit Fehler.</Step>
+<Step title="Fotos auslesen" who="KI" tone="ai" time="Minuten">Typen- und Seriennummer vom Typenschild, Fehlercode vom Display, Symptome aus der Beschreibung.</Step>
+<Step title="Nachschlagen und ordnen" who="System">Herstellerinformationen, auf die Sie Zugriff haben, und Ihre eigene Historie für Modell und Code ergeben eine geordnete Liste wahrscheinlicher Ursachen und Teile.</Step>
+<Step title="Lager entscheidet" who="Lager" tone="human" time="am selben Tag">Prüft den Bestand, bestellt, was fehlt, damit es vor dem Termin da ist, und gibt den Auftrag an einen Wagen, der die Teile hat.</Step>
+<Step title="Techniker bekommt ein Briefing" who="Techniker" tone="human">Modell, Code, wahrscheinliche Ursache, geladene Teile und Hinweise aus früheren Besuchen bei dieser Kundin.</Step>
+<Step title="Den Kreis schließen" who="Techniker" tone="human" time="nach der Reparatur">Eine kurze Sprachnotiz oder zwei Klicks: was die Ursache war und was getauscht wurde. Mit jedem Auftrag wird die Historie besser.</Step>
+</Flow>
+
+Im letzten Schritt wächst der Wert. Jeder abgeschlossene Auftrag lehrt das System etwas über dieses Modell und diesen Code. Nach einem Jahr ist die Historie ein echter Vermögenswert, und einer, den ein Mitbewerber nicht einfach kopieren kann.
+
+Das Briefing selbst ist kurz. Für die Waschmaschine vom Montag hätte der Techniker am Dienstagabend etwa das gesehen:
+
+```text
+MI 09:00 · Waschmaschine pumpt nicht ab
+Typ/Seriennr.: aus Kundenfoto gelesen (Typenschild am Türrahmen)
+Fehler: Abpumpfehler im Display
+Historie, dieses Modell + Code (41 Aufträge): Laugenpumpe 58 %,
+  Verstopfung 27 %, Ablaufschlauch 9 %, Elektronik 6 %
+Geladen: Laugenpumpe (passend zum Modell), Ablaufschlauch
+Kundenhinweis: „brummt, Wasser bleibt in der Trommel“
+Frühere Besuche: keine
+```
+
+Das Brummen passt zu einer Pumpe, die Strom bekommt, sich aber nicht dreht, oft wegen eines Fremdkörpers oder eines defekten Motors. Der Techniker kommt mit einer klaren ersten Prüfung, dem wahrscheinlichen Teil in der Hand und einem Plan B.
+
+## Reparieren oder ersetzen?
+
+Vor dem Termin stellen Kunden oft eine Frage, bei der das System ehrlich helfen kann: Lohnt sich die Reparatur überhaupt? Mit Typennummer und wahrscheinlichem Teil lässt sich eine realistische Kostenspanne nennen. Zusammen mit dem Alter des Geräts kann die Kundschaft entscheiden, bevor jemand losfährt.
+
+Ich würde das sachlich halten und die Entscheidung bei der Kundschaft lassen. Eine zehn Jahre alte Waschmaschine mit einer Pumpe für 60 Euro lohnt sich meist. Ein fünfzehn Jahre alter Kühlschrank mit defektem Kompressor oft nicht. Das Recht auf Reparatur und Förderungen wie der Reparaturbonus verschieben diese Rechnung zugunsten der Reparatur, und ein Betrieb, der ehrlich bei der Entscheidung hilft, gewinnt Vertrauen, das sich in Bewertungen zeigt.
+
+## Wo das Typenschild sitzt
+
+Die meisten Kunden haben die Typennummer ihres Geräts nie gesucht. Eine kurze Anleitung in der Terminbestätigung löst das.
+
+<Checklist title="Wo das Typenschild meistens sitzt" items={[
+  "Waschmaschinen: innen am Türrahmen oder hinter der kleinen Serviceklappe unten vorn",
+  "Geschirrspüler: an der Seitenkante der geöffneten Tür",
+  "Kühl- und Gefriergeräte: innen an einer Seitenwand oder hinter dem Gemüsefach",
+  "Wäschetrockner: am Türrahmen oder innen an der Tür",
+  "Backöfen und Herde: am Rahmen bei geöffneter Backofentür",
+  "Wenn Sie es nicht finden: Ein Foto der Gerätefront und die Marke helfen trotzdem"
+]} />
+
+Die letzte Zeile ist wichtig. Manche finden das Schild nicht. Ein Foto der Front grenzt die Baureihe oft genug ein, und der Techniker liest das Schild bei Ankunft ab.
+
+## Was das System nicht darf
+
+<Split title="Die Grenze zwischen Vorbereitung und Diagnose" leftTitle="Das System" rightTitle="Das System nie" left={[
+  "Liest Typennummern und Fehlercodes aus Fotos",
+  "Ordnet wahrscheinliche Ursachen nach Ihrer Historie und Herstellerdaten",
+  "Schlägt vor, welche Teile mitgenommen oder bestellt werden",
+  "Brieft den Techniker vor dem Einsatz",
+  "Lernt aus jedem abgeschlossenen Auftrag"
+]} right={[
+  "Fordert Kunden auf, ein Gerät zu öffnen oder selbst zu reparieren",
+  "Gibt Hinweise zu Gas, Elektrik oder Kältemittel",
+  "Verlässt sich auf sein allgemeines Gedächtnis statt auf echte Dokumentation",
+  "Nennt einen festen Preis, bevor der Techniker diagnostiziert hat",
+  "Entscheidet für die Kundschaft, dass sich eine Reparatur nicht lohnt"
+]} />
+
+Der dritte Punkt rechts verdient Nachdruck. Fehlercodes unterscheiden sich nach Marke, Modell und sogar Baujahr, und ein Sprachmodell „erinnert“ sich gern an eine Bedeutung, die falsch ist. Das Nachschlagen muss aus Serviceinformationen des Herstellers oder aus Ihren eigenen Daten kommen, nie aus den Trainingsdaten des Modells.
+
+## Werkzeuge, die dazu passen
+
+Reparaturbetriebe arbeiten meist mit Handwerker- oder Kundendienstsoftware für Termine und Aufträge und beziehen Ersatzteile über Großhändler wie ASWO oder direkt beim Hersteller. Gewährleistungs- und Garantiefälle laufen oft über Herstellerportale. Die Vorbereitung sitzt daneben: Sie liest die Fotos aus der Buchung, prüft Ihre Historie und schreibt Briefing und Teilevorschlag in Ihr System. Bestellt wird weiter vom Lager.
+
+Kundenfotos entstehen in fremden Wohnungen. Speichern Sie sie beim Auftrag, nutzen Sie sie nur für die Reparatur und löschen Sie sie nach einer sinnvollen Frist. Das verlangt die DSGVO.
+
+## Fragen, die Reparaturbetriebe stellen
+
+### Schicken Kunden wirklich Fotos?
+
+Die meisten ja, wenn man im richtigen Moment fragt (in der Terminbestätigung) und erklärt, warum: „damit unser Techniker das passende Teil mitbringt und beim ersten Besuch reparieren kann“. Niemand will sich einen zweiten Vormittag freinehmen.
+
+### Was, wenn der Fehlercode mehrdeutig ist?
+
+Dann enthält die Liste zwei oder drei plausible Ursachen, und Sie nehmen die Teile für die ersten beiden mit, wenn sie vernünftig zu lagern sind. Das ist immer noch viel besser, als nichts Passendes dabeizuhaben.
+
+### Unsere Auftragshistorie ist unordentlich. Hilft das trotzdem?
+
+Typenschild und Fehlercode vor dem Einsatz zu kennen, hilft ab dem ersten Tag. Die Rangfolge aus der Historie wird nach ein paar Monaten sauber abgeschlossener Aufträge nützlich, und diese Daten sind die günstigsten, die Sie je sammeln werden.
+
+### Funktioniert das für gewerbliche Küchengeräte?
+
+Ja, und dort steht mehr auf dem Spiel, weil eine kaputte Fritteuse oder Spülmaschine ein Restaurant jede Stunde Geld kostet. Dieselbe Vorbereitung mit Modell und Fehlercodes der Geräte verkürzt den Ausfall.
+
+## Die Regel für jede Buchung
+
+Modell und Fehler kennen, bevor jemand in den Wagen steigt, und das Teil mitnehmen, das die eigene Historie vorhersagt. Die Reparatur macht der Techniker. Gut vorbereitet anzukommen, kann das System übernehmen.
+
+Wenn zweite Anfahrten die Woche Ihrer Techniker auffressen, [schreiben Sie mir, wie Buchungen und Ersatzteile bei Ihnen laufen](/contact?intent=improve), und ich schlage Ihnen vor, wie ein Pilot zur Vorbereitung aussehen könnte. Dieselbe Idee in anderen Branchen beschreibe ich für die [Schädlingsbekämpfung](/de/posts/ai-for-pest-control-routing) und für die [Auftragsannahme in der Kfz-Werkstatt](/de/posts/ai-for-auto-repair-diagnostics-intake).
