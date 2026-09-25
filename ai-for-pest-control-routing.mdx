@@ -1,0 +1,162 @@
+---
+id: "ai-for-pest-control-routing"
+title: "No More Walking In Blind: AI Pre-Visit Briefs for Pest Control"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Field services", "Pest control companies", "Technician briefs", "AI for small business"]
+description: "Pest control technicians often arrive knowing less than the last visit did. How AI turns account history into a two-minute brief before every stop."
+excerpt: "Pest control technicians often arrive knowing less than the last visit did. How AI turns account history into a two-minute brief before every stop."
+---
+
+Marco pulls up behind a busy restaurant for a German cockroach follow-up. He wasn't on the first visit two weeks ago; that technician has since moved to another route. The note in the system says: "Kitchen treated, gel bait applied, follow-up 14 days."
+
+What the note doesn't say: the heaviest activity was under the dish station, not the cook line. The owner complained about the smell of the spray last time and asked for no liquid treatment during service. The back door doesn't close properly, and a proofing recommendation is still open. The glue monitor behind the dishwasher caught twelve roaches, up from five.
+
+Marco finds most of this out again, one question at a time, while the manager gets impatient. The treatment is less targeted than it could have been. Two weeks later, the restaurant calls back.
+
+This is one of the quietest and most useful places for AI in a pest control business: a short brief before every stop, written from everything the company already knows about the account.
+
+## The industry context
+
+<Stats title="US pest control in 2025">
+  <Stat value="$13.4B" label="US pest control industry revenue in 2025, up about 6%, across 16,565 firms" source="NPMA" href="https://www.npmapestworld.org/your-business/latest-news/us-pest-control-industry-sustains-steady-growth-with-6-increase-in-2025/" />
+  <Stat value="36.8%" label="of companies said their growth was held back by not having enough technicians" source="NPMA and PCO Bookkeepers cost study" href="https://www.npmapestworld.org/content-pages/press-releases/npma-and-pco-bookkeepers-release-comprehensive-2025-pest-control-industry-cost-study/" />
+  <Stat value="51.6%" label="of companies named ants as a leading cause of callbacks, followed by cockroaches at 42.6%" source="NPMA and PCO Bookkeepers" href="https://www.npmapestworld.org/content-pages/press-releases/npma-and-pco-bookkeepers-release-comprehensive-2025-pest-control-industry-cost-study/" />
+</Stats>
+
+More than four in five pest control firms run one or two locations, according to the same NPMA data. That means small teams, routes that change weekly, and technicians who can't possibly remember every account's history. When a third of companies say they can't grow because they can't hire technicians, every avoidable callback is a stop that doesn't go to a new customer.
+
+## Why technicians walk in blind
+
+The information exists. It's just scattered and written for the wrong reader.
+
+- **Service reports** record what was done and what was applied, often in a few words.
+- **Monitoring data** from glue boards, bait stations, and increasingly connected traps sits in a separate system or a spreadsheet.
+- **Customer messages** with complaints, requests, and access instructions live in the office inbox.
+- **Photos** from previous visits are attached to past work orders nobody opens.
+- **Open recommendations** such as proofing, sanitation, or repairs are in a PDF the customer may never have read.
+
+Reading all of that before every stop takes longer than the stop. So technicians read the last note and go in. A language model is well suited to reading the whole history and writing the few lines that matter for today.
+
+## What goes into a pre-visit brief
+
+<Checklist title="The brief, on one phone screen" items={[
+  "Why we're here: the pest, the service type, and what the customer expects today",
+  "What was done last time, by whom, and what was applied where",
+  "What changed: monitor counts rising or falling, new sightings the customer reported",
+  "Open recommendations: proofing, sanitation, repairs, and whether the customer acted on them",
+  "Constraints: pets, children, allergies, no-spray areas, service hours",
+  "Access: contact person, gate or door codes, where to park, where the monitors are",
+  "Anything the office promised the customer since the last visit"
+]} />
+
+The last line is the one that saves relationships. If the office told the customer "the technician will check the attic this time", the technician needs to know, or the customer's trust takes a hit that no treatment fixes.
+
+Here's what Marco's brief for the restaurant would have looked like:
+
+```text
+STOP 4 · Bella Cucina (commercial, monthly + follow-up)
+Why: German cockroach follow-up, 14 days after initial treatment
+Last visit (A. Reyes): gel bait under cook line and dish station
+Trend: Monitor 7 behind dishwasher rising: 3 → 5 → 9 → 12
+Open: back door sweep damaged, proofing recommended (not done)
+Constraints: no liquid treatment during service (owner request)
+Access: arrive 14:30-16:00 between services, ask for Giulia
+Promised: office said we'd check the dry storage room this visit
+```
+
+Eight lines, read in the van in under two minutes. Every one of them would have changed how the visit went: where Marco looked first, what he used, when he arrived, and what he checked that the customer was expecting.
+
+## The brief flow
+
+<Flow title="From account history to a brief, and back again" caption="The model reads and summarises. The technician decides the treatment. Every visit makes the next brief better.">
+<Step title="Tomorrow's route is set" who="Office" time="afternoon">The route for each technician is finalised in the field service system.</Step>
+<Step title="Gather the account history" who="System" time="evening">Service reports, monitoring counts, customer messages, photos, and open recommendations for each stop.</Step>
+<Step title="Write the brief" who="AI" tone="ai" time="minutes">A short summary per stop, highlighting what changed and what the technician must not miss. Every statement links to its source.</Step>
+<Step title="Technician reads before arriving" who="Technician" tone="human" time="2 minutes">On the phone, parked outside. The technician decides the plan for today.</Step>
+<Step title="Voice note after the visit" who="Technician" tone="human" time="1 minute">What was found, what was done, what was applied, what's recommended.</Step>
+<Step title="Report and customer summary drafted" who="AI" tone="ai">The service report and a plain-language summary for the customer, reviewed by the technician before sending.</Step>
+</Flow>
+
+The loop at the end matters. Because the technician's voice note becomes a structured report, the next brief has better material to work with. After a few cycles, accounts that used to have one-line notes have a readable history.
+
+## Reading the trend, not just the last count
+
+Monitoring devices are only useful if someone looks at the trend. This is the kind of thing a brief should point out without being asked.
+
+<Bars title="Glue monitor behind the dishwasher, last four visits" unit=" roaches" caption="Illustrative counts for one monitor. A brief should flag a rising trend like this before the technician walks in." data={[
+  { label: "Visit 1", value: 3 },
+  { label: "Visit 2", value: 5 },
+  { label: "Visit 3", value: 9 },
+  { label: "Visit 4 (last visit)", value: 12, highlight: true }
+]} />
+
+In the brief, that becomes one line: "Monitor 7 (behind dishwasher) rising: 3, 5, 9, 12. Focus inspection on the dish area; back door proofing still open." The technician walks straight to the right spot.
+
+For commercial food accounts, this also matters for audits. Food safety standards such as BRCGS, SQF, and IFS expect pest activity to be trended over time, with action on spikes and documented corrective actions. A brief that already shows the trend, and a report that records what was done about it, makes the customer's audit easier. That's a service you can charge for.
+
+## Where the line is
+
+<Split title="Division of labour" leftTitle="The model does" rightTitle="The technician does" left={[
+  "Reads the whole account history",
+  "Summarises what changed and what's open",
+  "Points out rising monitor counts",
+  "Drafts the service report from a voice note",
+  "Drafts a readable summary for the customer"
+]} right={[
+  "Inspects and identifies the pest",
+  "Chooses the treatment and the products",
+  "Follows the product label and local regulations",
+  "Decides whether to recommend proofing or other work",
+  "Talks to the customer about what they need to do"
+]} />
+
+The treatment decision stays with the licensed technician, and I'd keep it that way explicitly. The brief lists what was applied last time; it never recommends products or rates. Pesticide use is regulated (in the US, the product label is the law under federal rules, and states license applicators), and resistance management depends on the technician's judgment. A model that suggests chemicals is a liability, not a feature.
+
+## Customer summaries that get read
+
+The other half of this is the customer. Many callbacks are really sanitation or proofing problems that the customer never fixed because the recommendation was buried in a report. A short summary after each visit, drafted from the technician's voice note, helps:
+
+> Today we found activity mainly under the dish station and treated it with bait, which is odourless and safe to use during service. The back door still doesn't close fully at the bottom, which lets insects in from the alley. Fixing the door sweep is the single most useful thing you can do before our next visit in two weeks.
+
+That paragraph takes the technician thirty seconds to approve, and it gives the customer one clear action instead of a PDF.
+
+## Tools and data
+
+Most pest control companies run field service software such as PestPac, FieldRoutes, GorillaDesk, Briostack, or ServSuite, and some use connected monitoring devices that report counts automatically. The brief sits on top: it reads from those systems and writes the brief into the technician's app or sends it as a message. Nothing about the core scheduling or billing changes.
+
+Account histories contain home addresses, door codes, and notes about who is home when. That's sensitive. Access to briefs should follow the route (a technician sees today's stops, not the whole customer base), and codes should be shown only at the stop. In the EU, customer data falls under the GDPR, which means a processing agreement with any AI provider and a known data location.
+
+## A pilot on one route
+
+<Timeline title="Four weeks, one technician, one route">
+<Phase when="Week 1" title="Set up">Connect service history, monitoring data, and customer messages for the accounts on one route. Agree the brief format with the technician.</Phase>
+<Phase when="Weeks 2 to 3" title="Briefs and voice notes">The technician reads a brief before each stop and records a voice note after. Reports are drafted from the notes.</Phase>
+<Phase when="Week 4" title="Review">Compare callbacks, time per stop, and report completeness with the same route in earlier months. Ask the technician what the brief got wrong.</Phase>
+</Timeline>
+
+The technician's feedback is the most useful measure. If they say the brief told them something they would otherwise have missed, several times a week, it works.
+
+## Questions pest control owners ask
+
+### Will technicians actually read the brief?
+
+If it's short and useful, yes. Two minutes in the van before walking in is a habit technicians pick up quickly when the brief keeps saving them from awkward questions. If it's long and generic, they won't, which is why the format matters more than the technology.
+
+### Can it recommend treatments?
+
+It shouldn't, and I wouldn't build it to. It reports what was done and what the monitoring shows. The licensed technician decides what to do.
+
+### What about accounts with almost no history?
+
+Then the brief is short, and that's honest. The voice-note reports build the history quickly. After three or four visits, even a new account has a useful brief.
+
+### Does this help with commercial audits?
+
+Yes. Trended monitoring data, documented corrective actions, and readable reports are exactly what auditors look for in a food facility's pest program. You make the customer's audit easier, which makes you harder to replace.
+
+## The rule for every stop
+
+No technician should walk into an account knowing less than the last visit knew. Software can read the history; your technicians do the rest.
+
+If callbacks and rediscovery are costing your routes time, [tell me which field service software you use](/contact?intent=improve) and how technicians get account information today. I'll suggest how a one-route pilot could work. For other routes built on messy real-world constraints, see [home care scheduling](/posts/ai-for-home-care-scheduling), and for the food businesses you serve, [finding production records on audit day](/posts/ai-for-food-producers-compliance).
