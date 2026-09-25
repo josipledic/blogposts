@@ -1,0 +1,154 @@
+---
+id: "ai-for-landscapers-estimates"
+title: "AI for Landscaping Estimates: Faster Drafts, Same Site Walk"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Field services", "Landscaping companies", "Estimating", "AI for small business"]
+description: "Landscapers lose evenings to estimates and jobs to whoever quotes first. How AI turns a site walk into a priced draft the same day, and what stays your call."
+excerpt: "Landscapers lose evenings to estimates and jobs to whoever quotes first. How AI turns a site walk into a priced draft the same day, and what stays your call."
+---
+
+The owner of a small landscaping company is excellent at the work. On a Tuesday afternoon, she walks a client's backyard and sees the whole job in ten minutes: rip out the tired lawn strip along the fence, a new planting bed with drought-tolerant perennials, a gravel path to the shed, fix the drainage by the patio, fresh mulch everywhere.
+
+Turning that picture into an estimate takes the rest of the week. Sunday evening, she sits down with her notes, a measuring wheel's worth of numbers, and a price list. Square footage for the bed. Cubic yards of soil and mulch. Linear feet of edging. Plant counts by size. Labour hours for excavation and hauling. Three hours later, she has a number. She sends it Monday. The client thanks her politely and mentions they went with another company that quoted on Wednesday.
+
+The design took ten minutes. The arithmetic took three hours and cost her the job. That's the part I'd hand to software.
+
+## A tight labour market makes owners' time the bottleneck
+
+<Stats title="The landscaping business in numbers">
+  <Stat value="66,000" label="yearly cap on H-2B seasonal worker visas in the US, which many landscaping firms depend on" source="USCIS" href="https://www.uscis.gov/working-in-the-united-states/temporary-workers/h-2b-temporary-non-agricultural-workers" />
+  <Stat value="€10.65B" label="revenue of Germany's garden and landscape construction sector in 2024, from 19,636 firms" source="BGL, via Neue Landschaft" href="https://neuelandschaft.de/artikel/seit-15-jahren-ungebrochenes-branchenwachstum-galabau-steigert-seinen-umsatz-2024-auf-1065-mrd-13330" />
+  <Stat value="131,166" label="people employed in German landscaping firms in 2024, a record high" source="BGL, via Neue Landschaft" href="https://neuelandschaft.de/artikel/seit-15-jahren-ungebrochenes-branchenwachstum-galabau-steigert-seinen-umsatz-2024-auf-1065-mrd-13330" />
+</Stats>
+
+On both sides of the Atlantic, the pattern is the same: demand is steady, crews are hard to hire, and most firms are small enough that the owner is also the estimator, the designer, and often the person on the mower. Every hour spent converting square feet into cubic yards is an hour not spent selling, supervising, or resting. And in a market where clients often ask two or three companies, speed matters. The estimate that arrives first sets the frame for the others.
+
+## Why estimates are slow
+
+When I break an estimate down, the time rarely goes to the creative part. It goes to four mechanical steps.
+
+1. **Measuring.** Areas of lawn, beds, and hardscape, lengths of edging and fence, often from rough notes and a wheel.
+2. **Converting.** Area times depth into volume; volume into loads or bags; plant spacing into counts.
+3. **Assembling.** Knowing that a "new bed" means excavation, haul-away, soil amendment, edging, plants, and mulch, and not forgetting one.
+4. **Pricing and writing.** Applying your prices and labour rates, then writing a description a client can understand.
+
+All four are exactly what software is good at, provided it works from your numbers and your standard assemblies.
+
+## Three ways to produce an estimate
+
+| Method | Time per estimate | Strengths | What it misses |
+| --- | --- | --- | --- |
+| Site walk, wheel, and notepad | Hours of evening work | Complete picture of the site | Slow, error-prone arithmetic, forgotten line items |
+| Aerial measurement tools | Much faster measuring | Accurate areas for open lots, can be done before the visit | Areas under trees, slopes, soil, drainage, access |
+| Site walk plus AI-drafted estimate | Draft ready the same afternoon | Your observations, measured areas, and your assemblies combined | Still needs your review and your judgment on price |
+
+Aerial measurement tools such as Go iLawn, SiteRecon, or the takeoff features in LMN and similar platforms already solve much of the measuring. What they don't capture is what you notice on the walk: the soggy corner, the narrow side gate, the roots, the neighbour's dog. The third row combines both and adds the step most tools leave to you, which is turning it all into a priced, readable proposal.
+
+## From site walk to draft
+
+<Flow title="From a site walk to a priced draft proposal" caption="You observe and decide. Aerial data and your price book produce the numbers. The model structures notes and writes the draft.">
+<Step title="Measure from above first" who="System" time="before the visit">Lawn, bed, and hardscape areas from aerial imagery, so you arrive knowing the size of the job.</Step>
+<Step title="Walk the site and talk" who="You" tone="human" time="on site">Voice notes and photos per area: "Back fence strip, remove lawn, about 40 feet long, new bed 6 feet deep, full sun, clay soil, drainage issue near the patio corner."</Step>
+<Step title="Turn notes into line items" who="AI" tone="ai" time="minutes">The model maps your notes to your standard assemblies: bed installation, sod removal, drainage fix, gravel path, and flags anything it can't place.</Step>
+<Step title="Calculate quantities" who="System">Areas, volumes, counts, and loads from the measurements and your rules, like mulch at 3 inches and perennials at 18-inch spacing.</Step>
+<Step title="Price and describe" who="AI" tone="ai">Your prices and labour rates applied, plus a plain-language description of each part of the job and photos of the areas.</Step>
+<Step title="You review and send" who="You" tone="human" time="same day">You adjust for access, difficulty, and anything else your experience tells you, then send it before dinner.</Step>
+</Flow>
+
+The model's contribution is narrow but valuable: understanding "new bed along the back fence, six feet deep, full sun, clay" and knowing which of your assemblies that means. The arithmetic afterwards is plain calculation, done by rules, not guessed by a language model.
+
+## The conversions nobody enjoys
+
+Here's the kind of calculation that eats an evening when you do it for every area of every job. Software does it the same way every time.
+
+<Calc title="Mulch and soil for one new bed" caption="Illustrative quantities for a 40 × 6 ft bed. Your depths, spacing, and waste allowances will differ." rows={[
+  ["Bed area (40 ft × 6 ft)", "240 sq ft"],
+  ["Soil amendment at 2 inches", "40 cu ft ≈ 1.5 cu yd"],
+  ["Mulch at 3 inches", "60 cu ft ≈ 2.2 cu yd"],
+  ["Perennials at 18-inch spacing", "≈ 107 plants"],
+  ["Steel edging along the front", "40 linear ft"]
+]} result={["Mulch to order, rounded up with waste", "2.5 cu yd"]} />
+
+None of that is hard. It's just tedious, and tedium is where mistakes live: the missing half-yard of mulch that means a second delivery, or the forgotten haul-away line that turns a profitable job into a break-even one.
+
+## What the client reads
+
+The line items are for you. The client reads the description, and that's where a draft saves the most time, because writing clear, friendly prose at 10 p.m. is hard. For the back-fence bed, the draft might say:
+
+> **New planting bed along the back fence (about 40 × 6 ft).** We'll remove the existing lawn strip and haul it away, loosen the clay soil and work in compost so roots can establish, and install steel edging along the lawn side for a clean line. The bed will be planted with drought-tolerant perennials suited to full sun, spaced so they fill in by the second summer, and finished with 3 inches of shredded hardwood mulch to hold moisture and keep weeds down.
+
+That paragraph comes from your voice note, your assembly, and your plant list. You read it, change "shredded hardwood" to whatever you actually use, and move on. Clients understand what they're paying for, which makes the price easier to accept and the conversation shorter.
+
+## What stays with you
+
+<Split title="Division of labour on an estimate" leftTitle="Software drafts" rightTitle="You decide" left={[
+  "Measured areas and lengths",
+  "Quantities, volumes, and plant counts",
+  "Line items from your standard assemblies",
+  "Prices from your price book",
+  "A readable description with photos"
+]} right={[
+  "The design and the plant choices for this site",
+  "Adjustments for access, slope, soil, and difficulty",
+  "What to include, exclude, or offer as an option",
+  "The final price and your margin",
+  "The conversation with the client"
+]} />
+
+Plant choices deserve a word of caution. A language model will happily suggest plants, and some of its suggestions will be wrong for your climate zone, your soil, or what your nursery actually stocks. I'd restrict any plant suggestions to your own list of plants you use and can source, with their hardiness and light requirements attached. The model picks from your list; it doesn't invent from its training data.
+
+## What to say during the walk
+
+Voice notes work best when you cover the same things at every site. A short checklist on your phone helps.
+
+<Checklist title="Site walk prompts" items={[
+  "Area name and what you want to do there",
+  "Sun or shade, and soil type if you can tell",
+  "Slope, standing water, or signs of drainage problems",
+  "Access for machines: gate width, steps, distance from the street",
+  "Existing plants, stumps, or structures to remove and haul away",
+  "Irrigation and outdoor lighting, existing or wanted",
+  "Utilities: mark it for a locate request before any digging (811 in the US)",
+  "HOA or neighbour constraints the client mentioned"
+]} />
+
+The utilities line isn't optional. In the US, calling 811 before you dig is required, and in most of Europe, utility maps have to be requested before excavation. A note on the walk means the request goes out in time, not the morning the crew arrives.
+
+## A two-week pilot
+
+<Timeline title="Testing AI-drafted estimates">
+<Phase when="Days 1 to 3" title="Write down your assemblies">List your common jobs as assemblies with line items and default rates: new bed, sod install, gravel path, paver patio, cleanup.</Phase>
+<Phase when="Days 4 to 7" title="Back-test">Take five recent estimates you did by hand. Feed in your old notes and photos and compare the drafts with what you actually sent.</Phase>
+<Phase when="Week 2" title="Live on new estimates">Walk, record, review the draft, send. Track time per estimate and how many line items you had to add or fix.</Phase>
+</Timeline>
+
+The back-test in the first week is the honest part. If the drafts from your old notes come close to your hand-made estimates, you'll trust the system on new jobs. If they don't, you'll see exactly which assemblies need more detail.
+
+## Tools that fit
+
+Many landscaping companies already use business software such as LMN, Aspire, SingleOps, or Jobber, which hold customers, price lists, and estimates. The AI layer produces a draft in the format those tools expect, so the estimate lives where the rest of your business does. Your price book stays the only source of prices.
+
+## Questions landscapers ask
+
+### Can AI measure a yard from satellite images?
+
+For open areas, aerial measurement is accurate enough to estimate from, and dedicated tools do it well. Areas under tree canopy, steep slopes, and anything behind structures still need a check on site. That's why the walk stays.
+
+### Will clients notice the estimate was drafted by software?
+
+They'll notice it arrived the same day, reads clearly, and matches what you talked about in their yard. The judgment in it is yours, and you've reviewed every line.
+
+### Can it produce design visuals too?
+
+Image generation can make a quick mood picture, but I'd be careful. A generated image can show plants that won't grow there or a patio that doesn't fit, and clients remember pictures. For anything a client will rely on, use your design software or sketches.
+
+### How do we keep prices current?
+
+Keep one price book, update it when supplier prices change, and let every draft pull from it. The model never decides a price; it looks it up.
+
+## The rule of thumb
+
+Walk every site yourself. Let software do the arithmetic afterwards, so the estimate goes out while the client still remembers your visit.
+
+If Sunday evenings in your business belong to estimates, [tell me which software you use](/contact?intent=improve) and what your typical jobs are. I'll suggest how a two-week pilot could look. The same "measure, assemble, price" problem shows up in [commercial cleaning bids](/posts/ai-for-cleaning-companies-scope) and in [moving estimates](/posts/ai-for-moving-companies-inventory).
