@@ -1,0 +1,147 @@
+---
+id: "ai-for-cabinet-makers-change-orders"
+title: "Change Orders in Custom Cabinetry: Get Every Small Change on Paper"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Trades & construction", "Cabinet makers", "Change orders", "AI for small business"]
+description: "In custom cabinetry, “can we just…” texts become unpaid work and install-day disputes. How AI catches change requests and turns them into approved change orders."
+excerpt: "In custom cabinetry, “can we just…” texts become unpaid work and install-day disputes. How AI catches change requests and turns them into approved change orders."
+---
+
+The Morgans signed off on their kitchen drawings in March: fourteen cabinets, a tall pantry, an island, quartz countertops from a separate fabricator. In week three, Mrs. Morgan texts a photo from Instagram: "Could the island have one of these waterfall ends?" The designer, standing in a showroom with another client, replies "should be fine!" In week four, Mr. Morgan calls the shop and asks to move the sink twenty centimetres to the left so it's centred under the window. The foreman hears about it in passing.
+
+On install day, the plumbing rough-in doesn't match the new sink position, the island needs an end panel nobody ordered, and the invoice doesn't include either. The Morgans remember being told it was fine. The shop remembers a text and a hallway conversation. Somebody is going to eat the cost, and somebody is going to be unhappy about it.
+
+Every cabinet maker I've talked to has a version of this story. The problem isn't that clients change their minds; in custom work, that's normal and often good. The problem is that changes arrive through every channel except the one where they'd be priced, drawn, and approved. That's something AI is surprisingly good at fixing.
+
+## How big the problem is
+
+There's no precise study of change orders in small cabinet shops, but the broader construction data is clear about where rework comes from.
+
+<Stats title="Where rework comes from">
+  <Stat value="48%" label="of rework in US construction is caused by poor project data and miscommunication" source="FMI and PlanGrid, Construction Disconnected" href="https://www.autodesk.com/blogs/construction/construction-disconnected-fmi-report/" />
+  <Stat value="$31.3B" label="the yearly cost of that rework in the US alone" source="FMI and PlanGrid" href="https://www.autodesk.com/blogs/construction/construction-disconnected-fmi-report/" />
+  <Stat value="$177B" label="in US labour costs spent each year on non-optimal work such as looking for information and fixing mistakes" source="Construction Dive" href="https://www.constructiondive.com/news/industry-could-be-overspending-177b-per-year-study-finds/529450/" />
+</Stats>
+
+Custom cabinetry is especially exposed. A change that sounds small ("can it be a bit deeper?") ripples into the drawings, the cut list, the CNC program, the material order, the hardware, the countertop template, and sometimes the plumber's or electrician's work. If one of those links doesn't hear about the change, it shows up as rework on site.
+
+## How changes arrive, and what they need to become
+
+<Split title="From a casual message to a real change order" leftTitle="How changes arrive" rightTitle="What they need to become" left={[
+  "“Oh, and we went with the 90 cm fridge after all”",
+  "A photo from Instagram with “something like this?”",
+  "A phone call to whoever picks up",
+  "A comment during a site visit",
+  "An email reply buried under a thread about delivery dates"
+]} right={[
+  "A numbered change with the affected cabinets identified",
+  "The impact on drawings, cut list, materials, and schedule",
+  "Any effect on other trades, such as plumbing or countertops",
+  "A price and a time impact from your own price book",
+  "The client's written approval, before production changes"
+]} />
+
+The left column is how people naturally talk. You won't change that, and you shouldn't try too hard: clients who feel they can casually mention ideas are clients who are engaged with the project. The right column is what the shop needs. The gap between them is pure information work.
+
+## The change capture flow
+
+<Flow title="From “can we just…” to an approved change order" caption="The model notices and drafts. An estimator prices and checks feasibility. The client approves in writing. Only then does production change.">
+<Step title="Message arrives anywhere" who="Client" time="any time">Text, email, a call note, a voice memo from the installer on site. All project channels feed one place.</Step>
+<Step title="Spot the change request" who="AI" tone="ai" time="seconds">The model flags messages that ask for something different from the approved drawings, even when they're phrased as a side remark.</Step>
+<Step title="Draft the change note" who="AI" tone="ai">Which cabinets, what changes, likely knock-on effects, and a price from your standard items where one applies.</Step>
+<Step title="Estimator reviews" who="Estimator" tone="human" time="same day">Checks feasibility, adjusts the price, adds anything the draft missed, and sends it to the client.</Step>
+<Step title="Client approves" who="Client" tone="human">A simple written approval: an e-signature or a reply that says yes. No approval, no change.</Step>
+<Step title="Update everything" who="Shop" tone="human">Drawings, cut list, material order, and schedule are updated, and other trades are told.</Step>
+</Flow>
+
+The second step is where the value is. The hardest part of change management in a small shop isn't pricing or paperwork. It's noticing that a message contains a change at all, especially when it's the fourth paragraph of a friendly email about the delivery date. A language model reads every message on the project with the same attention, which no busy designer can.
+
+## What the model is looking for
+
+It helps to see what "spotting a change" means in practice. The model reads each message against the approved drawings and specification and sorts it roughly like this:
+
+| Message | What the model makes of it |
+| --- | --- |
+| "Could the island have a waterfall end like this photo?" | Change request: new end panel on the island. Draft a change note. |
+| "We went with the 90 cm fridge after all." | Change request with appliance impact. Check the spec sheet against the opening. |
+| "Is the handle we picked available in black?" | Question that may become a change. Ask the client whether they want to switch. |
+| "When is the install date again?" | Not a change. Leave it for the normal reply. |
+| "The plumber says the drain is 10 cm further left than on the plan." | Site condition that may force a change. Flag it for the designer. |
+
+The model will get some of these wrong, mostly by flagging too much. That's the right way to be wrong: a designer dismissing a false alarm takes seconds, while a missed change costs a day on site. After a few weeks, the corrections tell you which phrasings your clients use, and the flags get sharper.
+
+## What a change note contains
+
+<Checklist title="Every change note, every time" items={[
+  "A change number and the date it was requested, with a link to the original message",
+  "The affected cabinets or parts, using the IDs from your drawings",
+  "What changes, in plain words and in dimensions",
+  "Impact on materials, hardware, and appliances",
+  "Impact on other trades: plumbing, electrical, countertops, flooring",
+  "Price difference and schedule difference",
+  "The client's written approval, with date and name"
+]} />
+
+The first line is underrated. When a dispute comes up six weeks later, being able to show the client their own message, next to the change note they approved, ends most arguments before they start.
+
+## The appliance trap
+
+One kind of change deserves special mention because it causes so much rework: appliance swaps. A client switches to a different fridge, oven, or dishwasher model mid-project, often because of a sale, and mentions it in passing.
+
+This is a good job for AI in two steps. First, the model spots the change ("we went with the Bosch after all"). Second, it pulls the new model's specification sheet and extracts the installation dimensions, ventilation clearances, and hinge requirements, then compares them with the opening in your drawings. The output is a short note for the designer: "New fridge needs 5 mm more width and 50 mm more depth for ventilation than the opening allows." The designer checks it and decides. That comparison takes a person twenty minutes of PDF hunting; it takes the software seconds.
+
+## What undocumented changes cost
+
+<Calc title="Napkin math: changes that never make it onto an invoice" caption="Assumptions, not measurements. A retrospective look at your own recent projects will give you the real figures." rows={[
+  ["Projects per year", "60"],
+  ["Change requests per project", "× 4"],
+  ["Share that are never priced or approved", "× 40%"],
+  ["Unpriced changes per year", "≈ 96"],
+  ["Average value of a change", "× €180"]
+]} result={["Revenue given away each year", "≈ €17,000"]} />
+
+That box doesn't include the rework: the wrong-sized cabinet built twice, the install day that runs into a second day, the plumber called back. Those costs are often larger than the unbilled changes themselves.
+
+## Start with a change audit
+
+The best first step isn't building anything for live projects. It's looking backwards.
+
+Take the message threads, emails, and notes from your last twenty finished projects and let a model go through them looking for change requests. Then compare what it finds with the change orders you actually issued and invoiced. The gap between the two lists is your number. It tells you, in your own currency, whether a change capture system is worth building, and it usually turns up a few surprises that settle the question.
+
+<Timeline title="From audit to everyday change capture">
+<Phase when="Week 1" title="Change audit">Run the last twenty projects' messages through the model. List every change request it finds and match it against issued change orders.</Phase>
+<Phase when="Week 2" title="Agree the process">Decide the change note format, who prices changes, how clients approve, and what counts as "approved".</Phase>
+<Phase when="Weeks 3 to 6" title="Live on new projects">The model watches project channels and drafts change notes. The estimator reviews every one.</Phase>
+<Phase when="Week 8" title="Compare">Changes captured, changes invoiced, install-day surprises, and client disputes, compared with the audit.</Phase>
+</Timeline>
+
+## Tools it has to fit
+
+Cabinet shops run design and production software like Cabinet Vision, Microvellum, KCD, Mozaik, or 2020 Design, often alongside a CRM or project tool. The change capture system doesn't replace any of that. It reads the project's communication, produces change notes, and tracks approval. Updating the drawings and the CNC output stays with your designers, in the software they already use.
+
+The communication channels need some housekeeping. Change capture only works if project messages are in places the system can read: a shared inbox per project, a business messaging account rather than a designer's personal phone, call notes in the CRM. That's a good habit regardless of AI, because it's also what lets someone else pick up a project when the designer is on holiday.
+
+## Questions cabinet makers ask
+
+### Won't formal change orders annoy clients?
+
+Clients are annoyed by surprises on the final invoice, not by a short note that says "here's what that change costs, reply yes to go ahead". Most appreciate knowing the price before they commit, and the note is quick to approve.
+
+### What about changes decided on site during install?
+
+Those are the most important ones to capture, because they're the easiest to forget. An installer's thirty-second voice memo ("client wants the filler on the left, not the right, added a panel") can become a draft change note automatically, to be priced back at the office.
+
+### Can it price changes by itself?
+
+For standard items with a price in your book, it can propose a price. Anything custom, structural, or unusual goes to an estimator. The model's job is to make sure the estimator sees every change, not to replace their judgment.
+
+### Is this worth it for a two-person shop?
+
+Try the change audit first. If it finds a few thousand in unbilled changes per year, a lightweight version pays for itself quickly. If it finds almost nothing, your current process works, and that's worth knowing too.
+
+## The rule of thumb
+
+If it isn't written down and approved, it isn't a change. It's a future argument. Software can make sure every "can we just…" gets written down; you decide what it costs.
+
+If you'd like to know what your last twenty projects would reveal, [get in touch](/contact?intent=improve) and I'll help you run a change audit. Change requests aren't unique to cabinetry: [architects lose design decisions the same way](/posts/ai-for-architects-meeting-decisions), and [construction site notes](/posts/ai-for-construction-daily-reports) are where many of these changes first get mentioned.

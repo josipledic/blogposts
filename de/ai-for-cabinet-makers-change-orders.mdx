@@ -1,0 +1,149 @@
+---
+id: "de-ai-for-cabinet-makers-change-orders"
+title: "Tischlerei: Änderungswünsche festhalten, bevor sie Geld kosten"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Handwerk & Bau", "Tischlereien", "Nachträge", "KI für kleine Unternehmen"]
+description: "Im Innenausbau werden „Können wir noch schnell…“-Nachrichten zu unbezahlter Arbeit. Wie KI Änderungswünsche erkennt und daraus freigegebene Nachträge macht."
+excerpt: "Im Innenausbau werden „Können wir noch schnell…“-Nachrichten zu unbezahlter Arbeit. Wie KI Änderungswünsche erkennt und daraus freigegebene Nachträge macht."
+---
+
+Familie Morgenroth hat ihre Küchenplanung im März freigegeben: vierzehn Schränke, ein Hochschrank als Vorratsschrank, eine Kochinsel, Quarzarbeitsplatten von einem separaten Steinmetz. In Woche drei schickt Frau Morgenroth ein Instagram-Foto per WhatsApp: „Ginge an der Insel so eine Wange bis zum Boden?“ Der Planer, gerade im Termin bei einem anderen Kunden, antwortet: „Klar, kein Problem!“ In Woche vier ruft Herr Morgenroth in der Werkstatt an und bittet darum, die Spüle zwanzig Zentimeter nach links zu setzen, damit sie mittig unter dem Fenster sitzt. Der Werkstattleiter hört es im Vorbeigehen.
+
+Am Montagetag passt der Wasseranschluss nicht zur neuen Spülenposition, an der Insel fehlt eine Wange, die niemand bestellt hat, und auf der Rechnung steht beides nicht. Morgenroths erinnern sich, dass es „kein Problem“ war. Die Tischlerei erinnert sich an eine Nachricht und ein Gespräch im Flur. Irgendjemand zahlt die Kosten, und irgendjemand ist danach verärgert.
+
+Jeder Tischler, mit dem ich gesprochen habe, kennt so eine Geschichte. Das Problem ist nicht, dass Kunden ihre Meinung ändern; im individuellen Möbel- und Innenausbau ist das normal und oft sogar gut. Das Problem ist, dass Änderungen über jeden Kanal kommen, nur nicht über den, in dem sie bepreist, gezeichnet und freigegeben würden. Genau das kann KI erstaunlich gut beheben.
+
+## Wie groß das Problem ist
+
+Eine genaue Studie zu Nachträgen in kleinen Tischlereien gibt es nicht, aber die Daten aus dem Bau zeigen deutlich, woher Nacharbeit kommt.
+
+<Stats title="Woher Nacharbeit kommt">
+  <Stat value="48 %" label="der Nacharbeit im US-Bau entstehen durch schlechte Projektdaten und Missverständnisse" source="FMI und PlanGrid, Construction Disconnected" href="https://www.autodesk.com/blogs/construction/construction-disconnected-fmi-report/" />
+  <Stat value="≈ 36.000" label="Betriebe zählte das Tischler- und Schreinerhandwerk Ende 2023, mit rund 157.000 Beschäftigten" source="DDS, Zahlen zum Tischlerhandwerk" href="https://www.dds-online.de/allgemein/zahlen-daten-und-fakten-zum-tischler-schreinerhandwerk/" />
+  <Stat value="≈ 17.800" label="Lehrlinge gab es 2023, im Jahr 2000 waren es noch über 37.000" source="DDS" href="https://www.dds-online.de/allgemein/zahlen-daten-und-fakten-zum-tischler-schreinerhandwerk/" />
+</Stats>
+
+Der Bau ist ein anderes Geschäft, aber der Mechanismus ist derselbe: Informationen erreichen nicht alle, die sie brauchen. In der Tischlerei ist das besonders heikel. Eine Änderung, die klein klingt („Kann der Schrank etwas tiefer werden?“), wirkt sich auf Zeichnung, Stückliste, CNC-Programm, Materialbestellung, Beschläge, das Aufmaß für die Arbeitsplatte und manchmal auf Installateur oder Elektriker aus. Erfährt ein Glied dieser Kette nichts davon, taucht die Änderung auf der Baustelle als Nacharbeit wieder auf. Und bei der Nachwuchslage kann sich kaum ein Betrieb Stunden leisten, die doppelt gearbeitet werden.
+
+## Wie Änderungen ankommen und was aus ihnen werden muss
+
+<Split title="Von der beiläufigen Nachricht zum echten Nachtrag" leftTitle="Wie Änderungen ankommen" rightTitle="Was aus ihnen werden muss" left={[
+  "„Ach, und wir nehmen jetzt doch den breiten Kühlschrank“",
+  "Ein Instagram-Foto mit „so was in der Art?“",
+  "Ein Anruf bei dem, der gerade rangeht",
+  "Eine Bemerkung beim Termin auf der Baustelle",
+  "Eine Antwort, versteckt in einem E-Mail-Verlauf über den Liefertermin"
+]} right={[
+  "Ein nummerierter Nachtrag mit den betroffenen Schränken",
+  "Die Auswirkung auf Zeichnung, Stückliste, Material und Termin",
+  "Folgen für andere Gewerke wie Sanitär oder Arbeitsplatte",
+  "Preis und Zeitaufwand aus Ihrer eigenen Kalkulation",
+  "Die Freigabe des Kunden in Textform, bevor die Fertigung etwas ändert"
+]} />
+
+Die linke Spalte ist, wie Menschen nun einmal reden. Das ändern Sie nicht, und Sie sollten es auch nicht zu sehr versuchen: Kunden, die Ideen beiläufig erwähnen, sind Kunden, die sich für ihr Projekt begeistern. Die rechte Spalte ist, was der Betrieb braucht. Die Lücke dazwischen ist reine Informationsarbeit.
+
+## Der Weg zum Nachtrag
+
+<Flow title="Von „Können wir noch…“ zum freigegebenen Nachtrag" caption="Das Modell bemerkt und entwirft. Die Kalkulation prüft Machbarkeit und Preis. Der Kunde gibt in Textform frei. Erst dann ändert sich die Fertigung.">
+<Step title="Nachricht kommt irgendwo an" who="Kunde" time="jederzeit">WhatsApp, E-Mail, eine Telefonnotiz, eine Sprachnachricht des Monteurs von der Baustelle. Alle Projektkanäle laufen an einer Stelle zusammen.</Step>
+<Step title="Änderungswunsch erkennen" who="KI" tone="ai" time="Sekunden">Das Modell markiert Nachrichten, die etwas anderes wollen als die freigegebene Planung, auch wenn es als Nebenbemerkung formuliert ist.</Step>
+<Step title="Nachtrag entwerfen" who="KI" tone="ai">Welche Schränke, was sich ändert, wahrscheinliche Folgen und ein Preis aus Ihren Standardpositionen, wo es einen gibt.</Step>
+<Step title="Kalkulation prüft" who="Kalkulation" tone="human" time="am selben Tag">Prüft die Machbarkeit, passt den Preis an, ergänzt, was der Entwurf übersehen hat, und schickt den Nachtrag an den Kunden.</Step>
+<Step title="Kunde gibt frei" who="Kunde" tone="human">Eine einfache Freigabe in Textform: eine digitale Unterschrift oder eine Antwort mit „Ja, bitte so“. Ohne Freigabe keine Änderung.</Step>
+<Step title="Alles nachziehen" who="Werkstatt" tone="human">Zeichnung, Stückliste, Materialbestellung und Terminplan werden aktualisiert, andere Gewerke informiert.</Step>
+</Flow>
+
+Im zweiten Schritt steckt der Nutzen. Das Schwierigste am Nachtragsmanagement in einer kleinen Tischlerei ist nicht der Preis und nicht der Papierkram. Es ist, überhaupt zu bemerken, dass eine Nachricht eine Änderung enthält, besonders wenn sie im vierten Absatz einer freundlichen Mail über den Liefertermin steht. Ein Sprachmodell liest jede Nachricht zum Projekt mit derselben Aufmerksamkeit, und das schafft kein vielbeschäftigter Planer.
+
+## Worauf das Modell achtet
+
+Was „eine Änderung erkennen“ praktisch heißt, zeigt diese Übersicht. Das Modell liest jede Nachricht gegen die freigegebene Planung und sortiert ungefähr so:
+
+| Nachricht | Was das Modell daraus macht |
+| --- | --- |
+| „Ginge an der Insel so eine Wange wie auf dem Foto?“ | Änderungswunsch: neue Seitenwange an der Insel. Nachtrag entwerfen. |
+| „Wir nehmen jetzt doch den breiten Kühlschrank.“ | Änderungswunsch mit Geräteauswirkung. Datenblatt gegen die Nische prüfen. |
+| „Gibt es den Griff, den wir ausgesucht haben, auch in Schwarz?“ | Frage, aus der eine Änderung werden kann. Nachfragen, ob gewechselt werden soll. |
+| „Wann war noch mal der Montagetermin?“ | Keine Änderung. Normale Antwort. |
+| „Der Installateur sagt, der Abfluss sitzt 10 cm weiter links als im Plan.“ | Baustellenbefund, der eine Änderung erzwingen kann. An den Planer. |
+
+Das Modell liegt dabei manchmal falsch, meistens, indem es zu viel markiert. Das ist die richtige Art, falschzuliegen: Ein Fehlalarm kostet den Planer Sekunden, eine übersehene Änderung einen Tag auf der Baustelle. Nach ein paar Wochen zeigen die Korrekturen, wie Ihre Kunden formulieren, und die Markierungen werden treffsicherer.
+
+## Was in einen Nachtrag gehört
+
+<Checklist title="Jeder Nachtrag, jedes Mal" items={[
+  "Eine Nachtragsnummer und das Datum des Wunsches, mit Verweis auf die ursprüngliche Nachricht",
+  "Die betroffenen Schränke oder Teile, mit den Positionsnummern aus der Planung",
+  "Was sich ändert, in klaren Worten und in Maßen",
+  "Auswirkung auf Material, Beschläge und Elektrogeräte",
+  "Auswirkung auf andere Gewerke: Sanitär, Elektro, Arbeitsplatte, Boden",
+  "Preisänderung und Terminänderung",
+  "Die Freigabe des Kunden in Textform, mit Datum und Namen"
+]} />
+
+Die erste Zeile wird unterschätzt. Wenn es sechs Wochen später Streit gibt, beendet es die meisten Diskussionen, dem Kunden seine eigene Nachricht neben dem Nachtrag zu zeigen, den er freigegeben hat.
+
+Rechtlich lohnt der Blick auf § 650b BGB. Bei Bauverträgen regelt er, wie der Besteller Änderungen verlangen und nach dreißig Tagen ohne Einigung in Textform anordnen kann, und § 650c, wie die Mehrvergütung berechnet wird. Ob Ihr Auftrag ein Bauvertrag im Sinne des Gesetzes ist, hängt vom Einzelfall ab. Unabhängig davon ist die Textform die Gewohnheit, die Sie wollen: Ein Nachtrag, den der Kunde schriftlich bestätigt hat, schützt beide Seiten.
+
+## Die Gerätefalle
+
+Eine Art von Änderung verdient besondere Erwähnung, weil sie so viel Nacharbeit verursacht: der Gerätewechsel. Ein Kunde entscheidet sich mitten im Projekt für einen anderen Kühlschrank, Backofen oder Geschirrspüler, oft wegen eines Angebots, und erwähnt es nebenbei.
+
+Hier hilft KI in zwei Schritten. Zuerst bemerkt das Modell die Änderung („Wir haben jetzt doch den Bosch genommen“). Dann holt es sich das Datenblatt des neuen Modells, liest Einbaumaße, Lüftungsquerschnitte und Scharnieranforderungen heraus und vergleicht sie mit der Nische in Ihrer Planung. Heraus kommt eine kurze Notiz für den Planer: „Neuer Kühlschrank braucht 5 mm mehr Nischenbreite und 50 mm mehr Tiefe für die Lüftung, als geplant.“ Der Planer prüft und entscheidet. Für diesen Vergleich sucht ein Mensch zwanzig Minuten in PDFs, die Software braucht Sekunden.
+
+## Was nicht dokumentierte Änderungen kosten
+
+<Calc title="Überschlag: Änderungen, die nie auf einer Rechnung landen" caption="Annahmen, keine Messwerte. Ein Rückblick auf Ihre eigenen letzten Projekte liefert die echten Zahlen." rows={[
+  ["Projekte pro Jahr", "60"],
+  ["Änderungswünsche pro Projekt", "× 4"],
+  ["Anteil, der nie bepreist oder freigegeben wird", "× 40 %"],
+  ["Nicht bepreiste Änderungen pro Jahr", "≈ 96"],
+  ["Durchschnittlicher Wert einer Änderung", "× 180 €"]
+]} result={["Verschenkter Umsatz pro Jahr", "≈ 17.000 €"]} />
+
+In dieser Rechnung fehlt die Nacharbeit: der Schrank in falscher Größe, der zweimal gebaut wird, der Montagetag, der zum zweiten Montagetag wird, der Installateur, der noch mal kommen muss. Diese Kosten sind oft höher als die nicht berechneten Änderungen selbst.
+
+## Anfangen mit einem Nachtrags-Audit
+
+Der beste erste Schritt ist nicht, etwas für laufende Projekte zu bauen. Er besteht darin, zurückzuschauen.
+
+Nehmen Sie die Nachrichtenverläufe, E-Mails und Notizen Ihrer letzten zwanzig abgeschlossenen Projekte und lassen Sie ein Modell nach Änderungswünschen suchen. Vergleichen Sie das Ergebnis mit den Nachträgen, die Sie tatsächlich gestellt und berechnet haben. Die Differenz zwischen beiden Listen ist Ihre Zahl. Sie sagt Ihnen in Euro, ob sich ein System zum Erfassen von Änderungen lohnt, und fördert meist ein paar Überraschungen zutage, die die Frage entscheiden.
+
+<Timeline title="Vom Audit zur täglichen Erfassung">
+<Phase when="Woche 1" title="Nachtrags-Audit">Die Nachrichten der letzten zwanzig Projekte durch das Modell laufen lassen. Jeden gefundenen Änderungswunsch mit den gestellten Nachträgen abgleichen.</Phase>
+<Phase when="Woche 2" title="Ablauf festlegen">Format des Nachtrags, wer kalkuliert, wie Kunden freigeben und was als „freigegeben“ gilt.</Phase>
+<Phase when="Woche 3 bis 6" title="Live bei neuen Projekten">Das Modell liest die Projektkanäle mit und entwirft Nachträge. Die Kalkulation prüft jeden einzelnen.</Phase>
+<Phase when="Woche 8" title="Vergleichen">Erfasste Änderungen, berechnete Nachträge, Überraschungen bei der Montage und Streitfälle im Vergleich zum Audit.</Phase>
+</Timeline>
+
+## Software, zu der es passen muss
+
+Tischlereien planen und fertigen mit Software wie imos, SmartWOP, Palette CAD oder Pytha und verwalten Aufträge oft in einer Branchenlösung wie BORM. Das Erfassen von Änderungen ersetzt nichts davon. Es liest die Projektkommunikation, erstellt Nachtragsentwürfe und verfolgt die Freigabe. Zeichnung und CNC-Daten ändern weiterhin Ihre Planer in der Software, die sie kennen.
+
+Bei den Kanälen braucht es etwas Ordnung. Das Ganze funktioniert nur, wenn Projektnachrichten dort landen, wo das System sie lesen kann: ein gemeinsames Postfach pro Projekt, ein geschäftliches Konto statt des privaten Handys des Planers, Telefonnotizen im Auftrag. Bei WhatsApp würde ich wegen der DSGVO genau hinschauen und Kunden lieber auf E-Mail oder ein Kundenportal lenken. Diese Ordnung lohnt sich ohnehin, denn sie erlaubt auch, dass jemand anderes ein Projekt übernimmt, wenn der Planer im Urlaub ist.
+
+## Fragen, die Tischler stellen
+
+### Nerven formelle Nachträge die Kunden nicht?
+
+Kunden nervt eine Überraschung auf der Schlussrechnung, nicht eine kurze Nachricht „Diese Änderung kostet so viel, antworten Sie mit Ja, dann legen wir los“. Die meisten schätzen es, den Preis vorher zu kennen, und die Freigabe dauert Sekunden.
+
+### Was ist mit Änderungen, die bei der Montage entschieden werden?
+
+Die sind am wichtigsten, weil sie am leichtesten vergessen werden. Aus einer dreißigsekündigen Sprachnachricht des Monteurs („Kunde will die Blende links statt rechts, Passstück ergänzt“) kann automatisch ein Nachtragsentwurf werden, der im Büro bepreist wird.
+
+### Kann das Änderungen selbst kalkulieren?
+
+Für Standardpositionen mit Preis in Ihrer Kalkulation kann es einen Preis vorschlagen. Alles Individuelle, Statische oder Ungewöhnliche geht an die Kalkulation. Das Modell soll dafür sorgen, dass jede Änderung gesehen wird, nicht das Urteil des Kalkulators ersetzen.
+
+### Lohnt sich das für eine Zwei-Mann-Tischlerei?
+
+Machen Sie zuerst das Audit. Findet es ein paar tausend Euro nicht berechneter Änderungen im Jahr, rechnet sich eine schlanke Lösung schnell. Findet es fast nichts, funktioniert Ihr Ablauf, und auch das ist gut zu wissen.
+
+## Die Faustregel
+
+Was nicht aufgeschrieben und freigegeben ist, ist keine Änderung, sondern ein künftiger Streit. Software kann dafür sorgen, dass jedes „Können wir noch…“ aufgeschrieben wird; was es kostet, entscheiden Sie.
+
+Wenn Sie wissen möchten, was Ihre letzten zwanzig Projekte zeigen würden, [melden Sie sich](/contact?intent=improve), und ich helfe Ihnen beim Nachtrags-Audit. Änderungswünsche gibt es nicht nur in der Tischlerei: [Architekturbüros verlieren Entscheidungen auf dieselbe Weise](/de/posts/ai-for-architects-meeting-decisions), und im [Bautagebuch](/de/posts/ai-for-construction-daily-reports) tauchen viele dieser Änderungen zum ersten Mal auf.
