@@ -1,0 +1,150 @@
+---
+id: "ai-for-construction-daily-reports"
+title: "From Voice Notes to Daily Reports: AI for Small Construction Firms"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Trades & construction", "Construction companies", "Daily reports", "AI for small business"]
+description: "Daily reports get written from memory on Friday, then a dispute needs them. How AI turns a foreman’s voice notes and photos into a signed report each evening."
+excerpt: "Daily reports get written from memory on Friday, then a dispute needs them. How AI turns a foreman’s voice notes and photos into a signed report each evening."
+---
+
+At 5:40 in the evening, the site foreman sits in his truck with a clipboard, or more likely an app on his phone, and tries to remember the day. Crew of six, one sick. Framing on the second floor. The concrete truck was an hour and a half late. The owner walked through at lunch and asked whether the kitchen window could be wider. An inspector came by. It rained a bit in the afternoon.
+
+He writes "framing 2nd floor, 5 crew, light rain" and drives home. On busy weeks, he writes Monday to Friday on Friday afternoon. Nobody blames him. He's been on site since six.
+
+Three months later, the project is late and the owner's lawyer says it's the contractor's fault. The contractor knows about the late concrete, the owner's window request, and the inspection that held up the drywall. The daily reports for those days say "framing 2nd floor". That's the moment a small construction firm learns what daily reports are really for.
+
+This is one of the clearest cases I know for AI on a job site: not doing the building, but capturing what happened while it happens, with almost no extra effort from the people doing the work.
+
+## Where the hours go
+
+The best-known study of wasted time in construction is still the FMI and PlanGrid "Construction Disconnected" survey of 600 construction professionals.
+
+<Bars title="Hours per week construction professionals spend on non-productive work" unit=" h" caption="Average hours per week per construction professional, from a survey of 600 professionals. Together, about 35% of the working week." source="FMI and PlanGrid, via Construction Dive" href="https://www.constructiondive.com/news/industry-could-be-overspending-177b-per-year-study-finds/529450/" data={[
+  { label: "Looking for project data and information", value: 5.5, highlight: true },
+  { label: "Conflict resolution", value: 4.7 },
+  { label: "Dealing with mistakes and rework", value: 3.9 }
+]} />
+
+<Stats title="Why documentation matters later">
+  <Stat value="35%" label="of construction professionals' time goes to non-productive activities, over 14 hours a week" source="FMI and PlanGrid" href="https://www.autodesk.com/blogs/construction/construction-disconnected-fmi-report/" />
+  <Stat value="12.5 months" label="average length of a construction dispute in North America" source="Arcadis Construction Disputes Report 2025" href="https://media.arcadis.com/-/media/project/arcadiscom/com/expertise/global/contract-solutions/2025/2025-15th-annual-construction-disputes-report-final-19jun25.pdf?rev=8569d68da4d44425ab37c911e699640c" />
+</Stats>
+
+The biggest bar is the one that daily reports are supposed to shrink: looking for information. A good daily report is the answer to "what happened on site on the 14th?" without calling three people. A bad one sends everyone searching through photos and text messages. And when things turn into a dispute, which Arcadis finds takes more than a year on average in North America, the daily reports are often the only contemporaneous record.
+
+## What a good daily report actually contains
+
+Most daily report templates are fine. The problem isn't the form, it's filling it in accurately at the end of a long day. Here's what I'd want in each report, and why each part matters months later.
+
+| Section | Example entry | Why it matters later |
+| --- | --- | --- |
+| Crew and hours | 5 of 6 on site, 7:00 to 15:30; electrician sub from 10:00 | Labour costs, productivity, sub disputes |
+| Work completed | Second-floor framing, grid lines C to F | Progress claims and schedule updates |
+| Deliveries | Concrete arrived 9:30 instead of 8:00; 2 damaged sheets of plywood | Supplier claims, delay evidence |
+| Delays and their cause | Pour delayed 90 minutes by late delivery | Time extensions and notice requirements |
+| Instructions and changes | Owner asked to widen kitchen window by 30 cm | Change orders and who asked for what |
+| Visitors and inspections | Building inspector, framing inspection passed | Compliance and schedule |
+| Weather | Light rain 14:00 to 15:00, 11°C | Weather delay claims |
+| Safety | Near miss: unsecured ladder, corrected | Safety records and prevention |
+| Photos | 23 photos, time-stamped, by area | Evidence for everything above |
+
+The "instructions and changes" row is the one that most often goes missing, and it's the one that costs the most money. A change requested verbally on site and never written down is exactly how firms end up doing extra work for free.
+
+## Voice notes all day, a report in the evening
+
+The idea is simple: the foreman records short voice notes and takes photos during the day, when things happen. By the end of the shift, the report is already drafted.
+
+<Flow title="From a day of voice notes to a signed daily report" caption="The foreman records and signs. The model transcribes, sorts, and flags. Nothing is sent without the foreman's review.">
+<Step title="Record as it happens" who="Foreman" tone="human" time="during the day">Thirty-second voice notes: "Concrete just showed up, 9:30, was supposed to be 8." Photos as usual, with time and location attached.</Step>
+<Step title="Transcribe and sort" who="AI" tone="ai" time="minutes">Each note is transcribed, including in the crew's own language, and sorted into the right report section with names, times, and quantities extracted.</Step>
+<Step title="Add the context automatically" who="System">Weather for the site's location from a weather service, the crew list from the schedule, photos grouped by area.</Step>
+<Step title="Flag what needs follow-up" who="AI" tone="ai">Possible delays, change requests, safety events, and damaged deliveries are flagged separately.</Step>
+<Step title="Foreman reviews and signs" who="Foreman" tone="human" time="3 minutes">A draft report on the phone after the shift. Corrections are quick; the signature makes it his report.</Step>
+<Step title="Report and follow-ups go out" who="Project manager" tone="human">The report goes to the project file. Flags become tasks: a delay notice to draft, a change order to price.</Step>
+</Flow>
+
+The shift is in the timing. Instead of reconstructing the day at 5:40, the foreman spends three minutes checking a draft that was built from notes recorded at 9:30, 12:15, and 14:05. The information is better because it was captured when it was fresh.
+
+## What that looks like in practice
+
+Here's one voice note and what the system does with it:
+
+```text
+Voice note, 12:18:
+"Owner came by with his wife, they want the kitchen window
+thirty centimetres wider, told them I'd pass it on. Also the
+inspector passed the framing on the east side."
+```
+
+In the draft report, that becomes two entries in two sections: under "instructions and changes", *Owner requested kitchen window widened by 30 cm (12:18, verbal, on site). Not yet priced or approved.*; under "inspections", *Framing inspection, east side, passed.* The first entry also appears as a flag for the project manager: a change request that needs a price and written approval before anyone touches the window.
+
+## Two versions of the same Tuesday
+
+<Split title="The same day, recorded two ways" leftTitle="Written from memory at 5:40" rightTitle="Built from voice notes during the day" left={[
+  "Framing 2nd floor",
+  "5 crew",
+  "Light rain",
+  "(Late concrete, owner request, and inspection not mentioned)"
+]} right={[
+  "Framing 2nd floor, grid C to F; 5 of 6 crew, 7:00 to 15:30",
+  "Concrete delivery 90 minutes late; pour moved to 11:00",
+  "Owner requested wider kitchen window at 12:18; flagged for change order",
+  "Framing inspection east side passed; light rain 14:00 to 15:00"
+]} />
+
+The left column isn't wrong. It's just useless when someone asks, three months later, why the pour slipped or who asked for the window change.
+
+## The flags that matter most
+
+Some entries need action, not just filing. Those are the ones I'd have the system flag every time:
+
+- **Delays**, with cause, start, and end. Many contracts require written notice within a short window. Standard forms like the AIA A201 set time limits for claims, often 21 days from the event, and missing them can forfeit a legitimate claim.
+- **Changes and instructions** from the owner, architect, or engineer, with who said what and when. These become change orders, priced and approved in writing.
+- **Safety events**, including near misses. They feed your safety records and whatever reporting your jurisdiction requires.
+- **Damaged or short deliveries**, so supplier claims are made while the evidence is on site.
+
+The model's job is to notice these in ordinary speech. The project manager decides what to do about them.
+
+## A pilot on one site
+
+<Timeline title="Four weeks on a single project">
+<Phase when="Week 1" title="Set up">Agree the report template, the flag categories, and who reviews. Set up the voice note capture on the foreman's phone.</Phase>
+<Phase when="Week 2" title="Side by side">The foreman writes the usual report and also records voice notes. Compare the two versions each evening.</Phase>
+<Phase when="Weeks 3 to 4" title="Voice notes only">The drafted report replaces the old routine. The foreman reviews and signs each evening.</Phase>
+<Phase when="End of week 4" title="Review">Compare completeness, time spent, flags raised, and what the project manager did with them.</Phase>
+</Timeline>
+
+I'd judge the pilot mostly on one question: did the report capture things the old one would have missed? If the week-two comparisons show the voice-note version catching delays, changes, and deliveries that the memory version didn't, the case makes itself.
+
+## Tools that fit
+
+Many firms already use Procore, Buildertrend, Fieldwire, or a dedicated daily report app like Raken. The voice capture and drafting layer feeds the daily report in the tool you already have. It doesn't need to replace your project management software, and I'd be wary of anyone who says it should.
+
+Voice notes on a noisy site work better than people expect with current speech recognition, especially if foremen step away from the saw for thirty seconds. Multilingual crews are a bonus rather than a problem: a note recorded in Spanish or Polish can be transcribed and added to an English report, with the original kept.
+
+Photos and voice recordings contain workers' faces, names, and locations. Tell the crew what's recorded and why, keep recordings only as long as needed once the report is signed, and in the EU treat it as personal data under the GDPR, with the works council involved where there is one.
+
+## Questions construction owners ask
+
+### Will foremen actually use voice notes?
+
+More readily than forms. Talking for thirty seconds is easier than typing on a phone with gloves on. The deciding factor is whether the end-of-day draft is good enough that the foreman trusts it. That's what the side-by-side week is for.
+
+### Is a report drafted by AI legally valid?
+
+The foreman reviews and signs it, so it's his report, based on his own recordings made at the time. That's arguably stronger evidence than a report written from memory days later. Keep the original voice notes and photos linked to the report.
+
+### Can it write the delay notice or change order itself?
+
+It can draft them from the flagged entries, with the facts already filled in. A project manager checks, completes, and sends them. Contract notices have legal weight, and they need a person who understands the contract.
+
+### What does it cost?
+
+Transcription and drafting cost little per report. The main effort is the setup: the template, the flags, and the connection to your project software. A single-site pilot is a small, fixed project.
+
+## The rule for the job site
+
+Record it when it happens, sign it the same day. A daily report written on Friday for Tuesday is a memory, not a record.
+
+If your daily reports are the thing everyone skips, [tell me which project software you use](/contact?intent=improve) and how reports are written today. I'll suggest how a voice-note pilot could work on one of your sites. Changes mentioned on site are the start of many disputes; I've written about catching them in [custom cabinetry](/posts/ai-for-cabinet-makers-change-orders) and in [architects' design meetings](/posts/ai-for-architects-meeting-decisions).
