@@ -1,0 +1,150 @@
+---
+id: "ai-for-architects-meeting-decisions"
+title: "The Decision Log: Keeping Design Decisions From Disappearing"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Professional services", "Architects", "Meeting notes", "AI for small business"]
+description: "Design decisions made in meetings vanish into notebooks and inboxes until someone disputes them. How small architecture firms can use AI to keep a real decision log."
+excerpt: "Design decisions made in meetings vanish into notebooks and inboxes until someone disputes them. How small architecture firms can use AI to keep a real decision log."
+---
+
+Month nine of a house renovation. The walls are up and the window openings are framed. The client walks the site and stops in the kitchen. "This window is smaller than we agreed." The architect remembers the conversation: the larger window would have needed a steel lintel and a structural engineer's revision, the client decided it wasn't worth €4,000 and six weeks, and they settled on the smaller one. That was in month three, in a meeting at the client's dining table.
+
+Where's the record? A line in a notebook ("kitchen window: std size"), an email that says "as discussed", and a drawing revision with no note about why it changed. The client doesn't remember the lintel conversation at all. What they remember is the first sketch.
+
+Nobody here is lying. People remember the version they liked. And the design decisions that matter most are usually made in conversation, not in writing. That's the gap a decision log closes, and it's a gap AI is surprisingly good at filling.
+
+<Stats title="Why decisions go missing">
+  <Stat value="75%" label="of US architecture firms have fewer than 10 employees, and 28% are sole practitioners" source="AIA Firm Survey 2024" href="https://www.aia.org/aia-architect/article/latest-insights-2024-firm-survey-report" />
+  <Stat value="48%" label="of rework on US construction projects was traced to poor project data and miscommunication" source="FMI / PlanGrid" href="https://www.autodesk.com/blogs/construction/construction-disconnected-fmi-report/" />
+  <Stat value="27%" label="of small architecture firms said they used AI for day-to-day work, against 61% of large firms" source="AIA Firm Survey 2024" href="https://www.aia.org/aia-architect/article/latest-insights-2024-firm-survey-report" />
+</Stats>
+
+Small firms don't have a project coordinator whose job is to write minutes. The architect runs the meeting, sketches, answers questions and makes decisions, all at once. Minutes get written that evening from memory, or not at all.
+
+## How a decision disappears
+
+Decisions in a design project rarely happen in one clean moment. They drift through several conversations, and the reasoning lives only in the heads of the people who were there.
+
+<Timeline title="One window, nine months" caption="A hypothetical but very typical sequence. The decision was real. The record of why it was made wasn't.">
+<Phase when="Month 1" title="First sketch">The concept shows a wide kitchen window facing the garden. The client loves it.</Phase>
+<Phase when="Month 3" title="The dining-table meeting">Structural input: the wider opening needs a steel lintel and a revised calculation. Cost around €4,000, plus six weeks. The client chooses the standard size. Nobody writes down the reason.</Phase>
+<Phase when="Month 4" title="Drawings revised">The window changes on the plans. The revision cloud says "window size updated". Nothing about the lintel or the cost.</Phase>
+<Phase when="Month 6" title="Permit and tender">The smaller window goes out to tender. The client signs off a set of 40 drawings and doesn't notice.</Phase>
+<Phase when="Month 9" title="Site visit">"This window is smaller than we agreed." The architect has a memory. The client has the first sketch.</Phase>
+</Timeline>
+
+Multiply that by every decision in a project: the floor finish, the heat pump position, the kitchen layout, the budget cut on the terrace. Most never become disputes. The ones that do cost fees, time and a client relationship.
+
+## What a decision log actually is
+
+A decision log is a simple table: one row per decision, with enough context that someone who wasn't in the room understands what was decided and why. It isn't the same as meeting minutes. Minutes record what was said. The log records what was settled.
+
+| Field | Example |
+| --- | --- |
+| Number and date | D-017, 14 March |
+| Decision | Kitchen window reduced to standard 1.20 m width |
+| Decided by | Client (both owners present), architect advised |
+| Reason | Wider opening needs a steel lintel and revised structural calculation, about €4,000 and six weeks |
+| Alternatives considered | 1.80 m window with lintel; two smaller windows side by side |
+| Cost and schedule impact | Saves about €4,000 and six weeks against the wider option |
+| Drawings affected | A-201 rev C, A-310 rev B |
+| Confirmed | Email confirmation sent 15 March, acknowledged by client 16 March |
+
+The last row is the one that ends arguments. A decision the client confirmed in writing, with the reason attached, is very hard to dispute nine months later. And a client who reads "we chose the smaller window to save €4,000 and six weeks" is unlikely to feel misled when they see it built.
+
+## Where AI fits
+
+The reason most small firms don't keep a log isn't that they don't see the value. It's that writing one takes time nobody has after a two-hour meeting. That's the part AI can take over.
+
+<Flow title="From meeting to confirmed decision" caption="The model drafts. The architect checks every entry. The client confirms in writing. Nothing enters the log without both.">
+<Step title="Meeting" who="Architect and client" tone="human" time="as usual">In person, on site or by video. With the client's consent, the conversation is recorded or transcribed. Or the architect dictates a two-minute voice note straight afterwards.</Step>
+<Step title="Extract decisions" who="AI" tone="ai" time="minutes">From the transcript or voice note: decisions, the reasons given, alternatives discussed, open questions, and tasks with owners.</Step>
+<Step title="Architect checks" who="Architect" tone="human" time="5 to 10 min">Corrects anything misheard, removes anything that wasn't actually decided, adds drawing references.</Step>
+<Step title="Confirmation to client" who="AI" tone="ai">A short, plain-language email: "Here's what we decided today and why." The architect sends it.</Step>
+<Step title="Client confirms" who="Client" tone="human">A reply, or a click on a confirmation link. Questions go back to the architect.</Step>
+<Step title="Log updated" who="System">Confirmed decisions become rows in the project's decision log, linked to the drawings and the meeting.</Step>
+</Flow>
+
+The important design choice is in step two: the model should separate *decided* from *discussed*. A meeting might explore three kitchen layouts and settle on none of them. If the model writes "decision: layout B" because layout B was discussed longest, that's worse than no log. The instruction has to be explicit: only record something as a decision if someone clearly agreed to it, and list everything else as an open question.
+
+## What the client sees
+
+The confirmation email should be short enough that the client actually reads it:
+
+> Thanks for today's meeting. Here's what we decided:
+>
+> 1. **Kitchen window:** we'll use the standard 1.20 m width instead of 1.80 m. The wider window would need a steel lintel and a new structural calculation, adding about €4,000 and six weeks.
+> 2. **Heat pump:** outdoor unit on the east side, away from the bedroom windows.
+>
+> Still open: floor finish for the living room (you're checking samples), and whether to keep the terrace in phase one.
+>
+> If anything here doesn't match your understanding, just reply and we'll talk it through.
+
+The last line matters. The point isn't to trap the client, it's to catch misunderstandings while they're still cheap to fix. A client who replies "wait, I thought we were keeping the wide window" in month three is a gift compared with the same client in month nine.
+
+## Beyond disputes
+
+Protection against disputes is the obvious benefit, but it's not the only one.
+
+**Fees.** Changes after a client has approved a design phase are often additional services under your agreement. A log that shows "D-031: client requested second-floor layout change after design development sign-off" makes that conversation factual instead of awkward.
+
+**Handover inside the firm.** When a colleague takes over a project, or joins for the construction phase, the log answers the questions they'd otherwise ask you: why this window, why this heating system, why the terrace was cut.
+
+**Consultants and contractors.** A structural engineer or contractor who can see the relevant decisions, with reasons, makes fewer wrong assumptions.
+
+**Your own memory.** Two years later, when the client calls about a leak near that window, you'll know exactly what was specified and why.
+
+## Recording meetings: ask first
+
+Transcribing a meeting is the easiest way to get a complete record, but it needs consent. In the US, several states require the consent of everyone in the conversation to record it. In the EU, recording without consent raises data protection problems, and in some countries it's a criminal offence. The simple rule: ask at the start of every meeting, note the answer, and offer the voice-note alternative for clients who'd rather not be recorded.
+
+The voice-note method works surprisingly well. Two minutes of dictation in the car after a meeting ("We decided the window goes to standard width because of the lintel cost, about four thousand; heat pump on the east side; floor finish still open, they're getting samples") gives the model enough to draft the log and the confirmation email.
+
+## Meeting habits that make the log better
+
+The model can only extract what was actually said. A few small habits make a big difference to the quality of the log, with or without AI:
+
+<Checklist title="Five habits for meetings that produce clear decisions" items={[
+  "Open with the list of decisions you need today, so everyone knows what's being settled",
+  "Say decisions out loud as decisions: “So we're agreed: standard window, because of the lintel cost”",
+  "Name who decided, especially when there are two owners or a committee",
+  "Mention cost, time and drawing numbers when they come up, so they land in the transcript",
+  "Spend the last five minutes reading back what was decided and what's still open"
+]} />
+
+The read-back at the end is the single most useful habit. It catches misunderstandings in the room, and it gives the model a clean summary to work from.
+
+## Tools that fit
+
+You don't need special software. Video tools such as Teams, Zoom and Google Meet already produce transcripts; a phone's voice memo app handles on-site meetings. The decision log can live in whatever your firm already uses for project records: a spreadsheet, Notion, or the project area of a platform like Newforma or Procore on larger jobs. What matters is that it's one table per project, in a place everyone can find.
+
+The AI step connects the two: it reads the transcript or voice note, drafts the log entries and the confirmation email, and puts them in front of the architect to approve. Choose a provider that doesn't train on your data. Client meetings include personal information, budgets and sometimes security details about a building.
+
+## When it's overkill
+
+For a small, quick project with one decision-maker and a handful of meetings, a disciplined habit of sending a three-line email after each meeting does the same job. The AI version earns its keep on longer projects with many meetings, several decision-makers (two owners, a developer and a tenant, a building committee), or a history of scope drift.
+
+## Questions architects ask
+
+### Does the client need to confirm every decision?
+
+Confirm the ones that affect cost, schedule, appearance or function. Minor coordination points can go in the minutes without a formal confirmation. The model can suggest which is which; you decide.
+
+### What if the AI mishears something in a meeting?
+
+It will, occasionally, especially with numbers, names and technical terms. That's why the architect checks every entry before it goes anywhere. The check takes a few minutes; writing it from scratch takes much longer.
+
+### Can it link decisions to drawing revisions?
+
+If you mention the drawing in the meeting or add the reference during your check, yes. Some firms add a short "decisions" field to their revision notes that points to the log number, which closes the loop nicely.
+
+### Is a confirmation email legally meaningful?
+
+It's evidence, not a contract amendment. For changes that alter the scope or fee, follow the change procedure in your agreement. The log and the email make that procedure easier, they don't replace it.
+
+## Rule of thumb
+
+A decision nobody wrote down is a disagreement waiting for a date. Record what was decided and why, get the client to confirm it while the meeting is fresh, and let the model do the writing so it actually happens.
+
+If decisions keep slipping away in your projects, [tell me how your meetings and project records work today](/contact?intent=improve), and I'll suggest the lightest way to add a decision log. Construction firms face the same problem on site, covered in [voice notes to daily reports](/posts/ai-for-construction-daily-reports), and cabinet makers lose money the same way through [small changes nobody wrote down](/posts/ai-for-cabinet-makers-change-orders).
