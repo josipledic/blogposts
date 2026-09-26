@@ -1,0 +1,133 @@
+---
+id: "ai-for-translation-agencies-project-intake"
+title: "Quoting Translation Projects Without Surprises: AI for Project Intake"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Professional services", "Translation agencies", "Project intake", "AI for small business"]
+description: "Scanned PDFs, hidden annexes and missing locales turn good quotes into losses. How small translation agencies can use AI to inspect every request before quoting it."
+excerpt: "Scanned PDFs, hidden annexes and missing locales turn good quotes into losses. How small translation agencies can use AI to inspect every request before quoting it."
+---
+
+The email arrives at 4:50 on a Tuesday: "Please translate the attached contract into German, 10 pages, needed by Friday. What would it cost?" The project manager opens the PDF, sees ten neat pages, runs a quick estimate, and sends a quote. The client accepts within the hour.
+
+On Wednesday morning the translator opens the file properly. The ten pages are scanned images, so the CAT tool sees zero words. The last page says "see Annexes A to D", which turn out to be another fourteen pages attached as photos in a second email the PM never opened. The client's reply to the confirmation mentions, in passing, that the contract is for their office in Zurich. And a follow-up question reveals that the German authorities will want a certified translation.
+
+The quote was for ten pages of editable text into standard German. The job is 24 pages of scanned material, some of it photographed at an angle, into Swiss German, certified, by Friday. Somebody is going to lose money, sleep or the client. Usually all three.
+
+None of these surprises were hidden. They were all in the request, the files and the thread. Nobody had time to look properly at 4:50 on a Tuesday. That's the part AI can do in seconds: look properly at every request before anyone quotes it.
+
+## Teardown: where quotes go wrong
+
+The translation industry is not small. Slator put the addressable market for language solutions at [USD 31.7 billion in 2025](https://slator.com/slator-2025-language-industry-market-report/). But most of it is served by small agencies and freelance networks, and for them, the gap between a good quote and a loss-making one is usually decided in the first ten minutes after a request arrives.
+
+| The surprise | How it shows up | What a proper intake check catches |
+| --- | --- | --- |
+| Scanned or image-only files | CAT analysis shows almost no words | Pages without a text layer, and a rough word count from recognising the text |
+| Text inside images, charts and screenshots | Words missing from the analysis, then found during translation | Images that contain text, flagged for extraction or DTP |
+| Hidden extra content | Annexes in a second email, tracked changes, comments, hidden slides or sheets | Every attachment in the thread, and every hidden element in each file |
+| The wrong target variant | "German" means Germany, but the client is in Zurich or Vienna | Locale questions whenever the client, address or use suggests a variant |
+| Certification needed | Mentioned late, or not at all, until the authority rejects it | Document types that usually need certification: certificates, court papers, contracts for authorities |
+| Formatting work | InDesign, scanned forms or complex layouts need DTP | File types and layouts that need more than a text export |
+| Specialist subject matter | Medical, legal or technical content needs a specialist and a reviser | Domain and terminology density, so the right translator and reviser are planned |
+| Unrealistic deadline | Accepted by habit, then missed | Words per day against the deadline, including revision time |
+
+Each of these is a question of looking carefully. None requires translation expertise to spot. All of them change the price, the team or the deadline.
+
+## What AI does at intake
+
+A language model with vision can do the careful looking in seconds. When a request arrives, it reads the email thread and opens every attachment, and produces a short intake report for the project manager:
+
+- **Files:** what each file is, whether it has a text layer, whether it contains images with text, tracked changes, comments or hidden content.
+- **Volume:** a word count for files the CAT tool can't read, clearly marked as an estimate.
+- **Languages and variants:** source language as detected, target languages as requested, and a question if the variant is unclear.
+- **Document type and domain:** contract, certificate, medical report, marketing brochure, software strings. Flags if certification is likely.
+- **Deadline check:** whether the requested date is realistic for the volume and whether revision fits in.
+- **Questions for the client:** only the ones that matter for this request.
+
+For editable files, the real word count and match analysis still come from your CAT tool, whether that's Trados, memoQ or Phrase. The model doesn't replace the analysis. It makes sure the analysis is run on everything, and it tells you what the analysis can't see.
+
+<Flow title="From request to a quote without surprises" caption="The model inspects and asks. The CAT tool analyses. The project manager prices and approves. Translators translate.">
+<Step title="Request arrives" who="Client" time="any time">Email, web form or portal upload, often with files spread across several messages.</Step>
+<Step title="Inspect everything" who="AI" tone="ai" time="1 to 2 min">Opens every attachment in the thread, checks text layers, images with text, hidden content, languages, document types and domain.</Step>
+<Step title="Clarifying questions" who="AI" tone="ai">Drafts the questions that affect price or deadline: variant, certification, use, reference material. The PM approves them.</Step>
+<Step title="CAT analysis" who="System" time="minutes">Editable files go through the CAT tool against the client's translation memory. Scanned files are recognised first, then analysed.</Step>
+<Step title="Quote draft with assumptions" who="AI" tone="ai">Price, deadline and team from the analysis and your rate card, with the assumptions written out.</Step>
+<Step title="PM approves" who="Project manager" tone="human" time="5 min">Checks the report, adjusts, sends. Anything unusual gets a phone call instead.</Step>
+</Flow>
+
+## The assumptions line
+
+The single most useful thing an intake check produces is a line in the quote that states the assumptions:
+
+> **This quote assumes:** 10 pages of scanned text (approx. 3,400 words) plus Annexes A to D (approx. 4,100 words), translated from English into Swiss German, certified translation, delivery as a PDF matching the original layout, delivery Friday 17:00 CET. If any of these differ, we'll confirm the change in price or deadline before starting.
+
+Clients rarely read terms and conditions. They do read three lines about their own project. If the client's actual situation differs, you find out before the work starts, not on Thursday night.
+
+## Match analysis and the weighted word count
+
+For clients with a translation memory, the match analysis changes the price a lot, and it's worth making the logic visible. Most agencies use a [CAT grid](https://www.1stopasia.com/blog/cat-grids-basics-why-they-matter/) that discounts repetitions and close matches, and the percentages are a long-running argument between agencies and translators. The grid below is an example; yours will differ.
+
+<Bars title="Example: 12,000 words, and what gets billed" unit=" words" caption="Illustrative grid: repetitions and 100% matches at 25%, 95 to 99% at 50%, 85 to 94% at 70%, everything below at full rate. Weighted total: 8,570 words instead of 12,000." data={[
+  { label: "Repetitions and 100% matches", value: 3200, display: "3,200 → billed as 800" },
+  { label: "95 to 99% matches", value: 1400, display: "1,400 → billed as 700" },
+  { label: "85 to 94% matches", value: 1100, display: "1,100 → billed as 770" },
+  { label: "Below 85% and new words", value: 6300, display: "6,300 → billed as 6,300", highlight: true }
+]} />
+
+The model can turn the raw CAT report into this kind of plain-language breakdown for the quote, which saves the PM from explaining fuzzy matches on the phone. It also catches the reverse problem: a client who expects a discount because "it's mostly the same as last year" when the analysis shows 70% new words.
+
+## The intake questions
+
+A good intake asks few questions, but the right ones. The model picks from a list like this, depending on what the files and the thread already answer:
+
+<Checklist title="Questions that change price, team or deadline" items={[
+  "Which country and audience is the translation for? (de-DE, de-CH, de-AT; pt-PT or pt-BR; es-ES or Latin America)",
+  "Does it need to be certified, sworn or notarised, and for which authority?",
+  "What will it be used for: internal information, publication, court, product labelling?",
+  "Is there a glossary, style guide or previous translation we should follow?",
+  "Do you need the layout reproduced, or is a text file enough?",
+  "Is machine translation with human post-editing acceptable, or does your policy exclude it?",
+  "Who reviews on your side, and should we plan time for their feedback?"
+]} />
+
+The machine translation question matters more than it used to. Some clients want the lower price of post-edited machine translation. Others have contracts that forbid sending their text through any MT engine. Ask, record the answer, and make sure your workflow respects it.
+
+## Repeat clients: remember the last project
+
+Half of a good intake for a repeat client is remembering what you agreed last time. Which variant of German, which glossary, whether they wanted the layout reproduced, who reviews on their side, whether MT was allowed. That information usually sits in old emails and the PM's head.
+
+The model can pull it from previous projects in your TMS and pre-fill the intake: "Last three projects for this client: Swiss German, client glossary v4, layout reproduced, no MT. Assume the same?" One confirmation from the client replaces five questions, and a new PM covering a holiday doesn't have to rediscover everything.
+
+## Confidentiality comes first
+
+Client documents in a translation agency include contracts, medical records, patents before filing, and personal documents. An intake model that reads them has to meet the same standard as the rest of your workflow: a provider that doesn't store or train on the content, processing where your clients' contracts allow, and a data processing agreement where GDPR applies. Many client NDAs are explicit about third-party tools. Check them before you connect anything, and never paste client files into a consumer chatbot.
+
+If your agency works to [ISO 17100](https://www.iso.org/standard/59149.html), nothing here changes the core requirement: translation by a qualified translator and revision by a second qualified person. For post-edited machine translation, [ISO 18587](https://www.iso.org/standard/62970.html) sets out its own requirements. The model works before any of that starts.
+
+## Tools that fit
+
+Translation management systems such as Plunet, XTRF and Protemos handle requests, quotes and projects. CAT tools such as Trados, memoQ and Phrase do the analysis. The intake layer sits in front of both: it reads the incoming request and files, writes the intake report and clarifying questions, triggers the CAT analysis, and puts a draft quote into your TMS for the PM to approve. For scanned documents, a good text recognition step first makes both the word count and the later translation easier.
+
+## Questions agency owners ask
+
+### Is the word count from scanned files reliable enough to quote on?
+
+It's an estimate, and the quote should say so. For clean scans it's usually close. For photos of documents at an angle, handwriting or stamps, quote a range or confirm after recognition.
+
+### Can the model tell which documents need certification?
+
+It can recognise document types that usually need it, such as birth certificates, diplomas, court documents and company registrations, and ask the question. The requirements depend on the country and the authority, so the answer comes from the client and your certified translators, not from the model.
+
+### Does this help with small, quick jobs?
+
+Especially with those. Small jobs are the ones nobody inspects carefully, and a two-page certificate with a second page on the back, a stamp in another language and an apostille can take far longer than its size suggests.
+
+### Won't clients find the questions tedious?
+
+Two or three specific questions, asked straight away, feel like care. A surprise price change on Thursday feels like a bait and switch.
+
+## Rule of thumb
+
+Never quote a file you haven't opened, a thread you haven't read to the end, or a language you haven't pinned to a country. Let the model do the looking on every request, and write the assumptions into the quote so the client can correct them before you start.
+
+If quotes at your agency keep turning into surprises, [tell me which TMS and CAT tools you use](/contact?intent=improve), and I'll suggest how an intake check could fit in front of them. Print shops fight the same battle with incoming files, covered in [preflight checks](/posts/ai-for-print-shops-preflight), and law firms face a stricter version of intake in [first contact with new clients](/posts/ai-for-law-firm-intake).
