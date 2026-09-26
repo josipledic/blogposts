@@ -1,0 +1,145 @@
+---
+id: "ai-for-farm-shops-inventory"
+title: "Farm Shop Stock Planning: Sell the Harvest Before It Spoils"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Food & drink", "Farm shops", "Fresh stock planning", "AI for small business"]
+description: "The harvest doesn't wait for demand. How farm shops can combine picking plans, sales patterns and weather to sell more fresh produce and throw less away."
+excerpt: "The harvest doesn't wait for demand. How farm shops can combine picking plans, sales patterns and weather to sell more fresh produce and throw less away."
+---
+
+It's a Tuesday in July on a family farm with a shop by the road. At six in the morning, two people pick 60 kilos of strawberries because that's what's ripe. By five in the afternoon, 18 kilos are still in the shop, softening in the heat. The courgettes are doing what courgettes do in July, doubling overnight. Lettuce picked yesterday is wilting. And on Saturday, as every Saturday, the eggs were sold out by ten.
+
+A farm shop has a planning problem that a bakery or a brewery doesn't. The bakery decides how much to bake. The farm mostly doesn't decide how much is ripe. The harvest follows the weather, and the shop has to sell what the field produces, when it produces it, before it spoils.
+
+That makes the usual retail forecasting only half the answer. The other half is about moving demand: getting the right amount picked, in the right channel, in front of the right customers, today. This is where AI can help a small farm shop, as long as nobody expects it to control the weather.
+
+## Two sides of the same field
+
+<Split title="How most farm shops plan, and what changes with better information" leftTitle="Harvest-driven" rightTitle="Harvest-aware and demand-informed" left={[
+  "Pick whatever is ripe, as early as possible",
+  "Put everything in the shop and hope",
+  "Discover the surplus at closing time",
+  "Leftovers go to compost, animals or the family",
+  "Weekends sell out, weekdays over-supply",
+  "Planning lives in one person's head"
+]} right={[
+  "Pick crops that can wait according to expected sales",
+  "Split the harvest across shop, box scheme, market stall and restaurants",
+  "See the surplus coming by midday",
+  "Offer it early: messages to regulars, restaurants, preserves",
+  "Adjust picking and stock by weekday and weather",
+  "A shared daily plan everyone can see"
+]} />
+
+The difference isn't technology for its own sake. It's knowing in the morning roughly what will sell today, and knowing by lunchtime whether today is going to plan.
+
+## The size of the opportunity
+
+Farm direct sales are a real business. The US Department of Agriculture's 2022 census counted [116,617 farms selling directly to consumers, with $3.3 billion in sales](https://ers.usda.gov/data-products/charts-of-note/108821), up 16% on 2017, even as the number of farms doing it fell. Fewer farms, selling more each: that's a sign of professionalising, and of margins that depend on not throwing produce away.
+
+Fresh produce is also where waste concentrates. The FAO estimates that [around 14% of food is lost](https://www.fao.org/state-of-food-agriculture/2019/en/) between harvest and the retail stage, with fruit and vegetables among the worst affected, and the UN's [Food Waste Index](https://www.unep.org/resources/publication/food-waste-index-report-2024) adds more than a billion tonnes wasted further down the chain. A farm shop sells the most perishable version of all this: picked that morning, sold loose, no cold chain to speak of.
+
+## What moves farm shop demand
+
+Farm shop demand follows patterns that are fairly predictable once you look:
+
+- **Weekday.** Saturdays and Fridays carry most of the week for many roadside shops. Weekdays depend on commuter traffic and regulars.
+- **Weather.** Sunny weekends bring day-trippers; rainy days bring only regulars. Heat changes what people buy (strawberries and salad up, potatoes and cabbage down).
+- **Season and novelty.** The first asparagus, the first strawberries and the first new potatoes sell far above later weeks, when everyone has had them and the supermarkets carry them cheaply.
+- **Holidays and school breaks.** Local families away, tourists around.
+- **Local events.** A village fête, a cycling race past the gate, road closures.
+
+A model that learns these patterns from the shop's own sales history can estimate tomorrow's demand per product. Combined with what's ripe or ready, that gives a picking and stocking plan.
+
+<Bars title="Unsold at closing, one July week, harvest-driven planning" unit=" kg" caption="Illustrative. Strawberries and lettuce overflow on weekdays; eggs and new potatoes run out on Saturday. Both problems come from the same cause: supply that ignores the weekday pattern." data={[
+  { label: "Strawberries (Mon to Fri)", value: 62, highlight: true },
+  { label: "Lettuce and salad leaves", value: 34, highlight: true },
+  { label: "Courgettes", value: 28 },
+  { label: "Tomatoes", value: 12 },
+  { label: "New potatoes (sold out Saturday)", value: 0 },
+  { label: "Eggs (sold out Saturday 10:00)", value: 0 }
+]} />
+
+## What tomorrow's plan looks like
+
+The plan should fit on a phone screen and be readable in the field at six in the morning:
+
+> **Wednesday, forecast sunny, 27 °C, no events.** Expected shop sales: strawberries 35 kg (pick what's ripe; about 20 kg surplus likely, offer 10 kg to Café Linde, which asked for seconds), lettuce 40 heads (pick 40, the rest can wait a day), courgettes 25 kg (ripe anyway; plan soup for the weekend box), eggs 30 dozen (keep 10 dozen back for Saturday preorders). **Note:** last three hot weekdays, salad sold 30% above normal.
+
+It's a suggestion. The farmer sees the field and the sky and changes it. The model remembers the change and the reason, and gets a little better at the next hot Wednesday.
+
+## Reduce the uncertainty you can
+
+Some demand doesn't need forecasting, because you can simply ask for it. Box schemes and subscriptions tell you on Monday what goes out on Thursday. Restaurants that buy from you can place standing orders with a weekly adjustment. Regulars can preorder eggs, asparagus or strawberries for Saturday by message, which turns the item that always sells out into one you can plan for.
+
+Every kilo sold through a preorder or standing order is a kilo that doesn't depend on the weather or the passing traffic. The model can collect those orders from messages and emails into one list, subtract them from the harvest, and plan the shop with what's left.
+
+## The daily rhythm
+
+<Timeline title="A farm shop day with a plan" caption="The plan doesn't replace the farmer's judgment in the field. It gives a starting point, a midday check and a way to act on surplus before it's too late.">
+<Phase when="Evening before" title="Tomorrow's plan">Expected sales per product from history, weather and events. The farmer adds what's ripe or ready. The plan suggests what to pick, how much for the shop and how much for other channels.</Phase>
+<Phase when="6:00" title="Picking">Crops that can't wait are picked anyway. Crops that can (lettuce, some roots, kale) follow the plan.</Phase>
+<Phase when="8:00" title="Shop opens">Stock displayed. The vending machine or honesty stall is filled with the products that sell out of hours.</Phase>
+<Phase when="12:00" title="Midday check">Sales so far against the plan. If strawberries are running 30% behind, the surplus is visible now, not at closing.</Phase>
+<Phase when="13:00" title="Act on surplus">A message to regulars ("strawberries picked this morning, 2 kg for the price of 1.5 until 6"), an offer to the café down the road, or a decision to make jam tomorrow.</Phase>
+<Phase when="18:00" title="Close and record">Leftovers weighed or estimated per product, and what happened to them. That's tomorrow's data.</Phase>
+</Timeline>
+
+The midday check is the step most farm shops skip, and it's the one that saves the most. Surplus found at noon can still be sold, offered or processed. Surplus found at six is compost.
+
+## Where AI helps, specifically
+
+**Forecasting expected sales** per product and day from till data, weather forecasts and your notes. That's statistics, not a chatbot, and it works with a season or two of history.
+
+**Suggesting the split** between channels: how much for the shop, the box scheme, the Saturday market, the two restaurants that buy from you. The farmer decides; the model does the arithmetic and remembers last year.
+
+**Writing the surplus message.** A short, friendly note for your regulars' list or social media, written in seconds, with the right product, quantity and offer. A person approves it and sends it.
+
+**Keeping the record.** Leftovers and what happened to them, sell-out times, what was picked. Voice notes at closing ("about 15 kilos of strawberries left, 5 to the café, rest for jam") can be turned into the daily record without anyone sitting at a computer.
+
+## What to record every day
+
+A forecast is only as good as the history behind it. The good news is that it doesn't take much.
+
+<Checklist title="The daily record that makes planning work" items={[
+  "Sales per product from the till, or at least per product group",
+  "What was picked or brought in, roughly, per product",
+  "What was left at closing, and what happened to it",
+  "When popular products sold out",
+  "Weather: sunny, cloudy, rain, heat (the forecast service can fill this in)",
+  "Anything unusual: event nearby, road closed, school holidays started",
+  "Offers made during the day and whether they worked"
+]} />
+
+If your till doesn't record sales per product, that's the first thing to fix. Many modern till systems do it with a few buttons per product group; weighing scales with product keys do it for loose produce.
+
+## Tools that fit
+
+A till system with product-level sales, a spreadsheet or simple database for the daily record, a weather feed, and a messaging channel to reach regulars (email list, text messages or a business messaging app) cover most of it. The AI layer reads the till data and the daily record, produces tomorrow's plan and the midday check, drafts surplus messages, and turns voice notes into records. For farms with several sales channels, a simple order list for restaurants and the box scheme in the same place helps the split.
+
+Customer contact lists are personal data. Only message people who've agreed to hear from you, make it easy to unsubscribe, and keep the list in one place.
+
+## Questions farm shop owners ask
+
+### Can a model predict the harvest?
+
+Not reliably, and I wouldn't try. The farmer knows what's ripe better than any model. What the model can do is predict demand and help decide what to do with what's ripe.
+
+### We don't have much sales history.
+
+Start recording now. One season gives a usable picture of weekday and weather patterns; two seasons are much better. In the first season, even a simple weekday-and-weather rule of thumb from your own records will beat guessing.
+
+### Won't discount messages teach customers to wait for offers?
+
+Only if you send them every day at the same time. Keep offers occasional and tied to real surplus, and many regulars will simply appreciate knowing what's fresh. Messages about what's just been picked often work without any discount at all.
+
+### What about the vending machine?
+
+Farm vending machines and honesty stalls are the channel that sells when you're closed. Their sales data is part of the same picture, and they're often where the evening surplus can go: stock them with what sold slowly during the day, at a slightly lower price.
+
+## Rule of thumb
+
+You can't plan the harvest, but you can plan what happens to it. Record what sold and what was left every day, check at noon instead of at closing, and have a place for every surplus before it spoils: a message, a restaurant, a jar.
+
+If fresh produce keeps ending up on the compost at your farm shop, [tell me how you sell and what your till records](/contact?intent=improve). I'll suggest the simplest way to start planning with the data you have. Bakeries face a similar daily bet in [baking to demand](/posts/ai-for-bakeries-production-planning), and food producers keep their records straight in [audit day](/posts/ai-for-food-producers-compliance).
