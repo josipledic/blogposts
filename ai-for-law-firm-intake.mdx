@@ -1,0 +1,136 @@
+---
+id: "ai-for-law-firm-intake"
+title: "Law Firm Intake With AI: Faster First Contact, No Accidental Legal Advice"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Professional services", "Law firms", "Client intake", "AI for small business"]
+description: "Most law firms are slow to answer new inquiries, and chatbots that give advice are worse. How AI can speed up intake while leaving every legal judgment to a lawyer."
+excerpt: "Most law firms are slow to answer new inquiries, and chatbots that give advice are worse. How AI can speed up intake while leaving every legal judgment to a lawyer."
+---
+
+It's 10:40 on a Thursday night. Someone fills in the contact form on a small firm's website: "My landlord changed the locks while I was at work. My things are inside. What can I do?" The firm reads it on Friday at 9:15, replies at 11, and gets no answer. By then the person has called three other firms, and one of them picked up.
+
+There's a second way this goes wrong, and it's newer. The firm has a chatbot on its website. It replies within seconds, sympathetically, and adds: "Based on what you've described, you likely have a strong case for illegal eviction." Nobody at the firm has seen the facts. The chatbot has just given legal advice in the firm's name.
+
+Good intake avoids both failures: it answers fast, and it never says anything a lawyer wouldn't sign. This post is organised as the questions I'd expect a managing partner to ask before trying it.
+
+<Stats title="First contact at law firms">
+  <Stat value="33%" label="of firms replied to a prospective client's email in Clio's 2024 secret shopper study, down from 40% in 2019" source="Clio Legal Trends, via 2Civility" href="https://www.2civility.org/2024-clio-legal-trends-report-fixing-the-first-impression-problem-for-law-firms/" />
+  <Stat value="48%" label="of firms neither answered the phone nor called back, making them unreachable by phone" source="Clio Legal Trends, via 2Civility" href="https://www.2civility.org/2024-clio-legal-trends-report-fixing-the-first-impression-problem-for-law-firms/" />
+  <Stat value="$193,000" label="paid by DoNotPay under an FTC order over claims its “robot lawyer” could replace a human one" source="FTC, February 2025" href="https://www.ftc.gov/news-events/news/press-releases/2025/02/ftc-finalizes-order-donotpay-prohibits-deceptive-ai-lawyer-claims-imposes-monetary-relief-requires" />
+</Stats>
+
+## What does intake actually involve?
+
+Strip away the software and intake is five steps: someone gets in touch, the firm checks for conflicts, someone works out whether the matter fits (practice area, jurisdiction, urgency, whether the firm can help), a consultation is booked, and an engagement letter follows if the firm takes it on.
+
+Only one of those steps needs legal judgment: deciding whether the firm can and should help. The rest is gathering information, checking it against records, and scheduling. That's where the time goes, and it's also where most firms lose people: not because the lawyer said no, but because nobody got back to them in time.
+
+## Where can AI help without crossing the line?
+
+Everywhere information is being collected, sorted or scheduled:
+
+- **Answering immediately, at any hour,** with a clear statement of what happens next and when a person will be in touch.
+- **Asking structured questions** that match the matter type: a landlord dispute needs different facts than a car accident or a will.
+- **Identifying the practice area and jurisdiction,** so the inquiry reaches the right person, or gets a polite referral if the firm doesn't handle it.
+- **Spotting urgency signals:** a court date, a deadline mentioned in a letter, someone in danger, someone in custody.
+- **Collecting names for the conflict check** before collecting detailed facts (more on why below).
+- **Booking the consultation** and sending a list of what to bring.
+- **Writing a summary for the lawyer,** so the consultation starts with the facts already on the table.
+
+<Split title="The line, drawn clearly" leftTitle="The intake assistant does" rightTitle="Stays with a lawyer" left={[
+  "Collects facts, dates, names and documents",
+  "Identifies the likely practice area",
+  "Flags deadlines and urgency for a person",
+  "Explains the firm's process and published fees",
+  "Books the consultation",
+  "Says clearly that it is not a lawyer"
+]} right={[
+  "Whether the person has a case",
+  "What their options or chances are",
+  "Which deadline applies and when it runs out",
+  "Whether the firm will take the matter",
+  "Fee quotes for this specific matter",
+  "Anything that starts with “you should”"
+]} />
+
+## Why collect names before facts?
+
+This is the part firms most often get backwards. Under ABA Model Rule 1.18, information a prospective client shares is protected even if the firm never takes them on. And if the firm receives information that could be significantly harmful to that person, it can be disqualified from representing the other side in the same matter.
+
+So an intake assistant that cheerfully collects every detail of a divorce before anyone has run a conflict check can create a real problem. If the other spouse is already a client, the firm now holds information it shouldn't have.
+
+The fix is simple and belongs in the design: collect names of the parties and the basic matter type first, run the conflict check, and only then gather the detailed facts. An assistant can hold that order more consistently than a busy receptionist can. It can say: "Before you tell me more, I need the names of everyone involved so we can make sure we're able to help you. This is standard for every law firm."
+
+## How does the flow look?
+
+<Flow title="From first message to a prepared consultation" caption="The assistant gathers and schedules. A person checks conflicts and fit. A lawyer gives advice, and only in the consultation.">
+<Step title="First contact" who="Prospective client" time="any hour">Web form, chat, email or a phone call answered by a voice assistant. Immediate reply that states it's an automated assistant, not a lawyer.</Step>
+<Step title="Parties and matter type" who="AI" tone="ai" time="2 min">Names of everyone involved, the kind of matter, jurisdiction. Urgency questions: court date? Deadline in a letter? Safety concern?</Step>
+<Step title="Conflict check" who="Staff" tone="human" time="same day">Names are checked against the firm's records in the practice management system. Urgent matters are escalated to a person right away.</Step>
+<Step title="Structured facts" who="AI" tone="ai" time="5 to 10 min">Only after the conflict check clears: matter-specific questions, key dates, documents uploaded.</Step>
+<Step title="Consultation booked" who="AI" tone="ai">Calendar slot with the right lawyer, published consultation fee, list of what to bring.</Step>
+<Step title="Lawyer reviews the summary" who="Lawyer" tone="human" time="5 min">Reads a one-page summary before the call and decides what to ask. Advice happens here, not before.</Step>
+</Flow>
+
+## Which questions should it ask?
+
+The questions depend on the matter type, and writing them down is the most useful hour a firm can spend on intake, with or without AI. A starting point:
+
+| Matter type | After the conflict check, ask about | Urgency signals |
+| --- | --- | --- |
+| Landlord and tenant | Lease dates, rent status, notices received and when, access to the home | Lockout, utilities cut, court date on an eviction notice |
+| Personal injury | Date and place of the incident, injuries and treatment, insurance contacts so far, police report | Insurer asking for a recorded statement, treatment still ongoing with no coverage |
+| Employment | Employer, role and dates, what happened and when, anything signed at termination | Deadline stated in a severance agreement or agency letter |
+| Estate planning | Family members, assets in broad terms, existing will or trust | Serious illness, upcoming surgery |
+| Family | Children and their ages, current living situation, any existing orders | Safety concerns, a hearing date, a child being moved away |
+
+The assistant asks, records and flags. The urgency column doesn't trigger advice. It triggers a person.
+
+## What does the lawyer receive?
+
+A one-page summary, not an assessment. It might look like this:
+
+> **Matter:** Residential tenancy, possible lockout. **Jurisdiction:** state and county given. **Parties:** tenant (inquirer), landlord (individual, name given), property manager (company, name given). **Conflict check:** clear, checked Friday 9:05. **Key dates:** lease signed March 2025; rent paid through end of month; locks changed Thursday. **Urgency:** tenant has no access to belongings including medication; flagged for same-day call. **Documents:** lease (uploaded), photo of the notice on the door (uploaded). **What they want:** access to the apartment and belongings. **Not yet known:** whether any court order exists.
+
+Notice what's absent: no opinion on whether the lockout was lawful, no likely outcome, no deadline calculation. Those are the lawyer's call. The summary saves the first ten minutes of every consultation and makes sure the lawyer walks in knowing the urgent part.
+
+## What should the prospective client see?
+
+The hardest moment in automated intake is when someone asks, directly, "Do I have a case?" The answer has to be honest, warm, and firm:
+
+> I can't answer that, because I'm an automated assistant and not a lawyer. Only an attorney can tell you after looking at the details. What I can do is make sure an attorney sees everything you've told me today, and book you a consultation. Because you mentioned your medication is inside, I've marked this as urgent and someone will call you this morning.
+
+It's the same thing a good receptionist says. The assistant should say it every time, word for word if needed, and never slide into "it sounds like" or "usually in cases like this".
+
+<Callout title="Urgent matters skip the queue" tone="warning">
+Some inquiries can't wait for a Monday reply: a court hearing this week, a deadline stated in a letter, an arrest, a threat to someone's safety, a lockout from a home. The assistant should recognise these signals, tell the person plainly how to reach a human now (or emergency services where there's danger), and alert the firm immediately. It should never tell anyone how much time they have left. Getting a deadline wrong is the kind of mistake a firm doesn't recover from.
+</Callout>
+
+## Is this compatible with the ethics rules?
+
+Yes, if you design it as assistance to your staff rather than a substitute for your lawyers. The ABA's [Formal Opinion 512](https://www.americanbar.org/content/dam/aba/administrative/professional_responsibility/ethics-opinions/aba-formal-opinion-512.pdf) on generative AI tools, issued in July 2024, walks through the duties that apply: competence, confidentiality, communication with clients, supervision and reasonable fees. For intake, three stand out.
+
+**Confidentiality.** Prospective client information is covered. Before any of it goes into an AI tool, you need to know where it's processed, whether the provider stores it, and whether it's used for training. Choose providers with a contract that rules out training on your data.
+
+**Supervision.** An intake assistant is a nonlawyer assistant in everything but form. Someone at the firm is responsible for what it says, which means reviewing its instructions, reading a sample of conversations every week, and fixing anything that drifts toward advice.
+
+**Honesty about what it is.** The DoNotPay case is a reminder that claiming an AI can do a lawyer's job is a consumer protection problem, not only an ethics one. The assistant should say what it is in its first message.
+
+Several state bars have issued their own guidance on AI, and it varies. Check yours before launch.
+
+## Which tools do firms use for this?
+
+Most small firms already have part of the stack. Intake and CRM tools such as Clio Grow, Lawmatics and the intake features in MyCase, PracticePanther or Smokeball handle forms, pipelines and scheduling. Virtual receptionist services such as Ruby and Smith.ai answer the phone, and several now add AI to the mix. The AI layer I'd add sits between them: it runs the structured conversation, enforces the names-first order, flags urgency, and writes the summary into your practice management system.
+
+Start with one practice area where inquiries are frequent and fairly standard, such as landlord and tenant, personal injury, estate planning or employment. Measure response time to first contact and how many inquiries turn into booked consultations, before and after.
+
+## When isn't it worth it?
+
+If your firm works mostly on referrals from other lawyers, and new matters arrive by a phone call from someone you know, automated intake adds little. If your practice is complex commercial work where every inquiry needs a partner's attention from the first minute, the same applies. And if you get fewer than a handful of new inquiries a week, a staff member with a good intake checklist and a firm rule to reply within two business hours does the job well.
+
+## A rule for every first contact
+
+Answer every inquiry fast, check conflicts before collecting the story, and let nobody but a lawyer say what the story means. An assistant can do the first two better than a busy front desk. The third stays with you.
+
+If new inquiries are slipping through at your firm, [tell me which practice management software you use](/contact?intent=improve) and which matter types bring in most inquiries. I'll suggest how a names-first intake could fit in. For a related intake problem in a different profession, see how accounting firms can [stop chasing client documents](/posts/ai-for-accounting-document-intake), and how insurance brokers [prepare renewal calls](/posts/ai-for-insurance-brokers-renewals) without losing the personal touch.
