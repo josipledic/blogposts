@@ -1,0 +1,134 @@
+---
+id: "de-ai-for-microbreweries-sales-forecast"
+title: "Brauerei: Abfüllung nach echter Nachfrage planen"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Lebensmittel & Gastronomie", "Brauereien", "Absatzplanung", "KI für kleine Unternehmen"]
+description: "Zu viel gebraut steht im Kühlraum, zu wenig lässt den Biergarten trocken. Entscheidungshilfe zur Absatzprognose für kleine Brauereien, von der Tabelle bis zum Modell."
+excerpt: "Zu viel gebraut steht im Kühlraum, zu wenig lässt den Biergarten trocken. Entscheidungshilfe zur Absatzprognose für kleine Brauereien, von der Tabelle bis zum Modell."
+---
+
+Ein Brauer entscheidet heute, was die Leute in sechs Wochen trinken wollen. Das Helle auf dem Sudplan muss jetzt eingebraut werden, gären, lagern und abgefüllt werden, und dann soll es verkauft sein, bevor der Sommer vorbei ist. Wird zu viel gebraut, stehen die Kästen im Lager, bis sie verramscht, verschenkt oder weggekippt werden. Wird zu wenig gebraut, ist das Helle am ersten warmen Wochenende im eigenen Biergarten aus, und die Wirtschaften, die es vom Fass ausschenken, greifen zum Bier der Nachbarbrauerei.
+
+In einer kleinen Brauerei fällt diese Entscheidung jede Woche, für jedes Bier und jedes Gebinde: Flasche, Dose, Fass. Meist aus einer Mischung aus Vorjahreszahlen, der letzten Bestellung des Getränkefachgroßhändlers und dem Gefühl des Braumeisters. In einem wachsenden Markt verzieh das Gefühl viel. Der Markt wächst nicht mehr.
+
+## Der Markt ist weniger nachsichtig geworden
+
+<Bars title="Bierabsatz deutscher Brauereien und Bierlager" unit=" Mrd. Liter" caption="2025 sank der Absatz um 6,0 %, der stärkste Rückgang seit Beginn der Zeitreihe 1993, und erstmals unter 8 Milliarden Liter. Werte für 2015 und 2024 aus den Destatis-Veränderungsraten gerundet." source="Destatis" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/02/PD26_037_73.html" data={[
+  { label: "2015", value: 9.6, display: "≈ 9,6" },
+  { label: "2024", value: 8.3, display: "≈ 8,3" },
+  { label: "2025", value: 7.8, display: "≈ 7,8", highlight: true }
+]} />
+
+Gleichzeitig ist die Zahl der Brauereien in Deutschland 2025 auf [1.415 gesunken](https://www.destatis.de/DE/Presse/Pressemitteilungen/Zahl-der-Woche/2026/PD26_32_p002.html), 53 weniger als im Vorjahr. In einem schrumpfenden Markt verschwindet der Spielraum für Verluste. Jeder Kasten, der das Mindesthaltbarkeitsdatum erreicht, ist Geld, das eine kleine Brauerei nicht übrig hat, und jeder Engpass beim Bestseller überlässt Zapfhähne und Regalplätze der Konkurrenz.
+
+Planung verdient also einen zweiten Blick. Die Frage ist, wie viel Planung eine kleine Brauerei braucht und ob das überhaupt KI bedeutet.
+
+## Was planen Sie eigentlich?
+
+Bier ist schwerer zu planen als viele Produkte, wegen der Vorlaufzeiten und der Saisonalität. Für ein untergäriges Bier sieht der Rhythmus etwa so aus:
+
+<Timeline title="Von der Entscheidung bis zum Verkauf, am Beispiel eines Hellen" caption="Zeiten je nach Rezept, Hefe und Brauerei verschieden. Der Punkt: Die Sudentscheidung fällt rund sechs Wochen, bevor der größte Teil verkauft wird.">
+<Phase when="Woche 0" title="Sudentscheidung">Wie viel, in welchen Gebinden, auf Basis dessen, was ab Woche 5 verkauft werden soll.</Phase>
+<Phase when="Woche 0" title="Sudtag">Die Tankkapazität ist gebunden. Umentscheiden wird jetzt teuer.</Phase>
+<Phase when="Woche 1" title="Hauptgärung">Bei obergärigen Bieren geht vieles schneller, bei Bockbieren deutlich langsamer.</Phase>
+<Phase when="Wochen 2 bis 5" title="Lagerung">Tank belegt, der nächste Sud muss warten.</Phase>
+<Phase when="Woche 5 bis 6" title="Abfüllung">Flaschen, Dosen oder Fässer, abhängig von Leergut, Etiketten und Abfülltermin.</Phase>
+<Phase when="Ab Woche 6" title="Verkaufsfenster">Biergarten, eigene Gastronomie, Wirte, Getränkefachgroßhandel, Handel. Bei hopfenbetonten Craft-Bieren kürzer, als das MHD vermuten lässt.</Phase>
+</Timeline>
+
+Dazu kommt der deutsche Saisonkalender: Biergartensaison, Starkbierzeit, Fest- und Märzenbier im Herbst, Weihnachtsbier. Jedes Saisonbier hat ein Fenster, in dem es gefragt ist, und danach kaum noch.
+
+Eine Prognose für eine Brauerei ist also nicht eine Zahl, sondern die erwartete Nachfrage je Bier, Gebinde und Absatzweg über ein Fenster, das in einem Monat beginnt. Und sie muss Grenzen respektieren, die sich nicht schnell ändern lassen: Tankplatz, Abfülltermine, Leergut und Etiketten.
+
+## Die Entscheidungshilfe
+
+Nicht jede Brauerei braucht ein Prognosemodell. So würde ich entscheiden:
+
+| Ihre Situation | Was ich nutzen würde | Warum |
+| --- | --- | --- |
+| Gasthausbrauerei, wenige Sorten, kaum Abfüllung | Eine gemeinsame Tabelle mit wöchentlichen Vorjahreszahlen und Notizen | Die Nachfrage sieht man am Tresen, ein Modell bringt wenig |
+| Eigene Gastronomie plus 20 bis 50 Wirte und Händler, 6 bis 12 Sorten | Tabelle plus einfache statistische Prognose je Bier und Absatzweg, wöchentlich aktualisiert | Saison und Kundenmuster zählen, Tabellen werden fehleranfällig |
+| Mehrere Absatzwege mit Getränkefachgroßhandel und Handel, wechselnde Saisonbiere, Flasche und Fass | Prognosemodell mit Daten aus Kasse, Großhandel und Handel, der Braumeister gibt den Sudplan frei | Zu viele Kombinationen aus Bier, Gebinde und Absatzweg, Engpässe und Überhänge kosten beide |
+| Starke Saisonausschläge, Feste, wetterabhängiger Biergarten | Jede der Varianten oben, plus Veranstaltungen und Wetter | Die besten und schlechtesten Wochenenden sind oft vorhersehbar |
+
+Der Schritt von der Tabelle zum Modell lohnt sich, wenn es so viele Kombinationen gibt, dass der Braumeister sie nicht mehr im Kopf behalten kann, und genug Historie da ist, idealerweise zwei Jahre, mindestens eines.
+
+## Was in eine brauchbare Prognose gehört
+
+**Absatz je Bier, Gebinde und Absatzweg, wöchentlich.** Kassendaten der eigenen Gastronomie, Rechnungen der Direktbelieferung und, wo möglich, Abverkaufsdaten des Großhandels, also was er tatsächlich an Wirte und Märkte verkauft hat, nicht was er bei Ihnen bestellt hat. Bestellungen verschleiern eine Abschwächung, bis sein Lager voll ist.
+
+**Wochen mit Engpass.** War das Helle im Juli zwei Wochen aus, unterschätzen die Juli-Verkäufe die Nachfrage. Markieren Sie diese Wochen, sonst lernt die Prognose, von Ihrem Bestseller weniger zu brauen.
+
+**Kalender und Veranstaltungen.** Feiertage, Ferien, Stadtfeste, Kirchweih, Ihre eigenen Anstiche, Fußballturniere, wenn Ihr Biergarten überträgt.
+
+**Wetter für Biergarten und Ausschank.** Ein sonniges Wochenende kann den Biergartenumsatz verdoppeln. Auf den Handel wirkt es schwächer.
+
+**Neue und verlorene Kunden.** Eine Wirtschaft, die ab Mai Ihr Helles vom Fass ausschenkt, verändert die Fassprognose auf eine Weise, die die Historie nicht kennt. Das trägt der Außendienst als Notiz ein.
+
+## Wo KI wirklich hilft
+
+Hier werden drei verschiedene Dinge „KI“ genannt, und es lohnt sich, sie zu trennen.
+
+**Die Prognose selbst** ist Statistik und maschinelles Lernen auf Ihrer Absatzhistorie. Das kann so einfach sein wie saisonale Durchschnitte mit Trend oder ein Modell, das aus mehreren Einflüssen gleichzeitig lernt. Es liefert eine Zahl je Bier, Gebinde und Absatzweg, mit Spanne.
+
+**Das Lesen der unordentlichen Eingänge** ist die Stärke von Sprachmodellen. E-Mails des Großhändlers, Abverkaufslisten in wechselnden Formaten, Notizen aus dem Außendienst („Gasthof Linde will ab Mai auch Radler vom Fass“) werden zu strukturierten Daten für die Prognose.
+
+**Aus der Prognose einen Plan machen** heißt, Nachfrage und Grenzen zusammenzubringen. Das Modell schlägt Sud- und Abfüllplan vor, der Braumeister passt an und gibt frei. Eine kurze Begründung zu jedem Vorschlag macht daraus etwas, das ein Braumeister mit seinem Gefühl für den Markt abgleichen kann.
+
+## So sieht der Wochenplan aus
+
+> **Diese Woche einbrauen:** Helles 30 hl (sonst 20): Biergartensaison beginnt, Vorjahr plus 25 %, zwei neue Wirte, Stadtfest in Woche 7. Pils 20 hl wie üblich. **Aussetzen:** Dunkles in diesem Zyklus; 90 Kästen im Lager, reicht bei aktuellem Tempo fünf Wochen. **Abfüllung** am 14.: Helles 70 % Flasche, 30 % Fass; Leergut prüfen, aktuell für etwa 400 Kästen. **Im Blick behalten:** Weißbier liegt die dritte Woche in Folge über Prognose; nächsten Sud vorziehen?
+
+Jede Zeile hat eine Begründung. Weiß der Braumeister etwas, das der Plan nicht weiß, ändert er ihn und schreibt eine Notiz dazu. Der Plan der nächsten Woche lernt daraus.
+
+## Leergut, Etiketten und andere Grenzen
+
+Die Nachfrage ist nur die Hälfte des Plans. Die andere Hälfte ist, was die Brauerei physisch leisten kann. Tankplatz bestimmt, wie viel in einer Woche gebraut werden kann. Abfülltermine, besonders mit Lohnabfüllung oder mobiler Anlage, werden vorab gebucht. Und in der Hochsaison ist bei Mehrweg oft das Leergut der Engpass: Flaschen und Kästen kommen nicht so schnell zurück, wie sie gebraucht werden, Fässer bleiben bei Wirten stehen.
+
+Eine Prognose, die diese Grenzen ignoriert, erzeugt Pläne, denen niemand folgen kann. Ein guter Planungsschritt rechnet rückwärts: Das erwarten wir zu verkaufen, das erlauben Tanks, Abfülltermin und Leergut, das ist der beste Kompromiss, und das muss jetzt bestellt oder zurückgeholt werden, damit der nächste Zyklus nicht am Bestand scheitert.
+
+## Was es wert ist, es richtig zu machen
+
+<Calc title="Überschlag: Bier, das durch Überproduktion verloren geht" caption="Annahmen, keine Messwerte. Erfassen Sie jedes Quartal, wie viel Bier Sie verbilligt abgeben, verschenken oder vernichten, und zu welchem Wert. Das ist Ihre echte Zahl." rows={[
+  ["Sude pro Jahr", "60"],
+  ["Durchschnittliche Sudgröße", "× 10 hl"],
+  ["Gebraute Menge pro Jahr", "600 hl"],
+  ["Anteil verbilligt, verschenkt oder vernichtet", "× 8 %"],
+  ["Betroffene Menge", "48 hl"],
+  ["Verlorener Erlös je hl, Abgabepreis", "× 220 €"]
+]} result={["Verlust pro Jahr durch Überproduktion", "≈ 10.600 €"]} />
+
+Die andere Seite ist schwerer zu messen, aber genauso real: der Biergartensamstag ohne Helles, die Wirtschaft, die auf das Bier der Nachbarbrauerei umgestellt hat, weil Ihres drei Wochen nicht lieferbar war.
+
+## Klein anfangen, dann prüfen
+
+Egal welche Stufe: Lassen Sie sie einige Wochen parallel zur bisherigen Methode laufen. Notieren Sie jede Woche, was die Prognose vorgeschlagen hat, was Sie gebraut haben und was verkauft wurde. Nach acht bis zehn Wochen wissen Sie, ob die Prognose das Gefühl schlägt und wo. Die meisten Brauer stellen fest: bei den Stammsorten besser, bei Neuheiten schlechter. Genau dort sollte ihr eigenes Urteil das letzte Wort behalten.
+
+## Häufige Fragen aus Brauereien
+
+### Kommt eine Prognose mit Saison- und Spezialbieren zurecht?
+
+Teilweise. Für ein wiederkehrendes Saisonbier ist der Vorjahresverlauf ein guter Ausgangspunkt. Für ein ganz neues Bier gibt es keine Historie, also orientiert sich die Prognose an ähnlichen Bieren, und Ihr Urteil zählt mehr. Am nützlichsten ist das Modell bei den Stammsorten, wo auch die meiste Menge liegt.
+
+### Wir sind winzig. Lohnt sich das?
+
+Wenn Sie überwiegend über den eigenen Tresen verkaufen, kaum über eine gute Tabelle hinaus. Sobald Sie für andere Absatzwege abfüllen und jeden Monat etwas ans MHD kommt, lohnt sich eine wöchentliche Prognose.
+
+### Woher bekommen wir Abverkaufsdaten vom Großhandel?
+
+Fragen Sie. Viele Getränkefachgroßhändler können ihre Abverkäufe Ihrer Marken je Kunde oder zumindest je Woche bereitstellen, manche über ein Portal, andere als monatliche Liste. Auch ohne Prognose lohnt sich das: Sie sehen, welche Wirte Ihr Bier wirklich ausschenken und wo es gerade nachlässt. Kommen die Listen in wechselnden Formaten, macht das Sprachmodell daraus eine einheitliche Tabelle.
+
+### Und der Lebensmittelhandel?
+
+Beim Handel ist die Planung schwieriger, weil Aktionen, Zweitplatzierungen und Listungsentscheidungen die Nachfrage stark verschieben. Tragen Sie geplante Aktionen als Ereignis ein, sobald Sie davon wissen, und planen Sie für Aktionswochen mit eigener Spanne. Die Prognose hilft hier vor allem bei der Grundnachfrage zwischen den Aktionen.
+
+### Entscheidet das Modell, was gebraut wird?
+
+Nein. Es schlägt Mengen und einen Plan mit Begründungen vor. Der Braumeister entscheidet, weil er Dinge weiß, die kein Modell sieht: eine Hefe, die sich seltsam verhält, ein Tank, der gewartet werden muss, ein Rezept, das er ändern will.
+
+## Faustregel
+
+Planen Sie nach Nachfrage, nicht nach Bestellungen. Markieren Sie die Wochen, in denen etwas aus war, respektieren Sie Tanks, Abfülltermine und Leergut, und lassen Sie den Braumeister jeden Plan freigeben. Fangen Sie mit einer Tabelle an und wechseln Sie zum Modell, wenn die Kombinationen das Gedächtnis des Braumeisters übersteigen.
+
+Wenn die Abfüllplanung in Ihrer Brauerei noch Bauchgefühl ist, [schreiben Sie mir, über welche Wege Sie verkaufen und wie Sie Absätze heute erfassen](/contact?intent=improve). Ich schlage Ihnen den einfachsten passenden Einstieg vor. Bäckereien haben dasselbe Problem im Tagesrhythmus, siehe [weniger Retouren mit KI-Prognosen](/de/posts/ai-for-bakeries-production-planning), der Großhandel bei der [Auftragserfassung](/de/posts/ai-for-wholesale-order-entry).

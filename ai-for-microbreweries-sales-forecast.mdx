@@ -1,0 +1,131 @@
+---
+id: "ai-for-microbreweries-sales-forecast"
+title: "Planning Packaged Beer Around Real Demand: Forecasting for Microbreweries"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Food & drink", "Microbreweries", "Sales forecasting", "AI for small business"]
+description: "Brew too much hazy IPA and it goes stale, too little and the taproom runs dry. A decision guide to forecasting for small breweries, from spreadsheet to model."
+excerpt: "Brew too much hazy IPA and it goes stale, too little and the taproom runs dry. A decision guide to forecasting for small breweries, from spreadsheet to model."
+---
+
+A brewer decides today what people will want to drink in six weeks. The hazy IPA on the schedule has to be brewed now, fermented, dry-hopped, conditioned and canned, and then it has maybe three months before it tastes noticeably tired. Brew too much and cases sit in the cold room until they're discounted, given away or poured down the drain. Brew too little and the taproom's best seller runs out on a sunny Saturday, and the distributor's bars switch to someone else's IPA.
+
+For a small brewery, that decision is made weekly, for every beer and every package: cans, kegs, bottles, crowlers. It's usually made from a mix of last year's sales, the distributor's latest order and the brewer's instinct. In a growing market, instinct was forgiving. The market isn't growing anymore.
+
+## The market got less forgiving
+
+<Bars title="US craft brewery openings and closings" unit=" breweries" caption="In both years closings outnumbered openings. The number of operating craft breweries fell to 9,578 in 2025, and craft production fell 4%." source="Brewers Association" href="https://www.brewersassociation.org/association-news/a-year-of-correction-for-craft-beer-with-early-signals-of-recovery/" data={[
+  { label: "Openings 2024", value: 518 },
+  { label: "Closings 2024", value: 591, highlight: true },
+  { label: "Openings 2025", value: 300 },
+  { label: "Closings 2025", value: 481, highlight: true }
+]} />
+
+The Brewers Association reports that 60% of craft breweries saw declining volume in 2025. In a shrinking market, the margin for waste disappears. Every case that goes out of date is money a brewery can't afford to lose, and every stockout of a best seller hands shelf space and tap handles to a competitor.
+
+That makes planning worth a second look. The question is how much planning a small brewery needs, and whether that means AI at all.
+
+## First, what are you actually planning?
+
+Beer is harder to plan than most products because of the lead times and the freshness window. For a typical ale, the rhythm looks like this:
+
+<Timeline title="From decision to last good day, for a hop-forward ale" caption="Times vary by recipe, yeast and brewery. The point: the brew decision is made about six weeks before most of the beer is sold, and the beer has a limited window once packaged.">
+<Phase when="Week 0" title="Brew decision">How much, in which packages, based on what you expect to sell from week 4 to week 16.</Phase>
+<Phase when="Week 0" title="Brew day">Tank capacity is committed. Changing your mind now is expensive.</Phase>
+<Phase when="Weeks 1 to 3" title="Fermentation and dry hopping">Lagers take considerably longer, which pushes the decision further ahead.</Phase>
+<Phase when="Week 3 to 4" title="Packaging">Cans, kegs or bottles. With a mobile canner, the run is booked weeks ahead and has a minimum.</Phase>
+<Phase when="Weeks 4 to 16" title="Selling window">Taproom, own distribution, distributor, retail. Hop aroma fades; many brewers aim to sell hazy IPAs within about 90 days.</Phase>
+<Phase when="After week 16" title="Discount or dump">What's left is sold cheaply, poured at the taproom as a special, or destroyed.</Phase>
+</Timeline>
+
+So a forecast for a brewery isn't one number. It's expected demand per beer, per package, per channel, over a window that starts a month from now. And it has to respect constraints the brewer can't change quickly: fermenter space, canning run minimums, and the number of printed cans or labels in stock.
+
+## The decision guide
+
+Not every brewery needs a forecasting model. Here's how I'd decide.
+
+| Your situation | What I'd use | Why |
+| --- | --- | --- |
+| One taproom, a handful of core beers, little packaging | A shared spreadsheet with last year's weekly sales and a few notes | Demand is visible across the bar; a model adds little |
+| Taproom plus self-distribution to 20 to 50 accounts, 6 to 12 beers | Spreadsheet plus a simple statistical forecast per beer and channel, updated weekly | Seasonality and account patterns start to matter; spreadsheets get fragile |
+| Several channels including a distributor and retail, rotating seasonals, cans and kegs | A forecasting model fed by taproom, distributor depletion and retail data, with the brewer approving the schedule | Too many beer, package and channel combinations to track by hand; stockouts and waste are both costly |
+| Large seasonal swings, events, festivals, weather-driven taproom | Any of the above, plus event and weather inputs | The taproom's best and worst weekends are often predictable |
+
+The step up from spreadsheet to model makes sense when you have enough combinations that the brewer can't hold them in their head, and enough history (ideally two years, at least one) for patterns to show.
+
+## What goes into a useful forecast
+
+**Sales by beer, package and channel, weekly.** The taproom's point-of-sale data, your own distribution invoices, and the distributor's depletion reports (what they actually sold to bars and shops, not what they ordered from you). Depletions matter because a distributor's order can hide a slowdown until their warehouse is full.
+
+**Out-of-stock periods.** If the IPA ran out for two weeks in July, July's sales understate demand. Mark those weeks, or the forecast learns to brew less of your best seller.
+
+**Calendar and events.** Summer, holidays, local festivals, your own release parties, sports finals if your taproom shows them.
+
+**Weather for the taproom.** A sunny weekend can double beer garden sales. The effect on distribution is smaller.
+
+**New accounts and lost accounts.** A new restaurant chain taking your lager on draught changes the keg forecast in a way history can't predict. That's a note the sales person adds.
+
+## Where AI actually helps
+
+Three different things get called "AI" here, and it's worth separating them.
+
+**The forecast itself** is statistics and machine learning on your sales history. It can be as simple as seasonal averages with a trend, or a model that learns from several inputs at once. It produces a number per beer, package and channel, with a range.
+
+**Reading the messy inputs** is where language models help. Distributor emails, depletion reports in different formats, account managers' notes ("Riverside Tavern wants to switch to cans for the patio in May") can be turned into structured data the forecast can use.
+
+**Turning the forecast into a plan** means combining demand with constraints: tank availability, canning dates, minimums, can and label stock. The model can propose a brewing and packaging schedule; the head brewer adjusts and approves it. A short explanation with each suggestion ("Hazy IPA: brew 20 bbl instead of 15; taproom sales up 30% on last spring, two new accounts, festival in week 7") makes it something a brewer can check against their own sense of the market.
+
+## What the weekly plan looks like
+
+The output that matters isn't a chart. It's a short plan the head brewer can read on Monday morning and argue with:
+
+> **Brew this week:** Hazy IPA 20 bbl (usually 15): taproom up 30% on last spring, two new accounts, festival in week 7. West Coast Pils 15 bbl as usual. **Skip:** Amber this cycle; 38 cases still in the cold room, enough for five weeks at current pace. **Packaging:** canning run on the 14th: Hazy IPA 60% cans, 40% kegs; check printed can stock (enough for about 180 cases). **Watch:** Stout is ahead of forecast for the third week running; consider pulling the next batch forward.
+
+Each line has a reason. If the brewer knows something the plan doesn't (the Amber is being replaced, the festival was cancelled), they change it and add a note. Next week's plan learns from it.
+
+## Cans, labels and other constraints
+
+Demand is only half the plan. The other half is what the brewery can physically do. Fermenter space decides how much can be brewed in a given week. Canning runs, especially with a mobile canner, are booked ahead and have minimums. Printed cans usually come in large minimum quantities, which is why many small brewers moved to blank cans with labels or sleeves; either way, the number in stock limits what can be packaged. Keg fleets run short in summer.
+
+A forecast that ignores these constraints produces plans nobody can follow. A good planning step works backwards: here's what we expect to sell, here's what the tanks and the canning date allow, here's the best compromise, and here's what to order now (cans, labels, malt, hops) so the next cycle isn't limited by stock.
+
+## What getting it right is worth
+
+<Calc title="Napkin math: packaged beer lost to overproduction" caption="Assumptions, not measurements. Track how much beer you discount, give away or dump each quarter, and at what value; that's your real number." rows={[
+  ["Batches per year", "40"],
+  ["Average batch size", "× 15 bbl"],
+  ["Barrels brewed per year", "600 bbl"],
+  ["Share discounted, given away or dumped", "× 8%"],
+  ["Barrels affected", "48 bbl"],
+  ["Lost value per barrel, wholesale", "× $500"]
+]} result={["Value lost per year to overproduction", "≈ $24,000"]} />
+
+The other side is harder to measure but just as real: the taproom Saturday when the best seller ran out, the bar that switched to another brewery's IPA because yours was unavailable for three weeks. A forecast that cuts waste by a third and prevents a couple of stockouts a year pays for a lot of spreadsheet hours.
+
+## Start simple, then check
+
+Whatever level you choose, run it alongside your current method for a couple of months. Each week, write down what the forecast suggested, what you actually brewed, and what sold. After eight to ten weeks you'll know whether the forecast beats instinct, and where. Most brewers find it's better on core beers and worse on new releases, which is exactly where their own judgment should stay in charge.
+
+## Questions brewers ask
+
+### Can a forecast handle one-off and seasonal beers?
+
+Partly. For a returning seasonal, last year's release is a good starting point. For a brand-new beer, there's no history, so the forecast borrows from similar beers (a new hazy IPA behaves roughly like your last one) and your judgment carries more weight. The model is most useful on the core range, which is also where most of the volume is.
+
+### We're tiny. Is this worth it?
+
+If you mostly sell across your own bar, probably not beyond a good spreadsheet. Once you're packaging for other channels and something goes out of date every month, a weekly forecast is worth the setup.
+
+### Where do we get distributor data?
+
+Many distributors share depletion reports through their data systems or portals, often on request. In the US, a lot of that data runs through distributor software such as [VIP](https://www.vtinfo.com/), and breweries can often get access to their own brands' depletions. It's worth asking for them even if you don't forecast, because they show what's really moving in the market.
+
+### Does the model decide what to brew?
+
+No. It suggests quantities and a schedule with reasons. The head brewer decides, because they also know things no model sees: a yeast that's behaving oddly, a fermenter that needs maintenance, a recipe they want to change.
+
+## Rule of thumb
+
+Forecast demand, not orders. Mark the weeks you ran out, respect your tanks and canning minimums, and let the brewer approve every schedule. Start with a spreadsheet, and move to a model when the combinations outgrow the brewer's memory.
+
+If planning packaged beer is still guesswork at your brewery, [tell me your channels and how you track sales today](/contact?intent=improve). I'll suggest the lightest forecasting setup that fits. Bakeries face the same problem on a daily clock in [baking to demand](/posts/ai-for-bakeries-production-planning), and wholesalers in [order entry](/posts/ai-for-wholesale-order-entry).
