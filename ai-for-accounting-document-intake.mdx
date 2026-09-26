@@ -1,0 +1,140 @@
+---
+id: "ai-for-accounting-document-intake"
+title: "Stop Chasing Client Documents: AI for Accounting Firm Intake"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Professional services", "Accounting firms", "Document collection", "AI for small business"]
+description: "Document chasing is the top workflow problem in small accounting firms. How AI can sort uploads, check them against each client's list and write sharper reminders."
+excerpt: "Document chasing is the top workflow problem in small accounting firms. How AI can sort uploads, check them against each client's list and write sharper reminders."
+---
+
+Ask the owner of a small accounting firm what slows them down, and you rarely hear "the tax code". You hear about the client who uploaded 34 photos called `IMG_4471.jpg`, the one who swears they sent the brokerage statement in February, and the one who emails a single receipt every day for three weeks. The expertise isn't the bottleneck. Getting the paper in is.
+
+Three numbers explain why this matters more every season.
+
+<Stats title="Why document chasing hurts more every year">
+  <Stat value="#1" label="workflow challenge for accounting, bookkeeping and tax firms: getting documents from clients (vendor survey of 816 firm owners)" source="Financial Cents 2025" href="https://financial-cents.com/resources/articles/2025-report-state-of-accounting-workflow-and-automation/" />
+  <Stat value="55,152" label="US accounting graduates (bachelor's and master's) in 2023-24, down 6.6% on the year before" source="AICPA" href="https://www.aicpa-cima.com/news/article/pool-of-accounting-graduates-continues-to-shrink-in-u-s-aicpa-report-finds" />
+  <Stat value="5 filings" label="a year for UK sole traders and landlords with income over £50,000 under Making Tax Digital, from April 2026" source="GOV.UK" href="https://www.gov.uk/guidance/find-out-if-and-when-you-need-to-use-making-tax-digital-for-income-tax" />
+</Stats>
+
+The first number is from a software vendor, so read it with that in mind. But it matches the complaint you hear from almost any small practice, and the same survey found that for more than half of firms, collecting what they needed took several days or longer. The second number is about who does the chasing: fewer people are entering the profession. The third is about how often: in the UK, a once-a-year scramble is turning into a quarterly one for a growing group of clients.
+
+## Where the hours actually go
+
+Chasing isn't one task. It's a loop, and most of its cost hides in small steps that nobody tracks.
+
+A request list goes out in January. Over the next six weeks, documents trickle in through a portal, email, WhatsApp and the occasional envelope. Someone on the team opens each file, works out what it is, renames it, files it, and ticks it off against a list, usually last year's return open in another window. Then they write to the client about what's missing. The client replies that they already sent it. Someone checks. Sometimes the client is right, and the document is sitting in a different folder under a different name.
+
+Every one of those steps is small. Together they're the reason a return that takes 90 minutes to prepare sits in "waiting on client" for five weeks.
+
+The worst part is the reminder itself. A message that says "Please send your outstanding documents" gets ignored, because the client doesn't know what "outstanding" means. They think they sent everything. A message that says "We have your W-2 from Acme, but not the one from your second job at Bright Dental, which appeared on last year's return" gets answered, because it tells them exactly what to look for.
+
+## Fewer people for the same pile
+
+<Bars title="The US pipeline, per year" unit="" caption="Not a like-for-like comparison: not every opening needs a new graduate, and not every graduate goes into practice. But the gap shows why firms can't hire their way out of admin work." source="AICPA; US Bureau of Labor Statistics" href="https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm" data={[
+  { label: "Projected openings for accountants and auditors (avg per year, 2025-35)", value: 115300, display: "≈ 115,300" },
+  { label: "Accounting graduates, bachelor's and master's (2023-24)", value: 55152, display: "55,152", highlight: true }
+]} />
+
+When there are fewer people to hire, the hours they spend matching PDFs to checklists become more expensive. I'd rather a qualified accountant spent those hours reviewing a tricky return or talking to a client about next year's planning. The chasing still needs to happen. It just doesn't need a qualified person to do most of it.
+
+## What AI can do with a pile of uploads
+
+This is a job language and vision models are good at, as long as the scope stays narrow. Each incoming file goes through the same few checks:
+
+| What arrives | What the model checks | What a person still decides |
+| --- | --- | --- |
+| A PDF or photo of a tax form | Which form it is (W-2, 1099-INT, 1099-B, 1098, K-1), which employer or payer, which tax year | Anything unusual on the form itself |
+| A brokerage or bank statement | Institution, account ending, period covered, whether it's the annual tax statement or just a monthly one | Whether the figures make sense |
+| A receipt or invoice | Date, amount, vendor, rough category | The tax treatment of the expense |
+| A blurry photo | Whether it's readable at all | Whether to ask for a rescan |
+| A duplicate | Whether the same document already arrived under another name | Nothing, if the match is exact |
+| Something unexpected | That it doesn't match anything on the list | What it means: a new job, a sold property, a new account |
+
+That last row is where the value sits. A new 1099 from a payer who wasn't there last year often means a life change: a side business, an inheritance, a property sale. Flagging it early gives the accountant time to ask the right question before the deadline, not after.
+
+The model then compares what arrived against what's expected for that client and produces two things: an updated checklist for the file, and a draft reminder that names the specific missing items in plain language.
+
+## The loop, redesigned
+
+<Flow title="From upload to a complete client file" caption="The model sorts, matches and drafts. Staff approve every message and handle anything the model flags as unclear. The accountant reviews the complete file.">
+<Step title="Expected list per client" who="System" time="once a season">Built from last year's return and known changes: every employer, payer, account and deduction category that should show up again.</Step>
+<Step title="Client uploads" who="Client" time="anytime">Through the portal, by email, or from a phone. No naming rules and no folders to choose.</Step>
+<Step title="Classify and match" who="AI" tone="ai" time="seconds">Identifies each document, reads the key fields, renames and files it, and ticks it off the client's list. Flags duplicates, wrong years and unreadable pages.</Step>
+<Step title="Specific reminder drafted" who="AI" tone="ai">Names exactly what's still missing and why it's expected, in the client's language and tone.</Step>
+<Step title="Staff check and send" who="Staff" tone="human" time="1 to 2 min">Reads the draft, fixes anything odd, sends it. Anything flagged as unexpected goes to the accountant.</Step>
+<Step title="Accountant reviews a complete file" who="Accountant" tone="human">Starts preparation only when the list is complete, instead of starting and stopping three times.</Step>
+</Flow>
+
+Notice what's missing from this loop: nobody renames files, nobody compares two windows by eye, and nobody writes a reminder from scratch. Also notice what's still there: a person reads every message before it goes out, and the accountant sees every surprise.
+
+## Reminders people actually answer
+
+The difference between a reminder that works and one that doesn't is specificity. Compare these two:
+
+> **Generic:** Hi Sarah, just a friendly reminder that we're still waiting on some of your documents for your 2026 return. Please upload them to the portal at your earliest convenience.
+
+> **Specific:** Hi Sarah, thanks for the documents you sent on Tuesday. We now have everything except two items: the 1099-DIV from Vanguard (it was on last year's return, so we expect one again), and the 1098 mortgage statement for the house on Elm Street. Both are usually available to download from the provider's website by mid-February. If you closed the Vanguard account last year, just tell us and we'll take it off the list.
+
+The second one takes a person five minutes to write, which is why it rarely gets written in busy season. For a model that already knows what arrived and what's expected, it takes a second. The last sentence matters too: it gives the client an easy way to tell you that something won't come, which clears the item instead of leaving it open for weeks.
+
+Timing helps as well. A reminder that goes out the day after a client uploads something, while they're still in "tax mode", gets a faster reply than one that arrives two weeks later.
+
+## Build the expected list first
+
+The whole system depends on knowing what each client should send. Without that list, a model can tell you what arrived but not what's missing. Most of the list comes straight from last year's return; the rest comes from a few questions at the start of the season.
+
+<Checklist title="What each client's expected list should cover" items={[
+  "Every employer and payer from last year's return, by name",
+  "Every bank, brokerage and pension account that produced a tax form",
+  "Property-related forms: mortgage interest, property tax, rental income and expenses",
+  "Recurring deductions: charitable giving, childcare, education, medical, business expenses",
+  "Business clients: bank statements for every account, sales reports, payroll summaries",
+  "A short start-of-season questionnaire: new job, moved, married, sold anything, started a business?",
+  "A due date for each item, and who at the firm owns the file"
+]} />
+
+The questionnaire is where last year's list gets updated. Five yes-or-no questions catch most of the changes that would otherwise surface in March: "Did you start or stop a job? Did you buy or sell property? Did you open or close any investment accounts?" Each "yes" adds an item to the list.
+
+## Where it goes wrong
+
+I'd be careful about three things.
+
+**Misreading forms.** Models are good at identifying common forms, but they can confuse similar documents, a consolidated brokerage statement and a single 1099 for example, and they can misread a number from a poor photo. That's fine for sorting and checklist purposes. It's not fine for data entry into the return. Treat extracted figures as a convenience for staff, and keep the preparation software and the accountant's review as the source of truth.
+
+**Drifting into advice.** The reminder system should ask for documents. It shouldn't tell clients whether an expense is deductible or how much they'll owe. Keep the drafts to what's missing and why, and route questions to a person.
+
+**Data handling.** Tax documents are about as sensitive as data gets. In the US, the FTC Safeguards Rule requires tax professionals to maintain a written information security plan, and the IRS publishes a template for small practices in [Publication 5708](https://www.irs.gov/newsroom/irs-security-summit-remind-tax-pros-they-need-a-written-information-security-plan-to-protect-client-data). Any AI service that touches client files belongs in that plan: what it processes, where, whether the provider keeps or trains on the data, and who can access it. In the UK and EU, the same questions come under GDPR, with a data processing agreement for the provider. Choose services that don't train on your data and let you choose where it's processed.
+
+## Tools that fit
+
+Before building anything, look at what your practice software already does. Client portals such as TaxDome, Canopy, Karbon, SmartVault and Liscio already offer organizers, request lists and automated reminders, and several have added AI classification. For bookkeeping clients, Dext and Hubdoc handle receipts and invoices well. If your current tool covers most of the loop, the gap might be small: better expected lists, and reminders that name the missing items.
+
+Where a custom layer makes sense is the matching and the drafting: comparing what arrived to each client's expected list, flagging the unexpected, and writing reminders that sound like your firm. That layer can sit on top of your existing portal, reading new uploads and writing back a checklist and a draft message for staff to approve.
+
+Start with one group of clients, say individual returns with more than ten documents, and measure two things: the days from first request to complete file, and how many reminders each file needed. If both drop, expand. If they don't, the problem is probably the expected list, not the model.
+
+## Questions firms ask about AI document collection
+
+### Can AI enter the figures into our tax software?
+
+It can extract them, and some tools will do so. I'd keep a person in between for anything that ends up on a return. Extraction errors are rare with clean PDFs and more common with phone photos, and a wrong figure on a filed return costs far more than the time saved.
+
+### Will clients be put off by automated reminders?
+
+Clients are put off by vague reminders, not automated ones. A specific, polite message that names exactly what's missing and gets checked by someone at the firm reads as better service. Be open about the fact that you use software to track documents; most clients assume you do.
+
+### What about clients who only send paper?
+
+Scan on arrival and let the same process sort it. The model doesn't care whether a PDF came from a client's phone or your office scanner.
+
+### Is this only worth it during tax season?
+
+The peak is tax season, but monthly bookkeeping clients have the same problem twelve times a year: missing bank statements, receipts without context, invoices sent to the wrong address. And with Making Tax Digital moving UK clients to quarterly updates, "once a year" is becoming a smaller part of the work.
+
+## A rule for every request list
+
+If a client can't tell from your reminder exactly which document to look for, the reminder is the problem, not the client. Know what each client should send, check what arrived automatically, and ask for the rest by name.
+
+If document chasing is eating your team's weeks, [tell me which portal and practice software you use](/contact?intent=improve) and roughly how many clients you handle each season. I'll suggest where matching and drafting could fit into what you already have. Bookkeepers face a related problem with the same few client questions every month, which I cover in [the bookkeeper's case for an AI assistant](/posts/ai-for-bookkeepers-client-questions), and law firms face a stricter version of the intake problem in [first contact with new clients](/posts/ai-for-law-firm-intake).

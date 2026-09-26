@@ -1,0 +1,143 @@
+---
+id: "de-ai-for-accounting-document-intake"
+title: "Steuerkanzlei: Belegen nicht mehr hinterherlaufen"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Kanzleien & Dienstleister", "Steuerkanzleien", "Belegerfassung", "KI für kleine Unternehmen"]
+description: "Fehlende Unterlagen bremsen jede Steuerkanzlei. Wie KI Uploads sortiert, mit der Erwartungsliste je Mandant abgleicht und konkrete Nachforderungen entwirft."
+excerpt: "Fehlende Unterlagen bremsen jede Steuerkanzlei. Wie KI Uploads sortiert, mit der Erwartungsliste je Mandant abgleicht und konkrete Nachforderungen entwirft."
+---
+
+Februar in einer kleinen Steuerkanzlei. Ein Mandant schickt 23 Handyfotos per E-Mail, Betreff „Unterlagen“. Eine Mandantin ist sich sicher, die Jahressteuerbescheinigung ihrer Bank längst hochgeladen zu haben. Ein Dritter schreibt: „Die Nebenkostenabrechnung kommt noch, der Vermieter ist spät dran.“ Das steuerliche Fachwissen ist in keinem dieser Fälle das Problem. Das Problem ist, vollständige Unterlagen zu bekommen.
+
+Drei Zahlen zeigen, warum das jedes Jahr schwerer wird.
+
+<Stats title="Warum Nachfordern teurer wird">
+  <Stat value="72,7 %" label="der Rechts- und Steuerberatungskanzleien meldeten im August 2025 Schwierigkeiten, Fachkräfte zu finden" source="ifo, via stb-web" href="https://www.stb-web.de/news/article.php/id/26435" />
+  <Stat value="17.081" label="Auszubildende zur/zum Steuerfachangestellten am 1. Januar 2026, 1,3 % weniger als im Vorjahr" source="BStBK Berufsstatistik 2025" href="https://www.stb-web.de/news/article.php/id/26670" />
+  <Stat value="1. März 2027" label="Abgabefrist für beratene Erklärungen 2025: Die verlängerten Corona-Fristen sind vorbei" source="Finanztip" href="https://www.finanztip.de/steuererklaerung/steuererklaerung-frist/" />
+</Stats>
+
+Weniger Nachwuchs, knappe Fachkräfte und wieder die regulären Fristen. Genau in dieser Lage bindet das Nachfordern von Belegen die Menschen, die man eigentlich für die Erklärung selbst braucht.
+
+## Die Fristen werden wieder kürzer
+
+<Bars title="Zeit zwischen Jahresende und Abgabefrist bei beratenen Steuerpflichtigen" unit=" Monate" caption="Gerechnet ab dem 31. Dezember des jeweiligen Jahres. Für 2025 gilt wieder die reguläre Frist Ende Februar des übernächsten Jahres, 2027 verschoben auf den 1. März, weil der 28. Februar ein Sonntag ist." source="Landesamt für Steuern Niedersachsen" href="https://lstn.niedersachsen.de/steuer/verlangerung-der-abgabefrist-fur-die-einkommensteuererklarungen-2021-2022-und-2023-212835.html" data={[
+  { label: "Erklärung 2022 (31. Juli 2024)", value: 19 },
+  { label: "Erklärung 2023 (2. Juni 2025)", value: 17 },
+  { label: "Erklärung 2024 (30. April 2026)", value: 16 },
+  { label: "Erklärung 2025 (1. März 2027)", value: 14, highlight: true }
+]} />
+
+Fünf Monate weniger als noch vor zwei Jahren, bei gleicher Zahl an Mandanten und tendenziell weniger Personal. Wer die Erklärungen im Kontingent gleichmäßig über das Jahr verteilen will, braucht vollständige Unterlagen früher. Und jede Woche, die eine Akte auf „wartet auf Mandant“ steht, fehlt am Ende.
+
+## Was Sie gar nicht nachfordern müssen
+
+Bevor es um KI geht, ein ehrlicher Hinweis: Ein Teil der Belegjagd lässt sich ganz ohne neue Technik abstellen.
+
+Vieles liegt der Finanzverwaltung bereits elektronisch vor und lässt sich über den Belegabruf (vorausgefüllte Steuererklärung) direkt in die Kanzleisoftware holen: Lohnsteuerbescheinigungen, Rentenbezugsmitteilungen, Beiträge zur Kranken- und Pflegeversicherung, Altersvorsorgebeiträge. Wer diese Daten noch beim Mandanten anfragt, verschenkt Zeit auf beiden Seiten.
+
+Bei Buchhaltungsmandanten verändert die E-Rechnung das Bild. Seit dem 1. Januar 2025 müssen alle Unternehmen im Inland E-Rechnungen empfangen können, ab 2027 müssen Unternehmen mit mehr als 800.000 Euro Vorjahresumsatz sie auch ausstellen, ab 2028 alle ([BMF-FAQ](https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html)). Eine XRechnung oder ZUGFeRD-Rechnung enthält ihre Daten strukturiert. Dafür braucht niemand Texterkennung. Bis dahin bleiben aber Papierbelege, PDFs ohne XML-Teil und Quittungen aus dem Portemonnaie.
+
+Was übrig bleibt, ist genau das, was Mandanten selbst liefern müssen. Und da hilft KI.
+
+## Was nach dem Belegabruf übrig bleibt
+
+| Was ankommt | Was das Modell prüft | Was die Kanzlei entscheidet |
+| --- | --- | --- |
+| Jahressteuerbescheinigung der Bank | Institut, Depot oder Konto, Jahr, ob es die Steuerbescheinigung oder nur ein Quartalsauszug ist | Ob Verluste, Quellensteuer oder Sonderfälle zu beachten sind |
+| Nebenkostenabrechnung | Zeitraum, ob haushaltsnahe Dienstleistungen und Handwerkerleistungen gesondert ausgewiesen sind | Die Zuordnung nach § 35a EStG |
+| Handwerkerrechnung | Datum, Betrag, ob Arbeitskosten getrennt ausgewiesen sind, ob ein Zahlungsnachweis dabei ist | Ob und in welcher Höhe sie steuerlich wirkt |
+| Spendenbescheinigung | Empfänger, Betrag, Jahr, ob es eine Zuwendungsbestätigung ist | Die Abzugsfähigkeit |
+| Belege zur Vermietung | Objekt, Art der Kosten, Zeitraum | Erhaltungsaufwand oder Herstellungskosten |
+| Unscharfes Handyfoto | Ob es überhaupt lesbar ist | Ob neu angefordert wird |
+| Etwas Unerwartetes | Dass es zu keinem Punkt auf der Liste passt | Was es bedeutet: neue Einkunftsquelle, Verkauf, Erbschaft |
+
+Die letzte Zeile ist die wertvollste. Eine Steuerbescheinigung von einer Bank, die im Vorjahr nicht auftauchte, oder ein Kaufvertrag im Upload-Ordner deutet auf eine Veränderung hin. Wer das im Februar sieht, kann die richtige Frage stellen, bevor die Erklärung halb fertig ist.
+
+## Der Ablauf, neu sortiert
+
+<Flow title="Vom Upload zur vollständigen Mandantenakte" caption="Das Modell sortiert, gleicht ab und entwirft. Mitarbeitende prüfen jede Nachricht, bevor sie rausgeht. Die Steuerberaterin oder der Steuerberater sieht jede Auffälligkeit.">
+<Step title="Erwartungsliste je Mandant" who="System" time="einmal pro Jahr">Aus der Vorjahreserklärung und bekannten Änderungen: jede Bank, jedes Objekt, jede regelmäßige Position, die wieder zu erwarten ist.</Step>
+<Step title="Mandant lädt hoch" who="Mandant" time="jederzeit">Per App, Portal oder E-Mail. Ohne Dateinamen-Regeln und ohne Ordnerwahl.</Step>
+<Step title="Erkennen und abgleichen" who="KI" tone="ai" time="Sekunden">Erkennt jedes Dokument, liest die Eckdaten, benennt und legt ab, hakt auf der Liste ab. Markiert Dubletten, falsche Jahre und unlesbare Seiten.</Step>
+<Step title="Konkrete Nachforderung entworfen" who="KI" tone="ai">Nennt genau, was fehlt und warum es erwartet wird, im Ton der Kanzlei.</Step>
+<Step title="Prüfen und senden" who="Mitarbeitende" tone="human" time="1 bis 2 Min.">Liest den Entwurf, korrigiert, sendet. Alles Unerwartete geht an die Berufsträgerin oder den Berufsträger.</Step>
+<Step title="Bearbeitung einer vollständigen Akte" who="Steuerberatung" tone="human">Die Erklärung wird erst begonnen, wenn die Liste komplett ist, statt dreimal angefangen und unterbrochen.</Step>
+</Flow>
+
+Was fehlt: niemand benennt Dateien um, niemand vergleicht zwei Fenster mit bloßem Auge, niemand schreibt Nachforderungen von Grund auf. Was bleibt: Ein Mensch liest jede Nachricht, bevor sie rausgeht, und jede Überraschung landet bei jemandem mit Fachwissen.
+
+## Nachforderungen, auf die Mandanten reagieren
+
+Der Unterschied zwischen einer Erinnerung, die wirkt, und einer, die ignoriert wird, ist die Genauigkeit.
+
+> **Allgemein:** Sehr geehrte Frau Berger, für Ihre Einkommensteuererklärung 2025 fehlen uns noch einige Unterlagen. Bitte laden Sie diese zeitnah hoch.
+
+> **Konkret:** Sehr geehrte Frau Berger, vielen Dank für die Unterlagen vom Dienstag. Jetzt fehlen nur noch zwei Dinge: die Jahressteuerbescheinigung der Sparkasse für Ihr Depot (sie war im Vorjahr dabei, deshalb rechnen wir wieder damit) und die Nebenkostenabrechnung 2025 für Ihre Wohnung. Die Bescheinigung finden Sie meist im Online-Banking im Postfach. Falls Sie das Depot aufgelöst haben, geben Sie uns bitte kurz Bescheid, dann streichen wir den Punkt.
+
+Die zweite Nachricht kostet einen Menschen fünf Minuten. In der Hochphase schreibt sie deshalb kaum jemand. Für ein Modell, das weiß, was angekommen ist und was erwartet wird, ist sie in einer Sekunde entworfen. Der letzte Satz ist wichtig: Er gibt Mandanten einen einfachen Weg zu sagen, dass etwas nicht kommt. Der Punkt ist damit erledigt, statt wochenlang offen zu bleiben.
+
+Auch der Zeitpunkt zählt. Eine Nachforderung am Tag nach einem Upload, wenn der Mandant gerade ohnehin mit seinen Unterlagen beschäftigt ist, wird schneller beantwortet als eine drei Wochen später.
+
+## Buchhaltungsmandanten: fehlende Belege zu Buchungen
+
+Bei der laufenden Finanzbuchhaltung stellt sich dieselbe Frage jeden Monat, nur andersherum. Die Bankumsätze sind vollständig da, aber zu einem Teil der Buchungen fehlt der Beleg. Die übliche Lösung ist eine Liste offener Posten, die als PDF an den Mandanten geht und dort liegen bleibt.
+
+Besser funktioniert eine Rückfrage, die jede Buchung so beschreibt, dass der Mandant sie wiedererkennt: „Am 14. März wurden 89,90 Euro an Amazon gezahlt. Dazu fehlt die Rechnung. Wenn es ein privater Einkauf war, genügt ein kurzer Hinweis.“ Das Modell kann solche Rückfragen aus den offenen Posten formulieren, nach Anbieter gruppieren („Drei Buchungen bei der Telekom, jeweils Monatsrechnung“) und einfache Treffer selbst vorschlagen, etwa wenn ein Beleg mit passendem Betrag und Datum im Upload liegt, aber noch nicht zugeordnet ist. Die Zuordnung bestätigt ein Mensch.
+
+## Zuerst die Erwartungsliste
+
+Das ganze System steht und fällt damit, zu wissen, was ein Mandant schicken sollte. Ohne diese Liste kann ein Modell sagen, was angekommen ist, aber nicht, was fehlt. Der größte Teil ergibt sich aus der Vorjahreserklärung, der Rest aus ein paar Fragen zum Jahresbeginn.
+
+<Checklist title="Was die Erwartungsliste je Mandant abdecken sollte" items={[
+  "Jede Bank und jedes Depot mit Steuerbescheinigung im Vorjahr, namentlich",
+  "Jedes Mietobjekt mit den üblichen Kostenbelegen",
+  "Nebenkostenabrechnung und Handwerkerrechnungen für § 35a EStG",
+  "Regelmäßige Positionen: Spenden, Kinderbetreuung, Arbeitsmittel, Fortbildung, Krankheitskosten",
+  "Was per Belegabruf kommt, ausdrücklich nicht anfordern",
+  "Kurzer Fragebogen zum Jahresbeginn: Jobwechsel, Umzug, Heirat, Kind, Immobilie gekauft oder verkauft, Gewerbe angemeldet?",
+  "Eine Frist je Position und eine zuständige Person in der Kanzlei"
+]} />
+
+Der Fragebogen aktualisiert die Liste. Fünf Ja-Nein-Fragen fangen die meisten Veränderungen ab, die sonst im Mai auffallen: „Haben Sie den Arbeitgeber gewechselt? Haben Sie eine Immobilie gekauft oder verkauft? Haben Sie ein Konto oder Depot eröffnet oder aufgelöst?“ Jedes Ja fügt einen Punkt hinzu.
+
+## Wo es schiefgehen kann
+
+**Fehler beim Lesen.** Modelle erkennen gängige Belege zuverlässig, verwechseln aber ähnliche Dokumente, etwa einen Depotauszug mit der Jahressteuerbescheinigung, und lesen bei schlechten Fotos auch mal eine Zahl falsch. Für das Sortieren und die Checkliste ist das verkraftbar. Für Werte, die in die Erklärung wandern, nicht. Ausgelesene Beträge sind eine Arbeitshilfe, die Kanzleisoftware und die Prüfung durch Fachpersonal bleiben maßgeblich.
+
+**Beratung durch die Hintertür.** Die Nachforderungen fragen nach Unterlagen. Sie sagen nicht, ob etwas absetzbar ist oder wie hoch die Erstattung ausfällt. Fragen dieser Art gehen an einen Menschen.
+
+**Verschwiegenheit und Datenschutz.** Steuerberaterinnen und Steuerberater unterliegen der Schweigepflicht nach § 203 StGB. Externe Dienstleister, auch ein KI-Anbieter, dürfen nach § 62a StBerG nur eingebunden werden, wenn sie zur Verschwiegenheit verpflichtet sind und nur so viel erfahren, wie für ihre Aufgabe nötig ist. Dazu kommt ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO, klare Angaben zum Speicherort und die Zusage, dass die Daten nicht zum Training verwendet werden. Schreibt ein Assistent direkt mit Mandanten, gilt seit dem 2. August 2026 zusätzlich die Transparenzpflicht aus Art. 50 der KI-Verordnung: Mandanten müssen erkennen können, dass sie mit einem KI-System kommunizieren. Bei Entwürfen, die ein Mensch prüft und versendet, ist das weniger heikel. Ein offener Hinweis schadet trotzdem nicht.
+
+## Was schon im Werkzeugkasten liegt
+
+In vielen Kanzleien ist DATEV gesetzt, und dort gibt es bereits einiges: DATEV Unternehmen online mit Belege online, die Upload-Apps für Mandanten, die Texterkennung für Belegdaten und den Belegabruf für die Einkommensteuer. Mandanten, die ihre Buchhaltung selbst vorbereiten, arbeiten oft mit Candis, sevDesk oder Lexware Office, die Belege ebenfalls strukturiert übergeben. Wer Agenda oder Addison nutzt, hat vergleichbare Wege.
+
+Die Lücke ist meist nicht der Upload, sondern das, was danach passiert: der Abgleich gegen die Erwartungsliste des einzelnen Mandanten, das Markieren des Unerwarteten und Nachforderungen, die so klingen wie Ihre Kanzlei. Diese Schicht kann auf den vorhandenen Werkzeugen aufsetzen, neue Uploads lesen und eine aktualisierte Checkliste samt Entwurf zur Freigabe zurückgeben.
+
+Fangen Sie mit einer Gruppe an, zum Beispiel Einkommensteuermandanten mit Vermietung, und messen Sie zwei Dinge: die Tage von der ersten Anforderung bis zur vollständigen Akte und die Zahl der Nachforderungen pro Akte. Sinken beide, weiten Sie aus. Sinken sie nicht, liegt das Problem meist an der Erwartungsliste, nicht am Modell.
+
+## Häufige Fragen aus Kanzleien
+
+### Kann die KI Werte direkt in DATEV übernehmen?
+
+Auslesen kann sie sie, und manche Werkzeuge übergeben sie auch. Für alles, was in einer Erklärung landet, würde ich einen Menschen dazwischen lassen. Bei sauberen PDFs sind Lesefehler selten, bei Handyfotos häufiger, und ein falscher Wert in einer abgegebenen Erklärung kostet mehr als die gesparte Zeit.
+
+### Stören sich Mandanten an automatisierten Erinnerungen?
+
+Mandanten stören sich an unklaren Erinnerungen, nicht an automatisierten. Eine höfliche Nachricht, die genau benennt, was fehlt, und von jemandem in der Kanzlei geprüft wurde, wirkt wie guter Service. Sagen Sie ruhig offen, dass Sie Software zur Belegverwaltung nutzen. Die meisten Mandanten gehen ohnehin davon aus.
+
+### Was ist mit Mandanten, die nur Papier bringen?
+
+Bei Eingang scannen und denselben Ablauf nutzen. Dem Modell ist es egal, ob ein PDF vom Handy des Mandanten oder vom Kanzleiscanner kommt.
+
+### Lohnt sich das nur für die Einkommensteuer?
+
+Die Einkommensteuer ist die Spitze, aber Buchhaltungsmandanten haben das Problem zwölfmal im Jahr: fehlende Kontoauszüge, Belege ohne Zusammenhang, Rechnungen an die falsche Adresse. Gerade dort spart die konkrete Rückfrage zu jeder offenen Buchung viel Hin und Her.
+
+## Die Faustregel für jede Nachforderung
+
+Wenn ein Mandant aus Ihrer Erinnerung nicht erkennen kann, welches Dokument er suchen soll, liegt das Problem bei der Erinnerung, nicht beim Mandanten. Wissen Sie, was jeder Mandant schicken sollte, prüfen Sie automatisch, was angekommen ist, und fordern Sie den Rest beim Namen an.
+
+Wenn das Nachfordern in Ihrer Kanzlei Wochen frisst, [schreiben Sie mir, mit welcher Software Sie arbeiten](/contact?intent=improve) und wie viele Mandanten Sie pro Saison betreuen. Ich zeige Ihnen, wo Abgleich und Entwürfe in Ihre bestehende Umgebung passen. Buchhaltungsbüros kämpfen mit einem verwandten Problem, nämlich immer denselben Mandantenfragen, dazu mehr in [die zehn Fragen, die jeder Mandant stellt](/de/posts/ai-for-bookkeepers-client-questions). Und Anwaltskanzleien haben eine strengere Variante der Erstaufnahme, siehe [Mandatsanfragen in der Kanzlei](/de/posts/ai-for-law-firm-intake).
