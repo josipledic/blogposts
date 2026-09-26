@@ -1,0 +1,138 @@
+---
+id: "ai-for-restaurants-review-analysis"
+title: "What Your Reviews Are Really Saying: AI Review Analysis for Restaurants"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Food & drink", "Restaurants", "Review analysis", "AI for small business"]
+description: "One angry review tells you little. Four hundred reviews, read together, show what guests really think. A blueprint for AI review analysis and honest replies."
+excerpt: "One angry review tells you little. Four hundred reviews, read together, show what guests really think. A blueprint for AI review analysis and honest replies."
+---
+
+It's 11:30 at night, the kitchen is clean, and the owner of a busy neighbourhood restaurant checks her phone. A new one-star review on Google: "Waited 50 minutes for mains, waiter didn't care." She reads it three times, feels her stomach turn, and writes a reply she'll regret by morning. Then she scrolls past two five-star reviews without really reading them.
+
+That's how most owners experience reviews: one at a time, emotionally, late at night. It's also the least useful way to read them. A single review is mostly noise. The signal is in the patterns across hundreds: that the complaints about waiting cluster on Friday evenings, that "portion" started appearing next to the schnitzel in March, that the new server's name comes up in the good reviews again and again.
+
+Reading 400 reviews for patterns is exactly the kind of work AI does well. This post is a blueprint for doing it, and for replying in a way that helps rather than hurts.
+
+<Stats title="Why reviews deserve a system">
+  <Stat value="5 to 9%" label="more revenue for an independent restaurant from a one-star increase in its Yelp rating; chains saw no effect" source="Luca, Harvard Business School" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1928601" />
+  <Stat value="41%" label="of consumers say they “always” read reviews when choosing a local business, up from 29% the year before" source="BrightLocal, 2026" href="https://www.brightlocal.com/research/local-consumer-review-survey/" />
+  <Stat value="$51,744" label="maximum civil penalty per violation under the FTC's rule against fake and suppressed reviews, in force since October 2024" source="FTC" href="https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials" />
+</Stats>
+
+The Luca study is older and based on Seattle-area restaurants, but it's one of the few that connects ratings to actual revenue data, and its central finding has held up in later research: reviews matter most for independents, because guests know less about them in advance. The FTC number is the other side of the coin: the answer to bad reviews is fixing what they describe, not manufacturing good ones.
+
+## Why single reviews mislead
+
+Three things distort how reviews feel when you read them one by one.
+
+**Negativity sticks.** A one-star review hurts far more than a five-star review pleases. It's easy to overreact to the angry guest and underweight the forty happy ones.
+
+**The loud minority.** Guests with a very good or very bad experience write reviews. The large middle, the "it was fine" guests who quietly don't come back, rarely do. Patterns in what the extremes mention still tell you where the middle might be drifting.
+
+**Recency.** Whatever arrived last feels like the truth. A change in the kitchen three months ago might show up in reviews gradually, too slowly to notice one at a time.
+
+Reading everything together, by theme and over time, corrects all three.
+
+## The blueprint
+
+### Step 1: Get every review into one place
+
+Guests review you on Google, Tripadvisor, Yelp, booking platforms like OpenTable or TheFork, and delivery apps. Most owners check one or two. Use the official exports or APIs where they exist, or a review management tool that collects them, and put them into one list with the date, platform, rating and text. Respect each platform's terms; don't scrape what you're not allowed to.
+
+### Step 2: Tag what each review is about
+
+A review is rarely about one thing. "Food was great but we waited forever and it was so loud we couldn't talk" contains three separate signals. The model breaks each review into aspects and gives each one a sentiment:
+
+| Aspect | What it picks up | Example phrase |
+| --- | --- | --- |
+| Dishes | Which dish, and what about it | "The schnitzel was smaller than last time" |
+| Wait times | Time to be seated, to order, for food, for the bill | "50 minutes for mains" |
+| Service | Friendliness, attentiveness, named staff | "Marco was brilliant" |
+| Value | Price relative to portion and quality | "Pricey for what you get" |
+| Ambience | Noise, temperature, lighting, music | "Too loud to talk" |
+| Cleanliness | Tables, toilets, cutlery | "Toilets need attention" |
+| Booking and arrival | Reservations, waiting at the door, table allocation | "Table wasn't ready despite booking" |
+| Dietary needs | How well allergies and diets were handled | "Great vegan options" |
+
+Where a review mentions a day or time ("Friday night", "Sunday lunch"), that gets tagged too. It's often the most useful detail of all.
+
+### Step 3: Look at patterns, not reviews
+
+Once reviews are tagged, the question changes from "what did this guest say?" to "what are guests saying, and is it changing?"
+
+<Bars title="Negative mentions by theme, last 90 days" unit=" mentions" caption="Illustrative output for a restaurant with about 400 reviews a year. The value is in the comparison over time: which bars are growing, and what they're attached to." data={[
+  { label: "Wait for mains (Friday and Saturday evenings)", value: 23, highlight: true },
+  { label: "Noise level", value: 14 },
+  { label: "Schnitzel portion size (since March)", value: 11, highlight: true },
+  { label: "Table not ready despite booking", value: 8 },
+  { label: "Price and value", value: 7 },
+  { label: "Toilets", value: 4 }
+]} />
+
+The weekly or monthly summary should be short enough to read at the staff meeting:
+
+> **Last 30 days, 38 new reviews, average 4.4 (was 4.5).** Wait times on Friday and Saturday evenings are the main complaint again (9 mentions, all after 19:30). Schnitzel portion mentioned as smaller in 4 reviews since the new supplier in March. Positive: service named in 14 reviews, Marco in 6 of them; the new autumn menu praised in 7. Vegan options mentioned positively 5 times. **Suggested focus:** Friday evening kitchen flow; check the schnitzel spec with the supplier.
+
+### Step 4: Change one thing, then check
+
+The summary is only useful if it leads to a change. Pick one or two issues, decide what to do (a second person on the pass on Fridays, a word with the supplier about portion weights), and check whether the mentions change over the next month or two. The model can track that for you: "Friday wait-time complaints: 9 in September, 3 in October."
+
+This is also where reviews become a management tool rather than a source of stress. The team sees what guests praise, not only what they complain about, and the conversation is about patterns rather than about whose table the angry guest sat at.
+
+### Step 5: Reply like a person
+
+Replies matter to future guests more than to the reviewer. BrightLocal's research finds that most consumers read owners' replies, and that copy-paste responses put a growing share of them off. The model can draft a reply to every review in your voice, based on what the guest actually wrote, and you approve or edit it before it goes out.
+
+A good reply to the 50-minute review, drafted the next morning rather than at 11:30 p.m.:
+
+> Thank you for telling us, and I'm sorry. Fifty minutes for mains is too long, and it's not how we want Friday evenings to feel. We've added a second person on the pass on Fridays and Saturdays to speed things up. I'd love to welcome you back and get it right. Please ask for me, Lena, when you book.
+
+It acknowledges the problem, doesn't argue, says what's changed, and is signed by a real person. Future guests reading it see an owner who listens.
+
+## The whole loop
+
+<Flow title="From scattered reviews to changes guests notice" caption="The model collects, tags, summarises and drafts. The owner and team decide what to change and approve every public reply.">
+<Step title="Collect" who="System" time="daily">New reviews from every platform into one list, with date, rating and text.</Step>
+<Step title="Tag" who="AI" tone="ai" time="seconds">Aspects, sentiment per aspect, dishes, staff names, days and times mentioned.</Step>
+<Step title="Summarise" who="AI" tone="ai" time="weekly">Short summary: what's praised, what's criticised, what's changing, with a few quotes.</Step>
+<Step title="Decide" who="Owner and team" tone="human" time="staff meeting">Pick one or two issues to fix, and share the praise with the team.</Step>
+<Step title="Reply" who="AI and owner" tone="human">Drafted replies in the owner's voice, approved before posting.</Step>
+<Step title="Check" who="AI" tone="ai" time="monthly">Did the complaints about the thing you fixed go down?</Step>
+</Flow>
+
+<Callout title="What not to do with AI and reviews" tone="warning">
+Don't use AI to write reviews for yourself, and don't pay or reward guests for positive ones. The FTC's rule bans fake reviews, including AI-generated ones, as well as suppressing negative reviews and buying reviews with a particular sentiment, and EU consumer law has similar rules. Don't only invite happy guests to review you. And in replies, never reveal a guest's personal details, what they ordered on a specific date or anything else from your booking system: that's a privacy problem, not a clever rebuttal.
+</Callout>
+
+## Tools that fit
+
+Review management tools such as Birdeye, ReviewTrackers or Podium collect reviews from many platforms and increasingly include AI summaries and reply suggestions. For a single restaurant, your Google Business Profile plus a simple monthly export may be enough, with an AI step that tags and summarises. What matters more than the tool is the routine: a summary at every staff meeting, one change at a time, and replies that sound like you.
+
+## Questions restaurant owners ask
+
+### Should I reply to every review?
+
+To every negative and mixed review, yes. To positive ones, where you have something personal to say. A short, specific thank-you ("glad you liked the new autumn menu, the pumpkin risotto is Chef's favourite too") beats a generic one every time.
+
+### Will guests notice AI-written replies?
+
+They notice generic replies, whoever wrote them. A draft based on what the guest actually said, edited by you and signed with your name, reads like you. If you let replies post automatically without review, they'll drift towards the generic, which is exactly what guests dislike.
+
+### What about fake or unfair reviews?
+
+Report reviews that break the platform's rules, such as reviews from people who were never guests, or reviews with abusive content. Reply calmly and factually to unfair ones for the benefit of future readers. The model can help you spot suspicious patterns, like several one-star reviews from new accounts on the same day.
+
+### Can it tell me which dishes to change?
+
+It can tell you which dishes guests mention, how often, and in what tone, and combined with your till data it becomes much more useful: a dish that sells well but collects lukewarm comments is a candidate for a recipe tweak, while a dish that's rarely ordered but loved by those who try it might just need a better place on the menu. The decision is still yours and your chef's. The model gives you the evidence in one page instead of four hundred reviews.
+
+### How many reviews do I need before this is useful?
+
+Patterns appear with a few dozen reviews a quarter. Below that, reading them yourself is fine, but tagging still helps you see which themes repeat over a year.
+
+## Rule of thumb
+
+Read your reviews as a pattern, not as a verdict. Summarise them every week, fix one thing at a time and check whether the complaints go away, and reply the next morning, in your own voice, instead of at midnight.
+
+If you'd like to see what your reviews are really saying, [tell me which platforms your guests use](/contact?intent=improve), and I'll suggest a simple way to collect and summarise them. Independent hotels face the same challenge with [guest messages](/posts/ai-for-independent-hotels-guest-messages), and online shops with [customer support](/posts/ai-for-ecommerce-support).
