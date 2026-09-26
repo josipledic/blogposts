@@ -1,0 +1,129 @@
+---
+id: "ai-for-butchers-preorders"
+title: "Holiday Preorders at the Butcher Counter: Fewer Mistakes, Less Paper"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Food & drink", "Butcher shops", "Holiday preorders", "AI for small business"]
+description: "Holiday orders pile up on paper slips and phone notes until pickup day turns chaotic. How AI helps small butcher shops capture, confirm and plan every order."
+excerpt: "Holiday orders pile up on paper slips and phone notes until pickup day turns chaotic. How AI helps small butcher shops capture, confirm and plan every order."
+---
+
+It's the morning of the 23rd of December, and the queue outside a family butcher shop starts at the corner. Inside, the order book has grown into a ring binder with 312 handwritten slips. A customer at the counter says she ordered a rib roast for eight people two weeks ago, by phone. Nobody can find the slip. Another slip says "Miller, 1 turkey". There are three Millers in the binder. One of them wanted it boned and rolled.
+
+Somebody in the back is weighing turkeys against a list that was added up by hand on the 19th. The supplier delivered two fewer geese than ordered. The phone keeps ringing: people asking whether they can still order, people asking what time to come, people who can't come until the 24th after all.
+
+None of this is unusual. Holiday preorders are one of the busiest and most profitable weeks of the year for a butcher shop, and they're run on paper because the rest of the year doesn't need anything else. This post is about a light way to change that, without turning the shop into a web shop and without losing the customers who'll always prefer to call.
+
+## Why holiday orders are hard
+
+The difficulty isn't volume alone, although the volume is real: the National Turkey Federation has long estimated that Americans eat [around 46 million turkeys at Thanksgiving and 22 million at Christmas](https://www.ndfb.org/turkeytrivia), and a large share of the special cuts, geese and roasts sold all year go out in the same few days. It's volume concentrated in a few weeks, arriving through every channel at once, in the customer's own words.
+
+Orders come in by phone, at the counter, by email, by text message, through the website form, and scribbled on the back of a receipt by the Saturday staff. They're often vague: "a big turkey", "the usual", "beef for Christmas dinner, eight people". Weights and preparations matter (bone-in or boned, rolled, stuffed, portioned), and many items are sold by weight, so the final price is only known when the order is packed. Some items need ordering from suppliers or farms weeks in advance. And then everyone wants to pick up in the same two days.
+
+Each of those is manageable on its own. Together, on paper, they produce the scene above.
+
+## What an order needs to contain
+
+The first step has nothing to do with AI: decide what a complete order looks like. Most mistakes come from slips that were missing one field.
+
+| Field | Why it matters | Typical ambiguity to resolve |
+| --- | --- | --- |
+| Customer name and phone number | Finding the order, calling if something changes | "Miller" without a first name or number |
+| Product | What to reserve and order from suppliers | "Turkey" when you sell free-range and standard |
+| Size or weight | Planning quantities and supplier orders | "Big", "for eight people" |
+| Preparation | Workload in the back and correct packing | Bone-in or boned, rolled, stuffed, portioned, marinated |
+| Quantity | Obvious, until it's two ducks written as "2x duck halves" | Whole versus portions |
+| Pickup day and time slot | Spreading the rush and packing in order | "Before Christmas" |
+| Special requests and allergies | Customer trust and legal duties | "No pork in the stuffing" |
+| Deposit | Protection against no-shows on big orders | Paid or not, and how much |
+
+A customer who says "a turkey for ten, boned and rolled, picking up the 23rd in the morning" has given almost everything. A customer who says "the usual" has given nothing, unless you can look up last year's order.
+
+## Where AI fits
+
+The idea is simple: whatever channel an order arrives through, it ends up as a complete, structured order in one list, and the customer gets a written confirmation. AI does the translating from what people say to what the list needs.
+
+<Flow title="From “a big turkey” to a confirmed order on the pickup list" caption="The model structures and asks. Staff check anything unusual. The customer confirms. The shop plans from one list instead of a binder.">
+<Step title="Order arrives" who="Customer" time="any channel">Phone call noted by staff in plain words, a text message, an email, the website form, or a note typed at the counter.</Step>
+<Step title="Structure the order" who="AI" tone="ai" time="seconds">Turns the message into the order fields: product, size, preparation, quantity, pickup slot, name and number. Looks up last year's order for "the usual".</Step>
+<Step title="Ask what's missing" who="AI" tone="ai">A short follow-up in the same channel: "Which size turkey: about 4 kg for six people, or about 6 kg for ten?"</Step>
+<Step title="Staff check" who="Staff" tone="human" time="a few seconds">Unusual requests, very large orders and anything about allergies go to a person before confirmation.</Step>
+<Step title="Confirmation" who="AI" tone="ai">A written confirmation with an order number, the details, the pickup slot and the note that items are priced by weight.</Step>
+<Step title="Plan and pick up" who="Shop" tone="human">Daily totals for supplier orders and cutting lists; reminder the day before pickup; orders packed and labelled by slot.</Step>
+</Flow>
+
+The phone deserves a special mention. Many butcher shop customers will always call, and that's fine. The quickest win isn't an AI answering the phone, it's staff typing what the customer says in plain words ("Miller Anna, 0171..., turkey 6 kg boned rolled, 23rd morning") into a simple form, and the model structuring it. Staff don't need to learn a new system, and the order still ends up complete and in the list. For the busiest weeks, a voice assistant that takes orders when all lines are busy is an option, but start with the simple version.
+
+## What the customer receives
+
+A confirmation that removes every doubt:
+
+> **Your Christmas order no. 214, Butcher Hansen**
+> 1 free-range turkey, approx. 6 kg, boned and rolled
+> 1 kg homemade sausage meat stuffing, no pork
+> **Pickup:** Tuesday 23 December, 8:00 to 10:00
+> Priced by weight at pickup: turkey €18.90/kg, stuffing €14.50/kg.
+> Anything wrong? Just reply to this message. We'll remind you the day before.
+
+That one message ends most of the arguments at the counter. The customer has it on their phone, the shop has the same record, and "I ordered it by phone two weeks ago" becomes "order 214, here it is".
+
+## Planning the season
+
+The value isn't only in the order list. Once orders are structured, the planning that used to be done by hand on the 19th can happen every day.
+
+<Timeline title="A holiday season run from one list" caption="Dates are an example for a Christmas season. The same rhythm works for Thanksgiving, Easter or any holiday with a preorder peak.">
+<Phase when="Early November" title="Open preorders">Announce the holiday range, prices per kilo, pickup slots and the order deadline. Returning customers get their order from last year as a suggestion.</Phase>
+<Phase when="Mid November" title="Supplier forecast">Totals so far, plus last year's final numbers, give a first estimate for farms and suppliers with long lead times: geese, turkeys, special cuts.</Phase>
+<Phase when="Early December" title="Slot management">Pickup slots fill up. The model offers alternatives when a slot is full and nudges customers towards quieter times.</Phase>
+<Phase when="Order deadline" title="Final supplier orders">Final totals per product, size and preparation. Supplier orders confirmed.</Phase>
+<Phase when="Three days before" title="Cutting and packing plan">Lists per day and slot for the back room: what to prepare, in what order, with labels printed from the list.</Phase>
+<Phase when="Day before pickup" title="Reminders">Every customer gets a reminder with their slot. Changes come in a day early instead of at the counter.</Phase>
+<Phase when="After the holidays" title="Review">No-shows, shortages, most popular items and slot pressure, as a starting point for next year.</Phase>
+</Timeline>
+
+The supplier step is where the money is. If you know on the 10th of December that you have 140 turkey orders, with 60 of them between 5 and 6 kg, you can order accurately from the farm instead of guessing from last year plus a feeling.
+
+## Before the season starts
+
+<Checklist title="Holiday preorder checklist" items={[
+  "A holiday product list with sizes, preparations and prices per kilo",
+  "The order fields every order must have, agreed with everyone who takes orders",
+  "Pickup days and time slots with a maximum number of orders per slot",
+  "An order deadline, and a rule for late orders",
+  "A deposit rule for large or special orders",
+  "Written allergen information for every product, including stuffings and marinades",
+  "One list where every order ends up, whatever the channel",
+  "A confirmation template and a reminder template"
+]} />
+
+The allergen line matters. Customers ordering for a family dinner ask about gluten in the stuffing and mustard in the marinade, and food law in most countries requires you to be able to answer accurately. In the EU, the [food information regulation](https://eur-lex.europa.eu/eli/reg/2011/1169/oj) requires allergen information for loose foods too, and in the UK the Food Standards Agency's [allergen guidance](https://www.food.gov.uk/business-guidance/allergen-guidance-for-food-businesses) sets out what's expected. The model can pass on your written allergen information; it should never guess, and any allergy question should reach a person.
+
+## Tools that fit
+
+Nothing here needs special software. A spreadsheet or simple database as the order list, an order form for staff and the website, the shop's messaging channels (email, SMS or a business messaging app), and a small AI layer that structures messages, asks follow-up questions and sends confirmations. Some till systems and online ordering tools have preorder features; if yours does, use it as the list and add the AI layer only for the messy channels.
+
+Customer names and phone numbers are personal data, so keep the list in one place, use it only for the orders, and delete what you don't need after the season. In the EU, customers should know when an automated assistant is replying to their messages.
+
+## Questions butchers ask
+
+### What about older customers who only phone?
+
+They keep phoning. Staff type the call into the form in plain words, the model structures it, and the customer gets a confirmation by text if they have a mobile, or a printed slip at pickup if they don't. The system adapts to the customer, not the other way round.
+
+### Can it handle platters and custom orders?
+
+Yes, as long as your options are written down: which platters, which cuts, what can be swapped. For truly custom requests, the model collects the details and flags the order for a person to price.
+
+### What if a supplier delivers less than we ordered?
+
+The list tells you exactly which customers are affected, sorted by pickup slot. The model can draft a message offering an alternative size or product, which a person approves and sends. Calling six customers on the 21st is much better than disappointing them on the 23rd.
+
+### Is it worth it for a single shop?
+
+If holiday orders run into the hundreds, yes. Even the order list and confirmations alone, without any supplier planning, remove most of the chaos at pickup.
+
+## Rule of thumb
+
+Every order in one list, every order complete, every customer with a written confirmation. Let the model turn "a big turkey for Christmas" into the right fields, and let your staff spend the busiest week of the year behind the counter instead of in the binder.
+
+If your holiday orders still live on paper slips, [tell me how orders reach you and roughly how many you take](/contact?intent=improve). I'll suggest the lightest setup that gets them into one list. Bakeries face a daily version of the same planning problem in [baking to demand](/posts/ai-for-bakeries-production-planning), and caterers have their own rush with [inquiries that go cold fast](/posts/ai-for-catering-inquiries).
