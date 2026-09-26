@@ -1,0 +1,146 @@
+---
+id: "de-ai-for-marketing-agencies-reporting"
+title: "Agentur-Reporting: Monatsberichte ohne Copy-and-paste"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Kanzleien & Dienstleister", "Marketingagenturen", "Kundenreporting", "KI für kleine Unternehmen"]
+description: "Dashboards liefern die Diagramme, die Zeit geht in die Erklärung. Wie kleine Agenturen mit KI Berichtskommentare entwerfen, ohne Ursachen zu erfinden."
+excerpt: "Dashboards liefern die Diagramme, die Zeit geht in die Erklärung. Wie kleine Agenturen mit KI Berichtskommentare entwerfen, ohne Ursachen zu erfinden."
+---
+
+Die ersten Arbeitstage jedes Monats sehen in einer kleinen Marketingagentur gleich aus. Die Kundenberater öffnen für jeden Kunden das Dashboard, machen Screenshots von den Diagrammen, die sich bewegt haben, kopieren sie in die Folienvorlage und starren dann auf ein leeres Textfeld mit der Überschrift „Zusammenfassung“. Was ist passiert? Warum? Was machen wir nächsten Monat? Mal 25 Kunden, und die erste Woche ist weg.
+
+Die meisten Agenturen haben es längst bemerkt: Die Zahlen zusammenzutragen ist nicht mehr das Langsame. Reporting-Tools verbinden sich mit Google Ads, Meta, GA4 und der Search Console und bauen die Diagramme automatisch. Langsam ist der Kommentar, die drei Absätze, die dem Kunden erklären, was die Diagramme bedeuten. Genau diese Absätze lesen Kunden tatsächlich.
+
+In diesem Beitrag geht es darum, KI für genau diesen Teil einzusetzen, und um die eine Regel, die verhindert, dass sie das Vertrauen der Kunden beschädigt.
+
+## Die Zahlen
+
+<Bars title="Wie lange Agenturen mit automatisiertem Reporting für einen Kundenbericht brauchen" unit=" %" caption="Anteil der Befragten nach Erstellungszeit. Anbieterumfrage unter 494 Agenturmitarbeitenden, überwiegend Nutzer des eigenen Tools und vor allem aus den USA. Also eher: was mit Automatisierung möglich ist, kein Branchendurchschnitt." source="AgencyAnalytics" href="https://agencyanalytics.com/blog/client-reporting-benchmarks" data={[
+  { label: "Unter 15 Minuten", value: 17 },
+  { label: "15 bis 30 Minuten", value: 29 },
+  { label: "30 bis 60 Minuten", value: 27 },
+  { label: "Mehr als eine Stunde", value: 27, highlight: true }
+]} />
+
+Mit Automatisierung lässt sich ein Bericht in unter einer halben Stunde zusammenstellen. Umfragen unter Agenturen ohne Automatisierung, meist von Reporting-Anbietern, nennen zwei bis über zehn Stunden pro Kunde und Monat, je nach Kanälen und Analysetiefe. Der Unterschied ist fast vollständig Handarbeit: sammeln, formatieren, schreiben.
+
+Ist das Sammeln automatisiert, bleibt das Schreiben. Und dabei kann KI helfen, solange Sie genau festlegen, was sie behaupten darf.
+
+## Das Dashboard zeigt was. Kunden zahlen für warum.
+
+<Split title="Was das Dashboard kann und wofür der Bericht da ist" leftTitle="Das Dashboard" rightTitle="Der Kommentar" left={[
+  "Sitzungen, Klicks, Conversions, Budget, ROAS",
+  "Vormonat und Vorjahr im Vergleich",
+  "Diagramme je Kanal und Kampagne",
+  "Automatisch aktualisiert",
+  "Für jeden Kunden gleich"
+]} right={[
+  "Was sich verändert hat, gemessen an den Zielen dieses Kunden",
+  "Warum, belegt durch das, was wir tatsächlich getan haben",
+  "Was ein Tracking- oder Datenproblem war und keine Leistung",
+  "Was wir nächsten Monat tun und was wir vom Kunden brauchen",
+  "Geschrieben für den, der liest: Geschäftsführung, Marketingleitung, Controlling"
+]} />
+
+Ein Kunde, der ein 14-seitiges PDF voller Diagramme und einen Einzeiler bekommt („Toller Monat! Conversions plus 12 %.“), fragt sich irgendwann, wofür er bezahlt. Ein Kunde, der drei klare Absätze bekommt, die Zahlen mit seinem Geschäft verbinden, ein Problem ansprechen, bevor er es selbst bemerkt, und sagen, was als Nächstes passiert, verlängert.
+
+## Die Regel: keine Ursache ohne Eintrag
+
+Hier liegt die Gefahr. Bittet man ein Sprachmodell nur mit den Zahlen um eine „Zusammenfassung der Monatsleistung“, liefert es flüssige, selbstsichere Erklärungen. „Der organische Traffic stieg um 18 %, getrieben durch bessere Rankings der Produktseiten nach unserer Onpage-Optimierung.“ Vielleicht. Vielleicht war auch die Website eines Wettbewerbers eine Woche offline, Google hat eines seiner [Core Updates](https://developers.google.com/search/updates/core-updates) ausgerollt, oder ein einzelner Artikel wurde in einem Forum geteilt. Das Modell weiß es nicht. Es rät, und es rät überzeugend.
+
+Die Regel dagegen: **Das Modell darf eine Veränderung nur mit etwas erklären, das aufgeschrieben ist.** Dafür braucht jede Agentur ein einfaches Änderungsprotokoll pro Kunde. Passt eine Veränderung in den Zahlen zu einem Eintrag, darf das Modell den Zusammenhang nennen. Passt sie zu keinem, steht im Entwurf „Ursache unklar“, und der Kundenberater geht dem nach oder schreibt selbst.
+
+Was ins Protokoll gehört, ist überschaubar, solange es jedes Mal geführt wird:
+
+- **Kampagnen und Budgets:** Starts, Pausen, Budgetverschiebungen, neue Gebotsstrategien.
+- **Website:** neue Landingpages, Relaunch, Releases, Ladezeit-Optimierung, Änderungen am Checkout.
+- **Tracking:** neue Tags, geändertes Consent-Banner, Anpassungen in GA4 oder Matomo.
+- **Inhalte und SEO:** veröffentlichte Artikel, technische Korrekturen, Migrationen.
+- **Ereignisse beim Kunden:** Aktionen, Preisänderungen, Lieferengpässe, Messen, Presse.
+- **Äußere Ereignisse:** Suchmaschinen-Updates, große Kampagnen der Konkurrenz, Feiertage und Ferien.
+
+Jeder Eintrag ist eine Zeile: Datum, was, wer. Dreißig Sekunden, wenn es passiert, statt dreißig Minuten Spurensuche, wenn der Bericht fällig ist.
+
+## Der Ablauf
+
+<Flow title="Von den Live-Daten zum geprüften Monatsbericht" caption="Das Dashboard sammelt. Das Modell vergleicht, markiert und entwirft, ausschließlich auf Basis der Zahlen und des Änderungsprotokolls. Der Kundenberater prüft jede Aussage, bevor sie zum Kunden geht.">
+<Step title="Daten aktualisiert" who="System" time="1. des Monats">Das Reporting-Tool holt die Vormonatsdaten aus Werbeplattformen, Analytics und Suchtools.</Step>
+<Step title="Auffälligkeiten prüfen" who="KI" tone="ai" time="Minuten">Markiert plötzliche Einbrüche oder Spitzen, Conversions bei null, Budget ohne Klicks und Zahlen, die nicht zusammenpassen. Oft ein defektes Tag, kein schlechter Monat.</Step>
+<Step title="Mit dem Protokoll abgleichen" who="KI" tone="ai">Ordnet jede auffällige Veränderung einem Eintrag zu. Alles Unerklärte wird als „Ursache unklar“ markiert.</Step>
+<Step title="Kommentar entwerfen" who="KI" tone="ai">Drei kurze Abschnitte entlang der Kundenziele: Was ist passiert, warum (nur laut Protokoll), wie geht es weiter. In Sprache und Ton des Kunden.</Step>
+<Step title="Prüfung" who="Kundenberater" tone="human" time="15 bis 30 Min.">Prüft jede Aussage, klärt die offenen Punkte, ergänzt Einschätzung und nächste Schritte, korrigiert den Ton.</Step>
+<Step title="Versand und Gespräch" who="Kundenberater" tone="human">Der Bericht geht raus. Bei wichtigen Kunden zusätzlich ein kurzer Termin oder eine aufgezeichnete Erläuterung.</Step>
+</Flow>
+
+Die Auffälligkeitsprüfung verdient besondere Aufmerksamkeit. Der peinlichste Bericht ist der, der einem Kunden 60 % weniger Conversions meldet, obwohl in Wahrheit jemand den Checkout geändert hat und das Tracking seit dem 9. nicht mehr feuert. Ein Modell, das Tageswerte vergleicht, sieht so einen Absturz sofort und setzt ihn ganz oben auf die Liste des Kundenberaters. Dann steht im Bericht „Tracking-Fehler gefunden und am 21. behoben“ statt „Leistung rückläufig“.
+
+## Wie ein guter Entwurf aussieht
+
+Für einen regionalen Onlinehändler mit dem Ziel Onlineumsatz bei einem Ziel-ROAS:
+
+> **Was passiert ist:** Der Onlineumsatz lag bei 48.200 Euro, 9 % über September und 14 % über dem Vorjahresoktober. Der ROAS lag mit 4,1 über dem Ziel von 3,5. Der Umsatz aus organischer Suche ging um 6 % zurück.
+>
+> **Warum:** Der Umsatzanstieg kam vor allem aus der Herbstkampagne, gestartet am 3. Oktober (Protokoll), mit 38 % des bezahlten Umsatzes. Der bessere ROAS folgt auf die Budgetverschiebung von generischen zu Marken- und Kategoriebegriffen am 10. Oktober. Der organische Rückgang: Ursache unklar. Die Rankings der Kategorieseiten sind stabil, wir prüfen, ob die Ladezeitänderung vom 17. damit zusammenhängt.
+>
+> **Nächster Monat:** Die Black-Friday-Kampagnen starten am 20. November. Dafür brauchen wir bis 8. November die finalen Rabatte von Ihnen. Zur organischen Frage melden wir uns im Termin nächste Woche.
+
+Jedes „Warum“ verweist auf einen Eintrag im Protokoll. Das eine, bei dem das nicht geht, ist klar gekennzeichnet. Der Kundenberater prüft Zahlen, klärt die offene Frage und passt den Ton an, statt von vorn zu schreiben.
+
+## Für den Leser schreiben
+
+Ein kleines Detail mit großer Wirkung: Verschiedene Kunden brauchen verschiedene Berichte. Die Geschäftsführerin will drei Sätze und eine Zahl. Der Marketingleiter will Details je Kanal. Das Controlling will Budget gegen Umsatz und nichts über Impressionen. Hinterlegen Sie pro Kunde ein kurzes Profil (wer liest, was zählt, welche Ziele gelten), und das Modell schreibt jeden Monat für genau diesen Leser. Für Kunden in der Schweiz, Österreich oder im Ausland entwirft es auf Wunsch in der passenden Sprache.
+
+## Consent-Lücken gehören in den Bericht
+
+In Deutschland regelt § 25 TDDDG, früher TTDSG, dass Cookies und Tracking, die nicht unbedingt erforderlich sind, eine Einwilligung brauchen. Ein Teil der Nutzer lehnt ab. Im EWR verlangt Google seit März 2024 den [Consent Mode](https://developers.google.com/tag-platform/security/guides/consent) in Version 2, und ein Teil der Conversions wird modelliert statt gemessen.
+
+Für den Bericht heißt das: offen sagen, was gemessen und was geschätzt ist, und warum Werbeplattform und Analytics unterschiedliche Zahlen zeigen. Das Modell kann dafür einen festen, verständlichen Absatz einfügen. Wer mit Matomo oder etracker arbeitet, erklärt entsprechend die eigene Konfiguration. Überraschte Kunden entstehen, wenn die Differenz erst im Quartalsgespräch auffällt.
+
+## Was es spart
+
+<Calc title="Überschlag: Monatsreporting in einer Agentur mit 25 Kunden" caption="Annahmen, keine Messwerte. Stoppen Sie einen Monat lang Ihr eigenes Reporting, vorher und nachher." rows={[
+  ["Kunden", "25"],
+  ["Reporting von Hand pro Kunde, inklusive Text", "× 3 Std."],
+  ["Stunden pro Monat heute", "75 Std."],
+  ["Prüfung eines automatischen Berichts mit Kommentarentwurf", "× 45 Min."],
+  ["Stunden pro Monat mit Entwürfen", "≈ 19 Std."]
+]} result={["Gewonnene Stunden pro Monat, vor allem in der ersten Woche", "≈ 56 Std."]} />
+
+Diese Stunden fallen in die vollste Woche des Monats. Was Agenturen damit machen, ist unterschiedlich: mehr Strategiezeit mit Kunden, ein genauer Blick auf die Konten, die schwächeln, oder schlicht keine Überstunden in der ersten Woche.
+
+## Welche Werkzeuge passen
+
+Looker Studio, AgencyAnalytics, DashThis, Swydo oder Whatagraph übernehmen die Datenseite, und einige haben eigene KI-Zusammenfassungen. Probieren Sie die zuerst. Was ihnen meist fehlt, sind Ihr Änderungsprotokoll und der Kundenkontext. Deshalb beschreiben ihre Zusammenfassungen oft Diagramme, statt sie zu erklären. Ist die eingebaute Zusammenfassung zu allgemein, liefert ein kleiner eigener Schritt aus exportierten Daten, Protokoll und Kundenprofil meist bessere Entwürfe.
+
+Das Protokoll kann eine geteilte Tabelle sein oder ein Feld in Ihrer Projektsoftware, etwa MOCO oder awork. Die Disziplin, es zu führen, ist mehr wert als jedes Tool.
+
+Die Berichtsdaten sind meist aggregiert und nicht personenbezogen. Strategie, Umsätze und Pläne der Kunden sind aber vertraulich. Nutzen Sie einen Anbieter mit Auftragsverarbeitungsvertrag, ohne Training mit Ihren Daten, und prüfen Sie Ihre Kundenverträge auf Regeln zu externen Tools.
+
+## Häufige Fragen von Agenturinhabern
+
+### Merken Kunden, dass der Kommentar von einer KI vorbereitet ist?
+
+Sie merken, wenn er allgemein ist, egal ob Mensch oder Modell geschrieben hat. Ein Kommentar, der auf ihre Ziele eingeht, die Arbeit der Agentur benennt und zugibt, was unklar ist, wirkt aufmerksam. Viele Agenturen sagen offen, dass sie Berichte mit KI vorbereiten und ein Kundenberater alles prüft.
+
+### Kann das Modell Maßnahmen für den nächsten Monat vorschlagen?
+
+Es kann Optionen aus den Daten ableiten und bemerkt manchmal gut, wenn bei einer Kampagne die Kosten pro Conversion steigen. Der Plan selbst sollte vom Kundenberater kommen. Kunden bezahlen für Urteilsvermögen, und bei den nächsten Schritten zeigt es sich.
+
+### Sollten wir Berichte seltener verschicken?
+
+Für viele kleinere Kunden ist ein kurzer Monatsbericht mit drei Absätzen und fünf Kennzahlen sinnvoller als ein ausführliches Monatspaket, ergänzt um eine gründliche Quartalsauswertung mit Gespräch. Das Modell kann beides aus denselben Daten entwerfen: monatlich knapp, quartalsweise mit Entwicklung über die Zeit und Vorschlägen für die nächste Periode. Fragen Sie Ihre Kunden, was sie tatsächlich lesen. Die Antwort ist oft weniger, als Sie schicken.
+
+### Wer haftet, wenn im Bericht etwas Falsches steht?
+
+Die Agentur, wie bisher. Ein Entwurf ist ein Entwurf. Deshalb prüft der Kundenberater jede Zahl und jede Aussage, bevor der Bericht rausgeht, und deshalb darf das Modell nichts erklären, was nicht im Protokoll steht.
+
+### Was, wenn der Kunde Rückfragen zum Bericht hat?
+
+Dieselben Daten und dasselbe Protokoll beantworten viele Nachfragen schnell („Wie lief die Markenkampagne im letzten Quartal?“). Antwort entwerfen, prüfen, senden.
+
+## Faustregel
+
+Diagramme automatisieren, Texte entwerfen lassen, und nie eine Zahl mit etwas erklären, das nicht im Änderungsprotokoll steht. Ist die Ursache nicht aufgeschrieben, sollte der Bericht das sagen.
+
+Wenn das Reporting in Ihrer Agentur jede erste Monatswoche frisst, [schreiben Sie mir, welche Reporting-Tools Sie nutzen](/contact?intent=improve) und wie Sie Änderungen pro Kunde festhalten. Ich zeige Ihnen, wie Kommentarentwürfe dazu passen. Dasselbe Muster aus wiederkehrender Arbeit und immer gleichen Fragen kennen [Buchhaltungsbüros](/de/posts/ai-for-bookkeepers-client-questions) und kleine IT-Dienstleister mit [wiederkehrenden Tickets](/de/posts/ai-for-it-service-desks).
