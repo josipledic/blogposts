@@ -1,0 +1,146 @@
+---
+id: "ai-for-recruitment-agencies-candidate-notes"
+title: "Interview Notes to Candidate Records: AI for Small Recruitment Agencies"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Professional services", "Recruitment agencies", "Candidate records", "AI for small business"]
+description: "AI can turn screening calls into clean candidate records, but ranking candidates is high-risk under the EU AI Act. A decision guide for small recruitment agencies."
+excerpt: "AI can turn screening calls into clean candidate records, but ranking candidates is high-risk under the EU AI Act. A decision guide for small recruitment agencies."
+---
+
+A recruiter at a four-person agency does six screening calls a day. Each one is 30 to 45 minutes of real conversation: why the candidate wants to move, what they actually did in their last role, what would make them say no to an offer. And during each call, the recruiter is typing. Half-sentences, abbreviations, a salary figure with a question mark. The candidate notices the pauses. The recruiter misses a follow-up question because they were still writing down the last answer.
+
+A week later the client asks, "Why do you think she's a fit for this role?" The record in the applicant tracking system says: *Strong comms. Wants hybrid. 75k? Notice 3 months. Good w/ stakeholders.* The recruiter knows there was more. They can't remember what.
+
+This is one of the clearest wins for AI in a small agency: capture the conversation, turn it into a structured record, and let the recruiter listen instead of type. It's also a place where it's easy to drift into something very different, and legally much heavier: letting the model judge candidates. This post is about where that line runs and how to stay on the right side of it.
+
+## The decision: structure or evaluate?
+
+There are roughly three things you can ask AI to do with a screening call. They look similar from a distance and they're very different up close.
+
+**1. Transcribe and structure.** The model turns the conversation into a candidate record: experience, skills, motivation, availability, expectations, open questions. It records what the candidate said. It doesn't judge.
+
+**2. Draft the client submission.** The model writes a summary of the candidate for the client, based on the structured record and the recruiter's own assessment. The recruiter edits and sends it. The judgment is the recruiter's; the model is doing the writing.
+
+**3. Score, rank or filter.** The model rates candidates against a job, produces a "fit score", ranks a shortlist, or decides who gets rejected. Now the model is evaluating people.
+
+Under the EU AI Act, AI systems intended for recruitment or selection, "in particular to place targeted job advertisements, to analyse and filter job applications, and to evaluate candidates", are listed as high-risk in [Annex III](https://artificialintelligenceact.eu/annex/3/). High-risk systems carry heavy obligations: risk management, data governance, human oversight, logging, and more. Those obligations now apply from December 2027, but that's not far away, and the classification depends on what the system does, not on whether a human signs off afterwards.
+
+The US has its own patchwork. New York City's Local Law 144 requires a bias audit and candidate notice before using an automated employment decision tool. Illinois amended its Human Rights Act, effective January 2026, to prohibit AI use that has a discriminatory effect in hiring and to [require notice when AI is used](https://natlawreview.com/article/illinois-anti-discrimination-law-address-ai-goes-effect-1-january-2026). More states are following.
+
+<Timeline title="The rules arriving for AI in hiring" caption="Dates for the rules mentioned here. Check the ones that apply where you and your clients recruit.">
+<Phase when="July 2023" title="New York City">Enforcement of Local Law 144 begins: bias audits and candidate notice for automated employment decision tools.</Phase>
+<Phase when="January 2026" title="Illinois">Human Rights Act amendment in force: no AI use with discriminatory effect, and notice when AI is used in hiring decisions.</Phase>
+<Phase when="August 2026" title="EU transparency rules">AI Act Article 50 applies: people must be told when they're interacting with an AI system.</Phase>
+<Phase when="December 2027" title="EU high-risk obligations">Requirements for Annex III systems, including recruitment and candidate evaluation, apply.</Phase>
+</Timeline>
+
+My recommendation for a small agency is simple: do the first two, and stay out of the third.
+
+<Split title="Where the line runs" leftTitle="Structuring: a documentation tool" rightTitle="Evaluating: a high-risk system" left={[
+  "Transcribes the call with the candidate's consent",
+  "Fills the candidate record from what was said",
+  "Lists open questions for the next call",
+  "Drafts a client summary from the recruiter's assessment",
+  "Removes remarks about protected characteristics",
+  "The recruiter decides who goes forward"
+]} right={[
+  "Rates or scores candidates against a job",
+  "Ranks a shortlist automatically",
+  "Rejects applications without a human decision",
+  "Infers personality or “culture fit” from speech",
+  "Analyses tone, facial expressions or accents",
+  "Needs audits, documentation and oversight to be lawful"
+]} />
+
+## What a good candidate record contains
+
+The value of structuring comes from consistency. Every candidate record has the same fields, filled from the conversation, so the recruiter and the client can compare like with like.
+
+| Field | Where it comes from | Watch out for |
+| --- | --- | --- |
+| Current role and responsibilities | Candidate's description, in their words | Titles mean different things at different companies; capture what they actually did |
+| Key experience for the target role | Specific examples from the call | Record examples, not adjectives like "strong" |
+| Reasons for moving | Candidate's own explanation | The real reason often comes late in the call |
+| What would make them say no | Deal-breakers: commute, pay floor, travel, remote policy | The most useful field for avoiding late withdrawals |
+| Availability and notice period | Stated notice, any flexibility | Note whether they've checked their contract |
+| Salary expectations | Stated range for the new role | Many US states and cities ban asking about salary history; record expectations, not history |
+| Right to work | Candidate's statement, where relevant | Ask the same way for everyone; don't infer from name or accent |
+| Open questions | Anything unclear or not covered | The model is good at spotting gaps |
+
+The "watch out" column is where a lot of the value is. A model instructed to capture examples instead of adjectives produces records that are far more useful to clients than "great communicator".
+
+## The workflow
+
+<Flow title="From screening call to candidate record" caption="The model transcribes, structures and filters. The recruiter reviews every record and makes every decision about who goes forward.">
+<Step title="Consent" who="Recruiter" tone="human" time="start of call">The recruiter asks whether the call can be transcribed and explains why. If the candidate says no, the recruiter dictates a voice note afterwards instead.</Step>
+<Step title="The conversation" who="Recruiter and candidate" tone="human" time="30 to 45 min">The recruiter listens and asks follow-up questions instead of typing.</Step>
+<Step title="Structured draft" who="AI" tone="ai" time="minutes">The transcript becomes a draft record in the agency's fixed format, with quotes for key points and a list of open questions.</Step>
+<Step title="Protected-characteristics filter" who="AI" tone="ai">Remarks about age, family, health, religion, origin or similar are removed from the record and flagged, not stored.</Step>
+<Step title="Recruiter reviews" who="Recruiter" tone="human" time="5 min">Corrects errors, adds their own assessment in a separate field, and saves to the ATS.</Step>
+<Step title="Client submission" who="AI and recruiter" tone="ai">When the recruiter decides to put the candidate forward, the model drafts the submission from the record. The recruiter edits and sends.</Step>
+</Flow>
+
+Two details matter in this flow. First, the recruiter's own assessment lives in a separate field that the model doesn't fill. That keeps it clear whose judgment is whose, which matters for clients and, increasingly, for regulators. Second, the filter step removes things people mention in passing that shouldn't end up in a record, let alone in front of a client.
+
+<Callout title="Keep protected characteristics out of the record" tone="warning">
+Candidates mention things in conversation: their kids, an upcoming operation, their age, their faith, where their parents are from. None of it belongs in a candidate record or a client submission, and having it there creates discrimination risk for the agency and the client. Instruct the model to leave such remarks out and flag them to the recruiter, and never let it infer these characteristics from a name, a voice or a photo.
+</Callout>
+
+## What the client sees
+
+A submission drafted from a structured record reads very differently from one written from memory:
+
+> **Sarah M., Operations Manager, logistics.** Six years running warehouse operations for a regional distributor, currently responsible for two sites and 45 staff. Led the switch to a new warehouse management system last year, including retraining both shifts. Moving because the company is centralising and her role will be based three hours away. Looking for a hands-on site role within 40 minutes of home; open to one day remote. Notice period three months, likely negotiable to two. Expectations within your range.
+>
+> **Recruiter's view:** Strong match for the site lead role. Her WMS rollout is directly relevant to your planned migration, and she's candid about wanting to stay operational rather than move into a regional role. Worth probing: experience with unionised workforces.
+
+Everything in the first paragraph traces back to what the candidate said. The second paragraph is the recruiter's opinion, labelled as such. The client knows which is which.
+
+## Decisions you'll face
+
+### Should you record screening calls?
+
+If candidates agree, yes: transcripts make better records than any notes. Ask at the start of every call, explain what it's for and how long you keep it, and respect a no. Several US states require everyone's consent to record a call, and in the EU recording needs a clear legal basis and transparency. Delete the recording once the structured record is checked, unless you have a reason to keep it.
+
+### Should the model match candidates to open roles?
+
+Suggesting "you might want to look at these five candidates for the new role" sounds harmless, but automated matching is filtering, and filtering is on the high-risk list. If you use it, the recruiter must genuinely choose, and you should treat the tool as a high-risk system in your planning. For most small agencies, a good search in the ATS over well-structured records gets you most of the way without the risk.
+
+### Should candidates see their own record?
+
+It's a good practice and, in the EU, candidates can request their data anyway. Some agencies send the candidate a short summary after the call ("here's what I understood, did I get anything wrong?"). It catches errors and builds trust.
+
+### Should you tell clients you use AI?
+
+Yes, briefly: which tasks, who reviews, and that no candidate is selected or rejected by software. Clients increasingly ask, and some have their own AI policies for suppliers.
+
+## Tools that fit
+
+Agency platforms such as Bullhorn, Vincere, JobAdder, Loxo and Recruit CRM all have candidate records and APIs, and several now offer AI features of their own. Check what those features do before switching them on: "AI matching" and "candidate scoring" are the parts that move you into high-risk territory. Interview note-taking tools and the transcription in Teams or Zoom handle the recording side. The structuring layer, with your fixed record format and the protected-characteristics filter, is what I'd build or configure carefully.
+
+Keep data handling tight: a provider that doesn't train on your data, retention periods that match your privacy notice, and deletion of raw recordings once they've served their purpose.
+
+## Questions recruiters ask
+
+### Will candidates mind being transcribed?
+
+Most don't, especially when you explain that it lets you listen properly and represent them more accurately to clients. Offer the alternative without pressure.
+
+### Can the model write job ads too?
+
+Yes, and that's a low-risk use as long as a person reviews them. Watch for gendered or age-coded language, which models sometimes reproduce. Targeting who sees the ad is a different matter: the AI Act lists targeted job advertising in the same high-risk category.
+
+### What if the transcript gets something wrong?
+
+It will, with names, company names and numbers most often. The recruiter's five-minute review exists for that. Quotes in the record make it easy to check what was actually said.
+
+### Does this work for high-volume temp recruitment?
+
+The structuring part does, and it saves even more time at volume. The temptation to automate screening decisions is also stronger at volume. That's exactly where the high-risk rules bite, so the same line applies.
+
+## Rule of thumb
+
+Let the model write down what the candidate said. Let the recruiter decide what it means. The moment software starts deciding who's a good candidate, you're running a high-risk system, and a small agency rarely needs one.
+
+If your candidate records are thinner than your conversations, [tell me which ATS you use](/contact?intent=improve) and how your screening calls run. I'll suggest how to set up structured records that stay on the documentation side of the line. Insurance brokers face a similar prepare-and-document problem in [renewal season](/posts/ai-for-insurance-brokers-renewals), and architects keep [decision logs](/posts/ai-for-architects-meeting-decisions) the same way.
