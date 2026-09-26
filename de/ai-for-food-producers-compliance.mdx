@@ -1,0 +1,120 @@
+---
+id: "de-ai-for-food-producers-compliance"
+title: "Lebensmittelhersteller: Chargen und HACCP-Nachweise in Sekunden finden"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Lebensmittel & Gastronomie", "Lebensmittelhersteller", "HACCP-Dokumentation", "KI für kleine Unternehmen"]
+description: "HACCP-Protokolle, Lieferantenzertifikate und Chargendaten liegen in Ordnern und Postfächern. Wie KI kleinen Herstellern hilft, sie im Audit sofort zu finden."
+excerpt: "HACCP-Protokolle, Lieferantenzertifikate und Chargendaten liegen in Ordnern und Postfächern. Wie KI kleinen Herstellern hilft, sie im Audit sofort zu finden."
+---
+
+Dienstag, 8:30 Uhr. Die Auditorin ist zum unangekündigten IFS-Audit bei einem kleinen Hersteller von Müsli und Nussriegeln eingetroffen. Um 9:15 Uhr stapeln sich die Anfragen. Die Backtemperatur-Protokolle für Charge 2419 aus dem März. Das aktuelle Allergenzertifikat des Mandellieferanten. Die Reinigungsvalidierung nach dem Wechsel von der Erdnusslinie. Die Reklamation aus dem Juni wegen eines Kunststoffteils und was daraufhin passiert ist. Und dann der große Punkt: ein Rückverfolgbarkeitstest. „Zeigen Sie mir jede Rohwarencharge, die in Charge 2419 gegangen ist, und jeden Kunden, der sie bekommen hat.“
+
+Der Qualitätsmanager, der gleichzeitig Produktionsleiter ist und dienstags die Warenannahme übernimmt, weiß, dass alles existiert. In den Ordnern im Regal, in den eingescannten Protokollen im Laufwerksordner „QM neu (2)“, in Zertifikaten als E-Mail-Anhang in irgendeinem Postfach und in der Produktionstabelle. Es zu finden, kostet den Rest des Vormittags. Der Rückverfolgbarkeitstest dauert bis zum Mittag. Es ist alles da. Es ist nur nicht verbunden.
+
+Genau diese Lücke kann KI für einen kleinen Lebensmittelhersteller schließen: nicht indem sie Aufzeichnungen schreibt, sondern indem sie die vorhandenen liest, verknüpft und in Sekunden findet.
+
+<Stats title="Aufzeichnungen, die schnell auffindbar sein müssen">
+  <Stat value="323" label="Lebensmittelrückrufe wurden 2025 auf lebensmittelwarnung.de veröffentlicht" source="BVL" href="https://www.bvl.bund.de/SharedDocs/Pressemitteilungen/01_lebensmittel/2026/PM_Lebensmittelwarnung_de_2025.html" />
+  <Stat value="43" label="davon wegen Listerien, seit 2024 der häufigste Erreger hinter Rückrufen" source="BVL" href="https://www.bvl.bund.de/SharedDocs/Pressemitteilungen/01_lebensmittel/2026/PM_Lebensmittelwarnung_de_2025.html" />
+  <Stat value="seit 2005" label="gilt EU-weit die Pflicht zur Rückverfolgbarkeit: eine Stufe zurück, eine Stufe vor" source="Art. 18 VO (EG) 178/2002" href="https://eur-lex.europa.eu/eli/reg/2002/178/oj" />
+</Stats>
+
+Jeder Lebensmittelunternehmer muss wissen, woher seine Zutaten kommen und wohin seine Erzeugnisse gegangen sind. IFS Food und BRCGS prüfen das mit Rückverfolgbarkeitstests unter Zeitvorgabe, die amtliche Lebensmittelüberwachung im Ernstfall. Und bei einem Rückruf verlangt Art. 19 derselben Verordnung, betroffene Ware umgehend vom Markt zu nehmen und die Behörde zu informieren. Die Frage „Was ist da drin, und wo ist es hingegangen?“ muss also schnell und vollständig beantwortbar sein.
+
+## Was im Audit gefragt wird und wo es meist liegt
+
+| Was die Auditorin sehen will | Wo es in kleinen Betrieben meist liegt | Was ein verknüpftes Archiv leistet |
+| --- | --- | --- |
+| CCP-Überwachung für eine Charge | Papierprotokolle im Ordner, manchmal wöchentlich gescannt | Liest die Scans, erkennt Charge, Datum, Messwerte und Unterschrift, findet sie über die Chargennummer |
+| Lieferantenfreigabe und Zertifikate | E-Mail-Anhänge, Lieferantenordner, Schreibtisch des Einkaufs | Ordnet jedes Zertifikat Lieferant und Rohware zu, kennt das Ablaufdatum |
+| Allergenmanagement und Reinigungsvalidierung | QM-Ordner, Reinigungsprotokolle, Abklatsch-Ergebnisse vom Labor | Verbindet Linienwechsel, Reinigung und Laborergebnis über Datum und Linie |
+| Reklamationen und Korrekturmaßnahmen | E-Mails, Reklamationstabelle, Besprechungsnotizen | Verknüpft Reklamation mit Charge, Untersuchung und Maßnahme |
+| Schädlingsmonitoring | Berichte des Dienstleisters als PDF | Indexiert Befunde und Nacharbeiten nach Datum und Standort |
+| Rückverfolgung Charge zu Rohwaren | Produktionsbelege, Wareneingang, Lieferantenchargen | Folgt Chargennummern rückwärts durch die Produktion |
+| Rückverfolgung Charge zu Kunden | Lieferscheine und Rechnungen | Folgt der Charge vorwärts zu jeder Lieferung |
+| Schulungsnachweise | Personalordner, Unterschriftenlisten | Zeigt, wer wann worin geschult wurde |
+
+Nichts davon verlangt neue Dokumentation. Es verlangt, dass die vorhandene auffindbar und verbunden ist.
+
+## So funktioniert es
+
+<Flow title="Von verstreuten Aufzeichnungen zu Antworten mit Quelle" caption="Das Modell liest, verknüpft und markiert. Es schreibt nie eine Aufzeichnung. Jede Antwort verweist auf das Originaldokument, und jede Lücke prüft ein Mensch.">
+<Step title="Erfassen" who="Mitarbeitende" tone="human" time="wie bisher">Papierprotokolle werden am Schichtende fotografiert oder gescannt. Digitale Daten (Sensorlogs, Tabellen, Warenwirtschaft, Laborbefunde, Zertifikate per E-Mail) werden direkt angebunden.</Step>
+<Step title="Lesen und auslesen" who="KI" tone="ai" time="Minuten">Aus jedem Dokument: Art, Datum, Chargen- oder Losnummern, Linie, Messwerte, Unterschrift. Handschrift wird gelesen, wo sie lesbar ist, und markiert, wo nicht.</Step>
+<Step title="Verknüpfen" who="KI" tone="ai">Aufzeichnungen werden über Charge, Los, Lieferant, Linie und Datum verbunden. Eine Chargennummer führt zu allem, was dazugehört.</Step>
+<Step title="Lücken markieren" who="KI" tone="ai" time="täglich">Fehlende Protokolle, Grenzwertüberschreitungen ohne Korrekturmaßnahme, fehlende Unterschriften, bald ablaufende Zertifikate.</Step>
+<Step title="QM prüft" who="Qualitätsmanagement" tone="human" time="10 Min. täglich">Prüft die Markierungen, klärt mit dem Team und dokumentiert, was tatsächlich getan wurde. Lücken werden an der Quelle behoben, nie überdeckt.</Step>
+<Step title="Fragen und Antworten" who="Berechtigte" tone="human">„Zeig mir die CCP-Protokolle für Charge 2419“ liefert die Originalscans und die ausgelesenen Werte, mit Link zu jeder Quelle.</Step>
+</Flow>
+
+## Der Rückverfolgbarkeitstest in Minuten
+
+Die größte Zeitersparnis bringt der Rückverfolgbarkeitstest und der Ernstfall, den er probt: der Rückruf. Mit verknüpften Aufzeichnungen liefert die Frage „Charge 2419 zurückverfolgen“ einen kurzen Bericht:
+
+> **Charge 2419, Honig-Mandel-Müsli, produziert am 12. März, Linie 2, 1.840 kg.** Rohwaren: Haferflocken Los OT-2201 (Mühle Berger, geliefert 3. März, Zertifikat gültig bis Dezember), Mandeln Los A-7731 (Nutco, geliefert 28. Februar, Allergenzertifikat gültig bis August), Honig Los H-118 (zwei Lieferungen, beide verknüpft). CCP 2 Backtemperatur: 14 Messungen, alle im Grenzbereich, unterschrieben von J. Ortiz (Scan, Seite 3). Metalldetektor-Prüfungen: Schichtbeginn, alle zwei Stunden, Schichtende, alle bestanden. **Ausgeliefert an:** 6 Kunden, insgesamt 1.812 kg; 28 kg Rückstellmuster und Nacharbeit. **Offener Punkt:** Wareneingangsprüfung für die Honiglieferung vom 5. März nicht gefunden.
+
+Jede Zeile verweist auf ihr Quelldokument. Was früher einen Vormittag Ordnerziehen kostete, sind jetzt ein paar Minuten Prüfen.
+
+Die Gegenrichtung zählt genauso. Ruft ein Lieferant an, weil ein Mandellos belastet ist, lautet die Frage: „Welche unserer Chargen enthielten Mandeln aus Los A-7731, und wohin sind sie gegangen?“ Diese Antwort wollen Sie haben, bevor das Telefonat zu Ende ist, nicht am Ende der Woche.
+
+## Lücken sind der eigentliche Wert
+
+Aufzeichnungen schnell zu finden, beeindruckt im Audit. Lücken zu finden, bevor die Auditorin sie findet, schützt den Betrieb wirklich.
+
+Ein täglicher Abgleich über alle Aufzeichnungen findet, was im Ordner leicht untergeht: ein nie ausgefülltes Temperaturprotokoll der Donnerstagnachtschicht, einen Messwert über dem kritischen Grenzwert ohne notierte Korrekturmaßnahme, ein Lieferantenzertifikat, das in drei Wochen abläuft, eine fehlende Reinigung nach dem Wechsel von einem erdnusshaltigen Produkt. Jede Markierung geht an das Qualitätsmanagement, das klärt, was passiert ist, und die tatsächliche Nachbearbeitung dokumentiert.
+
+<Callout title="Das Modell findet Lücken. Es füllt sie nie." tone="warning">
+Eine Aufzeichnung zur Lebensmittelsicherheit ist nur etwas wert, weil ein Mensch sie zum richtigen Zeitpunkt auf Grundlage seiner Beobachtung gemacht hat. Ein KI-System darf Überwachungsprotokolle, Unterschriften oder Korrekturmaßnahmen niemals nachträglich erstellen, ergänzen oder „rekonstruieren“. Das wäre Fälschung, und es zerstört das Vertrauen, auf dem Ihr ganzes System beruht, bei Auditoren, Kunden und Behörden. Richten Sie das System so ein, dass es lesen und markieren kann, sonst nichts. Fehlt eine Aufzeichnung, lautet die ehrliche Antwort: Sie fehlt, und das haben wir daraufhin getan.
+</Callout>
+
+## Nicht nur fürs Zertifizierungsaudit
+
+Auch die amtliche Lebensmittelüberwachung prüft Ihre Eigenkontrollen, und sie kommt ohne Anmeldung. Kontrolleure wollen HACCP-Nachweise, Reinigungspläne, Temperaturaufzeichnungen und Schulungsnachweise sehen, und bei bestimmten Verstößen sieht § 40 Abs. 1a LFGB eine Veröffentlichung vor. Wer auf Nachfrage in Minuten die richtigen Belege zeigt, führt ein anderes Gespräch als jemand, der eine Stunde in Ordnern sucht.
+
+Dazu kommen Kundenaudits. Handelsketten und größere Abnehmer schicken eigene Fragebögen und verlangen Nachweise zu Allergenen, Herkunft oder Nachhaltigkeit. Mit einem verknüpften Archiv lassen sich viele dieser Fragen aus vorhandenen Aufzeichnungen beantworten. Das Modell kann einen Antwortentwurf mit Belegen zusammenstellen, das Qualitätsmanagement prüft und schickt ihn ab.
+
+## Papier ist nicht das Problem
+
+Viele kleine Hersteller arbeiten an der Linie mit Papierprotokollen, und daran ist nichts falsch. Papier ist schnell, funktioniert mit nassen Händen und muss nicht geladen werden. Das Problem ist Papier, das nur im Ordner existiert. Ein Foto jedes ausgefüllten Blatts am Schichtende, mit sichtbarer Chargennummer, reicht, damit das Modell es lesen und verknüpfen kann. Mit der Zeit wandern manche Protokolle auf Tablets oder Sensoren, vor allem Temperaturen. Das ist aber eine Verbesserung, keine Voraussetzung.
+
+## Der Einstieg
+
+Ein sinnvoller erster Monat, ohne große Anschaffung:
+
+1. **Woche 1:** Eine Produktlinie wählen. Die Aufzeichnungen der letzten drei Monate scannen oder fotografieren: Produktionsbelege, CCP-Protokolle, Wareneingang, Lieferungen.
+2. **Woche 2:** Vom Modell indexieren lassen und den Rückverfolgbarkeitstest an drei Chargen ausprobieren. Mit dem Weg von Hand vergleichen.
+3. **Woche 3:** Lieferantenzertifikate ergänzen und Ablauferinnerungen einschalten.
+4. **Woche 4:** Den täglichen Lückencheck für die Linie aktivieren und mit dem Team festlegen, wie Markierungen bearbeitet werden.
+
+Spart es Zeit und findet echte Lücken, kommt die nächste Linie dran. Wenn nicht, haben Sie einen Monat verloren und trotzdem ein besser geordnetes Archiv gewonnen.
+
+## Welche Werkzeuge passen
+
+HACCP- und QM-Software bietet digitale Protokolle, HACCP-Pläne und Lieferantenmanagement, einige Anbieter inzwischen auch mit KI-Funktionen. Viele kleine Hersteller nutzen eine Warenwirtschaft mit Chargenverwaltung für Wareneingang und Lieferungen. Die hier beschriebene KI-Schicht liegt quer über allem, was da ist: Sie liest Dokumente aus Laufwerksordnern, E-Mail-Anhängen, Warenwirtschaft und Scan-App und baut daraus den verknüpften Index. Sie ersetzt weder Ihren HACCP-Plan noch Ihr QM-System. Sie macht die Aufzeichnungen dahinter auffindbar.
+
+Rezepturen, Lieferanten- und Kundenlisten sind Geschäftsgeheimnisse, auch wenn die meisten Aufzeichnungen keine personenbezogenen Daten enthalten. Wählen Sie einen Anbieter mit klaren Regeln zu Speicherort und Nutzung, am besten mit Verarbeitung in der EU.
+
+## Häufige Fragen von Lebensmittelherstellern
+
+### Akzeptieren Auditoren Aufzeichnungen, die eine KI gefunden hat?
+
+Auditoren schauen auf die Originale, nicht auf die KI. Was sich ändert, ist die Geschwindigkeit, mit der Sie sie zeigen können. Der Index verweist auf den Originalscan oder die Originaldatei, und die zeigen Sie. Eine gut geordnete, durchsuchbare Dokumentenlenkung macht im Audit ohnehin einen guten Eindruck.
+
+### Kann das Modell unsere Handschrift lesen?
+
+Meistens. Klare Druckbuchstaben und Zahlen in festen Feldern funktionieren am besten, ein guter Grund, Protokolle mit Kästchen statt freien Linien zu gestalten. Was das Modell nicht sicher lesen kann, wird markiert und von einem Menschen am Original geprüft.
+
+### Und unser HACCP-Plan?
+
+Der Plan ist die Arbeit Ihres Teams und sollte es bleiben. Das Modell kann prüfen, ob Ihre Überwachungsaufzeichnungen zum Plan passen, also richtige Häufigkeit, richtige Grenzwerte, richtige Verantwortliche. Das ist ein häufiger Auditbefund.
+
+### Lohnt sich das für einen sehr kleinen Betrieb?
+
+Bei einer Produktlinie und einem Ordner eher noch nicht. Sobald mehrere Linien, Allergenwechsel, eine wachsende Zahl von Lieferanten und Handelskunden mit eigenen Audits dazukommen, summieren sich die Suchstunden schnell, und ebenso das Risiko einer Lücke, die niemand bemerkt hat.
+
+## Faustregel
+
+Dokumentieren Sie weiter wie bisher: zum richtigen Zeitpunkt, durch die Person, die prüft. Lassen Sie das Modell lesen, nach Charge und Los verknüpfen und Ihnen jeden Morgen sagen, was fehlt. Und üben Sie die Rückverfolgung, bis die Antwort Minuten dauert, denn irgendwann ist es keine Übung mehr.
+
+Wenn die Auditvorbereitung bei Ihnen Wochen frisst, [schreiben Sie mir, wie Ihre Aufzeichnungen heute geführt werden](/contact?intent=improve): Papier, Tabellen, Software oder gemischt. Ich zeige Ihnen, wie sie durchsuchbar werden, ohne dass sich an der Linie etwas ändert. Dentallabore kennen eine ähnliche Dokumentationslast bei der [Auftragsannahme](/de/posts/ai-for-dental-labs-case-intake), Hofläden die Frische-Frage in [frische Ware verkaufen, bevor sie verdirbt](/de/posts/ai-for-farm-shops-inventory).

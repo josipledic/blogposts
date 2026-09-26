@@ -1,0 +1,114 @@
+---
+id: "ai-for-food-producers-compliance"
+title: "Audit Day at a Small Food Producer: Find Any Record in Seconds"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Food & drink", "Food producers", "Food safety records", "AI for small business"]
+description: "HACCP logs, supplier certificates and batch records live in binders, folders and inboxes. How AI helps small food producers find and link them when an auditor asks."
+excerpt: "HACCP logs, supplier certificates and batch records live in binders, folders and inboxes. How AI helps small food producers find and link them when an auditor asks."
+---
+
+8:30 on a Tuesday. The auditor has arrived for the unannounced certification audit at a small producer of granola and nut bars. By 9:15 the requests are piling up. The baking temperature records for batch 2419 from March. The current allergen certificate for the almond supplier. The cleaning validation after the switch from the peanut line. The complaint from June about a piece of plastic, and what was done about it. And then the big one: a traceability exercise. "Show me every raw material lot that went into batch 2419, and every customer who received it."
+
+The quality manager, who is also the production manager and on Tuesdays covers the loading dock, knows all of this exists. It's in the ring binders on the shelf, the scanned logs in a shared folder called "QM new (2)", the supplier certificates attached to emails in someone's inbox, and the production spreadsheet. Finding it takes the rest of the morning. The traceability exercise takes until lunch. It's all there. It's just not connected.
+
+That's the gap AI can close for a small food producer: not by writing records, but by reading the ones you already keep, linking them, and finding anything in seconds.
+
+<Stats title="Records you need to find, fast">
+  <Stat value="24 hours" label="to hand the FDA traceability records for foods on its Traceability List when asked, under FSMA 204" source="FDA" href="https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-requirements-additional-traceability-records-certain-foods" />
+  <Stat value="July 2028" label="when the FDA will begin enforcing the Food Traceability Rule, after a 30-month delay from the original January 2026 date" source="Federal Register" href="https://www.federalregister.gov/documents/2025/08/07/2025-14967/requirements-for-additional-traceability-records-for-certain-foods-compliance-date-extension" />
+  <Stat value="323" label="food recalls published in Germany in 2025; Listeria was the most common pathogen, with 43" source="BVL" href="https://www.bvl.bund.de/SharedDocs/Pressemitteilungen/01_lebensmittel/2026/PM_Lebensmittelwarnung_de_2025.html" />
+</Stats>
+
+In the EU, traceability has been law for over two decades: Regulation 178/2002 requires every food business to know where its ingredients came from and where its products went, one step back and one step forward. Certification schemes such as IFS Food and BRCGS test it with timed traceability exercises. The FDA's delay gives US producers more time, but the direction is the same everywhere: be able to answer "what went into this, and where did it go?" quickly and completely.
+
+## What auditors ask for, and where it usually lives
+
+| What the auditor asks for | Where it usually lives in a small producer | What an indexed archive does |
+| --- | --- | --- |
+| CCP monitoring records for a batch | Paper logs in binders, scanned weekly, sometimes | Reads the scans, extracts batch, date, readings and signature, finds them by batch number |
+| Supplier approval and certificates | Email attachments, a supplier folder, the buyer's desk | Links each certificate to the supplier and ingredient, knows the expiry date |
+| Allergen management and cleaning validation | QM folder, cleaning logs, swab results from the lab | Connects line changeovers, cleaning records and swab results by date and line |
+| Complaints and corrective actions | Email, a complaint spreadsheet, meeting notes | Links the complaint to the batch, the investigation and the action taken |
+| Pest control | Contractor reports as PDFs | Indexes findings and follow-ups by date and location |
+| Traceability: batch to raw materials | Production sheets, goods-in records, supplier lot numbers | Follows lot numbers backwards through production records |
+| Traceability: batch to customers | Delivery notes and invoices | Follows the batch forwards to every delivery |
+| Training records | HR folder, sign-off sheets | Finds who was trained on what, and when |
+
+None of this requires new record-keeping. It requires that the records you already keep can be found and connected.
+
+## How it works
+
+<Flow title="From scattered records to answers with sources" caption="The model reads, links and flags. It never writes a record. Every answer points to the original document, and a person reviews every gap.">
+<Step title="Capture" who="Staff" tone="human" time="as today">Paper logs are photographed or scanned at the end of each shift. Digital records (sensor logs, spreadsheets, ERP data, lab results, emails with certificates) are connected directly.</Step>
+<Step title="Read and extract" who="AI" tone="ai" time="minutes">From each document: type, date, batch or lot numbers, line, readings, who signed. Handwriting is read where legible and flagged where it isn't.</Step>
+<Step title="Link" who="AI" tone="ai">Records are connected by batch, lot, supplier, line and date, so one batch number leads to everything related to it.</Step>
+<Step title="Flag gaps" who="AI" tone="ai" time="daily">Missing records, readings out of range without a corrective action, unsigned sheets, certificates about to expire.</Step>
+<Step title="QA reviews" who="Quality manager" tone="human" time="10 min a day">Checks the flags, follows up with the team, and records what was actually done. Gaps are fixed at the source, never papered over.</Step>
+<Step title="Ask and answer" who="Anyone authorised" tone="human">"Show me the CCP records for batch 2419" returns the original scans and the extracted values, with links to each source.</Step>
+</Flow>
+
+## The traceability exercise in minutes
+
+The biggest time saver is the traceability test, and the related real-life event it rehearses: a recall.
+
+With linked records, a question like "trace batch 2419" produces a short report: the raw material lots used (with supplier, delivery date and certificate), the production date and line, the CCP records, the quantity produced, and every delivery of that batch with customer, date and quantity. Each line links to its source document. What used to take a morning of pulling binders becomes a few minutes of checking. It might look like this:
+
+> **Batch 2419, Honey Almond Granola, produced 12 March, line 2, 1,840 kg.** Raw materials: oats lot OT-2201 (Miller Farms, delivered 3 March, certificate valid to Dec), almonds lot A-7731 (Nutco, delivered 28 Feb, allergen certificate valid to Aug), honey lot H-118 (two deliveries, both linked). CCP 2 baking temperature: 14 readings, all within limits, signed by J. Ortiz (scan, page 3). Metal detector checks: start, every 2 hours, end, all passed. **Delivered to:** 6 customers, 1,812 kg in total; 28 kg retained samples and rework. **Open point:** goods-in inspection sheet for the honey delivery of 5 March not found.
+
+The reverse matters just as much. If a supplier calls to say one of their almond lots is contaminated, the question becomes "which of our batches used almond lot A-7731, and where did they go?" That's the question you want answered before the phone call ends, not by the end of the week.
+
+## Gaps are the real value
+
+Finding records quickly impresses auditors. Finding gaps before the auditor does is what actually protects the business.
+
+A daily check across all records can spot things that are easy to miss in a binder: a temperature log for Thursday's night shift that was never filled in, a reading above the critical limit with no corrective action noted, a supplier certificate that expires in three weeks, a cleaning record missing after a changeover from a product containing peanuts. Each flag goes to the quality manager, who finds out what happened and records the real follow-up.
+
+<Callout title="The model finds gaps. It never fills them." tone="warning">
+A food safety record is only worth something because a person made it at the time, based on what they observed. An AI system must never create, complete or "reconstruct" monitoring records, signatures or corrective actions after the fact. That would be falsification, and it would destroy the trust your whole system rests on, with auditors, customers and regulators. Set up the system so that it can read and flag, and nothing else. When a record is missing, the honest answer is that it's missing, together with what you did about it.
+</Callout>
+
+## Paper isn't the problem
+
+Many small producers still run on paper logs at the line, and there's nothing wrong with that. Paper is quick, works with wet hands and doesn't need charging. The problem is paper that's only ever in the binder. A photo of each completed sheet at the end of the shift, with the batch number visible, is enough for the model to read and link it. Over time, some logs move to tablets or sensors, especially temperatures, but that's an upgrade, not a precondition.
+
+## Getting started
+
+A sensible first month, without buying anything big:
+
+1. **Week 1:** Pick one product line. Scan or photograph the last three months of its records: production sheets, CCP logs, goods-in, deliveries.
+2. **Week 2:** Let the model index them and try the traceability exercise on three batches. Compare with doing it by hand.
+3. **Week 3:** Add supplier certificates and turn on expiry reminders.
+4. **Week 4:** Switch on the daily gap check for that line, and decide with the team how flags are followed up.
+
+If it saves time and finds real gaps, extend it to the next line. If it doesn't, you've lost a month and gained a better-organised archive anyway.
+
+## Tools that fit
+
+Food safety management platforms such as FoodDocs or SafetyChain offer digital logs, HACCP plans and supplier management, and some now include AI features. Many small producers use an ERP or accounting system with lot tracking for goods-in and deliveries. The AI layer described here sits across whatever you have: it reads documents from shared folders, email attachments, the ERP and the scanning app, and builds the linked index. It doesn't replace your HACCP plan or your food safety system. It makes the records behind them findable.
+
+Choose a provider with clear data handling: your recipes, supplier lists and customer lists are commercially sensitive, even if the records themselves aren't personal data.
+
+## Questions food producers ask
+
+### Will auditors accept AI-found records?
+
+Auditors look at the original records, not at the AI. What changes is how fast you can show them. The index points to the original scan or file, and that's what you show. Some certification bodies are also interested in how you manage your documents, and a well-organised, searchable archive helps there.
+
+### Can it read our handwriting?
+
+Mostly. Clear block capitals and numbers in fixed fields work best, which is a good reason to design logs with boxes rather than open lines. Anything the model can't read confidently is flagged for a person to check against the original.
+
+### What about our HACCP plan itself?
+
+The plan is your team's work and should stay that way. The model can help you check whether your monitoring records actually match what the plan says (right frequency, right limits, right responsible person), which is a common audit finding.
+
+### Is this worth it for a very small producer?
+
+If you have one product line and one binder, probably not yet. Once you have several lines, allergen changeovers, a growing number of suppliers and retail customers who audit you, the hours spent finding records add up quickly, and so does the risk of a gap nobody noticed.
+
+## Rule of thumb
+
+Keep making records the way you do, at the time, by the person doing the check. Let the model read them, link them by batch and lot, and tell you every morning what's missing. And practise the traceability exercise until the answer takes minutes, because one day it won't be an exercise.
+
+If audit preparation eats your weeks, [tell me how your records are kept today](/contact?intent=improve): paper, spreadsheets, software or a mix. I'll suggest how to make them searchable without changing how your team works on the line. Dental labs deal with a similar documentation load in [case intake](/posts/ai-for-dental-labs-case-intake), and farm shops with fresh stock in [selling the harvest before it spoils](/posts/ai-for-farm-shops-inventory).
