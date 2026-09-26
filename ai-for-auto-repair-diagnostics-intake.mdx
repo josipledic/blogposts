@@ -1,0 +1,159 @@
+---
+id: "ai-for-auto-repair-diagnostics-intake"
+title: "“It Makes a Weird Noise”: Better Service Intake for Independent Garages"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Field services", "Auto repair shops", "Service intake", "AI for small business"]
+description: "Vague complaints cost technicians diagnostic time and cause comebacks. How garages can use AI to turn “weird noise” into a structured concern before the car arrives."
+excerpt: "Vague complaints cost technicians diagnostic time and cause comebacks. How garages can use AI to turn “weird noise” into a structured concern before the car arrives."
+---
+
+At 7:45 on a Monday, a customer drops off their car. "It makes a weird noise when I brake, sometimes. Oh, and a light came on last week." The service advisor, with three more customers in line, writes on the repair order: *Noise when braking. Check engine light.*
+
+The technician takes the car for a test drive and hears nothing. Forty minutes later, after a second drive and a call to the customer that goes to voicemail, he finds out what the customer would have said if anyone had asked: the noise only happens in the morning, when turning right into their driveway, and it started after the tyres were changed at another shop last month. The check engine light, it turns out, is a separate issue entirely.
+
+None of this is anyone's fault. It's what happens when a complex, intermittent problem is summarised in one line at a busy counter. And it's a problem AI can help with before the car even arrives, simply by asking the questions a good service advisor would ask if they had the time.
+
+## Why intake matters more every year
+
+<Stats title="The repair market in numbers">
+  <Stat value="12.8 years" label="record average age of US cars and light trucks in 2025" source="S&P Global Mobility" href="https://press.spglobal.com/2025-05-21-U-S-Vehicle-Age-Rises-Again-to-12-8-Years-in-2025,-According-to-S-P-Global-Mobility" />
+  <Stat value="1.2 million" label="new technicians the US will need by 2029 across automotive, diesel, and collision; the pipeline delivers fewer than half" source="TechForce Foundation" href="https://techforce.org/sdpressrelease/" />
+  <Stat value="10.6 years" label="average age of passenger cars in Germany, the highest ever recorded" source="kfz-betrieb" href="https://www.kfz-betrieb.vogel.de/fast-jeder-vierte-pkw-ist-ueber-15-jahre-alt-a-063a8b6f45ab8c20605eec357ea61b19/" />
+</Stats>
+
+Older cars need more repairs, and today's older cars are full of electronics. At the same time, there aren't enough technicians. That combination makes a technician's hour the most valuable thing in the shop, and diagnosis is where most of those hours go. Every minute spent re-interviewing a customer or trying to reproduce a symptom nobody described properly is a minute that isn't billed or isn't spent on the next car.
+
+## One line versus a real concern
+
+The auto repair trade has a good framework for this already: the three Cs on a repair order, *concern, cause, correction*. The technician writes the cause and correction. The concern is supposed to capture the problem as the customer experiences it. In practice, it's usually the weakest of the three.
+
+<Split title="Same car, two repair orders" leftTitle="What usually gets written" rightTitle="What the technician needs" left={[
+  "Noise when braking",
+  "Check engine light",
+  "(Nothing about when, where, or since when)"
+]} right={[
+  "Squeal from front right when braking lightly, mostly on cold mornings, often while turning right",
+  "Started after tyre change at another shop about 4 weeks ago",
+  "Check engine light on steadily since last Tuesday, not flashing, no change in how the car drives",
+  "Customer video attached with the sound"
+]} />
+
+The right column isn't the diagnosis. It's the information that lets a technician start diagnosing in the right place: brakes on the front right, check the work done during the tyre change, and treat the warning light as a separate job with its own scan.
+
+## The questions that matter
+
+Good service advisors ask these instinctively. Under pressure at the counter, they get skipped. A structured interview makes sure they're asked every time, in words customers understand.
+
+| Symptom type | Questions worth asking | Why they help |
+| --- | --- | --- |
+| Noise | Squeal, grind, click, clunk, or hum? Where from? When braking, turning, accelerating, or over bumps? Cold or warm? | Narrows the system and the conditions to reproduce it |
+| Vibration | At what speed? Through the steering wheel or the seat? When braking? | Separates wheels and tyres from brakes and drivetrain |
+| Warning light | Which light, and what colour? Steady or flashing? Any change in how the car drives? | Urgency and where to start the scan |
+| Leak | What colour, where under the car, how big a spot overnight? | Identifies the fluid and the likely source |
+| Starting problems | Cranks slowly, clicks, or cranks but won't start? Cold mornings only? | Battery, starter, or fuel and ignition |
+| History | Since when? Any recent work, here or elsewhere? Happened before? | Recent work is often the cause |
+
+The last row is the one that saves the most time. "Started after the tyre change" or "since the battery was replaced" points straight at the likely cause.
+
+## Intake before the car arrives
+
+<Flow title="From booking to a technician-ready concern" caption="The model interviews and structures. The service advisor checks. The technician diagnoses. Nobody tells the customer what's wrong before a technician has looked.">
+<Step title="Customer books" who="Customer" time="days before">Online, by phone, or by message. The booking confirmation links to a short, friendly questionnaire.</Step>
+<Step title="Guided symptom interview" who="AI" tone="ai" time="3 to 5 min">Plain-language questions that adapt to the answers: noise questions for a noise, light questions for a warning light. The customer can attach a short video with sound.</Step>
+<Step title="Structured concern" who="AI" tone="ai">The answers become a concern statement in the shop's format, with conditions, history, and the customer's own words quoted.</Step>
+<Step title="Vehicle history" who="System">Previous repair orders at your shop and the decoded VIN, plus recall information where you have access to it.</Step>
+<Step title="Advisor checks at drop-off" who="Service advisor" tone="human" time="2 minutes">Confirms the concern with the customer in person, adds anything missing, and gets authorisation for diagnosis.</Step>
+<Step title="Technician starts in the right place" who="Technician" tone="human">Reads a concern that describes how the car behaves, watches the video, and plans the test drive and checks.</Step>
+</Flow>
+
+The video deserves special mention. For intermittent noises, a fifteen-second phone recording made by the customer at the moment the noise happens is worth more than any description. It lets the technician hear the squeal before the test drive, and sometimes it answers the question outright.
+
+## What the customer sees
+
+The questionnaire should feel like a conversation with a helpful person, not a form. For the braking noise, it might go like this:
+
+> **What's the problem?** "Weird noise when I brake, sometimes."
+>
+> **What does it sound like?** Squeal · Grinding · Clicking · Clunk · Something else → *Squeal*
+>
+> **When do you notice it most?** First drive of the day · After driving a while · Always → *First drive of the day*
+>
+> **Does anything make it more likely?** Turning left · Turning right · Braking gently · Braking hard · Going over bumps → *Turning right, braking gently*
+>
+> **Has any work been done on the car recently, here or anywhere else?** → *"New tyres about a month ago at the tyre place."*
+>
+> **If you can, record a few seconds of the noise next time you hear it.** → *Video uploaded*
+
+Six taps and one sentence of typing. Every answer narrows the search, and none of them requires the customer to know anything about cars. The model's job is to pick the next question based on the previous answer and to turn the result into the concern the technician reads.
+
+## What it saves
+
+<Calc title="Napkin math: technician time spent reconstructing complaints" caption="Assumptions, not measurements. Track a week of repair orders to get your own figures." rows={[
+  ["Cars per day with a symptom complaint", "8"],
+  ["Minutes saved per car with a structured concern", "× 15"],
+  ["Technician hours saved per day", "2"],
+  ["Working days per month", "× 21"],
+  ["Hours freed per month", "42"],
+  ["Labour rate billed per hour", "× €110"]
+]} result={["Capacity freed per month", "≈ €4,600"]} />
+
+Some of that time was never billed in the first place, because no customer wants to pay for a technician trying to guess what they meant. Freeing it either brings in more work with the same team or lets the team finish on time.
+
+## After the diagnosis
+
+The same approach helps on the other side of the job. Once the technician has found the cause, the customer needs an explanation they can understand before they approve the repair. A draft written from the technician's notes and inspection photos saves the advisor ten minutes per car:
+
+> The squeal comes from the front right brake. The pad's wear indicator is touching the disc, and the pads are close to the minimum. We'd recommend replacing the front pads and checking the discs, which look fine for now. Photos attached. The check engine light is a separate issue: the scan shows a sensor reading we'd like to test further before recommending anything.
+
+The advisor checks it, adjusts the wording, adds the price, and sends it. Customers who understand what they're paying for approve faster and trust the shop more.
+
+## Where the line is
+
+<Callout title="The intake never diagnoses" tone="warning">
+The questionnaire asks and records. It doesn't tell customers what's wrong, doesn't quote a repair, and doesn't guess from an error code. A code is a starting point for a technician, not a diagnosis. The one exception is safety: if a customer reports a flashing check engine light, smoke, brakes that feel wrong, or a strong fuel smell, the intake tells them plainly not to drive the car and to call the shop.
+</Callout>
+
+I'd hold that line firmly. A language model can produce a very convincing explanation of what "probably" causes a noise, and customers will remember it when the invoice says something else. The shop's credibility comes from the technician's diagnosis, not from a chatbot's guess.
+
+## The intake checklist
+
+<Checklist title="What every concern should capture" items={[
+  "The symptom in the customer's own words, quoted",
+  "When it happens: speed, braking, turning, bumps, cold or warm, weather",
+  "Where it seems to come from, and how often",
+  "Since when, and any recent work done, here or elsewhere",
+  "Any warning lights, their colour, and whether they're steady or flashing",
+  "A photo of the dashboard, and a video if there's a noise",
+  "Whether the customer is comfortable driving the car"
+]} />
+
+## Tools that fit
+
+Most independent shops use shop management software such as Tekmetric, Shopmonkey, Shop-Ware, or Mitchell 1 Manager SE, often with a digital vehicle inspection tool. The intake plugs in at booking: it creates or updates the appointment with a structured concern, the customer's attachments, and the vehicle history. The technician reads it where they already read everything else.
+
+Customer answers and videos are personal data. Keep them with the repair order, use them for the repair, and follow your normal retention rules. In the EU, customers should be told when an automated assistant is asking the questions.
+
+## Questions shop owners ask
+
+### Won't customers find the questions annoying?
+
+Short, relevant questions that adapt to their problem aren't annoying, especially if you explain the reason: "so we can find the problem faster and you pay for less diagnosis time". What annoys customers is being called back three times.
+
+### Can it read warning lights from a dashboard photo?
+
+It can usually recognise the common symbols and colours from a clear photo. It can't read fault codes; that needs a scan tool in the shop. Treat the photo as context, not as data.
+
+### Does this replace the service advisor?
+
+No. It gives the advisor a head start and a structured note to confirm at the counter. The conversation, the authorisation, and the customer relationship stay with the advisor.
+
+### What about walk-ins with no booking?
+
+Hand them a tablet or a QR code at the counter and let them answer while they wait. Even two minutes of structured questions beats a one-line note written under pressure.
+
+## The rule for every repair order
+
+Write down the concern the way the car behaves, not the way the customer guesses. Ask the same good questions every time, and let the technician start in the right place.
+
+If vague repair orders are costing your technicians time, [tell me which shop software you use](/contact?intent=improve) and how bookings reach you. I'll suggest how a structured intake could work in your shop. The same "prepare before the visit" idea helps [appliance repair technicians bring the right part](/posts/ai-for-repair-services-parts), and good intake matters just as much for [bike shops in the spring rush](/posts/ai-for-bike-shops-seasonal-service).
