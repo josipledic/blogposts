@@ -1,0 +1,148 @@
+---
+id: "ai-for-music-schools-administration"
+title: "Less Admin, More Teaching: AI for Music School Administration"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Education & community", "Music schools", "School administration", "AI for small business"]
+description: "Rescheduling texts, trial lessons, term fees, recital programmes. Seven music school admin jobs ranked by how much AI helps, and where a plain tool does better."
+excerpt: "Rescheduling texts, trial lessons, term fees, recital programmes. Seven music school admin jobs ranked by how much AI helps, and where a plain tool does better."
+---
+
+Ask anyone who runs a small music school what takes their time, and the answer is rarely teaching. It's the Thursday evening message asking whether Emma's lesson can move because of a football match. The parent who wants a trial lesson for a six-year-old "who loves the piano". The term invoice with the sibling discount that didn't apply. The recital programme that needs twenty-three pieces, timings and an accompanist by Friday.
+
+Each job is small. Together they fill the evenings of owners and teachers who would rather be practising, planning lessons or simply resting. Some of these jobs are a good fit for AI. Some are better handled by a plain piece of software that already exists. And some should stay exactly where they are, with a person.
+
+Here are the seven admin jobs that fill a typical small music school's week, ranked by how much AI actually helps.
+
+<Stats title="Who's learning">
+  <Stat value="59%" label="of UK children said they currently play a musical instrument" source="ABRSM Making Music 2021" href="https://www.abrsm.org/sites/default/files/2023-08/web_abrsm-making-music-uk-21.pdf" />
+  <Stat value="27%" label="of UK adults said they currently play an instrument" source="ABRSM Making Music 2021" href="https://www.abrsm.org/sites/default/files/2023-08/web_abrsm-making-music-uk-21.pdf" />
+  <Stat value="Almost 2 in 3" label="children who play an instrument were learning from online tuition such as YouTube" source="ABRSM Making Music 2021" href="https://www.abrsm.org/sites/default/files/2023-08/web_abrsm-making-music-uk-21.pdf" />
+</Stats>
+
+The last number is the one to think about. Families can learn a lot from free videos. What a music school offers on top is a teacher, a plan and a relationship, and every hour spent on admin is an hour taken from exactly those things.
+
+<Bars title="Where a small music school's admin week goes" unit=" h" caption="Illustrative week for a school with about 150 students and eight teachers. Your split will differ; the ranking below is about where AI helps, not where the hours are largest." data={[
+  { label: "Rescheduling and make-up lessons", value: 6, highlight: true },
+  { label: "Enquiries, trial lessons, waiting list", value: 4, highlight: true },
+  { label: "Messages to families", value: 4 },
+  { label: "Fees, invoices, payment questions", value: 3 },
+  { label: "Term timetable changes", value: 3 },
+  { label: "Recitals and exam entries", value: 2 },
+  { label: "Lesson notes and practice plans", value: 2 }
+]} />
+
+## 1. Rescheduling and make-up lessons
+
+**How much AI helps: a lot.** This is the job that eats evenings, arrives through every channel and follows the same few rules every time. A family asks to move or cancel. Someone checks the policy (how much notice, whether a make-up lesson is due), looks for an open slot with the right teacher, suggests it, and updates the calendar.
+
+A model can do that first pass in seconds, around the clock, if the policy is written down and the timetable lives in one system:
+
+<Flow title="A cancellation, handled" caption="The model applies your written policy and your live timetable. The teacher confirms make-up slots; exceptions go to the office.">
+<Step title="Message arrives" who="Parent" time="Thursday, 19:40">"Emma has a fever, can she skip tomorrow's lesson and make it up next week?"</Step>
+<Step title="Check the policy" who="AI" tone="ai" time="seconds">More than 24 hours' notice for illness, so a make-up lesson is due under your terms.</Step>
+<Step title="Find slots" who="AI" tone="ai" time="seconds">Two open slots with Emma's teacher next week, both at times the family has used before.</Step>
+<Step title="Offer and book" who="Parent" time="minutes">Picks Tuesday 16:30; the calendar updates and the Friday slot is freed.</Step>
+<Step title="Teacher sees it" who="Teacher" tone="human">A notification with the change; exceptions, disputes and repeated late cancellations go to the office.</Step>
+</Flow>
+
+The reply the family receives is short and clear:
+
+> Hi Sarah, sorry to hear Emma's unwell, get well soon! Since you let us know in good time, she's due a make-up lesson. Mr. Novak has two free slots next week: Tuesday at 16:30 or Wednesday at 17:15. Just reply with the one that suits you. Friday's lesson is cancelled. Best wishes, Riverside Music School
+
+The model never invents a make-up entitlement the policy doesn't give, and it never argues. "We cancelled this morning, why can't we have a make-up?" goes to a person.
+
+## 2. Enquiries, trial lessons and the waiting list
+
+**How much AI helps: a lot.** Enquiries follow a pattern: which instrument, how old, any experience, which days work, trial lesson or straight in. A model can answer instantly, ask those questions, suggest a suitable teacher and trial slot, and add the family to the waiting list with the details you need if nothing is free.
+
+The waiting list is where many schools lose track. A model can keep it tidy and, when a slot opens ("Thursday 15:45, piano, Mrs. Ahmed"), draft offers to the families who fit it best, in the order your rules say. The office sends them.
+
+For young children, the model can also explain what a first lesson looks like and what parents should expect, which answers most of the nervous questions before they're asked.
+
+## 3. Messages to families
+
+**How much AI helps: quite a lot.** Term dates, holiday closures, concert invitations, exam deadlines, room changes. The model drafts them from your calendar, in the right language for each family, and short enough to be read. It can also answer routine questions ("When does the summer term start?", "Is there a lesson on the bank holiday?") from your published information.
+
+The same rule as everywhere: routine facts are fine for a model. Concerns about a student's progress, behaviour or wellbeing are conversations for the teacher.
+
+## 4. Fees, invoices and payment questions
+
+**How much AI helps: some.** Invoicing itself belongs in your school management software, which already handles term fees, sibling discounts, instrument hire and direct debits. A model adds little to the calculation, and shouldn't touch amounts.
+
+Where it helps is the communication: answering "why is this term more expensive?" from the invoice lines, drafting friendly first reminders for late payments, and explaining payment options. Anything involving hardship, disputes or exceptions goes to the owner.
+
+## 5. Term timetable changes
+
+**How much AI helps: less than you'd think.** Building a term timetable is a puzzle: teacher availability, room constraints, students' school times, siblings who should be back to back. That's a job for scheduling software or a constraint solver, not a language model, which is good with words and unreliable with forty interlocking constraints.
+
+A model can help around the edges: collecting availability from families in plain language ("Tuesdays after 4, not Wednesdays"), turning replies into structured data for the scheduler, and drafting the messages that announce the new times. The puzzle itself belongs to a tool built for it and to the person who knows which families to call first.
+
+## 6. Recitals and exam entries
+
+**How much AI helps: some, in bursts.** A recital needs pieces, durations, running order, accompanists, room setup and a programme. Exam entries need pieces, grades and deadlines for boards like ABRSM or Trinity. The model can collect submissions from teachers, check them for completeness, draft a running order that fits the time available, and lay out the printed programme. The teachers decide who plays and in what order; the model saves the evening of copying titles from emails.
+
+## 7. Lesson notes and practice plans
+
+**How much AI helps: useful, if teachers want it.** A teacher records a thirty-second voice note after the lesson ("scales in G and D, bars 12 to 20 slowly with metronome at 60, start learning the minuet"), and the model turns it into a tidy practice plan for the student and parents. Some teachers love this; some prefer writing in the student's notebook. Make it an offer, not a rule.
+
+## What AI is good for, and what isn't
+
+<Split title="Where each job belongs" leftTitle="Good for AI" rightTitle="Better with a plain tool or a person" left={["Rescheduling against a written policy", "Enquiries, trial lessons and waiting list offers", "Routine messages and answers to families", "Collecting and checking recital and exam entries", "Practice plans from teachers' voice notes"]} right={["Calculating fees and discounts: your billing software", "Building the term timetable: a scheduling tool", "Progress concerns and difficult conversations: the teacher", "Disputes, hardship and exceptions: the owner", "Safeguarding concerns: your safeguarding lead"]} caption="The line is the same everywhere: words and routine rules suit a model; calculations belong to software built for them, and judgment belongs to people." />
+
+## Before you switch anything on
+
+<Checklist title="What needs to exist first" items={[
+  "A written cancellation and make-up policy the model can apply word for word",
+  "One timetable that is the single source of truth, not three calendars and a spreadsheet",
+  "Clear rules for the waiting list: who gets offered a slot first, and why",
+  "A decision about channels: email, text, app or messenger, with families' consent",
+  "A data processing agreement with every tool that sees students' details",
+  "An easy way for families to reach a person, and for teachers to override the model"
+]} />
+
+Most of these are worth doing even if you never use AI. A written make-up policy alone ends a surprising number of arguments.
+
+## Where to start
+
+Start with the job that costs the most evenings, which for most schools is rescheduling. Write the policy down if it isn't already, make sure the timetable is current, and run the model in draft mode for two weeks: it prepares every reply, and the office reads and sends. Note what you change. Most changes in the first week are about tone ("we're a bit warmer than that") and edge cases the policy didn't cover ("what if the teacher cancelled last time?"). Fix the instructions, add the edge cases to the policy, and only then let routine replies go out on their own.
+
+Enquiries and the waiting list come next, because the rules are simple and the payoff is new students. Family messages, recitals and practice plans can follow once the team trusts the first two.
+
+## When you don't need AI
+
+A teacher with twenty private students doesn't need a model. A booking tool that lets families reschedule within your rules, automatic reminders and an invoicing app cover most of it. AI starts paying off when there are several teachers, a real waiting list and enough messages that someone spends their evenings answering them.
+
+## Tools that fit
+
+Studio and school management platforms such as My Music Staff, TutorBird or Opus1 handle calendars, student records, invoicing and family portals, and several offer online rescheduling within your rules. The AI layer sits on top: it reads messages from any channel, applies your policies, drafts replies and waiting list offers, and turns teachers' voice notes into practice plans, while the platform stays the record of lessons and payments.
+
+Students' details, especially children's, are personal data. Keep them in your school system, share only what a tool needs, and tell families how messages are handled.
+
+## Questions music school owners ask
+
+### Will families mind talking to an assistant?
+
+Most mind waiting until Monday more. Say clearly that it's an assistant (in the EU, [Article 50 of the AI Act](https://ai-act-service-desk.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has required this since August 2026), sign messages with the school, and make it easy to reach a person. Families who prefer to call should still be able to.
+
+### Can the model handle messages in WhatsApp?
+
+Technically, yes, through the WhatsApp Business platform, but think about data protection and whether you want lesson admin in a messenger at all. Many schools keep admin in their school app or email and use messengers only for urgent notices.
+
+### What about teachers' own availability changes?
+
+A teacher who's ill tomorrow is a different case: several families need to hear quickly, and some may need a substitute. The model can draft all the messages and propose make-up slots, but the office decides and sends.
+
+### Does this replace our office manager?
+
+No. In a school with an office manager, it takes the repetitive replies off their desk so they can spend time on the things that need a person: new families, unhappy families, teachers' problems, concerts. In a school without one, it takes those replies off the owner's evenings.
+
+### How do we measure whether it helps?
+
+Count the evenings. More precisely: time spent on messages per week, how long families wait for a reply, how many make-up lessons are actually taken, and how long waiting list offers take to fill.
+
+## Rule of thumb
+
+Write your rules down, keep one timetable, and let a model do the replying, offering and reminding that follows from those rules. Let your billing and scheduling tools do the maths, and keep the teacher at the centre of anything about a student's progress.
+
+If your evenings go to rescheduling texts, [tell me which school software you use](/contact?intent=improve), and I'll suggest where to start. Language schools face the same enrolment rush in [course placement](/posts/ai-for-language-schools-placement), and childcare providers write to families every day in [parent updates](/posts/ai-for-childcare-parent-updates).
