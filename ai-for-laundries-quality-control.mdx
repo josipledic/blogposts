@@ -1,0 +1,134 @@
+---
+id: "ai-for-laundries-quality-control"
+title: "Reading the Complaint Log: AI Quality Analysis for Commercial Laundries"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Manufacturing", "Commercial laundries", "Quality analysis", "AI for small business"]
+description: "Every complaint gets a rewash and a credit note, and nobody sees the pattern. How commercial laundries can use AI to link complaints to machines and textiles."
+excerpt: "Every complaint gets a rewash and a credit note, and nobody sees the pattern. How commercial laundries can use AI to link complaints to machines and textiles."
+---
+
+A commercial laundry serving hotels, care homes and restaurants gets about sixty complaints a month. A hotel housekeeper emails a photo of a greyish sheet. A driver notes that a care home is short twelve towels again. A restaurant calls about stains left on white tablecloths. Each complaint is handled on its own: rewash, replace, credit note, apology. Customer service is good at it.
+
+What nobody sees is that the grey sheets all came from one tunnel washer after a change to the detergent dosing three weeks ago. That the torn towels are almost all from one batch bought from a new supplier. That the missing items cluster on the Tuesday route, where the driver changed. Each complaint is a data point. Handled one at a time, they're just costs. Read together, they point straight at the causes.
+
+Commercial laundries already collect most of the data needed to find those patterns: complaint logs, production records, wash programs, chemical dosing, textile tracking, route plans. It just lives in different places. This post is a blueprint for connecting it, with AI doing the reading and matching.
+
+## Where complaints come from
+
+<Bars title="A month of complaints by category" unit=" complaints" caption="Illustrative for a mid-sized laundry. The categories matter more than the numbers: each points to a different part of the process." data={[
+  { label: "Stains not removed", value: 16, highlight: true },
+  { label: "Missing items or short deliveries", value: 13, highlight: true },
+  { label: "Damage: holes, tears, frayed edges", value: 9 },
+  { label: "Greying or discolouration", value: 7 },
+  { label: "Wrong items or wrong customer", value: 5 },
+  { label: "Folding and presentation", value: 4 },
+  { label: "Late delivery", value: 4 },
+  { label: "Smell or dampness", value: 2 }
+]} />
+
+Each category has typical causes, and each cause leaves traces in data the laundry already has. The trick is to connect a complaint ("grey sheets at Hotel Linde") to the production facts behind it (which machine, which program, which day, which textile batch).
+
+## The blueprint
+
+### Step 1: Collect every complaint in one place
+
+Complaints arrive by email with photos, by phone, through a customer portal, from drivers at delivery, and from your own quality checks at the finishing line. The model reads each one, whatever the format, and turns it into a structured record: customer, date, item type, defect, quantity, photo, and anything the customer says about when they noticed it.
+
+Your own internal findings belong in the same list. A finishing line that rejects fifty pillowcases for stains is a complaint you caught before the customer did.
+
+### Step 2: Link each complaint to production data
+
+This is the step that turns a list into analysis. For each complaint, the system looks up what's known about the items: delivery date and route, the production day, wash program and machine where your systems record them, chemical dosing logs, textile type, supplier and age where you track textiles by RFID or barcode, and the finishing line.
+
+Even partial links help. If you can't trace individual sheets, you can still link a complaint to the customer's delivery, the day it was processed and the programs that ran for that customer that day.
+
+### Step 3: Look for patterns weekly
+
+Once complaints are linked, patterns become visible that no one would spot one at a time:
+
+| Complaint category | Causes worth checking | Data to link |
+| --- | --- | --- |
+| Stains not removed | Program choice, temperature, chemical dosing, pre-sorting, heavily soiled batches from certain customers | Wash program, machine, dosing logs, customer, sorting line |
+| Greying or discolouration | Dosing changes, water hardness, mixed loads, textile age | Dosing logs, water treatment records, machine, textile batch |
+| Damage | Textile batch or supplier, age and wash cycles, machine mechanics, customer misuse | Textile supplier, purchase date, cycle count, machine maintenance |
+| Missing items | Route, driver, counting at dispatch, customer-side losses | Route plans, dispatch counts, RFID scans |
+| Wrong items or customer | Sorting errors, labelling, packing | Sorting shift, packing line |
+| Smell or dampness | Drying time, overloading, storage, delivery delays | Dryer logs, dispatch times, weather |
+
+A weekly summary, written by the model from the linked data, might read:
+
+> **Week 39: 14 complaints.** Greying: 5 complaints from 3 hotels, all bed linen processed on tunnel washer 2 since 16 September, after the detergent dosing was adjusted. No greying from tunnel 1 in the same period. **Suggest:** check dosing on tunnel 2. Damage: 4 of 5 torn towels from the batch delivered by Supplier B in July (cycle count under 40). **Suggest:** inspect batch, contact supplier. Missing items: 6 of 7 on route 3 (Tuesday), new driver since 9 September.
+
+That's three concrete investigations, each with the evidence attached. The quality manager decides what to do.
+
+### Step 4: Fix, then check
+
+The value is in the follow-up. Adjust the dosing on tunnel 2 and watch whether greying complaints stop. Take the problem towel batch to the supplier with the numbers. Retrain the counting at dispatch for route 3, or add a scan. Then check the next month's summary. Complaints that don't go down after a fix mean the cause was something else.
+
+### Step 5: Answer customers with facts
+
+Customers notice when a laundry understands its problems. "We found the cause of the greying: a dosing change on one machine. It's corrected, and we're replacing the affected sheets" is a very different message from "sorry, we'll rewash them". The model can draft these replies from the quality manager's findings.
+
+<Flow title="From complaint to root cause to fewer complaints" caption="The model reads, links and summarises. The quality team investigates, decides and fixes. Hygiene-related complaints skip the queue.">
+<Step title="Complaint arrives" who="Customer, driver or finishing line" tone="human" time="any channel">Email with photo, phone note, portal entry, driver app, internal rejection.</Step>
+<Step title="Structure" who="AI" tone="ai" time="seconds">Customer, date, item type, defect category, quantity, photo, customer's description.</Step>
+<Step title="Link" who="System">Delivery, route, production day, program, machine, dosing, textile batch, where recorded.</Step>
+<Step title="Weekly patterns" who="AI" tone="ai" time="weekly">Clusters by machine, program, textile batch, route or customer, with evidence and suggested checks.</Step>
+<Step title="Investigate and fix" who="Quality manager" tone="human">Decides which patterns are real, finds root causes, sets corrective actions.</Step>
+<Step title="Check and reply" who="Quality manager" tone="human">Watches whether complaints fall; replies to customers with what was found and fixed.</Step>
+</Flow>
+
+<Callout title="Hygiene complaints are not statistics" tone="warning">
+For laundries serving hospitals, care homes and food businesses, some complaints are hygiene events: soiled items in clean deliveries, damaged packaging of hygiene-sensitive textiles, a smell that suggests microbial growth. These follow your hygiene procedures immediately, under frameworks such as EN 14065 risk analysis and, in Germany, the RAL-GZ 992 quality marks, not a weekly report. Set the system so that any complaint mentioning these signals goes straight to the responsible person, and never let a model reclassify or downgrade them.
+</Callout>
+
+## Standards already expect this
+
+Quality and hygiene frameworks for laundries are built on the same idea: know your process, monitor it, and act on deviations. The European standard [EN 14065](https://tsa-uk.org/wp-content/uploads/2021_TSA-BS-EN-14065-Guidance-Final-2.pdf) describes risk analysis and biocontamination control for laundry-processed textiles, used across Europe for healthcare, food and pharmaceutical customers. In Germany, the [RAL-GZ 992 quality marks](https://www.ral.de/guetezeichen-von-a-z/guetezeichen-uebersicht/gz-992/), monitored by independent inspectors, require process control and hygiene assurance. A complaint log that's linked to production data and reviewed for patterns is exactly the kind of evidence auditors like to see.
+
+## Getting the data together
+
+Most laundries have more data than they think:
+
+- **Complaints:** emails, CRM or ticket system, driver notes, a spreadsheet.
+- **Production:** washer and dryer controllers log programs, times and temperatures; tunnel washers log batches.
+- **Chemicals:** dosing systems log quantities and changes.
+- **Textiles:** RFID or barcode tracking, where used, gives item history; otherwise purchase records by batch and supplier.
+- **Logistics:** route plans, dispatch counts, delivery times.
+
+You don't need all of it on day one. Start with complaints plus delivery and production day, add machine and program data next, and textile tracking where you have it.
+
+## Tools that fit
+
+Laundry management systems handle customers, orders, routes and often textile tracking; machine and dosing systems have their own logs and exports. The AI layer reads complaints in any format, structures them, pulls the related production and logistics data through exports or interfaces, and writes the weekly summary and draft replies. The quality manager remains the person who decides what a pattern means.
+
+Photos from care homes and hospitals can contain personal information (names on labels, room numbers). Handle them as personal data, with access limited to the people who need them.
+
+## Questions laundry managers ask
+
+### We already track complaints in a spreadsheet. What's different?
+
+The spreadsheet records complaints. The linked analysis explains them. The difference is connecting each complaint to what happened in production and logistics, which a spreadsheet can't do without hours of manual lookup.
+
+### How many complaints do we need for patterns to show?
+
+A few dozen a month is enough for strong patterns like a machine or textile batch problem. Weaker patterns need a quarter's data. Internal rejections from the finishing line add volume and catch problems earlier.
+
+### Can AI judge stains from photos?
+
+It can describe and categorise them reasonably well (stain, discolouration, tear, hole) and spot similar cases. It can't tell you the chemistry of a stain. Treat photo categorisation as a helpful first sort, confirmed by the quality team.
+
+### What about damage the customer caused?
+
+It happens: make-up and self-tanner on hotel towels, bleach spills in care home kitchens, tablecloths used as dust sheets. Linked data helps here too. If stains or damage cluster at one customer and not at others processed on the same machines with the same programs, the cause is probably on their side. That turns an awkward argument into a constructive conversation, backed by numbers, about handling, sorting or a different textile for that use.
+
+### Will it blame staff?
+
+It points to processes, machines, batches and routes. When a pattern involves a person, like a new driver, the right response is training and better tools, not blame. Say that clearly to the team from the start.
+
+## Rule of thumb
+
+Treat every complaint as a data point, not just a cost. Collect them in one place, link them to production, read them weekly for patterns, fix causes rather than symptoms, and let hygiene complaints go straight to the responsible person, always.
+
+If your complaint log is a list of credit notes, [tell me how complaints and production data are recorded today](/contact?intent=improve), and I'll suggest how to connect them. Food producers use a similar linked-records approach on [audit day](/posts/ai-for-food-producers-compliance), and restaurants read patterns in [their reviews](/posts/ai-for-restaurants-review-analysis).
