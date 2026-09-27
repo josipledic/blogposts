@@ -1,0 +1,129 @@
+---
+id: "ai-for-ecommerce-support"
+title: "Pre-Sale Product Questions: The Support Tickets That Make Money"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Retail & wholesale", "Online shops", "Pre-sale support", "AI for small business"]
+description: "“Will this fit my bike?” is a sale waiting for an answer. A decision guide for small online shops on which pre-sale questions AI can answer and which need a person."
+excerpt: "“Will this fit my bike?” is a sale waiting for an answer. A decision guide for small online shops on which pre-sale questions AI can answer and which need a person."
+---
+
+Most small online shops treat customer support as a cost: where's my parcel, I want to return this, the discount code doesn't work. But a different kind of message arrives every day too, and it's worth far more. "Will this rack fit a 2019 Cube Touring?" "Is the medium closer to a UK 10 or 12?" "Can I use this pan on induction?" "If I order today, will it arrive before Saturday?"
+
+Those are people with a product in their basket and one doubt left. Answer quickly and correctly, and many of them buy. Answer the next day, and most of them have bought somewhere else, or not at all. These are the support tickets that make money, and they're a very good fit for AI, with one important condition: the answer has to be true.
+
+<Stats title="Why pre-sale questions matter">
+  <Stat value="70.22%" label="average documented cart abandonment rate, across 50 studies" source="Baymard Institute" href="https://baymard.com/lists/cart-abandonment-rate" />
+  <Stat value="48%" label="of US shoppers who abandoned a checkout did so because of unexpected extra costs, a question a clear answer could have settled" source="Baymard Institute" href="https://baymard.com/lists/cart-abandonment-rate" />
+  <Stat value="Liable" label="Air Canada was held responsible for its chatbot's wrong answer about a fare policy" source="Moffatt v. Air Canada, via ABA" href="https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/" />
+</Stats>
+
+The third item is the warning label. In 2024, a Canadian tribunal rejected an airline's argument that its chatbot was responsible for its own words and held the company liable for the wrong information it gave. For an online shop, that means a chatbot that says "yes, it fits" when it doesn't is your promise, not the software's.
+
+## Two kinds of question
+
+Pre-sale questions sort along two lines: how much the answer affects the purchase, and whether it can be answered from your product data or needs someone's judgment.
+
+<Matrix title="Which pre-sale questions to automate" caption="Start where the answer can be looked up and the purchase depends on it. Keep people for advice that needs judgment." xLabel="Can be answered from product data" yLabel="Effect on the purchase" quadrants={[
+  { title: "Big effect, needs judgment: assist a person", text: "“Which e-bike for a hilly 30 km commute?”, bundle advice, B2B quantities and quotes. AI drafts, an expert answers." },
+  { title: "Big effect, answerable: automate first", text: "Size and fit, compatibility, delivery time and cost, stock, what's in the box, material and dimensions.", highlight: true },
+  { title: "Small effect, needs judgment: when time allows", text: "Unusual use cases, style opinions, comparisons with products you don't sell." },
+  { title: "Small effect, answerable: product page and FAQ", text: "Care instructions, warranty terms, packaging, gift wrapping." }
+]} />
+
+The top-right quadrant is where the money is: questions that decide the purchase and have a factual answer somewhere in your data. That's where an assistant pays off first.
+
+## What the assistant needs to know
+
+An assistant can only answer from what it's given. For pre-sale questions, that means:
+
+- **Product data:** specifications, dimensions, materials, compatibility lists, what's in the box. Usually in your shop system or a product information management tool.
+- **Size and fit information:** size charts per brand and model, and fit notes ("runs small", "cut for a slim fit"). Customer reviews that mention fit are a valuable source, as long as they're summarised honestly.
+- **Stock and delivery:** live stock, dispatch cut-off times, carrier transit times, shipping costs by country.
+- **Policies:** returns, warranty, what happens with customs outside the EU or UK.
+- **Your own expertise, written down:** the notes your best staff member would give. "This rack fits most touring bikes with rack mounts; not bikes with thru-axle dropouts without an adapter."
+
+The last item is what turns a generic bot into something that sounds like a specialist shop. It's also the part most shops have never written down.
+
+## Typical questions by shop type
+
+The questions differ by what you sell, but the pattern is the same: a specific doubt that your data could settle.
+
+| Shop type | Typical pre-sale questions | Data that answers them |
+| --- | --- | --- |
+| Fashion and shoes | Does it run small? Which size if I'm usually a 38? How long is the inside leg? | Size charts per brand, garment measurements, fit notes from reviews |
+| Bike parts and outdoor | Does it fit my model? Which adapter do I need? Is it compatible with my brakes? | Compatibility lists, specs, workshop notes |
+| Kitchen and home | Induction? Dishwasher safe? Will it fit a 60 cm niche? | Specs, dimensions, material data |
+| Electronics and accessories | Does it work with my phone or my old system? Which cable is included? | Compatibility tables, box contents, firmware notes |
+| Specialist food and drink | Allergens? Shelf life? Suitable for vegans? | Ingredient and allergen data, best-before policy |
+
+If your data can't answer the typical questions for your shop type, that's the first project, before any assistant.
+
+## Answer where the question is asked
+
+Pre-sale questions work best when they're answered on the product page, in the moment, with the product already known. An email that arrives the next morning answers a question the customer has stopped asking. A chat on the product page that knows which product and which variant the customer is looking at can answer in seconds without asking "which product do you mean?". If you can only do one channel well, make it that one.
+
+## How a good answer works
+
+<Flow title="From product question to answer, or to a person" caption="The assistant answers only from your data and says where the answer comes from. Anything it can't find, or any question with safety or legal weight, goes to a person.">
+<Step title="Question arrives" who="Customer" time="any hour">Product page chat, email, or a messaging app, ideally with the product already known.</Step>
+<Step title="Look up the facts" who="System">Product specs, compatibility list, size chart, stock, delivery times, relevant reviews and staff notes.</Step>
+<Step title="Answer with a source" who="AI" tone="ai" time="seconds">A short, direct answer based only on that data, with the key fact quoted ("the rack's max tyre width is 50 mm").</Step>
+<Step title="Admit uncertainty" who="AI" tone="ai">If the data doesn't answer it, say so and offer a person. Never guess compatibility, sizes or safety.</Step>
+<Step title="Hand over" who="Staff" tone="human" time="same day">Advice questions and unanswered ones go to an expert with the conversation attached.</Step>
+<Step title="Learn from gaps" who="Shop owner" tone="human" time="weekly">Questions the assistant couldn't answer become product page improvements.</Step>
+</Flow>
+
+Here's the difference in practice:
+
+> **Customer:** Will this rear rack fit my 2019 Cube Touring, size 54?
+>
+> **Assistant:** Yes, very likely. The Cube Touring 2019 has rack mounts on the frame and seat stays, and this rack is listed as compatible with 26 to 29 inch wheels and tyres up to 50 mm; the Touring comes with 28 inch wheels and 40 mm tyres. One thing to check: if you've fitted wider tyres since, measure them. If you'd like, I can pass your question to our workshop team to double-check. They usually reply within a few hours.
+
+It's specific, it quotes the facts it's based on, it names the one thing that could go wrong, and it offers a person. It doesn't say "definitely fits" when the data only says "very likely".
+
+<Callout title="Your assistant's answers are your promises" tone="warning">
+A customer who buys because your chat said "yes, it fits" and finds it doesn't has a strong case, in court and in their review. Instruct the assistant to answer only from your data, to say "I'm not sure" when the data doesn't cover the question, and never to invent compatibility, sizes, certifications or safety properties. Questions about child safety, electrical products, food contact, allergies or medical use go to a person every time.
+</Callout>
+
+## The unanswered-questions log
+
+The most valuable output of a pre-sale assistant isn't the answers. It's the list of questions it couldn't answer.
+
+Every "I'm not sure" points to a gap on a product page: a missing dimension, an unclear size chart, a compatibility question nobody thought to address. Review that list weekly and fix the top five pages. Each fix answers the question for every future customer, including the ones who never ask and simply leave. It also reduces returns, because many returns come from exactly these gaps: the wrong size, the wrong fit, the part that didn't fit the bike.
+
+## When not to automate
+
+Some shops shouldn't hand pre-sale questions to an assistant at all. If you sell complex, expensive products where every customer needs a real consultation (hearing aids, specialist tools, made-to-measure furniture), the conversation is the product, and AI should support your staff rather than answer customers. If your product data is thin or messy, fix that first: an assistant built on bad data gives confident wrong answers, which is worse than a slow correct one.
+
+And if you get three pre-sale questions a week, answer them yourself. Quickly.
+
+## Tools that fit
+
+Shop platforms such as Shopify, WooCommerce and Shopware have chat and helpdesk integrations, and support tools such as Gorgias, Zendesk and Freshdesk offer AI answers trained on your content. The quality depends almost entirely on the data you connect: product specs, compatibility, size charts, stock, and your written expertise. Check that the tool can show which source it used for each answer, and that it can hand over cleanly to a person.
+
+In the EU, a chatbot must make clear that it's an automated system, a requirement under the AI Act since August 2026. Chat transcripts are personal data; keep them only as long as you need them.
+
+## Questions shop owners ask
+
+### Will an AI assistant increase sales?
+
+It can, for shops where customers regularly ask pre-sale questions and currently wait hours for answers. Measure it: conversion rate of visitors who used the chat versus those who didn't, and how many chat conversations end with a purchase. Be careful with vendor claims; your own numbers after a month are what counts.
+
+### Should it recommend products?
+
+For simple, factual recommendations ("this pan works on induction, this one doesn't"), yes. For advice that depends on the customer's situation, draft a suggestion and let an expert confirm, or be clear that it's a general suggestion.
+
+### What about returns and "where's my order"?
+
+Those are worth automating too, and many tools do it well by connecting to your order and shipping data. But they save money rather than make it. Start with pre-sale questions if your goal is revenue.
+
+### How do I keep answers in my shop's voice?
+
+Give the assistant examples of your best replies and a few rules about tone. Specialist shops win on knowledge and personality; the assistant should sound like your best staff member on a good day, not like a call centre.
+
+## Rule of thumb
+
+Treat product questions as sales, not support. Answer them fast, only from your own data, with the fact that settles it, and hand over the moment the data runs out. Then fix the product page, so the next customer doesn't need to ask.
+
+If product questions pile up in your shop's inbox, [tell me which shop system and support tool you use](/contact?intent=improve). I'll suggest how to answer them quickly and correctly. The same data work pays off for [accurate product pages at scale](/posts/ai-for-retail-product-descriptions), and small IT providers face the repeat-question problem in [support tickets](/posts/ai-for-it-service-desks).
