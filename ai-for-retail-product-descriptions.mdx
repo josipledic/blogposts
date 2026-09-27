@@ -1,0 +1,145 @@
+---
+id: "ai-for-retail-product-descriptions"
+title: "Accurate Product Pages at Scale: AI for Specialist Retailers"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Retail & wholesale", "Specialist retailers", "Product content", "AI for small business"]
+description: "Supplier PDFs, half-filled spreadsheets and new EU rules: a blueprint for specialist retailers to build accurate product pages with AI, without inventing specs."
+excerpt: "Supplier PDFs, half-filled spreadsheets and new EU rules: a blueprint for specialist retailers to build accurate product pages with AI, without inventing specs."
+---
+
+A specialist outdoor shop takes on a new tent brand: 140 products, arriving as a price list in Excel, a 90-page catalogue PDF, a folder of images and a link to the brand's website. Someone has to turn that into 140 product pages with correct weights, pack sizes, materials, hydrostatic head ratings, what's in the bag, care instructions, safety notes and a description that explains who each tent is for. At twenty minutes per product, that's more than a week of work, and it's the most error-prone week of the season.
+
+Language models can write product descriptions in seconds. That's not the hard part, and it's not the risky part either. The risk is a fluent description that says the tent weighs 1.9 kg when it weighs 2.4, or promises "fully waterproof" when the brand says "water-resistant". For a specialist retailer, whose whole value is being right about the product, that's worse than no description at all.
+
+This post is a blueprint for using AI where it's strong, in reading and structuring messy supplier data and drafting from verified facts, while keeping every claim traceable.
+
+## The rules got stricter
+
+<Stats title="What a product page must now get right in the EU">
+  <Stat value="13 Dec 2024" label="since when the EU General Product Safety Regulation applies, including mandatory information on every online listing" source="Fieldfisher" href="https://www.fieldfisher.com/en/insights/new-obligations-under-the-eu-general-product-safety-regulation" />
+  <Stat value="4 items" label="every online offer must show: manufacturer details, an EU responsible person where needed, a product identifier, and warnings or safety information" source="GPSR, Article 19" href="https://www.xictron.com/en/blog/gpsr-product-safety-regulation-online-shop-2026/" />
+  <Stat value="28 Jun 2025" label="since when the European Accessibility Act applies to online shops; microenterprises providing services are exempt" source="Travers Smith" href="https://www.traverssmith.com/knowledge/knowledge-container/a-new-milestone-for-accessibility-the-european-accessibility-act-now-applies/" />
+</Stats>
+
+For shops selling into the EU, product pages are no longer only marketing. They carry legal information: who made the product and how to reach them, identifiers, warnings in the right language, and, for many shops, content that works for people using screen readers, which means descriptive image text and a clear structure. All of that has to be correct for every product, and kept correct when suppliers change things.
+
+## Two ways to write a product page
+
+<Split title="Where the description comes from" leftTitle="Rewritten marketing copy" rightTitle="Drafted from verified attributes" left={[
+  "Starts from the brand's promotional text",
+  "Adjectives instead of numbers",
+  "Claims copied without checking",
+  "Specs scattered through the prose",
+  "Different structure on every page",
+  "Nobody knows where a claim came from"
+]} right={[
+  "Starts from a structured set of attributes",
+  "Numbers with units, checked against sources",
+  "Claims only if an attribute supports them",
+  "Specs in a consistent table, prose explains them",
+  "Same structure for every product in a category",
+  "Every value linked to the document it came from"
+]} />
+
+The right column is what a specialist shop should aim for. It's also exactly where AI helps most, because the slow part isn't writing, it's extracting and checking the facts.
+
+## The blueprint
+
+### Step 1: Define what a product is, per category
+
+Before any AI, decide which attributes matter for each category. For tents: weight (minimum and packed), pack size, sleeping capacity, inner and outer materials, hydrostatic head for fly and floor, poles, number of doors and vestibules, season rating, what's included. For a guitar shop it's body wood, scale length, pickups and so on. This attribute list is the backbone: it decides what the page shows, what the model extracts, and what "complete" means.
+
+### Step 2: Extract from supplier sources
+
+The model reads the price list, the catalogue PDF, datasheets and the brand's product pages, and fills the attributes for each product. The important rule: every value is stored with its source (document and page), and anything the sources don't state stays empty. An empty field is honest. A guessed one isn't.
+
+### Step 3: Validate
+
+Automatic checks catch most extraction errors: units that don't match (grams vs kilograms), values outside plausible ranges (a two-person tent at 250 g), conflicts between sources (catalogue says 2.4 kg, price list says 2.2 kg), and missing required fields. Conflicts and gaps go to a person, who checks with the supplier if needed.
+
+### Step 4: Draft the page from attributes only
+
+Now the model writes: a short introduction on who the product is for, a readable explanation of what the specs mean in practice ("a 3,000 mm fly handles sustained heavy rain; for storms above the tree line, look at the 5,000 mm version"), bullet points, and descriptive image text. It uses only the verified attributes and your shop's writing guidelines. It never adds a claim that isn't backed by an attribute.
+
+### Step 5: Add the compliance block
+
+Manufacturer name and addresses, the EU responsible person where the manufacturer is outside the EU, product identifiers, warnings and safety information, and any category-specific labels. These come from structured fields, not from prose, so they're complete on every page and can be updated centrally.
+
+### Step 6: Review by someone who knows the product
+
+A category expert reviews each new page at first, then a sample once the process is trusted. The review focuses on what matters: do the numbers match, are the claims right, would I say this to a customer in the shop?
+
+<Flow title="From supplier files to a published product page" caption="The model extracts, checks and drafts. People resolve conflicts and approve. Every published value can be traced back to a supplier document.">
+<Step title="Supplier sources" who="Supplier" time="as they arrive">Price lists, catalogue PDFs, datasheets, images, product feeds, brand websites.</Step>
+<Step title="Extract attributes" who="AI" tone="ai" time="minutes per range">Fills the category's attribute list per product, with the source for every value. Leaves unknowns empty.</Step>
+<Step title="Validate" who="System" time="seconds">Units, plausible ranges, conflicts between sources, missing required fields.</Step>
+<Step title="Resolve gaps" who="Category expert" tone="human" time="as needed">Checks conflicts and gaps, asks the supplier where necessary.</Step>
+<Step title="Draft page" who="AI" tone="ai" time="seconds">Description, bullets, spec table and image text from verified attributes only, in the shop's voice.</Step>
+<Step title="Review and publish" who="Category expert" tone="human" time="3 to 5 min per product">Approves or edits; compliance fields filled from structured data; page goes live.</Step>
+</Flow>
+
+## What the draft looks like
+
+Here's the difference for one tent. The brand's catalogue says: "Ultralight freedom for your next adventure. Innovative materials keep you dry in any weather." The attribute-based draft says:
+
+> **For whom:** two hikers who count grams on multi-day summer and shoulder-season trips below the tree line.
+>
+> At 1.9 kg packed (1.6 kg minimum), it's one of the lighter freestanding two-person tents we stock. The fly is rated at 3,000 mm, which handles sustained heavy rain; the floor at 5,000 mm. Two doors and two vestibules mean nobody climbs over anyone at night. It packs to 45 × 15 cm, small enough for a 40-litre pack.
+>
+> **Not the right choice** for exposed, windy pitches or snow. For that, look at our four-season tents.
+
+Every number comes from a verified attribute with a source. "Any weather" has quietly disappeared, because no attribute supports it. That sentence is exactly the kind of claim that leads to a disappointed customer, a return and a bad review.
+
+## What a good page includes
+
+<Checklist title="Before a product page goes live" items={[
+  "All required attributes for the category filled, each with a source",
+  "No conflicts left unresolved between supplier sources",
+  "Numbers with units, consistent with the spec table",
+  "No claims that aren't supported by an attribute (waterproof, organic, certified, safe for children)",
+  "Manufacturer details, EU responsible person where needed, product identifier",
+  "Warnings and safety information in the customer's language",
+  "Descriptive image text for every product image",
+  "A sentence on who the product is for, and who it isn't for"
+]} />
+
+The last line is where specialist shops shine. "Not the right tent if you camp above the tree line in autumn; look at the four-season models instead" builds trust, prevents returns, and is exactly the kind of advice customers come to a specialist for.
+
+## Keeping pages correct
+
+Supplier data changes: a new model year with a different fabric, a weight that's been corrected, a new safety warning. With attributes and sources stored, updating is a matter of re-extracting from the new document, showing what changed, and redrafting only the affected parts of the page. Without them, it's someone opening 140 pages and hoping to spot the difference.
+
+The same structure feeds everything else: filters in the shop, comparison tables, marketplace listings, the pre-sale assistant that answers customer questions. One set of verified attributes, many uses.
+
+## Tools that fit
+
+Product information management (PIM) systems such as Akeneo, Plytix or Pimcore, or the product data features of your shop system, hold the attributes. Many now include AI features for enrichment and translation. For a small shop, a well-structured spreadsheet per category can work as a start. The AI layer reads supplier documents, fills and validates attributes with sources, and drafts the pages; the PIM or shop system stays the place where approved data lives.
+
+## Questions retailers ask
+
+### Can AI just write descriptions from the supplier's marketing text?
+
+It can, and that's how many shops end up with pages full of adjectives and unchecked claims. Use the marketing text as one source among others, but build the page from attributes.
+
+### How long does it take to set up?
+
+Defining attributes for your main categories takes a few days with the people who know the products. After that, each new range is much faster than writing by hand, and the time saved grows with every update.
+
+### What about translations?
+
+Once attributes are structured, translating is far more reliable: numbers and units stay the same, only the prose and warnings need translating, and warnings should come from approved texts rather than fresh translations.
+
+### What about product images?
+
+Images come from suppliers or your own photography, and the model can help with two things: descriptive image text that says what's actually shown ("tent pitched with both doors open, showing the two vestibules"), which matters for accessibility, and checking that the image matches the variant (the green tent shouldn't show the orange one). It shouldn't generate product images that show things the product doesn't have.
+
+### Will search engines penalise AI-written descriptions?
+
+Search engines care about whether content is helpful and accurate, not about how it was drafted. Pages built from verified specs with genuine advice on who a product suits are the kind of content they reward. Thin, generic, copied text is what performs badly, whoever writes it.
+
+## Rule of thumb
+
+Build product pages from facts, not from adjectives. Let AI read the supplier files, fill the attributes with their sources, and draft from those alone. Keep a person who knows the product in the loop, and never publish a claim you can't point to in a document.
+
+If new ranges take your team weeks to put online, [tell me how supplier data reaches you and which shop system you use](/contact?intent=improve). I'll suggest how to get from messy files to accurate pages faster. The same verified data answers customer questions in [pre-sale support](/posts/ai-for-ecommerce-support), and wholesalers use a similar pipeline for [order entry](/posts/ai-for-wholesale-order-entry).
