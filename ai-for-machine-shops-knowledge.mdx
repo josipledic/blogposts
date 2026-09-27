@@ -1,0 +1,123 @@
+---
+id: "ai-for-machine-shops-knowledge"
+title: "When Your Best Machinist Retires: Making Shop-Floor Knowledge Searchable"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Manufacturing", "Machine shops", "Knowledge capture", "AI for small business"]
+description: "Decades of machine quirks, fixture tricks and customer details live in one person's head. How small machine shops can capture that knowledge before it retires."
+excerpt: "Decades of machine quirks, fixture tricks and customer details live in one person's head. How small machine shops can capture that knowledge before it retires."
+---
+
+Every small machine shop has one. Call him Walter. Thirty-eight years in the shop. He knows that machine 4 drifts by a few hundredths in the afternoon once it's warm, and that the fix is a probe cycle after lunch. He knows that one customer's aluminium comes in slightly harder than the certificate suggests, so you drop the feed by ten percent. He knows which fixture holds the thin-walled housing without distorting it, and that the old program for part 4471 has a comment in it that says "don't trust the second tool offset". He retires in fourteen months.
+
+Most of what Walter knows isn't written down anywhere, or it's written on a piece of paper taped to a machine, in a program comment, or in a notebook in his locker. When he leaves, the shop doesn't just lose a skilled machinist. It loses the answers to questions nobody else knows to ask, until the scrap rate on part 4471 doubles and nobody can figure out why.
+
+This is one of the most useful and least glamorous places for AI in a small manufacturer: capturing experience while the people who have it are still there, and making it findable at the machine.
+
+## The retirement wave is real
+
+<Stats title="Why this can't wait">
+  <Stat value="Nearly 1 in 4" label="US manufacturing workers are 55 or older" source="The Manufacturing Institute" href="https://themanufacturinginstitute.org/research/the-aging-of-the-manufacturing-workforce/" />
+  <Stat value="Over 40%" label="of US manufacturing employment in 2022 was at firms where at least a quarter of workers were over 55, up from 14% in 2000" source="US Census Bureau" href="https://census.gov/library/stories/2025/12/older-workers.html" />
+  <Stat value="13.3 million" label="workers in Germany will reach the statutory retirement age within the next 15 years" source="Destatis, 2026" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/06/PD26_N039_13.html" />
+</Stats>
+
+Small shops feel this more than large ones. In a plant with 2,000 people, knowledge is spread across many heads and some of it is in formal documentation. In a shop with 25, one or two experienced people often hold the practical knowledge for whole machine groups or customer families. When they go, there's no one to ask.
+
+## What kind of knowledge is at risk
+
+Not all of it is equally hard to capture, and not all of it is equally valuable. It helps to sort it.
+
+| Kind of knowledge | Example | Where it lives today | How to capture it |
+| --- | --- | --- | --- |
+| Machine quirks | Machine 4 drifts when warm; spindle on machine 2 needs a warm-up cycle after the weekend | Heads, notes taped to machines | Short voice notes at each machine, walk-through video |
+| Part-specific tricks | Part 4471: second tool offset unreliable; clamp here, not there | Program comments, heads | Linked notes per part number, reviewed with the programs |
+| Material behaviour | Customer X's aluminium runs harder; this stainless gums up at high speeds | Heads, sometimes supplier notes | Notes per material and supplier |
+| Fixturing and setups | Which fixture for thin walls; how to set up the four-part pallet | Heads, photos on a phone | Photos and short videos per setup, with notes |
+| Troubleshooting | Chatter on this part means a worn insert, not a bad program | Heads | Problem and cause pairs from interviews and past incidents |
+| Customer requirements | This customer measures flatness differently; that one rejects any tool marks on the face | Heads, emails, quality agreements | Notes per customer, linked to their parts |
+
+The top rows are where AI helps most, because the knowledge is scattered, informal and tied to specific machines and parts. It's not knowledge you can write as a manual. It's hundreds of small facts that matter at the right moment.
+
+## The blueprint
+
+<Flow title="From an experienced machinist's head to an answer at the machine" caption="People share and validate what they know. The model transcribes, structures, links and retrieves. Nothing becomes a shop-floor instruction without an experienced person's review.">
+<Step title="Capture as people work" who="Machinist" tone="human" time="minutes a day">Voice notes at the machine, a photo of a setup, a short video of a tricky clamping, explained in their own words.</Step>
+<Step title="Structured interviews" who="Machinist and interviewer" tone="human" time="1 hour a week">Guided conversations per machine, part family and customer. Recorded with consent.</Step>
+<Step title="Transcribe and structure" who="AI" tone="ai" time="minutes">Turns recordings into short notes tagged by machine, part number, material, customer and problem type.</Step>
+<Step title="Review" who="Experienced machinist" tone="human" time="weekly">Checks each note: is it right, is it complete, is it still true? Corrects and approves.</Step>
+<Step title="Link" who="System">Approved notes are linked to part numbers, programs and machines in the ERP or document system.</Step>
+<Step title="Ask at the machine" who="Any machinist" tone="human">On a tablet or terminal: "Anything I should know about part 4471 on machine 4?" The answer quotes the approved notes, with who wrote them and when.</Step>
+</Flow>
+
+### Start with interviews, not software
+
+The most productive hour is a structured conversation. An interviewer (a colleague, a manager, or someone from outside) walks through one machine or one part family with the experienced machinist: What goes wrong on this machine? What do new people always get wrong? Which parts do you set up differently from the program? What would you tell your replacement on day one?
+
+The model can prepare the questions from what it already knows (the parts that run on that machine, recent scrap reports, past quality complaints), and turn an hour of talk into twenty short, tagged notes afterwards. That's far more than anyone would ever type.
+
+### Make capture part of the work
+
+Nobody writes documentation after a ten-hour shift. But almost anyone will say thirty seconds into their phone at the machine: "Part 4471, first op, use the soft jaws from drawer three, the standard ones leave marks the customer rejects." The model transcribes, tags it with part and machine, and queues it for review.
+
+### Review is non-negotiable
+
+A note that says "drop the feed by ten percent" might be right for one material batch and wrong for the next. Every note is reviewed by an experienced person before it's available as guidance, and notes carry their author and date so people can judge how current they are.
+
+<Callout title="The model retrieves knowledge. It doesn't invent process parameters." tone="warning">
+Ask a general-purpose model how to machine a part and it will happily suggest speeds, feeds and clamping methods that sound reasonable and may be wrong or unsafe. The system described here answers only from your approved notes, quotes them, and says clearly when it has nothing. Anything involving safety (guarding, lifting, chemicals, machine interlocks) belongs in your formal safety documentation, not in a note, and is never paraphrased by a model.
+</Callout>
+
+## What it looks like at the machine
+
+A younger machinist sets up part 4471 for the first time since Walter retired:
+
+> **Part 4471, machine 4. 3 approved notes.**
+> Use soft jaws from drawer 3 for op 1; standard jaws leave marks the customer rejects (W. Becker, March 2026).
+> Second tool offset in the old program has drifted before; measure after the first part (W. Becker, reviewed by S. Klein, April 2026).
+> Machine 4 drifts slightly when warm; run the probe cycle after lunch for tolerances under 0.02 mm (W. Becker, February 2026).
+
+Three sentences, at the right moment, with names and dates. That's the difference between a good first part and a morning of scrap.
+
+## Respect the people whose knowledge it is
+
+Knowledge capture works only if the experienced people want to take part. Be clear about why you're doing it (keeping the shop running and helping the next generation, not replacing anyone), credit people by name in the notes, and never use recordings to assess performance. Ask for consent before recording. In countries with works councils or strong employee consultation rules, involve them early. Many experienced machinists are proud to pass on what they know. They just need a way that doesn't involve writing a manual.
+
+## A first month
+
+A realistic start, without new systems:
+
+1. **Week 1:** List the three people whose departure would hurt most, and for each, the machines, part families and customers they know best.
+2. **Week 2:** First interview with each, one machine or part family per hour. Transcribe, tag, review together.
+3. **Week 3:** Introduce voice notes at the machine for everyone. Thirty seconds, part number first.
+4. **Week 4:** Make the approved notes searchable at two machines and ask the younger machinists what they looked for and didn't find.
+
+The gaps they report are next month's interview topics.
+
+## Tools that fit
+
+You don't need a big knowledge management platform. A document or wiki system your shop already uses, a simple app for voice notes and photos, and an AI layer that transcribes, tags, links notes to part numbers from your ERP, and answers questions from approved notes only. Some manufacturing execution systems and CAM tools allow notes per program or operation, which is a good place for the most part-specific knowledge to live.
+
+## Questions shop owners ask
+
+### How long does it take to capture someone's knowledge?
+
+You won't capture all of it, and you don't need to. A weekly hour of interviews and daily voice notes over six to twelve months captures most of what matters for the parts and machines you run most. Start with the machines and customers where losing the knowledge would hurt most.
+
+### What if people disagree?
+
+Good. When two experienced machinists disagree about how to run a part, that's worth a conversation, and the agreed result is a better note than either had alone. The review step is where that happens.
+
+### Can this help train apprentices?
+
+Yes. Approved notes, photos and videos organised by machine and part are excellent training material, and apprentices can ask questions in plain language instead of hunting for the right person.
+
+### Does it work for other kinds of expertise?
+
+The same approach works for maintenance knowledge, quality inspection tricks and customer-specific requirements. Anywhere experience lives in heads and scraps of paper, capture and review make it last.
+
+## Rule of thumb
+
+Start capturing while the experts are still there, in their own words and at the machine. Let the model transcribe, tag and link; let experienced people approve every note; and make the answers appear where the next machinist needs them.
+
+If someone in your shop is taking decades of knowledge into retirement soon, [tell me how your shop documents setups and programs today](/contact?intent=improve). I'll suggest a practical way to start capturing it this month. The same knowledge makes [RFQ to quote faster](/posts/ai-for-manufacturing-quotations), and print shops face similar problems in [catching order problems before the press runs](/posts/ai-for-print-shops-preflight).
