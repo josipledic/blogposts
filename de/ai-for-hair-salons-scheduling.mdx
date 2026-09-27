@@ -1,0 +1,134 @@
+---
+id: "de-ai-for-hair-salons-scheduling"
+title: "Friseursalon: Terminlücken füllen, ohne Kundschaft zu nerven"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Persönliche Dienstleistungen", "Friseursalons", "Terminplanung", "KI für kleine Unternehmen"]
+description: "Um 9 Uhr abgesagt, um 11 Uhr 90 Minuten frei. Wie Salons mit KI Lücken gezielt den wenigen anbieten, die sie wollen, und warum Massen-SMS nach hinten losgehen."
+excerpt: "Um 9 Uhr abgesagt, um 11 Uhr 90 Minuten frei. Wie Salons mit KI Lücken gezielt den wenigen anbieten, die sie wollen, und warum Massen-SMS nach hinten losgehen."
+---
+
+Fangen wir mit den Zahlen an, denn im Salon sind sie gnadenlos.
+
+Ende 2025 waren in Deutschland 80.118 Friseurbetriebe in der Handwerksrolle eingetragen. Nur 53.516 davon tauchen in der Umsatzsteuerstatistik auf, zusammen mit rund 7,7 Milliarden Euro Umsatz. Der Rest sind überwiegend Kleinstbetriebe mit so wenig Umsatz, dass sie dort gar nicht erfasst werden. Und in Großbritannien gaben Salons in einer Umfrage eines Buchungsanbieters an, fast 7 % ihres Monatsumsatzes durch Absagen und Nichterscheinen zu verlieren. Bei so knappen Margen ist ein Farbtermin über 90 Minuten, der um 9 Uhr für 11 Uhr abgesagt wird, kein kleines Ärgernis. Er kann der Gewinn des Tages sein.
+
+Die meisten Salons reagieren auf eine von zwei Arten. Sie nehmen die Lücke hin und hoffen auf Laufkundschaft. Oder jemand schreibt an alle im Kundenstamm: „Heute um 11 frei, 20 % Rabatt!“ Das Erste kostet Geld. Das Zweite kostet etwas, das schwerer zurückzuholen ist: Kundinnen, die Ihre Nachrichten ignorieren, Kunden, die auf Rabatte warten, und im Zweifel eine Abmahnung wegen unerlaubter Werbung.
+
+Es gibt einen besseren Mittelweg: die Lücke den wenigen Kundinnen und Kunden anbieten, die sie wirklich wollen, mit einer Nachricht, die sich wie Service anfühlt und nicht wie Werbung. Das ist ein Zuordnungsproblem, und Zuordnen kann KI gut.
+
+<Stats title="Warum jede Lücke zählt">
+  <Stat value="80.118" label="Friseurbetriebe waren Ende 2025 in der Handwerksrolle eingetragen, 0,3 % weniger als im Vorjahr" source="Zentralverband des Deutschen Friseurhandwerks, via verbaende.com" href="https://www.verbaende.com/news/pressemitteilung/die-wirtschaftliche-lage-des-friseurhandwerks-173183/" />
+  <Stat value="7,7 Mrd. €" label="Umsatz erwirtschafteten 2024 die 53.516 umsatzsteuerpflichtigen Friseurbetriebe" source="Zentralverband des Deutschen Friseurhandwerks, via verbaende.com" href="https://www.verbaende.com/news/pressemitteilung/die-wirtschaftliche-lage-des-friseurhandwerks-173183/" />
+  <Stat value="~7 %" label="des Monatsumsatzes verlieren Friseur- und Kosmetikbetriebe in Großbritannien durch Absagen und Nichterscheinen (Anbieterumfrage)" source="Fresha, Dezember 2025" href="https://www.fresha.com/blog/cancellations-cost-study" />
+</Stats>
+
+## Was eine gefüllte Lücke wert ist
+
+Bevor Sie etwas aufbauen, rechnen Sie aus, was eine Lücke Ihren Salon kostet. Hier eine Beispielrechnung für einen mittelgroßen Salon; ersetzen Sie die Annahmen durch Ihre Zahlen.
+
+<Calc title="Lücken füllen in einem Salon mit vier Plätzen, beispielhaft" rows={[
+  ["Kurzfristige Lücken pro Woche (Absagen und Nichterscheinen)", "6"],
+  ["Durchschnittlicher Wert einer Lücke", "60 €"],
+  ["Heute gefüllt (Laufkundschaft, Glück)", "15 %"],
+  ["Gefüllt mit gezielten Angeboten", "45 %"],
+  ["Zusätzlich gefüllte Lücken pro Woche", "1,8"],
+  ["Arbeitswochen pro Jahr", "48"]
+]} result={["Zusätzlicher Umsatz pro Jahr", "rund 5.200 €"]} caption="Annahmen, keine Messwerte. Der Betrag ist größtenteils Marge, denn Personal, Platz und Miete sind ohnehin bezahlt." />
+
+Es geht nicht um die genaue Zahl, sondern darum, dass fast alles davon Gewinn ist: Die Friseurin ist für diese Stunde schon bezahlt. Genau deshalb lohnt es sich, sorgfältig statt aggressiv vorzugehen. Eine Lücke, für die zehn Leute genervt wurden, ist kein Gewinn.
+
+## Wer von der Lücke erfahren sollte
+
+Nicht Ihr ganzer Kundenstamm ist das Publikum für einen kurzfristigen Termin. Sondern ein paar Leute:
+
+- **Die Warteliste.** Wer um einen früheren Termin bei dieser Friseurin gebeten und gesagt hat, welche Tage und Zeiten passen.
+- **Wer fällig ist.** Die Kundin, die alle sechs Wochen zur Farbe kommt und jetzt bei sieben ist, der Kunde, der jeden Monat schneiden lässt und noch nicht gebucht hat.
+- **Wer Lückenangeboten zugestimmt hat.** Menschen, die eingewilligt und gesagt haben, wann sie meist Zeit haben und wie viel Vorlauf sie brauchen.
+- **Wer in die Lücke passt.** Die Lücke ist 90 Minuten bei einer Coloristin; sie jemandem anzubieten, der zweieinhalb Stunden Balayage braucht, hilft niemandem.
+
+Diese Listen um 9 Uhr von Hand zusammenzustellen, während das Telefon klingelt und die erste Kundin im Stuhl sitzt, passiert genau nicht. Ein Modell, das an Ihr Buchungssystem angebunden ist, schafft es in Sekunden.
+
+## Eine Warteliste, die etwas taugt
+
+Die meisten Wartelisten sind ein Name und eine Nummer auf einem Zettel oder eine Funktion in der Buchungs-App, die niemand nutzt. Eine brauchbare hält etwas mehr fest, in dem Moment, in dem die Kundin fragt:
+
+- **Welche Friseurin, und ob eine andere auch in Ordnung ist.**
+- **Welche Leistung.** Ein Schnitt dauert 45 Minuten, eine Farbkorrektur vier Stunden. Die Lücke muss passen.
+- **Wann sie kommen kann.** Tage, Uhrzeiten und nötiger Vorlauf. „Vormittags unter der Woche, wenn ich bis 9 Bescheid weiß“ ist Gold wert.
+- **Bis wann.** Der Wunsch nach einem früheren Termin vor einer Hochzeit endet mit der Hochzeit.
+- **Wie sie erreichbar ist.** Der bevorzugte Kanal und die Zustimmung, über frei gewordene Termine informiert zu werden.
+
+Fragt jemand am Empfang oder per Nachricht nach einem früheren Termin, kann das Modell diese Fragen stellen, die Antworten festhalten und bestätigen. Wird dann eine Lücke frei, sind die richtigen Leute schon bekannt.
+
+## Wie eine Lücke gefüllt wird
+
+<Flow title="Von der Absage zum besetzten Stuhl" caption="Das Modell findet die richtigen wenigen und schreibt ein persönliches Angebot. Es gibt nie selbst Rabatt und schreibt niemanden an, der nicht zugestimmt hat.">
+<Step title="Absage" who="Kundin" time="09:10">Sagt den Farbtermin um 11:00 per Nachricht, App oder Telefon ab.</Step>
+<Step title="Passende finden" who="KI" tone="ai" time="Sekunden">Warteliste, Fällige für diese Leistung, Eingewilligte, die vormittags Zeit haben, und ob die Lücke zu Leistung und Friseurin passt.</Step>
+<Step title="Erste kleine Runde" who="KI" tone="ai" time="09:12">Eine persönliche Nachricht an die drei besten Treffer, nicht an alle.</Step>
+<Step title="Erstes Ja bucht" who="Kundin" time="09:25">Bestätigt; der Termin landet mit richtiger Leistung und Dauer im Kalender.</Step>
+<Step title="Die Runde schließen" who="KI" tone="ai">Ein kurzes „Danke, ist vergeben“ an die anderen. Antwortet niemand in 45 Minuten, die nächste Runde.</Step>
+<Step title="Der Salon entscheidet den Rest" who="Empfang" tone="human">Rabatt, eine längere Leistung einschieben oder den Termin öffentlich posten, entscheidet der Salon.</Step>
+</Flow>
+
+Die Nachricht ist so wichtig wie die Auswahl. Eine gute klingt nach Empfang, nicht nach Werbung:
+
+> Hallo Laura, bei Mia ist heute um 11:00 ein Termin frei geworden, und Sie wollten ja gern vor Ihrem Urlaub noch kommen. Die Zeit reicht für Ihre übliche Farbe mit Schnitt. Möchten Sie? Antworten Sie einfach mit Ja, dann gehört er Ihnen.
+
+Vergleichen Sie das mit „LAST MINUTE 11 UHR 20 % RABATT!!“ an 800 Nummern. Das eine ist ein Gefallen. Das andere ist Lärm.
+
+## Service oder Spam?
+
+<Split title="Zwei Arten, eine Lücke zu füllen" leftTitle="Spam" rightTitle="Service" left={["Rundnachricht an den ganzen Kundenstamm", "Pauschalrabatt, damit es schnell geht", "Mehrere Angebote pro Woche an dieselben Leute", "An alle, ob sie zugestimmt haben oder nicht", "Kundschaft lernt, auf den Rabatt zu warten"]} right={["Eine persönliche Nachricht an die wenigen, die passen", "Die Leistung, die sie ohnehin buchen, zum normalen Preis", "Höchstens ein Lückenangebot pro Person und Woche", "Nur an Eingewilligte oder Leute auf der Warteliste", "Kundschaft lernt, dass Fragen nach einem früheren Termin funktioniert"]} caption="Gezielte Angebote füllen Lücken meist ohne Rabatt, weil die Empfänger ohnehin einen Termin wollten." />
+
+Die Rechtslage zeigt in dieselbe Richtung. Werbung per SMS, E-Mail oder Messenger braucht nach § 7 UWG grundsätzlich eine vorherige ausdrückliche Einwilligung. Die Ausnahme für Bestandskunden per E-Mail ist eng: ähnliche Leistungen, Hinweis auf das Widerspruchsrecht bei der Erhebung und bei jeder Nachricht. Eine Terminerinnerung ist keine Werbung, und eine Nachricht an jemanden, der selbst um einen früheren Termin gebeten hat, ist Service. Eine Rabatt-Rundmail an alle, die je gebucht haben, ist Werbung, mit allen Regeln, die dazugehören. Halten Sie Einwilligungen in Ihrer Salonsoftware fest.
+
+## Weniger Lücken von vornherein
+
+Lücken füllen ist das Zweitbeste. Keine zu haben ist besser, und dafür gibt es einfache Mittel, mit oder ohne KI:
+
+**Erinnerungen mit einfacher Umbuchung.** Eine Erinnerung zwei Tage vorher und am Morgen, mit Link zum Verschieben, macht aus vielen Nichterscheinen eine Umbuchung mit genug Vorlauf, um die Lücke neu zu vergeben. Das können die meisten Buchungssysteme ohne KI.
+
+**Anzahlung oder Ausfallgebühr, wo es passt.** Bei langen Leistungen, Neukunden aus der Online-Buchung und wiederholtem Nichterscheinen wirkt eine Anzahlung oder eine hinterlegte Karte. Eine Ausfallgebühr muss vorher klar vereinbart sein, etwa in den Buchungsbedingungen, und sichtbar auf der Buchungsseite und in der Bestätigung stehen.
+
+**Gespräche, die das Modell führen kann.** Kundschaft antwortet auf Erinnerungen frei formuliert: „Geht es eine halbe Stunde später?“, „Meine Tochter ist krank, kann ich nächste Woche kommen?“ Ein Modell kann diese Antworten lesen, in den Kalender schauen und Möglichkeiten anbieten. Das spart dem Empfang ein ständiges Hin und Her. Alles Ungewöhnliche geht an einen Menschen.
+
+**Den nächsten Termin gleich an der Kasse.** Am leichtesten zu füllen ist der nächste Termin, direkt beim Bezahlen gebucht. Ein Hinweis an der Kasse („Laura kommt meist alle sechs Wochen: 14. November bei Mia vorschlagen?“) hält Stammkundschaft bei der Stange.
+
+## Was bei Menschen bleibt
+
+- **Rabatte und Ausnahmen.** Ob es für eine Lücke einen Preisnachlass gibt, eine Ausfallgebühr erlassen oder eine längere Leistung eingeschoben wird, entscheidet der Salon.
+- **Schwierige Gespräche.** Ärger über eine Gebühr, eine Reklamation, ein heikler Wunsch: immer ein Mensch.
+- **Die Kundschaft kennen.** Das Modell kennt die Buchungshistorie. Die Friseurin weiß, dass Laura frühe Termine hasst, egal, was die Daten sagen.
+
+## Wann Sie keine KI brauchen
+
+Ein Salon mit einem Stuhl und einer Wartelisten-Funktion in der Buchungs-App braucht kein Modell. Automatische Erinnerungen einschalten, eine kurze Warteliste führen und die ein, zwei Leute darauf persönlich anschreiben. Das dürfte für einen großen Teil der 80.000 Betriebe schon die beste Lösung sein. KI lohnt sich bei mehreren Friseurinnen, einem vollen Terminbuch und einem Empfang, der bei einer Absage keine Zeit für Listen hat.
+
+## Werkzeuge, die passen
+
+Salonsoftware wie Shore, Studiolution, Treatwell, Planity oder Fresha übernimmt Online-Buchung, Erinnerungen, Anzahlungen und oft auch Wartelisten. Die KI-Schicht arbeitet mit diesen Daten: Sie ordnet Lücken den richtigen Leuten zu, schreibt persönliche Angebote, liest frei formulierte Antworten und schlägt an der Kasse den nächsten Termin vor. Einwilligungen, Vorlieben und Buchungshistorie bleiben in Ihrer Salonsoftware, mit Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.
+
+## Was Salonbesitzer mich fragen
+
+### Sollten wir kurzfristige Termine rabattieren?
+
+Meistens nicht. Gezielte Angebote an Leute, die ohnehin einen Termin wollten, füllen die meisten Lücken zum vollen Preis. Regelmäßige Rabatte bringen Kundschaft bei, zu warten. Wenn Sie einen Anreiz wollen, schützt eine kleine Extraleistung (eine Pflegebehandlung, eine Produktprobe) Ihre Preise besser als ein Prozentsatz.
+
+### Wie viele sollten die erste Nachricht bekommen?
+
+Fangen Sie mit drei an und schauen Sie. Zu viele, und mehrere sagen Ja zu einem Termin, der schon weg ist, was ärgerlich ist. Zu wenige, und die Lücke bleibt vielleicht leer. Das „Danke, ist vergeben“ ist so wichtig wie das Angebot.
+
+### Kann das Modell auch Instagram- und WhatsApp-Nachrichten bearbeiten?
+
+Oft ja, über die Business-Werkzeuge der Plattformen, aber die Buchungen gehören in ein System. Das Modell liest Nachrichten aus jedem Kanal und bucht in der Salonsoftware, damit es einen Kalender gibt, nicht drei.
+
+### Merkt die Kundschaft, dass ein Assistent schreibt?
+
+Sollte sie, besonders in frei formulierten Gesprächen. Nach [Art. 50 der KI-Verordnung](https://ai-act-service-desk.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) müssen KI-Systeme, die mit Menschen kommunizieren, das seit August 2026 erkennbar machen. Ein einfacher Gruß wie „Ihr Salon-Assistent, im Namen des Teams“ reicht.
+
+## Faustregel
+
+Wissen, was eine Lücke wert ist, vermeidbare Lücken mit Erinnerungen und Anzahlungen verhindern und den Rest den wenigen anbieten, die ihn wollen, persönlich und zum normalen Preis. Nie den ganzen Kundenstamm anschreiben, und nie jemanden, der nicht zugestimmt hat.
+
+Wenn Absagen Ihre Marge auffressen, [schreiben Sie mir, welche Salonsoftware Sie nutzen](/contact?intent=improve), und ich sage Ihnen, wie Sie das einrichten. Fitnessstudios haben ein ähnliches Problem beim [Erkennen von Kündigungen, bevor sie eingehen](/de/posts/ai-for-gyms-member-retention), und Zahnarztpraxen verlieren Termine an den Anrufbeantworter bei [Neupatienten-Anrufen](/de/posts/ai-for-dentists).
