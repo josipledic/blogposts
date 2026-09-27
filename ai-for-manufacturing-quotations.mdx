@@ -1,0 +1,127 @@
+---
+id: "ai-for-manufacturing-quotations"
+title: "RFQ to Quote in Hours: AI for Small Manufacturers"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Manufacturing", "Contract manufacturers", "Quotations", "AI for small business"]
+description: "An RFQ with drawings, three quantities and a tight deadline waits three days for the estimator. How small manufacturers can use AI to prepare quotes in hours."
+excerpt: "An RFQ with drawings, three quantities and a tight deadline waits three days for the estimator. How small manufacturers can use AI to prepare quotes in hours."
+---
+
+A request for quote arrives on Tuesday morning at a 25-person machining and fabrication shop. The email is short: "Please quote the attached parts, quantities 50, 200 and 1,000, delivery in six weeks." Attached: three PDF drawings, two STEP files and a supplier quality requirements document of 30 pages. The customer is a medical device company the shop has wanted to work with for years.
+
+The estimator is also the production planner. On Tuesday there's a machine down. On Wednesday a big order goes out. The RFQ gets looked at properly on Thursday afternoon: material from the title block, tolerances and surface finish from the notes, a thread callout that needs a special tool, anodising to be sourced from a subcontractor, cycle times estimated from memory of "something similar last year". The quote goes out on Friday. The customer replies politely that they've already placed the order.
+
+Small manufacturers lose work like this all the time, not because their price or quality was wrong, but because the quote came too late. The expertise to price the job exists. The time to assemble everything the estimator needs doesn't.
+
+## Why the estimator is the bottleneck
+
+<Stats title="Skilled people are the scarce resource">
+  <Stat value="3.8 million" label="new manufacturing employees the US could need between 2024 and 2033" source="Deloitte and The Manufacturing Institute" href="https://themanufacturinginstitute.org/manufacturers-need-as-many-as-3-8-million-new-employees-by-2033/" />
+  <Stat value="1.9 million" label="of those jobs could go unfilled if skills and applicant gaps aren't addressed" source="Deloitte and The Manufacturing Institute" href="https://www.manufacturingdive.com/news/manufacturing-labor-shortage-2033-deloitte-mi-report-2024/713133/" />
+  <Stat value="65%" label="of manufacturers named attracting and retaining talent as their top business challenge in early 2024" source="The Manufacturing Institute" href="https://themanufacturinginstitute.org/manufacturers-need-as-many-as-3-8-million-new-employees-by-2033/" />
+</Stats>
+
+Estimating well takes years of shop-floor experience, and the people who have it are usually also running production, solving problems and training others. Buyers, meanwhile, expect faster responses than ever, and often send the same RFQ to several shops. The first credible quote has an advantage, a point trade magazines like [Modern Machine Shop](https://www.mmsonline.com/articles/when-it-comes-to-rfq-response-time-is-money) have made for years.
+
+## Teardown: where an estimator's time goes
+
+<Bars title="Estimator time for one RFQ with three parts" unit=" minutes" caption="Illustrative, for a moderately complex RFQ. Much of the time goes into finding and assembling information, not into the pricing judgment itself." data={[
+  { label: "Reading email, drawings, specs and quality requirements", value: 40, highlight: true },
+  { label: "Finding similar past jobs and their real costs", value: 35, highlight: true },
+  { label: "Material and stock check, pricing", value: 20 },
+  { label: "Routing and cycle time estimates", value: 45 },
+  { label: "Subcontractor quotes: finishing, heat treatment", value: 30 },
+  { label: "Writing the quote with assumptions", value: 20 }
+]} />
+
+The two highlighted bars are almost pure information work: reading documents and searching old jobs. The routing and cycle time estimate is where the estimator's judgment is irreplaceable, but even there, a good starting point from similar parts saves time.
+
+## What hides in an RFQ
+
+| What the estimator needs | Where it usually hides | What goes wrong if it's missed |
+| --- | --- | --- |
+| Material and condition | Drawing title block, sometimes a separate spec | Wrong raw material price, wrong machining parameters |
+| Tolerances and surface finish | Drawing notes and individual dimensions | A tolerance that needs grinding or a special process, not priced |
+| Threads, special features | Callouts on the drawing, 3D model | Special tools or operations not included |
+| Finishing and treatments | Drawing notes, spec documents | Anodising, plating or heat treatment forgotten, or wrong colour or class |
+| Inspection and documentation | Quality requirements document | First article inspection, material certificates, measurement reports not priced |
+| Quantities and delivery | Email text, sometimes a spreadsheet | Setup costs spread wrongly, delivery promised that production can't meet |
+| Packaging and marking | Quality requirements, notes | Individual bagging, labelling or part marking not priced |
+
+The quality requirements document is the classic trap. Thirty pages of standard text, with two requirements buried on page 17 that add real cost: a first article inspection report and material certificates for every batch.
+
+## Where AI helps
+
+The model does the reading and the searching. The estimator does the judging.
+
+<Flow title="From RFQ email to a quote draft for the estimator" caption="The model extracts requirements, finds similar past jobs and drafts. The estimator checks every requirement, sets routing and price, and signs off.">
+<Step title="RFQ arrives" who="Customer" time="any time">Email with drawings, 3D models, specifications and quality requirements.</Step>
+<Step title="Extract requirements" who="AI" tone="ai" time="minutes">Material, tolerances, finishes, threads, quantities, delivery, inspection and documentation requirements, each with the page or drawing it came from.</Step>
+<Step title="Flag the unusual" who="AI" tone="ai">Tight tolerances, special processes, requirements hidden in long documents, missing information to ask about.</Step>
+<Step title="Find similar jobs" who="AI" tone="ai">Past parts with similar material, size and features, with their actual cycle times, scrap and costs from the ERP.</Step>
+<Step title="Estimator prices" who="Estimator" tone="human" time="30 to 60 min">Checks the extracted requirements, sets routing and cycle times, requests subcontractor prices, decides the price.</Step>
+<Step title="Quote with assumptions" who="AI and estimator" tone="human">Draft quote with price breaks, lead time and a clear list of assumptions; the estimator reviews and sends.</Step>
+</Flow>
+
+The step that makes the biggest difference is "find similar jobs". Most shops have years of quotes, work orders and actual times in their ERP, but finding the right comparison takes an estimator's memory and a lot of scrolling. A model that can say "three similar aluminium housings in 2024 and 2025, actual cycle times 38 to 44 minutes, scrap 2 to 4%, last quoted at €41 for 200 pieces" gives the estimator a grounded starting point in seconds.
+
+## The requirements summary
+
+Before any pricing, the estimator gets a one-page summary like this:
+
+> **RFQ from MedTec GmbH, 3 parts, quantities 50 / 200 / 1,000, delivery 6 weeks.** Part A: aluminium 6082-T6, overall 120 × 80 × 35 mm, tolerance ±0.02 mm on two bores (drawing 1, dimensions 14 and 15), Ra 0.8 on bore surfaces, clear anodising class 2, part marking by laser. Part B: stainless 1.4404, M5 helicoil inserts (4). Part C: same as A, different pocket depth. **From the quality document:** first article inspection report in the customer's format (page 17), material certificates 3.1 per batch (page 9), individual bagging (page 22). **Missing:** colour of anodising for part C not stated; ask. **Similar past jobs:** 3 found for part A.
+
+Every line points to where it came from, so the estimator can check it in minutes. The model doesn't set the price. It makes sure nothing that affects the price is missed.
+
+## The assumptions list protects both sides
+
+Every quote should end with its assumptions, and the model can draft them from the summary: material as stated with 3.1 certificates, tolerances as drawn, anodising clear class 2, first article inspection included for the first batch only, packaging individually bagged, delivery six weeks from order and approved drawings. If the customer's intent differs, they say so before the order, not after the parts are made.
+
+## What it's worth
+
+<Calc title="Napkin math: estimating time at a small shop" caption="Assumptions, not measurements. Track estimating hours and quote turnaround for a month; the more important number is how many quotes you win when they go out faster." rows={[
+  ["RFQs per month", "40"],
+  ["Estimator time per RFQ today", "× 3 h"],
+  ["Estimating hours per month today", "120 h"],
+  ["Estimator time per RFQ with extraction and similar jobs", "× 1.25 h"],
+  ["Estimating hours per month with drafts", "50 h"]
+]} result={["Estimator hours freed per month", "≈ 70 h"]} />
+
+Seventy hours a month is almost half of an estimator's working time, returned to the person who's also your production planner. The bigger effect is on turnaround: quotes that go out the same or next day instead of at the end of the week.
+
+## Handle drawings with care
+
+Customer drawings are confidential, and some are legally controlled: defence and dual-use parts can fall under export control rules that restrict where data may be processed and who may see it. Before connecting any AI service to your RFQ inbox, check your customers' confidentiality terms and any export control obligations, choose a provider that processes data where you're allowed to, and keep controlled drawings out of the automated flow if in doubt.
+
+## Tools that fit
+
+Quoting software for machine shops, such as Paperless Parts or the estimating modules in shop ERPs like ProShop, JobBOSS, E2 or, in Europe, industry ERPs for contract manufacturers, handle pricing and quote documents. Some analyse 3D models to estimate machining features. The AI layer described here complements them: it reads the whole RFQ package, including the long documents nobody wants to read, extracts and flags requirements, and finds comparable past jobs in your own data.
+
+## Questions manufacturers ask
+
+### Should we quote every RFQ?
+
+No, and a fast, polite "no quote" is better than a slow one. The model can flag RFQs that fall outside what you do (materials you don't machine, sizes beyond your machines, certifications you don't hold, quantities far outside your sweet spot) so the estimator can decide in two minutes and reply the same day. Buyers remember suppliers who say no quickly and clearly, and they come back with the jobs that fit.
+
+### Can AI read technical drawings reliably?
+
+It reads title blocks, notes and clearly dimensioned features well, and it's improving fast. It can misread a tolerance or miss a small callout, which is why every extracted requirement links to its source and the estimator checks each one. Treat it as a very fast first reader, not as the authority.
+
+### Can it estimate cycle times?
+
+It can suggest a range based on similar past jobs, which is often a good starting point. The routing and the final cycle time are the estimator's call, because they depend on your machines, fixtures and people.
+
+### What if our past job data is messy?
+
+Most shops' data is. Start with what's there: part numbers, materials, quantities, quoted prices and actual hours where recorded. Even imperfect history gives better comparisons than memory alone, and it improves as you record actual times more consistently.
+
+### Will customers accept quotes with long assumption lists?
+
+Experienced buyers prefer them. Clear assumptions show you've read the requirements and reduce disputes later. Keep them short and specific.
+
+## Rule of thumb
+
+Let the model read every page of the RFQ and find your similar past jobs; let the estimator decide routing and price. Send the quote with its assumptions spelled out, and aim for the next day, not the end of the week.
+
+If RFQs pile up on your estimator's desk, [tell me which ERP or quoting tool you use](/contact?intent=improve), and I'll suggest how to prepare quotes faster without losing accuracy. The same approach helps capture [shop-floor knowledge before your best machinist retires](/posts/ai-for-machine-shops-knowledge), and wholesalers use a similar reading step in [order entry](/posts/ai-for-wholesale-order-entry).
