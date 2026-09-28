@@ -1,0 +1,140 @@
+---
+id: "ai-for-marketing-agencies-reporting"
+title: "Monthly Client Reports Without the Copy-Paste: AI for Small Agencies"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Professional services", "Marketing agencies", "Client reporting", "AI for small business"]
+description: "Dashboards solved the charts. The hours now go into explaining them. How small agencies can use AI to draft report commentary without inventing causes."
+excerpt: "Dashboards solved the charts. The hours now go into explaining them. How small agencies can use AI to draft report commentary without inventing causes."
+---
+
+The first working days of every month look the same in a small marketing agency. Account managers open the reporting dashboard for each client, screenshot the charts that moved, paste them into a slide template, and then stare at a blank text box labelled "Summary". What happened? Why? What are we doing next month? Multiply by 25 clients and the first week of the month is gone.
+
+Here's the thing most agencies have already noticed: pulling the numbers isn't the slow part anymore. Reporting tools connect to Google Ads, Meta, GA4 and Search Console and build the charts automatically. The slow part is the commentary, the three paragraphs that tell a client what the charts mean. That's also the part clients actually read.
+
+This post is about using AI for exactly that part, and about the one rule that keeps it from damaging client trust.
+
+## The numbers
+
+<Bars title="How long agencies with automated reporting take to build a client report" unit="%" caption="Share of respondents by report build time. Vendor survey of 494 agency professionals, mostly users of the vendor's own tool, so read it as what's possible with automation rather than an industry average." source="AgencyAnalytics" href="https://agencyanalytics.com/blog/client-reporting-benchmarks" data={[
+  { label: "Under 15 minutes", value: 17 },
+  { label: "15 to 30 minutes", value: 29 },
+  { label: "30 to 60 minutes", value: 27 },
+  { label: "More than an hour", value: 27, highlight: true }
+]} />
+
+With automation, assembling a report can take under half an hour. Surveys of agencies without it, most run by reporting vendors, put the total effort anywhere from two to more than ten hours per client per month, depending on how many channels and how much analysis a client gets. The difference is almost entirely the manual work: gathering, formatting and writing.
+
+Once the gathering is automated, what's left is the writing. And the writing is where AI can help, as long as you're careful about what you let it claim.
+
+## Dashboards show what. Clients pay for why.
+
+<Split title="What the dashboard does and what the report is for" leftTitle="The dashboard" rightTitle="The commentary" left={[
+  "Sessions, clicks, conversions, spend, ROAS",
+  "Month over month and year over year",
+  "Charts per channel and campaign",
+  "Updated automatically",
+  "The same for every client"
+]} right={[
+  "What changed that matters to this client's goals",
+  "Why it changed, based on what we actually did",
+  "What was a tracking or data issue, not performance",
+  "What we'll do next month, and what we need from the client",
+  "Written for the person who reads it: owner, marketing lead, CFO"
+]} />
+
+A client who gets a 14-page PDF of charts and a one-line summary ("Great month! Conversions up 12%.") eventually wonders what they're paying for. A client who gets three clear paragraphs that connect the numbers to their business, flag a problem before they spot it, and say what happens next, renews.
+
+## The rule: no cause without a record
+
+Here's the danger. Ask a language model to "write a summary of this month's performance" with only the numbers, and it will produce fluent, confident explanations. "Organic traffic increased 18%, driven by improved rankings for key product pages following our on-page optimisation." Maybe. Or maybe a competitor's site was down for a week, or Google rolled out one of its [core updates](https://developers.google.com/search/updates/core-updates), or a single article went viral on a forum. The model doesn't know. It guesses, and it guesses convincingly.
+
+The rule that fixes this: **the model may only attribute a change to something that's written down.** That means every agency needs a simple change log per client: campaigns launched or paused, budget changes, new landing pages, site releases, tracking changes, promotions, and anything the client told you about (a trade show, a price increase, a stock-out). If a change in the numbers lines up with an entry in the log, the model can say so. If it doesn't, the draft says "cause unclear" and the account manager investigates or writes it themselves.
+
+That one constraint turns AI commentary from a liability into a genuinely useful first draft.
+
+What belongs in the log? Less than you'd think, as long as it's kept every time:
+
+- **Campaigns and budgets:** launches, pauses, budget shifts, bid strategy changes.
+- **Site changes:** new landing pages, redesigns, releases, speed work, checkout changes.
+- **Tracking changes:** new tags, consent banner updates, GA4 configuration changes.
+- **Content and SEO work:** published articles, technical fixes, migrations.
+- **Client events:** promotions, price changes, stock-outs, trade shows, press coverage.
+- **Outside events you noticed:** a search engine update, a competitor's big campaign, a holiday shift.
+
+Each entry is one line: date, what, who. Thirty seconds when it happens, instead of thirty minutes of archaeology when the report is due.
+
+## The workflow
+
+<Flow title="From live data to a reviewed monthly report" caption="The dashboard gathers. The model compares, flags and drafts, using only the numbers and the change log. The account manager checks every claim before it goes to the client.">
+<Step title="Data refresh" who="System" time="1st of the month">The reporting tool pulls last month's data from ad platforms, analytics and search tools.</Step>
+<Step title="Anomaly check" who="AI" tone="ai" time="minutes">Flags sudden drops or spikes, conversions at zero, spend without clicks, and metrics that don't add up: often a broken tag, not a bad month.</Step>
+<Step title="Match to the change log" who="AI" tone="ai">Links each notable change to logged events. Anything unexplained is marked "cause unclear".</Step>
+<Step title="Draft commentary" who="AI" tone="ai">Three short sections against the client's goals: what happened, why (from the log only), what's next. In the client's language and tone.</Step>
+<Step title="Account manager review" who="Account manager" tone="human" time="15 to 30 min">Checks every claim, investigates the unclear items, adds judgment and next steps, fixes tone.</Step>
+<Step title="Send and discuss" who="Account manager" tone="human">Report goes out. For key clients, a short call or recorded walkthrough instead of a PDF alone.</Step>
+</Flow>
+
+The anomaly check deserves special attention. The most embarrassing report is the one that tells a client conversions dropped 60% when the real story is that someone changed the checkout page and the tracking tag stopped firing on the 9th. A model comparing daily data will spot a cliff like that immediately and put it at the top of the account manager's list, so the report says "tracking issue found and fixed on the 21st" instead of "performance declined".
+
+## What a good draft looks like
+
+For a regional e-commerce client whose goal is online revenue at a target return on ad spend:
+
+> **What happened:** Online revenue was €48,200, up 9% on September and 14% on last October. Return on ad spend was 4.1, above the 3.5 target. Organic search revenue fell 6%.
+>
+> **Why:** The revenue increase came mainly from the autumn collection campaign launched on 3 October (change log), which delivered 38% of paid revenue. The ROAS improvement follows the budget shift from generic to brand-plus-category terms on 10 October. The organic decline: cause unclear. Rankings for the main category pages are stable; we're checking whether the site speed change on the 17th is related.
+>
+> **Next month:** Black Friday campaigns go live on 20 November. We need final discount levels from you by 8 November. We'll report back on the organic question in our call next week.
+
+Every "why" in that draft points to something in the log. The one thing that doesn't is clearly marked. The account manager's job is to check the numbers, answer the open question, and adjust the tone, not to write from scratch.
+
+## Write for the reader
+
+A small detail with a big effect: different clients need different reports. A founder wants three sentences and one number. A marketing manager wants channel detail. A CFO wants spend against revenue and nothing about impressions. Store a short profile per client (who reads the report, what they care about, what their goals are) and the model writes for that reader every month.
+
+The same goes for language. If you serve clients in several languages, the model can draft in each, which saves a translation step that small agencies often skip.
+
+## What it saves
+
+<Calc title="Napkin math: monthly reporting for a 25-client agency" caption="Assumptions, not measurements. Time your own reporting for one month before and after." rows={[
+  ["Clients", "25"],
+  ["Manual reporting per client, including writing", "× 3 h"],
+  ["Hours per month today", "75 h"],
+  ["Review of an automated report with drafted commentary", "× 45 min"],
+  ["Hours per month with drafts", "≈ 19 h"]
+]} result={["Hours back each month, mostly in week one", "≈ 56 h"]} />
+
+Those hours land in the busiest week of the month. What agencies do with them varies: more strategy time with clients, a proper look at the accounts that are underperforming, or simply not working late in the first week.
+
+## Tools that fit
+
+Looker Studio, AgencyAnalytics, DashThis, Swydo and Whatagraph all handle the data side, and several have added AI summaries of their own. Try those first. What they often lack is your change log and your client context, which is why their summaries tend to describe charts rather than explain them. If the built-in summary is generic, a small custom step that combines the exported data, the change log and the client profile usually does better.
+
+The change log can be as simple as a shared spreadsheet or a field in your project management tool: date, client, what changed, who did it. The discipline of keeping it is worth more than any tool.
+
+On data protection, the report data is mostly aggregated and not personal, but client strategy, revenue and plans are confidential. Use a provider that doesn't train on your inputs, and check your client contracts for rules about third-party tools.
+
+## Questions agency owners ask
+
+### Will clients notice the commentary is AI-drafted?
+
+They'll notice if it's generic, and that's true whether a person or a model wrote it. Commentary that's specific to their goals, references what the agency did, and admits what's unclear reads as attentive. Many agencies tell clients openly that they use AI to prepare reports and that an account manager reviews everything.
+
+### How do we handle data gaps from cookie consent?
+
+Put them in the report, plainly. In the EEA, Google has required [Consent Mode](https://developers.google.com/tag-platform/security/guides/consent) v2 since March 2024, and some conversions are modelled rather than measured. The model can include a standard line explaining what that means for the client's numbers, so nobody is surprised when platform numbers and analytics numbers differ.
+
+### Can the model suggest next month's actions?
+
+It can suggest options based on the data, and it's sometimes good at spotting things like a campaign with rising costs per conversion. The plan itself should come from the account manager. Clients pay for judgment, and next steps are where judgment shows.
+
+### What if a client asks a question about the report?
+
+The same data and log can answer many follow-up questions quickly ("How did the brand campaign do last quarter?"). Draft the answer, check it, send it.
+
+## Rule of thumb
+
+Automate the charts, draft the words, and never let the model explain a number with something that isn't in your change log. If the cause isn't written down, the report should say so.
+
+If reporting eats the first week of every month at your agency, [tell me which reporting tools you use](/contact?intent=improve) and how you track changes per client. I'll suggest how drafted commentary could fit in. The same "repeat work, same questions" pattern shows up in [bookkeeping practices](/posts/ai-for-bookkeepers-client-questions), and small IT providers deal with it in [repetitive support tickets](/posts/ai-for-it-service-desks).

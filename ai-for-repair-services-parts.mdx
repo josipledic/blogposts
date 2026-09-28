@@ -1,0 +1,162 @@
+---
+id: "ai-for-repair-services-parts"
+title: "Bring the Right Part the First Time: AI for Appliance Repair"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Field services", "Appliance repair", "First-time fix", "AI for small business"]
+description: "Most repeat visits in appliance repair come down to a missing part. How AI reads the rating plate, error code and your repair history before the visit."
+excerpt: "Most repeat visits in appliance repair come down to a missing part. How AI reads the rating plate, error code and your repair history before the visit."
+---
+
+The call comes in on a Monday: "My washing machine won't drain, and there's an error on the display." The office books a visit for Wednesday. On Wednesday, the technician arrives, reads the model number off the door rim, looks up the error code, and confirms what he suspected: the drain pump. He has a pump in the van, just not one that fits this model. He orders the right one, and the customer takes another morning off work on Friday.
+
+The repair itself took twenty minutes. The business paid for two trips, the customer lost two mornings, and the technician's Friday slot went to a job that should have been finished on Wednesday.
+
+Almost everything the technician learned at the door could have been known on Monday. The model number is on a label. The error code is on the display. The company's own records probably show what usually fixes that code on that model. This is exactly the kind of preparation AI is good at in a repair business.
+
+## Why first-time fix matters more now
+
+<Stats title="First-time fix and the repair market">
+  <Stat value="≈ 77%" label="average first-time fix rate in field service research; best-in-class organisations reach about 88%" source="Service Council and Aberdeen research, via ServicePower" href="https://www.servicepower.com/blog/how-to-improve-your-first-time-fix-rate" />
+  <Stat value="31 July 2026" label="EU Right to Repair rules apply: manufacturers must offer repairs after the warranty and sell spare parts to any repairer at reasonable prices" source="European Commission" href="https://commission.europa.eu/news-and-media/news/right-repair-new-consumer-rights-easy-and-attractive-repairs-2026-07-31_en" />
+  <Stat value="50%, up to €200" label="of repair costs reimbursed per repair under Saxony's relaunched repair bonus in Germany" source="Deutsche Handwerks Zeitung" href="https://www.deutsche-handwerks-zeitung.de/bundesweiter-reparaturbonus-gescheitert-das-tut-sich-in-den-laendern-378638/" />
+</Stats>
+
+A first-time fix rate around three in four means one visit in four needs a return trip. Research on the topic has pointed at the same cause for years: [Aberdeen's work on first-time fix](https://www.concerttech.com/wp-content/uploads/2021/05/Aberdeen_Fixing_First_Time_Fix_2013.pdf) found that parts are the most important ingredient, and that information helping technicians identify the right part in advance is what separates the best performers.
+
+In Europe, the market is also shifting towards repair. The Right to Repair Directive covers washing machines, dishwashers, refrigerators, vacuum cleaners, and several electronics categories, and makes spare parts easier for independent repairers to get. More repair demand and better parts access are good news for repair businesses, but only if each job doesn't take two visits.
+
+## What a return visit costs
+
+<Calc title="Napkin math: return visits caused by missing parts" caption="Assumptions, not measurements. Your job volume, fix rate, and cost per visit will differ." rows={[
+  ["Jobs per month", "300"],
+  ["First-time fix rate today", "75%"],
+  ["Return visits per month", "75"],
+  ["Cost of a return visit (technician time, travel, admin)", "× €90"],
+  ["Return visits avoided by raising the fix rate to 85%", "30"]
+]} result={["Direct saving per month", "≈ €2,700"]} />
+
+That's before counting what the freed capacity is worth. Thirty avoided return visits are thirty slots for new, paying jobs, which in a business with more demand than technicians is often the bigger number.
+
+## What predicts the part
+
+Before the visit, four pieces of information narrow down the likely fault a long way.
+
+| Information | Where it comes from | What it tells you |
+| --- | --- | --- |
+| Brand, model, and serial number | The rating plate, photographed by the customer | Exactly which parts fit; production batch issues |
+| Error code | The display, photographed or read out | The manufacturer's fault category for that model |
+| Symptoms | The customer's description or a short video | Noise, smell, leak, won't start, won't drain |
+| Your repair history | Your own job records | What actually fixed this code on this model before |
+
+The first three come from the customer. The fourth is the one most businesses already have and never use: years of job records saying "model X, code Y, replaced part Z". That history is often more useful than the manufacturer's fault table, because it reflects what actually failed in the field.
+
+## Your own history, used properly
+
+Here's what that history can look like for one model and error code, and why it changes what goes in the van.
+
+<Bars title="What fixed one washer model with a drain error, from past jobs" unit="%" caption="Illustrative distribution from a repair company's own job history for one model and error code. Real figures come from your records." data={[
+  { label: "Drain pump replaced", value: 58, highlight: true },
+  { label: "Filter or hose blockage cleared, no part", value: 27 },
+  { label: "Drain hose replaced", value: 9 },
+  { label: "Control board replaced", value: 6 }
+]} />
+
+With that picture, the decision is simple: bring the pump for that model and a drain hose, and plan for a clean-out. The control board, rarely the problem and expensive to carry, gets ordered only if the technician confirms it on site. That's the kind of call good technicians make from experience. Software can make it for every job, based on everyone's experience.
+
+## The preparation flow
+
+<Flow title="From booking to a van with the right part" caption="The model reads photos and history and ranks likely causes. The parts desk and the technician decide what to carry. Every repair improves the history.">
+<Step title="Customer books" who="Customer" time="day 0">By phone or online. The confirmation asks for two photos: the rating plate and the display with the error.</Step>
+<Step title="Read the photos" who="AI" tone="ai" time="minutes">Model and serial number are read from the rating plate photo, the error code from the display, symptoms from the description.</Step>
+<Step title="Look up and rank" who="System">Manufacturer fault information you have access to, plus your own history for this model and code, produce a ranked list of likely causes and parts.</Step>
+<Step title="Parts desk decides" who="Parts desk" tone="human" time="same day">Checks stock, orders what's missing so it arrives before the visit, and assigns the job to a van that has the parts.</Step>
+<Step title="Technician gets a brief" who="Technician" tone="human">Model, code, likely cause, parts loaded, and any notes from previous visits to this customer.</Step>
+<Step title="Close the loop" who="Technician" tone="human" time="after the repair">A short voice note or two taps: what the cause was and what was replaced. The history gets better with every job.</Step>
+</Flow>
+
+The last step is where the value compounds. Every closed job teaches the system something about that model and code. After a year, the history is a real asset, and a hard one for a competitor to copy.
+
+The brief itself is short. For Monday's washing machine, the technician would have seen something like this on Tuesday evening:
+
+```text
+WED 09:00 · Washing machine, won't drain
+Model/serial: read from customer photo (rating plate on door rim)
+Error: drain fault code shown on display
+History, this model + code (41 jobs): drain pump 58%, blockage 27%,
+  drain hose 9%, control board 6%
+Loaded: drain pump (fits this model), drain hose
+Customer note: "makes a humming noise, water stays in the drum"
+Previous visit: none
+```
+
+The humming noise fits a pump that's getting power but can't turn, often because of a blockage or a failed motor. The technician walks in with a clear first check, the likely part in his hands, and a plan B.
+
+## Repair or replace?
+
+Customers often ask a question before the visit that the system can help answer honestly: is it even worth repairing? With the model number and the likely part, you can give a realistic range for the repair cost. Combined with the appliance's age, that lets the customer decide before anyone drives out.
+
+I'd keep this factual and leave the decision with the customer. A ten-year-old washer with a €60 pump is usually worth fixing. A fifteen-year-old fridge with a failed compressor often isn't. The EU's push towards repair, and repair bonuses like Saxony's, shift that calculation in favour of fixing things, and a repair business that helps customers make the call honestly earns trust that shows up in reviews.
+
+## Helping customers find the rating plate
+
+Most customers have never looked for their appliance's model number. A short guide in the booking confirmation solves that.
+
+<Checklist title="Where the rating plate usually is" items={[
+  "Washing machines: on the inside of the door rim, or behind the small filter flap at the bottom front",
+  "Dishwashers: on the edge of the door when it's open",
+  "Refrigerators and freezers: on an inside side wall, or behind the vegetable drawer",
+  "Tumble dryers: on the door frame or the inside of the door",
+  "Ovens and cookers: on the frame when the oven door is open",
+  "If you can't find it: a photo of the front of the appliance and the brand name still helps"
+]} />
+
+The last line matters. Some customers won't find the plate. A photo of the front often narrows the model range enough to be useful, and the technician reads the plate on arrival.
+
+## What the system must not do
+
+<Split title="The line between preparation and diagnosis" leftTitle="The system does" rightTitle="The system never does" left={[
+  "Reads model numbers and error codes from photos",
+  "Ranks likely causes using your history and manufacturer data",
+  "Suggests which parts to carry or order",
+  "Briefs the technician before the visit",
+  "Learns from each closed job"
+]} right={[
+  "Tells a customer to open an appliance or repair it themselves",
+  "Gives advice on gas, electrical, or refrigerant work",
+  "Relies on its general memory of fault codes instead of real documentation",
+  "Promises a price before the technician has diagnosed the fault",
+  "Decides a repair isn't worth it on the customer's behalf"
+]} />
+
+The third item on the right deserves emphasis. Fault codes vary by brand, model, and even production year, and a language model will cheerfully "remember" a meaning that's wrong. The lookup has to come from manufacturer service information or your own records, never from the model's training data.
+
+## Tools that fit
+
+Appliance repair businesses usually run field service software such as ServiceTitan, Housecall Pro, Workiz, or FieldPulse, and buy parts through distributors like Marcone, Encompass, or Reliable Parts in the US, or ASWO in Europe. Warranty work often goes through manufacturer portals. The preparation layer sits alongside these: it reads booking photos, checks your history, and writes the brief and the parts suggestion into your system. Ordering stays with the parts desk.
+
+Customer photos are taken inside people's homes. Keep them with the job, use them only for the repair, and delete them after a sensible period. In the EU, that's a GDPR obligation.
+
+## Questions repair business owners ask
+
+### Will customers really send photos?
+
+Most will if you ask at the right moment (in the booking confirmation) and explain why: "so our technician can bring the right part and fix it in one visit". Nobody wants to take a second morning off.
+
+### What if the error code is ambiguous?
+
+Then the ranked list has two or three plausible causes, and you carry the parts for the top two if they're reasonable to stock. That's still far better than carrying nothing specific.
+
+### We don't have clean job history. Is this still useful?
+
+Reading the rating plate and error code before the visit is useful on day one. The history-based ranking gets useful after a few months of closing jobs properly, which is also the cheapest data you'll ever collect.
+
+### Does this work for commercial kitchen equipment?
+
+Yes, and the stakes are higher there, because a broken fryer or dishwasher costs a restaurant money every hour. The same preparation, with the equipment's model and fault codes, shortens downtime.
+
+## The rule for every booking
+
+Know the model and the error before you get in the van, and carry the part your own history says you'll need. The repair is the technician's job. Arriving prepared can be the system's.
+
+If return visits are eating your technicians' week, [tell me how bookings and parts work in your business](/contact?intent=improve), and I'll suggest how a preparation pilot could look. For the same idea in other trades, see [pre-visit briefs for pest control](/posts/ai-for-pest-control-routing) and [service intake for independent garages](/posts/ai-for-auto-repair-diagnostics-intake).

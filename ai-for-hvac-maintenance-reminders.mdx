@@ -1,0 +1,155 @@
+---
+id: "ai-for-hvac-maintenance-reminders"
+title: "Beyond the Reminder Postcard: AI for HVAC Maintenance Agreements"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Trades & construction", "HVAC contractors", "Maintenance agreements", "AI for small business"]
+description: "Generic tune-up reminders get ignored. How HVAC contractors can use AI to write reminders that reflect each system and its history, and keep agreements renewing."
+excerpt: "Generic tune-up reminders get ignored. How HVAC contractors can use AI to write reminders that reflect each system and its history, and keep agreements renewing."
+---
+
+Every HVAC contractor I know sends some version of the same message twice a year: "It's time for your seasonal tune-up! Call us to book." It goes out by postcard, email, or text to everyone on the maintenance plan. Some customers book. Many don't, and a few months later the agreement quietly lapses.
+
+The irony is that the contractor knows a lot about each of those customers. The technician wrote down that the capacitor on the Hendersons' condenser was testing weak. The Parks have a fifteen-year-old furnace and a baby who arrived in the spring. The office knows Mr. Diaz only takes morning appointments. None of that makes it into the reminder, because writing six hundred individual reminders by hand isn't realistic.
+
+That's the gap I'd close with AI. Not a chatbot, not a pushy upsell engine, but reminders that sound like they were written by someone who remembers the last visit, and a reply inbox that doesn't need a person for every "can we do Thursday instead?".
+
+## Why the visit matters to the customer
+
+Before talking about renewals, it's worth being clear about why maintenance is worth selling at all. A reminder that explains the benefit honestly converts better than one that just says "it's time".
+
+<Bars title="Extra energy use when a heat pump is undercharged with refrigerant" unit="%" caption="Energy use increase for a heat pump operating with refrigerant undercharge, from NIST laboratory tests and simulations. A maintenance visit checks the charge." source="NIST, 2014" href="https://www.nist.gov/news-events/news/2014/11/underperforming-energy-efficiency-hvac-equipment-suffers-due-poor" data={[
+  { label: "10% undercharged", value: 3 },
+  { label: "20% undercharged", value: 8 },
+  { label: "30% undercharged", value: 16, highlight: true }
+]} />
+
+<Stats title="What maintenance does for the bill">
+  <Stat value="5 to 15%" label="lower air conditioner energy use from routinely replacing or cleaning dirty filters" source="US Department of Energy" href="https://www.energy.gov/energysaver/air-conditioner-maintenance" />
+  <Stat value="≈ 30%" label="higher heating and cooling energy use from common installation faults such as leaky ducts and wrong refrigerant charge" source="NIST" href="https://www.nist.gov/news-events/news/2014/11/underperforming-energy-efficiency-hvac-equipment-suffers-due-poor" />
+</Stats>
+
+These are the kinds of facts that belong in a reminder, adapted to the customer's system. "Your system is due" is a chore. "Last visit we noted your refrigerant pressure was on the low side; an undercharged system can use noticeably more energy" is a reason.
+
+## Generic versus contextual
+
+Here's the difference, side by side.
+
+<Split title="Two reminders for the same customer" leftTitle="The postcard version" rightTitle="The version that remembers" left={[
+  "It's time for your fall tune-up!",
+  "Book now to keep your system running smoothly.",
+  "Call us at the number below.",
+  "Same text for every customer on the plan."
+]} right={[
+  "Hi Maria, your furnace check is due before the first cold week.",
+  "Last spring Dave noted the flame sensor was dirty. He'll clean it and check the heat exchanger, which matters on a 15-year-old unit.",
+  "Tuesday or Thursday morning next week? Reply with a day.",
+  "Written from the service history and technician notes, checked before sending."
+]} />
+
+The right-hand version isn't a marketing trick. Every sentence in it is true and comes from the contractor's own records. It just takes a person ten minutes to write, and a language model a second to draft.
+
+## What a good reminder draws on
+
+The model can only personalise with what's in your records. This is the data I'd pull for each customer before drafting anything, and just as important, what I'd leave out.
+
+| Record | Example | How it shows up in the reminder |
+| --- | --- | --- |
+| Equipment type and age | 15-year-old gas furnace, 4-year-old heat pump | Which checks matter most, and why they matter more on older units |
+| Last technician findings | "Capacitor reading low", "flame sensor dirty" | One sentence on what will be checked again |
+| Refrigerant and parts | Older system on a phased-out refrigerant | An honest note that repairs on this system are getting more expensive to plan for |
+| Warranty status | Manufacturer warranty that requires documented maintenance | A reminder that the visit keeps the paperwork in order |
+| Scheduling preferences | Mornings only, gate code, dog in the yard | Suggested slots, and notes for the technician |
+| Household notes the customer shared | Newborn, elderly parent living in | Priority before the first cold snap |
+
+What stays out: anything the customer didn't tell you directly, guesses about their finances, and anything from outside your own records. The test is simple. If the customer read the reminder and asked "how do you know that?", the answer should always be "our technician noted it at your last visit" or "you told us".
+
+## Use reminders to flatten the peak
+
+There's an operational reason to get reminders right that has nothing to do with renewals. Every contractor knows the week of the first heat wave: the phones light up, every technician is on emergency calls, and maintenance visits get cancelled to make room. The customers whose systems fail that week are often the ones who skipped their spring check.
+
+Better reminders let you move demand. Instead of sending everyone the same message on the same date, you can prioritise the customers most likely to need you in the rush: old equipment, a technician flag from last time, a system that failed in last year's heat. Book them early, while you still have open slots in the shoulder season. The heat wave still comes, but fewer of your agreement customers are in the emergency queue when it does.
+
+This is also where the model's job ends and a simple ranking takes over. "Which customers should hear from us first?" is a sorting problem over equipment age, flags, and past failures. A spreadsheet formula or a few lines of code does that reliably. The model's contribution is turning the result into messages that people actually answer.
+
+## What the numbers look like
+
+Maintenance agreements matter because they turn one-off customers into recurring revenue and give you a first look at every system before it breaks. The napkin math for renewals is simple.
+
+<Calc title="Napkin math: what a few points of renewal are worth" caption="Assumptions, not measurements. Use your own agreement count, renewal rate, and the revenue an agreement customer brings in a year." rows={[
+  ["Customers on maintenance agreements", "800"],
+  ["Renewal rate today", "65%"],
+  ["Renewal rate with better reminders", "75%"],
+  ["Extra customers kept per year", "80"],
+  ["Yearly value of an agreement customer (fee plus typical repairs)", "× €350"]
+]} result={["Extra revenue per year", "≈ €28,000"]} />
+
+The other half of the value doesn't show up in this box: agreement customers call you first when something breaks, and a technician who has seen the system twice a year can spot the failing part before the emergency.
+
+## The reminder sequence
+
+A good sequence starts early, gives the customer concrete choices, and hands over to a person when the automated part stops working.
+
+<Timeline title="Reminder sequence for one agreement visit">
+<Phase when="45 days before" title="Personal reminder">A message drafted from the service history: what's due, anything the technician flagged last time, and two or three suggested slots.</Phase>
+<Phase when="30 days before" title="Follow-up with slots">A shorter nudge with fresh slots, on the customer's preferred channel.</Phase>
+<Phase when="14 days before" title="Text reminder">One line and one question: "Want me to hold Thursday at 9?"</Phase>
+<Phase when="7 days before" title="Human call list">Customers who haven't replied go to a call list for the office, with a one-line summary of their system and history.</Phase>
+<Phase when="After the visit" title="Findings in plain words">A short summary of what the technician found and what, if anything, needs attention before the next visit.</Phase>
+</Timeline>
+
+The step I would never automate away is the call list. A customer who ignores three messages might be unhappy, might have moved, or might just be busy. That's a conversation, and your office staff are better at it than any model.
+
+## Handling the replies
+
+Replies are where most offices lose time. Customers answer in every possible form, and each reply needs someone to read it, check the schedule, and write back. A language model can take most of that.
+
+<Flow title="What happens when a customer replies" caption="The model reads and drafts. Bookings go through the schedule. Anything that sounds like a problem or a cancellation goes to a person.">
+<Step title="Customer replies" who="Customer" time="any time">"Thursday works", "can you do after 4?", "the AC's been making a noise actually", or "please cancel".</Step>
+<Step title="Understand the intent" who="AI" tone="ai" time="seconds">Book, reschedule, question, report a problem, or cancel. Unclear replies get a clarifying question.</Step>
+<Step title="Bookings go straight to the schedule" who="System">For simple bookings, the slot is reserved in the field service software and confirmed to the customer.</Step>
+<Step title="Problems become service calls" who="Office" tone="human">"It's making a noise" is not a maintenance booking. It goes to the office as a possible service call with the history attached.</Step>
+<Step title="Cancellations go to a person" who="Office" tone="human">The model never argues with a customer who wants to cancel. It passes the message, the history, and the renewal date to the office.</Step>
+</Flow>
+
+That last rule matters to me. It's tempting to let a model handle "retention" automatically. I think that's how you end up with the kind of pushy follow-ups that give the trade a bad name. A person who wants to cancel should talk to a person.
+
+## Where this plugs in
+
+Most contractors already run field service software such as ServiceTitan, Housecall Pro, Jobber, FieldEdge, or Service Fusion. Those systems hold the agreements, equipment records, and technician notes, and many already send basic reminders. The AI part sits on top: it reads the history, drafts the personal message, and handles replies, writing bookings back through the software's API.
+
+The quality of the reminders depends almost entirely on the quality of the technician notes. If notes say "PM done, all good" on every visit, there's nothing to personalise. One side benefit I'd expect from a project like this is that technicians start writing better notes once they see them used.
+
+## Consent and tone
+
+Two practical rules keep this on the right side of both the law and your customers.
+
+<Callout title="Consent comes first" tone="warning">
+In the US, marketing texts require prior express written consent under the TCPA, and even service reminders should only go to customers who agreed to receive texts. In the EU, email and SMS marketing generally need consent too, with a narrow exception for similar offers to existing customers. Keep a clear opt-out in every message and honour it immediately.
+</Callout>
+
+The second rule is about tone. The reminder should never invent urgency. If the technician didn't flag anything, the message says so. The whole value of a contextual reminder is that customers learn to trust it, and that trust disappears the first time it cries wolf.
+
+## Questions HVAC contractors ask
+
+### Won't personal details in a reminder feel creepy?
+
+Not if everything in it comes from your own visits. Customers expect their contractor to remember their system. What feels creepy is information they didn't give you, and that should never be in the message.
+
+### Can it book directly into ServiceTitan or Housecall Pro?
+
+Usually, through their APIs, at least for straightforward bookings. I'd still keep anything unusual, like a customer asking for two visits or a system you've never serviced, in front of a person.
+
+### Does this work without good technician notes?
+
+Partly. Equipment age, model, and visit history are enough for a decent reminder. But the most convincing messages come from specific findings, so better notes pay off quickly.
+
+### Is this worth it for a five-truck shop?
+
+If you have a few hundred agreements, yes, because renewals are where a small shop's steady revenue comes from. Start with the reply handling, which saves office time immediately, and add personalised reminders once you see how customers respond.
+
+## The rule I'd keep
+
+Every reminder should contain at least one sentence that could only be true for that customer. If it doesn't, it's a postcard, and postcards are easy to ignore.
+
+If you'd like to see what your own agreement base could look like with better reminders, [tell me which field service software you use](/contact?intent=improve) and roughly how many agreements you have. I'll suggest a small pilot. For the other end of the service business, see how I'd handle [emergency calls for plumbers](/posts/ai-for-plumbers-emergency-calls), and for qualifying new equipment leads, the piece on [solar lead screening](/posts/ai-for-solar-installers-lead-screening).

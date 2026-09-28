@@ -1,0 +1,143 @@
+---
+id: "ai-for-security-installers-surveys"
+title: "Better Site Surveys for Security Installers: Photos In, Proposal Out"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Trades & construction", "Security installers", "Site surveys", "AI for small business"]
+description: "A security survey takes an hour on site and hours at the desk. How AI turns an installer’s photos and voice notes into a structured survey and same-day proposal."
+excerpt: "A security survey takes an hour on site and hours at the desk. How AI turns an installer’s photos and voice notes into a structured survey and same-day proposal."
+---
+
+A small accounting office wants an alarm system and a few cameras. The installer walks the site with a phone and a notepad: two entrances, a glass shopfront, a back office with the server cupboard, a car park at the rear. Forty minutes later, he has thirty photos, a page of notes, and a rough plan in his head.
+
+Back at the office, the plan in his head has to become a proposal: device list, camera positions, cable runs, a recorder with the right storage, a monitoring plan, labour, and a price. That takes two to three hours, usually in the evening, and something is always missing. Was the ceiling in the corridor suspended or solid? Where exactly was the network switch? A second visit or a phone call fills the gaps, and the proposal goes out three days after the walkthrough.
+
+Meanwhile the customer has looked at camera kits online. Speed and thoroughness are how a professional installer wins against that. AI can help with both, by turning what the installer sees on site into a structured survey while they're still standing there.
+
+## The market professional installers compete in
+
+<Stats title="Home and small business security in numbers">
+  <Stat value="48%" label="of US households owned a security solution in Q2 2025, up from 38% in 2022" source="Parks Associates" href="https://www.parksassociates.com/blogs/in-the-news/pro-monitoring-smart-homes-and-the-decline-of-traditional-security" />
+  <Stat value="9-year low" label="for new professionally installed and monitored systems in the US in 2024, while device-only households doubled" source="Parks Associates" href="https://www.parksassociates.com/blogs/in-the-news/pro-monitoring-smart-homes-and-the-decline-of-traditional-security" />
+  <Stat value="82,920" label="residential burglaries including attempts recorded in Germany in 2025, about half of them stopped at the attempt stage" source="BKA police crime statistics" href="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2025/Polizeiliche_Kriminalstatistik_2025/Polizeiliche_Kriminalstatistik_2025_node.html" />
+</Stats>
+
+Demand for security is growing. The share going to professionally designed systems isn't, because a camera kit from an online store is cheap and "good enough" for many people. The professional's advantage is design: the right detectors in the right places, cameras that actually see faces rather than the tops of heads, recording that covers the retention period, and a system that meets insurer and local requirements. The German burglary data makes the point in its own way: roughly half of break-ins fail at the attempt stage, and good mechanical and electronic protection is a large part of why.
+
+That advantage only counts if the customer sees it quickly. A detailed proposal three days after the visit loses to a kit that could be delivered tomorrow.
+
+## What a survey needs to capture
+
+The survey is where proposals are won or lost, because everything later depends on it. For each zone of the site, I'd want these fields captured, not remembered.
+
+| Field | Example | Why it matters |
+| --- | --- | --- |
+| Zone and openings | Front entrance, glass double door, two ground-floor windows | Detector type and count |
+| Surfaces and heights | Suspended ceiling at 2.6 m, brick exterior wall | Mounting, cable routes, labour |
+| Cable route | From the server cupboard via the ceiling void, about 18 m | Material and labour estimate |
+| Camera purpose | Identify faces at the door, not just detect movement | Camera type, lens, mounting height |
+| Lighting | Street light opposite, dark car park at the rear | IR or low-light cameras |
+| Network and power | Switch in the server cupboard, one free PoE port | Extra switch or power supplies |
+| Privacy constraints | Pavement and neighbour's entrance in view | Masking, camera angle, signage |
+
+A good installer holds most of this in their head during the walk. The problem is getting it out of their head and into a proposal accurately, hours later.
+
+## The survey flow
+
+<Flow title="From site walk to proposal draft" caption="The installer observes and decides. The model structures notes and drafts. Your rules and catalogue produce the numbers.">
+<Step title="Walk the site with a phone" who="Installer" tone="human" time="on site">Photos of each zone, plus short voice notes: "Front door, glass, suspended ceiling 2.6 m, camera to identify faces on approach, cable from server room via ceiling."</Step>
+<Step title="Structure the notes" who="AI" tone="ai" time="while walking">Voice notes are transcribed and turned into a zone-by-zone survey record, linked to the photos. Missing fields are flagged before the installer leaves.</Step>
+<Step title="Suggest devices from your rules" who="Rules">Each exterior door gets a contact and, where wanted, a camera; glass areas get glass-break detection; rules come from your standard designs.</Step>
+<Step title="Calculate materials and storage" who="System">Cable lengths from the notes, a bill of materials from your catalogue, and recorder storage from camera count, bitrate, and retention.</Step>
+<Step title="Draft the proposal" who="AI" tone="ai">A readable proposal with annotated photos, device list, privacy measures, monitoring options, and price.</Step>
+<Step title="Engineer reviews and sends" who="Engineer" tone="human" time="same day">A person checks the design, adjusts, and sends. Nothing leaves without that review.</Step>
+</Flow>
+
+The detail that makes this work is the second step happening before the installer leaves. If the structured record shows "corridor: ceiling type unknown", the installer can look up while still in the corridor. That alone removes most second visits.
+
+Here's what that looks like for one zone. The installer says, standing at the back door: "Back door to the car park, steel door, solid ceiling, about 2.4. Want a camera that sees faces coming in, car park is dark. Cable from the server cupboard, maybe 12 metres through the store room." The structured record that comes back a few seconds later:
+
+```text
+Zone 4: Rear entrance (car park)
+Opening:     Steel door, single leaf
+Ceiling:     Solid, approx. 2.4 m
+Devices:     Door contact; camera (face identification on approach)
+Lighting:    Dark exterior, needs IR or low-light camera
+Cable:       Server cupboard → store room → door, approx. 12 m
+Photos:      4 attached
+Missing:     Is there a light over the door? Mounting height inside or outside?
+```
+
+The "missing" line is the useful part. The installer looks up, sees there's no light over the door, adds a note, and moves on. Back at the office, nothing has to be reconstructed from memory.
+
+## What to photograph on the walk
+
+<Checklist title="The photo list per zone" items={[
+  "The opening itself, straight on, and the area just outside it",
+  "The ceiling, and above a ceiling tile if it's suspended",
+  "The intended camera position and the view it should have",
+  "The route the cable would take, especially any wall or floor it has to cross",
+  "The network cabinet, switch, and free ports",
+  "Power sockets near planned device positions",
+  "Anything outside the property that would appear in a camera view"
+]} />
+
+The last item is there for privacy, and it's the one most often skipped.
+
+## Storage, calculated rather than guessed
+
+Recorder sizing is a good example of where the software should calculate, not the model. It's arithmetic, and it's easy to get wrong in a hurry. Here's the calculation for a modest system.
+
+<Calc title="Recorder storage for continuous recording" caption="Continuous recording at a fixed bitrate. Motion-based recording needs much less; real bitrates depend on resolution, compression, and scene activity." rows={[
+  ["Cameras", "8"],
+  ["Average bitrate per camera", "4 Mbit/s"],
+  ["Storage per camera per day", "≈ 43 GB"],
+  ["All cameras per day", "≈ 346 GB"],
+  ["Retention period", "× 30 days"]
+]} result={["Storage needed", "≈ 10.4 TB"]} />
+
+In a real proposal, the retention period often comes from the customer's policy or, in Europe, from data protection guidance that favours short retention. Many data protection authorities consider a few days sufficient for typical private and small business uses unless there's a specific reason for longer. The calculation should use the retention you've agreed, not the maximum the hardware can hold.
+
+## Privacy is part of the design
+
+Cameras are where security installers most often run into legal trouble on behalf of their customers. Building the checks into the survey protects both.
+
+<Callout title="Privacy checks for every camera" tone="warning">
+In the EU and UK, a camera should cover only the customer's own property. Pavements, streets, and neighbours' property generally have to be excluded or masked, signs have to tell people they're being recorded, and recordings shouldn't be kept longer than needed. In workplaces, employee monitoring has extra rules and often needs the staff or works council involved. In the US, recording audio can fall under wiretapping laws, and several states require the consent of everyone recorded. The survey should flag every camera view that includes something outside the property.
+</Callout>
+
+The photo list above feeds this directly. If the model sees a pavement in the photo of a front-door camera view, the proposal draft includes a privacy mask for that area and a note for the engineer. That's a small thing to automate and a big thing to get wrong.
+
+## Keeping survey data safe
+
+There's one more issue that is specific to this industry: the survey itself is sensitive. It describes where the customer's valuables are, which doors are weak, where the recorder sits, and which areas the cameras don't cover. That's exactly the information a burglar would want.
+
+So the rules for handling survey data should be strict. Store it in your own systems or with a provider you trust under a proper contract. Don't send floor plans and vulnerability notes to random free tools. Limit access to the people working on the job. For AI processing, choose a provider that doesn't train on your data and processes it in a region you've agreed with your customers. This is a selling point, too: a customer who asks "where does my floor plan go?" deserves a clear answer.
+
+## Tools that fit
+
+Many integrators already use survey or proposal tools like System Surveyor or D-Tools, or a general field service platform. The AI part slots in as the capture and drafting layer: it structures voice notes and photos into the survey format those tools expect, and drafts the proposal text. Your product catalogue and your standard designs remain the source of every device and price.
+
+## Questions security installers ask
+
+### Can AI design the system?
+
+It can propose a first draft based on your own design rules, like "every exterior door gets a contact". A qualified engineer designs the system. The model saves the time between the walkthrough and the first draft, not the thinking.
+
+### How accurate are cable lengths from voice notes?
+
+As accurate as the installer's estimate, which is usually good enough for a proposal with a sensible margin. For larger commercial jobs, a floor plan with a scale gives better numbers, and the model can read measurements from a plan when one is provided.
+
+### Does this work for commercial sites?
+
+Yes, and it's often more valuable there, because commercial surveys have more zones, more stakeholders, and more requirements from insurers. The structured record also makes handovers to installation teams much cleaner.
+
+### What if the customer wants to compare with a DIY kit?
+
+Then the proposal should make the difference visible: camera positions chosen to identify faces, detection where burglars actually enter, storage sized for the retention they need, and privacy handled properly. A fast, specific proposal is the best argument against a generic kit.
+
+## The rule I'd follow
+
+Walk the site once, capture everything before you leave, and send the proposal before the customer orders a camera kit online.
+
+If proposals are the evening job nobody wants in your business, [tell me how surveys work for you today](/contact?intent=improve) and which tools you use. I'll suggest a capture setup you could try on your next few walkthroughs. For the same "prepare before you drive" idea elsewhere, see how I'd approach [window replacement leads](/posts/ai-for-window-installers-leads) and [site notes that become daily reports in construction](/posts/ai-for-construction-daily-reports).

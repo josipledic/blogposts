@@ -1,0 +1,157 @@
+---
+id: "de-ai-for-dental-labs-case-intake"
+title: "Dentallabor: Unvollständige Aufträge abfangen, bevor gefertigt wird"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Gesundheit", "Dentallabore", "Auftragsannahme", "KI für kleine Unternehmen"]
+description: "Fehlende Zahnfarbe, unklare Präparationsgrenze, falscher Scan: Wie eine KI-gestützte Auftragsprüfung unvollständige Fälle beim Eingang erkennt und gezielt nachfragt."
+excerpt: "Fehlende Zahnfarbe, unklare Präparationsgrenze, falscher Scan: Wie eine KI-gestützte Auftragsprüfung unvollständige Fälle beim Eingang erkennt und gezielt nachfragt."
+---
+
+Montagmorgen im Dentallabor ist eine Warteschlange. Über Nacht sind vierzehn neue Aufträge eingegangen: einige über das Scanner-Portal, einige per E-Mail, zwei als Auftragszettel im Karton mit Abformungen. Auftrag Nummer neun ist eine Einzelkrone auf 36. Der Scan ist da, das Material steht drauf. Die Zahnfarbe fehlt, die Präparationsgrenze ist nicht beschrieben, und beim Liefertermin steht „schnellstmöglich“.
+
+Das fällt erst am Nachmittag auf, wenn die Zahntechnikerin den Fall zum Konstruieren öffnet. Dann beginnt das Telefonpingpong. Die Praxis ist voll, der Zahnarzt behandelt, die Rezeption verspricht einen Rückruf. Der Auftrag liegt. Bis die Antwort kommt, ist aus „schnellstmöglich“ ein Eilauftrag geworden, der die Planung für alle anderen durcheinanderbringt.
+
+Jede Laborinhaberin, mit der ich über Abläufe gesprochen habe, kennt diese Geschichte. Mich interessiert daran, dass es fast ausschließlich ein Informationsproblem ist, und zwar eines, das in dem Moment sichtbar ist, in dem der Auftrag eingeht. Genau solche Aufgaben kann Software übernehmen, und KI übernimmt den Teil, an dem einfache Regeln scheitern.
+
+## Wie groß das Problem ist
+
+Studien zur Kommunikation zwischen Praxis und Labor fallen seit Jahrzehnten ähnlich aus, und schmeichelhaft sind sie nicht.
+
+<Stats title="Was Untersuchungen zu Laboraufträgen zeigen">
+  <Stat value="Unter 25 %" label="der Aufträge waren nach Einschätzung befragter Zahntechniker gut genug lesbar, um sauber arbeiten zu können" source="Journal of Indian Prosthodontic Society, 2020" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7335025/" />
+  <Stat value="≈ 73 %" label="der Aufträge für festsitzenden Zahnersatz enthielten keine Angabe zur gewünschten Präparationsgrenze" source="Dieselbe Befragung von 85 Technikern" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7335025/" />
+  <Stat value="≈ 46.000" label="sozialversicherungspflichtig beschäftigte Zahntechniker gab es 2023, rund 7 % weniger als 2019" source="Deutsche Handwerks Zeitung" href="https://www.deutsche-handwerks-zeitung.de/ausbildungsquote-ueber-30-prozent-doch-die-labore-kaempfen-376672/" />
+</Stats>
+
+Die ersten beiden Zahlen stammen aus einer einzelnen Befragung und sind kein internationaler Maßstab. Das Muster kennt aber jedes Labor: Der Auftragszettel wird schnell am Stuhl ausgefüllt, von jemandem, auf den der nächste Patient wartet, und die Felder, die optional aussehen, sind genau die, die das Labor braucht.
+
+Die dritte Zahl zeigt, warum das Thema in Deutschland drängt. Wenn die Zahl der Fachkräfte sinkt, ist jede Stunde, die eine Technikerin mit Detektivarbeit verbringt, eine Stunde, die in der Fertigung fehlt. Eine große US-Studie des National Dental Practice-Based Research Network mit 1.777 Zahnärzten zeigt außerdem, was auf dem Spiel steht: 17 Prozent der Befragten meldeten bei Einzelkronen [Neuanfertigungsquoten über 4 Prozent](https://pmc.ncbi.nlm.nih.gov/articles/PMC5793929/). Jede Neuanfertigung bedeutet doppelte Laborzeit, einen zweiten Termin für den Patienten und eine Praxis, die anfängt, am Labor zu zweifeln.
+
+## Woher unvollständige Aufträge kommen
+
+Es lohnt sich, genau hinzusehen, denn jede Quelle braucht eine andere Lösung.
+
+**Eilig ausgefüllte Auftragszettel.** Zahnarzt oder Assistenz füllen das Formular zwischen zwei Patienten aus. Die Farbe steht als „A2?“ da oder fehlt ganz, weil das Labor sie „anhand der Fotos“ bestimmen soll, die dann nicht dabei sind.
+
+**Portale, in denen Pflichtangaben keine Pflicht sind.** Scanner-Plattformen wie 3Shape, iTero, Medit oder das Portal von Dentsply Sirona machen den Versand eines Falls einfach. Das ist gut. Die meisten erlauben aber auch, einen Fall mit halb leerem Auftrag zu schicken oder mit dem Hinweis „wie beim letzten Mal“.
+
+**Papier, das niemand lesen kann.** Handschrift, Durchschläge und gefaxte Formulare gibt es noch immer. Die Befragung oben erinnert daran, dass Lesbarkeit keine Nebensache ist.
+
+**Dateien, die nicht zum Auftrag passen.** Ein Oberkieferscan, der als Unterkiefer beschriftet ist, ein fehlendes Bissregistrat, der Auftrag für 36 mit einem Scan von 46.
+
+Nichts davon ist ein Charakterfehler von Zahnärzten. Es passiert einfach, wenn ein Formular unter Zeitdruck ausgefüllt wird und erst geprüft wird, wenn jemand es braucht.
+
+## Was ein vollständiger Auftrag für Kronen und Brücken enthält
+
+Vor jeder Automatisierung braucht ein Labor eine schriftliche Definition von „vollständig“, und zwar pro Auftragsart. Für Kronen und Brücken würde meine Liste so aussehen. Ihre wird sich je nach Werkstoffen und Erfahrungen Ihrer Techniker unterscheiden.
+
+<Checklist title="Vollständiger Auftrag: Kronen und Brücken" items={[
+  "Patientenbezug und verordnender Zahnarzt, mit den Angaben für die Erklärung zur Sonderanfertigung",
+  "Zahnangaben im FDI-Schema, passend zum Scan",
+  "Art der Versorgung und Werkstoff, etwa monolithisches Zirkon oder Lithiumdisilikat",
+  "Zahnfarbe, bei transluzenter Keramik auch Stumpffarbe",
+  "Präparationsgrenze und Hinweise zur Präparation",
+  "Wünsche zu Approximalkontakten und Okklusion",
+  "Brückengliedgestaltung bei Brücken",
+  "Scans beider Kiefer und Bissregistrat, oder Abformungen mit Registrat",
+  "Fotos bei Frontzahnversorgungen",
+  "Liefer- und Anprobetermin, abgeglichen mit der Fertigungskapazität"
+]} />
+
+Diese Liste ist das eigentliche Produkt. Die KI ist nur deshalb nützlich, weil sie einen unordentlichen, echten Auftrag in Sekunden und zuverlässig gegen diese Liste prüfen kann.
+
+## Die Eingangsprüfung
+
+So würde ich den Ablauf bauen. Die Laborsoftware bleibt das führende System. Die Prüfung sitzt an der Tür, bevor ein Auftrag einen Platz in der Fertigung bekommt.
+
+<Flow title="Vom Eingang bis zur Freigabe für die Fertigung" caption="Regeln legen fest, was vollständig ist. Das Modell liest unordentliche Eingaben und formuliert die Rückfrage. Ein Mensch schickt sie ab.">
+<Step title="Auftrag geht ein" who="Portal, E-Mail, Papier" time="jederzeit">Portal-Benachrichtigungen und E-Mails landen in einem gemeinsamen Eingangspostfach. Papier wird beim Eingang gescannt.</Step>
+<Step title="Alles in Felder übertragen" who="KI" tone="ai" time="Sekunden">Das Modell überträgt den Auftrag in strukturierte Felder, auch Handschrift und Freitext, und markiert alles, bei dem es unsicher ist.</Step>
+<Step title="Gegen die Liste der Auftragsart prüfen" who="Regeln">Leere Pflichtfelder werden markiert, ebenso Widersprüche: 36 auf dem Auftrag, 46 im Dateinamen des Scans.</Step>
+<Step title="Eine konkrete Rückfrage formulieren" who="KI" tone="ai">Nicht „bitte Auftrag vervollständigen“, sondern genau die fehlenden Punkte, mit Auftragsnummer und in der Sprache der Praxis.</Step>
+<Step title="Techniker prüft und sendet" who="Labor" tone="human" time="erste Stunde">Ein Mensch liest den Entwurf, ergänzt, was das Modell übersehen hat, und schickt ihn über den Kanal, den die Praxis bevorzugt.</Step>
+<Step title="Grüne Aufträge gehen in die Fertigung" who="Laborsoftware">Vollständige Aufträge bekommen ihren Platz. Offene Aufträge zeigen, worauf sie warten und seit wann.</Step>
+</Flow>
+
+Die Aufteilung zwischen Regeln und Modell ist Absicht.
+
+<Split title="Wer was erkennt" leftTitle="Einfache Regeln erkennen" rightTitle="Das Modell erkennt" left={[
+  "Ein leeres Feld für die Zahnfarbe",
+  "Einen Liefertermin unterhalb Ihrer Mindestlaufzeit",
+  "Eine Brücke ohne Angabe zum Brückenglied",
+  "Ein fehlendes Bissregistrat"
+]} right={[
+  "„Wie beim letzten Mal“ oder „wie 11“ im Freitext",
+  "Handschriftliche Farben und Zahnangaben auf gescanntem Papier",
+  "Einen Auftrag für 36 mit einem Scan, der als 46 beschriftet ist",
+  "Einen Hinweis, der einem Formularfeld widerspricht"
+]} />
+
+Die linke Spalte lässt sich ganz ohne KI umsetzen, und das sollten Sie auch tun, denn Regeln sind günstig und berechenbar. In der rechten Spalte verdient ein Sprachmodell sein Geld: Es liest Freitext, Handschrift und Dateinamen so, wie es eine müde Technikerin tun würde, nur eben um sieben Uhr morgens und bei jedem einzelnen Auftrag.
+
+## Die Rückfrage an die Praxis
+
+Ob Praxen so etwas hilfreich oder lästig finden, hängt an der Qualität der Rückfrage. Eine gute ist kurz, konkret und mit einer einzigen Antwort erledigt.
+
+> Auftrag 2231, Krone auf 36, Patient KM-0412: Uns fehlen Zahnfarbe und Präparationsgrenze. Können Sie uns die Farbe (wenn möglich auch die Stumpffarbe) nennen und ob Sie eine Hohlkehle oder eine Stufe präpariert haben? Der Liefertermin passt, wir legen los, sobald wir von Ihnen hören.
+
+Vergleichen Sie das mit dem üblichen „Bitte rufen Sie wegen Ihres Auftrags im Labor an“. Diese Frage beantwortet die Praxis in dreißig Sekunden aus der Karteikarte, ohne Telefonat. Nach ein paar Monaten wissen die Praxen außerdem, was Ihr Labor braucht, und die Zahl der Rückfragen sinkt von allein.
+
+## Was das wert ist
+
+Ein einzelner offener Auftrag wirkt nicht teuer. Die Kosten entstehen in der Summe: Technikerzeit für Detektivarbeit, Eilaufträge, die die Planung sprengen, und ab und zu eine Neuanfertigung, die mit einer fehlenden Angabe begann.
+
+| Was schiefgeht | Was es das Labor kostet | Wie die Prüfung hilft |
+| --- | --- | --- |
+| Fehlende Farbe oder Präparationsgrenze fällt beim Konstruieren auf | Ein halber bis ganzer Tag Verzögerung, Telefonpingpong, später Eilarbeit | Die Rückfrage geht in der ersten Stunde raus, nicht am Nachmittag |
+| Scan und Auftrag passen nicht zusammen | Falscher Zahn konstruiert oder Neuanfertigung | Wird markiert, bevor konstruiert wird |
+| Unrealistischer Liefertermin | Überstunden oder eine verspätete Arbeit, die Vertrauen kostet | Abgleich mit der Kapazität beim Eingang, mit ehrlicher Antwort |
+| Unleserlicher Auftragszettel | Die beste Vermutung einer Technikerin | Unsichere Felder werden markiert, nicht geraten |
+
+Messen würde ich vorher und nachher drei Werte: den Anteil der Aufträge mit Rückfrage, die Zeit vom Eingang bis zur Freigabe und die Neuanfertigungsquote der beim Eingang markierten Aufträge im Vergleich zu den übrigen.
+
+## Die Medizinprodukte-Verordnung als Rückenwind
+
+Fast alles, was ein Dentallabor fertigt, ist eine Sonderanfertigung im Sinne der [Medizinprodukte-Verordnung (EU) 2017/745](https://eur-lex.europa.eu/eli/reg/2017/745/oj). Eine Sonderanfertigung entsteht auf schriftliche Verordnung einer berechtigten Person, und die Erklärung nach Anhang XIII nennt unter anderem den verordnenden Zahnarzt und die spezifischen Merkmale des Produkts. Seit der MDR muss diese Erklärung [jeder Sonderanfertigung beiliegen](https://qs-dental.de/anhang-1-mdr/umsetzung-anhang-xiii-mdr), nicht mehr nur höheren Klassen. Ein vollständiger, strukturierter Auftragsdatensatz macht diese Dokumentation leichter.
+
+Auch die Abrechnung profitiert: Wenn Werkstoff und Ausführung von Anfang an eindeutig sind, passen die Positionen nach BEL II oder BEB später zu dem, was tatsächlich gefertigt wurde.
+
+Aufträge enthalten Patientendaten. Jeder Dienst, der sie liest, braucht dieselbe Sorgfalt wie Ihre Laborsoftware: einen Auftragsverarbeitungsvertrag nach DSGVO, einen bekannten Datenstandort in der EU und Zugriff nur für die Menschen, die Aufträge bearbeiten.
+
+<Callout title="Was die Prüfung nicht darf">
+Sie ändert den Auftrag nicht. Sie wählt nie eine Farbe, einen Werkstoff oder eine Präparationsgrenze für den Zahnarzt aus, auch wenn sie es aus früheren Fällen erraten könnte. Sie fragt. Der verordnende Zahnarzt entscheidet, und die Antwort wird beim Auftrag gespeichert.
+</Callout>
+
+## Ein Pilot in vier Schritten
+
+<Timeline title="Vom heutigen Stapel zur funktionierenden Eingangsprüfung">
+<Phase when="Woche 1 bis 2" title="Jeden Stillstand notieren">Jedes Mal, wenn ein Auftrag auf Informationen wartet, den Grund notieren. Zwei Wochen Gründe zeigen, welche Prüfungen am meisten bringen.</Phase>
+<Phase when="Woche 3" title="Listen schreiben">Aus den Gründen eine Vollständigkeitsliste pro Auftragsart machen: Kronen und Brücken, Implantatarbeiten, Kombi- und Prothetik, Aligner.</Phase>
+<Phase when="Woche 4 bis 5" title="Schattenbetrieb">Die Prüfung liest eingehende Aufträge und formuliert Rückfragen, aber das Team arbeitet wie gewohnt und vergleicht.</Phase>
+<Phase when="Woche 6" title="Live mit einer Auftragsart">Mit Kronen und Brücken starten, meist dem größten Volumen. Weitere Arten folgen, wenn die Entwürfe kaum noch Korrekturen brauchen.</Phase>
+</Timeline>
+
+## Fragen, die Laborinhaber stellen
+
+### Kann das Handschrift lesen?
+
+Meistens ja. Aktuelle Modelle lesen Handschrift auf einem sauberen Scan erstaunlich gut. Entscheidend ist, dass unsichere Felder als unsicher markiert und einem Menschen gezeigt werden, statt stillschweigend geraten zu werden.
+
+### Funktioniert das mit 3Shape, iTero oder Medit?
+
+In der Regel über die Benachrichtigungs-E-Mails und exportierten Dateien, die diese Portale ohnehin erzeugen. Direkter Zugriff über eine Schnittstelle hängt von Plattform und Kontotyp ab, das prüfe ich zuerst. Die Prüfung muss nicht im Portal sitzen, um nützlich zu sein.
+
+### Nerven mehr Rückfragen die Praxen nicht?
+
+Sie bekommen weniger, frühere und genauere Rückfragen statt eines Anrufs am Nachmittag. Praxen nervt das Telefonpingpong, nicht eine klare Frage, die sie aus der Karteikarte beantworten können.
+
+### Lohnt sich das für ein Labor mit zwei oder drei Technikern?
+
+Das hängt davon ab, wie viele Aufträge heute auf Informationen warten. Ist es einer pro Woche, reicht eine ausgedruckte Checkliste am Eingang. Sind es mehrere am Tag, summiert sich das Hinterhertelefonieren zu einem Teil einer Stelle, und eine kleine Eingangsprüfung rechnet sich schnell.
+
+## Die Faustregel
+
+Ein Auftrag geht erst in die Fertigung, wenn eine Technikerin ihn bauen könnte, ohne zum Telefon zu greifen. Alles davor ist Informationsarbeit, und genau die sollte Software einer Fachkraft abnehmen.
+
+Wenn das nach Ihrem Montagmorgen klingt, [erzählen Sie mir, wie Aufträge heute in Ihr Labor kommen](/contact?intent=improve). Ich sage Ihnen ehrlich, ob eine Checkliste, ein Regelwerk oder eine KI-Prüfung der richtige erste Schritt ist. Die Praxen auf der anderen Seite haben ihren eigenen Engpass, das Telefon; darüber habe ich in [KI-Telefonassistent für die Zahnarztpraxis](/de/posts/ai-for-dentists) geschrieben. Und wer die Idee einer Prüfung am Eingang mag: [Druckereien haben dasselbe Problem mit Druckdaten](/de/posts/ai-for-print-shops-preflight).

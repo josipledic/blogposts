@@ -1,0 +1,140 @@
+---
+id: "de-ai-for-music-schools-administration"
+title: "Musikschule: Weniger Verwaltung, mehr Unterricht"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Bildung & Soziales", "Musikschulen", "Schulverwaltung", "KI für kleine Unternehmen"]
+description: "Terminverschiebungen, Probestunden, Gebühren, Vorspielprogramme. Sieben Verwaltungsaufgaben einer Musikschule, sortiert danach, wie viel KI wirklich hilft."
+excerpt: "Terminverschiebungen, Probestunden, Gebühren, Vorspielprogramme. Sieben Verwaltungsaufgaben einer Musikschule, sortiert danach, wie viel KI wirklich hilft."
+---
+
+Fragen Sie jemanden, der eine kleine Musikschule leitet, was die Zeit frisst, und die Antwort ist selten der Unterricht. Es ist die Nachricht am Donnerstagabend, ob Emmas Stunde wegen des Fußballturniers verschoben werden kann. Die Mutter, die eine Probestunde für einen Sechsjährigen möchte, „der Klavier so liebt“. Die Gebührenrechnung, bei der die Geschwisterermäßigung fehlt. Das Vorspielprogramm, für das bis Freitag 23 Stücke, Spieldauern und eine Klavierbegleitung feststehen müssen.
+
+Jede Aufgabe ist klein. Zusammen füllen sie die Abende von Leitungen und Lehrkräften, die lieber üben, Unterricht vorbereiten oder einfach Feierabend hätten. Manche dieser Aufgaben passen gut zu KI. Manche erledigt eine schlichte Software, die es längst gibt, besser. Und manche sollten genau da bleiben, wo sie sind: bei einem Menschen.
+
+Hier sind die sieben Verwaltungsaufgaben, die die Woche einer typischen kleinen Musikschule füllen, sortiert danach, wie viel KI tatsächlich hilft.
+
+<Stats title="Musikschulen in Deutschland">
+  <Stat value="928" label="öffentliche Musikschulen im Verband deutscher Musikschulen, an rund 4.000 Standorten (Stand 1.1.2025)" source="VdM, via Deutsches Musikinformationszentrum" href="https://miz.org/de/institutionen/verband-deutscher-musikschulen-e-v-vdm-i231" />
+  <Stat value="> 1 Mio." label="Kinder, Jugendliche und Erwachsene lernen an diesen Musikschulen" source="VdM, via Deutsches Musikinformationszentrum" href="https://miz.org/de/institutionen/verband-deutscher-musikschulen-e-v-vdm-i231" />
+  <Stat value="31.12.2027" label="endet die verlängerte Übergangsregelung für Honorarlehrkräfte nach dem Herrenberg-Urteil (§ 127 SGB IV)" source="TWW Rechtsanwälte, 2026" href="https://tww.law/blog/2026/08/26/127-sgb-iv-selbststaendige-lehrkraefte-2027/" />
+</Stats>
+
+Die dritte Zahl betrifft fast jede Musikschule, öffentlich wie privat. Seit das Bundessozialgericht 2022 im Herrenberg-Urteil eine Honorarlehrkraft als abhängig beschäftigt eingestuft hat, stellen viele Schulen auf Festanstellung um. Das heißt mehr Arbeitsverträge, Dienstpläne und Vertretungsregeln, bei gleich knapper Verwaltung. Umso wichtiger ist, dass Routinearbeit nicht die Abende frisst.
+
+<Bars title="Wohin die Verwaltungswoche einer kleinen Musikschule geht" unit=" Std." caption="Beispielhafte Woche einer Schule mit rund 150 Schülerinnen und Schülern und acht Lehrkräften. Ihre Verteilung sieht anders aus; die Reihenfolge unten richtet sich danach, wo KI hilft, nicht nach den meisten Stunden." data={[
+  { label: "Verschiebungen und Nachholstunden", value: 6, highlight: true },
+  { label: "Anfragen, Probestunden, Warteliste", value: 4, highlight: true },
+  { label: "Nachrichten an Familien", value: 4 },
+  { label: "Gebühren, Rechnungen, Zahlungsfragen", value: 3 },
+  { label: "Änderungen im Stundenplan", value: 3 },
+  { label: "Vorspiele und Wettbewerbe", value: 2 },
+  { label: "Unterrichtsnotizen und Übepläne", value: 2 }
+]} />
+
+## 1. Verschiebungen und Nachholstunden
+
+**Wie viel KI hilft: viel.** Diese Aufgabe frisst die Abende, kommt über jeden Kanal und folgt immer denselben Regeln. Eine Familie will verschieben oder absagen. Jemand prüft die Regelung (wie viel Vorlauf, ob eine Nachholstunde zusteht), sucht einen freien Platz bei der richtigen Lehrkraft, schlägt ihn vor und trägt ihn ein.
+
+Diesen ersten Durchgang kann ein Modell in Sekunden erledigen, rund um die Uhr, wenn die Regelung schriftlich vorliegt und der Stundenplan in einem System steht:
+
+<Flow title="Eine Absage, erledigt" caption="Das Modell wendet Ihre schriftliche Regelung und den aktuellen Stundenplan an. Die Lehrkraft bestätigt Nachholtermine; Ausnahmen gehen ans Büro.">
+<Step title="Nachricht kommt" who="Elternteil" time="Donnerstag, 19:40">„Emma hat Fieber, kann sie morgen aussetzen und nächste Woche nachholen?“</Step>
+<Step title="Regelung prüfen" who="KI" tone="ai" time="Sekunden">Krankheit mit mehr als 24 Stunden Vorlauf gemeldet, also steht laut Ihren Bedingungen eine Nachholstunde zu.</Step>
+<Step title="Termine finden" who="KI" tone="ai" time="Sekunden">Zwei freie Plätze bei Emmas Lehrer nächste Woche, zu Zeiten, die die Familie schon genutzt hat.</Step>
+<Step title="Anbieten und buchen" who="Elternteil" time="Minuten">Wählt Dienstag 16:30; der Plan wird aktualisiert, der Freitagsplatz frei.</Step>
+<Step title="Lehrkraft sieht es" who="Lehrkraft" tone="human">Benachrichtigung über die Änderung; Ausnahmen, Streitfälle und wiederholt kurzfristige Absagen gehen ans Büro.</Step>
+</Flow>
+
+Die Antwort an die Familie ist kurz und klar:
+
+> Hallo Frau Weber, gute Besserung für Emma! Da Sie rechtzeitig Bescheid gegeben haben, steht ihr eine Nachholstunde zu. Herr Novak hat nächste Woche zwei freie Termine: Dienstag um 16:30 oder Mittwoch um 17:15. Antworten Sie einfach mit dem Termin, der Ihnen passt. Die Stunde am Freitag ist abgesagt. Viele Grüße, Ihre Musikschule am Fluss
+
+Viele Entgeltordnungen öffentlicher Musikschulen sehen für Absagen durch Schüler gar keine Nachholstunde vor. Auch das kann das Modell freundlich erklären, wenn es so in Ihren Bedingungen steht. Es erfindet nie einen Anspruch, den die Regelung nicht hergibt, und es diskutiert nicht. „Wir haben doch heute früh abgesagt, warum gibt es keine Nachholstunde?“ geht an einen Menschen.
+
+## 2. Anfragen, Probestunden und Warteliste
+
+**Wie viel KI hilft: viel.** Anfragen folgen einem Muster: welches Instrument, wie alt, Vorerfahrung, welche Tage, Probestunde oder direkt anfangen. Ein Modell kann sofort antworten, diese Fragen stellen, eine passende Lehrkraft und einen Probetermin vorschlagen und die Familie mit den nötigen Angaben auf die Warteliste setzen, wenn nichts frei ist.
+
+Bei der Warteliste verlieren viele Schulen den Überblick, besonders öffentliche Musikschulen mit langen Listen. Ein Modell hält sie ordentlich und entwirft, wenn ein Platz frei wird („Donnerstag 15:45, Klavier, Frau Ahmed“), Angebote an die Familien, die am besten passen, in der Reihenfolge, die Ihre Regeln vorgeben. Das Büro verschickt sie.
+
+## 3. Nachrichten an Familien
+
+**Wie viel KI hilft: ziemlich viel.** Ferientermine, Schließtage, Einladungen zum Vorspiel, Anmeldefristen, Raumänderungen. Das Modell entwirft sie aus Ihrem Kalender, auf Wunsch in der Sprache der Familie und kurz genug, dass sie gelesen werden. Es kann auch Routinefragen beantworten („Wann fängt das Schuljahr an?“, „Ist am Brückentag Unterricht?“), aus Ihren veröffentlichten Informationen.
+
+Die Regel wie überall: Routinefakten sind in Ordnung für ein Modell. Sorgen um Fortschritt, Verhalten oder Wohlbefinden einer Schülerin sind Gespräche für die Lehrkraft.
+
+## 4. Gebühren, Rechnungen und Zahlungsfragen
+
+**Wie viel KI hilft: etwas.** Die Abrechnung selbst gehört in Ihre Musikschulverwaltung, die Unterrichtsentgelte, Geschwister- und Sozialermäßigungen, Instrumentenmiete und SEPA-Lastschriften längst beherrscht. Beim Rechnen bringt ein Modell wenig, und Beträge sollte es nicht anfassen.
+
+Es hilft bei der Kommunikation: „Warum ist es dieses Halbjahr teurer?“ aus den Rechnungspositionen beantworten, freundliche erste Zahlungserinnerungen entwerfen, Zahlungswege erklären. Auch der Hinweis auf Leistungen für Bildung und Teilhabe, über die Familien mit geringem Einkommen einen monatlichen Zuschuss für Musikunterricht bekommen können, lässt sich als Standardantwort hinterlegen. Härtefälle, Streit und Ausnahmen gehen an die Leitung.
+
+## 5. Änderungen im Stundenplan
+
+**Wie viel KI hilft: weniger, als man denkt.** Einen Stundenplan für das Schuljahr zu bauen ist ein Puzzle: Verfügbarkeit der Lehrkräfte, Räume, Schulzeiten und Ganztag der Kinder, Geschwister, die direkt hintereinander Unterricht haben sollen. Das ist eine Aufgabe für Planungssoftware oder einen Optimierer, nicht für ein Sprachmodell, das mit Worten gut ist und mit vierzig ineinandergreifenden Bedingungen unzuverlässig.
+
+Ein Modell hilft am Rand: Verfügbarkeiten von Familien in normaler Sprache einsammeln („dienstags ab 16 Uhr, mittwochs nicht“), die Antworten für die Planung strukturieren und die Nachrichten mit den neuen Zeiten entwerfen. Das Puzzle selbst gehört einem Werkzeug, das dafür gebaut ist, und der Person, die weiß, welche Familien sie zuerst anruft.
+
+## 6. Vorspiele und Wettbewerbe
+
+**Wie viel KI hilft: etwas, in Schüben.** Ein Vorspiel braucht Stücke, Spieldauern, Reihenfolge, Begleitung, Aufbau und ein Programm. Die Anmeldung zu Jugend musiziert braucht Stücke, Besetzungen, Altersgruppen und Fristen. Das Modell sammelt die Angaben der Lehrkräfte ein, prüft sie auf Vollständigkeit, entwirft eine Reihenfolge, die in die verfügbare Zeit passt, und setzt das Programmheft. Wer spielt und in welcher Reihenfolge, entscheiden die Lehrkräfte; das Modell spart den Abend, an dem man Titel aus E-Mails abtippt.
+
+## 7. Unterrichtsnotizen und Übepläne
+
+**Wie viel KI hilft: nützlich, wenn Lehrkräfte es wollen.** Eine Lehrkraft spricht nach der Stunde eine halbe Minute ins Handy („G- und D-Dur-Tonleiter, Takt 12 bis 20 langsam mit Metronom auf 60, mit dem Menuett anfangen“), und das Modell macht daraus einen ordentlichen Übeplan für Schüler und Eltern. Manche Lehrkräfte lieben das, andere schreiben lieber ins Hausaufgabenheft. Machen Sie es zum Angebot, nicht zur Pflicht.
+
+## Wofür KI taugt und wofür nicht
+
+<Split title="Wo jede Aufgabe hingehört" leftTitle="Gut für KI" rightTitle="Besser mit schlichter Software oder einem Menschen" left={["Verschiebungen nach schriftlicher Regelung", "Anfragen, Probestunden und Angebote von der Warteliste", "Routinenachrichten und Antworten an Familien", "Angaben für Vorspiele und Wettbewerbe einsammeln und prüfen", "Übepläne aus Sprachnotizen der Lehrkräfte"]} right={["Entgelte und Ermäßigungen berechnen: Ihre Verwaltungssoftware", "Den Stundenplan bauen: ein Planungswerkzeug", "Sorgen um Fortschritt und schwierige Gespräche: die Lehrkraft", "Streitfälle, Härtefälle, Ausnahmen: die Leitung", "Kinderschutz: Ihr Schutzkonzept und die zuständige Person"]} caption="Die Grenze ist überall dieselbe: Worte und Routineregeln passen zu einem Modell, Rechnen gehört in Software, die dafür gebaut ist, und Urteile gehören zu Menschen." />
+
+## Herrenberg und die Verwaltung
+
+Die Umstellung nach dem Herrenberg-Urteil bringt eigene Verwaltungsarbeit. Wer die Übergangsregelung für 2027 nutzen will, braucht neue Zustimmungserklärungen der Lehrkräfte, die alten gelten nicht automatisch weiter. Ab 2028 gelten wieder die allgemeinen Regeln. Ein Modell kann hier Schreiben entwerfen, nachhalten, wer schon unterschrieben hat, und Fragen der Lehrkräfte zum Ablauf beantworten. Ob eine Lehrkraft selbstständig oder angestellt arbeiten kann, entscheidet es nicht. Das ist eine Frage für Ihre Rechtsberatung oder ein Statusfeststellungsverfahren bei der Deutschen Rentenversicherung.
+
+## Bevor Sie etwas einschalten
+
+<Checklist title="Was vorher da sein muss" items={[
+  "Eine schriftliche Absage- und Nachholregelung, die das Modell wörtlich anwenden kann",
+  "Ein Stundenplan als einzige verlässliche Quelle, nicht drei Kalender und eine Tabelle",
+  "Klare Regeln für die Warteliste: wer zuerst ein Angebot bekommt und warum",
+  "Eine Entscheidung über Kanäle: E-Mail, SMS, Schul-App oder Messenger, mit Einwilligung der Familien",
+  "Ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO mit jedem Werkzeug, das Schülerdaten sieht",
+  "Ein einfacher Weg zu einem Menschen, und die Möglichkeit für Lehrkräfte, das Modell zu übersteuern"
+]} />
+
+Das meiste davon lohnt sich auch ohne KI. Eine schriftliche Nachholregelung allein beendet erstaunlich viele Diskussionen.
+
+## Wann Sie keine KI brauchen
+
+Eine Lehrkraft mit zwanzig Privatschülern braucht kein Modell. Ein Buchungstool, in dem Familien nach Ihren Regeln verschieben können, automatische Erinnerungen und eine Rechnungs-App decken das meiste ab. KI lohnt sich, wenn es mehrere Lehrkräfte gibt, eine echte Warteliste und so viele Nachrichten, dass jemand seine Abende mit Antworten verbringt.
+
+## Werkzeuge, die passen
+
+Musikschulverwaltungen wie MSVplus, iMikel, MELOS oder AMADEE verwalten Schülerstammdaten, Unterrichte, Lehrkräfte und die Abrechnung bis zur SEPA-Lastschrift. Die KI-Schicht sitzt darüber: Sie liest Nachrichten aus allen Kanälen, wendet Ihre Regeln an, entwirft Antworten und Angebote von der Warteliste und macht aus Sprachnotizen Übepläne, während die Verwaltungssoftware das maßgebliche System für Unterricht und Zahlungen bleibt.
+
+Schülerdaten, besonders von Kindern, sind personenbezogene Daten. Sie bleiben in Ihrer Schulverwaltung, Werkzeuge bekommen nur, was sie brauchen, und Familien erfahren, wie Nachrichten bearbeitet werden. Dass ein Assistent antwortet, muss nach der KI-Verordnung seit August 2026 erkennbar sein.
+
+## Was Musikschulleitungen mich fragen
+
+### Stört es Familien, mit einem Assistenten zu schreiben?
+
+Die meisten stört es mehr, bis Montag zu warten. Sagen Sie klar, dass es ein Assistent ist, unterschreiben Sie mit der Schule und machen Sie den Weg zu einem Menschen leicht. Wer lieber anruft, soll das weiter können.
+
+### Kann das Modell Nachrichten in WhatsApp bearbeiten?
+
+Technisch ja, über die WhatsApp-Business-Plattform, aber Datenschutz und die Frage, ob Unterrichtsverwaltung überhaupt in einen Messenger gehört, sollten Sie vorher klären. Viele Schulen halten die Verwaltung in der Schul-App oder per E-Mail.
+
+### Und wenn eine Lehrkraft selbst ausfällt?
+
+Das ist ein anderer Fall: Mehrere Familien müssen schnell Bescheid wissen, manche brauchen eine Vertretung. Das Modell kann alle Nachrichten entwerfen und Nachholtermine vorschlagen, aber das Büro entscheidet und verschickt.
+
+### Woran merken wir, ob es hilft?
+
+Zählen Sie die Abende. Genauer: Zeit für Nachrichten pro Woche, wie lange Familien auf eine Antwort warten, wie viele Nachholstunden tatsächlich stattfinden und wie schnell Plätze von der Warteliste besetzt werden.
+
+## Faustregel
+
+Regeln aufschreiben, einen Stundenplan pflegen und ein Modell das Antworten, Anbieten und Erinnern übernehmen lassen, das aus diesen Regeln folgt. Das Rechnen überlassen Sie Verwaltungs- und Planungssoftware, und alles, was den Fortschritt einer Schülerin betrifft, bleibt bei der Lehrkraft.
+
+Wenn Ihre Abende mit Verschiebungsnachrichten vergehen, [schreiben Sie mir, welche Verwaltungssoftware Sie nutzen](/contact?intent=improve), und ich sage Ihnen, wo Sie anfangen sollten. Sprachschulen haben einen ähnlichen Anmeldeansturm bei [der Einstufung](/de/posts/ai-for-language-schools-placement), und Kitas schreiben Familien jeden Tag bei [den Elterninformationen](/de/posts/ai-for-childcare-parent-updates).

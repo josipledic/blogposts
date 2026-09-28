@@ -1,0 +1,161 @@
+---
+id: "de-ai-for-catering-inquiries"
+title: "Catering-Anfragen: Antworten, solange der Kunde noch vergleicht"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Lebensmittel & Gastronomie", "Caterer", "Anfragen beantworten", "KI für kleine Unternehmen"]
+description: "Kunden schicken Catering-Anfragen an mehrere Anbieter, und oft gewinnt die erste brauchbare Antwort. Wie KI kleinen Caterern hilft, binnen einer Stunde zu antworten."
+excerpt: "Kunden schicken Catering-Anfragen an mehrere Anbieter, und oft gewinnt die erste brauchbare Antwort. Wie KI kleinen Caterern hilft, binnen einer Stunde zu antworten."
+---
+
+Freitag, 21 Uhr. Eine Office-Managerin erledigt endlich die Aufgabe, die sie die ganze Woche vor sich hergeschoben hat: Mittagessen für 60 Personen zum Firmenjubiläum in fünf Wochen. Sie findet vier Caterer im Netz und schickt allen dieselbe kurze Nachricht über das Kontaktformular. Dann geht sie nach Hause.
+
+Ein Caterer antwortet am Samstag um 7:30 Uhr: freundlich, drei Menüvorschläge mit Preisspanne pro Person, der Hinweis, dass der Termin noch frei ist, und zwei Fragen zur Location. Die anderen drei melden sich am Montag und Dienstag. Da hat die Office-Managerin den ersten Vorschlag schon an ihren Chef weitergeleitet, mit dem Kommentar „sieht gut aus“.
+
+Das passiert ständig, und die Caterer, die verlieren, sind selten schlechter. Sie sind beschäftigt. Freitagabend steht ein kleiner Caterer meistens genau da, wo er hingehört: in der Küche oder am Buffet einer fremden Veranstaltung. Die Anfrage wartet, bis Zeit ist, und bis dahin hat jemand anderes geantwortet.
+
+## Was die Zahlen über Tempo sagen
+
+<Stats title="Warum die erste Stunde zählt">
+  <Stat value="7-mal" label="höher war die Chance, eine Anfrage zu qualifizieren, bei Kontakt innerhalb einer Stunde statt nur eine Stunde später, in einer Untersuchung von 2.241 US-Firmen" source="Harvard Business Review, 2011" href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" />
+  <Stat value="42 Stunden" label="betrug die durchschnittliche Antwortzeit der Firmen, die überhaupt antworteten; 23 % antworteten nie" source="Harvard Business Review, 2011" href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" />
+  <Stat value="−2,2 %" label="realer Umsatz der Gastronomie in Deutschland 2025 gegenüber dem Vorjahr. Jede gewonnene Buchung zählt" source="Destatis" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/02/PD26_054_45213.html" />
+</Stats>
+
+Die HBR-Studie betrifft Vertriebsanfragen allgemein und ist von 2011. Wer je einen Caterer gebucht hat, weiß aber, dass sie nicht falscher geworden ist. Kunden vergleichen mehrere Anbieter gleichzeitig, und die erste vollständige, glaubwürdige Antwort setzt den Maßstab. Alle späteren werden daran gemessen.
+
+Der Haken steckt im Wort „vollständig“. Eine schnelle Eingangsbestätigung („Danke, wir melden uns“) zählt nicht. Gewinnen kann eine schnelle Antwort, die tatsächlich weiterhilft.
+
+## Was die Antwort bremst
+
+Nicht Bequemlichkeit. Eine gute Catering-Antwort braucht Informationen und etwas Rechnerei:
+
+| Was der Caterer braucht | Warum | Fehlt meist in der ersten Nachricht? |
+| --- | --- | --- |
+| Datum und Uhrzeit | Verfügbarkeit von Küche und Personal | Meist angegeben |
+| Personenzahl | Mengen, Personal, Preis | Meist angegeben, oft vage („50 bis 70“) |
+| Anlass und Serviceform | Buffet, gesetztes Menü, Fingerfood, Foodtruck, nur Lieferung | Fehlt oft |
+| Location und Ausstattung | Küche, Strom, Aufbauzeit, Entfernung | Fehlt fast immer |
+| Ernährungswünsche | Vegetarisch, vegan, Allergien, halal | Kommt meist erst später |
+| Budget | Welche Menüstufe passt | Fehlt meist, manchmal absichtlich |
+| Extras | Getränke, Personal, Geschirr, Mobiliar, Torte | Selten erwähnt |
+
+Der Inhaber liest die Nachricht zwischen zwei Gängen, denkt „Location fragen, Preis rechnen“ und schiebt es auf Montag. Genau hier passt KI: Sie liest die Anfrage, prüft, was bekannt ist, rechnet aus Ihren eigenen Regeln eine Preisspanne und entwirft eine Antwort, die schnell und brauchbar ist.
+
+<Split title="Zwei Antworten auf dieselbe Anfrage vom Freitagabend" leftTitle="Die übliche schnelle Antwort" rightTitle="Eine brauchbare schnelle Antwort" left={[
+  "Vielen Dank für Ihre Anfrage",
+  "Wir melden uns in Kürze",
+  "Nichts zum Termin",
+  "Kein Menü, kein Preisrahmen",
+  "Keine Frage, also nichts zum Antworten",
+  "Echte Antwort am Montag"
+]} right={[
+  "Der Termin ist für 60 Personen noch frei",
+  "Drei Menüs, die zu einem Firmenmittagessen passen",
+  "Preisspanne pro Person für jede Variante",
+  "Was enthalten ist und was extra kostet",
+  "Zwei konkrete Fragen: Küche vor Ort, Ernährungswünsche",
+  "Innerhalb einer Stunde verschickt, vom Inhaber geprüft"
+]} />
+
+## Der Ablauf
+
+<Flow title="Von der Website-Anfrage zum ersten Angebot innerhalb einer Stunde" caption="Das Modell liest, prüft und entwirft aus Ihren Menüs und Preisregeln. Der Inhaber gibt per Fingertipp frei. Ungewöhnliches bekommt später eine ordentliche Antwort.">
+<Step title="Anfrage kommt" who="Kunde" time="jederzeit">Kontaktformular, E-Mail, Anrufbeantworter oder Portal.</Step>
+<Step title="Auslesen und prüfen" who="KI" tone="ai" time="Sekunden">Datum, Personenzahl, Anlass, Ort, Ernährungshinweise. Prüft Kalender und Kapazität des Teams an dem Tag.</Step>
+<Step title="Varianten auswählen" who="KI" tone="ai">Zwei oder drei passende Pakete aus Ihren Menüs, nach Anlass, Personenzahl und Budgethinweis.</Step>
+<Step title="Preisspanne" who="KI" tone="ai">Spanne pro Person aus Ihren Preisregeln: Menüstufe, Mindestumsatz, Personalstunden, Lieferzone.</Step>
+<Step title="Inhaber gibt frei" who="Inhaber" tone="human" time="1 bis 2 Min.">Liest den Entwurf auf dem Handy, passt an oder gibt frei. Bei Ungewöhnlichem geht jetzt eine kurze Zwischennachricht raus.</Step>
+<Step title="Senden und nachfassen" who="KI" tone="ai">Antwort geht raus. Ohne Rückmeldung nach zwei Tagen eine kurze Nachfrage, nach einer Woche ein letzter freundlicher Gruß.</Step>
+</Flow>
+
+Die Freigabe ist absichtlich kurz. Der Inhaber schreibt nicht, er prüft: Ist der Termin wirklich frei, passen die Menüs, stimmt die Spanne? Für Standardpakete in Standardgröße lassen manche Caterer das Modell direkt senden und prüfen danach. Ich würde mit Freigabe für alles anfangen und erst lockern, wenn die Entwürfe durchgehend stimmen.
+
+## Was der Kunde bekommt
+
+> Guten Tag Frau Weber,
+>
+> vielen Dank für Ihre Anfrage. Gute Nachricht: Donnerstag, der 14. November, ist bei uns noch frei, und ein Mittagessen für 60 Personen passt gut.
+>
+> Für ein Firmenjubiläum schlagen wir eine dieser Varianten vor:
+> 1. **Buffet „Saison“**: zwei Hauptgerichte, eines davon vegetarisch, drei Beilagen, Dessert. 28 bis 32 Euro pro Person.
+> 2. **Bowl-Bar**: Bowls zum Selbstzusammenstellen, ideal bei gemischten Ernährungsweisen. 24 bis 27 Euro pro Person.
+> 3. **Fingerfood**: acht Häppchen pro Person, gut für Stehempfänge. 22 bis 26 Euro pro Person.
+>
+> Alle Preise zzgl. MwSt., inklusive Lieferung im Stadtgebiet, Aufbau, Servicepersonal für zwei Stunden und Geschirr. Getränke bieten wir gern zusätzlich an.
+>
+> Zwei Fragen für ein genaues Angebot: Gibt es vor Ort eine Küche oder zumindest Steckdosen in der Nähe des Buffets? Und sind Ihnen schon Ernährungswünsche oder Allergien bekannt?
+>
+> Viele Grüße, Anna von Grüne Gabel Catering
+
+Diese Nachricht leitet die Office-Managerin an ihren Chef weiter. Sie beantwortet die eigentliche Frage („Können Sie das, und ungefähr zu welchem Preis?“) und gibt ihr etwas Einfaches zum Antworten.
+
+## Preisregeln, mit denen das Modell rechnen kann
+
+Bei der Preisspanne zögern die meisten Caterer, Software mitreden zu lassen. Es funktioniert, wenn Ihre Regeln einmal aufgeschrieben sind:
+
+- **Preis pro Person je Paket,** mit Spanne für Varianten.
+- **Mindestbestellwert** oder Mindestumsatz pro Veranstaltung.
+- **Personal:** enthaltene Stunden, Satz für Mehrstunden, Personal je Gästezahl.
+- **Lieferzonen und Anfahrtspauschalen.**
+- **Zuschläge:** Wochenende, Feiertage, sehr kurzfristige Buchung.
+- **Immer extra:** Getränke, Mietmobiliar, Torte, Endreinigung.
+
+Mit diesen Regeln ist die Spanne eine Rechnung, keine Schätzung. Der Inhaber gibt trotzdem frei, und das genaue Angebot folgt, wenn die Fragen beantwortet sind.
+
+Ein deutscher Sonderpunkt: Seit dem 1. Januar 2026 gilt für Speisen in der Gastronomie und im Catering dauerhaft der [ermäßigte Steuersatz von 7 %](https://www.ihk.de/darmstadt/produktmarken/recht-und-fair-play/steuerinfo/mehrwertsteuersenkung-fuer-die-gastronomie-ab-2026-6927450), Getränke bleiben bei 19 %. Hinterlegen Sie das in den Preisregeln, und legen Sie fest, ob netto (Firmenkunden) oder brutto (Privatkunden, etwa bei Hochzeiten) angeboten wird. Privatkunden müssen Gesamtpreise inklusive Umsatzsteuer sehen.
+
+## Ernährungswünsche und Allergien
+
+Catering-Kunden fragen zunehmend nach veganen, glutenfreien und allergenarmen Varianten, und eine kleine Küche kann nicht alles garantieren. Das Modell sammelt die Zahlen („4 vegetarisch, 2 vegan, 1 Nussallergie“), gibt weiter, was Ihre Küche laut Ihren schriftlichen Angaben anbieten kann, und leitet alles zu schweren Allergien an einen Menschen weiter. „Allergenfrei“ verspricht es nie in Ihrem Namen. Kreuzkontamination in einer vollen Catering-Küche ist real, die Haftung auch.
+
+## Nachfassen ist die halbe Miete
+
+Viele Catering-Anfragen gehen nicht an die Konkurrenz verloren, sondern an die Stille. Der Kunde hat ein Angebot, wird abgelenkt, und niemand fragt nach. Eine kurze, freundliche Nachricht nach zwei Tagen („Passt der Vorschlag, oder sollen wir etwas anpassen?“) holt überraschend viele zurück. Das Modell schickt sie planmäßig und hört auf, sobald der Kunde antwortet oder bucht.
+
+## Was eine schnellere Antwort wert ist
+
+<Calc title="Überschlag: mehr Buchungen durch schnelle, brauchbare Antworten" caption="Annahmen, keine Messwerte. Die entscheidende Zahl ist Ihre Abschlussquote: Wie viele Anfragen werden zu Buchungen, vorher und nachher." rows={[
+  ["Anfragen pro Monat", "40"],
+  ["Abschlussquote heute", "× 20 %"],
+  ["Buchungen pro Monat heute", "8"],
+  ["Abschlussquote mit Antwort in der ersten Stunde und Nachfassen", "× 25 %"],
+  ["Buchungen pro Monat mit schneller Antwort", "10"],
+  ["Durchschnittlicher Auftragswert", "× 2.400 €"]
+]} result={["Mehrumsatz pro Monat durch zwei zusätzliche Buchungen", "≈ 4.800 €"]} />
+
+Fünf Prozentpunkte sind eine bescheidene Annahme. Ehrlich herausfinden lässt es sich nur durch Messen: eine einfache Liste jeder Anfrage mit drei Spalten, wann sie kam, wann Sie zuerst geantwortet haben und ob daraus eine Buchung wurde. Nach zwei Monaten kennen Sie Ihre echte Antwortzeit und Abschlussquote. Die meisten Caterer haben diese Zahlen nie gesehen und sind von beiden überrascht.
+
+## Welche Werkzeuge passen
+
+Catering- und Eventsoftware verwaltet Angebote, Verträge und Anzahlungen. Viele kleine Caterer arbeiten mit E-Mail, Kalender und Tabelle, und das reicht. Die KI-Schicht liest eingehende Anfragen, prüft den Kalender, entwirft die Antwort aus Menüs und Preisregeln und verschickt sie nach Freigabe. Nebenbei führt sie die Liste aller Anfragen, damit Sie endlich sehen, wie viele Sie bekommen, wie schnell Sie antworten und wie viele Sie gewinnen.
+
+Anfragen enthalten Namen, Kontaktdaten und manchmal Gesundheitsangaben wie Allergien. Nutzen Sie einen Anbieter mit Auftragsverarbeitungsvertrag und Verarbeitung in der EU. Antwortet ein Chatbot Kunden ohne Prüfung direkt, muss er sich seit August 2026 als KI zu erkennen geben.
+
+## Häufige Fragen von Caterern
+
+### Gehören Preise in die erste Antwort?
+
+Eine Spanne, ja. Wer vergleicht, will wissen, ob Sie ins Budget passen, bevor er mehr Zeit investiert. Eine Spanne pro Person mit klaren Leistungen ist ehrlich und hilfreich, das genaue Angebot folgt mit den Details.
+
+### Und Hochzeiten, die viel persönlicher sind?
+
+Die erste Antwort funktioniert genauso: Verfügbarkeit, ein paar Varianten, eine Spanne, zwei Fragen und das Angebot, zu telefonieren oder sich zu treffen. Das Persönliche beginnt beim Probeessen und im Gespräch, und beides bleibt ganz bei Ihnen. Das Tempo sorgt nur dafür, dass es zu diesem Gespräch kommt.
+
+### Was ist mit Anfragen per Telefon?
+
+Verpassen Sie den Anruf, wird aus der transkribierten Mailbox-Nachricht oder einem Formularlink per SMS dieselbe schriftliche Anfrage, und der Ablauf übernimmt. Nehmen Sie ab, notieren Sie beim Gespräch die Eckdaten, und das Modell macht daraus hinterher den schriftlichen Vorschlag. So hat der Kunde noch am selben Tag etwas Schriftliches, und genau das leitet er an die Person weiter, die entscheidet.
+
+### Und Anfragen über Hochzeits- und Eventportale?
+
+Die kommen oft in einem festen Format und mit denselben Lücken. Das Modell liest sie wie jede andere Anfrage, und die Antwort sollte dort ankommen, wo der Kunde schreibt. Wichtig ist nur, dass alle Anfragen in derselben Liste landen, egal über welchen Weg, damit Sie Antwortzeit und Abschlussquote je Kanal sehen.
+
+### Was, wenn der Termin schon vergeben ist?
+
+Das Modell sagt es sofort und bietet Alternativen an: einen Termin in der Nähe, ein kleineres Format, das noch passt, oder einen Kollegen, den Sie empfehlen. Ein schnelles, hilfreiches Nein bleibt auch im Gedächtnis.
+
+## Faustregel
+
+Innerhalb einer Stunde antworten, mit etwas, das der Kunde nutzen kann: Verfügbarkeit, passende Varianten, eine ehrliche Preisspanne und ein, zwei gute Fragen. Lassen Sie das Modell aus Ihren Menüs und Regeln entwerfen, und behalten Sie Ihre eigene Zeit für die Küche und für die Gespräche, die die Buchung abschließen.
+
+Wenn Anfragen bei Ihnen regelmäßig bis Montag warten, [schreiben Sie mir, wie sie ankommen und wie viele es pro Woche sind](/contact?intent=improve). Ich zeige Ihnen, wie eine schnelle erste Antwort bei Ihnen aussehen könnte. Eventlocations stehen vor demselben Wettlauf, siehe [Anfragen für Eventlocations](/de/posts/ai-for-event-venues-inquiries), und Metzgereien haben ihren eigenen Gipfel mit [Festtagsbestellungen](/de/posts/ai-for-butchers-preorders).

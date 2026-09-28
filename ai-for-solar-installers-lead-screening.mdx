@@ -1,0 +1,153 @@
+---
+id: "ai-for-solar-installers-lead-screening"
+title: "Solar Lead Screening: Which Inquiries Deserve a Site Visit?"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Trades & construction", "Solar installers", "Lead qualification", "AI for small business"]
+description: "Site visits are the costliest step in residential solar sales. How AI can screen roofs, read utility bills and estimate yield, so you visit only leads that can work."
+excerpt: "Site visits are the costliest step in residential solar sales. How AI can screen roofs, read utility bills and estimate yield, so you visit only leads that can work."
+---
+
+"How much would solar cost for my house?" is the most common inquiry a residential solar installer gets, and on its own it says almost nothing. Behind it might be a homeowner with a south-facing roof, a high electricity bill, and cash ready. Or a renter. Or someone whose roof is shaded by two oak trees and due for replacement next year. Or a family with a tiny bill who saw an ad.
+
+Traditionally, the way to find out is a site visit: a salesperson or surveyor drives out, looks at the roof, the electrical panel, and the bills, and runs the numbers. That's two to three hours of skilled time before anyone knows whether there's a project at all. In a market where every sale has become harder to close, spending those hours on the wrong roofs is the fastest way to lose money.
+
+This is where I'd use AI in a solar business: to do the desk research that decides whether a visit is worth making, with public data, the homeowner's own bill, and your rules.
+
+## Why screening matters more in 2026
+
+The economics changed at the start of the year, at least in the US.
+
+<Stats title="The 2026 residential solar market">
+  <Stat value="Dec 31, 2025" label="the 30% residential solar tax credit (25D) ended for homeowner-owned systems placed in service after this date" source="pv magazine USA" href="https://pv-magazine-usa.com/2025/11/21/how-the-value-proposition-of-residential-solar-is-evolving-as-the-federal-solar-tax-credit-comes-to-a-close/" />
+  <Stat value="Through 2027" label="the business credit for leases, PPAs and prepaid solar (48E) remains available" source="pv magazine USA" href="https://pv-magazine-usa.com/2025/11/21/how-the-value-proposition-of-residential-solar-is-evolving-as-the-federal-solar-tax-credit-comes-to-a-close/" />
+  <Stat value="16 GW" label="of new PV capacity added in Germany in 2024, bringing the total to about 99 GW" source="photovoltaik.org" href="https://photovoltaik.org/kosten/einspeiseverguetung" />
+</Stats>
+
+For a US cash buyer, the same system now costs roughly 40% more after incentives than it did a year ago. Installers report longer sales cycles and more customers steered towards leases. In Europe the incentives differ, but the pattern is similar: lower feed-in tariffs and new grid rules make every proposal more sensitive to the details of the roof and the household's consumption. Getting those details right early is what separates a good lead from a wasted afternoon.
+
+## What makes a lead worth a visit
+
+Before anything is automated, write down what "worth a visit" means for your business. These are the criteria I'd start with.
+
+| Question | Why it matters | Where the answer comes from |
+| --- | --- | --- |
+| Does the person own the home? | Renters can't sign; landlords decide | The homeowner, asked directly |
+| Roof orientation, tilt, and shading | Drives yield more than anything else | Aerial and satellite data, then the survey |
+| Roof age and condition | A roof due for replacement should be replaced first | The homeowner, plus ground photos |
+| Annual electricity use and tariff | Determines system size and savings | The utility bill |
+| Electrical panel capacity | An upgrade can add real cost | A photo of the panel |
+| Financing path | Cash, loan, or lease changes the whole proposal | The homeowner |
+| Timeline and plans | EV, heat pump, or battery plans change the design | The homeowner |
+| HOA or permit constraints | Can delay or block a project | The homeowner, local rules |
+
+Most of this can be answered before anyone gets in a car. A few items, like shading from a specific chimney or the real condition of the rafters, need the visit. The goal isn't to eliminate the visit. It's to make sure the visit is about those few items, not about discovering that the house is rented.
+
+## The screening pipeline
+
+Here's how I'd put the pieces together. The heavy lifting is done by public data and simple calculations. The language model does the reading and the talking.
+
+<Flow title="From “how much?” to a screened, prepared lead" caption="Public data and your rules produce the numbers. The model reads documents and writes messages. A person decides on every visit.">
+<Step title="Inquiry arrives" who="Web, phone, ads" time="any time">Name, address, and whatever the homeowner wrote.</Step>
+<Step title="Ask for the essentials" who="AI" tone="ai" time="minutes">A short reply asking about ownership, roof age, and plans, with an upload link for a recent bill and a photo of the electrical panel.</Step>
+<Step title="Look at the roof from above" who="System">Roof segments, orientation, and tilt from aerial data such as Google's Solar API where it has coverage, or a quick review by your designer.</Step>
+<Step title="Estimate yield" who="System">A yield estimate per kWp for that location from the EU's free PVGIS tool or a similar model, using the roof data.</Step>
+<Step title="Read the bill" who="AI" tone="ai">The model extracts annual consumption, the rate plan, and time-of-use details from the bill photo or PDF.</Step>
+<Step title="Size, range, and score" who="Rules">A rough system size and savings range from your own pricing and the current incentive rules, plus a readiness score.</Step>
+<Step title="Designer or rep reviews" who="Sales" tone="human" time="same day">A person checks the summary, calls the homeowner, and books a visit only if the roof and the buyer can work.</Step>
+</Flow>
+
+Two parts of this deserve a closer look.
+
+**PVGIS is free and good enough for screening.** The European Commission's Joint Research Centre runs [PVGIS](https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/pvgis-5-tools/grid-connected-pv_en), which estimates yearly and monthly production for a PV system at almost any location, taking solar radiation, temperature, and module type into account. It has an API, it's widely used, and for a first estimate it's as good as anything you'd pay for. The detailed design and shading analysis still happen later.
+
+**Utility bills are a perfect job for a language model.** Every utility formats its bill differently. A model reads a phone photo of a bill and pulls out annual consumption, the tariff, and whether the household is on a time-of-use plan, which a person would otherwise type in by hand. That one field, annual kWh, is the single most important input for sizing.
+
+## What the homeowner receives
+
+The output of the pipeline isn't just a score for your team. The homeowner gets something useful too, which is what earns the visit. A preliminary estimate might read like this:
+
+> Hi Daniel, thanks for sending your bill. Based on your address, your roof's south-west section looks well suited to solar, with some shade on the east side in the morning. You used about 11,200 kWh last year.
+>
+> A system of roughly 7 to 8 kW on the south-west section would likely cover 60 to 75% of that. With current rates and no federal tax credit, we'd expect a payback period in the range of 11 to 14 years for a cash purchase; a lease would change that picture, and we're happy to compare both.
+>
+> These are ranges from satellite data and public yield models, not a quote. If you'd like exact numbers, the next step is a one-hour visit to check the roof, the shading, and your electrical panel.
+
+Notice what it does. It shows the homeowner their own numbers, it's honest that the tax credit is gone, and it explains exactly why a visit is the next step. A homeowner who replies "yes, let's do the visit" after reading that is a very different lead from one who filled in a form an hour ago.
+
+## Sorting leads without guessing
+
+<Matrix title="Which leads get a visit" xLabel="How well the site suits solar" yLabel="How ready the buyer is" quadrants={[
+  { title: "Fix the roof first", text: "Ready buyer, poor site or an old roof. Offer honest alternatives: roof work first, a smaller array, or a battery-only discussion." },
+  { title: "Book the visit", text: "Good roof, owner, clear consumption, realistic budget or financing. This is what the survey team is for.", highlight: true },
+  { title: "Politely decline", text: "Renter, heavy shade, or tiny consumption. A clear, friendly explanation, and a referral if you have one." },
+  { title: "Share the numbers, then wait", text: "Great roof, not ready yet. Send the personalised yield estimate and follow up at the time they named." }
+]} />
+
+The bottom-right corner is where screening creates value that isn't obvious. A homeowner who isn't ready today but receives a clear, personalised estimate for their own roof remembers you when they are. That's a better nurture than a monthly newsletter.
+
+## What to ask homeowners for
+
+<Checklist title="The screening request" items={[
+  "Confirm the address and that you own the home",
+  "A recent electricity bill, ideally one that shows twelve months of usage",
+  "A photo of the electrical panel with the door open",
+  "The roof's approximate age, and any plans to replace it",
+  "A photo of the roof from the street or yard",
+  "Plans for an EV, heat pump, or battery in the next few years",
+  "Any HOA rules you know about"
+]} />
+
+Everything on this list takes a homeowner a few minutes. In return, they get a real estimate rather than a generic "systems start at…" figure. Most people see that as a fair trade.
+
+## What wasted visits cost
+
+<Calc title="Napkin math: visits that were never going to work" caption="Assumptions, not measurements. Replace them with your own visit volume and outcomes." rows={[
+  ["Site visits per month", "40"],
+  ["Share that fail on roof, shade, ownership, or budget", "× 35%"],
+  ["Visits that go nowhere per month", "14"],
+  ["Hours per visit including travel and follow-up design", "× 3.5"],
+  ["Months per year", "× 12"]
+]} result={["Skilled hours spent on dead ends per year", "≈ 590"]} />
+
+That's close to a third of a full-time salesperson's year. Even catching half of those dead ends at the desk frees capacity for the leads that can close.
+
+## Keeping the numbers honest
+
+Solar has a reputation problem with aggressive sales and inflated savings claims, and consumer protection agencies have warned about it for years. Automated estimates make it easier than ever to produce impressive-looking numbers, so the rules matter.
+
+<Callout title="Rules for every estimate" tone="warning">
+Ranges, not single numbers. Conservative assumptions for yield and electricity price growth. Incentives and export rules taken from a table your team maintains, never from the model's memory, because they change: California's move to its net billing tariff in 2023 cut the value of exported power sharply, and German feed-in tariffs drop every six months. Every estimate states that the final design follows a site survey.
+</Callout>
+
+The model writes the explanation. It never decides the numbers. That separation is what lets you send a personalised estimate at scale without worrying about what it promised.
+
+## Tools that fit
+
+Many solar installers already use design and sales tools like Aurora Solar, OpenSolar, or Enerflo, and a CRM such as HubSpot or Salesforce. The screening pipeline creates a qualified lead in the CRM with the bill data, the roof summary, and the preliminary estimate attached, so the designer starts from a head start rather than a blank address.
+
+Homeowners share bills with account numbers and addresses. Store them with the lead, limit access, and delete them if the lead doesn't proceed. In the EU, that's a GDPR obligation, and chat-style assistants must disclose that they're AI under [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act).
+
+## Questions solar installers ask
+
+### Can AI judge a roof from satellite images?
+
+It can read orientation, tilt, and obvious obstructions from good aerial data, and tools like Google's Solar API provide that directly in many areas. It can't see the condition of the roofing material or the rafters. That's what the site visit is for.
+
+### Is a PVGIS estimate accurate enough?
+
+For deciding whether a visit is worthwhile, yes. For a proposal, no. Final production estimates need a proper shading analysis and the actual layout.
+
+### Should we still visit leads that fail screening?
+
+Sometimes. A screening rule that says "renter" is final. One that says "heavy shade" might be wrong if the aerial data is old and the trees are gone. Let your reps override the score, and log why, so the rules improve.
+
+### What about batteries and heat pumps?
+
+They make screening more valuable, not less. A household planning a heat pump or an EV will use much more electricity in two years than their current bill shows. Asking about those plans up front changes the right system size.
+
+## The rule I'd follow
+
+Visit the roofs that can work, for the people who can buy. Everything else can be answered from a desk, and answered faster.
+
+If your survey team spends too many afternoons on roofs that were never going to work, [tell me how leads reach you](/contact?intent=improve) and which tools you use. I'll suggest a screening pipeline you could test on next month's inquiries. For the same idea in adjacent trades, see [qualifying window replacement leads](/posts/ai-for-window-installers-leads) and [contextual reminders for HVAC maintenance](/posts/ai-for-hvac-maintenance-reminders).

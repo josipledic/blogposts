@@ -1,0 +1,119 @@
+---
+id: "de-ai-for-machine-shops-knowledge"
+title: "Zerspanung: Erfahrungswissen sichern, bevor es in Rente geht"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Produktion", "Zerspanungsbetriebe", "Wissenssicherung", "KI für kleine Unternehmen"]
+description: "Jahrzehnte an Maschineneigenheiten, Spanntricks und Kundendetails stecken im Kopf eines Menschen. Wie kleine Zerspaner es mit KI sichern, bevor es in Rente geht."
+excerpt: "Jahrzehnte an Maschineneigenheiten, Spanntricks und Kundendetails stecken im Kopf eines Menschen. Wie kleine Zerspaner es mit KI sichern, bevor es in Rente geht."
+---
+
+Jeder kleine Zerspanungsbetrieb hat einen. Nennen wir ihn Walter. 38 Jahre im Betrieb. Er weiß, dass Maschine 4 nachmittags, wenn sie warm ist, um ein paar Hundertstel wandert, und dass nach der Mittagspause ein Messzyklus hilft. Er weiß, dass das Aluminium eines bestimmten Kunden etwas härter ist, als das Zeugnis vermuten lässt, also zehn Prozent weniger Vorschub. Er weiß, welche Vorrichtung das dünnwandige Gehäuse hält, ohne es zu verziehen, und dass im alten Programm für Teil 4471 ein Kommentar steht: „Zweitem Werkzeugversatz nicht trauen.“ In vierzehn Monaten geht er in Rente.
+
+Das meiste davon steht nirgends, oder auf einem Zettel an der Maschine, in einem Programmkommentar, in einem Notizbuch im Spind. Wenn Walter geht, verliert der Betrieb nicht nur einen guten Zerspanungsmechaniker. Er verliert die Antworten auf Fragen, die sonst niemand zu stellen weiß, bis sich der Ausschuss bei Teil 4471 verdoppelt und keiner versteht, warum.
+
+Hier ist KI in einem kleinen Fertigungsbetrieb besonders nützlich und besonders unspektakulär: Erfahrung erfassen, solange die Menschen noch da sind, und sie an der Maschine auffindbar machen.
+
+## Die Rentenwelle ist real
+
+<Stats title="Warum das nicht warten kann">
+  <Stat value="13,3 Mio." label="Erwerbspersonen erreichen in den nächsten 15 Jahren das gesetzliche Rentenalter" source="Destatis, 2026" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/06/PD26_N039_13.html" />
+  <Stat value="121.000" label="Fachkräfte fehlten 2025 im Schnitt in den Kernberufen der Metall- und Elektroindustrie" source="KOFA" href="https://www.kofa.de/mitarbeiter-finden/branchen-im-fokus/fachkraefte-fuer-metall-und-elekroindustrie/" />
+  <Stat value="7.1.6" label="Abschnitt der ISO 9001, der verlangt, das Wissen der Organisation zu bestimmen und verfügbar zu halten" source="ISO" href="https://www.iso.org/standard/62085.html" />
+</Stats>
+
+Kleine Betriebe trifft das härter als große. In einem Werk mit 2.000 Menschen verteilt sich Wissen auf viele Köpfe, und ein Teil steht in formalen Dokumenten. In einem Betrieb mit 25 halten oft ein oder zwei erfahrene Leute das praktische Wissen für ganze Maschinengruppen oder Kundenfamilien. Wenn sie gehen, ist niemand mehr zu fragen. Und wer nach ISO 9001 zertifiziert ist, muss im Audit ohnehin zeigen, wie er dieses Wissen sichert.
+
+## Welches Wissen gefährdet ist
+
+| Art des Wissens | Beispiel | Wo es heute steckt | Wie man es erfasst |
+| --- | --- | --- | --- |
+| Maschineneigenheiten | Maschine 4 wandert warm; Spindel an Maschine 2 braucht nach dem Wochenende einen Warmlauf | Köpfe, Zettel an der Maschine | Kurze Sprachnotizen an jeder Maschine, Rundgang auf Video |
+| Teilespezifische Kniffe | Teil 4471: zweiter Werkzeugversatz unzuverlässig; hier spannen, nicht dort | Programmkommentare, Köpfe | Notizen je Teilenummer, gemeinsam mit den Programmen geprüft |
+| Werkstoffverhalten | Aluminium von Kunde X läuft härter; dieser Edelstahl schmiert bei hoher Drehzahl | Köpfe, manchmal Lieferantennotizen | Notizen je Werkstoff und Lieferant |
+| Spannmittel und Rüsten | Welche Vorrichtung für dünne Wände; wie die Vierfach-Palette gerüstet wird | Köpfe, Fotos auf dem Handy | Fotos und kurze Videos je Aufspannung, mit Notizen |
+| Fehlersuche | Rattern bei diesem Teil heißt verschlissene Platte, nicht falsches Programm | Köpfe | Paare aus Problem und Ursache aus Gesprächen und früheren Vorfällen |
+| Kundenanforderungen | Dieser Kunde misst Ebenheit anders; jener reklamiert jede Werkzeugspur auf der Fläche | Köpfe, E-Mails, QSV | Notizen je Kunde, verknüpft mit seinen Teilen |
+
+Bei den oberen Zeilen hilft KI am meisten, weil das Wissen verstreut, informell und an bestimmte Maschinen und Teile gebunden ist. Daraus schreibt man kein Handbuch. Es sind Hunderte kleiner Fakten, die im richtigen Moment zählen.
+
+## Der Bauplan
+
+<Flow title="Vom Kopf des erfahrenen Zerspaners zur Antwort an der Maschine" caption="Menschen teilen und prüfen, was sie wissen. Das Modell transkribiert, ordnet, verknüpft und findet. Nichts wird zur Anweisung in der Werkstatt ohne Prüfung durch eine erfahrene Person.">
+<Step title="Erfassen während der Arbeit" who="Zerspaner" tone="human" time="Minuten am Tag">Sprachnotizen an der Maschine, ein Foto einer Aufspannung, ein kurzes Video einer kniffligen Spannung, in eigenen Worten erklärt.</Step>
+<Step title="Strukturierte Gespräche" who="Zerspaner und Gesprächsführung" tone="human" time="1 Std. pro Woche">Geführte Gespräche je Maschine, Teilefamilie und Kunde. Mit Einverständnis aufgezeichnet.</Step>
+<Step title="Transkribieren und ordnen" who="KI" tone="ai" time="Minuten">Aus Aufnahmen werden kurze Notizen, verschlagwortet nach Maschine, Teilenummer, Werkstoff, Kunde und Problemart.</Step>
+<Step title="Prüfen" who="Erfahrener Zerspaner" tone="human" time="wöchentlich">Jede Notiz: Stimmt sie, ist sie vollständig, gilt sie noch? Korrigieren und freigeben.</Step>
+<Step title="Verknüpfen" who="System">Freigegebene Notizen werden mit Teilenummern, Programmen und Maschinen im ERP oder Dokumentensystem verknüpft.</Step>
+<Step title="An der Maschine fragen" who="Jeder Zerspaner" tone="human">Am Tablet oder Terminal: „Muss ich bei Teil 4471 auf Maschine 4 etwas wissen?“ Die Antwort zitiert die freigegebenen Notizen, mit Autor und Datum.</Step>
+</Flow>
+
+### Mit Gesprächen anfangen, nicht mit Software
+
+Die ergiebigste Stunde ist ein strukturiertes Gespräch. Jemand, eine Kollegin, der Meister oder jemand von außen, geht mit dem erfahrenen Zerspaner eine Maschine oder Teilefamilie durch: Was geht an dieser Maschine schief? Was machen Neue immer falsch? Welche Teile rüstest du anders, als das Programm es vorsieht? Was würdest du deinem Nachfolger am ersten Tag sagen?
+
+Das Modell bereitet die Fragen aus dem vor, was es schon weiß: welche Teile auf dieser Maschine laufen, aktuelle Ausschussmeldungen, frühere Reklamationen. Aus einer Stunde Gespräch werden danach zwanzig kurze, verschlagwortete Notizen. Viel mehr, als je jemand tippen würde.
+
+### Erfassen als Teil der Arbeit
+
+Niemand schreibt nach einer Zehn-Stunden-Schicht Dokumentation. Aber fast jeder spricht an der Maschine dreißig Sekunden ins Handy: „Teil 4471, erste Aufspannung, weiche Backen aus Schublade drei, die normalen hinterlassen Abdrücke, die der Kunde reklamiert.“ Das Modell transkribiert, verschlagwortet nach Teil und Maschine und legt es zur Prüfung vor.
+
+### Die Prüfung ist nicht verhandelbar
+
+Eine Notiz „Vorschub zehn Prozent runter“ kann für eine Materialcharge richtig und für die nächste falsch sein. Jede Notiz prüft eine erfahrene Person, bevor sie als Hinweis verfügbar ist, und jede trägt Autor und Datum, damit man einschätzen kann, wie aktuell sie ist.
+
+<Callout title="Das Modell findet Wissen. Es erfindet keine Schnittwerte." tone="warning">
+Fragt man ein allgemeines Sprachmodell, wie ein Teil zu bearbeiten ist, schlägt es bereitwillig Schnittwerte und Spannmethoden vor, die plausibel klingen und falsch oder gefährlich sein können. Das hier beschriebene System antwortet nur aus Ihren freigegebenen Notizen, zitiert sie und sagt klar, wenn es nichts hat. Alles, was Sicherheit betrifft (Schutzeinrichtungen, Heben, Gefahrstoffe, Verriegelungen), gehört in die Betriebsanweisungen und Gefährdungsbeurteilungen, nicht in eine Notiz, und wird nie von einem Modell umformuliert.
+</Callout>
+
+## So sieht es an der Maschine aus
+
+Ein junger Zerspaner rüstet Teil 4471 zum ersten Mal, seit Walter in Rente ist:
+
+> **Teil 4471, Maschine 4. 3 freigegebene Notizen.**
+> Erste Aufspannung mit weichen Backen aus Schublade 3; normale Backen hinterlassen Abdrücke, die der Kunde reklamiert (W. Becker, März 2026).
+> Zweiter Werkzeugversatz im alten Programm ist schon gewandert; nach dem ersten Teil messen (W. Becker, geprüft von S. Klein, April 2026).
+> Maschine 4 wandert warm leicht; nach der Mittagspause Messzyklus laufen lassen bei Toleranzen unter 0,02 mm (W. Becker, Februar 2026).
+
+Drei Sätze, im richtigen Moment, mit Namen und Datum. Das ist der Unterschied zwischen einem guten ersten Teil und einem Vormittag voller Ausschuss.
+
+## Die Menschen respektieren, deren Wissen es ist
+
+Wissenssicherung funktioniert nur, wenn die Erfahrenen mitmachen wollen. Sagen Sie klar, warum Sie das tun: damit der Betrieb weiterläuft und die nächste Generation es leichter hat, nicht um jemanden zu ersetzen. Nennen Sie Menschen in den Notizen namentlich und nutzen Sie Aufnahmen nie zur Leistungsbeurteilung. Fragen Sie vor jeder Aufnahme um Einverständnis. Gibt es einen Betriebsrat, binden Sie ihn früh ein, denn Systeme, die Verhalten oder Leistung erfassen könnten, sind mitbestimmungspflichtig. Viele erfahrene Zerspaner sind stolz darauf, weiterzugeben, was sie wissen. Sie brauchen nur einen Weg, der nicht aus einem Handbuch besteht.
+
+## Der erste Monat
+
+1. **Woche 1:** Die drei Menschen auflisten, deren Weggang am meisten schmerzen würde, und je Person die Maschinen, Teilefamilien und Kunden, die sie am besten kennen.
+2. **Woche 2:** Erstes Gespräch mit jedem, eine Maschine oder Teilefamilie pro Stunde. Transkribieren, verschlagworten, gemeinsam prüfen.
+3. **Woche 3:** Sprachnotizen an der Maschine für alle einführen. Dreißig Sekunden, Teilenummer zuerst.
+4. **Woche 4:** Die freigegebenen Notizen an zwei Maschinen durchsuchbar machen und die Jüngeren fragen, was sie gesucht und nicht gefunden haben.
+
+Die gemeldeten Lücken sind die Gesprächsthemen im nächsten Monat.
+
+## Welche Werkzeuge passen
+
+Eine große Wissensplattform brauchen Sie nicht. Ein Dokumenten- oder Wiki-System, das der Betrieb schon nutzt, eine einfache App für Sprachnotizen und Fotos und eine KI-Schicht, die transkribiert, verschlagwortet, Notizen mit Teilenummern aus dem ERP verknüpft und nur aus freigegebenen Notizen antwortet. Manche MES- und CAM-Systeme erlauben Notizen je Programm oder Arbeitsgang, ein guter Ort für das teilespezifische Wissen.
+
+## Häufige Fragen aus Zerspanungsbetrieben
+
+### Wie lange dauert es, jemandes Wissen zu erfassen?
+
+Alles erfassen Sie nicht, und das müssen Sie auch nicht. Eine wöchentliche Gesprächsstunde und tägliche Sprachnotizen über sechs bis zwölf Monate sichern das meiste von dem, was für Ihre häufigsten Teile und Maschinen zählt. Fangen Sie dort an, wo der Verlust am meisten wehtun würde.
+
+### Was, wenn sich Leute widersprechen?
+
+Gut so. Wenn zwei erfahrene Zerspaner uneins sind, wie ein Teil laufen soll, lohnt sich das Gespräch, und das gemeinsame Ergebnis ist eine bessere Notiz, als jeder allein gehabt hätte.
+
+### Hilft das in der Ausbildung?
+
+Ja. Freigegebene Notizen, Fotos und Videos, geordnet nach Maschine und Teil, sind hervorragendes Ausbildungsmaterial, und Auszubildende können in normaler Sprache fragen, statt die richtige Person zu suchen.
+
+### Funktioniert das auch für andere Bereiche?
+
+Derselbe Ansatz funktioniert für Instandhaltungswissen, Kniffe bei der Qualitätsprüfung und Kundenanforderungen. Überall, wo Erfahrung in Köpfen und auf Zetteln steckt, sorgen Erfassen und Prüfen dafür, dass sie bleibt. Gerade die Instandhaltung ist oft noch stärker an eine Person gebunden als die Fertigung: Wer weiß, welche Schmierstelle an der alten Drehmaschine immer vergessen wird, weiß es meist allein.
+
+## Faustregel
+
+Fangen Sie an, solange die Experten noch da sind, in ihren eigenen Worten und an der Maschine. Lassen Sie das Modell transkribieren, verschlagworten und verknüpfen, lassen Sie Erfahrene jede Notiz freigeben, und sorgen Sie dafür, dass die Antworten dort erscheinen, wo der nächste Zerspaner sie braucht.
+
+Wenn in Ihrem Betrieb bald jemand Jahrzehnte an Wissen mit in die Rente nimmt, [schreiben Sie mir, wie Sie Aufspannungen und Programme heute dokumentieren](/contact?intent=improve). Ich zeige Ihnen, wie Sie noch diesen Monat anfangen. Dasselbe Wissen macht [Angebote schneller](/de/posts/ai-for-manufacturing-quotations), und Druckereien kennen ähnliche Probleme beim [Erkennen von Auftragsfehlern](/de/posts/ai-for-print-shops-preflight).

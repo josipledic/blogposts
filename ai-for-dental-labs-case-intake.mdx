@@ -1,0 +1,155 @@
+---
+id: "ai-for-dental-labs-case-intake"
+title: "Catching Incomplete Dental Lab Cases Before They Reach the Bench"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Healthcare", "Dental laboratories", "Case intake", "AI for small business"]
+description: "Missing shades, vague margins and mismatched scans cost dental labs days. An AI intake check can catch incomplete cases at the door and ask the right question."
+excerpt: "Missing shades, vague margins and mismatched scans cost dental labs days. An AI intake check can catch incomplete cases at the door and ask the right question."
+---
+
+Monday morning in a small dental lab looks like a queue. Overnight, fourteen new cases arrived: some through the scanner portal, some by email, two as paper prescriptions in a box with impressions. Case nine is a single crown on tooth 36. The scan is there. The material is there. The shade is not, the margin preference is not, and the due date says "asap".
+
+Nobody notices until the afternoon, when the technician opens the case to design it. Then the phone tag starts. The practice is busy with patients, the dentist is chairside, the receptionist promises a callback. The case sits. By the time the answer arrives, the "asap" has turned into a rush job that bumps somebody else's work.
+
+Every lab owner I have talked to about workflow knows this story. What interests me is that the problem is almost entirely an information problem, and it is visible the moment the case arrives. That makes it a good job for software, with AI doing the part that plain rules can't.
+
+## How big the problem is
+
+Research on dentist-to-lab communication is not flattering, and it has been consistent for decades.
+
+<Stats title="What studies of lab prescriptions found">
+  <Stat value="Under 25%" label="of prescriptions were legible enough to give good service, according to surveyed technicians" source="Journal of Indian Prosthodontic Society, 2020" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7335025/" />
+  <Stat value="≈ 73%" label="of work authorizations for fixed prostheses lacked the preferred margin design" source="Same survey of 85 technicians" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7335025/" />
+  <Stat value="17%" label="of US dentists reported crown remake rates above 4%; optical scans were linked to lower rates" source="National Dental PBRN, JADA 2017" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5793929/" />
+</Stats>
+
+The first two numbers come from one survey of technicians, so they are not a global benchmark. But the pattern matches what I hear from labs everywhere: the form is filled in quickly, chairside, by someone with a patient waiting, and the fields that look optional are exactly the ones the technician needs.
+
+The third number matters because it shows the stakes. The National Dental Practice-Based Research Network surveyed 1,777 dentists about single-unit crowns. Most reported low remake rates, but a meaningful group was above 4%, and more experience and digital impressions went with fewer remakes. Every remake is a second round of lab time, a second appointment for the patient, and a practice that starts to wonder whether the lab is the problem.
+
+## Where incomplete cases come from
+
+It helps to be precise, because each source needs a different fix.
+
+**Rushed prescriptions.** The dentist or assistant fills in the form between patients. Shade gets written as "A2?" or left blank for the lab to "match to photos" that were never attached.
+
+**Portals that let you skip fields.** Scanner platforms like 3Shape, iTero, Medit, and Dentsply Sirona's portal make sending a case easy. That is good. Most also let a practice send a case with half the prescription empty, or with a note that says "see previous case".
+
+**Paper that nobody can read.** Handwriting, carbon copies, and faxed forms still arrive, especially from older practices. The survey above is a reminder that legibility is not a small issue.
+
+**Files that don't match the prescription.** An upper scan labelled as lower, a bite registration missing, the prescription for 36 attached to a scan of 46.
+
+None of these is a character flaw of dentists. They are what happens when a form is completed under time pressure and nobody checks it until someone needs it.
+
+## What a complete crown and bridge case needs
+
+Before any automation, a lab needs a written definition of "complete" per case type. For crown and bridge work, mine would look like this. Your list will differ by materials and by what your technicians have been burned by.
+
+<Checklist title="Complete case: crown and bridge" items={[
+  "Patient reference and prescribing dentist, with the dentist's details for the conformity declaration",
+  "Tooth numbers in one notation (FDI or Universal), matching the scan",
+  "Restoration type and material, for example monolithic zirconia or lithium disilicate",
+  "Shade, plus stump shade for translucent ceramics",
+  "Margin design and any prep notes",
+  "Contact and occlusion preferences",
+  "Pontic design for bridges",
+  "Scans of both arches and a bite, or impressions and bite registration",
+  "Photos for anterior cases",
+  "Due date and try-in date, checked against production capacity"
+]} />
+
+This list is the real product. The AI part is only useful because it can check a messy, real-world case against it, reliably and in seconds.
+
+## The intake check
+
+Here is the flow I would build. The lab management system stays the system of record. The check sits at the door, before a case gets a slot in production.
+
+<Flow title="From incoming case to production-ready" caption="Rules decide what counts as complete. The model reads messy input and drafts the question. A person sends it.">
+<Step title="Case arrives" who="Portal, email, paper" time="any time">Portal notifications and emails land in one intake inbox. Paper forms are scanned at the door.</Step>
+<Step title="Read everything into fields" who="AI" tone="ai" time="seconds">The model extracts the prescription into structured fields, including handwriting and free-text notes, and marks anything it is unsure about.</Step>
+<Step title="Check against the case-type list" who="Rules" >Empty required fields are flagged. So are contradictions: tooth 36 on the form, 46 in the scan file name.</Step>
+<Step title="Draft one specific question" who="AI" tone="ai">Not "please complete the form", but the exact missing items, in the practice's language, with the case reference.</Step>
+<Step title="Technician approves and sends" who="Lab" tone="human" time="first hour">A person checks the draft, adds anything the model missed, and sends it by the practice's preferred channel.</Step>
+<Step title="Green cases enter production" who="Lab system">Complete cases get a production slot. Held cases show what they are waiting for and since when.</Step>
+</Flow>
+
+The split between rules and the model is deliberate.
+
+<Split title="Who catches what" leftTitle="Plain rules catch" rightTitle="The model catches" left={[
+  "An empty shade field",
+  "A due date earlier than your minimum lead time",
+  "A bridge with no pontic design",
+  "A missing bite scan file"
+]} right={[
+  "“Same as last time” or “match 11” in the notes",
+  "Handwritten shades and tooth numbers on scanned paper",
+  "A prescription for 36 attached to a scan labelled 46",
+  "A note that contradicts a form field"
+]} />
+
+You could build the left column without any AI, and you should, because rules are cheap and predictable. The right column is where a language model earns its keep: reading free text, handwriting, and file names the way a tired technician would, but at seven in the morning and for every single case.
+
+## The message that goes back to the practice
+
+The quality of the follow-up question decides whether practices find this helpful or annoying. A good one is short, specific, and answerable in one reply.
+
+> Case 2231, crown on 36 for patient ref. KM-0412: we're missing the shade and the margin preference. Could you reply with the shade (and stump shade if possible) and whether you prefer a chamfer or a shoulder? Due date is fine, we'll start as soon as we hear from you.
+
+Compare that with the usual "please call the lab about your case". The practice can answer this from the chart in thirty seconds, without a phone call. Over a few months, practices also learn what your lab needs, and the number of questions goes down on its own.
+
+## What it's worth
+
+A single held case doesn't look expensive. The cost is in the pile-up: technician time spent on detective work, rush jobs that wreck the plan, and the occasional remake that started as a missing detail.
+
+| What goes wrong | What it costs the lab | How the check helps |
+| --- | --- | --- |
+| Missing shade or margin found at design time | Half a day to a day of delay, phone tag, rush work later | Question goes out within the first hour, not the afternoon |
+| Scan and prescription don't match | Wrong tooth designed, or a remake | Flagged before any design work starts |
+| Unrealistic due date | Overtime, or a late case that damages trust | Checked against capacity at intake, with an honest reply |
+| Illegible paper form | A technician's best guess | Uncertain fields are marked, not guessed |
+
+I would measure three numbers before and after: the share of cases that need a follow-up, the time from arrival to "production-ready", and the remake rate for cases that were flagged at intake compared with the rest.
+
+## The regulatory side, briefly
+
+In the EU, most lab work is a custom-made device under the [Medical Device Regulation (EU) 2017/745](https://eur-lex.europa.eu/eli/reg/2017/745/oj). A custom-made device is made on the written prescription of an authorised person, and the conformity statement that goes with it names the prescriber and the device's specific characteristics. A complete, structured intake record makes that paperwork easier, not harder. In the US, several states require written work authorizations for lab work too.
+
+Prescriptions also carry patient identifiers. Whatever service reads them needs the same care as your lab software: a processing agreement, a known data location, and access limited to the people who handle cases.
+
+<Callout title="What the check must not do">
+It doesn't change the prescription. It never picks a shade, a material, or a margin on the dentist's behalf, even when it could guess from earlier cases. It asks. The prescribing dentist decides, and the answer is stored with the case.
+</Callout>
+
+## A pilot in four steps
+
+<Timeline title="From today's pile to a working intake check">
+<Phase when="Weeks 1 to 2" title="Log every hold">Each time a case waits for information, note why. Two weeks of reasons tells you which checks matter most.</Phase>
+<Phase when="Week 3" title="Write the lists">Turn the reasons into a complete-case checklist per case type: crown and bridge, implants, removables, aligners.</Phase>
+<Phase when="Weeks 4 to 5" title="Shadow run">The check reads incoming cases and drafts questions, but technicians work as usual and compare.</Phase>
+<Phase when="Week 6" title="Go live on one case type">Start with crown and bridge, which is usually the highest volume. Add others once the drafts rarely need editing.</Phase>
+</Timeline>
+
+## Questions lab owners ask
+
+### Can it read handwritten prescriptions?
+
+Mostly, yes. Current models read handwriting on a clean scan surprisingly well. The important part is that uncertain fields are marked as uncertain and shown to a person, never silently guessed.
+
+### Does it work with 3Shape, iTero, or Medit?
+
+Usually through the notification emails and exported files these portals already produce. Direct API access varies by platform and by account type, so I check that first. The check doesn't need to live inside the portal to be useful.
+
+### Won't practices get annoyed by more questions?
+
+They get fewer, earlier, and more specific questions instead of a phone call in the afternoon. Practices are annoyed by phone tag, not by a clear one-line question they can answer from the chart.
+
+### Is this worth it for a lab with two or three technicians?
+
+That depends on how many cases wait for information today. If it's one a week, a printed checklist at the door is enough. If it's several a day, the time spent chasing adds up to part of a technician, and a small intake check pays back quickly.
+
+## The rule of thumb
+
+A case should enter production only when a technician could build it without picking up the phone. Everything before that point is information work, and information work is exactly what software should take off a skilled technician's bench.
+
+If that sounds like your Monday queue, [tell me how cases reach your lab today](/contact?intent=improve), and I'll tell you honestly whether a checklist, a rule set, or an AI check is the right first step. The practices on the other side have their own bottleneck, the phone; I wrote about that in [AI for dental practices](/posts/ai-for-dentists). And if you like the idea of checking orders at the door, [print shops have the same problem with artwork files](/posts/ai-for-print-shops-preflight).

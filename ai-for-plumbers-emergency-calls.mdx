@@ -1,0 +1,158 @@
+---
+id: "ai-for-plumbers-emergency-calls"
+title: "After-Hours Calls for Plumbers: Triage Emergencies Without Losing Good Jobs"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Trades & construction", "Plumbing businesses", "Emergency call triage", "AI for small business"]
+description: "A burst pipe at midnight and a dripping tap shouldn’t reach the same voicemail. How an AI phone assistant sorts emergencies and protects the on-call plumber."
+excerpt: "A burst pipe at midnight and a dripping tap shouldn’t reach the same voicemail. How an AI phone assistant sorts emergencies and protects the on-call plumber."
+---
+
+It's 11:40 at night and water is spraying out from under a kitchen sink. The homeowner searches for "emergency plumber near me" and calls the first three numbers. The first goes to voicemail. The second rings out. The third picks up, and that company gets a well-paid emergency job and, quite possibly, a customer for the next twenty years.
+
+Now flip it around. The plumber who is on call this week gets three calls tonight: the burst pipe, a slow-draining bath that "has been getting worse for a month", and a robocall about solar panels. He answers all three, because he can't tell them apart until he does. Tomorrow he's on a job at 7:30, running on four hours of sleep.
+
+Both of these are the same problem: the phone can't tell an emergency from everything else. That's what I'd use AI for in a plumbing business. Not to replace the plumber on call, but to make sure he's woken up for the burst pipe and allowed to sleep through the bath.
+
+## What's at stake on a single call
+
+<Stats title="Why the after-hours phone matters">
+  <Stat value="26%" label="of calls to plumbing businesses went unanswered in Invoca's 2026 home services benchmarks (74% answered)" source="Invoca, home services report" href="https://www.invoca.com/reports/the-invoca-home-services-lead-conversion-benchmarks-report-2026" />
+  <Stat value="$15,400" label="average US homeowners claim for water damage or freezing, 2019 to 2023" source="Insurance Information Institute" href="https://www.iii.org/fact-statistic/facts-statistics-homeowners-and-renters-insurance" />
+  <Stat value="1 in 67" label="insured US homes filed a water damage or freezing claim each year in that period" source="Insurance Information Institute" href="https://www.iii.org/fact-statistic/facts-statistics-homeowners-and-renters-insurance" />
+</Stats>
+
+Plumbing actually does better than most trades on answering calls. A quarter of calls going unanswered is still a lot when some of those calls are water pouring through a ceiling. And the insurance numbers explain the urgency from the homeowner's side: every minute the water runs makes the damage, and the bill, larger. A plumber who answers and helps stop the water is worth a lot to that caller.
+
+## The two ways the phone fails
+
+Most plumbing businesses I've looked at fall into one of two patterns after hours.
+
+**Everything goes to voicemail.** Nobody gets woken up, and emergencies are lost to whoever answers first. The morning starts with a pile of messages, half of which are already solved by a competitor.
+
+**Everything goes to the on-call plumber.** No emergency is missed, but the on-call week becomes miserable. Non-urgent calls, sales calls, and "just a question" calls wake someone up, and that person is on a job the next morning.
+
+The second pattern is better for customers and worse for the team. It's also the one that makes skilled plumbers look for a job without on-call duty, which in a trade with too few people is expensive.
+
+## What counts as an emergency
+
+Before any AI is involved, you need your own triage rules written down. The model's job is to ask the right questions and apply these rules to a stressed caller's answers, not to invent the rules.
+
+| What the caller describes | Key question | Where it goes |
+| --- | --- | --- |
+| Water flowing that won't stop | Can you close the main shut-off valve? | Emergency if it won't stop; next-morning slot if the valve worked |
+| Sewage backing up inside the home | Is it coming up through a drain or toilet now? | Emergency |
+| No heating or hot water in winter | Is anyone vulnerable in the home: a baby, an elderly person, someone ill? | Urgent if yes, first slot tomorrow if not |
+| Smell of gas | None. The caller is told to leave, avoid switches, and call the gas emergency number | Not a plumbing call. The assistant stops and says so |
+| Dripping tap, slow drain, running toilet | When would suit you tomorrow? | Booked slot, nobody woken up |
+
+Two rows deserve extra attention. The gas row is a hard stop: the assistant doesn't triage it, doesn't book it, and gives the standard safety instruction immediately. And the first row shows why the shut-off valve question matters so much. If the homeowner can stop the water, a midnight emergency becomes a normal morning job, which is better for everyone, including the homeowner's wallet.
+
+## The call flow
+
+Here's the flow I'd build for after-hours calls. During the day, calls reach the office as usual.
+
+<Flow title="From a midnight call to the right response" caption="The assistant asks, sorts, and summarises. The on-call plumber decides and calls back for every real emergency.">
+<Step title="After-hours call comes in" who="Phone system" time="23:40">Calls outside office hours go to the assistant. Business hours are unchanged.</Step>
+<Step title="Greet, disclose, check safety" who="AI" tone="ai" time="0:00">The assistant says it's the company's automated assistant. If the caller mentions gas, it gives the safety instruction and ends the triage.</Step>
+<Step title="Triage questions" who="AI" tone="ai" time="1 to 2 min">What's happening, where, is water still flowing, can the main valve be closed, is anyone vulnerable. It can explain where shut-off valves are usually found.</Step>
+<Step title="Emergency: page the plumber" who="System">The on-call plumber gets a text with the address, a two-line summary, and a link where the customer can upload photos.</Step>
+<Step title="Plumber calls back" who="On-call plumber" tone="human" time="within minutes">The plumber confirms, gives an arrival estimate, and explains the call-out fee if it hasn't been covered.</Step>
+<Step title="Not an emergency: book it" who="AI" tone="ai">The caller gets the first suitable slot from the schedule or a callback promise for the morning, confirmed by text.</Step>
+</Flow>
+
+A few design decisions do most of the work.
+
+**When in doubt, it's an emergency.** The assistant is tuned to over-escalate. A plumber woken up for a false alarm is annoying. A flooded kitchen that waited until morning is a disaster. The rules make that trade-off explicit.
+
+**The plumber, not the assistant, promises arrival times.** The assistant can say "the plumber on call will call you back within ten minutes". It never says "someone will be there in 30 minutes", because it doesn't know that.
+
+**Photos before the drive.** A photo of the leak often tells the plumber which parts to bring, or whether it's a job that needs two people. That saves a trip back to the van or the wholesaler the next morning.
+
+## What lands on the plumber's phone
+
+The page is where the assistant earns its keep. The plumber should be able to decide in ten seconds, half asleep, whether to get dressed and what to bring. Something like this:
+
+```text
+EMERGENCY, 23:42
+Water spraying from pipe under kitchen sink, won't stop.
+Main valve: caller couldn't find it (tried under sink).
+Ground-floor flat, 14 Birch Road. Tenant, landlord informed.
+Nobody vulnerable in the home.
+Photos: 2 uploaded (link). Call-out fee accepted.
+Call back: 0171 555 0142 (Sarah)
+```
+
+Compare that with a voicemail that says "hi, it's Sarah, there's water everywhere, please call me back" and a number read too fast. The structured page tells the plumber it's real, that walking the caller to the valve over the phone might stop the damage before he even leaves, and that a landlord may need to authorise the repair. That's a much better first call-back.
+
+## What the assistant must not do
+
+<Split title="The line" leftTitle="The assistant does" rightTitle="The assistant never does" left={[
+  "Answers every after-hours call, and says it is automated",
+  "Asks your triage questions and records the answers",
+  "Explains where shut-off valves are usually found",
+  "Pages the on-call plumber with a summary for real emergencies",
+  "Books non-urgent jobs into tomorrow's schedule"
+]} right={[
+  "Handles gas smells beyond the standard safety instruction",
+  "Gives electrical advice or tells anyone to fix things themselves",
+  "Quotes prices other than your published call-out fee",
+  "Promises arrival times",
+  "Talks a caller out of an emergency the rules would escalate"
+]} />
+
+## What answering the night calls is worth
+
+The numbers depend heavily on your area and your pricing, so here's the calculation with placeholders I'd use in a first conversation.
+
+<Calc title="Napkin math: after-hours emergencies" caption="Assumptions, not measurements. Your call log and your emergency rates will give you the real figures." rows={[
+  ["After-hours calls per week", "12"],
+  ["Share that are real emergencies", "× 35%"],
+  ["Share you currently miss or lose to voicemail", "× 50%"],
+  ["Weeks per month", "× 4.3"],
+  ["Emergency jobs lost per month", "≈ 9"],
+  ["Average emergency job", "× €450"]
+]} result={["Revenue walking away each month", "≈ €4,000"]} />
+
+The other side of the ledger is sleep. If two thirds of tonight's calls are not emergencies, the assistant takes two wake-ups off the on-call plumber's night, every night. Over a year, that's the difference between an on-call rota people accept and one they quit over.
+
+## Tools you probably already have
+
+Most of this plugs into software you likely use already. Field service tools like ServiceTitan, Jobber, Housecall Pro, Simpro, or Commusoft hold the schedule and customer records. Your phone provider can route after-hours calls to a different destination. The assistant sits between the two: it answers, triages, pages, and writes the job or callback into your field service software through its API or, at minimum, by email.
+
+Call recording and transcription need a word of caution. In the EU, callers have to be told when a call is recorded and processed, and since August 2026 they also have to be told they're talking to an AI under [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act). In the US, some states require every party's consent to record a call. A clear greeting covers both: "You're speaking with the automated assistant for Smith Plumbing. This call is recorded so our plumber can help you faster."
+
+## A pilot that doesn't risk a flooded kitchen
+
+<Timeline title="Four weeks to a trustworthy night line">
+<Phase when="Week 1" title="Write the rules">Agree the triage table with your plumbers. Collect a month of after-hours calls and voicemails to test against.</Phase>
+<Phase when="Week 2" title="Test on real voicemails">Run last month's voicemails through the triage. Check every classification with the plumber who handled the call.</Phase>
+<Phase when="Weeks 3 to 4" title="Live, with a safety net">The assistant answers after-hours calls. Every emergency pages the on-call plumber. Every non-emergency summary is reviewed the next morning.</Phase>
+<Phase when="End of week 4" title="Decide">Count emergencies answered, non-emergencies that didn't wake anyone, and any call the rules got wrong.</Phase>
+</Timeline>
+
+I'd be especially strict about the last count. One missed emergency in the pilot is a reason to tighten the rules before going further, not a statistic to average away.
+
+## Questions plumbing business owners ask
+
+### Will customers hang up on an automated assistant?
+
+Some will, and some already hang up on voicemail. A caller with water on the floor mostly wants to know that help is coming. A short, clear assistant that asks two or three useful questions and says "the plumber will call you back within ten minutes" does that better than a beep.
+
+### What if the AI misjudges an emergency?
+
+That's why the rules lean towards escalation and why anything unclear is treated as an emergency. The assistant isn't making a judgment call; it's asking fixed questions and applying your rules. The plumber still makes every final decision.
+
+### Can it tell customers what the job will cost?
+
+Only your fixed call-out fee, if you publish one. Everything else depends on what the plumber finds, and that conversation belongs to the plumber.
+
+### Do I need this if I already have an answering service?
+
+Maybe not. A good human answering service with clear instructions does the same job. The AI version is usually cheaper per call, answers instantly even when three calls arrive at once, and writes a structured summary into your software. If your answering service already works well, keep it.
+
+## The rule for the night line
+
+When in doubt, wake the plumber. When it's a dripping tap, let them sleep. Everything else is detail.
+
+If you want to try this on your after-hours calls, [tell me how your on-call rota works today](/contact?intent=improve), and I'll suggest the smallest version worth testing. Plumbers aren't the only trade with this problem: [roofers after a storm](/posts/ai-for-roofers-storm-leads) face a flood of calls all at once, and [HVAC companies](/posts/ai-for-hvac-maintenance-reminders) face the opposite challenge of getting customers to book before anything breaks.

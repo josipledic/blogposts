@@ -1,0 +1,160 @@
+---
+id: "de-ai-for-pest-control-routing"
+title: "Schädlingsbekämpfung: Jeder Einsatz mit dem richtigen Vorwissen"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Dienstleistungen vor Ort", "Schädlingsbekämpfer", "Einsatzvorbereitung", "KI für kleine Unternehmen"]
+description: "Schädlingsbekämpfer kommen oft mit weniger Wissen an als beim letzten Einsatz. Wie KI aus der Kundenhistorie vor jedem Termin ein Briefing für zwei Minuten macht."
+excerpt: "Schädlingsbekämpfer kommen oft mit weniger Wissen an als beim letzten Einsatz. Wie KI aus der Kundenhistorie vor jedem Termin ein Briefing für zwei Minuten macht."
+---
+
+Marco hält hinter einem gut laufenden Restaurant zur Nachkontrolle wegen Deutscher Schaben. Beim ersten Einsatz vor zwei Wochen war er nicht dabei; der Kollege von damals fährt inzwischen eine andere Tour. Im System steht: „Küche behandelt, Gelköder ausgebracht, Nachkontrolle in 14 Tagen.“
+
+Was nicht drinsteht: Der stärkste Befall war unter der Spülstation, nicht an der Kochlinie. Der Inhaber hat sich beim letzten Mal über den Geruch des Sprühmittels beschwert und gebeten, während des Service nichts zu sprühen. Die Hintertür schließt unten nicht dicht, eine Empfehlung zur baulichen Abdichtung ist noch offen. Die Klebefalle hinter der Spülmaschine hatte zwölf Schaben, beim Mal davor fünf.
+
+Marco findet das meiste davon neu heraus, eine Frage nach der anderen, während der Küchenchef ungeduldig wird. Die Behandlung ist weniger gezielt, als sie sein könnte. Zwei Wochen später ruft das Restaurant wieder an.
+
+Das ist einer der unauffälligsten und nützlichsten Einsatzorte für KI in einem Schädlingsbekämpfungsbetrieb: ein kurzes Briefing vor jedem Termin, geschrieben aus allem, was der Betrieb über den Kunden schon weiß.
+
+## Die Lage in der Branche
+
+<Stats title="Schädlingsbekämpfung in Zahlen">
+  <Stat value="Seit 2022" label="steigen die Anfragen wegen Bettwanzen in deutschen Großstädten wieder deutlich, Berlin meldet die meisten" source="Schädlingsreport 2025" href="https://www.schaedlingshero.de/presse/schaedlingsreport-2025" />
+  <Stat value="36,8 %" label="der US-Betriebe sagen, dass fehlende Techniker ihr Wachstum bremsen" source="NPMA und PCO Bookkeepers" href="https://www.npmapestworld.org/content-pages/press-releases/npma-and-pco-bookkeepers-release-comprehensive-2025-pest-control-industry-cost-study/" />
+  <Stat value="51,6 %" label="der US-Betriebe nennen Ameisen als häufigen Grund für Nachbehandlungen, dahinter Schaben mit 42,6 %" source="NPMA und PCO Bookkeepers" href="https://www.npmapestworld.org/content-pages/press-releases/npma-and-pco-bookkeepers-release-comprehensive-2025-pest-control-industry-cost-study/" />
+</Stats>
+
+Die US-Zahlen passen gut zu dem, was man hierzulande hört: kleine Teams, Touren, die sich jede Woche ändern, und Techniker, die sich unmöglich die Geschichte jedes Kunden merken können. Wenn schon ein Drittel der Betriebe sagt, dass ihnen Leute zum Wachsen fehlen, ist jede vermeidbare Nachbehandlung ein Termin, der nicht an einen neuen Kunden geht. Und mit mehr Bettwanzenfällen steigt der Anteil der Aufträge, bei denen Vorwissen über Wohnung, Bewohner und bisherige Maßnahmen über Erfolg oder Wiederholung entscheidet.
+
+## Warum Techniker ohne Vorwissen ankommen
+
+Die Informationen gibt es. Sie liegen nur verstreut und sind für den falschen Leser geschrieben.
+
+- **Einsatzberichte** halten fest, was gemacht und ausgebracht wurde, oft in wenigen Worten.
+- **Monitoringdaten** von Klebefallen, Köderstationen und zunehmend vernetzten Fallen liegen in einem eigenen System oder einer Tabelle.
+- **Kundennachrichten** mit Beschwerden, Wünschen und Zugangshinweisen liegen im Büropostfach.
+- **Fotos** früherer Einsätze hängen an alten Aufträgen, die niemand öffnet.
+- **Offene Empfehlungen** zu Abdichtung, Hygiene oder Reparaturen stehen in einem PDF, das der Kunde vielleicht nie gelesen hat.
+
+Das alles vor jedem Termin zu lesen, dauert länger als der Termin. Also lesen Techniker die letzte Notiz und gehen rein. Ein Sprachmodell eignet sich gut dafür, die ganze Historie zu lesen und die paar Zeilen zu schreiben, die für heute zählen.
+
+## Was in ein Briefing gehört
+
+<Checklist title="Das Briefing, auf einem Handybildschirm" items={[
+  "Warum wir da sind: Schädling, Leistungsart und was der Kunde heute erwartet",
+  "Was beim letzten Mal gemacht wurde, von wem, und was wo ausgebracht wurde",
+  "Was sich geändert hat: steigende oder fallende Monitoringzahlen, neue Sichtungen",
+  "Offene Empfehlungen: Abdichtung, Hygiene, Reparaturen, und ob der Kunde sie umgesetzt hat",
+  "Einschränkungen: Haustiere, Kinder, Allergien, Bereiche ohne Sprühmittel, Betriebszeiten",
+  "Zugang: Ansprechpartner, Schlüssel oder Codes, Parken, Lage der Monitoringpunkte",
+  "Alles, was das Büro dem Kunden seit dem letzten Einsatz zugesagt hat"
+]} />
+
+Die letzte Zeile rettet Kundenbeziehungen. Wenn das Büro gesagt hat „Der Techniker schaut sich diesmal auch den Dachboden an“, muss der Techniker das wissen, sonst leidet das Vertrauen auf eine Art, die keine Behandlung wiedergutmacht.
+
+So hätte Marcos Briefing für das Restaurant ausgesehen:
+
+```text
+EINSATZ 4 · Bella Cucina (Gewerbe, monatlich + Nachkontrolle)
+Grund: Deutsche Schabe, Nachkontrolle 14 Tage nach Erstbehandlung
+Letzter Einsatz (A. Reyes): Gelköder unter Kochlinie und Spülstation
+Trend: Monitor 7 hinter Spülmaschine steigt: 3 → 5 → 9 → 12
+Offen: Türdichtung Hintertür defekt, Abdichtung empfohlen (nicht erledigt)
+Einschränkung: kein Sprühmittel während des Service (Wunsch Inhaber)
+Zugang: 14:30 bis 16:00 zwischen den Services, nach Giulia fragen
+Zugesagt: Büro hat Kontrolle des Trockenlagers zugesagt
+```
+
+Acht Zeilen, im Transporter in weniger als zwei Minuten gelesen. Jede davon hätte den Einsatz verändert: wo Marco zuerst hinschaut, was er einsetzt, wann er kommt und was er prüft, weil der Kunde es erwartet.
+
+## Der Ablauf
+
+<Flow title="Von der Kundenhistorie zum Briefing und zurück" caption="Das Modell liest und fasst zusammen. Über die Maßnahmen entscheidet der Techniker. Jeder Einsatz macht das nächste Briefing besser.">
+<Step title="Die Tour für morgen steht" who="Büro" time="nachmittags">Die Tour jedes Technikers ist in der Einsatzplanung festgelegt.</Step>
+<Step title="Historie zusammentragen" who="System" time="abends">Einsatzberichte, Monitoringzahlen, Kundennachrichten, Fotos und offene Empfehlungen für jeden Termin.</Step>
+<Step title="Briefing schreiben" who="KI" tone="ai" time="Minuten">Eine kurze Zusammenfassung pro Termin, mit Fokus darauf, was sich geändert hat und was nicht übersehen werden darf. Jede Aussage verweist auf ihre Quelle.</Step>
+<Step title="Techniker liest vor der Ankunft" who="Techniker" tone="human" time="2 Minuten">Auf dem Handy, geparkt vor der Tür. Der Techniker entscheidet, was heute passiert.</Step>
+<Step title="Sprachnotiz nach dem Einsatz" who="Techniker" tone="human" time="1 Minute">Was gefunden wurde, was gemacht wurde, was ausgebracht wurde, was empfohlen wird.</Step>
+<Step title="Bericht und Kundeninfo entwerfen" who="KI" tone="ai">Der Einsatzbericht und eine verständliche Zusammenfassung für den Kunden, vom Techniker vor dem Versand geprüft.</Step>
+</Flow>
+
+Die Schleife am Ende ist wichtig. Weil die Sprachnotiz des Technikers zu einem strukturierten Bericht wird, hat das nächste Briefing besseres Material. Nach ein paar Durchläufen haben Kunden, bei denen früher einzeilige Notizen standen, eine lesbare Geschichte.
+
+## Den Trend lesen, nicht nur die letzte Zahl
+
+Monitoringpunkte sind nur nützlich, wenn jemand auf den Verlauf schaut. Genau darauf sollte ein Briefing hinweisen, ohne dass jemand fragt.
+
+<Bars title="Klebefalle hinter der Spülmaschine, letzte vier Einsätze" unit=" Schaben" caption="Beispielwerte für einen Monitoringpunkt. Ein Briefing sollte einen steigenden Verlauf wie diesen melden, bevor der Techniker hineingeht." data={[
+  { label: "Einsatz 1", value: 3 },
+  { label: "Einsatz 2", value: 5 },
+  { label: "Einsatz 3", value: 9 },
+  { label: "Einsatz 4 (zuletzt)", value: 12, highlight: true }
+]} />
+
+Bei Lebensmittelbetrieben zählt das auch für Audits. Nach der EU-Lebensmittelhygieneverordnung (EG) Nr. 852/2004 müssen Betriebe geeignete Verfahren zur Schädlingsbekämpfung haben, und Standards wie IFS Food, BRCGS oder FSSC 22000 erwarten, dass Befall über die Zeit ausgewertet wird, mit Maßnahmen bei Ausreißern und dokumentierter Korrektur. Ein Briefing, das den Trend schon zeigt, und ein Bericht, der festhält, was dagegen getan wurde, erleichtern dem Kunden das Audit. Das ist eine Leistung, für die man Geld verlangen kann.
+
+## Wo die Grenze liegt
+
+<Split title="Arbeitsteilung" leftTitle="Das Modell" rightTitle="Der Techniker" left={[
+  "Liest die ganze Kundenhistorie",
+  "Fasst zusammen, was sich geändert hat und was offen ist",
+  "Weist auf steigende Monitoringzahlen hin",
+  "Entwirft den Einsatzbericht aus einer Sprachnotiz",
+  "Entwirft eine verständliche Info für den Kunden"
+]} right={[
+  "Inspiziert und bestimmt den Schädling",
+  "Wählt Verfahren und Mittel",
+  "Hält Anwendungsbestimmungen und Vorschriften ein",
+  "Entscheidet über Empfehlungen zu Abdichtung und Hygiene",
+  "Spricht mit dem Kunden darüber, was er tun muss"
+]} />
+
+Die Entscheidung über die Maßnahme bleibt beim sachkundigen Techniker, und das würde ich ausdrücklich so festhalten. Das Briefing nennt, was beim letzten Mal ausgebracht wurde; es empfiehlt nie Mittel oder Mengen. Biozide sind streng geregelt, gerade bei Rodentiziden gelten enge Anwendungsbestimmungen mit Befallsermittlung und Dokumentation, und das Resistenzmanagement hängt am Urteil des Technikers. Ein Modell, das Mittel vorschlägt, ist ein Risiko, keine Funktion.
+
+## Kundeninformationen, die gelesen werden
+
+Die andere Hälfte ist der Kunde. Viele Nachbehandlungen sind eigentlich Hygiene- oder Abdichtungsprobleme, die der Kunde nie angegangen ist, weil die Empfehlung in einem Bericht versteckt war. Eine kurze Zusammenfassung nach jedem Einsatz, entworfen aus der Sprachnotiz, hilft:
+
+> Heute haben wir vor allem unter der Spülstation Aktivität gefunden und dort Köder ausgebracht, die geruchlos sind und auch während des Service unbedenklich bleiben. Die Hintertür schließt unten weiterhin nicht dicht, so kommen Insekten vom Hof herein. Eine neue Türdichtung ist das Wirksamste, was Sie bis zu unserem nächsten Besuch in zwei Wochen tun können.
+
+Diesen Absatz gibt der Techniker in dreißig Sekunden frei, und der Kunde bekommt eine klare Aufgabe statt eines PDFs.
+
+## Software und Daten
+
+Viele Betriebe arbeiten mit Branchensoftware wie PestSoft, BORIS oder PestScan, manche mit vernetzten Fallen, etwa von traplinked, die Fänge automatisch melden. Das Briefing sitzt obendrauf: Es liest aus diesen Systemen und schreibt in die Techniker-App oder schickt eine Nachricht. An Einsatzplanung und Abrechnung ändert sich nichts.
+
+Kundenhistorien enthalten Privatadressen, Schlüsselinformationen und Hinweise, wer wann zu Hause ist. Das ist sensibel. Der Zugriff auf Briefings sollte der Tour folgen (ein Techniker sieht die Termine von heute, nicht den ganzen Kundenstamm), und Codes sollten erst am Einsatzort sichtbar sein. Nach DSGVO brauchen Sie mit jedem KI-Anbieter einen Auftragsverarbeitungsvertrag und einen bekannten Datenstandort.
+
+## Ein Pilot auf einer Tour
+
+<Timeline title="Vier Wochen, ein Techniker, eine Tour">
+<Phase when="Woche 1" title="Einrichten">Einsatzhistorie, Monitoringdaten und Kundennachrichten für die Kunden einer Tour anbinden. Das Briefingformat mit dem Techniker abstimmen.</Phase>
+<Phase when="Woche 2 bis 3" title="Briefings und Sprachnotizen">Der Techniker liest vor jedem Termin ein Briefing und spricht danach eine Notiz ein. Berichte werden daraus entworfen.</Phase>
+<Phase when="Woche 4" title="Auswertung">Nachbehandlungen, Zeit pro Termin und Vollständigkeit der Berichte mit derselben Tour in früheren Monaten vergleichen. Den Techniker fragen, was das Briefing falsch hatte.</Phase>
+</Timeline>
+
+Das Urteil des Technikers ist der nützlichste Maßstab. Wenn er sagt, dass ihm das Briefing mehrmals pro Woche etwas gesagt hat, das er sonst übersehen hätte, funktioniert es.
+
+## Fragen, die Betriebsinhaber stellen
+
+### Lesen Techniker das Briefing wirklich?
+
+Wenn es kurz und nützlich ist, ja. Zwei Minuten im Transporter vor dem Termin werden schnell zur Gewohnheit, wenn das Briefing immer wieder unangenehme Fragen erspart. Ist es lang und allgemein, liest es niemand. Deshalb zählt das Format mehr als die Technik.
+
+### Kann es Maßnahmen empfehlen?
+
+Sollte es nicht, und so würde ich es auch nicht bauen. Es berichtet, was gemacht wurde und was das Monitoring zeigt. Der sachkundige Techniker entscheidet.
+
+### Was ist mit Kunden ohne Historie?
+
+Dann ist das Briefing kurz, und das ist ehrlich. Die Berichte aus Sprachnotizen bauen die Historie schnell auf. Nach drei, vier Einsätzen hat auch ein neuer Kunde ein nützliches Briefing.
+
+### Hilft das bei IFS- und BRC-Audits?
+
+Ja. Ausgewertete Monitoringdaten, dokumentierte Korrekturmaßnahmen und lesbare Berichte sind genau das, worauf Auditoren beim Schädlingsmanagement eines Lebensmittelbetriebs schauen. Sie machen dem Kunden das Audit leichter, und damit sind Sie schwerer zu ersetzen.
+
+## Die Regel für jeden Einsatz
+
+Kein Techniker sollte bei einem Kunden mit weniger Wissen ankommen, als beim letzten Einsatz vorhanden war. Die Historie kann Software lesen; den Rest machen Ihre Techniker.
+
+Wenn Nachbehandlungen und Neu-Herausfinden Ihre Touren Zeit kosten, [schreiben Sie mir, welche Software Sie nutzen](/contact?intent=improve) und wie Techniker heute an Kundeninformationen kommen. Ich schlage Ihnen vor, wie ein Pilot auf einer Tour aussehen könnte. Für andere Touren mit unordentlichen Bedingungen lesen Sie den Beitrag zur [Tourenplanung im Pflegedienst](/de/posts/ai-for-home-care-scheduling), und für die Lebensmittelbetriebe, die Sie betreuen, den zu [HACCP-Nachweisen am Audittag](/de/posts/ai-for-food-producers-compliance).

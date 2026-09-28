@@ -1,0 +1,163 @@
+---
+id: "ai-for-veterinary-clinics-follow-up"
+title: "Vet Clinic Follow-Ups That Actually Happen: A Practical AI Setup"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Healthcare", "Veterinary clinics", "Client communication", "AI for small business"]
+description: "Post-visit follow-up depends on who is on shift. How a vet clinic can use AI to send clear discharge notes, check in on every patient, and route worries to a nurse."
+excerpt: "Post-visit follow-up depends on who is on shift. How a vet clinic can use AI to send clear discharge notes, check in on every patient, and route worries to a nurse."
+---
+
+Balu is a nine-year-old Labrador who had three teeth extracted this morning. At five in the afternoon his owner picks him up, still groggy, along with a bag of medication and a printed sheet of instructions. The nurse explains everything at the counter while the phone rings and the next patient waits. The owner nods, takes the sheet, and forgets half of it before reaching the car.
+
+The plan is that someone calls tomorrow to check how Balu is doing. Sometimes that happens. On a day with two emergencies and a nurse off sick, it doesn't. Balu will probably be fine either way. But whether his owner hears from the clinic depends less on Balu than on who happened to be working.
+
+That inconsistency is what I would fix first with AI in a veterinary clinic. Not diagnosis, not a chatbot that plays vet, but the plain, repetitive work of making sure every patient gets the same follow-up after the door closes.
+
+## Follow-up is where good medicine leaks
+
+The clinical work in the exam room is usually excellent. What happens at home is a different story.
+
+<Stats title="What happens after the visit">
+  <Stat value="39%" label="of cat owners in a recent study did not give medication as prescribed at home" source="Journal of Veterinary Internal Medicine, 2025" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11724197/" />
+  <Stat value="1 in 4" label="owners in the same study reported difficulty giving the medication, most often a resistant cat" source="Same study, 66 owners" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11724197/" />
+  <Stat value="17%" label="of clients who received a dental recommendation followed through, in AAHA's landmark compliance study" source="AAHA via dvm360" href="https://www.dvm360.com/view/aaha-unveils-details-client-compliance-study" />
+</Stats>
+
+The medication study is small, but its finding is uncomfortable: oral antibiotics were the treatments most associated with owners not following instructions. That has consequences for the individual animal and for antimicrobial resistance. The authors' suggestion is simple: show owners how to give the medication, and consider alternatives when pills are a struggle.
+
+The AAHA study is older, but its central point still holds. A lot of non-compliance happens because the recommendation never reached the owner clearly, or was never repeated. People don't follow advice they can't remember.
+
+Most clinics already send automated vaccine and dental reminders from their practice management software. That part is solved. The gap is the case-specific follow-up after a surgery, a dental, or a new diagnosis, where the message has to fit this animal and this owner.
+
+## What consistent follow-up looks like
+
+Here's the schedule I would design for a surgical or dental patient. The timing is a starting point for the vets to adjust; the point is that it happens for every patient, not just when there's time.
+
+<Timeline title="Follow-up after a dental with extractions">
+<Phase when="Day 0" title="Discharge note in plain language">Sent by text or email the same evening: what was done, medication times and how to give them, what's normal, what's not, and the out-of-hours number.</Phase>
+<Phase when="Day 1" title="Check-in with three questions">Is Balu eating? Drinking? Any bleeding, swelling, or signs of pain? Replies are sorted, and anything worrying goes to a nurse.</Phase>
+<Phase when="Day 3" title="Medication nudge and a photo">A reminder that the course isn't finished yet, and an invitation to send a photo of the gums if anything looks odd.</Phase>
+<Phase when="Days 7 to 10" title="Recheck reminder">Book or confirm the recheck, with a short note on what the vet will look at.</Phase>
+<Phase when="Day 30" title="Home care">Tooth-brushing tips or dental chews that the vet recommends, and when the next check is due.</Phase>
+</Timeline>
+
+None of these messages is clever. What makes them valuable is that they go out on time for every patient and that the replies are read.
+
+## Where AI does the work
+
+There are three jobs in that schedule that eat staff time, and all three are a good fit for a language model with a person in the loop.
+
+**Writing the discharge note.** The vet's clinical notes are written for the medical record, not for a worried owner at home. A model can turn them into a clear, friendly note in the owner's language, using the clinic's approved wording for medication and warning signs. The vet or nurse reads and approves it before it goes out. That takes a minute instead of ten.
+
+**Reading the replies.** Owners reply in every possible way: "all good!", a paragraph about the dog's mood, a blurry photo, "is it normal that he's drinking this much?". A model can sort these into "fine", "question", and "worry", and pull out the key facts for the nurse.
+
+**Drafting answers to routine questions.** Many questions are already answered in the discharge note. A draft reply that quotes the relevant part saves the nurse from typing it again. The nurse still sends it.
+
+Here is what that first job looks like in practice. The clinical note is written for colleagues:
+
+```text
+Dental w/ COHAT. Ext 108, 208, 309 (Triadan). Sites closed, 5-0 monocryl.
+Meloxicam SID x4d from tomorrow AM. Clindamycin BID x7d.
+Soft food 7d. No chews/toys 10d. Recheck 10d.
+```
+
+The draft the owner receives, after the vet has checked it, reads like this:
+
+> Balu had his teeth cleaned under anaesthesia today, and we removed three teeth that were damaged: two at the back of the upper jaw and one at the back of the lower jaw. The gums are closed with stitches that dissolve on their own.
+>
+> **Medication:** the pain relief (meloxicam) is given once a day with food, starting tomorrow morning, for four days. The antibiotic (clindamycin) is one capsule in the morning and one in the evening for seven days, until the pack is empty, even if he seems completely fine.
+>
+> **Food:** soft food only for the next week. No chews, bones, or hard toys for ten days.
+>
+> **Normal:** some sleepiness tonight and a little blood in his saliva for a day or two.
+>
+> **Call us if:** he won't eat for more than a day, the bleeding doesn't stop, his face swells, or he seems in pain despite the medication. Outside opening hours, call the emergency number below.
+
+Nothing in the second version is new medical information. It is the same content, reorganised around the owner's questions and translated out of clinical shorthand. That is precisely the kind of rewriting a language model does well, and precisely why a person still approves it: the model must not add, drop, or soften anything.
+
+<Split title="Who does what" leftTitle="Automated" rightTitle="Stays with the team" left={[
+  "Turning clinical notes into a plain-language discharge note, for approval",
+  "Sending messages on schedule",
+  "Sorting replies into fine, question, and worry",
+  "Drafting answers from the approved discharge note",
+  "Logging every message and reply in the patient record"
+]} right={[
+  "Approving every discharge note before it is sent",
+  "Calling back any owner whose reply sounds worrying",
+  "Every medical question that isn't answered in the note",
+  "Deciding whether an animal needs to come back in",
+  "Out-of-hours emergencies, always through the emergency line"
+]} />
+
+## How replies are routed
+
+The routing is where safety lives, so it deserves its own diagram.
+
+<Flow title="What happens when an owner replies" caption="The model sorts and drafts. Anything that sounds like a problem goes to a person, quickly.">
+<Step title="Owner replies to the check-in" who="Owner" time="any time">By text, email, or the clinic's messaging tool, sometimes with a photo.</Step>
+<Step title="Check for warning signs first" who="AI" tone="ai" time="seconds">The vets' list (not eating for 24 hours, vomiting, bleeding, lethargy, swelling, breathing trouble) overrides everything else.</Step>
+<Step title="Sort the rest" who="AI" tone="ai">Fine: logged in the record. Question: a draft answer from the discharge note. Unclear: goes to a nurse as a question.</Step>
+<Step title="Worries go to a nurse" who="Nurse" tone="human" time="within the hour">The nurse sees the reply, the discharge note, and the patient record, and calls the owner.</Step>
+<Step title="Questions get an approved answer" who="Nurse" tone="human">The nurse checks the draft, edits if needed, and sends it.</Step>
+<Step title="Out of hours" who="System">Every automated message includes the emergency number. The assistant never tries to triage at night.</Step>
+</Flow>
+
+Two rules make this safe. First, warning signs always win: if a reply contains anything from the vets' list, it goes to a person regardless of how the rest reads. Second, the assistant never answers a medical question with anything that isn't in the approved discharge note. If the answer isn't there, a nurse writes it.
+
+## What goes into a good discharge note
+
+This checklist is useful even if you never automate anything. A discharge note that covers these points prevents most of the "is this normal?" calls.
+
+<Checklist title="The discharge note, every time" items={[
+  "What was done, in one or two plain sentences",
+  "Each medication: what it's for, when, how much, and how to give it (a short video link helps for pills)",
+  "What's normal in the next days, such as sleepiness or a small amount of blood in saliva",
+  "What's not normal, and what to do if you see it",
+  "Food, water, and activity instructions, with dates",
+  "When the recheck is, and what the vet will look at",
+  "Who to contact during opening hours, and the out-of-hours emergency number"
+]} />
+
+## Tools and integration
+
+Most clinics run a practice management system such as ezyVet, Cornerstone, AVImark, Provet Cloud, Shepherd, or Vetspire, often alongside a client communication tool for reminders and two-way texting. The follow-up workflow doesn't replace any of that. It reads the discharge details from the record, sends messages through the channel the clinic already uses, and writes replies back to the patient record so the next person sees the whole conversation.
+
+How deep the integration goes depends on the software. Some systems have a documented API, others only allow exports or email-based workflows. I'd check that in the first week, because it decides whether the pilot takes two weeks or six.
+
+On privacy: animal health records aren't human health data, and HIPAA doesn't apply to veterinary clinics in the US. The owner's name, phone number, and messages are personal data, though, and in the EU they fall under the GDPR. Use a provider with a data processing agreement, keep message logs only as long as your records policy says, and tell owners when a message comes from an automated system. For chat-style assistants in the EU, that disclosure is required under [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) since August 2026.
+
+## How to know it's working
+
+I'd measure four things for a month before and a month after:
+
+- Share of surgical and dental patients who received a check-in within 24 hours.
+- Recheck attendance for those patients.
+- Inbound "is this normal?" calls in the first three days after discharge.
+- Complications caught by the check-in that would otherwise have shown up later as an emergency.
+
+The last one is hard to count and easy to exaggerate, so I'd record each case with a short note rather than trying to turn it into a percentage.
+
+## Questions clinic owners ask
+
+### Won't automated check-ins feel impersonal?
+
+A message that arrives on time and sounds like the clinic feels more personal than a call that never happens. The key is that replies are read and worrying ones get a phone call from someone who knows the patient.
+
+### Can the assistant answer medical questions?
+
+Only with information that's already in the approved discharge note. Anything else goes to a nurse. That limit is what makes the setup safe enough to run every day.
+
+### What about emergencies at night?
+
+The assistant doesn't handle them. Every message includes the out-of-hours number, and replies that arrive at night with warning signs trigger an immediate note to call the emergency service, not an attempt to assess the animal.
+
+### Is this only for surgery?
+
+Surgery and dentals are the best starting point because the follow-up is predictable. New chronic diagnoses such as diabetes or kidney disease are a good second step, where regular check-ins help owners with a routine that's hard at first.
+
+## The rule I'd put on the wall
+
+Every animal that leaves after anaesthesia gets the same care after the door closes, no matter who was on shift. Software can guarantee the "every" part. Your team supplies the care.
+
+If you'd like to try this for surgical patients first, [tell me which practice software you use](/contact?intent=improve) and how follow-up works today. I'll suggest the smallest setup worth testing. For the same idea applied to human patients, see how I'd handle [missed calls at a dental practice](/posts/ai-for-dentists) and [referral letters at a specialist practice](/posts/ai-for-medical-practices-referrals).

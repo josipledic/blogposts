@@ -1,0 +1,163 @@
+---
+id: "ai-for-dentists"
+title: "AI for Dental Practices: Stop Losing New Patients to Voicemail"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Healthcare", "Dental practices", "AI receptionist", "AI for small business"]
+description: "Dental practices miss more calls than they think, and new patients rarely leave a message. What an AI phone assistant should do, and what it must never do."
+excerpt: "Dental practices miss more calls than they think, and new patients rarely leave a message. What an AI phone assistant should do, and what it must never do."
+---
+
+Picture a Tuesday at 10:40. The receptionist is taking a card payment, a patient at the counter wants to move their next cleaning, and the hygienist has just asked where the lab case for room two is. The phone rings. Then it rings again. By the fourth ring, the caller with a cracked molar hears the voicemail greeting, hangs up, and dials the next practice on the map.
+
+Nobody in that scene did anything wrong. The front desk of a dental practice is a single point of contact for three jobs at once: the patients in the room, the patients on the phone, and the clinical team behind the door. When all three want attention in the same minute, the phone loses. It is the only one that cannot tap you on the shoulder.
+
+This is where I think AI is useful for a dental practice right now. Not as a robot that "runs your front desk", but as a way to make sure no call ends in silence, and that the few calls that matter clinically reach a person faster.
+
+## The numbers behind a ringing phone
+
+I'm careful with dental phone statistics, because most of them come from companies that sell call tracking. Still, the data points in the same direction, and it matches what practice owners describe.
+
+<Stats title="What the phone data says">
+  <Stat value="38%" label="of inbound calls went unanswered across one 26-practice dental group in February 2026" source="Peerlogic, vendor case study" href="https://www.peerlogic.com/post/peerlogic-dso-case-study" />
+  <Stat value="69%" label="of callers who reach voicemail do not leave a message" source="Moneypenny small business call report" href="https://www.moneypenny.com/us/resources/news/small-business-call-report/" />
+  <Stat value="70%+" label="of US dentists who were hiring found it very or extremely hard to recruit dental assistants at the end of 2024" source="ADA Health Policy Institute" href="https://adanews.ada.org/ada-news/2025/february/five-years-later-staffing-shortages-infection-control-since-the-covid-19-pandemic/" />
+</Stats>
+
+The first number is one group of practices, measured by a vendor, so treat it as a signal rather than a benchmark. The same case study found that new-patient calls converted at about 25% while existing patients converted at about 56%. New patients are the callers you pay marketing money to attract, and they are also the ones with the least loyalty. If you don't pick up, they have no reason to try again.
+
+The third number explains why hiring your way out of it is hard. When the front desk is short one person, the phone is what breaks first.
+
+Before you buy anything, get your own number. Most modern phone systems (and every VoIP provider I have looked at) can export a call log with missed calls, time of day, and whether the caller left a message. One month of that log tells you more than any industry average. In most logs I would expect two peaks: the first hour after opening and the lunch window, when the desk is thinnest.
+
+## What a missed call is worth
+
+Here is the napkin math I would do with a practice owner. The inputs are assumptions. Swap in yours.
+
+<Calc title="Napkin math: new patients lost to voicemail" caption="Assumptions, not measurements. Replace every line with your own call log and your own new-patient value." rows={[
+  ["Missed calls per week", "30"],
+  ["Share of those that are new-patient inquiries", "× 25%"],
+  ["Share who never leave a message or call back", "× 69%"],
+  ["Weeks per month", "× 4.3"],
+  ["Share you would normally book", "× 50%"],
+  ["New patients lost per month", "≈ 11"],
+  ["First-year value of a new patient", "× €500"]
+]} result={["Revenue at risk per month", "≈ €5,500"]} />
+
+Eleven patients a month does not sound dramatic until you remember that a new patient is not a one-off. They bring hygiene visits, treatment plans, and often their family. Even if you halve every assumption, the missed-call problem usually pays for a modest fix within the first month.
+
+The other cost is harder to put in a spreadsheet: the receptionist who spends the afternoon returning voicemails, half of which turn out to be "I'll call back later" or a sales call.
+
+## What "AI receptionist" should mean in a dental practice
+
+The phrase covers everything from a text message sent after a missed call to a voice agent that holds a full conversation. For a dental practice, I draw the line like this.
+
+<Split title="The division of labour" leftTitle="The assistant handles" rightTitle="People decide" left={[
+  "Answering when nobody at the desk can, and saying it is an automated assistant",
+  "Taking name, number, reason for calling, and preferred times",
+  "Sorting calls into new patient, reschedule, billing, emergency, other",
+  "Offering open slots it can read from the calendar",
+  "Writing a short summary for the callback queue"
+]} right={[
+  "Anything clinical: symptoms, medication, whether something is urgent",
+  "Confirming bookings that affect the treatment plan",
+  "Complaints, cost disputes, and anxious patients",
+  "The final wording of any message about treatment",
+  "Exceptions the rules did not foresee"
+]} />
+
+The left column is repetitive information work. It is exactly what current language models do well: turn a messy spoken request into structured fields and a clear summary. The right column is where judgment, liability, and the patient relationship live. An assistant that crosses that line is not saving time, it is creating risk.
+
+## The call flow I would build
+
+This is the simplest version that I would put into a real practice. It keeps the existing phone number and the existing practice management system as the source of truth.
+
+<Flow title="From unanswered call to booked appointment" caption="AI steps prepare and route. A person owns every decision that touches care.">
+<Step title="The desk can't pick up" who="Phone system" time="after 4 rings">The call rolls over to the assistant instead of voicemail. Nothing changes for calls the team answers.</Step>
+<Step title="Greet, disclose, listen" who="AI" tone="ai" time="0:00">The assistant says it is an automated assistant for the practice and asks how it can help.</Step>
+<Step title="Check for red flags first" who="AI" tone="ai">Words the dentist agreed on (swelling, bleeding that won't stop, trauma, fever) end the automated part and trigger the emergency route.</Step>
+<Step title="Collect and classify" who="AI" tone="ai" time="1 to 2 min">Name, number, new or existing patient, reason, preferred times. It can offer slots it reads from the calendar.</Step>
+<Step title="Summary lands in a callback queue" who="System">One line per call, with the transcript attached, sorted by type and waiting time.</Step>
+<Step title="Reception confirms" who="Reception" tone="human" time="between patients">A person books, reschedules, or calls back. Emergencies go to the clinician on duty immediately.</Step>
+</Flow>
+
+A few design choices matter more than the choice of AI model.
+
+**Roll over, don't replace.** The assistant only answers when the team doesn't. Patients who get a human keep getting a human, and staff don't feel replaced by a machine.
+
+**Read, don't write, at first.** In the first version, the assistant can read open slots but a person confirms the booking. Writing directly into the schedule is possible later, once you trust the classification. Some practice management systems have an open API (Open Dental does); others, like Dentrix or Eaglesoft, are usually reached through sync services such as NexHealth or Sikka. That affects cost and timeline more than anything on the AI side.
+
+**Emergencies are rules, not model opinions.** The list of red-flag words and the route they trigger come from the dentist, in writing. The model's job is to recognise them in messy speech, not to decide what counts as urgent.
+
+## Three setups, from cheap to capable
+
+Not every practice needs a voice agent. The right setup depends on your call volume and on how much your team can review.
+
+| Setup | What the caller gets | Effort to set up | Where it fits |
+| --- | --- | --- | --- |
+| Missed-call text-back | An SMS within a minute: "Sorry we missed you, reply here or book online" | An afternoon, usually a phone-system setting | Low volume, patients who text |
+| Voicemail transcription and triage | Voicemail as usual, but every message is transcribed, classified, and queued | A few days | Most small practices; a good first step |
+| Voice assistant on rollover | A short conversation that collects details and offers slots | Two to four weeks with testing | High volume, frequent lunch-hour overflow |
+
+If I had to pick one starting point for a typical two- to four-chair practice, I'd pick the middle row. It costs little, it fails safely (the worst case is a voicemail that someone listens to), and it gives you a month of classified data. That data then tells you whether a voice assistant is worth it.
+
+The text-back option deserves a mention because it needs no AI at all. If most of your callers are comfortable with SMS and you already have online booking, it may be all you need. Don't let anyone sell you a model when a phone setting will do.
+
+## The clinical line, in writing
+
+Dental calls contain health information, and some of them are genuinely urgent. That shapes the build from day one.
+
+<Callout title="Non-negotiables" tone="warning">
+The assistant never diagnoses, never suggests medication, and never tells a caller that something can wait. Red-flag words route to a person. Patients are told they are speaking to an automated assistant, which is also a legal requirement for AI that talks to people in the EU since August 2026 under Article 50 of the AI Act. Recordings and transcripts are health data: in the US that means a vendor who signs a Business Associate Agreement under HIPAA, in the EU a data processing agreement and a provider that keeps data where you agreed.
+</Callout>
+
+In practice, that means a few concrete decisions before any code runs:
+
+- Which provider processes the audio and the transcript, and where. The [European Commission's guidance on Article 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) covers the disclosure side; the [HHS guidance on business associate agreements](https://www.hhs.gov/hipaa/for-professionals/covered-entities/sample-business-associate-agreement-provisions/index.html) covers US practices; under the GDPR, health data is a [special category under Article 9](https://gdpr-info.eu/art-9-gdpr/).
+- How long transcripts are kept. For a callback queue, days are usually enough, not years.
+- Who can see the queue. Reception, yes. Every system that touches the phone line, no.
+
+None of this is exotic. It is the same care you already apply to your practice software, extended to one more channel.
+
+## A four-week pilot
+
+I would never switch this on for all calls on day one. A pilot that runs next to your normal process tells you whether it works with your patients, your accents, and your mix of calls.
+
+<Timeline title="A pilot that doesn't disturb the practice">
+<Phase when="Week 0" title="Get the baseline">Export a month of call logs. Count missed calls, when they happen, and how many led to a callback within the hour.</Phase>
+<Phase when="Week 1" title="Shadow mode">The assistant transcribes and classifies voicemails, but nobody acts on its output. Reception compares its sorting with their own.</Phase>
+<Phase when="Weeks 2 to 3" title="Live, with review">Summaries go to the callback queue. Reception confirms every booking. Misclassified calls get noted.</Phase>
+<Phase when="Week 4" title="Decide with numbers">Compare against the baseline: share of missed calls answered within 15 minutes, new-patient bookings from recovered calls, staff minutes spent on voicemail.</Phase>
+</Timeline>
+
+The misclassified calls from weeks two and three are the most valuable output of the pilot. They show you which phrases patients actually use, which rules are too strict, and where the assistant should hand over sooner.
+
+If the numbers don't move, stop. That is a perfectly good outcome for a four-week experiment, and it costs far less than a year-long software contract.
+
+## Questions practice owners ask me
+
+### Will patients mind talking to an AI?
+
+Some will. Most prefer it to a voicemail beep, especially if the assistant is short, honest about what it is, and hands over to a person when asked. The rollover design helps: patients only meet the assistant when the alternative was nobody.
+
+### Does this replace a receptionist?
+
+No. It removes the least pleasant part of the job, which is listening to voicemails and chasing callbacks, and gives the receptionist a sorted queue instead. In a practice that is already short-staffed, that is the point.
+
+### Can it book straight into Dentrix or Open Dental?
+
+Technically, often yes, either through an open API or through a sync service. I'd still start with read-only access and human confirmation, then allow direct booking for simple cases like hygiene recalls once the pilot shows the classification is reliable.
+
+### What does it cost to run?
+
+The running costs for transcription and classification are usually cents per call. A voice assistant costs more per minute, and the integration work with your practice software is the largest single item. A pilot like the one above is a small, fixed-scope project, not a platform purchase.
+
+### Is it compliant with HIPAA or the GDPR?
+
+It can be, but compliance comes from the choices above (processor agreements, data location, retention, access), not from the word "AI" on a vendor's website. Ask any provider for their BAA or data processing agreement before you ask for a demo.
+
+## The rule I would start with
+
+No call should end in silence, and anything clinical should end with a person. If a setup does both, it is worth testing. If it does neither, it is a gadget.
+
+If you run a practice and want to see what your own call log says, [send me a short note](/contact?intent=improve). I build this kind of integration for small practices, starting with the smallest version that can prove itself. If your bottleneck is less the phone and more the paperwork around lab work or referrals, have a look at how the same idea applies to [dental lab case intake](/posts/ai-for-dental-labs-case-intake) and [specialist referral letters](/posts/ai-for-medical-practices-referrals).

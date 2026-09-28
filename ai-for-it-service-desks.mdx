@@ -1,0 +1,131 @@
+---
+id: "ai-for-it-service-desks"
+title: "Repetitive Tickets at Small MSPs: What to Automate First"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Professional services", "IT service providers", "Help desk tickets", "AI for small business"]
+description: "Password resets, printer woes and onboarding requests fill every MSP queue. A ranked list of what to automate first, what AI adds, and what must stay human."
+excerpt: "Password resets, printer woes and onboarding requests fill every MSP queue. A ranked list of what to automate first, what AI adds, and what must stay human."
+---
+
+Open the ticket queue of any small managed service provider on a Monday morning and you'll find the same things. Three password resets. A printer at the dental practice that "isn't printing". A new starter at the accounting firm who needs an account, a laptop and access to the shared drive by Wednesday. Fifty-two RMM alerts, most of them the same disk space warning. And one real problem hiding in the middle of it all.
+
+Small MSPs live and die by how quickly technicians get through the routine to reach the real problems. That makes the help desk an obvious place for AI. It's also a place where automating the wrong thing can hand an attacker the keys to a client's network. So the question isn't whether to automate. It's what to automate first, and what never to automate at all.
+
+<Stats title="Why the routine matters, and why it's risky">
+  <Stat value="20 to 50%" label="of help desk call volume is password resets, in Gartner's widely cited estimate" source="Gartner, via BleepingComputer" href="https://www.bleepingcomputer.com/news/security/password-reset-calls-are-costing-your-org-big-money/" />
+  <Stat value="$70" label="average labour cost of a single help desk password reset, in Forrester's widely cited estimate" source="Forrester, via BleepingComputer" href="https://www.bleepingcomputer.com/news/security/password-reset-calls-are-costing-your-org-big-money/" />
+  <Stat value="MFA resets" label="Scattered Spider convinced help desk staff to reset passwords and MFA tokens by phone, per a CISA and FBI advisory" source="CISA" href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a" />
+</Stats>
+
+The first two numbers are old, and they come from larger organisations. But anyone who has worked a help desk recognises the pattern. The third is the warning label. The attack on MGM Resorts in 2023 reportedly started with a phone call to the IT help desk, and the CISA advisory on the group behind it describes exactly that technique: impersonating employees to get passwords and MFA reset. Anything you automate around identity has to be harder to fool than a tired technician, not easier.
+
+## Start with your own numbers
+
+Before ranking anything, pull a category report from your PSA for the last three months. Most MSPs have one they've never looked at closely. If your categories are a mess (and they usually are), that's the first thing AI can fix, as you'll see below.
+
+<Bars title="What a month of tickets might look like at a small MSP" unit=" tickets" caption="A hypothetical mix for an MSP supporting around 400 users, to show the method. Your PSA can give you the real one in minutes." data={[
+  { label: "Password resets and account lockouts", value: 96, highlight: true },
+  { label: "How-to questions (Teams, VPN, shared mailboxes)", value: 74, highlight: true },
+  { label: "Printers and scanners", value: 51 },
+  { label: "New starters and leavers", value: 38 },
+  { label: "Email delivery and spam", value: 35 },
+  { label: "Hardware faults", value: 29 },
+  { label: "Line-of-business application issues", value: 27 },
+  { label: "Security alerts and suspicious emails", value: 22 },
+  { label: "Everything else", value: 48 }
+]} />
+
+## The ranked list: what to automate first
+
+Here's the order I'd tackle things in, based on volume, how routine they are, and how much damage a mistake could do.
+
+### 1. Password resets: self-service first, not AI
+
+The biggest category is also the one where AI is the least necessary. Self-service password reset in Microsoft Entra ID or Google Workspace, with proper MFA registration, handles most of it without anyone touching a ticket. If your clients don't have it switched on, that's your first project, and it doesn't need a language model.
+
+Where AI helps: recognising a reset request in an email or chat and replying instantly with the self-service link and short instructions. Where it must not help: resetting anything itself based on a chat conversation. More on that below.
+
+### 2. Ticket triage
+
+This is where AI earns its keep fastest. Every incoming email or portal request gets read and turned into a clean ticket: which client, which contact, which device if mentioned, a sensible category, a suggested priority, and a flag if it looks like a duplicate of an open ticket or part of a wider outage ("third ticket from the same office about email in ten minutes"). Technicians stop spending the first minutes of every ticket working out what it is, and your category reports start meaning something.
+
+An email that says "printer not working again!!" from someone at a client becomes something like this at the top of the ticket:
+
+> **Client:** Riverside Dental. **Contact:** front desk (verified sender). **Device:** HP LaserJet at reception, per the client's documentation. **Category:** Printing. **Priority:** normal; one user affected, other printers fine. **History:** fourth ticket on this printer in six weeks, last two fixed by clearing the print queue. **Suggested next step:** clear the queue remotely, then check whether the driver update from the 3rd is involved, since two other clients on the same driver reported the same issue.
+
+The technician reads four lines instead of the thread and starts in the right place.
+
+### 3. How-to questions
+
+"How do I add a shared mailbox in Outlook?" "How do I connect to the VPN from home?" The answers live in your documentation platform, if anyone wrote them down. An assistant that drafts a reply from your client's own documentation, with the right screenshots and steps for their setup, can resolve many of these with a technician's quick approval, or directly once you trust it for that category.
+
+### 4. New starters and leavers
+
+Onboarding and offboarding requests arrive incomplete: no start date, no role, no idea which groups the person needs. AI can turn "Anna starts Monday, please set her up" into a structured request and ask the client for what's missing: job title, manager, which shared drives, which licence, which hardware. The actual account creation can then run from a checklist or script with a technician's approval. Offboarding deserves particular care: the request should be verified with an authorised contact before anything is disabled or handed over.
+
+### 5. Alert noise
+
+RMM and monitoring tools produce far more alerts than anyone reads. AI can group them, recognise the same disk space warning on the same server for the ninth time this month, correlate alerts that belong together, and put a short summary at the top of the queue: "Two issues worth a look today; 47 repeats of known conditions." It doesn't fix the underlying noise, which is a tuning job, but it stops the real alert from drowning.
+
+### 6. Ticket notes and time entries
+
+Technicians hate writing resolution notes and billing descriptions. AI can draft both from the ticket history, the chat log and the remote session notes: what the problem was, what was done, how long it took. The technician confirms. Better notes mean better documentation for the next person and fewer billing disputes.
+
+### 7. Patterns across clients
+
+The same printer driver update breaking scanning at three clients in a week. A certain laptop model that keeps losing Wi-Fi after sleep. Across hundreds of tickets, patterns like these are easy to miss and easy for a model to spot. A weekly "recurring issues" summary turns reactive tickets into proactive fixes and good material for client reviews.
+
+## Sorting by volume and risk
+
+<Matrix title="Where each ticket type belongs" caption="Volume decides what's worth automating. Risk decides how much a technician checks first, and whether identity verification is required." xLabel="Ticket volume" yLabel="Risk if handled wrongly" quadrants={[
+  { title: "Rare and risky: technician only", text: "MFA resets, admin rights, firewall and conditional access changes, offboarding with data handover, anything a phone caller insists is urgent." },
+  { title: "Common and risky: verify, then automate the paperwork", text: "Password and account issues, new starters and leavers. Strong identity checks first; AI drafts the request and checklist.", highlight: true },
+  { title: "Rare and safe: documentation", text: "Unusual how-to questions, one-off software requests, questions about a client's own setup." },
+  { title: "Common and safe: automate first", text: "Triage and categorisation, how-to answers from documentation, alert grouping, ticket notes and time entries.", highlight: true }
+]} />
+
+## The workflow
+
+<Flow title="From incoming request to resolved ticket" caption="The model reads, sorts, drafts and summarises. Technicians resolve and approve. Anything touching identity or access goes through a verification step no chat message can skip.">
+<Step title="Request arrives" who="Client user" time="any channel">Email, portal, chat or a phone call transcribed into the PSA.</Step>
+<Step title="Triage" who="AI" tone="ai" time="seconds">Client, contact, device, category, priority, duplicates, and whether it's part of a wider incident.</Step>
+<Step title="Look up the client's documentation" who="System">Their setup, previous tickets on the same device, known issues, and the relevant how-to articles.</Step>
+<Step title="Draft reply or steps" who="AI" tone="ai">A reply for simple how-to questions, or suggested diagnostic steps for the technician. Self-service links where they exist.</Step>
+<Step title="Identity gate" who="Technician" tone="human">Anything involving passwords, MFA, access rights or leavers: verification by a known callback number or an authorised approver. No exceptions for urgency.</Step>
+<Step title="Resolve and document" who="Technician" tone="human">Fixes the issue. The model drafts the resolution note and time entry; the technician confirms.</Step>
+</Flow>
+
+<Callout title="Never let a conversation reset access" tone="warning">
+An AI assistant that resets passwords or MFA because someone in a chat sounds convincing is a gift to attackers. So is a tired technician who does the same because the caller is shouting about a board meeting. Put the rule in writing for both: access changes require verification through a channel the requester doesn't control, such as a callback to the number on file or approval from a named contact at the client. The model can explain the process politely. It can't skip it.
+</Callout>
+
+## Tools that fit
+
+Most small MSPs run a PSA such as ConnectWise PSA, Autotask, HaloPSA or Syncro, an RMM such as NinjaOne, N-able or Datto RMM, and a documentation platform such as IT Glue or Hudu. Several PSA vendors now include AI triage, summaries and suggested replies. Try those first, since they already sit on your ticket data. Where they fall short is usually client context: your documentation, your naming conventions, your runbooks. A custom layer that reads tickets and documentation through their APIs and writes back categories, drafts and notes often fills that gap.
+
+Client data in tickets includes names, emails, sometimes screenshots of sensitive systems. Use a provider that doesn't train on your data and check your client contracts. In the EU, the [NIS2 directive](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive) brings many managed service providers into scope for cybersecurity obligations themselves, which is another reason to document how your AI tools handle client information.
+
+## Questions MSP owners ask
+
+### Will clients accept an AI answering their tickets?
+
+They accept fast, correct answers. Label AI-drafted replies honestly, make it easy to reach a technician, and start with categories where the answers are clearly right, like how-to questions from your own documentation.
+
+### Should the AI talk directly to end users?
+
+For triage acknowledgments and self-service links, yes. For how-to answers, after you've reviewed enough drafts to trust that category. For anything involving access, only to explain the verification process.
+
+### What's the quickest win?
+
+Triage. It touches every ticket, it's low risk, and it makes all your reporting better. Most MSPs notice the difference in the first week.
+
+### Won't this reduce billable hours?
+
+On fixed-fee contracts, fewer technician minutes per ticket is pure margin. On time-and-materials, the saved time goes into project work and proactive fixes, which clients value more than fast password resets.
+
+## Rule of thumb
+
+Automate the reading, sorting and writing around every ticket. Use self-service, not a chatbot, for passwords. And never let a conversation, with a human or a model, change anyone's access without verification through a channel the requester doesn't control.
+
+If your queue is full of the same tickets every week, [tell me which PSA and documentation tools you use](/contact?intent=improve), and I'll suggest where triage and drafting could start. Bookkeepers face the same repeat-question problem with [the ten questions every client asks](/posts/ai-for-bookkeepers-client-questions), and online shops handle it in [customer support](/posts/ai-for-ecommerce-support).

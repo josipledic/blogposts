@@ -1,0 +1,164 @@
+---
+id: "ai-for-window-installers-leads"
+title: "Qualifying Window Replacement Leads Before You Drive Out"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Trades & construction", "Window installers", "Lead qualification", "AI for small business"]
+description: "“Need a price for windows, call me” isn’t a lead yet. How AI turns vague inquiries into survey-ready ones, with photos, window counts and a realistic range."
+excerpt: "“Need a price for windows, call me” isn’t a lead yet. How AI turns vague inquiries into survey-ready ones, with photos, window counts and a realistic range."
+---
+
+The web form says: "Need price for new windows. Please call." There's a name and a phone number. After two rounds of phone tag, a sales rep books an in-home consultation and drives forty minutes to get there. Inside, it turns out the homeowner wants one bathroom window replaced, is thinking about "maybe next year", and the spouse who makes the decision isn't home.
+
+That visit cost the company two hours of a salesperson's day and the fuel to get there. Multiply by a few wasted visits a week and it's a real line in the budget, not to mention the good leads that waited longer because the calendar was full of weak ones.
+
+Window replacement is a business where the first visit is expensive and the information needed to decide whether to make it is easy to get. That's a good place for AI: not to replace the consultation, but to make sure the consultation is worth driving to.
+
+## The market context in 2026
+
+Two facts shape how homeowners approach window projects right now.
+
+<Stats title="Why homeowners are more price-conscious">
+  <Stat value="Jan 2026" label="the US federal tax credit for energy-efficient windows (up to $600 a year) ended for new installations" source="ENERGY STAR" href="https://www.energystar.gov/about/federal-tax-credits/windows-skylights" />
+  <Stat value="Up to 13%" label="average energy bill savings from replacing single-pane windows with ENERGY STAR certified ones" source="ENERGY STAR" href="https://www.energystar.gov/products/res_windows_doors_skylights" />
+  <Stat value="25 to 30%" label="of residential heating and cooling energy use comes from heat gained or lost through windows" source="US Department of Energy" href="https://www.energy.gov/energysaver/update-or-replace-windows" />
+</Stats>
+
+With the federal credit gone, more homeowners want a sense of cost before they let anyone into the house. At the same time, the energy argument is solid, especially for older single-pane windows. A company that can give an honest range early, and explain what the homeowner is likely to gain, earns the consultation instead of begging for it.
+
+## What the form says versus what you need
+
+Here's the gap, laid out.
+
+<Split title="The inquiry versus a survey-ready lead" leftTitle="What the form usually says" rightTitle="What you need before driving out" left={[
+  "Name and phone number",
+  "“New windows”",
+  "Maybe a postcode",
+  "“Please call”"
+]} right={[
+  "How many windows, and which rooms",
+  "Current frames and glazing: wood, vinyl, aluminium; single or double pane",
+  "Why now: drafts, condensation, noise, looks, selling the house",
+  "Owner or tenant, and any HOA or historic district rules",
+  "Rough timeline and a budget range",
+  "A photo of each window and one of the whole house",
+  "Who needs to be at the consultation"
+]} />
+
+None of the right-hand column is secret or hard to answer. Most homeowners can provide all of it in five minutes from their phone. They just aren't asked, or they're asked on the phone by someone reading a script, which is slower for everyone.
+
+## The flow I'd build
+
+<Flow title="From vague inquiry to a booked, prepared consultation" caption="The assistant asks and organises. A person reviews every lead before a consultation is booked.">
+<Step title="Inquiry arrives" who="Web, phone, email" time="any time">A form, a voicemail, a message. However little it says, it's enough to start.</Step>
+<Step title="Reply within minutes" who="AI" tone="ai" time="2 min">A friendly message asking four or five questions and linking to a simple photo upload with a short guide.</Step>
+<Step title="Read the answers and photos" who="AI" tone="ai">It counts windows, notes likely frame types, and flags things like condensation between panes. Everything is marked as an estimate from photos.</Step>
+<Step title="Rough range from your price book" who="System">Your own prices by window type and size band produce a range, clearly labelled as provisional until measured.</Step>
+<Step title="Sort the lead" who="AI" tone="ai">Survey-ready, needs one more answer, later, or not a fit. Each with a one-paragraph summary.</Step>
+<Step title="Rep reviews and books" who="Sales" tone="human" time="same day">The rep reads the summary, calls the homeowner, and books a consultation with samples and notes prepared.</Step>
+</Flow>
+
+The step that makes the most difference is the second one. A reply within minutes, asking good questions, catches the homeowner while they're still thinking about windows. The same questions asked two days later in a phone call often get "I'll get back to you".
+
+## The first reply
+
+The tone of that first message decides whether homeowners answer. It should sound like a helpful person at a local company, not a form. Something like this, adapted to what the homeowner wrote:
+
+> Hi Karen, thanks for getting in touch about new windows. So we can give you a realistic price range before anyone visits, could you tell us:
+>
+> 1. Roughly how many windows, and in which rooms?
+> 2. What's bothering you about the current ones: drafts, fogging, noise, or just their age?
+> 3. Do you own the house, and is there an HOA?
+> 4. When would you ideally like the work done?
+>
+> If it's easier, you can [upload a few photos here] instead, and we'll count from those. Prefer a call? Just reply with a good time.
+
+Four questions, all answerable from the sofa. The photo option takes the place of the question most people find hardest, which is describing their windows. And the last line matters: a homeowner who wants to talk to a person should never feel trapped in an automated exchange.
+
+## Getting good photos
+
+Homeowners are happy to send photos if you tell them exactly what to take. This short guide is what I'd put behind the upload link.
+
+<Checklist title="How to photograph your windows for a quote" items={[
+  "One photo of the front of the house, and one of the back",
+  "Each window from inside, straight on, with the whole frame visible",
+  "A close-up of any problem: fogging between panes, rot, cracks, broken locks",
+  "For one typical window, a tape measure across the width and the height",
+  "The year the house was built, if you know it",
+  "Anything that might affect access: upper floors, bay windows, shrubs, a deck"
+]} />
+
+The tape measure photo matters. It won't replace a proper measurement, but it lets the range be realistic instead of a guess.
+
+## What AI can and can't see in a photo
+
+It's worth being honest about this, because it's easy to oversell.
+
+| From photos, AI can | From photos, AI can't |
+| --- | --- |
+| Count windows and group them by type | Measure windows accurately for ordering |
+| Recognise common frame materials, roughly | See rot behind trim or water damage inside walls |
+| Spot fogging between panes, a sign of a failed seal | Judge structural issues or out-of-square openings |
+| Notice obvious damage like cracked glass or rotted sills | Tell whether old paint contains lead |
+| Estimate rough size bands with a tape measure in frame | Replace the installer's judgment on site |
+
+The lead paint row is not a detail in the US. In homes built before 1978, window replacement disturbs painted surfaces, and the EPA's Renovation, Repair and Painting rule requires certified renovators and lead-safe work practices. Asking "when was the house built?" in the first reply lets you plan for that before the consultation, not during it.
+
+## Should you give a price range before the visit?
+
+I think yes, and this is where many window companies disagree with me. The fear is that a range scares people off. In my view, it scares off the wrong people: homeowners who wanted one cheap window, and homeowners who would never have signed. The right people appreciate knowing the ballpark before they give up an evening for a consultation.
+
+The range must come from your own price book, not from a model's imagination. A rule like "vinyl double-hung, standard size band, installed: this range" multiplied by the counted windows, with a margin for unknowns, is simple and honest. The message says clearly that the final price follows a measurement.
+
+## Sorting leads by readiness
+
+<Calc title="Napkin math: what wasted consultations cost" caption="Assumptions, not measurements. Use your own numbers for consultations, conversion, and rep time." rows={[
+  ["Consultations per week", "15"],
+  ["Share that were never going to buy", "× 30%"],
+  ["Wasted consultations per week", "≈ 4.5"],
+  ["Hours per consultation including travel", "× 2"],
+  ["Weeks per year", "× 48"]
+]} result={["Rep hours wasted per year", "≈ 430"]} />
+
+That's roughly eleven weeks of a salesperson's time, spent in living rooms that were never going to turn into orders. Even halving it frees capacity for the leads that are ready. The sorting itself is simple:
+
+- **Survey-ready:** owner, clear scope, photos, timeline within a few months. Book the consultation.
+- **Needs one answer:** almost there. The assistant asks the missing question.
+- **Later:** real interest, but "next spring". A check-in at the time they named, not a weekly drip.
+- **Not a fit:** a single glass unit to replace, or a job you don't do. A quick, friendly referral to a glazier or another trade.
+
+## What changes at the consultation
+
+When a lead arrives prepared, the consultation itself gets better, not just rarer. The rep knows there are eleven windows, that three of them are fogged, that the house was built in 1962, and that the homeowners care most about noise from the road. They bring the right samples, including an acoustic glazing option, and plan for lead-safe work practices. Both decision makers are there because the booking confirmation asked for it.
+
+The homeowner notices too. The conversation starts from their situation rather than from a generic pitch, and the price they hear at the end sits within the range they already saw. That consistency is what turns a consultation into a signed order: no surprises, no pressure, and a company that clearly listened before it showed up.
+
+## Tools and data
+
+Most window companies run a CRM such as HubSpot, Salesforce, MarketSharp, Leap, or JobNimbus. The intake assistant creates or updates the lead there, attaches photos and the summary, and sets the stage. Your price book can live in a spreadsheet to begin with; it just has to be the one source both the assistant and your reps use.
+
+Homeowners share photos of the inside of their homes, which deserves care: store them with the lead, limit access to the sales team, and delete them for leads that don't go anywhere after a sensible period. In the EU, the GDPR applies, and people should be told when they're chatting with an AI under [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act).
+
+## Questions window companies ask
+
+### Won't asking questions up front scare leads away?
+
+Some leads will drop off. Those are mostly the ones that would have been wasted consultations. Keep the questions few, conversational, and optional, and always offer a phone call for people who prefer it.
+
+### Can AI measure windows from photos?
+
+Not accurately enough to order. With a tape measure in the frame it can estimate a size band, which is good enough for a range. Ordering always needs a proper measurement by your installer.
+
+### Should we put prices on the website instead?
+
+A price guide on the website helps, but it can't account for the number and types of windows in a specific house. The assistant's range is more useful because it's based on what this homeowner actually sent you.
+
+### What if a homeowner won't send photos?
+
+Then the lead stays in "needs one answer" and a person calls. Some people just prefer talking. The point isn't to force everyone through a form, it's to stop driving out blind.
+
+## The rule of thumb
+
+Drive out for a measurement, not for an introduction. Everything a homeowner can tell you from their phone should be known before anyone gets in the car.
+
+If your sales calendar is full of consultations that go nowhere, [tell me how leads reach you today](/contact?intent=improve) and which CRM you use. I'll suggest a small intake assistant you could test within a month. The same logic applies to [solar installers deciding which site visits to make](/posts/ai-for-solar-installers-lead-screening), and to [security installers preparing site surveys](/posts/ai-for-security-installers-surveys).

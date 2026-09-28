@@ -1,0 +1,165 @@
+---
+id: "de-ai-for-moving-companies-inventory"
+title: "Umzugsunternehmen: Umzugsgutliste per Video statt Besichtigung"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Dienstleistungen vor Ort", "Umzugsunternehmen", "Umzugsgutliste", "KI für kleine Unternehmen"]
+description: "Falsche Umzugsgutlisten bedeuten zu kleine Wagen, zweite Fahrten und Streit um die Rechnung. Wie KI aus dem Rundgang-Video der Kunden eine prüfbare Liste macht."
+excerpt: "Falsche Umzugsgutlisten bedeuten zu kleine Wagen, zweite Fahrten und Streit um die Rechnung. Wie KI aus dem Rundgang-Video der Kunden eine prüfbare Liste macht."
+---
+
+Eine Kundin füllt das Onlineformular aus: „3-Zimmer-Wohnung, Umzug innerhalb der Stadt, ca. 20 Kartons.“ Das Büro schickt ein Angebot für eine typische Dreizimmerwohnung. Am Umzugstag findet die Kolonne einen Keller voller Werkzeug, eine Gefriertruhe, ein Klavier, das niemand erwähnt hat, und eher sechzig Kartons als zwanzig. Der Wagen ist zu klein, der Tag wird lang, und die Rechnung ist deutlich höher als das Angebot. Die Kundin fühlt sich betrogen, der Betrieb belogen. Beide haben ein bisschen recht.
+
+Die Alternative war immer die Besichtigung: Jemand fährt hin, geht durch jeden Raum und schreibt die Umzugsgutliste Position für Position. Das ist genau und kostet pro Angebot ein bis zwei Stunden Fachzeit, das meiste davon im Auto. Videobesichtigungen haben geholfen, aber auch dann muss jemand das Video ansehen und die Liste abtippen.
+
+Das ist eine sehr naheliegende Aufgabe für KI. Die Kundin nimmt mit dem Handy einen Rundgang auf, die Software schlägt eine Umzugsgutliste vor, und der Disponent prüft und korrigiert, statt bei null anzufangen.
+
+## Markt und Rahmen
+
+<Stats title="Umzüge in Zahlen">
+  <Stat value="8 Mio.+" label="Menschen ziehen in Deutschland jedes Jahr um, etwa jeder Zehnte" source="Umzugsstudie der Deutschen Post Adress, via eurotransport" href="https://www.eurotransport.de/logistik/spedition-und-logistik/jeder-10-zieht-jedes-jahr-in-deutschland-um-wo-das-kommen-und-gehen-besonders-hoch-ist/" />
+  <Stat value="620 €" label="je Kubikmeter Laderaum haftet ein Umzugsunternehmen nach dem Handelsgesetzbuch grundsätzlich für Verlust und Beschädigung" source="§ 451e HGB" href="https://www.gesetze-im-internet.de/hgb/__451e.html" />
+  <Stat value="20 %" label="der Arbeitskosten können Privatkunden als haushaltsnahe Dienstleistung von der Steuer abziehen, bis 4.000 € im Jahr" source="§ 35a EStG" href="https://www.gesetze-im-internet.de/estg/__35a.html" />
+</Stats>
+
+Die zweite Zahl zeigt, dass das Volumen nicht nur für den Wagen zählt. Nach § 451e HGB hängt sogar die Regelhaftung am benötigten Laderaum. Eine genaue Umzugsgutliste ist also Kalkulation, Einsatzplanung und Vertragsgrundlage zugleich. Die dritte Zahl ist ein kleiner Service, den viele vergessen: Wer die Arbeitskosten auf der Rechnung sauber ausweist, erspart der Kundschaft Ärger mit dem Finanzamt.
+
+## Vier Wege zum Angebot
+
+| Weg | Genauigkeit | Zeit im Betrieb | Aufwand für Kunden | Wofür geeignet |
+| --- | --- | --- | --- | --- |
+| Onlineformular („3 Zimmer“) | Gering | Minuten | Gering | Grobe Größenordnung |
+| Besichtigung vor Ort | Hoch | 1 bis 2 Stunden inklusive Fahrt | Zu Hause sein | Große, schwierige oder wertvolle Umzüge |
+| Live-Videotelefonat | Gut | 30 bis 45 Minuten live | Den Disponenten durch die Wohnung führen | Wenn Kunden lieber reden |
+| Aufgezeichnetes Video plus KI-Liste | Gut nach Prüfung | 10 bis 20 Minuten Prüfung | Rundgang aufnehmen, wann es passt | Die meisten Privatumzüge |
+
+Bei der letzten Zeile werden meiner Meinung nach die meisten Privatumzüge landen. Die Kundschaft nimmt auf, wann es passt, die Software macht den ersten Durchgang, und die Zeit des Disponenten fließt in Urteil statt in Tipparbeit.
+
+## Vom Rundgang-Video zur bestätigten Umzugsgutliste
+
+<Flow title="Vom Handyvideo zur bestätigten, kalkulierten Umzugsgutliste" caption="Das Modell schlägt eine Liste aus dem Video vor. Der Disponent prüft und kalkuliert. Die Kundschaft bestätigt vor dem Umzug.">
+<Step title="Kundin bekommt einen geführten Link" who="Kundin" time="Tag 0">Ein Link mit kurzen Hinweisen, Raum für Raum: Schränke öffnen, Keller und Dachboden zeigen, laut sagen, was nicht mitkommt.</Step>
+<Step title="Gegenstände erkennen und auflisten" who="KI" tone="ai" time="Minuten">Das Modell listet Möbel, Geräte und Kartons nach Raum auf, mit Anzahl und Größenklasse, und macht aus gesprochenen Hinweisen Notizen.</Step>
+<Step title="Volumen berechnen" who="System">Ihre eigene Tabelle mit Kubikmetern je Gegenstand ergibt Summen pro Raum und insgesamt.</Step>
+<Step title="Markieren, was ein Mensch klären muss" who="KI" tone="ai">Unklare Kartonzahlen, geschlossene Schränke, Sondergüter wie Klavier, Tresor, Kunst, Aquarium und alles, was ab- und aufgebaut werden muss.</Step>
+<Step title="Disponent prüft" who="Disponent" tone="human" time="10 bis 20 Min.">Sieht das Video im schnellen Durchlauf neben dem Listenentwurf, korrigiert, ergänzt und kalkuliert Wagen, Personal, Stunden und Material.</Step>
+<Step title="Kundin bestätigt die Liste" who="Kundin" tone="human">Die Kundin prüft die Liste und bestätigt sie. Was draufsteht, deckt der Preis.</Step>
+</Flow>
+
+Die Bestätigung am Ende verhindert die meisten Streitigkeiten. Wer eine raumweise Liste gesehen und bestätigt hat, kann später nicht sagen, niemand habe erwähnt, dass das Klavier extra kostet. Und eine Kolonne, die einen vollen Keller findet, der nicht auf der Liste steht, hat eine klare, faire Grundlage für ein Gespräch.
+
+So sieht die Prüfung für einen Raum aus, links der Entwurf, rechts das Video:
+
+```text
+SCHLAFZIMMER 2 (Video 04:12 bis 06:40)
+Doppelbett 160 cm mit Kopfteil ......... 1   (Abbau: ja)
+Kommode, 6 Schubladen ................. 1
+Nachttische ............................ 2
+Kleiderschrank, 3-türig ................ 1   ⚑ Inhalt nicht sichtbar
+Schreibtisch und Bürostuhl ............. 1 + 1
+Kartons, gepackt ....................... 7   ⚑ weitere im Schrank? unklar
+Kundenhinweis: „Der Schreibtisch bleibt, der gehört dem Vermieter“
+Markierungen: Schrankinhalt · Kartons im Schrank · Schreibtisch bleibt
+```
+
+Der Disponent springt auf 05:30, sieht im Schrank sechs weitere Kartons, streicht den Schreibtisch, weil die Kundin gesagt hat, dass er bleibt, und plant Kleiderboxen für den Schrankinhalt ein. Zwei Minuten Prüfung für einen Raum, der von Grund auf zehn Minuten gedauert hätte, und die Korrekturen sind genau die Art von Urteil, die ein Modell nicht treffen kann.
+
+## Die Kubikmeter-Rechnung
+
+Hinter jedem Angebot steckt eine Umzugsgutliste: Gegenstände mal Volumen, aufsummiert. Von Hand ist das langsam und fehleranfällig. Hier ein Raum mit Werten, wie sie viele Betriebe verwenden.
+
+<Calc title="Umzugsgutliste für ein Wohnzimmer" caption="Beispielwerte je Gegenstand. Nutzen Sie Ihre eigene Volumentabelle; bei Kartons rechnen viele Listen mit 0,1 m³ je Karton inklusive Stauraum." rows={[
+  ["Sofa, 3-Sitzer", "1,5 m³"],
+  ["Sessel × 2", "1,4 m³"],
+  ["Couchtisch und Beistelltische", "0,4 m³"],
+  ["Fernseher mit Lowboard", "0,6 m³"],
+  ["Regale × 2", "1,2 m³"],
+  ["Bücherkartons × 12", "1,2 m³"],
+  ["Lampen, Teppich, Deko", "0,4 m³"]
+]} result={["Summe Wohnzimmer", "≈ 6,7 m³"]} />
+
+Das für jeden Raum, Keller und Dachboden wiederholt, und eine typische Dreizimmerwohnung landet irgendwo zwischen 25 und 40 Kubikmetern. Davon hängen Fahrzeug, Kolonnengröße und Stunden ab. Ein Formular mit „3 Zimmer“ kann nicht sagen, ob es 20 oder 45 sind.
+
+## Von der Liste zum Preis
+
+Die Liste bestimmt jede Zeile des Angebots, und die meisten Zeilen folgen Regeln, die Sie ohnehin anwenden, ob sie aufgeschrieben sind oder nicht.
+
+| Angebotsposition | Hängt ab von | Typische Regel |
+| --- | --- | --- |
+| Fahrzeug | Gesamtvolumen | Nächstgrößeres Fahrzeug mit Reserve für sperrige Teile |
+| Kolonnengröße | Schwerste und sperrigste Gegenstände | Klavier, Tresor und große Geräte brauchen mehr Hände |
+| Stunden | Volumen, Zugang, Entfernung | Treppen, lange Tragewege und Aufzüge kosten Zeit |
+| Material | Räume und Gegenstände | Kleiderboxen, Matratzenhüllen, Geschirrkartons |
+| Zusatzleistungen | Markierungen | Möbelmontage, Küchenabbau, Einlagerung, Halteverbotszone |
+
+Diese Regeln aufzuschreiben gehört zum Projekt und lohnt sich ohnehin: Dann kommen zwei Disponenten beim selben Video zum selben Angebot. Das Modell liefert die Liste; Regeln und Disponent machen daraus einen Preis.
+
+## Was das Modell sieht und was nicht
+
+<Split title="Ehrlich über Videolisten" leftTitle="Video und KI erfassen gut" rightTitle="Braucht Disponent oder Kundschaft" left={[
+  "Betten, Sofas, Tische, Stühle und Schränke",
+  "Große Elektrogeräte und Unterhaltungselektronik",
+  "Sichtbare Kartons und Kisten, grob gezählt",
+  "Die raumweise Struktur des Umzugs",
+  "Gesprochene Hinweise wie „das bleibt hier“"
+]} right={[
+  "Inhalt geschlossener Schränke, Kammern und Schubladen",
+  "Wie schwer die Kartons wirklich sind, Bücher oder Bettwäsche",
+  "Zerbrechliches oder Wertvolles, das besonders verpackt werden muss",
+  "Abbau und Aufbau, etwa Küche, Betten, Wandfernseher",
+  "Zugang: Etage, Aufzug, Parkabstand, enge Türen, Halteverbotszone"
+]} />
+
+Deshalb ist die Prüfung keine Formsache. Das Modell erfasst den Großteil der Liste schnell und richtig und markiert, was es nicht sehen kann. Die Erfahrung des Disponenten ergänzt den Rest, besonders den Zugang, der oft mehr über den Preis entscheidet als die Möbel.
+
+## Die Anleitung, die Videos brauchbar macht
+
+Kunden drehen deutlich bessere Videos, wenn sie genau wissen, was sie filmen sollen. Die Hinweise im Link erledigen den größten Teil.
+
+<Checklist title="So filmen Sie Ihre Wohnung für ein Umzugsangebot" items={[
+  "Raum für Raum gehen und beim Betreten den Raum nennen",
+  "Langsam durch jeden Raum schwenken, auch Ecken und hinter Türen",
+  "Schränke und Kammern kurz öffnen, damit wir sehen, wie voll sie sind",
+  "Keller, Dachboden, Garage, Gartenhaus und Balkon nicht vergessen",
+  "Laut sagen, was nicht mitkommt oder woanders hingeht",
+  "Auf Zerbrechliches, Wertvolles oder sehr Schweres hinweisen",
+  "Hauseingang, Treppenhaus und die Stelle filmen, an der der Wagen halten würde"
+]} />
+
+## Vertrauen ist das eigentliche Produkt
+
+Die Umzugsbranche hat ein Rufproblem. Geschichten von Kolonnen, die das Umzugsgut erst gegen deutlich mehr Geld als vereinbart herausgeben, haben viele Menschen misstrauisch gemacht. Ein seriöser Betrieb kann das nutzen.
+
+<Callout title="Die Liste als Versprechen">
+Sagen Sie der Kundschaft klar: „Auf dieser Liste beruht Ihr Preis. Wenn etwas nicht draufsteht, sprechen wir darüber, bevor wir es einladen, nicht danach.“ Bewahren Sie Video und bestätigte Liste beim Auftrag auf. Das schützt die Kundschaft vor Überraschungen und Ihre Kolonne vor Diskussionen, und es ist der klarste Weg zu zeigen, dass Sie nicht zu den schwarzen Schafen gehören.
+</Callout>
+
+## Werkzeuge, die dazu passen
+
+Umzugsunternehmen arbeiten meist mit Speditions- oder Umzugssoftware für Angebote, Disposition und Rechnung. Spezialisierte Anbieter für KI-Videobesichtigungen gibt es bereits, Yembo ist ein bekanntes Beispiel. Wer es schlanker möchte, setzt eine einfachere Variante auf die vorhandene Software: Video einsammeln, Listenentwurf erzeugen und dem Disponenten im Format übergeben, mit dem Ihre Kalkulation arbeitet.
+
+Rundgang-Videos zeigen das Innere fremder Wohnungen, manchmal Unterlagen und Familienfotos. Gehen Sie sorgfältig damit um: beim Auftrag speichern, Zugriff beschränken und nach Umzug und Reklamationsfrist löschen. Das verlangt die DSGVO, und Kunden sollten wissen, dass ein automatisches System ihr Video auswertet.
+
+## Fragen, die Umzugsunternehmer stellen
+
+### Reicht eine Videoliste für einen Festpreis?
+
+Nach Prüfung durch einen erfahrenen Disponenten kann sie reichen. Bei schwierigen oder wertvollen Umzügen würde ich trotzdem eine Besichtigung vor Ort oder ein kurzes Videotelefonat für die markierten Punkte einplanen.
+
+### Nehmen Kunden wirklich ein Video auf?
+
+Die meisten ja, wenn Sie erklären, dass es die Besichtigung ersetzt und schneller zu einem genauen Preis führt. Halten Sie die Anleitung kurz und lassen Sie die Kundschaft aufnehmen, wann es passt.
+
+### Was ist mit Kartons, die noch nicht gepackt sind?
+
+Das ist die häufigste Unbekannte. Das Modell zählt, was sichtbar ist, und der Disponent schätzt den Packumfang nach Räumen, Schränken und Regalen. Wenn Sie Einpackservice anbieten, ist das Video auch Ihr bestes Werkzeug, um ihn zu kalkulieren.
+
+### Funktioniert das auch für Büroumzüge?
+
+Derselbe Ansatz funktioniert mit einer anderen Volumentabelle: Schreibtische, Stühle, Rollcontainer, Aktenschränke, IT. Bei Firmenumzügen kommen Zeitfenster und Hausordnungen dazu, die der Disponent regelt.
+
+## Die Faustregel
+
+Kalkulieren, was man gesehen hat, von der Kundschaft bestätigen lassen und die Liste die Diskussionen klären lassen, bevor sie entstehen.
+
+Wenn zu kleine Wagen und Streit um die Schlussrechnung zu Ihrer Saison gehören, [schreiben Sie mir, wie Sie Angebote heute erstellen](/contact?intent=improve) und mit welcher Software Sie arbeiten. Ich schlage Ihnen vor, wie ein Pilot mit Videolisten aussehen könnte. Dieselbe Idee, vor dem Preis zu messen, beschreibe ich für den [Garten- und Landschaftsbau](/de/posts/ai-for-landscapers-estimates) und die [Gebäudereinigung](/de/posts/ai-for-cleaning-companies-scope).

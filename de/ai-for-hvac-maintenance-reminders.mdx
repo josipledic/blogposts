@@ -1,0 +1,160 @@
+---
+id: "de-ai-for-hvac-maintenance-reminders"
+title: "Wartungsverträge im SHK-Betrieb: Erinnerungen, aus denen Termine werden"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Handwerk & Bau", "SHK-Betriebe", "Wartungsverträge", "KI für kleine Unternehmen"]
+description: "Die Standard-Wartungserinnerung wird ignoriert. Wie SHK-Betriebe mit KI Erinnerungen schreiben, die zur Anlage und ihrer Geschichte passen, und mehr Verträge halten."
+excerpt: "Die Standard-Wartungserinnerung wird ignoriert. Wie SHK-Betriebe mit KI Erinnerungen schreiben, die zur Anlage und ihrer Geschichte passen, und mehr Verträge halten."
+---
+
+Fast jeder SHK-Betrieb, den ich kenne, verschickt einmal im Jahr dieselbe Nachricht: „Ihre Heizungswartung steht an. Rufen Sie uns an, um einen Termin zu vereinbaren.“ Per Brief, E-Mail oder SMS an alle Kunden mit Wartungsvertrag. Manche melden sich. Viele nicht, und ein paar Monate später schläft der Vertrag still ein.
+
+Das Absurde daran: Der Betrieb weiß über jeden dieser Kunden eine Menge. Der Monteur hat notiert, dass bei Familie Hansen der Ionisationsstab verschmutzt war. Familie Park hat eine fünfzehn Jahre alte Gastherme und im Frühjahr ein Baby bekommen. Im Büro weiß man, dass Herr Yilmaz nur vormittags kann. Nichts davon steht in der Erinnerung, weil niemand sechshundert einzelne Schreiben von Hand verfassen kann.
+
+Genau diese Lücke würde ich mit KI schließen. Kein Chatbot, keine aufdringliche Verkaufsmaschine, sondern Erinnerungen, die klingen, als hätte sie jemand geschrieben, der sich an den letzten Besuch erinnert, und ein Antwortpostfach, das nicht für jedes „Geht auch Donnerstag?“ einen Menschen braucht.
+
+## Warum gerade jetzt
+
+Der Heizungsmarkt hat sich in kurzer Zeit gedreht, und das verändert, was in so einer Erinnerung stehen sollte.
+
+<Stats title="Der Heizungsmarkt in Bewegung">
+  <Stat value="299.000" label="Heizungs-Wärmepumpen wurden 2025 in Deutschland verkauft, 55 % mehr als im Vorjahr" source="BDH und BWP, via TGA Fachplaner" href="https://www.tga-fachplaner.de/meldungen/marktdaten-2025-waermepumpenabsatz-steigt-um-55-auf-299000-geraete" />
+  <Stat value="− 36 %" label="weniger Gas-Brennwertkessel wurden 2025 abgesetzt, rund 229.000 Stück" source="BDH, via TGA Fachplaner" href="https://www.tga-fachplaner.de/meldungen/marktdaten-2025-waermepumpenabsatz-steigt-um-55-auf-299000-geraete" />
+  <Stat value="Juli 2026" label="trat das Gebäudemodernisierungsgesetz in Kraft und ersetzte die 65-Prozent-Regel des bisherigen GEG" source="Bundesregierung" href="https://www.bundesregierung.de/breg-de/aktuelles/neues-gebaeudemodernisierungsgesetz-2430284" />
+</Stats>
+
+Für die Wartung heißt das: Der Bestand wird bunter. Neben der alten Gastherme stehen immer mehr Wärmepumpen, dazu Hybridanlagen und Pelletkessel. Jede Anlage braucht andere Prüfungen, und viele Kunden wissen nicht genau, was bei ihrer Anlage eigentlich gemacht wird. Viele verwechseln die Wartung auch mit dem Besuch des Schornsteinfegers. Eine Erinnerung, die erklärt, was bei genau dieser Anlage geprüft wird und warum, hat deutlich bessere Chancen.
+
+Wie viel Wartung bei Wärmepumpen ausmacht, zeigt eine Untersuchung des US-Normungsinstituts NIST: Schon eine Unterfüllung mit Kältemittel treibt den Energieverbrauch messbar nach oben.
+
+<Bars title="Mehrverbrauch einer Wärmepumpe bei zu wenig Kältemittel" unit=" %" caption="Anstieg des Energieverbrauchs einer Wärmepumpe bei Kältemittel-Unterfüllung, aus Labortests und Simulationen des NIST. Bei der Wartung wird die Füllmenge geprüft." source="NIST, 2014" href="https://www.nist.gov/news-events/news/2014/11/underperforming-energy-efficiency-hvac-equipment-suffers-due-poor" data={[
+  { label: "10 % zu wenig Kältemittel", value: 3 },
+  { label: "20 % zu wenig Kältemittel", value: 8 },
+  { label: "30 % zu wenig Kältemittel", value: 16, highlight: true }
+]} />
+
+Solche Fakten gehören in eine Erinnerung, passend zur Anlage des Kunden. „Ihre Wartung ist fällig“ klingt nach Pflicht. „Beim letzten Besuch war der Kältemitteldruck etwas niedrig, und eine unterfüllte Wärmepumpe verbraucht spürbar mehr Strom“ ist ein Grund.
+
+## Standard oder persönlich
+
+Der Unterschied, direkt nebeneinander:
+
+<Split title="Zwei Erinnerungen für denselben Kunden" leftTitle="Die Standardfassung" rightTitle="Die Fassung, die sich erinnert" left={[
+  "Ihre jährliche Heizungswartung steht an!",
+  "Vereinbaren Sie jetzt einen Termin.",
+  "Rufen Sie uns unter der unten stehenden Nummer an.",
+  "Derselbe Text für alle Vertragskunden."
+]} right={[
+  "Guten Tag Frau Park, Ihre Heizungswartung steht vor der ersten kalten Woche an.",
+  "Im Frühjahr hat Herr Keller notiert, dass der Ionisationsstab verschmutzt war. Er reinigt ihn und prüft den Wärmetauscher, was bei einer 15 Jahre alten Therme wichtig ist.",
+  "Passt Ihnen Dienstag- oder Donnerstagvormittag nächste Woche? Antworten Sie einfach mit dem Tag.",
+  "Aus Wartungshistorie und Monteursnotizen entworfen, vor dem Versand geprüft."
+]} />
+
+Die rechte Fassung ist kein Marketingtrick. Jeder Satz darin stimmt und stammt aus den eigenen Unterlagen des Betriebs. Ein Mensch braucht dafür zehn Minuten, ein Sprachmodell für den Entwurf eine Sekunde.
+
+## Worauf eine gute Erinnerung zugreift
+
+Das Modell kann nur mit dem personalisieren, was in Ihren Unterlagen steht. Diese Daten würde ich pro Kunde heranziehen, und genauso wichtig: was draußen bleibt.
+
+| Datensatz | Beispiel | Was daraus in der Erinnerung wird |
+| --- | --- | --- |
+| Anlagenart und Alter | 15 Jahre alte Gastherme, 3 Jahre alte Wärmepumpe | Welche Prüfungen am wichtigsten sind und warum sie bei älteren Geräten mehr zählen |
+| Befunde beim letzten Besuch | „Ionisationsstab verschmutzt“, „Ausdehnungsgefäß Vordruck niedrig“ | Ein Satz dazu, was erneut geprüft wird |
+| Ersatzteillage | Ältere Therme, für die Teile knapp werden | Ein ehrlicher Hinweis, dass man mittelfristig über die Erneuerung sprechen sollte |
+| Herstellergarantie | Garantie, die regelmäßige Fachwartung voraussetzt | Der Hinweis, dass die Wartung die Garantie absichert |
+| Terminwünsche | Nur vormittags, Schlüssel beim Nachbarn, Hund im Garten | Vorgeschlagene Termine und Hinweise für den Monteur |
+| Was der Kunde erzählt hat | Neugeborenes, pflegebedürftige Mutter im Haus | Vorrang vor dem ersten Kälteeinbruch |
+
+Was draußen bleibt: alles, was der Kunde Ihnen nicht selbst gesagt hat, Vermutungen über seine Finanzen und alles aus Quellen außerhalb Ihrer eigenen Unterlagen. Der Test ist einfach. Wenn der Kunde fragt „Woher wissen Sie das?“, muss die Antwort immer lauten: „Das hat unser Monteur beim letzten Besuch notiert“ oder „Das haben Sie uns gesagt“.
+
+## Mit Erinnerungen die Spitze glätten
+
+Es gibt einen betrieblichen Grund, Erinnerungen gut zu machen, der mit Vertragsverlängerungen nichts zu tun hat. Jeder Betrieb kennt die Woche des ersten Kälteeinbruchs: Das Telefon glüht, alle Monteure sind bei Störungen, Wartungstermine werden verschoben, um Platz zu schaffen. Die Anlagen, die in dieser Woche ausfallen, gehören oft Kunden, die ihre Wartung im Sommer ausgelassen haben.
+
+Bessere Erinnerungen verschieben die Nachfrage. Statt allen am selben Tag dieselbe Nachricht zu schicken, sprechen Sie zuerst die Kunden an, die Sie im Ansturm am wahrscheinlichsten brauchen: alte Anlagen, ein Hinweis des Monteurs beim letzten Mal, eine Anlage, die schon im letzten Winter gestreikt hat. Buchen Sie diese Kunden früh, solange Sie im Spätsommer noch freie Termine haben. Der Kälteeinbruch kommt trotzdem, aber weniger Ihrer Vertragskunden stehen dann auf der Störungsliste.
+
+Hier endet übrigens die Aufgabe des Modells, und eine einfache Rangfolge übernimmt. „Welche Kunden sprechen wir zuerst an?“ ist ein Sortierproblem über Anlagenalter, Hinweise und frühere Ausfälle. Das erledigt eine Tabellenformel oder ein paar Zeilen Code zuverlässig. Der Beitrag des Modells ist, aus dem Ergebnis Nachrichten zu machen, auf die Menschen tatsächlich antworten.
+
+## Was ein paar Prozentpunkte wert sind
+
+Wartungsverträge machen aus Einmalkunden wiederkehrenden Umsatz und geben Ihnen einen ersten Blick auf jede Anlage, bevor sie ausfällt. Der Überschlag für Verlängerungen ist einfach.
+
+<Calc title="Überschlag: was ein paar Punkte Vertragstreue wert sind" caption="Annahmen, keine Messwerte. Setzen Sie Ihre Vertragszahl, Ihre Verlängerungsquote und den Jahresumsatz eines Vertragskunden ein." rows={[
+  ["Kunden mit Wartungsvertrag", "800"],
+  ["Verlängerungsquote heute", "65 %"],
+  ["Verlängerungsquote mit besseren Erinnerungen", "75 %"],
+  ["Zusätzlich gehaltene Kunden pro Jahr", "80"],
+  ["Jahreswert eines Vertragskunden (Wartung plus übliche Reparaturen)", "× 350 €"]
+]} result={["Zusätzlicher Umsatz pro Jahr", "≈ 28.000 €"]} />
+
+Die andere Hälfte des Werts steht nicht in dieser Rechnung: Vertragskunden rufen zuerst Sie an, wenn etwas kaputtgeht, und ein Monteur, der die Anlage regelmäßig sieht, erkennt das schwächelnde Bauteil vor dem Totalausfall.
+
+## Die Abfolge der Erinnerungen
+
+Eine gute Abfolge beginnt früh, bietet konkrete Termine an und übergibt an einen Menschen, wenn der automatische Teil nicht mehr weiterkommt.
+
+<Timeline title="Erinnerungen für einen Wartungstermin">
+<Phase when="45 Tage vorher" title="Persönliche Erinnerung">Aus der Wartungshistorie entworfen: was fällig ist, was der Monteur beim letzten Mal notiert hat, und zwei oder drei Terminvorschläge.</Phase>
+<Phase when="30 Tage vorher" title="Nachfassen mit Terminen">Eine kürzere Nachricht mit neuen Terminvorschlägen über den Kanal, den der Kunde bevorzugt.</Phase>
+<Phase when="14 Tage vorher" title="SMS">Eine Zeile, eine Frage: „Soll ich Ihnen Donnerstag, 9 Uhr, reservieren?“</Phase>
+<Phase when="7 Tage vorher" title="Anrufliste fürs Büro">Wer nicht geantwortet hat, kommt auf eine Anrufliste, mit einer Zeile zu Anlage und Vorgeschichte.</Phase>
+<Phase when="Nach dem Termin" title="Befund in klaren Worten">Eine kurze Zusammenfassung, was der Monteur gefunden hat und was bis zur nächsten Wartung Aufmerksamkeit braucht.</Phase>
+</Timeline>
+
+Den Schritt mit der Anrufliste würde ich nie wegautomatisieren. Ein Kunde, der drei Nachrichten ignoriert, ist vielleicht unzufrieden, vielleicht umgezogen oder einfach beschäftigt. Das ist ein Gespräch, und das führt Ihr Büro besser als jedes Modell.
+
+## Wie Antworten bearbeitet werden
+
+Bei den Antworten verlieren die meisten Büros Zeit. Kunden antworten in jeder denkbaren Form, und jede Antwort muss jemand lesen, mit dem Terminplan abgleichen und beantworten. Das kann ein Sprachmodell zum großen Teil übernehmen.
+
+<Flow title="Was passiert, wenn ein Kunde antwortet" caption="Das Modell liest und entwirft. Buchungen laufen über den Terminplan. Alles, was nach Störung oder Kündigung klingt, geht an einen Menschen.">
+<Step title="Kunde antwortet" who="Kunde" time="jederzeit">„Donnerstag passt“, „geht es auch nach 16 Uhr?“, „die Heizung macht übrigens komische Geräusche“ oder „bitte kündigen“.</Step>
+<Step title="Anliegen verstehen" who="KI" tone="ai" time="Sekunden">Buchen, verschieben, Frage, Störung oder Kündigung. Bei unklaren Antworten fragt der Assistent nach.</Step>
+<Step title="Buchungen direkt in den Plan" who="System">Einfache Buchungen werden in der Handwerkersoftware reserviert und dem Kunden bestätigt.</Step>
+<Step title="Störungen werden zum Auftrag" who="Büro" tone="human">„Macht komische Geräusche“ ist keine Wartungsbuchung. Das geht als möglicher Störungsauftrag mit Anlagenhistorie ans Büro.</Step>
+<Step title="Kündigungen gehen an einen Menschen" who="Büro" tone="human">Das Modell diskutiert nie mit einem Kunden, der kündigen will. Es gibt Nachricht, Historie und Vertragsende ans Büro weiter.</Step>
+</Flow>
+
+Die letzte Regel ist mir wichtig. Es ist verlockend, ein Modell automatisch „Kundenrückgewinnung“ machen zu lassen. So entstehen genau die aufdringlichen Nachfassaktionen, die dem Handwerk einen schlechten Ruf einbringen. Wer kündigen will, soll mit einem Menschen sprechen.
+
+## Wo das andockt
+
+Die meisten Betriebe arbeiten bereits mit Handwerkersoftware wie HERO, pds, Streit V.1 oder TopKontor, oft mit eigenem Wartungsmodul. Dort liegen Verträge, Anlagendaten und Monteursnotizen, und viele Programme verschicken schon einfache Erinnerungen. Der KI-Teil sitzt obendrauf: Er liest die Historie, entwirft die persönliche Nachricht und bearbeitet Antworten, und Buchungen schreibt er über die Schnittstelle der Software zurück.
+
+Wie gut die Erinnerungen werden, hängt fast vollständig von der Qualität der Monteursnotizen ab. Wenn bei jedem Besuch „Wartung durchgeführt, i. O.“ steht, gibt es nichts zu personalisieren. Einen Nebeneffekt würde ich bei so einem Projekt deshalb erwarten: Monteure schreiben bessere Notizen, sobald sie sehen, dass sie genutzt werden.
+
+## Einwilligung und Ton
+
+Zwei praktische Regeln halten das auf der richtigen Seite, rechtlich und bei den Kunden.
+
+<Callout title="Erst die Einwilligung" tone="warning">
+Werbung per E-Mail oder SMS braucht nach § 7 UWG grundsätzlich eine ausdrückliche Einwilligung. Für Bestandskunden gibt es eine enge Ausnahme für ähnliche Leistungen, wenn bei der Erhebung der Adresse und in jeder Nachricht auf das Widerspruchsrecht hingewiesen wird. Terminerinnerungen im Rahmen eines bestehenden Wartungsvertrags sind etwas anderes als Werbung, aber auch dort gehört eine einfache Abmeldemöglichkeit in jede Nachricht, und ein Widerspruch gilt sofort.
+</Callout>
+
+Die zweite Regel betrifft den Ton. Die Erinnerung darf nie Dringlichkeit erfinden. Wenn der Monteur nichts notiert hat, steht das so da. Der ganze Wert einer persönlichen Erinnerung liegt darin, dass Kunden ihr vertrauen lernen, und dieses Vertrauen ist beim ersten falschen Alarm weg.
+
+## Fragen, die SHK-Betriebe stellen
+
+### Wirken persönliche Details in einer Erinnerung nicht unheimlich?
+
+Nicht, wenn alles darin aus Ihren eigenen Besuchen stammt. Kunden erwarten, dass ihr Heizungsbauer ihre Anlage kennt. Unheimlich wird es bei Informationen, die sie Ihnen nicht gegeben haben, und die haben in der Nachricht nichts zu suchen.
+
+### Kann das direkt in HERO oder pds buchen?
+
+Meist ja, über die Schnittstellen der Programme, zumindest für einfache Buchungen. Alles Ungewöhnliche, etwa zwei Termine auf einmal oder eine Anlage, die Sie noch nie gewartet haben, würde ich trotzdem einem Menschen vorlegen.
+
+### Funktioniert das ohne gute Monteursnotizen?
+
+Teilweise. Anlagenart, Alter und Wartungshistorie reichen für eine ordentliche Erinnerung. Die überzeugendsten Nachrichten entstehen aber aus konkreten Befunden, deshalb zahlen sich bessere Notizen schnell aus.
+
+### Lohnt sich das für einen Betrieb mit fünf Monteuren?
+
+Wenn Sie ein paar hundert Wartungsverträge haben, ja, denn dort liegt der planbare Umsatz eines kleinen Betriebs. Fangen Sie mit der Bearbeitung der Antworten an, die spart sofort Bürozeit, und nehmen Sie die persönlichen Erinnerungen dazu, sobald Sie sehen, wie Kunden reagieren.
+
+## Die Regel, die ich behalten würde
+
+Jede Erinnerung sollte mindestens einen Satz enthalten, der nur für diesen einen Kunden stimmt. Sonst ist sie eine Postkarte, und Postkarten ignoriert man leicht.
+
+Wenn Sie sehen möchten, was bessere Erinnerungen bei Ihrem Vertragsbestand bewirken könnten, [schreiben Sie mir, welche Handwerkersoftware Sie nutzen](/contact?intent=improve) und wie viele Verträge Sie ungefähr haben. Ich schlage Ihnen einen kleinen Piloten vor. Für das andere Ende des Geschäfts lesen Sie, wie ich [Notdienstanrufe im Sanitärbetrieb](/de/posts/ai-for-plumbers-emergency-calls) sortieren würde, und für neue Anlagen den Beitrag zur [Vorqualifizierung von PV-Anfragen](/de/posts/ai-for-solar-installers-lead-screening).

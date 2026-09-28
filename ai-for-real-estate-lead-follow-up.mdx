@@ -1,0 +1,141 @@
+---
+id: "ai-for-real-estate-lead-follow-up"
+title: "Following Up With Serious Buyers: AI for Local Estate Agents"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Property", "Estate agents", "Lead follow-up", "AI for small business"]
+description: "Sixty portal inquiries, a handful of serious buyers, and all of them waiting. How local estate agents can use AI to reply fast, qualify fairly and follow up."
+excerpt: "Sixty portal inquiries, a handful of serious buyers, and all of them waiting. How local estate agents can use AI to reply fast, qualify fairly and follow up."
+---
+
+Four numbers explain why follow-up is the part of an estate agent's week that decides the rest of it.
+
+Buyers still use agents: 88% of recent US buyers bought through one. They take their time: the typical search lasts ten weeks. They remember how they were treated: 43% found their agent through a referral, and another 18% went back to an agent they'd used before. And they don't wait: an old but much-quoted study of online sales leads found that firms answering within an hour were about seven times more likely to qualify the lead than those answering an hour later, while the average response took 42 hours.
+
+Put those together and the job is clear. Answer quickly, work out who is ready, stay useful for ten weeks, and treat everyone well enough that they send you their friends. Most small agencies know this. What gets in the way is the inbox.
+
+<Stats title="What buyers do, and what they expect">
+  <Stat value="88%" label="of recent US home buyers purchased through an agent" source="NAR 2025 Profile of Home Buyers and Sellers" href="https://www.nar.realtor/news/economists-outlook/top-10-takeaways-from-nars-2025-profile-of-home-buyers-and-sellers" />
+  <Stat value="10 weeks" label="median length of a buyer's home search" source="NAR 2025 Profile, via Virginia REALTORS" href="https://virginiarealtors.org/2025/12/08/key-takeaways-from-nars-2025-profile-of-home-buyers-and-sellers/" />
+  <Stat value="43%" label="of buyers found their agent through a referral from a friend, neighbour or relative" source="NAR 2025 Profile of Home Buyers and Sellers" href="https://www.nar.realtor/news/economists-outlook/top-10-takeaways-from-nars-2025-profile-of-home-buyers-and-sellers" />
+  <Stat value="7x" label="more likely to qualify a lead when contacting within an hour rather than later" source="Harvard Business Review, 2011" href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" />
+</Stats>
+
+## Sixty inquiries, one house
+
+Picture a three-person agency listing a family house at a fair price. It goes live on the portals on Thursday. By Monday there are sixty inquiries.
+
+Some are from people who have sold their own place, have a mortgage agreement in principle and want to view this week. Some are from people who might move next year. Some want to know the price when it's in the listing. A few are neighbours curious about what the house is worth. One is a developer. Several ask the same questions: is there parking, how old is the boiler, is the price negotiable, can I view on Saturday.
+
+The agents are out doing viewings and valuations. They reply to the inquiries in the evening, in the order they arrived. The two buyers who were ready to offer have already viewed three other houses by then, and one of them has booked a second viewing elsewhere.
+
+Nobody did anything wrong. There were just sixty messages and three people. That's the part AI can take on: answer every inquiry within minutes, with the facts from the listing, ask the few questions that show how ready someone is, and put the ready buyers in front of an agent the same day.
+
+## What "serious" looks like
+
+The instinct is to rank buyers by how serious they sound. That's unreliable and, done carelessly, unfair. A better approach is to ask everyone the same few practical questions and sort on the answers.
+
+<Matrix title="Readiness and fit, not gut feeling" caption="Readiness is about timing and money. Fit is about whether this property matches what they told you they need. Everyone gets a fast, friendly reply; the quadrant decides what happens next." xLabel="Fit with this property" yLabel="Readiness to buy" quadrants={[
+  { title: "Ready, poor fit: show them something else", text: "Financing in place, needs a garden this house doesn't have. Offer similar listings and coming-soon properties." },
+  { title: "Ready and a good fit: agent calls today", text: "Mortgage in principle or cash, nothing to sell or sale agreed, wants to view this week, the house matches their must-haves.", highlight: true },
+  { title: "Early, poor fit: stay in touch lightly", text: "Browsing, no timeline, unclear needs. Useful information and new listings now and then." },
+  { title: "Early, good fit: nurture properly", text: "Likes this kind of house, still needs to sell or arrange a mortgage. Help with next steps, including a valuation of their own home." }
+]} />
+
+The questions behind the matrix are practical and the same for everyone:
+
+- Have you spoken to a lender or mortgage broker yet, or is this a cash purchase?
+- Do you have a property to sell, and if so, is it on the market or sold?
+- When would you ideally like to move?
+- What do you need that this house has, and is there anything missing for you?
+- When could you view?
+
+Asked in a friendly, optional way, most buyers answer happily because the questions help them too. Nobody should be required to answer before getting information about a property that's publicly advertised.
+
+<Callout title="Qualify on readiness, never on who someone is" tone="warning">
+A model should never sort, score or prioritise buyers on anything connected to protected characteristics: ethnicity, religion, family status, disability, age, sex, or proxies for them such as names, languages or neighbourhoods. In the US the Fair Housing Act applies whether a person or a piece of software makes the decision, and the UK's Equality Act covers estate agents too. Keep qualification to timing, finance and the stated fit with the property, log the reasons for each follow-up decision, and review the rules with your compliance adviser before switching anything on.
+</Callout>
+
+## What the first reply looks like
+
+A good first reply answers the question, gives the useful facts and makes the next step easy. For a buyer who asked "Is this still available and can I view on Saturday?", the model could draft:
+
+> Hi Sarah, thanks for your message about 12 Orchard Lane. Yes, it's still available. We have viewing slots on Saturday at 10:00, 11:30 and 14:00; just reply with the one that suits you. A few quick facts people often ask about: the driveway fits two cars, the boiler was replaced in 2021, and the council tax band is D. To help us plan, may I ask whether you have a home to sell and whether you've spoken to a mortgage adviser yet? No problem if not, we're happy to help with both. Best, Anna, Hill & Partners.
+
+Every fact in that reply comes from the listing record. If the buyer asks something the listing doesn't answer ("Is the neighbour planning an extension?"), the model says it will check with the agent, and the agent answers. In the UK, listings already have to carry material information such as council tax band and tenure, which gives the model a solid base to answer from.
+
+## From inquiry to viewing to offer
+
+<Flow title="How an inquiry moves" caption="The model replies, asks and summarises. Agents call, show and negotiate. Anything about price, offers or legal questions goes to a person.">
+<Step title="Inquiry arrives" who="Buyer" time="any hour">Portal message, website form, email, text or a missed call with voicemail.</Step>
+<Step title="Instant reply" who="AI" tone="ai" time="under 5 min">Answers from the listing, offers viewing slots, asks the readiness questions politely.</Step>
+<Step title="Summary to the agent" who="AI" tone="ai" time="seconds">Name, property, answers so far, quadrant, suggested next step, in the CRM.</Step>
+<Step title="Call ready buyers" who="Agent" tone="human" time="same day">A real conversation with the buyers who are ready and a good fit.</Step>
+<Step title="Viewing and feedback" who="Agent" tone="human">Shows the property; the model sends a feedback request afterwards and summarises replies.</Step>
+<Step title="Follow-up and matching" who="AI" tone="ai" time="ongoing">Drafts the next messages and suggests other listings that match what the buyer said they need.</Step>
+</Flow>
+
+The summary is where the agent saves time. Instead of reading sixty threads, they see a list sorted by readiness and fit, each with one line: "Sold subject to contract, mortgage agreed in principle, wants to move by March, needs three bedrooms and parking, can view Saturday morning."
+
+## The ten-week follow-up
+
+Most buyers won't buy the first house they ask about. A ten-week search means the agent who stays helpful for ten weeks, without nagging, is the one who's there when the buyer is ready. That needs a cadence, and cadences are exactly what busy agents drop first.
+
+<Timeline title="A follow-up cadence that respects people's time" caption="Illustrative. Every message is short, useful and easy to stop. The agent approves anything that isn't routine.">
+<Phase when="Minute 1" title="Reply">Answer the question, offer viewing slots, ask the readiness questions.</Phase>
+<Phase when="Same day" title="Agent call">For ready, good-fit buyers. A person, not a message.</Phase>
+<Phase when="After the viewing" title="Feedback">A short message asking what they liked and what put them off. Replies go to the agent and the seller report.</Phase>
+<Phase when="Day 3 to 5" title="Next step">If interested: offer process, second viewing, surveyor contacts. If not: similar properties, based on what they said.</Phase>
+<Phase when="Every 2 weeks" title="Relevant listings">New and coming-soon properties that match their stated needs. Nothing generic.</Phase>
+<Phase when="Monthly" title="Light touch">For early buyers: local market notes, a valuation offer if they have a home to sell.</Phase>
+</Timeline>
+
+The feedback step pays twice. Buyers who explain why they didn't like a house tell you what to show them next. Sellers get real feedback instead of "they'll think about it", which matters when you're discussing a price reduction.
+
+## Buyers are also sellers
+
+Many buyers have a home to sell. In the matrix they often sit in "early, good fit": they want a house like yours but can't commit until their own sale is under way. For a local agent, that's the most valuable lead in the inbox, because it's also a potential listing.
+
+The follow-up for these buyers should offer help with the sale: a valuation, an idea of how long homes like theirs take to sell locally, what they'd need to do before listing. The model can draft that offer. The valuation itself stays with the agent.
+
+## What AI shouldn't do
+
+Some parts of the job stay with people, and should be set that way from the start:
+
+- **Price and negotiation.** "Would the seller accept 20,000 less?" goes to the agent, every time.
+- **Offers.** Receiving, presenting and confirming offers is regulated and personal.
+- **Legal and survey questions.** Rights of way, boundary disputes, structural issues: the agent answers or refers to the right professional.
+- **Seller confidentiality.** Why the seller is moving, how quickly they need to sell, what they'd accept: never disclosed by a chatbot.
+- **Judgment calls about people.** The model sorts on answers to practical questions, not on impressions.
+
+And if your agency handles ten inquiries a week, you don't need any of this. A shared inbox, a few good templates and a rule that every inquiry gets an answer the same day will do most of the work.
+
+## Tools that fit
+
+Real estate CRMs such as Follow Up Boss, Lofty, BoldTrail or Sierra Interactive in the US, and Reapit, Alto or Street in the UK, already collect portal leads, send drip campaigns and track viewings. Many now include AI assistants for replies and lead scoring. The pieces described here work inside or next to them: replies that use only the facts in the listing, the same readiness questions for everyone, a one-line summary per buyer, and follow-ups based on what each buyer actually said.
+
+Buyer information, especially financial details, is personal data. Keep it in the CRM, not in copies of chat logs, and don't send it to tools without a proper data agreement.
+
+## What agents ask me
+
+### Will buyers mind talking to AI?
+
+Most buyers mind waiting more than they mind a well-written automated reply, as long as it's honest. Say that it's an assistant, sign replies with the agent who will follow up, and make it easy to reach a person. In the EU, [Article 50 of the AI Act](https://ai-act-service-desk.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has required chatbots to say they're AI since August 2026.
+
+### Can the model book viewings directly?
+
+Yes, if it's connected to the agents' calendars and the seller's availability. Many agencies start with the model offering slots and the agent confirming, then allow direct booking once it works reliably.
+
+### Doesn't this make every agency sound the same?
+
+Only if you let it. Write the reply templates in your own voice, include local knowledge (schools, transport, the good bakery round the corner), and keep the phone call with a person for the buyers who matter most.
+
+### How do I know it's working?
+
+Track three things before and after: time to first reply, the share of inquiries that turn into viewings, and how many ready buyers an agent speaks to on the same day. If those improve, it's working.
+
+## Rule of thumb
+
+Answer every inquiry within minutes with facts from the listing, ask everyone the same practical questions, call the ready buyers yourself the same day, and keep following up with something useful for ten weeks. The buyer you treat well this month may be selling next year, or sending you a friend who is.
+
+If your inbox after a new listing looks like this, [tell me which CRM and portals you use](/contact?intent=improve), and I'll suggest where to start. Property managers deal with a similar flood of messages in [maintenance requests](/posts/ai-for-property-managers-maintenance), coworking spaces turn tour requests into members in [the right membership](/posts/ai-for-coworking-spaces-sales), and caterers race the same clock with [inquiries that go cold fast](/posts/ai-for-catering-inquiries).

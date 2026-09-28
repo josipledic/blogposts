@@ -1,0 +1,143 @@
+---
+id: "de-ai-for-print-shops-preflight"
+title: "Druckerei: Auftragsfehler erkennen, bevor die Maschine läuft"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Produktion", "Druckereien", "Auftragsprüfung", "KI für kleine Unternehmen"]
+description: "PDF ohne Preflight-Fehler, trotzdem Nachdruck: falsches Format, Datum oder Falz. Fünf Irrtümer über KI in Druckereien und was sie findet, was Preflight nicht sieht."
+excerpt: "PDF ohne Preflight-Fehler, trotzdem Nachdruck: falsches Format, Datum oder Falz. Fünf Irrtümer über KI in Druckereien und was sie findet, was Preflight nicht sieht."
+---
+
+Eine kleine Druckerei bekommt einen Auftrag über 5.000 gefalzte Flyer für das Frühlingsfest eines Gartencenters. Das PDF besteht den Preflight ohne eine einzige Warnung: Schriften eingebettet, Bilder mit 300 dpi, CMYK, 3 mm Beschnitt. Der Auftrag läuft über Nacht, wird morgens gefalzt und geht mittags raus. Um drei ruft der Kunde an. Auf dem Flyer steht „Samstag, 14. Mai“. In diesem Jahr ist der 14. Mai ein Donnerstag. Das Fest ist am Samstag, dem 16.
+
+Formal hat die Druckerei nichts falsch gemacht. Der Kunde hat die Datei geliefert und die Druckfreigabe erteilt. In der Praxis druckt die Druckerei zum Selbstkostenpreis nach, um einen guten Kunden zu halten, und die Maschinenzeit, das Papier und die Falzmaschine, die für andere Aufträge eingeplant waren, sind weg.
+
+Preflight-Software ist hervorragend in dem, was sie tut: prüfen, ob ein PDF technisch druckfähig ist. Sie weiß nicht, was bestellt wurde, was im Dokument steht oder ob Datum und Wochentag zusammenpassen. In dieser Lücke zwischen „technisch korrekter Datei“ und „korrektem Auftrag“ bringt KI etwas Neues in die Druckerei.
+
+## Was Preflight schon findet
+
+<Stats title="Druckindustrie und die häufigsten Dateiprobleme">
+  <Stat value="rund 6.000" label="überwiegend kleine und mittlere Betriebe zählt die Druckindustrie in Deutschland, mit rund 95.000 Beschäftigten" source="Bundesverband Druck und Medien" href="https://www.bvdm-online.de/bvdm/branchenportal/druckindustrie/die-branche" />
+  <Stat value="83 %" label="der Druckereien haben weniger als 20 sozialversicherungspflichtig Beschäftigte" source="Bundesverband Druck und Medien" href="https://www.bvdm-online.de/bvdm/branchenportal/druckindustrie/die-branche" />
+  <Stat value="über 70 %" label="der Befragten einer GWG-Umfrage nannten zu niedrige Bildauflösung als häufiges Problem, über 50 % falsche Farbräume und fehlenden Beschnitt" source="GWG, via Prepressure" href="https://www.prepressure.com/pdf/pdf-troubleshooter" />
+</Stats>
+
+Diese technischen Probleme sind bekannt, und Werkzeuge wie Enfocus PitStop oder callas pdfToolbox erledigen sie zuverlässig, oft mit automatischer Korrektur nach PDF/X und den Vorgaben aus dem ProzessStandard Offsetdruck. Dafür braucht es keine KI, und nichts in diesem Beitrag schlägt vor, das zu ersetzen. Die Frage ist, was passiert, nachdem die Datei technisch sauber ist.
+
+## Irrtum 1: „Was den Preflight besteht, ist richtig“
+
+Preflight prüft das PDF gegen technische Regeln. Es vergleicht die Datei nicht mit dem Auftrag: ob das Format zum bestellten passt, ob ein vierseitiger Auftrag als zweiseitige Datei kam, ob die Falzmarken zur gewählten Falzart passen, ob Sonderfarben in der Datei als CMYK bestellt wurden. Den Inhalt liest es gar nicht.
+
+Tatsächlich entstehen viele teure Nachdrucke aus Abweichungen und inhaltlichen Fehlern, die keine technische Prüfung sieht. Die Datei gegen den Auftrag zu prüfen und den Inhalt auf offensichtliche Widersprüche zu lesen, ist ein eigener Schritt, und genau dort ist ein Sprachmodell mit Bilderkennung wirklich nützlich.
+
+<Split title="Was welche Prüfung ansieht" leftTitle="Technischer Preflight" rightTitle="Auftrags- und Inhaltsprüfung" left={[
+  "Bildauflösung",
+  "Farbräume und Farbauftrag",
+  "Beschnitt und Endformat",
+  "Eingebettete Schriften",
+  "Transparenzen, Überdrucken, Haarlinien",
+  "PDF/X-Konformität"
+]} right={[
+  "Format und Seitenzahl gegen den Auftrag",
+  "Falz, Weiterverarbeitung und Ausschießen gegen die Datei",
+  "Sonderfarben gegen das, was bestellt und kalkuliert wurde",
+  "Daten, Wochentage und Uhrzeiten, die nicht zusammenpassen",
+  "Telefonnummern, Webadressen und E-Mails, die falsch aussehen",
+  "Text zu nah am Beschnitt oder im Falz"
+]} />
+
+## Irrtum 2: „KI ersetzt den Preflight“
+
+Sollte sie nicht. Preflight ist deterministisch: dieselbe Datei, dasselbe Ergebnis, mit automatischer Korrektur. Ein Sprachmodell arbeitet mit Wahrscheinlichkeiten: Es bemerkt Dinge, die sich in keine Regel fassen lassen, etwa ein Datum, das nicht zum Wochentag passt, kann aber auch etwas übersehen oder falschen Alarm geben.
+
+Tatsächlich arbeiten beide nacheinander. Erst der Preflight, wie heute. Dann eine Auftrags- und Inhaltsprüfung, die eine kurze Liste von Fragen für einen Menschen liefert, keine automatischen Korrekturen.
+
+## Irrtum 3: „Kunden wollen keine Rückfragen“
+
+Niemand freut sich über einen Anruf wegen seines Flyers. Jeder zieht ihn 5.000 Flyern mit falschem Datum vor. Entscheidend sind wenige, konkrete Fragen, früh, mit dem Proof: „Auf Ihrem Flyer steht Samstag, 14. Mai, der 14. ist dieses Jahr aber ein Donnerstag. Meinen Sie Samstag, den 16.?“
+
+Tatsächlich schafft eine präzise Frage mit dem Proof Vertrauen. Sie zeigt, dass die Druckerei sich den Auftrag angesehen hat, nicht nur die Datei.
+
+## Irrtum 4: „Korrekturlesen ist Sache des Kunden“
+
+Vertraglich meistens ja. Mit der Druckfreigabe übernimmt der Kunde das Risiko für den Inhalt. Wirtschaftlich übernimmt die Druckerei einen Nachdruck für Stammkunden oft trotzdem, und selbst wenn nicht, bleibt der Ärger beim Kunden hängen.
+
+Tatsächlich übernimmt die Druckerei keine Verantwortung für den Inhalt. Sie ergänzt eine kurze Plausibilitätsprüfung und gibt die Fragen an den Kunden weiter, der für die Antwort verantwortlich bleibt. Viele Druckereien schreiben das klar auf den Proof: „Folgende Punkte sind uns aufgefallen, bitte prüfen. Die Verantwortung für den Inhalt bleibt bei Ihnen.“
+
+## Irrtum 5: „Das lohnt sich nur für große Druckereien“
+
+Große Druckereien haben eine Druckvorstufe mit erfahrenen Leuten, die viele dieser Probleme mit bloßem Auge finden. Kleine Betriebe haben oft eine Person, die Druckvorstufe, Kundenservice und Digitaldruckmaschine gleichzeitig macht. Genau sie hat keine Zeit, jeden Flyer zu lesen, und genau sie trifft ein Nachdruck am härtesten.
+
+Tatsächlich ist eine automatische Prüfung von wenigen Minuten pro Auftrag umso mehr wert, je kleiner die Druckerei.
+
+## So funktioniert die Prüfung
+
+<Flow title="Von Auftrag und Datei zum Proof mit den richtigen Fragen" caption="Preflight prüft die technische Datei. Das Modell vergleicht Datei und Auftrag und liest den Inhalt. Ein Mensch entscheidet, welche Fragen mit dem Proof an den Kunden gehen.">
+<Step title="Auftrag und Datei kommen" who="Kunde" time="Webshop oder E-Mail">Auftragsdaten (Produkt, Format, Seiten, Papier, Weiterverarbeitung, Auflage) und das PDF.</Step>
+<Step title="Technischer Preflight" who="System" time="Sekunden">Vorhandenes Preflight-Profil: Auflösung, Farbe, Beschnitt, Schriften, PDF/X. Automatische Korrekturen, wo vereinbart.</Step>
+<Step title="Datei gegen Auftrag" who="KI" tone="ai" time="Sekunden">Format, Seitenzahl, Falz und Weiterverarbeitung, Sonderfarben, Ausrichtung gegen das Bestellte.</Step>
+<Step title="Inhalt lesen" who="KI" tone="ai">Datum und Wochentag, auffällige Telefonnummern und Adressen, Text am Beschnitt oder im Falz, offensichtliche Tippfehler in Überschriften.</Step>
+<Step title="Druckvorstufe entscheidet" who="Druckvorstufe" tone="human" time="1 bis 2 Min.">Prüft die Markierungen, verwirft Fehlalarme, formuliert die Fragen.</Step>
+<Step title="Proof mit Fragen" who="Druckvorstufe" tone="human">Der Proof geht mit einer kurzen Liste konkreter Punkte raus. Der Auftrag wartet auf die Antwort.</Step>
+</Flow>
+
+## Was bei jedem Auftrag geprüft werden sollte
+
+<Checklist title="Auftrags- und Inhaltsprüfungen, die die meisten Nachdrucke verhindern" items={[
+  "Endformat und Ausrichtung passen zum bestellten Produkt",
+  "Seitenzahl stimmt, inklusive Umschlag und Vakatseiten",
+  "Falzart und Seitenbreiten passen zur Datei (beim Wickelfalz ist die eingeklappte Seite schmaler)",
+  "Sonderfarben in der Datei sind bestellt und kalkuliert oder werden umgewandelt",
+  "Jedes Datum passt zum Wochentag, Uhrzeiten und Jahre sind plausibel",
+  "Telefonnummern, Webadressen und E-Mails sind vollständig und plausibel",
+  "Kein wichtiger Text im Sicherheitsabstand oder über einem Falz",
+  "Variable Daten (Namen, Nummern) vollständig, keine leeren Felder im Muster"
+]} />
+
+Die Falzzeile verdient Aufmerksamkeit. Ein Wickelfalz-Flyer mit gleich breiten Seiten sieht am Bildschirm gut aus und falzt auf Papier schlecht, weil die eingeklappte Seite etwas schmaler sein muss. Das Modell kann die Seitenbreiten in der Datei messen und mit der gewählten Falzart vergleichen, für einen Menschen mühsam, für Software leicht.
+
+## Was es in der Praxis findet
+
+Ein paar typische Funde, alle aus Dateien, die den technischen Preflight bestanden haben:
+
+> Flyer, 5.000, DIN A5 auf A6 gefalzt: „Samstag, 14. Mai“ (der 14. Mai ist ein Donnerstag). Telefonnummer hat eine Ziffer weniger als die sonst verwendete Nummer des Kunden.
+>
+> Broschüre, 16 Seiten bestellt: PDF mit 14 Seiten plus separater Umschlagdatei mit 4 Seiten; bitte klären, ob der Umschlag in den 16 Seiten enthalten ist.
+>
+> Visitenkarten, 4/4: Rückseite mit Pantone 286 C, Auftrag nur CMYK; wird umgewandelt, außer Sie wünschen eine Sonderfarbe (Preisänderung).
+
+Jeder Fund ist eine Frage in zwei Zeilen. Jeder verhindert einen Nachdruck, eine Verzögerung oder einen überraschten Kunden bei der Abholung.
+
+## Mit dem Nachdruckprotokoll anfangen
+
+Bevor Sie etwas einrichten, sehen Sie sich die Nachdrucke, Gutschriften und Reklamationen der letzten zwölf Monate an. Sortieren Sie jede in drei Gruppen: technische Dateifehler, die der Preflight hätte finden müssen, Abweichungen zwischen Datei und Auftrag, und inhaltliche Fehler im Kundentext. Die meisten Druckereien stellen fest: Die erste Gruppe ist klein, weil der Preflight funktioniert, die anderen beiden größer als gedacht. Diese Aufteilung zeigt, wo Sie anfangen, und sie liefert den Ausgangswert: Nachdrucke je tausend Aufträge jetzt und in drei Monaten.
+
+## Welche Werkzeuge passen
+
+Web-to-Print-Systeme und Branchensoftware für Druckereien halten die Auftragsdaten, Preflight-Werkzeuge wie PitStop, pdfToolbox oder die in RIPs eingebauten Prüfungen übernehmen die Technik. Die KI-Schicht liest beides, den Auftragsdatensatz und das PDF Seite für Seite, und liefert der Druckvorstufe eine kurze Liste von Funden, am besten direkt in der Auftragstasche, die sie ohnehin nutzt.
+
+Kundendateien sind vertraulich. Wählen Sie einen Anbieter mit Auftragsverarbeitungsvertrag und Verarbeitung in der EU, der Dateien weder speichert noch zum Training nutzt, besonders bei personalisierten Mailings mit personenbezogenen Daten.
+
+## Häufige Fragen aus Druckereien
+
+### Wie viele Fehlalarme gibt es?
+
+Einige, besonders bei kreativen Layouts, in denen ungewöhnliche Textplatzierung Absicht ist. Deshalb prüft ein Mensch die Funde, bevor etwas an den Kunden geht. Passen Sie die Prüfungen in den ersten Wochen an, dann sinken die Fehlalarme schnell.
+
+### Kann es den ganzen Text Korrektur lesen?
+
+Offensichtliche Fehler kann es markieren, aber vollständiges Korrektorat ist eine eigene Dienstleistung mit eigener Verantwortung. Die meisten Druckereien beschränken die automatische Prüfung auf klare Widersprüche wie Daten, Nummern und abgeschnittenen Text und lassen die Verantwortung für den Inhalt beim Kunden.
+
+### Wer haftet, wenn die Prüfung etwas übersieht?
+
+Dieselbe Seite wie heute. Die Prüfung ist ein zusätzliches Augenpaar, keine Garantie, und Ihre AGB und die Druckfreigabe bleiben, wie sie sind. Schreiben Sie auf den Proof, dass die genannten Punkte bei der Prüfung aufgefallen sind und die Verantwortung für den Inhalt beim Kunden bleibt. Was sich ändert: Es kommen deutlich weniger Fehler überhaupt bis zur Maschine.
+
+### Was ist mit Großformat und Verpackung?
+
+Dieselbe Idee funktioniert: Stanzkontur gegen Datei, Beschnitt gegen Schneidlinie, Barcodes auf Lesbarkeit, Pflichtangaben auf Vorhandensein. Gerade Verpackungen profitieren, weil Fehler teuer sind und die Kennzeichnungspflichten streng.
+
+## Faustregel
+
+Der Preflight prüft die Datei, das Modell prüft den Auftrag: Passt die Datei zur Bestellung, und ergibt der Inhalt Sinn? Schicken Sie die wenigen Fragen, auf die es ankommt, mit dem Proof, und lassen Sie die Verantwortung für die Antworten beim Kunden.
+
+Wenn Nachdrucke an Ihrer Marge nagen, [schreiben Sie mir, welches Web-to-Print- oder Branchensystem Sie nutzen](/contact?intent=improve). Ich zeige Ihnen, wie eine Auftrags- und Inhaltsprüfung in Ihren Ablauf passt. Übersetzungsbüros erleben ähnliche Überraschungen bei der [Projektannahme](/de/posts/ai-for-translation-agencies-project-intake), Dentallabore bei [unvollständigen Aufträgen](/de/posts/ai-for-dental-labs-case-intake).

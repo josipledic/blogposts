@@ -1,0 +1,127 @@
+---
+id: "ai-for-wholesale-order-entry"
+title: "Messy Orders In, Clean Drafts Out: AI Order Entry for Wholesalers"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Retail & wholesale", "Wholesalers", "Order entry", "AI for small business"]
+description: "Orders arrive as emails, PDFs, spreadsheets, faxes and photos of handwritten lists. A blueprint for wholesalers to turn them into checked ERP drafts, no retyping."
+excerpt: "Orders arrive as emails, PDFs, spreadsheets, faxes and photos of handwritten lists. A blueprint for wholesalers to turn them into checked ERP drafts, no retyping."
+---
+
+At 7:30 on a Monday, the inside sales team of a regional wholesaler for plumbing and heating supplies opens the shared inbox. Forty-three new orders over the weekend. A PDF purchase order from a large installer, with their own article numbers. An email that says "same as last time but double the 22 mm fittings". A spreadsheet with 60 lines and three different ways of writing the same valve. Two faxes. A photo of a handwritten list, taken on a van dashboard, slightly out of focus. And a message that just says "10 boxes M8 as usual, urgent".
+
+Every one of those orders has to be typed into the ERP by someone who knows the product range and the customers. It takes most of the morning, it's the least favourite job in the building, and it's where errors creep in: the wrong size, a missed line, 100 instead of 10. The customer's truck arrives with the wrong fittings, and a good installer starts looking at other suppliers.
+
+Plenty of wholesalers have tried to move customers onto a web shop or EDI. Some customers moved. Many didn't, and won't, because email and a PDF from their own system are what they know. This post is a blueprint for accepting orders the way customers send them and still getting clean, checked data into the ERP.
+
+## Paper and fax aren't going away soon
+
+<Stats title="Why messy orders will keep coming">
+  <Stat value="77%" label="of German companies with 20 or more employees still use fax in 2024" source="Bitkom" href="https://www.bitkom.org/Presse/Presseinformation/3-von-4-Bueros-gefaxt" />
+  <Stat value="25%" label="use it frequently or very frequently" source="Bitkom" href="https://www.bitkom.org/Presse/Presseinformation/3-von-4-Bueros-gefaxt" />
+  <Stat value="95%" label="still used fax in 2018; the decline is real but slow" source="Bitkom Research" href="https://bitkom-research.de/news/aktenordner-und-fax-haben-noch-nicht-ausgedient" />
+</Stats>
+
+Fax is only the extreme example. The same slow shift applies to emailed PDFs, spreadsheets and phone orders. Customers use what works for them, and a wholesaler who insists on a single channel loses the customers who won't change. The practical answer is to make every channel feed the same clean process.
+
+## What an order says and what the ERP needs
+
+The gap between the two is where the work is:
+
+| What the order says | What the ERP needs | How the match works |
+| --- | --- | --- |
+| "Customer 4471" or just a company name in the signature | Customer account, delivery address, payment terms | Sender address, known contacts, account numbers in the text |
+| The customer's own article number "HZ-22-90" | Your SKU | A cross-reference table per customer, built from past orders |
+| "22mm elbow 90°", "Winkel 22", "22 elbow" | One SKU | Descriptions matched to the catalogue, with synonyms learned from past corrections |
+| "10 boxes M8" | 1,000 pieces of SKU 88213, sold in boxes of 100 | Pack units and conversions from the product master |
+| "Same as last time, double the fittings" | A full order | Last order from that customer, with the change applied |
+| "Urgent", "by Thursday", "deliver to site" | Delivery date, route, address | Delivery options and cut-off times |
+| Prices, if the customer wrote them | Contract or list prices | Checked against the customer's price agreement |
+
+A person does all of that in their head, drawing on years of experience. The model can do most of it too, as long as it has the same context: the customer's order history, the catalogue with pack units, the cross-references and the price agreements.
+
+## The blueprint
+
+<Flow title="From any channel to a checked sales order draft" caption="The model reads, matches and checks. Inside sales reviews what the model flags and releases the order. Nothing reaches the warehouse unreviewed until you decide it can.">
+<Step title="Capture" who="System" time="continuous">Email bodies, PDF and spreadsheet attachments, fax scans, photos from messaging apps and notes from phone orders go into one queue.</Step>
+<Step title="Read" who="AI" tone="ai" time="seconds">Customer, delivery details, dates, and every line: the customer's description or number, quantity, unit.</Step>
+<Step title="Match" who="AI" tone="ai">Each line to your SKU using cross-references, the catalogue, synonyms and pack units. Each match gets a confidence level.</Step>
+<Step title="Check" who="System">Prices against agreements, stock, minimum quantities, delivery feasibility, and quantities that look unusual for this customer.</Step>
+<Step title="Review" who="Inside sales" tone="human" time="1 to 2 min per order">Confirms the draft; only flagged lines need attention: uncertain matches, unusual quantities, price differences.</Step>
+<Step title="Release and confirm" who="Inside sales" tone="human">Order goes to the ERP and warehouse; the customer gets a confirmation listing exactly what was understood.</Step>
+</Flow>
+
+### The checks that prevent expensive mistakes
+
+The review step is where most of the value is protected, and good checks make it fast:
+
+- **Quantity plausibility.** The customer usually orders 10 of this fitting; today the draft says 100. Flag it. Most of the costliest errors are a digit too many or too few.
+- **Unit confusion.** Boxes, packs, pieces and metres get mixed up constantly. The draft shows both the customer's unit and the converted quantity.
+- **Price differences.** The customer wrote a price that doesn't match their agreement. Maybe it's an old price, maybe a promise from a sales rep. Either way, a person decides.
+- **Unknown items.** A description the model can't match confidently goes to a person, and the correction teaches the cross-reference for next time.
+- **Delivery.** An "urgent" order after the cut-off for tomorrow's route gets flagged before the customer is promised something impossible.
+
+### What the reviewer sees
+
+Instead of a blank order screen, the reviewer gets a draft with the doubts already marked:
+
+> **Order from Becker Heizung GmbH, via email 07:12, PDF attached.** Delivery: site address Lindenstraße 4, requested Thursday; cut-off for Thursday's route met. **14 lines, 12 matched with high confidence.** Line 6: "Kugelhahn 3/4 rot" matched to SKU 44120 (red lever, 3/4"), medium confidence; last three orders used SKU 44121 (blue lever). Line 9: 100 pieces of press fitting 22 mm; this customer usually orders 10. Price on line 11 is €2.10 lower than the customer's agreement. **Action:** check lines 6, 9 and 11.
+
+Three decisions instead of fourteen lines of typing. The reviewer calls or emails the customer about line 9 if needed, fixes line 6, and decides about the price. Every correction is saved, so next time "Kugelhahn 3/4 rot" from this customer goes straight to the right SKU.
+
+### The confirmation closes the loop
+
+Every order gets a confirmation that lists what was understood, in the customer's own terms where possible: "22 mm elbow 90°, your number HZ-22-90, 40 pieces (4 packs of 10)". If the customer meant something else, they catch it before the truck is loaded. That one message prevents more wrong deliveries than any amount of careful typing.
+
+## What it's worth
+
+<Calc title="Napkin math: order entry for a small wholesaler" caption="Assumptions, not measurements. Time a week of order entry, and count wrong deliveries and credit notes caused by entry errors, to get your own figures." rows={[
+  ["Orders per day from non-EDI channels", "60"],
+  ["Average manual entry time per order", "× 6 min"],
+  ["Hours per day on manual entry", "6 h"],
+  ["Review time per order with a checked draft", "× 1.5 min"],
+  ["Hours per day with drafts", "1.5 h"],
+  ["Working days per year", "× 230"]
+]} result={["Inside sales hours freed per year", "≈ 1,035 h"]} />
+
+That's more than half a full-time position, freed from the least valued work in the building. The harder number to measure is the value of fewer wrong deliveries: each one costs a return trip, a credit note, and a bit of the customer's patience.
+
+## Where to start
+
+Start with the customers who send the most orders by email or PDF, since their formats repeat and their cross-references build up quickly. Run the drafts alongside manual entry for two weeks and compare line by line. Once the match rate is high and the flagged lines are the right ones, switch to review-only for those customers, and add the next group.
+
+Keep measuring two things: the share of lines that need correction, and the time from order received to order released. Both should fall steadily as the cross-references grow.
+
+## Tools that fit
+
+Wholesale ERPs such as Microsoft Dynamics 365 Business Central, SAP Business One, Odoo, or industry systems for building supplies, electrical and food distribution hold the customers, products and prices. There are specialised order automation tools for distributors, and some ERPs now add AI order capture. The AI layer described here reads the inbound channels, drafts orders through the ERP's interface, and leaves the ERP as the single source of truth for products, prices and stock.
+
+Orders contain customer data and prices, which are commercially sensitive. Use a provider with clear data handling, and keep the cross-reference tables as your own asset: they're the accumulated knowledge of your inside sales team.
+
+## Questions wholesalers ask
+
+### What about handwritten orders and faxes?
+
+Modern text recognition reads clear handwriting and fax scans reasonably well, and the model uses context (the customer's usual items) to interpret the rest. Lines it can't read confidently are flagged. A blurry photo from a van still needs a person more often than a clean PDF does.
+
+### Won't this let errors through that a person would catch?
+
+It will let some through if you skip the review. That's why the review exists, and why checks focus attention on the risky lines. Many wholesalers find that reviewers catch more errors, because they're checking flagged lines instead of typing sixty lines and hoping.
+
+### Should we still push customers towards our web shop?
+
+Offer it, and make it good. But accept that some customers will keep emailing, and make that channel just as reliable. Customers notice when a supplier makes ordering easy on their terms.
+
+### What about phone orders?
+
+Phone orders are still common with small trade customers. The inside sales person can type notes during the call in their own shorthand, or the call can be transcribed with the customer's consent, and the model turns either into the same kind of draft. The confirmation message afterwards matters even more for phone orders, because it's the only written record the customer sees.
+
+### How long until the matching is good?
+
+With a few months of order history loaded, common items match well from the start. Customer-specific numbers and odd descriptions improve with every correction. Most of the learning happens in the first few weeks for each customer.
+
+## Rule of thumb
+
+Accept orders the way customers send them, and convert them into clean drafts with every line matched, checked and flagged where it's uncertain. Let people review the flags, not retype the order, and confirm back to the customer exactly what you understood.
+
+If your inside sales team spends the morning retyping orders, [tell me which ERP you use and how orders arrive](/contact?intent=improve). I'll suggest how to get from inbox to clean drafts. The same matching logic helps packaging distributors suggest [sensible extras on repeat orders](/posts/ai-for-packaging-distributors-cross-sell), and manufacturers in [faster quotations](/posts/ai-for-manufacturing-quotations).

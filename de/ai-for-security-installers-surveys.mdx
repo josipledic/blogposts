@@ -1,0 +1,145 @@
+---
+id: "de-ai-for-security-installers-surveys"
+title: "Sicherheitstechnik: Begehungen, aus denen direkt ein Angebot wird"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Handwerk & Bau", "Errichter Sicherheitstechnik", "Begehung", "KI für kleine Unternehmen"]
+description: "Eine Begehung dauert eine Stunde vor Ort und Stunden am Schreibtisch. Wie KI aus Fotos und Sprachnotizen eine strukturierte Aufnahme und ein Angebot macht."
+excerpt: "Eine Begehung dauert eine Stunde vor Ort und Stunden am Schreibtisch. Wie KI aus Fotos und Sprachnotizen eine strukturierte Aufnahme und ein Angebot macht."
+---
+
+Eine kleine Steuerkanzlei möchte eine Einbruchmeldeanlage und ein paar Kameras. Der Errichter geht mit Handy und Notizblock durch die Räume: zwei Eingänge, eine verglaste Front zur Straße, ein Büro hinten mit dem Serverschrank, ein Parkplatz auf der Rückseite. Vierzig Minuten später hat er dreißig Fotos, eine Seite Notizen und einen groben Plan im Kopf.
+
+Zurück im Büro muss aus dem Plan im Kopf ein Angebot werden: Melder und Kameras, Positionen, Kabelwege, ein Rekorder mit passendem Speicher, Aufschaltung, Montage, Preis. Das dauert zwei bis drei Stunden, meistens abends, und irgendetwas fehlt immer. War die Decke im Flur abgehängt oder massiv? Wo genau stand der Switch? Ein zweiter Termin oder ein Anruf schließt die Lücken, und das Angebot geht drei Tage nach der Begehung raus.
+
+In der Zwischenzeit hat sich die Kundschaft Kamera-Sets im Internet angesehen. Mit Tempo und Gründlichkeit gewinnt ein Fachbetrieb gegen dieses Angebot. KI kann bei beidem helfen, indem sie das, was der Errichter vor Ort sieht, noch während er dort steht, in eine strukturierte Aufnahme verwandelt.
+
+## Der Markt, in dem Fachbetriebe antreten
+
+<Stats title="Einbruch und Sicherheitstechnik in Zahlen">
+  <Stat value="82.920" label="Wohnungseinbrüche einschließlich Versuchen erfasste die Polizei 2025, 5,7 % mehr als im Vorjahr" source="BKA, Polizeiliche Kriminalstatistik 2025" href="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2025/Polizeiliche_Kriminalstatistik_2025/Polizeiliche_Kriminalstatistik_2025_node.html" />
+  <Stat value="≈ 50 %" label="der Einbrüche blieben im Versuch stecken, 2024 waren es 45,7 %" source="BKA, Factsheet Wohnungseinbruchdiebstahl" href="https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/PolizeilicheKriminalstatistik/2024/BundesdatenDelikte/07_WohnungseinbruchdiebstahlBRD.pdf?__blob=publicationFile&v=3" />
+  <Stat value="48 %" label="der US-Haushalte besaßen 2025 eine Sicherheitslösung, während neue fachmännisch installierte Anlagen 2024 ein Neunjahrestief erreichten" source="Parks Associates" href="https://www.parksassociates.com/blogs/in-the-news/pro-monitoring-smart-homes-and-the-decline-of-traditional-security" />
+</Stats>
+
+Die Zahlen erzählen zwei Geschichten. Einbrüche nehmen wieder zu, und rund die Hälfte scheitert im Versuch, nicht zuletzt an guter mechanischer und elektronischer Sicherung. Gleichzeitig zeigt der Blick in die USA, wohin sich der Markt bewegt: Viele Haushalte kaufen Kameras und Videotürklingeln im Handel und bauen selbst. Der Vorteil des Fachbetriebs ist die Planung: die richtigen Melder an den richtigen Stellen, Kameras, die Gesichter erkennen statt Scheitel, ein Speicher, der die vereinbarte Aufbewahrung abdeckt, eine Anlage nach DIN EN 50131 und VdS, wo der Versicherer das verlangt.
+
+Dieser Vorteil zählt nur, wenn die Kundschaft ihn schnell sieht. Ein ausführliches Angebot drei Tage nach der Begehung verliert gegen ein Set, das morgen geliefert werden könnte.
+
+## Was eine Begehung erfassen muss
+
+Die Begehung entscheidet über das Angebot, denn alles danach baut darauf auf. Pro Bereich würde ich diese Angaben erfassen, nicht erinnern.
+
+| Angabe | Beispiel | Warum sie zählt |
+| --- | --- | --- |
+| Bereich und Öffnungen | Haupteingang, Glasflügeltür, zwei Fenster im Erdgeschoss | Art und Zahl der Melder |
+| Oberflächen und Höhen | Abgehängte Decke auf 2,60 m, Außenwand Ziegel | Montage, Kabelwege, Aufwand |
+| Kabelweg | Vom Serverschrank über die Zwischendecke, etwa 18 m | Material und Montagezeit |
+| Zweck der Kamera | Gesichter am Eingang erkennen, nicht nur Bewegung melden | Kameratyp, Objektiv, Montagehöhe |
+| Licht | Straßenlaterne gegenüber, dunkler Parkplatz hinten | IR- oder Restlichtkameras |
+| Netzwerk und Strom | Switch im Serverschrank, ein freier PoE-Port | Zusätzlicher Switch oder Netzteile |
+| Datenschutz | Gehweg und Nachbareingang im Bild | Maskierung, Blickwinkel, Hinweisschild |
+
+Ein guter Errichter behält das meiste während der Begehung im Kopf. Das Problem ist, es Stunden später vollständig aus dem Kopf ins Angebot zu bekommen.
+
+## Der Ablauf der Begehung
+
+<Flow title="Von der Begehung zum Angebotsentwurf" caption="Der Errichter beobachtet und entscheidet. Das Modell strukturiert Notizen und entwirft. Ihre Regeln und Ihr Katalog liefern die Zahlen.">
+<Step title="Mit dem Handy durchgehen" who="Errichter" tone="human" time="vor Ort">Fotos pro Bereich und kurze Sprachnotizen: „Haupteingang, Glastür, abgehängte Decke 2,60, Kamera soll Gesichter beim Reingehen erkennen, Kabel vom Serverraum über die Decke.“</Step>
+<Step title="Notizen strukturieren" who="KI" tone="ai" time="beim Durchgehen">Sprachnotizen werden verschriftlicht und zu einer Aufnahme pro Bereich, verknüpft mit den Fotos. Fehlende Angaben werden markiert, bevor der Errichter das Gebäude verlässt.</Step>
+<Step title="Komponenten nach Ihren Regeln vorschlagen" who="Regeln">Jede Außentür bekommt einen Öffnungsmelder und, wo gewünscht, eine Kamera; Glasflächen bekommen Glasbruchmelder. Die Regeln stammen aus Ihren Standardkonzepten.</Step>
+<Step title="Material und Speicher berechnen" who="System">Kabellängen aus den Notizen, Stückliste aus Ihrem Katalog, Rekorderspeicher aus Kamerazahl, Bitrate und Speicherdauer.</Step>
+<Step title="Angebot entwerfen" who="KI" tone="ai">Ein lesbares Angebot mit beschrifteten Fotos, Komponentenliste, Datenschutzmaßnahmen, Aufschaltungsoptionen und Preis.</Step>
+<Step title="Fachplaner prüft und verschickt" who="Fachplaner" tone="human" time="am selben Tag">Ein Mensch prüft das Konzept, passt an und verschickt. Nichts geht ohne diese Prüfung raus.</Step>
+</Flow>
+
+Entscheidend ist, dass der zweite Schritt passiert, bevor der Errichter geht. Steht in der Aufnahme „Flur: Deckenart unbekannt“, kann er nach oben schauen, solange er noch im Flur steht. Allein das erspart die meisten zweiten Termine.
+
+So sieht das für einen Bereich aus. Der Errichter sagt an der Hintertür: „Hintertür zum Parkplatz, Stahltür, Decke massiv, so 2,40. Kamera soll Gesichter beim Reinkommen erkennen, Parkplatz ist dunkel. Kabel vom Serverschrank, vielleicht zwölf Meter durchs Lager.“ Die Aufnahme, die wenige Sekunden später zurückkommt:
+
+```text
+Bereich 4: Hintereingang (Parkplatz)
+Öffnung:     Stahltür, einflügelig
+Decke:       Massiv, ca. 2,40 m
+Komponenten: Öffnungsmelder; Kamera (Gesichtserkennung beim Zutritt)
+Licht:       Außen dunkel, IR- oder Restlichtkamera nötig
+Kabel:       Serverschrank → Lager → Tür, ca. 12 m
+Fotos:       4 angehängt
+Fehlt:       Leuchte über der Tür? Montagehöhe innen oder außen?
+```
+
+Die Zeile „Fehlt“ ist der nützliche Teil. Der Errichter schaut hoch, sieht, dass keine Leuchte da ist, ergänzt eine Notiz und geht weiter. Im Büro muss nichts mehr aus dem Gedächtnis rekonstruiert werden.
+
+## Was bei der Begehung fotografiert wird
+
+<Checklist title="Die Fotoliste pro Bereich" items={[
+  "Die Öffnung selbst, gerade von vorn, und den Bereich direkt davor",
+  "Die Decke, bei abgehängten Decken auch über einer Platte",
+  "Die geplante Kameraposition und den Blick, den sie haben soll",
+  "Den Kabelweg, besonders Wände oder Decken, die durchquert werden",
+  "Netzwerkschrank, Switch und freie Ports",
+  "Steckdosen in der Nähe geplanter Komponenten",
+  "Alles außerhalb des Grundstücks, was im Kamerabild auftauchen würde"
+]} />
+
+Der letzte Punkt steht dort wegen des Datenschutzes, und er wird am häufigsten ausgelassen.
+
+## Speicher berechnen statt schätzen
+
+Die Rekordergröße ist ein gutes Beispiel dafür, wo die Software rechnen soll und nicht das Modell. Es ist Arithmetik, und die geht unter Zeitdruck leicht schief. Hier die Rechnung für eine kleine Anlage.
+
+<Calc title="Rekorderspeicher bei Daueraufzeichnung" caption="Daueraufzeichnung mit fester Bitrate. Bewegungsgesteuerte Aufzeichnung braucht deutlich weniger; reale Bitraten hängen von Auflösung, Kompression und Bildinhalt ab." rows={[
+  ["Kameras", "8"],
+  ["Durchschnittliche Bitrate pro Kamera", "4 Mbit/s"],
+  ["Speicher pro Kamera und Tag", "≈ 43 GB"],
+  ["Alle Kameras pro Tag", "≈ 346 GB"],
+  ["Speicherdauer", "× 3 Tage"]
+]} result={["Benötigter Speicher", "≈ 1,04 TB"]} />
+
+Die drei Tage sind kein Zufall. Die Datenschutzaufsichtsbehörden halten für typische private und kleingewerbliche Zwecke eine kurze Speicherdauer für ausreichend, häufig genannt werden 72 Stunden, sofern es keinen besonderen Grund für länger gibt. Die Rechnung sollte die Speicherdauer verwenden, die Sie mit der Kundschaft vereinbart haben, nicht das Maximum, das die Hardware hergibt. Das spart nebenbei Geld beim Rekorder.
+
+## Datenschutz ist Teil der Planung
+
+Bei Kameras geraten Errichter am häufigsten im Namen ihrer Kundschaft in rechtliche Schwierigkeiten. Wer die Prüfungen in die Begehung einbaut, schützt beide Seiten.
+
+<Callout title="Datenschutzprüfung für jede Kamera" tone="warning">
+Kameras dürfen grundsätzlich nur das eigene Grundstück erfassen. Gehweg, Straße und [Nachbargrundstück sind auszublenden](https://www.verbraucherzentrale.de/wissen/digitale-welt/datenschutz/mit-ueberwachungskameras-nur-das-eigene-grundstueck-filmen-12960), Hinweisschilder informieren über die Aufzeichnung, und Aufnahmen werden nicht länger gespeichert als nötig. Tonaufnahmen von Gesprächen sind nach § 201 StGB strafbar, Mikrofone bleiben also aus. Am Arbeitsplatz gelten zusätzliche Regeln, und wo es einen Betriebsrat gibt, hat er bei Videoüberwachung ein Mitbestimmungsrecht. Die Aufnahme markiert jede Kameraperspektive, die etwas außerhalb des Grundstücks zeigt.
+</Callout>
+
+Die Fotoliste oben liefert genau dafür die Grundlage. Sieht das Modell auf dem Foto der Eingangskamera einen Gehweg, enthält der Angebotsentwurf eine Privatzonenmaskierung für diesen Bereich und einen Hinweis für den Fachplaner. Das ist klein zu automatisieren und groß, wenn es schiefgeht.
+
+## Die Daten der Begehung schützen
+
+Ein Punkt ist in dieser Branche besonders: Die Begehung selbst ist sensibel. Sie beschreibt, wo Wertsachen liegen, welche Türen schwach sind, wo der Rekorder steht und welche Bereiche keine Kamera sieht. Genau diese Informationen würde ein Einbrecher gern haben.
+
+Die Regeln für den Umgang damit sollten deshalb streng sein. Speichern Sie die Daten in Ihren eigenen Systemen oder bei einem Anbieter, dem Sie vertrauen, mit ordentlichem Auftragsverarbeitungsvertrag. Schicken Sie Grundrisse und Schwachstellennotizen nicht an irgendwelche kostenlosen Werkzeuge. Beschränken Sie den Zugriff auf die Menschen, die am Auftrag arbeiten. Wählen Sie für die KI-Verarbeitung einen Anbieter, der Ihre Daten nicht zum Training verwendet und in der EU verarbeitet. Das ist auch ein Verkaufsargument: Wer fragt „Wo landet mein Grundriss?“, verdient eine klare Antwort.
+
+## Werkzeuge, die dazu passen
+
+Viele Errichter arbeiten mit Planungs- und Angebotssoftware ihrer Hersteller oder mit Programmen wie D-Tools, dazu mit einer Handwerker- oder Servicesoftware für Aufträge und Wartung. Der KI-Teil ist die Schicht für Erfassung und Entwurf: Er macht aus Sprachnotizen und Fotos die Aufnahme im Format, das diese Programme erwarten, und entwirft den Angebotstext. Ihr Produktkatalog und Ihre Standardkonzepte bleiben die Quelle jeder Komponente und jedes Preises.
+
+Gute Kunden kommen übrigens oft über die kriminalpolizeilichen Beratungsstellen, die nach einer Beratung auf Errichterlisten verweisen. Wer dann schnell ein sauberes, verständliches Angebot schickt, hat den Auftrag so gut wie sicher.
+
+## Fragen, die Errichter stellen
+
+### Kann KI die Anlage planen?
+
+Sie kann einen ersten Entwurf nach Ihren eigenen Regeln vorschlagen, etwa „jede Außentür bekommt einen Öffnungsmelder“. Die Anlage plant eine Fachkraft. Das Modell spart die Zeit zwischen Begehung und erstem Entwurf, nicht das Denken.
+
+### Wie genau sind Kabellängen aus Sprachnotizen?
+
+So genau wie die Schätzung des Errichters, und das reicht mit vernünftigem Zuschlag meist für ein Angebot. Bei größeren Gewerbeobjekten liefert ein maßstäblicher Grundriss bessere Werte, und das Modell kann Maße aus einem Plan lesen, wenn einer vorliegt.
+
+### Funktioniert das auch für Gewerbeobjekte?
+
+Ja, und dort ist es oft noch wertvoller, weil Gewerbeobjekte mehr Bereiche, mehr Beteiligte und mehr Vorgaben der Versicherer haben. Die strukturierte Aufnahme macht außerdem die Übergabe an das Montageteam viel sauberer.
+
+### Was, wenn die Kundschaft mit einem Set aus dem Baumarkt vergleicht?
+
+Dann sollte das Angebot den Unterschied sichtbar machen: Kamerapositionen, die Gesichter erkennen, Melder dort, wo Einbrecher tatsächlich einsteigen, Speicher für die richtige Aufbewahrungsdauer und sauber gelöster Datenschutz. Ein schnelles, konkretes Angebot ist das beste Argument gegen ein Set von der Stange.
+
+## Die Regel, der ich folgen würde
+
+Einmal durchgehen, alles erfassen, bevor Sie das Gebäude verlassen, und das Angebot verschicken, bevor die Kundschaft ein Kamera-Set bestellt.
+
+Wenn Angebote in Ihrem Betrieb die Abendarbeit sind, die niemand will, [schreiben Sie mir, wie Begehungen bei Ihnen heute laufen](/contact?intent=improve) und mit welcher Software Sie arbeiten. Ich schlage Ihnen eine Erfassung vor, die Sie bei den nächsten Begehungen ausprobieren können. Dieselbe Idee, vor der Anfahrt alles zu wissen, beschreibe ich für den [Fensterbau](/de/posts/ai-for-window-installers-leads) und für das [Bautagebuch per Sprachnachricht](/de/posts/ai-for-construction-daily-reports).

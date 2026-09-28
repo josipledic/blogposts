@@ -1,0 +1,151 @@
+---
+id: "ai-for-cleaning-companies-scope"
+title: "Pricing Commercial Cleaning Jobs Without Forgetting Half the Building"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Field services", "Commercial cleaning", "Bidding and scope", "AI for small business"]
+description: "Most losing cleaning contracts were lost at the walkthrough, when a room or task went unnoticed. How AI turns it into a complete room inventory and an honest bid."
+excerpt: "Most losing cleaning contracts were lost at the walkthrough, when a room or task went unnoticed. How AI turns it into a complete room inventory and an honest bid."
+---
+
+The salesperson walks a three-storey office building with the facility manager on a Thursday afternoon. The notes say: "Offices about 20,000 sq ft, 6 restrooms, kitchen, lobby, nightly." The bid goes out on Monday, it's competitive, and it wins.
+
+Three weeks into the contract, the night crew needs a lot more time than the bid assumed. Nobody noticed the second break room on the second floor. The glass partitions in the meeting rooms need daily spot cleaning because the client's CEO hates fingerprints. The restrooms on the third floor have eight fixtures each, not four. The landlord expects quarterly carpet extraction, which the facility manager mentioned in passing and nobody wrote down.
+
+The company now has two options: absorb the loss, or quietly cut corners and hope the client doesn't notice. Neither ends well. The contract wasn't lost in month three. It was lost on that Thursday afternoon.
+
+That walkthrough is where I'd put AI in a commercial cleaning business: not to replace the walk, but to make sure what's seen gets captured completely and priced honestly.
+
+## Why the walkthrough decides everything
+
+In commercial cleaning, labour is the largest cost, and labour is driven by area, surface type, fixtures, and frequency. Industry production rates make the point clearly: different spaces take very different amounts of time.
+
+<Bars title="Typical cleaning production rates by area type" unit=" sq ft/h" caption="Square feet one cleaner can service per hour, from ISSA 612 production rates as summarised by xiriOS. Your own rates depend on layout, furnishing, and service level." source="ISSA 612 via xiriOS" href="https://os.xiri.ai/blog/issa-612-cleaning-rates-explained" data={[
+  { label: "Warehouse", value: 6000, display: "6,000" },
+  { label: "Lobbies and corridors", value: 5500, display: "5,500" },
+  { label: "General office", value: 4200, display: "4,200" },
+  { label: "Classrooms", value: 3800, display: "3,800" },
+  { label: "Break rooms and cafeterias", value: 3200, display: "3,200" },
+  { label: "Medical and clinical", value: 2200, display: "2,200" },
+  { label: "Restrooms", value: 1000, display: "1,000", highlight: true }
+]} />
+
+A square foot of restroom takes roughly four times as long as a square foot of office. So missing one restroom, or counting its fixtures wrong, distorts a bid far more than being a little off on the office area. The same goes for a break room, a gym, or a lab that looked like "just another room" on the walk.
+
+<Stats title="Why accurate bids matter more every year">
+  <Stat value="€15.00" label="minimum hourly wage for interior cleaning in Germany from January 2026" source="BIV, German cleaning trade association" href="https://www.die-gebaeudedienstleister.de/pressemitteilungen/tarifloehne-im-gebaeudereiniger-handwerk-steigen-zum-jahreswechsel-2026/" />
+  <Stat value="+42%" label="increase in that minimum wage since 2019" source="Profacilo" href="https://profacilo.de/blog/mindestlohn-gebaeudereinigung-2026/" />
+</Stats>
+
+Wages are rising across the industry, in Europe and North America alike. When labour costs climb, the margin for "we'll figure it out on site" disappears. A bid that is 10% short on hours isn't a thin contract anymore. It's a losing one.
+
+## The room inventory is the real product
+
+Before pricing anything, a bid needs a complete room inventory: every space, what it's made of, what's in it, and how often it needs what. In German, this is called a Raumbuch, a room book, and it's the foundation of every serious cleaning tender there. It deserves the same status everywhere.
+
+| Room or area | Floor | Size | Fixtures and features | Frequency | Special tasks |
+| --- | --- | --- | --- | --- | --- |
+| Open office, 1st floor | Carpet | 6,800 sq ft | 42 desks | Nightly | Vacuum nightly, spot clean, high dusting monthly |
+| Restroom 3A | Tile | 260 sq ft | 4 toilets, 2 urinals, 2 sinks | Nightly | Restock, disinfect touchpoints |
+| Break room, 2nd floor | Vinyl | 400 sq ft | Fridge, microwave, dishwasher | Nightly | Wipe appliances, empty dishwasher Fridays |
+| Meeting rooms, 2nd floor | Carpet | 1,200 sq ft | Glass partitions | Nightly | Glass spot cleaning daily at client's request |
+| Lobby | Stone | 900 sq ft | Entrance mats | Nightly | Mats weekly, stone care quarterly |
+| All carpeted areas | Carpet | 14,000 sq ft | | Quarterly | Hot water extraction (landlord requirement) |
+
+Every row in that table is something the salesperson saw or heard on the walk. The problem is that on a real walk, with a facility manager talking and a building full of rooms, some of it never makes it onto paper.
+
+## From walkthrough to complete bid
+
+<Flow title="From walkthrough to a priced, complete proposal" caption="You walk and decide. The model builds the room inventory and flags gaps. Your production rates and costs produce the price.">
+<Step title="Photograph the floor plan" who="Salesperson" tone="human" time="start of walk">A photo of the fire escape plan or the facility manager's floor plan gives the list of spaces to cover.</Step>
+<Step title="Walk and talk, room by room" who="Salesperson" tone="human" time="on site">Short voice notes and photos: "Restroom 3A, tile, four toilets, two urinals, two sinks, heavy use."</Step>
+<Step title="Build the room inventory" who="AI" tone="ai" time="while walking">Notes become rows: area type, floor, size, fixtures, frequency, special tasks. Requests heard in conversation are captured too.</Step>
+<Step title="Flag the gaps" who="AI" tone="ai">Rooms on the floor plan without a note, restrooms without fixture counts, periodic tasks mentioned but not scheduled.</Step>
+<Step title="Calculate hours" who="System">Your own production rates per area type and task give hours per clean and per week. No guessing by the model.</Step>
+<Step title="Price and write the proposal" who="You" tone="human" time="same day">Wages, supplies, overhead, and margin applied; a proposal with the scope table attached. You review before it goes out.</Step>
+</Flow>
+
+The fourth step is the one that saves contracts. If the floor plan shows twelve rooms on the second floor and the notes cover ten, the salesperson finds out before leaving the building. If the facility manager said "the landlord wants the carpets done every quarter" while walking down a corridor, the model catches it in the voice note and it becomes a line in the proposal, with a price.
+
+## The arithmetic, shown
+
+Here's the hours calculation for the building above, using the production rates from the chart. It's simple, but doing it by hand for every area of every bid is exactly where errors creep in.
+
+<Calc title="Nightly labour hours for the office building" caption="Using ISSA-style production rates from the chart above. Replace them with your own measured rates." rows={[
+  ["General office, 20,000 sq ft ÷ 4,200 sq ft/h", "4.8 h"],
+  ["Restrooms, 1,200 sq ft ÷ 1,000 sq ft/h", "1.2 h"],
+  ["Lobby and corridors, 4,000 sq ft ÷ 5,500 sq ft/h", "0.7 h"],
+  ["Break rooms, 800 sq ft ÷ 3,200 sq ft/h", "0.25 h"],
+  ["Hours per night", "≈ 7.0 h"],
+  ["Nights per week", "× 5"]
+]} result={["Labour hours per week", "≈ 35 h"]} />
+
+Forgetting the second break room and two of the six restrooms would have taken about half an hour off that nightly figure, close to 8% of the labour, before counting the glass partitions and the quarterly carpet extraction. On a contract priced at a normal margin, that alone can eat most of the profit.
+
+## What the client asks for versus what the building needs
+
+<Split title="Hidden scope that bids tend to miss" leftTitle="What the client asks for" rightTitle="What the building also needs" left={[
+  "Nightly office cleaning",
+  "Restrooms cleaned and restocked",
+  "Kitchen kept tidy",
+  "Lobby looking good"
+]} right={[
+  "High dusting, vents, and blinds on a schedule",
+  "Glass partitions and doors, especially fingerprints",
+  "Periodic carpet extraction and hard floor care",
+  "Waste streams: recycling, confidential paper, organic waste",
+  "Consumables supply, and who pays for them",
+  "Access procedures, alarm codes, and key handling"
+]} />
+
+The right-hand column is where experienced salespeople earn their keep, and where tired ones slip. A checklist, prompted by the model during the walk, keeps it consistent.
+
+## The walkthrough checklist
+
+<Checklist title="Ask about these on every walkthrough" items={[
+  "A floor plan, and permission to photograph it",
+  "Every restroom's fixture count, and peak usage times",
+  "Kitchens and break rooms, including appliances the client expects cleaned",
+  "Glass: partitions, doors, interior windows, and how clean the client expects them",
+  "Floor types and any periodic care: extraction, stripping, sealing, stone care",
+  "Waste and recycling streams, and where bins go",
+  "Who supplies consumables, and restocking expectations",
+  "Access, keys, alarm codes, security procedures, and restricted rooms",
+  "Service window: nights, early mornings, or during business hours"
+]} />
+
+## Bid accurately, not cheaply
+
+I'll say this plainly because it matters: the point of all this isn't to win more bids by pricing lower. It's to bid what the building actually costs to clean well. Some clients will choose a cheaper competitor who missed the break room. That competitor will either lose money or cut quality, and in many cases the client comes back. The companies that last are the ones whose bids are right.
+
+A complete room inventory also gives you something to point to. When a client asks why your price is higher, you can show them the scope table: every room, every task, every frequency. It's hard to argue with a bid that shows its work.
+
+## Tools that fit
+
+Many cleaning companies use janitorial management software such as Janitorial Manager, Swept, or CleanTelligent, which include bidding tools and production rate calculators. The walkthrough capture sits in front of them: it produces the room inventory in a format those tools can use, and the pricing stays in the software you trust. What changes is that the inventory is complete before it gets there.
+
+Floor plans and access procedures are sensitive for your clients. Keep them with the bid, limit who can see them, and don't paste them into free tools. In the EU, remember that voice notes can contain names and personal details from the walk, which puts them under the GDPR.
+
+## Questions cleaning company owners ask
+
+### Can AI measure the building from the floor plan?
+
+If the plan has a scale or room areas printed on it, the model can read them and give you a good first estimate. Without a scale, it can still list the rooms so none are missed, and you add measurements on site.
+
+### Will this work for one-off deep cleans too?
+
+Yes. One-off jobs often have more hidden scope than regular contracts, because nobody has cleaned the space properly in a while. The same room-by-room capture helps you avoid underpricing them.
+
+### Can it set our production rates?
+
+It shouldn't. Your production rates come from your own crews and your own service level. Published rates like ISSA's are a useful starting point, but the calculation should always use your numbers.
+
+### Is this worth it for a company with a few contracts?
+
+If you bid a few times a month, yes, because one underpriced contract can wipe out the margin of several good ones. Start with the capture and gap check on your next three walkthroughs and compare the result with how you'd have done it on paper.
+
+## The rule of thumb
+
+Bid the building you walked, not the one you remember. Capture every room and every request while you're still inside, and let the numbers follow.
+
+If underpriced contracts have hurt your business before, [tell me how you run walkthroughs and bids today](/contact?intent=improve), and I'll suggest a capture setup you could try on your next few bids. The same measure-and-price problem shows up in [landscaping estimates](/posts/ai-for-landscapers-estimates), and complaint data can reveal quality problems in [commercial laundries](/posts/ai-for-laundries-quality-control) much like in cleaning contracts.

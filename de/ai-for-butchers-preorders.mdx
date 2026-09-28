@@ -1,0 +1,137 @@
+---
+id: "de-ai-for-butchers-preorders"
+title: "Metzgerei: Festtagsbestellungen ohne Zettelchaos"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Lebensmittel & Gastronomie", "Metzgereien", "Vorbestellungen", "KI für kleine Unternehmen"]
+description: "Festtagsbestellungen stapeln sich auf Zetteln und Telefonnotizen, bis die Abholung im Chaos endet. Wie KI Metzgereien hilft, jede Bestellung vollständig zu erfassen."
+excerpt: "Festtagsbestellungen stapeln sich auf Zetteln und Telefonnotizen, bis die Abholung im Chaos endet. Wie KI Metzgereien hilft, jede Bestellung vollständig zu erfassen."
+---
+
+Der Morgen des 23. Dezember, und die Schlange vor der Metzgerei reicht bis zur Ecke. Drinnen ist das Bestellbuch zu einem Ordner mit 312 handgeschriebenen Zetteln angewachsen. Eine Kundin an der Theke sagt, sie habe vor zwei Wochen telefonisch ein Rinderfilet für acht Personen bestellt. Der Zettel ist nicht auffindbar. Auf einem anderen steht „Müller, 1 Gans“. Im Ordner gibt es drei Müllers. Eine davon wollte die Gans küchenfertig und gefüllt.
+
+Hinten wiegt jemand Gänse gegen eine Liste, die am 19. von Hand zusammengezählt wurde. Der Geflügelhof hat zwei Gänse weniger geliefert als bestellt. Das Telefon klingelt ununterbrochen: Kann man noch bestellen? Wann soll ich kommen? Ich schaffe es doch erst am 24.
+
+Nichts davon ist ungewöhnlich. Festtagsbestellungen gehören zu den umsatzstärksten Wochen im Jahr einer Metzgerei, und sie laufen auf Papier, weil der Rest des Jahres nichts anderes braucht. In diesem Beitrag geht es um einen einfachen Weg, das zu ändern, ohne aus der Metzgerei einen Onlineshop zu machen und ohne die Kunden zu verlieren, die immer lieber anrufen werden.
+
+## Warum Festtagsbestellungen so schwierig sind
+
+Das Handwerk steht ohnehin unter Druck. Der Deutsche Fleischer-Verband zählte 2024 nur noch [9.872 Fleischerbetriebe](https://afz.fleischwirtschaft.de/maerkte/nachrichten/fleischerhandwerk-betriebsrueckgang-gebremst-66761), erstmals weniger als 10.000, dazu rund 5.900 Filialen. Weniger Betriebe heißt mehr Bestellungen pro Betrieb, und das Personal ist knapp. Gerade in den Festtagswochen zählt jede Stunde, die nicht mit Zettelsuchen verloren geht.
+
+Die Schwierigkeit ist aber nicht die Menge allein, sondern die Menge in wenigen Wochen, über jeden Kanal gleichzeitig, in den Worten der Kunden. Bestellungen kommen per Telefon, an der Theke, per E-Mail, per Nachricht, über das Formular auf der Website und auf der Rückseite eines Kassenbons, notiert von der Samstagsaushilfe. Sie sind oft vage: „eine große Gans“, „wie letztes Jahr“, „Braten für Heiligabend, acht Leute“. Gewicht und Zubereitung zählen (mit Knochen oder ausgelöst, gerollt, gefüllt, portioniert), vieles ist Gewichtsware mit Endpreis erst beim Abpacken, manches muss Wochen vorher beim Hof bestellt werden. Und dann wollen alle an denselben zwei Tagen abholen.
+
+Dazu kommt: In Deutschland gibt es nicht einen Gipfel, sondern drei. Die Martinsgans im November, die Weihnachtsbraten und Fondue- und Raclettefleisch für Silvester.
+
+## Was eine Bestellung enthalten muss
+
+Der erste Schritt hat mit KI nichts zu tun: festlegen, wie eine vollständige Bestellung aussieht. Die meisten Fehler entstehen durch Zettel, auf denen ein Feld fehlt.
+
+| Feld | Warum es zählt | Typische Unklarheit |
+| --- | --- | --- |
+| Name und Telefonnummer | Bestellung finden, anrufen, wenn sich etwas ändert | „Müller“ ohne Vorname und Nummer |
+| Artikel | Reservieren und beim Lieferanten bestellen | „Gans“, wenn es Weidegans und Standard gibt |
+| Größe oder Gewicht | Mengenplanung und Bestellung beim Hof | „groß“, „für acht Personen“ |
+| Zubereitung | Arbeit in der Wurstküche, richtiges Packen | ausgelöst, gerollt, gefüllt, portioniert, mariniert |
+| Menge | Klar, bis „2x Entenhälften“ auf dem Zettel steht | ganz oder in Teilen |
+| Abholtag und Zeitfenster | Den Ansturm verteilen, in Reihenfolge packen | „vor Weihnachten“ |
+| Sonderwünsche und Allergien | Vertrauen der Kunden und rechtliche Pflichten | „Füllung ohne Schwein“ |
+| Anzahlung | Schutz vor Nichtabholung bei großen Bestellungen | bezahlt oder nicht, wie viel |
+
+Eine Kundin, die sagt „Gans für sechs, küchenfertig, gefüllt, Abholung 23. vormittags“, hat fast alles gesagt. Ein Kunde, der sagt „wie letztes Jahr“, hat nichts gesagt, es sei denn, Sie können die Bestellung vom Vorjahr nachschlagen.
+
+## Wo die KI hilft
+
+Die Idee ist einfach: Egal über welchen Kanal eine Bestellung kommt, sie landet vollständig und strukturiert in einer Liste, und der Kunde bekommt eine schriftliche Bestätigung. Die KI übersetzt von dem, was Menschen sagen, in das, was die Liste braucht.
+
+<Flow title="Von „eine große Gans“ zur bestätigten Bestellung auf der Abholliste" caption="Das Modell strukturiert und fragt nach. Das Personal prüft Ungewöhnliches. Der Kunde bestätigt. Geplant wird aus einer Liste statt aus einem Ordner.">
+<Step title="Bestellung kommt" who="Kunde" time="jeder Kanal">Telefonat, von der Mitarbeiterin in eigenen Worten notiert, Nachricht, E-Mail, Webformular oder Eingabe an der Theke.</Step>
+<Step title="Bestellung strukturieren" who="KI" tone="ai" time="Sekunden">Macht daraus die Bestellfelder: Artikel, Größe, Zubereitung, Menge, Abholfenster, Name und Nummer. Schlägt bei „wie letztes Jahr“ die Vorjahresbestellung nach.</Step>
+<Step title="Nachfragen, was fehlt" who="KI" tone="ai">Kurze Rückfrage im selben Kanal: „Welche Größe darf es sein: etwa 4 kg für vier bis fünf Personen oder etwa 5,5 kg für sechs bis acht?“</Step>
+<Step title="Personal prüft" who="Personal" tone="human" time="Sekunden">Ungewöhnliche Wünsche, sehr große Bestellungen und alles zu Allergien gehen vor der Bestätigung an einen Menschen.</Step>
+<Step title="Bestätigung" who="KI" tone="ai">Schriftliche Bestätigung mit Bestellnummer, Details, Abholfenster und dem Hinweis, dass nach Gewicht abgerechnet wird.</Step>
+<Step title="Planen und abholen" who="Metzgerei" tone="human">Tägliche Summen für Lieferanten und Zerlegung, Erinnerung am Vortag, Bestellungen nach Zeitfenster gepackt und beschriftet.</Step>
+</Flow>
+
+Das Telefon verdient einen eigenen Satz. Viele Stammkunden werden immer anrufen, und das ist gut so. Der schnellste Gewinn ist nicht eine KI am Telefon, sondern dass das Personal in eigenen Worten eintippt, was der Kunde sagt („Müller Anna, 0171..., Gans 5,5 kg küchenfertig gefüllt, 23. vormittags“), und das Modell daraus die Bestellung macht. Niemand muss ein neues System lernen, und die Bestellung ist trotzdem vollständig in der Liste. Für die vollsten Wochen ist ein Sprachassistent, der Bestellungen annimmt, wenn alle Leitungen belegt sind, eine Option. Anfangen würde ich mit der einfachen Variante.
+
+## Was der Kunde bekommt
+
+Eine Bestätigung, die jeden Zweifel ausräumt:
+
+> **Ihre Weihnachtsbestellung Nr. 214, Metzgerei Hansen**
+> 1 Weidegans, ca. 5,5 kg, küchenfertig
+> 1 kg Füllung nach Hausrezept, ohne Schweinefleisch
+> **Abholung:** Dienstag, 23. Dezember, 8 bis 10 Uhr
+> Abrechnung nach Gewicht bei Abholung: Gans 18,90 €/kg, Füllung 14,50 €/kg.
+> Stimmt etwas nicht? Antworten Sie einfach auf diese Nachricht. Wir erinnern Sie am Vortag.
+
+Diese eine Nachricht beendet die meisten Diskussionen an der Theke. Die Kundin hat sie auf dem Handy, die Metzgerei hat denselben Eintrag, und aus „Ich habe vor zwei Wochen angerufen“ wird „Bestellung 214, bitte schön“.
+
+## Gewichtsware, Anzahlung und Nichtabholung
+
+Zwei Themen sorgen jedes Jahr für Ärger an der Theke: der Preis und die Bestellungen, die niemand abholt.
+
+Beim Preis hilft Klarheit von Anfang an. Eine Gans „ca. 5,5 kg“ kann 5,2 oder 5,9 Kilo wiegen, und der Endpreis steht erst beim Abpacken fest. Steht in der Bestätigung der Kilopreis und das „ca.“, ist die Differenz an der Kasse keine Überraschung. Wer mag, schickt am Vortag mit der Erinnerung das tatsächliche Gewicht und den Endpreis mit. Das Modell kann das aus der Packliste übernehmen.
+
+Bei der Nichtabholung hilft eine einfache Regel: Für Gänse, ganze Filets und alles, was eigens beim Hof bestellt wird, eine Anzahlung, und eine klare Frist für Stornierungen. Die Erinnerung am Vortag senkt die Zahl der vergessenen Bestellungen spürbar, weil Kunden, die es nicht schaffen, dann Bescheid geben. Was übrig bleibt, lässt sich am 24. mittags noch verkaufen, wenn die Liste zeigt, was nicht abgeholt wurde.
+
+## Die Saison planen
+
+Der Nutzen liegt nicht nur in der Liste. Sind Bestellungen strukturiert, lässt sich die Planung, die sonst am 19. von Hand passiert, jeden Tag machen.
+
+<Timeline title="Eine Festtagssaison aus einer Liste" caption="Termine als Beispiel. Derselbe Rhythmus funktioniert für Ostern, Grillsaison oder Firmenfeiern.">
+<Phase when="Mitte Oktober" title="Martinsgans und Saisonstart">Festtagssortiment, Kilopreise, Abholfenster und Bestellschluss ankündigen. Stammkunden bekommen ihre Vorjahresbestellung als Vorschlag.</Phase>
+<Phase when="Anfang November" title="Erste Prognose für den Hof">Bisherige Bestellungen plus Vorjahreszahlen ergeben eine erste Schätzung für Geflügelhof und Lieferanten mit langen Vorlaufzeiten.</Phase>
+<Phase when="Anfang Dezember" title="Zeitfenster steuern">Abholfenster füllen sich. Das Modell bietet Alternativen an, wenn ein Fenster voll ist, und lenkt auf ruhigere Zeiten.</Phase>
+<Phase when="Bestellschluss" title="Endgültige Bestellung beim Lieferanten">Summen je Artikel, Größe und Zubereitung. Bestellungen bei Hof und Großhandel bestätigt.</Phase>
+<Phase when="Drei Tage vorher" title="Zerlege- und Packplan">Listen je Tag und Zeitfenster für die Wurstküche: was, in welcher Reihenfolge, Etiketten direkt aus der Liste.</Phase>
+<Phase when="Vortag" title="Erinnerungen">Jeder Kunde bekommt eine Erinnerung mit seinem Zeitfenster. Änderungen kommen einen Tag früher statt an der Theke.</Phase>
+<Phase when="Silvester" title="Fondue und Raclette">Derselbe Ablauf für den dritten Gipfel, mit eigenen Zeitfenstern am 30. und 31.</Phase>
+</Timeline>
+
+Beim Lieferanten liegt das Geld. Wer am 10. Dezember weiß, dass 140 Gänse bestellt sind, davon 60 zwischen 5 und 6 Kilo, bestellt beim Hof genau, statt aus Vorjahr und Gefühl zu schätzen.
+
+## Vor der Saison
+
+<Checklist title="Checkliste für Festtagsbestellungen" items={[
+  "Festtagssortiment mit Größen, Zubereitungen und Kilopreisen",
+  "Pflichtfelder jeder Bestellung, abgestimmt mit allen, die Bestellungen annehmen",
+  "Abholtage und Zeitfenster mit Höchstzahl an Bestellungen pro Fenster",
+  "Bestellschluss und eine Regel für Nachzügler",
+  "Anzahlungsregel für große oder besondere Bestellungen",
+  "Schriftliche Allergeninformation zu jedem Artikel, auch zu Füllungen und Marinaden",
+  "Eine Liste, in der jede Bestellung landet, egal über welchen Kanal",
+  "Vorlagen für Bestätigung und Erinnerung"
+]} />
+
+Die Allergenzeile ist wichtig. Wer für das Familienessen bestellt, fragt nach Gluten in der Füllung und Senf in der Marinade. Auch für lose Ware verlangt die [Lebensmittelinformationsverordnung](https://eur-lex.europa.eu/eli/reg/2011/1169/oj) Allergeninformationen, in Deutschland konkretisiert durch die Lebensmittelinformations-Durchführungsverordnung. Das Modell gibt Ihre schriftliche Allergeninformation weiter. Raten darf es nie, und jede Allergiefrage geht an einen Menschen.
+
+## Welche Werkzeuge passen
+
+Spezielle Software braucht es nicht. Eine Tabelle oder einfache Datenbank als Bestellliste, ein Formular für Personal und Website, die Kanäle, über die Ihre Kunden schreiben, und eine kleine KI-Schicht, die Nachrichten strukturiert, nachfragt und bestätigt. Manche Kassensysteme und Bestelltools haben Vorbestellfunktionen. Ist das bei Ihnen so, nutzen Sie sie als Liste und ergänzen die KI nur für die unübersichtlichen Kanäle.
+
+Name und Telefonnummer sind personenbezogene Daten. Führen Sie die Liste an einem Ort, nutzen Sie sie nur für die Bestellungen und löschen Sie nach der Saison, was Sie nicht brauchen. Wer Messenger wie WhatsApp Business nutzt, sollte vorher die Datenschutzfragen klären. Und Kunden sollten erkennen können, wenn ein automatisierter Assistent antwortet, das verlangt seit August 2026 auch die KI-Verordnung.
+
+## Häufige Fragen aus Metzgereien
+
+### Was ist mit älteren Kunden, die nur anrufen?
+
+Die rufen weiter an. Das Personal tippt das Gespräch in eigenen Worten ins Formular, das Modell strukturiert, und die Kundin bekommt eine SMS, wenn sie ein Handy hat, oder einen gedruckten Zettel bei der Abholung. Das System passt sich dem Kunden an, nicht umgekehrt.
+
+### Schafft das auch Platten und Sonderwünsche?
+
+Ja, solange Ihre Optionen aufgeschrieben sind: welche Platten, welche Teilstücke, was sich tauschen lässt. Für echte Sonderanfertigungen sammelt das Modell die Details und markiert die Bestellung, damit ein Mensch den Preis macht.
+
+### Was, wenn der Hof weniger liefert als bestellt?
+
+Die Liste zeigt genau, welche Kunden betroffen sind, sortiert nach Abholfenster. Das Modell entwirft eine Nachricht mit einer Alternative, eine andere Größe oder ein anderes Stück, die ein Mensch freigibt und verschickt. Sechs Kunden am 21. anzurufen ist viel besser, als sie am 23. zu enttäuschen.
+
+### Lohnt sich das für einen einzelnen Laden?
+
+Wenn die Festtagsbestellungen in die Hunderte gehen, ja. Schon die Liste und die Bestätigungen allein, ohne jede Lieferantenplanung, nehmen den größten Teil des Chaos bei der Abholung.
+
+## Faustregel
+
+Jede Bestellung in einer Liste, jede Bestellung vollständig, jeder Kunde mit schriftlicher Bestätigung. Lassen Sie das Modell aus „eine große Gans für Weihnachten“ die richtigen Felder machen, und lassen Sie Ihr Personal die vollste Woche des Jahres hinter der Theke verbringen statt im Ordner.
+
+Wenn Ihre Festtagsbestellungen noch auf Zetteln leben, [schreiben Sie mir, wie Bestellungen bei Ihnen ankommen und wie viele es ungefähr sind](/contact?intent=improve). Ich schlage Ihnen den einfachsten Weg in eine Liste vor. Bäckereien haben dieselbe Planungsfrage jeden Tag, siehe [weniger Retouren mit KI-Prognosen](/de/posts/ai-for-bakeries-production-planning), und Caterer kämpfen mit [Anfragen, die schnell kalt werden](/de/posts/ai-for-catering-inquiries).

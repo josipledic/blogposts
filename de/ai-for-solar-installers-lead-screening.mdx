@@ -1,0 +1,153 @@
+---
+id: "de-ai-for-solar-installers-lead-screening"
+title: "PV-Anfragen vorqualifizieren: Welche Anfrage einen Vor-Ort-Termin verdient"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Handwerk & Bau", "Solarteure", "Anfragen qualifizieren", "KI für kleine Unternehmen"]
+description: "Der Vor-Ort-Termin ist der teuerste Schritt im PV-Vertrieb. Wie KI Dächer prüft, Stromrechnungen liest und Erträge schätzt, bevor jemand losfährt."
+excerpt: "Der Vor-Ort-Termin ist der teuerste Schritt im PV-Vertrieb. Wie KI Dächer prüft, Stromrechnungen liest und Erträge schätzt, bevor jemand losfährt."
+---
+
+„Was kostet eine PV-Anlage für mein Haus?“ ist die häufigste Anfrage, die ein Solarbetrieb bekommt, und allein sagt sie fast nichts. Dahinter kann ein Eigentümer mit Süddach, hohem Stromverbrauch und Wärmepumpe im Keller stecken. Oder eine Mieterin. Oder jemand, dessen Dach im Schatten zweier Eichen liegt und nächstes Jahr neu gedeckt werden muss. Oder ein Single-Haushalt mit 1.800 Kilowattstunden im Jahr, der eine Anzeige gesehen hat.
+
+Herausfinden lässt sich das klassisch nur mit einem Vor-Ort-Termin: Jemand fährt hin, schaut sich Dach, Zählerschrank und Stromrechnung an und rechnet. Das sind zwei bis drei Stunden Fachzeit, bevor klar ist, ob es überhaupt ein Projekt gibt. In einem Markt, in dem jeder Abschluss mehr Arbeit macht, ist das Verschwenden dieser Stunden der schnellste Weg, Geld zu verlieren.
+
+Genau hier würde ich KI in einem Solarbetrieb einsetzen: für die Recherche am Schreibtisch, die entscheidet, ob sich ein Termin lohnt, mit öffentlichen Daten, der Stromrechnung der Kunden und Ihren eigenen Regeln.
+
+## Warum Vorqualifizierung heute mehr zählt
+
+Die Rechnung für private PV-Anlagen hat sich in den letzten Jahren deutlich verschoben.
+
+<Stats title="PV in Deutschland 2025 und 2026">
+  <Stat value="16 GW" label="neue PV-Leistung kamen 2024 hinzu, insgesamt waren Ende 2024 rund 99 GW installiert" source="photovoltaik.org" href="https://photovoltaik.org/kosten/einspeiseverguetung" />
+  <Stat value="Unter 8 ct" label="pro kWh beträgt die Einspeisevergütung für kleine Anlagen mit Teileinspeisung, mit halbjährlicher Absenkung um 1 %" source="ADAC" href="https://www.adac.de/rund-ums-haus/energie/spartipps/einspeiseverguetung-pv-anlagen/" />
+  <Stat value="60 %" label="Einspeisegrenze für neue Anlagen ohne Smart Meter und Steuerbox, seit dem Solarspitzengesetz vom Februar 2025" source="neoom" href="https://neoom.com/ratgeber/solarspitzengesetz-deutschland" />
+</Stats>
+
+Einspeisen lohnt sich kaum noch, Eigenverbrauch umso mehr. Eine PV-Anlage rechnet sich heute über den Strom, den ein Haushalt selbst nutzt, gern mit Speicher, Wallbox oder Wärmepumpe. Das heißt: Die Details von Dach und Verbrauch entscheiden stärker als früher darüber, ob ein Angebot überzeugt. Wer sie früh kennt, trennt gute Anfragen von verschwendeten Nachmittagen.
+
+## Was eine Anfrage terminwürdig macht
+
+Bevor irgendetwas automatisiert wird, sollte feststehen, was „terminwürdig“ für Ihren Betrieb bedeutet. Mit diesen Kriterien würde ich anfangen.
+
+| Frage | Warum sie zählt | Woher die Antwort kommt |
+| --- | --- | --- |
+| Gehört das Haus der anfragenden Person? | Mieter können nicht unterschreiben | Direkt gefragt |
+| Ausrichtung, Neigung, Verschattung | Bestimmen den Ertrag mehr als alles andere | Luftbilder, Solarkataster, dann die Begehung |
+| Alter und Zustand der Dacheindeckung | Ein sanierungsbedürftiges Dach kommt zuerst dran | Eigentümer, dazu Fotos vom Boden |
+| Jahresverbrauch und Tarif | Bestimmen Anlagengröße und Eigenverbrauch | Die Stromrechnung |
+| Zählerschrank | Ein neuer Zählerschrank nach aktuellen Vorgaben kann viel kosten | Ein Foto vom Zählerschrank |
+| Finanzierung | Eigenkapital, KfW-Kredit oder Pacht verändern das Angebot | Direkt gefragt |
+| Pläne | Wärmepumpe, E-Auto oder Speicher verändern die Auslegung | Direkt gefragt |
+| Denkmalschutz, Eigentümergemeinschaft | Können das Projekt verzögern oder verhindern | Eigentümer, örtliche Regeln |
+
+Das meiste davon lässt sich klären, bevor jemand ins Auto steigt. Einiges, etwa der Schatten eines bestimmten Schornsteins oder der Zustand der Sparren, braucht den Termin. Es geht nicht darum, den Termin abzuschaffen. Er soll von genau diesen Punkten handeln und nicht davon, dass das Haus vermietet ist.
+
+## Die Vorqualifizierung als Ablauf
+
+So würde ich die Teile zusammensetzen. Die schwere Arbeit erledigen öffentliche Daten und einfache Rechnungen. Das Sprachmodell liest und schreibt.
+
+<Flow title="Von „Was kostet das?“ zur vorbereiteten Anfrage" caption="Öffentliche Daten und Ihre Regeln liefern die Zahlen. Das Modell liest Dokumente und schreibt Nachrichten. Über jeden Termin entscheidet ein Mensch.">
+<Step title="Anfrage geht ein" who="Web, Telefon, Portale" time="jederzeit">Name, Adresse und was die Eigentümer geschrieben haben.</Step>
+<Step title="Das Wichtigste erfragen" who="KI" tone="ai" time="Minuten">Eine kurze Antwort mit Fragen zu Eigentum, Dachalter und Plänen, dazu ein Upload-Link für die letzte Jahresabrechnung und ein Foto vom Zählerschrank.</Step>
+<Step title="Das Dach von oben ansehen" who="System">Dachflächen, Ausrichtung und Neigung aus Luftbilddaten, etwa Googles Solar API, wo es Abdeckung gibt, oder aus dem Solarkataster des Landes, sonst ein kurzer Blick durch Ihre Planung.</Step>
+<Step title="Ertrag schätzen" who="System">Ein spezifischer Ertrag pro kWp für den Standort aus dem kostenlosen PVGIS der EU oder einem vergleichbaren Modell.</Step>
+<Step title="Stromrechnung lesen" who="KI" tone="ai">Das Modell übernimmt Jahresverbrauch, Arbeitspreis und Grundpreis aus Foto oder PDF der Abrechnung.</Step>
+<Step title="Größe, Spanne und Einstufung" who="Regeln">Eine grobe Anlagengröße und Einsparspanne aus Ihren Preisen und den aktuellen Vergütungsregeln, dazu eine Einstufung der Kaufbereitschaft.</Step>
+<Step title="Planung oder Vertrieb prüft" who="Vertrieb" tone="human" time="am selben Tag">Ein Mensch prüft die Zusammenfassung, ruft an und vereinbart einen Termin nur, wenn Dach und Kunde passen.</Step>
+</Flow>
+
+Zwei Teile verdienen einen genaueren Blick.
+
+**PVGIS ist kostenlos und für die Vorqualifizierung gut genug.** Die Gemeinsame Forschungsstelle der EU-Kommission betreibt [PVGIS](https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis/using-pvgis-5/pvgis-5-tools/grid-connected-pv_en), das Monats- und Jahreserträge einer PV-Anlage an fast jedem Standort schätzt, unter Berücksichtigung von Einstrahlung, Temperatur und Modultyp. Es hat eine Schnittstelle, wird breit genutzt und ist für eine erste Schätzung so gut wie jedes kostenpflichtige Werkzeug. Viele Bundesländer und Kommunen bieten außerdem Solarkataster an, die die Eignung einzelner Dächer zeigen. Die genaue Planung mit Verschattungsanalyse kommt später.
+
+**Stromrechnungen sind eine ideale Aufgabe für ein Sprachmodell.** Jeder Versorger gestaltet seine Abrechnung anders. Ein Modell liest ein Handyfoto der Jahresabrechnung und übernimmt Jahresverbrauch, Arbeitspreis und Grundpreis, die sonst jemand abtippen würde. Der Jahresverbrauch in Kilowattstunden ist der wichtigste Einzelwert für die Auslegung.
+
+## Was die Eigentümer bekommen
+
+Das Ergebnis ist nicht nur eine Einstufung für Ihr Team. Die Eigentümer bekommen auch etwas Nützliches, und das verdient den Termin. Eine erste Einschätzung könnte so aussehen:
+
+> Guten Tag Herr Brandt, danke für Ihre Jahresabrechnung. Nach Ihrer Adresse ist die Südwestseite Ihres Dachs gut für Photovoltaik geeignet, die Ostseite liegt morgens teilweise im Schatten. Sie haben im letzten Jahr rund 5.400 kWh verbraucht, dazu planen Sie eine Wärmepumpe.
+>
+> Eine Anlage mit etwa 9 bis 10 kWp auf der Südwestseite und ein Speicher um 8 kWh würden nach unserer Schätzung 45 bis 60 % Ihres heutigen Verbrauchs decken. Mit Wärmepumpe steigt der Verbrauch, dann lohnt sich die größere Auslegung zusätzlich. Die Anlage ist seit 2023 von der Mehrwertsteuer befreit.
+>
+> Das sind Spannen aus Luftbildern und öffentlichen Ertragsmodellen, kein Angebot. Für genaue Zahlen wäre der nächste Schritt ein einstündiger Termin, bei dem wir Dach, Verschattung und Zählerschrank ansehen.
+
+Die Nachricht zeigt den Eigentümern ihre eigenen Zahlen, ist ehrlich, dass sich die Anlage über Eigenverbrauch rechnet, und erklärt, warum ein Termin der nächste Schritt ist. Wer darauf mit „Ja, gern“ antwortet, ist eine ganz andere Anfrage als jemand, der vor einer Stunde ein Formular ausgefüllt hat.
+
+## Anfragen sortieren, ohne zu raten
+
+<Matrix title="Welche Anfragen einen Termin bekommen" xLabel="Wie gut der Standort passt" yLabel="Wie kaufbereit die Kunden sind" quadrants={[
+  { title: "Erst das Dach", text: "Kaufbereit, aber schwieriges Dach oder alte Eindeckung. Ehrliche Alternativen: erst sanieren, kleiner planen oder über andere Dachflächen sprechen." },
+  { title: "Termin vereinbaren", text: "Gutes Dach, Eigentum, klarer Verbrauch, realistisches Budget oder Finanzierung. Dafür ist Ihr Außendienst da.", highlight: true },
+  { title: "Freundlich absagen", text: "Miete, starke Verschattung oder sehr geringer Verbrauch. Eine klare Erklärung, bei Mietern gern der Hinweis auf ein Steckersolargerät." },
+  { title: "Zahlen schicken, dann warten", text: "Tolles Dach, noch nicht so weit. Die persönliche Einschätzung schicken und zum genannten Zeitpunkt nachfassen." }
+]} />
+
+Das Feld unten links ist bei Mietern kein totes Ende. Seit der Reform im Oktober 2024 gelten Steckersolargeräte im Miet- und Wohnungseigentumsrecht als privilegierte Maßnahme, der Vermieter kann sie nicht mehr ohne Weiteres verbieten. Ein kurzer, hilfreicher Hinweis darauf kostet nichts und bleibt in Erinnerung.
+
+## Worum Sie Eigentümer bitten
+
+<Checklist title="Die Anfrage zur Vorqualifizierung" items={[
+  "Adresse bestätigen, und dass Ihnen das Haus gehört",
+  "Die letzte Jahresabrechnung Ihres Stromversorgers",
+  "Ein Foto vom geöffneten Zählerschrank",
+  "Das ungefähre Alter der Dacheindeckung und ob eine Sanierung geplant ist",
+  "Ein Foto des Dachs von der Straße oder aus dem Garten",
+  "Pläne für Wärmepumpe, E-Auto oder Speicher in den nächsten Jahren",
+  "Denkmalschutz oder Eigentümergemeinschaft, falls zutreffend"
+]} />
+
+Alles auf dieser Liste kostet Eigentümer ein paar Minuten. Dafür bekommen sie eine echte Einschätzung statt einer allgemeinen „Anlagen ab …“-Zahl. Die meisten empfinden das als fairen Tausch.
+
+## Was leere Termine kosten
+
+<Calc title="Überschlag: Termine, die nie funktioniert hätten" caption="Annahmen, keine Messwerte. Ersetzen Sie sie durch Ihre eigenen Terminzahlen und Ergebnisse." rows={[
+  ["Vor-Ort-Termine pro Monat", "40"],
+  ["Anteil, der an Dach, Schatten, Eigentum oder Budget scheitert", "× 35 %"],
+  ["Termine ohne Ergebnis pro Monat", "14"],
+  ["Stunden pro Termin inklusive Fahrt und Vorplanung", "× 3,5"],
+  ["Monate pro Jahr", "× 12"]
+]} result={["Fachstunden in Sackgassen pro Jahr", "≈ 590"]} />
+
+Das ist rund ein Drittel eines Vollzeit-Vertriebsjahrs. Schon die Hälfte dieser Sackgassen am Schreibtisch zu erkennen, schafft Platz für die Anfragen, die abschließen können.
+
+## Ehrliche Zahlen
+
+Die Solarbranche hat ein Rufproblem mit aggressivem Vertrieb und geschönten Renditeversprechen. Automatische Schätzungen machen es leichter denn je, beeindruckende Zahlen zu erzeugen. Deshalb zählen die Regeln.
+
+<Callout title="Regeln für jede Schätzung" tone="warning">
+Spannen statt einzelner Zahlen. Vorsichtige Annahmen für Ertrag und Strompreisentwicklung. Vergütungssätze, Solarspitzen-Regeln und Förderbedingungen stammen aus einer Tabelle, die Ihr Team pflegt, nie aus dem Gedächtnis des Modells, denn sie ändern sich: Die Einspeisevergütung sinkt alle sechs Monate, und neue Anlagen bekommen bei negativen Strompreisen keine Vergütung. Jede Schätzung sagt klar, dass die endgültige Planung nach der Begehung folgt.
+</Callout>
+
+Das Modell schreibt die Erklärung, die Zahlen bestimmt es nie. Diese Trennung erlaubt es, persönliche Einschätzungen in großer Zahl zu verschicken, ohne sich Sorgen machen zu müssen, was darin versprochen wurde.
+
+## Werkzeuge, die dazu passen
+
+Viele Solarbetriebe planen mit PV*SOL oder den Werkzeugen der Wechselrichterhersteller und verwalten Anfragen in einem Branchen-CRM wie Reonic oder in HubSpot und Pipedrive. Die Vorqualifizierung legt dort eine geprüfte Anfrage an, mit Verbrauchsdaten, Dachzusammenfassung und vorläufiger Schätzung im Anhang, sodass die Planung mit Vorsprung startet statt mit einer nackten Adresse.
+
+Eigentümer schicken Rechnungen mit Kundennummern und Adressen. Speichern Sie sie bei der Anfrage, beschränken Sie den Zugriff und löschen Sie sie, wenn aus der Anfrage nichts wird. Das verlangt die DSGVO, und dialogfähige Assistenten müssen seit August 2026 nach [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) offenlegen, dass sie KI sind.
+
+## Fragen, die Solarbetriebe stellen
+
+### Kann KI ein Dach auf Luftbildern beurteilen?
+
+Ausrichtung, Neigung und offensichtliche Hindernisse lassen sich aus guten Luftbildern ablesen, und Werkzeuge wie Googles Solar API oder die Solarkataster liefern das direkt. Den Zustand der Eindeckung oder der Sparren sieht niemand von oben. Dafür gibt es den Termin.
+
+### Ist eine PVGIS-Schätzung genau genug?
+
+Um zu entscheiden, ob sich ein Termin lohnt, ja. Für ein Angebot nein. Die endgültige Ertragsprognose braucht eine richtige Verschattungsanalyse und die tatsächliche Belegung.
+
+### Fahren wir trotzdem zu Anfragen, die durchfallen?
+
+Manchmal. Die Regel „Miete“ ist endgültig. Die Regel „starke Verschattung“ kann falsch sein, wenn das Luftbild alt ist und die Bäume längst weg sind. Lassen Sie Ihren Vertrieb die Einstufung überstimmen, und notieren Sie den Grund, damit die Regeln besser werden.
+
+### Was ist mit Speicher und Wärmepumpe?
+
+Sie machen die Vorqualifizierung wertvoller. Ein Haushalt, der eine Wärmepumpe oder ein E-Auto plant, verbraucht in zwei Jahren deutlich mehr Strom, als die heutige Abrechnung zeigt. Wer diese Pläne früh erfragt, legt die Anlage richtig aus.
+
+## Die Regel, der ich folgen würde
+
+Fahren Sie zu den Dächern, die funktionieren können, für die Menschen, die kaufen können. Alles andere lässt sich am Schreibtisch klären, und zwar schneller.
+
+Wenn Ihr Außendienst zu viele Nachmittage auf Dächern verbringt, die nie gepasst hätten, [schreiben Sie mir, wie Anfragen bei Ihnen ankommen](/contact?intent=improve) und mit welchen Werkzeugen Sie arbeiten. Ich schlage Ihnen eine Vorqualifizierung vor, die Sie mit den Anfragen des nächsten Monats testen können. Dieselbe Idee in benachbarten Gewerken beschreibe ich für den [Fensterbau](/de/posts/ai-for-window-installers-leads) und für [Wartungsverträge im SHK-Betrieb](/de/posts/ai-for-hvac-maintenance-reminders).

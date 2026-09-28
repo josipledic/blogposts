@@ -1,0 +1,146 @@
+---
+id: "ai-for-roofers-storm-leads"
+title: "After the Hailstorm: Handling a Flood of Roofing Leads With AI"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Trades & construction", "Roofing contractors", "Storm damage leads", "AI for small business"]
+description: "After a storm, a roofer gets a month of inquiries in a day. How AI can answer everyone, sort active leaks from inspections, and keep a local roofer trustworthy."
+excerpt: "After a storm, a roofer gets a month of inquiries in a day. How AI can answer everyone, sort active leaks from inspections, and keep a local roofer trustworthy."
+---
+
+The hail starts at 5:20 on a Thursday afternoon and lasts eleven minutes. By Friday morning, a local roofing company with two people in the office has 140 voicemails, 60 web form submissions, and thirty messages on Facebook. In a normal week it gets maybe twenty-five inquiries.
+
+Somewhere in that pile is a family with water dripping through the ceiling above their daughter's bed. Next to it are dozens of "I think my roof got hit, can someone look?", a few people outside your service area, a property manager with nine buildings, and a homeowner asking whether the guy knocking on their door this morning is legit.
+
+The office will get through it eventually. The question is whether the family with the leak hears back in an hour or on Tuesday, and whether the other 200 people hear anything at all before a storm chaser does. That's the problem I'd use AI for in a roofing business: absorbing a surge that no office can staff for, without losing the judgment that makes a local roofer worth calling.
+
+## A big market, and a crowded one after every storm
+
+<Stats title="Storm season in numbers">
+  <Stat value="$30B+" label="in US residential roof insurance claims in 2024, with wind and hail driving more than half" source="Verisk" href="https://www.verisk.com/company/newsroom/u.s.-roof-claims-costs-reached-over-$30-billion-in-2024-underscoring-evolving-risks/" />
+  <Stat value="+38%" label="increase in reported contractor fraud between 2023 and 2025, tracking major weather disasters" source="NICB, via Carrier Management" href="https://www.carriermanagement.com/news/2026/05/19/288150.htm" />
+  <Stat value="€1.8B" label="in storm and hail damage to insured property in Germany in 2024" source="GDV natural hazards statistics" href="https://www.gdv.de/gdv/medien/medieninformationen/gdv-naturgefahrenstatistik-2024-hochwasserschaeden-mehr-als-verdoppelt-188734" />
+</Stats>
+
+The fraud number is the one that shapes how I'd build this. The National Insurance Crime Bureau's advice to homeowners after a storm is blunt: [if you didn't request it, reject it](https://www.nicb.org/news/blog/when-hail-hits-storm-chasers-arrive). Homeowners are rightly suspicious of pushy follow-ups, door knockers, and anyone promising a free roof. A local contractor's advantage is trust. Any automation has to protect that, not spend it.
+
+## What's actually in the pile
+
+Before building anything, it helps to see the pile as four different piles.
+
+| Type of inquiry | What it sounds like | What it needs |
+| --- | --- | --- |
+| Active leak | "Water is coming through the ceiling." | A crew with tarps today, not an estimate |
+| Visible damage | "Shingles are in the yard." "A skylight cracked." | An inspection this week, and a safe temporary fix if needed |
+| Possible damage | "The hail was huge, can you check the roof?" | An inspection when the route allows, plus photos in the meantime |
+| Not a fit | Outside your area, a job you don't do, a sales call | A polite, useful answer, quickly |
+
+In a normal week, the office sorts this in its head as calls come in. In a storm week, the sorting itself becomes the bottleneck. That's the part software can take over.
+
+## The first 72 hours
+
+Here's how I'd structure the surge. The goal for the first two hours is simple: everybody hears back, honestly.
+
+<Timeline title="A storm week, hour by hour">
+<Phase when="Hours 0 to 2" title="Acknowledge everyone">Every call, form, and message gets a reply: we got your message, here's when we'll realistically be in touch, please don't climb on your roof, and here's how to send photos.</Phase>
+<Phase when="Hours 2 to 12" title="Sort into four queues">Each inquiry is read, the address and description extracted, photos attached, and a queue suggested. Anything that sounds like water getting in goes straight to a person.</Phase>
+<Phase when="Day 1" title="Leaks first">Crews go to active leaks with tarps. The office confirms each visit by phone.</Phase>
+<Phase when="Days 1 to 3" title="Inspection routes by area">Visible and possible damage are clustered by neighbourhood so inspectors don't zigzag across town.</Phase>
+<Phase when="Days 3 onward" title="Reports and insurance paperwork">Inspection notes and photos are turned into clear reports for homeowners to share with their insurer.</Phase>
+</Timeline>
+
+The acknowledgement in the first two hours matters more than it looks. A homeowner who has heard back from a real local company, with a realistic time frame, is much less likely to sign with the first stranger who knocks on the door.
+
+## How the sorting works
+
+<Flow title="From 200 inquiries to a plan for the day" caption="The model reads, extracts, and suggests. People confirm every urgent case and every crew dispatch.">
+<Step title="Inquiries arrive everywhere" who="Phone, web, social" time="all day">Voicemails are transcribed. Forms and messages land in one list, with duplicates from the same household merged.</Step>
+<Step title="Acknowledge and ask for photos" who="AI" tone="ai" time="minutes">A reply with a realistic time frame, safety advice, and a link to upload photos taken from the ground.</Step>
+<Step title="Extract and classify" who="AI" tone="ai">Address, description, photos, and a suggested queue. Words like leak, dripping, ceiling, or water inside always mean a human looks first.</Step>
+<Step title="Office confirms urgent cases" who="Office" tone="human" time="within the hour">A person calls every suspected leak back and decides whether a crew goes today.</Step>
+<Step title="Cluster the rest" who="System">Inspections are grouped by area and suggested as routes for the next days.</Step>
+<Step title="Inspectors visit, reports follow" who="Inspector" tone="human">The inspector's notes and photos become a report draft, which the inspector checks and signs off.</Step>
+</Flow>
+
+The most important rule is the same one I'd use for a plumber's night line: when in doubt, it's urgent. A person calling back a homeowner who turns out to have a small stain costs five minutes. A leak that sits in the "possible damage" queue for four days costs a ceiling.
+
+## Where the priorities come from
+
+It's worth making the ranking explicit, because in a storm week everyone in the office will have a different gut feeling.
+
+<Matrix title="Who gets a visit first" xLabel="How sure we are there's damage" yLabel="Is water getting in?" quadrants={[
+  { title: "Call back now", text: "Sounds urgent, but unclear. A person calls, asks questions, and requests photos." },
+  { title: "Crew today", text: "Water is coming in and damage is visible. Tarp first, estimate later.", highlight: true },
+  { title: "Group inspection route", text: "Possible damage, nothing urgent. Scheduled by area over the next week or two." },
+  { title: "Inspection this week", text: "Clear damage, no leak yet. Visit soon, before the next rain makes it urgent." }
+]} />
+
+The model's job is to put each inquiry into the right square based on what the homeowner wrote and sent. The office can move anything with one click, and every move teaches you something about how customers describe damage.
+
+## Photos: useful, but not a diagnosis
+
+Asking homeowners for photos is one of the best things you can do in the first hour, as long as you ask for the right ones and never ask anyone to climb a ladder.
+
+<Checklist title="Photos to ask homeowners for, all from the ground" items={[
+  "Each side of the roof from across the street or the yard",
+  "Gutters and downspouts, where hail dents are easy to see",
+  "Window screens, siding, and the outdoor AC unit, which often show hail marks",
+  "Any shingles, granules, or debris on the ground",
+  "Ceiling stains or drips inside, with something for scale",
+  "A hailstone next to a coin, if they kept one",
+  "The time the storm hit, if they remember"
+]} />
+
+Can AI tell hail damage from a phone photo? Sometimes it can spot the obvious: a tarp-worthy hole, missing shingles, water on a ceiling. For anything subtler, I wouldn't trust it, and I wouldn't let it tell a homeowner their roof is fine. Proper roof assessment tools with drone or aerial imagery exist for inspectors. Phone photos from the yard are for triage, not verdicts.
+
+## Staying on the right side of the line
+
+A roofing company using automation after a storm has to be careful not to look like the people it competes against.
+
+<Split title="What the automation does and never does" leftTitle="It does" rightTitle="It never does" left={[
+  "Replies to everyone quickly and honestly, with a realistic time frame",
+  "Tells people not to go on the roof",
+  "Sorts, routes, and prepares inspections",
+  "Drafts inspection reports from the inspector's own notes and photos",
+  "Answers questions about your company, licensing, and insurance"
+]} right={[
+  "Promises a free roof or says insurance will pay",
+  "Pushes anyone to sign a contract or an assignment of benefits",
+  "Sends repeated follow-ups to people who didn't reply",
+  "Describes damage the inspector didn't document",
+  "Negotiates with insurers, which in many US states only licensed public adjusters may do"
+]} />
+
+That right-hand column isn't just ethics. It's positioning. After every storm, homeowners get flooded with aggressive offers. The contractor whose messages are calm, specific, and honest stands out.
+
+## What the office needs in place
+
+Most roofing companies run a CRM or field service tool such as AccuLynx, JobNimbus, Roofr, or a general one like Jobber. The storm intake sits in front of it: it reads all channels, creates leads with the extracted details and photos, and writes the suggested queue and route into the system you already use.
+
+Two things are worth preparing before storm season, not during it. First, the acknowledgement messages and the photo checklist, approved by you in advance, so nothing goes out that you haven't read. Second, your service area as a proper map, so out-of-area inquiries get a quick, friendly referral instead of sitting in the queue.
+
+In the EU, remember that people have to be told when they are interacting with an AI system under [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act). A line like "this reply was prepared by our assistant and checked by our team" is honest and costs nothing.
+
+## Questions roofing contractors ask
+
+### Won't automatic replies look like spam?
+
+Not if they're specific and useful. "We received your message about hail damage on Maple Street. We're prioritising active leaks today and expect to contact you by Monday. Please don't climb on your roof; here's how to send us photos" is the opposite of spam. What looks like spam is a generic "Get your FREE roof inspection NOW!!!" blast.
+
+### Can it handle the surge on its own over a weekend?
+
+It can acknowledge, sort, and prepare everything over a weekend. It shouldn't dispatch crews or call anything "not urgent" without a person seeing it. A small on-call rota for the leak queue is still necessary.
+
+### Can it write the insurance claim?
+
+It can turn an inspector's notes and photos into a clear, factual report that the homeowner can send to their insurer. It shouldn't file claims or argue with adjusters, and it must never add damage the inspector didn't find. That protects the homeowner and your licence.
+
+### Is this worth building if storms only hit a few times a year?
+
+That depends on your region. The acknowledgement and sorting part is cheap to run and sits idle between storms without cost. If one storm week a year buries your office, having it ready is worth a lot. If storms are rare, a prepared set of template replies and a shared spreadsheet may be enough.
+
+## The rule for storm week
+
+Answer everyone honestly within the hour, send crews to the leaks first, and never let a machine promise what an inspector hasn't seen.
+
+If your office has been buried after a storm before, [tell me how inquiries reach you](/contact?intent=improve) and which CRM you use. I'll suggest what's worth preparing before the next one. For the same triage idea on a smaller scale, see [after-hours emergency calls for plumbers](/posts/ai-for-plumbers-emergency-calls), and for property managers who get the tenant side of every storm, [routing maintenance requests](/posts/ai-for-property-managers-maintenance).

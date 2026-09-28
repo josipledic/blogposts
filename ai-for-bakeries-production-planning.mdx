@@ -1,0 +1,144 @@
+---
+id: "ai-for-bakeries-production-planning"
+title: "Baking to Demand: AI Forecasting for Small Bakeries"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Food & drink", "Bakeries", "Demand forecasting", "AI for small business"]
+description: "Bake too much and it's waste, too little and the shelves are empty by eleven. How forecasting from sales, weather and holidays helps small bakeries plan each night."
+excerpt: "Bake too much and it's waste, too little and the shelves are empty by eleven. How forecasting from sales, weather and holidays helps small bakeries plan each night."
+---
+
+Every afternoon, someone in a bakery with a few shops makes a bet. How many rolls for the shop by the station tomorrow? How many sourdough loaves for the one in the old town? The night shift starts at ten, so the numbers have to be in by six. The usual method is last week's order for the same day, adjusted by gut feeling: it's supposed to rain, there's a market on Saturday, it's the Monday after a holiday.
+
+Bet too high and the leftovers come back in the evening. Bet too low and the shop is sold out by eleven, and the customer who came for a sourdough loaf goes to the supermarket. Both happen every week, in every shop, and the losses are quiet: nobody writes down the sales that didn't happen.
+
+This is one of the places where AI, in the sense of forecasting models rather than chatbots, has a track record in small food businesses. Here's what the numbers say and how it works in practice.
+
+<Stats title="The numbers behind the daily bet">
+  <Stat value="3.8 to 16%" label="return rates measured at six German craft bakeries in a waste-reduction project" source="Zu gut für die Tonne / FH Münster" href="https://www.zugutfuerdietonne.de/jetzt-engagieren/projekte-aus-der-praxis/details/reduktion-der-lebensmittelabfaelle-bei-brot-und-backwaren" />
+  <Stat value="30%" label="average reduction in bakery returns reported in 2022 by users of a machine-learning forecasting service, in a peer-reviewed case study" source="Hübner et al., Journal of Industrial Ecology" href="https://onlinelibrary.wiley.com/doi/10.1111/jiec.13528" />
+  <Stat value="1.05 bn t" label="of food wasted worldwide in 2022, 28% of it in food service and 12% in retail" source="UNEP Food Waste Index 2024" href="https://www.unep.org/resources/publication/food-waste-index-report-2024" />
+</Stats>
+
+The 30% figure comes from the vendor's own sales reports, analysed in an academic life-cycle study, so treat it as an indication, not a promise. But the direction is consistent with what forecasting research on bakeries shows: order quantities that follow real demand drivers beat quantities copied from last week.
+
+## Why last week's order keeps going wrong
+
+"Same as last Tuesday" works on ordinary days. Bakery demand has very few ordinary days. The things that move it are mostly known in advance:
+
+- **Weekday patterns,** which differ by shop: the station shop is busy Monday to Friday, the old-town shop on Saturday.
+- **Weather.** Sunny days shift demand towards snacks and cold drinks; rainy days change footfall entirely. The effect depends on the location.
+- **Public and school holidays,** and the days around them. Research on a large German bakery chain found that these "special days" are exactly where simple methods fail, because demand behaves completely differently ([Huber and Stuckenschmidt, 2020](https://www.sciencedirect.com/science/article/abs/pii/S0169207020300224)).
+- **Local events:** markets, football matches, a festival, roadworks outside the shop.
+- **Paydays and month ends,** which show up in some shops more than others.
+
+A person can keep all of that in mind for one shop and a few products. Across five shops and forty products, nobody can, especially not at five in the afternoon.
+
+<Bars title="One shop, one week, fixed order of 600 rolls a day" unit=" rolls left over" caption="Illustrative. With a fixed order, the rainy Wednesday and the Sunday produce waste, while Saturday sells out before noon. The sales lost on Saturday never appear in any report." data={[
+  { label: "Monday", value: 80 },
+  { label: "Tuesday", value: 55 },
+  { label: "Wednesday (rain)", value: 140, highlight: true },
+  { label: "Thursday", value: 45 },
+  { label: "Friday", value: 20 },
+  { label: "Saturday (sold out 11:30)", value: 0, highlight: true },
+  { label: "Sunday", value: 95 }
+]} />
+
+The zero on Saturday is the worst bar on the chart, even though it looks like the best. It means the shop turned away customers from half past eleven onwards.
+
+## What a forecasting model does
+
+A forecast model learns from your own history: sales per product, per shop, per day, together with the weather on each of those days, holidays, school breaks and the events you've recorded. For tomorrow, it combines the same inputs (the weather forecast, the calendar, the known events) and suggests a quantity per product per shop.
+
+A few things make it work in a bakery:
+
+**It forecasts demand, not sales.** On days when a product sold out, sales understate demand. Good models account for that, for example by using the time of the last sale. Otherwise a product that always sells out gets ordered ever lower.
+
+**It learns each shop separately.** The station shop and the old-town shop react differently to rain and to holidays. Averaging them hides exactly the patterns that matter.
+
+**It stays a suggestion.** The shop manager who knows the street will be closed for a parade tomorrow can override it. Those overrides, with a short reason, become data for next time.
+
+**It's optimised for the right balance.** A bakery would rather have a few rolls left over than turn customers away at eleven. The model can be tuned to aim for a small, deliberate surplus on bread and a tighter target on perishable cream cakes.
+
+A language model plays a smaller role here than you might expect. The core is statistical forecasting on sales data. Where a language model helps is at the edges: reading the local event calendar, turning the shop managers' notes into structured events, and explaining in plain words why tomorrow's suggestion is higher than usual.
+
+## Suggestions people trust
+
+A number without a reason gets overridden. A shop manager who's been ordering for fifteen years won't accept "the system says 720 rolls" when she usually orders 600. She will listen to a reason:
+
+> **Station shop, Tuesday: rolls 720 (usually 600).** School holidays end on Monday, so commuter traffic returns. Forecast dry and mild. On the last three comparable Tuesdays after a school break, rolls sold out between 11:40 and 12:15. Confidence: medium. Sourdough unchanged at 34.
+
+That explanation is where a language model earns its place: it turns the model's inputs into two sentences a baker can check against her own experience. If she disagrees, she overrides and writes why. After a few weeks, the overrides show where the model is missing local knowledge, and where the shop's habits were costing money.
+
+It also helps to start small. Bread and rolls first, where volumes are high and patterns are stable. Cakes and specialities later. And a short weekly look at forecast against actual sales, per shop, keeps everyone honest, the model included.
+
+## The daily rhythm
+
+<Timeline title="A day in a bakery that bakes to forecast" caption="The forecast doesn't replace the afternoon decision. It gives the person making it a better starting point and a reason for every number.">
+<Phase when="14:00" title="Forecast for tomorrow">Suggested quantities per product and shop, based on history, the weather forecast, the calendar and known events.</Phase>
+<Phase when="15:00" title="Shop managers adjust">Each shop checks its list and overrides where they know something the model doesn't, with a one-line reason.</Phase>
+<Phase when="18:00" title="Production plan closes">Totals go to the bakehouse: dough quantities, oven schedule, packing lists per shop.</Phase>
+<Phase when="22:00 to 04:00" title="Night production">The bakehouse produces to the plan.</Phase>
+<Phase when="05:30" title="Delivery">Each shop receives its quantities.</Phase>
+<Phase when="11:00" title="Midday check">Shops with in-store ovens bake off extra par-baked products where the morning ran faster than forecast.</Phase>
+<Phase when="18:30" title="Close and record">Leftovers and sell-out times are recorded per product, and feed tomorrow's forecast.</Phase>
+</Timeline>
+
+The midday step deserves attention. A shop that can bake off par-baked rolls during the day can run a tighter morning delivery, because it has a way to respond when demand runs high. The forecast and the in-store oven work together.
+
+## What it's worth
+
+<Calc title="Napkin math: returns at a bakery with five shops" caption="Assumptions, not measurements. Your return rate, cost share and opening days will differ; the return rate is the number to measure first." rows={[
+  ["Goods delivered to shops per day, at retail value", "€9,000"],
+  ["Return rate", "× 10%"],
+  ["Returns per day, at retail value", "€900"],
+  ["Share of retail value that is production cost", "× 35%"],
+  ["Cost of returns per day", "€315"],
+  ["Opening days per year", "× 300"],
+  ["Cost of returns per year", "€94,500"],
+  ["Assumed reduction with forecasting", "× 25%"]
+]} result={["Production cost saved per year, before extra sales", "≈ €23,600"]} />
+
+The calculation leaves out the other side: sales recovered on days that used to sell out early. For many bakeries that's worth as much as the reduced waste, but it's harder to measure, which is why tracking sell-out times matters.
+
+## What you need to start
+
+**Clean sales data per product, shop and day.** Most modern till systems have it. Two years is ideal because it covers every holiday twice; one year works.
+
+**Returns and sell-out times.** If you don't record leftovers per product today, start now. A tablet in each shop at closing, or a scale with product buttons, is enough. Without this data, no model can learn the difference between demand and sales.
+
+**A calendar of local events.** Markets, festivals, matches, roadworks. A shared calendar that shop managers can add to is fine.
+
+**A weather feed.** Public weather services and commercial APIs provide forecasts by location.
+
+Then run the forecast alongside your normal ordering for a few weeks before relying on it. Compare both against what actually sold. That builds trust with the shop managers and shows you where the model needs local knowledge.
+
+## Tools that fit
+
+Some bakery management and till systems now include forecasting. There are also specialised forecasting services for bakeries, like the one analysed in the study above, that connect to the till data and deliver order suggestions per shop. For a small bakery, a specialised service is usually more sensible than building your own model. A custom build makes sense when you have unusual data, several sales channels (shops, wholesale customers, cafés) or want the forecast inside your own ordering system.
+
+Whichever route you take, check three things: whether it forecasts demand rather than sales, whether it handles each shop separately, and whether the shop managers can override it easily.
+
+## Questions bakers ask
+
+### Does this work for a single shop?
+
+Yes, although the savings are smaller in absolute terms. A single shop often knows its customers well enough that gut feeling is decent. The benefit shows up most on holidays and unusual weather, and in products with short shelf life.
+
+### What about wholesale orders from cafés and hotels?
+
+Those are orders, not forecasts, and should be planned as fixed quantities. The forecast covers what you sell in your own shops. Where wholesale customers order at short notice, the same approach can suggest a buffer.
+
+### Won't the model reduce quantities until everything sells out?
+
+Only if it's set up badly. That's why it needs to forecast demand rather than sales and aim for a deliberate small surplus on staple products. Agree the target with your shop managers: how many leftovers of each product are acceptable to avoid selling out?
+
+### What happens to the leftovers that remain?
+
+Fewer of them, but some will always remain. Selling day-old bread at a discount, apps that sell surplus bags, and donations to food banks all work alongside forecasting, not instead of it.
+
+## Rule of thumb
+
+Plan tomorrow from what actually drives demand, not from what you ordered last week. Record leftovers and sell-out times every day, because that's the data that makes the forecast better, and let the people in the shops override it when they know something the numbers don't.
+
+If you run a bakery and the daily order is still a gut-feeling spreadsheet, [tell me which till system you use](/contact?intent=improve) and how many shops you supply. I'll tell you what data you already have and what it would take to start forecasting. Microbreweries face the same question on a weekly scale in [planning packaged beer](/posts/ai-for-microbreweries-sales-forecast), and farm shops fight spoilage in [stock planning for the harvest](/posts/ai-for-farm-shops-inventory).

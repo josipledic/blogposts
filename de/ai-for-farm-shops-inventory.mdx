@@ -1,0 +1,149 @@
+---
+id: "de-ai-for-farm-shops-inventory"
+title: "Hofladen: Frische Ware verkaufen, bevor sie verdirbt"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Lebensmittel & Gastronomie", "Hofläden", "Warenplanung", "KI für kleine Unternehmen"]
+description: "Die Ernte wartet nicht auf die Nachfrage. Wie Hofläden Ernte, Verkaufsmuster und Wetter zusammenbringen, um mehr frische Ware zu verkaufen und weniger wegzuwerfen."
+excerpt: "Die Ernte wartet nicht auf die Nachfrage. Wie Hofläden Ernte, Verkaufsmuster und Wetter zusammenbringen, um mehr frische Ware zu verkaufen und weniger wegzuwerfen."
+---
+
+Ein Dienstag im Juni auf einem Familienbetrieb mit Hofladen. Um sechs Uhr früh stechen zwei Leute Spargel und pflücken 60 Kilo Erdbeeren, weil das reif ist. Um fünf Uhr nachmittags liegen noch 18 Kilo Erdbeeren im Laden und werden in der Wärme weich. Der Salat von gestern lässt die Blätter hängen. Und am Samstag waren, wie jeden Samstag, die Eier um zehn Uhr aus.
+
+Ein Hofladen hat ein Planungsproblem, das eine Bäckerei oder Brauerei nicht hat. Die Bäckerei entscheidet, wie viel sie backt. Der Hof entscheidet meistens nicht, wie viel reif ist. Die Ernte folgt dem Wetter, und der Laden muss verkaufen, was das Feld liefert, wenn es liefert, bevor es verdirbt.
+
+Deshalb ist die übliche Absatzprognose nur die halbe Antwort. Die andere Hälfte ist, Nachfrage zu bewegen: die richtige Menge ernten, über den richtigen Weg, vor die richtigen Kunden, heute noch. Dabei kann KI einem kleinen Hofladen helfen, solange niemand erwartet, dass sie das Wetter steuert.
+
+## Zwei Seiten desselben Feldes
+
+<Split title="Wie die meisten Hofläden planen und was sich mit besseren Informationen ändert" leftTitle="Erntegetrieben" rightTitle="Ernte im Blick, Nachfrage im Plan" left={[
+  "Ernten, was reif ist, so früh wie möglich",
+  "Alles in den Laden und hoffen",
+  "Den Überhang bei Ladenschluss entdecken",
+  "Reste auf den Kompost, an die Tiere oder die Familie",
+  "Wochenende ausverkauft, unter der Woche zu viel",
+  "Die Planung steckt im Kopf einer Person"
+]} right={[
+  "Was warten kann, nach erwartetem Verkauf ernten",
+  "Ernte auf Laden, Automat, Markt, Kiste und Gastronomie aufteilen",
+  "Den Überhang schon mittags kommen sehen",
+  "Früh anbieten: Nachricht an Stammkunden, Gastronomie, Einkochen",
+  "Ernte und Bestand nach Wochentag und Wetter anpassen",
+  "Ein gemeinsamer Tagesplan, den alle sehen"
+]} />
+
+Der Unterschied ist nicht Technik um ihrer selbst willen. Es geht darum, morgens ungefähr zu wissen, was heute verkauft wird, und mittags zu wissen, ob der Tag nach Plan läuft.
+
+## Warum sich das lohnt
+
+Direktvermarktung ist ein echtes Standbein. Nach der Landwirtschaftszählung 2020 gab es in Deutschland [22.840 Betriebe mit Verarbeitung und Direktvermarktung](https://lw.landwirtschaft-bw.de/,Lde/Direktvermarktung), die meisten davon in Bayern und Baden-Württemberg. Dazu kommen immer mehr Verkaufsautomaten und Selbstbedienungshütten, die rund um die Uhr verkaufen.
+
+Frische Ware ist zugleich der Ort, an dem Verluste entstehen. Nach Schätzung der FAO gehen [rund 14 % der Lebensmittel](https://www.fao.org/state-of-food-agriculture/2019/en/) zwischen Ernte und Handel verloren, Obst und Gemüse gehören zu den am stärksten betroffenen Gruppen. Ein Hofladen verkauft die empfindlichste Form davon: morgens geerntet, lose verkauft, kaum Kühlkette.
+
+## Was die Nachfrage im Hofladen bewegt
+
+Die Nachfrage folgt Mustern, die ziemlich vorhersehbar sind, wenn man hinsieht:
+
+- **Wochentag.** Freitag und Samstag tragen bei vielen Hofläden die Woche. Unter der Woche zählen Pendler und Stammkunden.
+- **Wetter.** Sonnige Wochenenden bringen Ausflügler, Regentage nur Stammkunden. Hitze verschiebt den Einkauf: Erdbeeren und Salat hoch, Kartoffeln und Kohl runter.
+- **Saison und Neuheit.** Der erste Spargel, die ersten Erdbeeren, die ersten Frühkartoffeln verkaufen sich weit über späteren Wochen, wenn alle sie schon hatten und der Supermarkt sie günstig anbietet. Und nach dem Johannistag ist beim Spargel ohnehin Schluss.
+- **Feiertage und Ferien.** Familien aus dem Ort verreist, Urlauber in der Gegend.
+- **Ereignisse vor Ort.** Dorffest, Radrennen an der Einfahrt vorbei, gesperrte Straße.
+
+Ein Modell, das diese Muster aus der eigenen Verkaufshistorie lernt, kann die Nachfrage von morgen je Artikel schätzen. Zusammen mit dem, was reif ist, ergibt das einen Ernte- und Bestückungsplan.
+
+<Bars title="Unverkauft bei Ladenschluss, eine Juniwoche, erntegetriebene Planung" unit=" kg" caption="Beispielhaft. Erdbeeren und Salat laufen unter der Woche über, Eier und Frühkartoffeln sind am Samstag aus. Beides hat dieselbe Ursache: ein Angebot, das den Wochentag ignoriert." data={[
+  { label: "Erdbeeren (Mo bis Fr)", value: 62, highlight: true },
+  { label: "Salat", value: 34, highlight: true },
+  { label: "Zucchini", value: 28 },
+  { label: "Spargel Bruch und Suppenspargel", value: 12 },
+  { label: "Frühkartoffeln (Samstag aus)", value: 0 },
+  { label: "Eier (Samstag 10 Uhr aus)", value: 0 }
+]} />
+
+## So sieht der Plan für morgen aus
+
+Der Plan sollte auf einen Handybildschirm passen und um sechs Uhr auf dem Feld lesbar sein:
+
+> **Mittwoch, sonnig, 27 °C, keine Veranstaltungen.** Erwarteter Ladenverkauf: Erdbeeren 35 kg (ernten, was reif ist; etwa 20 kg Überhang wahrscheinlich, 10 kg dem Café Linde anbieten, das nach Marmeladenware gefragt hat), Salat 40 Köpfe (40 ernten, der Rest kann einen Tag stehen), Spargel 45 kg (Bruchspargel für die Samstagskiste als Suppenspargel), Eier 30 Dutzend (10 Dutzend für Samstagsvorbestellungen zurücklegen). **Hinweis:** An den letzten drei heißen Werktagen lag Salat 30 % über normal.
+
+Es ist ein Vorschlag. Die Bäuerin sieht Feld und Himmel und ändert ihn. Das Modell merkt sich Änderung und Grund und wird beim nächsten heißen Mittwoch ein bisschen besser.
+
+## Die Unsicherheit verkleinern, wo es geht
+
+Manche Nachfrage muss man nicht vorhersagen, man kann sie erfragen. Gemüsekisten und Abos sagen am Montag, was am Donnerstag rausgeht. Solidarische Landwirtschaft plant gleich die ganze Saison mit ihren Mitgliedern. Gastronomen, die bei Ihnen kaufen, können feste Wochenbestellungen mit Anpassung aufgeben. Stammkunden können Eier, Spargel oder Erdbeeren für Samstag per Nachricht vorbestellen, und aus dem Artikel, der immer ausverkauft ist, wird einer, den Sie planen können.
+
+Jedes Kilo, das über Vorbestellung oder feste Bestellung verkauft wird, hängt nicht mehr von Wetter und Laufkundschaft ab. Das Modell sammelt solche Bestellungen aus Nachrichten und E-Mails in einer Liste, zieht sie von der Ernte ab und plant den Laden mit dem Rest.
+
+## Der Tagesrhythmus
+
+<Timeline title="Ein Hofladentag mit Plan" caption="Der Plan ersetzt nicht das Urteil auf dem Feld. Er liefert einen Ausgangspunkt, einen Mittagscheck und einen Weg, mit dem Überhang etwas anzufangen, bevor es zu spät ist.">
+<Phase when="Vorabend" title="Plan für morgen">Erwarteter Verkauf je Artikel aus Historie, Wetter und Ereignissen. Die Bäuerin ergänzt, was reif ist. Der Plan schlägt vor, was geerntet wird und wie viel wohin geht.</Phase>
+<Phase when="6:00" title="Ernte">Was nicht warten kann, wird trotzdem geerntet. Was warten kann (Salat, manche Wurzeln, Grünkohl), folgt dem Plan.</Phase>
+<Phase when="8:00" title="Laden öffnet">Ware liegt aus, der Verkaufsautomat wird mit dem bestückt, was außerhalb der Öffnungszeiten gut läuft.</Phase>
+<Phase when="12:00" title="Mittagscheck">Verkauf bisher gegen Plan. Liegen die Erdbeeren 30 % zurück, ist der Überhang jetzt sichtbar, nicht erst abends.</Phase>
+<Phase when="13:00" title="Überhang angehen">Nachricht an Stammkunden („Erdbeeren von heute Morgen, 2 kg zum Preis von 1,5 bis 18 Uhr“), Angebot ans Café, oder Entscheidung, morgen Marmelade zu kochen.</Phase>
+<Phase when="18:00" title="Schluss und Erfassung">Reste je Artikel gewogen oder geschätzt, dazu, was damit passiert ist. Das sind die Daten für morgen.</Phase>
+</Timeline>
+
+Der Mittagscheck ist der Schritt, den die meisten Hofläden auslassen, und der, der am meisten bringt. Ein Überhang, der mittags auffällt, lässt sich noch verkaufen, anbieten oder verarbeiten. Einer, der um sechs auffällt, ist Kompost.
+
+## Wo KI konkret hilft
+
+**Verkauf prognostizieren** je Artikel und Tag aus Kassendaten, Wetterbericht und Ihren Notizen. Das ist Statistik, kein Chatbot, und es funktioniert schon mit ein, zwei Saisons Historie.
+
+**Die Aufteilung vorschlagen** zwischen Laden, Automat, Wochenmarkt, Kiste und Gastronomie. Die Bäuerin entscheidet, das Modell rechnet und erinnert sich an das Vorjahr.
+
+**Die Überhang-Nachricht schreiben.** Eine kurze, freundliche Nachricht an die Stammkundenliste oder für Social Media, in Sekunden, mit richtigem Artikel, Menge und Angebot. Ein Mensch gibt frei und schickt ab.
+
+**Die Aufzeichnung führen.** Reste und was damit geschah, Ausverkaufszeiten, Erntemengen. Eine Sprachnotiz bei Ladenschluss („etwa 15 Kilo Erdbeeren übrig, 5 ans Café, Rest für Marmelade“) wird zur Tagesaufzeichnung, ohne dass jemand am Computer sitzt.
+
+## Aus Überhang wird Ware
+
+Nicht jeder Überhang muss verkauft werden, um nicht verloren zu sein. Erdbeeren, die morgen zu weich für den Laden sind, sind heute perfekt für Marmelade, Fruchtaufstrich oder die Eisdiele im Ort. Bruchspargel wird Suppenspargel, krumme Zucchini werden Suppe für die Gemüsekiste. Wer solche Wege vorher festlegt, entscheidet mittags nur noch, welcher Weg heute passt.
+
+Das Modell kann dabei helfen, weil es sieht, welche Verarbeitung sich in der Vergangenheit gut verkauft hat und wann: Marmelade vor Weihnachten, Suppen im Herbst. So wird aus einem Verlust im Juni ein Artikel für November. Beachten Sie bei verarbeiteten Produkten die Kennzeichnungspflichten, sobald Sie sie verpackt verkaufen.
+
+## Was Sie jeden Tag festhalten sollten
+
+<Checklist title="Die tägliche Aufzeichnung, mit der Planung funktioniert" items={[
+  "Verkauf je Artikel aus der Kasse, mindestens je Warengruppe",
+  "Was geerntet oder zugekauft wurde, grob je Artikel",
+  "Was bei Ladenschluss übrig war und was damit passiert ist",
+  "Wann gefragte Artikel ausverkauft waren",
+  "Wetter: sonnig, bewölkt, Regen, Hitze (kann der Wetterdienst ergänzen)",
+  "Besonderheiten: Fest in der Nähe, Straße gesperrt, Ferienbeginn",
+  "Angebote während des Tages und ob sie funktioniert haben"
+]} />
+
+Erfasst Ihre Kasse den Verkauf nicht je Artikel, ist das der erste Schritt. Viele Kassensysteme schaffen das mit ein paar Tasten je Warengruppe, Waagen mit Artikeltasten übernehmen es für lose Ware. Auch der Verkaufsautomat liefert Daten, die in dasselbe Bild gehören.
+
+## Welche Werkzeuge passen
+
+Eine Kasse mit Artikelverkäufen, eine Tabelle oder einfache Datenbank für die Tagesaufzeichnung, Wetterdaten und ein Kanal, um Stammkunden zu erreichen (E-Mail-Liste, SMS oder Messenger), decken fast alles ab. Die KI-Schicht liest Kassendaten und Aufzeichnung, erstellt den Plan für morgen und den Mittagscheck, entwirft Überhang-Nachrichten und macht aus Sprachnotizen Aufzeichnungen.
+
+Kontaktlisten von Kunden sind personenbezogene Daten. Schreiben Sie nur Menschen an, die zugestimmt haben, machen Sie das Abmelden leicht, und führen Sie die Liste an einem Ort. Bei Messengern lohnt vorher ein Blick auf den Datenschutz.
+
+## Häufige Fragen aus Hofläden
+
+### Kann ein Modell die Ernte vorhersagen?
+
+Nicht verlässlich, und ich würde es nicht versuchen. Die Bäuerin weiß besser als jedes Modell, was reif ist. Das Modell kann die Nachfrage schätzen und helfen zu entscheiden, was mit dem Reifen passiert.
+
+### Wir haben kaum Verkaufsdaten.
+
+Fangen Sie jetzt an. Eine Saison ergibt ein brauchbares Bild von Wochentags- und Wettermustern, zwei Saisons sind deutlich besser. Schon in der ersten Saison schlägt eine einfache Faustregel aus den eigenen Aufzeichnungen das Raten.
+
+### Gewöhnen Rabatt-Nachrichten die Kunden nicht ans Warten?
+
+Nur wenn sie jeden Tag zur selben Zeit kommen. Halten Sie Angebote selten und an echten Überhang gebunden. Viele Stammkunden freuen sich schlicht über die Nachricht, was gerade frisch ist, auch ganz ohne Rabatt.
+
+### Und der Verkaufsautomat?
+
+Automat und Selbstbedienungshütte verkaufen, wenn der Laden zu ist. Ihre Verkaufsdaten gehören ins selbe Bild, und oft ist der Automat der Ort für den abendlichen Überhang: am Nachmittag mit dem bestücken, was tagsüber langsam lief, zu einem etwas niedrigeren Preis.
+
+## Faustregel
+
+Die Ernte können Sie nicht planen, aber was mit ihr passiert. Halten Sie jeden Tag fest, was verkauft wurde und was übrig blieb, prüfen Sie mittags statt bei Ladenschluss, und haben Sie für jeden Überhang einen Platz, bevor er verdirbt: eine Nachricht, ein Gastronom, ein Einmachglas.
+
+Wenn bei Ihnen frische Ware regelmäßig auf dem Kompost landet, [schreiben Sie mir, wie Sie verkaufen und was Ihre Kasse erfasst](/contact?intent=improve). Ich schlage Ihnen den einfachsten Einstieg mit den Daten vor, die Sie schon haben. Bäckereien stehen vor einer ähnlichen täglichen Wette, siehe [weniger Retouren mit KI-Prognosen](/de/posts/ai-for-bakeries-production-planning), und Lebensmittelhersteller halten ihre Aufzeichnungen in [Chargen und HACCP-Nachweise in Sekunden finden](/de/posts/ai-for-food-producers-compliance) im Griff.

@@ -1,0 +1,145 @@
+---
+id: "de-ai-for-recruitment-agencies-candidate-notes"
+title: "Personalvermittlung: Aus Gesprächsnotizen saubere Kandidatenprofile"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Kanzleien & Dienstleister", "Personalvermittlung", "Kandidatenprofile", "KI für kleine Unternehmen"]
+description: "KI macht aus Erstgesprächen saubere Kandidatenprofile. Wer Kandidaten bewerten lässt, betreibt aber ein Hochrisiko-System. Entscheidungshilfe für Agenturen."
+excerpt: "KI macht aus Erstgesprächen saubere Kandidatenprofile. Wer Kandidaten bewerten lässt, betreibt aber ein Hochrisiko-System. Entscheidungshilfe für Agenturen."
+---
+
+Eine Personalberaterin in einer Agentur mit vier Leuten führt sechs Erstgespräche am Tag. Jedes dauert 30 bis 45 Minuten: Warum will die Kandidatin wechseln, was hat sie in ihrer letzten Position wirklich verantwortet, was wäre ein Grund, ein Angebot abzulehnen? Und während jedes Gesprächs tippt die Beraterin. Halbe Sätze, Abkürzungen, eine Gehaltszahl mit Fragezeichen. Die Kandidatin merkt die Pausen. Die Beraterin verpasst eine Nachfrage, weil sie noch die letzte Antwort mitschreibt.
+
+Eine Woche später fragt der Kunde: „Warum passt sie auf die Stelle?“ Im Bewerbermanagementsystem steht: *Kommunikationsstark. Will hybrid. 75k? KüFri 3 Mon. Gut mit Stakeholdern.* Die Beraterin weiß, dass da mehr war. Was genau, weiß sie nicht mehr.
+
+Das ist einer der klarsten Anwendungsfälle für KI in einer kleinen Agentur: das Gespräch erfassen, daraus ein strukturiertes Profil machen und die Beraterin zuhören lassen, statt zu tippen. Es ist aber auch ein Bereich, in dem man leicht in etwas ganz anderes hineinrutscht, rechtlich deutlich schwerer: das Modell Kandidaten beurteilen zu lassen. In diesem Beitrag geht es darum, wo diese Grenze verläuft und wie Sie auf der richtigen Seite bleiben.
+
+## Die Entscheidung: strukturieren oder bewerten?
+
+Grob gibt es drei Dinge, die KI mit einem Erstgespräch tun kann. Aus der Ferne sehen sie ähnlich aus, aus der Nähe sind sie sehr verschieden.
+
+**1. Transkribieren und strukturieren.** Das Modell macht aus dem Gespräch ein Kandidatenprofil: Erfahrung, Kenntnisse, Motivation, Verfügbarkeit, Erwartungen, offene Fragen. Es hält fest, was gesagt wurde. Es bewertet nicht.
+
+**2. Den Kundenvorschlag entwerfen.** Das Modell schreibt aus dem Profil und der Einschätzung der Beraterin eine Kandidatenvorstellung für den Kunden. Die Beraterin überarbeitet und versendet. Das Urteil ist ihres, das Modell schreibt nur.
+
+**3. Bewerten, ranken oder aussortieren.** Das Modell bewertet Kandidaten gegen eine Stelle, vergibt einen „Match-Score“, sortiert eine Shortlist oder entscheidet über Absagen. Jetzt beurteilt die Software Menschen.
+
+Die KI-Verordnung stuft KI-Systeme für die Einstellung oder Auswahl von Personen, „insbesondere für die Schaltung gezielter Stellenanzeigen, die Analyse und Filterung von Bewerbungen und die Bewertung von Bewerbern“, in [Anhang III](https://artificialintelligenceact.eu/annex/3/) als hochriskant ein. Für Hochrisiko-Systeme gelten umfangreiche Pflichten: Risikomanagement, Datenqualität, menschliche Aufsicht, Protokollierung und mehr. Sie greifen nach der Verschiebung im Rahmen des Digital-Omnibus ab dem 2. Dezember 2027. Das ist nicht mehr weit weg, und die Einstufung hängt davon ab, was das System tut, nicht davon, ob hinterher ein Mensch unterschreibt.
+
+<Timeline title="Die Regeln für KI in der Personalauswahl" caption="Die hier genannten Termine im Überblick. Das AGG gilt ohnehin, egal ob ein Mensch oder eine Software benachteiligt.">
+<Phase when="seit 2006" title="AGG">Benachteiligungsverbot im Bewerbungsverfahren, Indizien genügen für die Beweislastumkehr (§ 22 AGG).</Phase>
+<Phase when="Juni 2026" title="Entgelttransparenz">Umsetzungsfrist der EU-Richtlinie abgelaufen, das deutsche Gesetz steht noch aus. Vorgesehen: keine Frage nach dem bisherigen Gehalt, Gehaltsspanne vor dem Gespräch.</Phase>
+<Phase when="August 2026" title="KI-Verordnung, Transparenz">Art. 50 gilt: Menschen müssen erkennen können, dass sie mit einem KI-System kommunizieren.</Phase>
+<Phase when="Dezember 2027" title="KI-Verordnung, Hochrisiko">Pflichten für Systeme nach Anhang III, darunter Auswahl und Bewertung von Bewerbern.</Phase>
+</Timeline>
+
+Meine Empfehlung für eine kleine Agentur ist einfach: das Erste und Zweite ja, das Dritte nicht.
+
+<Split title="Wo die Grenze verläuft" leftTitle="Strukturieren: ein Dokumentationswerkzeug" rightTitle="Bewerten: ein Hochrisiko-System" left={[
+  "Transkribiert das Gespräch mit Einwilligung",
+  "Füllt das Profil aus dem, was gesagt wurde",
+  "Listet offene Fragen für das nächste Gespräch",
+  "Entwirft den Kundenvorschlag aus der Einschätzung der Beraterin",
+  "Entfernt Bemerkungen zu AGG-Merkmalen",
+  "Die Beraterin entscheidet, wer weiterkommt"
+]} right={[
+  "Bewertet oder scort Kandidaten gegen eine Stelle",
+  "Sortiert eine Shortlist automatisch",
+  "Sagt ohne menschliche Entscheidung ab",
+  "Leitet Persönlichkeit oder „Kulturfit“ aus der Sprache ab",
+  "Analysiert Tonfall, Mimik oder Akzent",
+  "Braucht Dokumentation, Aufsicht und Konformitätsnachweise"
+]} />
+
+## Was ein gutes Kandidatenprofil enthält
+
+Der Wert des Strukturierens liegt in der Einheitlichkeit. Jedes Profil hat dieselben Felder, gefüllt aus dem Gespräch, damit Beraterin und Kunde Vergleichbares vergleichen.
+
+| Feld | Woher es kommt | Worauf zu achten ist |
+| --- | --- | --- |
+| Aktuelle Position und Aufgaben | Beschreibung der Kandidatin, in ihren Worten | Titel bedeuten überall etwas anderes; festhalten, was sie tatsächlich getan hat |
+| Relevante Erfahrung für die Zielstelle | Konkrete Beispiele aus dem Gespräch | Beispiele statt Adjektive wie „stark“ |
+| Wechselmotivation | Eigene Erklärung | Der eigentliche Grund kommt oft erst spät im Gespräch |
+| Ausschlusskriterien | Pendelweg, Gehaltsuntergrenze, Reisetätigkeit, Homeoffice | Das nützlichste Feld gegen späte Absagen |
+| Kündigungsfrist und Verfügbarkeit | Genannte Frist, Spielraum | Notieren, ob sie den Vertrag geprüft hat |
+| Gehaltsvorstellung | Genannte Spanne für die neue Stelle | Vorstellung festhalten, nicht das bisherige Gehalt (siehe unten) |
+| Offene Fragen | Alles Unklare oder nicht Besprochene | Das Modell findet Lücken zuverlässig |
+
+Die rechte Spalte ist der eigentliche Mehrwert. Ein Modell, das angewiesen ist, Beispiele statt Adjektive festzuhalten, liefert Profile, mit denen Kunden deutlich mehr anfangen können als mit „kommunikationsstark“.
+
+Zum Gehalt: Die EU-Entgelttransparenzrichtlinie verbietet, Bewerber nach ihrem bisherigen Gehalt zu fragen. Deutschland hat die Umsetzungsfrist im Juni 2026 [verstreichen lassen](https://www.etl-rechtsanwaelte.de/aktuelles/umsetzung-eu-entgelttransparenzrichtlinie-2026/), das Gesetz wird erwartet. Wer seine Profilvorlage jetzt neu aufsetzt, sollte das Feld „bisheriges Gehalt“ gleich weglassen.
+
+## Der Ablauf
+
+<Flow title="Vom Erstgespräch zum Kandidatenprofil" caption="Das Modell transkribiert, strukturiert und filtert. Die Beraterin prüft jedes Profil und trifft jede Entscheidung darüber, wer vorgestellt wird.">
+<Step title="Einwilligung" who="Beraterin" tone="human" time="Gesprächsbeginn">Die Beraterin fragt, ob das Gespräch transkribiert werden darf, und erklärt, wozu. Bei Nein spricht sie danach eine Sprachnotiz ein.</Step>
+<Step title="Das Gespräch" who="Beraterin und Kandidatin" tone="human" time="30 bis 45 Min.">Die Beraterin hört zu und fragt nach, statt zu tippen.</Step>
+<Step title="Strukturierter Entwurf" who="KI" tone="ai" time="Minuten">Aus dem Transkript wird ein Profilentwurf im festen Format der Agentur, mit Zitaten zu wichtigen Punkten und einer Liste offener Fragen.</Step>
+<Step title="AGG-Filter" who="KI" tone="ai">Bemerkungen zu Alter, Familie, Gesundheit, Religion, Herkunft und ähnlichem werden aus dem Profil entfernt und markiert, nicht gespeichert.</Step>
+<Step title="Beraterin prüft" who="Beraterin" tone="human" time="5 Min.">Korrigiert Fehler, ergänzt ihre eigene Einschätzung in einem separaten Feld und speichert im Bewerbermanagementsystem.</Step>
+<Step title="Kundenvorschlag" who="KI und Beraterin" tone="ai">Entscheidet sich die Beraterin für einen Vorschlag, entwirft das Modell die Vorstellung aus dem Profil. Die Beraterin überarbeitet und versendet.</Step>
+</Flow>
+
+Zwei Details sind wichtig. Erstens steht die Einschätzung der Beraterin in einem eigenen Feld, das das Modell nicht füllt. So bleibt klar, wessen Urteil wessen ist, gegenüber Kunden und zunehmend auch gegenüber Aufsichtsbehörden. Zweitens entfernt der Filter Dinge, die im Gespräch nebenbei fallen und in keinem Profil stehen sollten, schon gar nicht vor einem Kunden.
+
+<Callout title="AGG-Merkmale gehören nicht ins Profil" tone="warning">
+Im Gespräch erzählen Kandidaten vieles: von den Kindern, einer anstehenden Operation, ihrem Alter, ihrem Glauben, der Herkunft der Eltern. Nichts davon gehört in ein Profil oder einen Kundenvorschlag. Steht es dort, kann es im Streitfall als Indiz für eine Benachteiligung nach § 22 AGG dienen, mit Beweislast bei der Agentur oder dem Kunden. Weisen Sie das Modell an, solche Bemerkungen wegzulassen und der Beraterin zu melden, und lassen Sie es diese Merkmale nie aus Namen, Stimme oder Foto ableiten.
+</Callout>
+
+## Was der Kunde sieht
+
+Ein Vorschlag aus einem strukturierten Profil liest sich deutlich anders als einer aus dem Gedächtnis:
+
+> **Sarah M., Standortleitung Logistik.** Sechs Jahre Lagerleitung bei einem regionalen Großhändler, aktuell verantwortlich für zwei Standorte und 45 Mitarbeitende. Hat im letzten Jahr die Einführung eines neuen Lagerverwaltungssystems geleitet, einschließlich Schulung beider Schichten. Wechselgrund: Das Unternehmen zentralisiert, ihre Stelle wandert an einen drei Stunden entfernten Standort. Sucht eine operative Standortleitung, maximal 40 Minuten Anfahrt, gern ein Tag Homeoffice. Kündigungsfrist drei Monate zum Quartal, Verhandlungsbereitschaft angedeutet. Gehaltsvorstellung im Rahmen Ihrer Spanne.
+>
+> **Einschätzung der Beraterin:** Passt sehr gut zur Standortleitung. Die Systemeinführung ist direkt relevant für Ihre geplante Umstellung, und sie sagt offen, dass sie operativ bleiben will. Nachfragen lohnt sich zu: Erfahrung mit Betriebsrat und Tarifverhandlungen.
+
+Alles im ersten Absatz geht auf das zurück, was die Kandidatin gesagt hat. Der zweite Absatz ist die Meinung der Beraterin, als solche gekennzeichnet. Der Kunde weiß, was was ist.
+
+## Entscheidungen, die auf Sie zukommen
+
+### Sollten Sie Erstgespräche aufzeichnen?
+
+Wenn die Kandidaten einverstanden sind, ja: Ein Transkript ergibt bessere Profile als jede Mitschrift. Fragen Sie zu Beginn jedes Gesprächs, erklären Sie Zweck und Speicherdauer und akzeptieren Sie ein Nein. Die unbefugte Aufnahme des nichtöffentlich gesprochenen Wortes ist nach § 201 StGB strafbar, datenschutzrechtlich brauchen Sie ohnehin eine klare Rechtsgrundlage und Transparenz nach Art. 13 DSGVO. Löschen Sie die Aufnahme, sobald das Profil geprüft ist.
+
+### Soll das Modell Kandidaten zu offenen Stellen vorschlagen?
+
+„Schau dir für die neue Stelle diese fünf Kandidaten an“ klingt harmlos. Automatisches Matching ist aber Filtern, und Filtern steht auf der Hochrisiko-Liste. Wer es nutzt, muss sicherstellen, dass die Beraterin tatsächlich auswählt, und das Werkzeug in der Planung als Hochrisiko-System behandeln. Für die meisten kleinen Agenturen bringt eine gute Suche im Bewerbermanagement über sauber strukturierte Profile fast denselben Nutzen ohne dieses Risiko.
+
+### Sollen Kandidaten ihr Profil sehen?
+
+Eine gute Praxis, und nach Art. 15 DSGVO können sie ihre Daten ohnehin anfordern. Manche Agenturen schicken nach dem Gespräch eine kurze Zusammenfassung („So habe ich Sie verstanden, stimmt das?“). Das findet Fehler und schafft Vertrauen.
+
+### Wie lange dürfen Sie Profile behalten?
+
+Für einen konkreten Auswahlprozess üblicherweise einige Monate nach dessen Ende, weil abgelehnte Bewerber Ansprüche nach dem AGG innerhalb von zwei Monaten geltend machen können (§ 15 Abs. 4 AGG). Für einen Talentpool, aus dem Sie später wieder vorschlagen, brauchen Sie in der Regel eine Einwilligung. Das Modell ändert daran nichts, aber strukturierte Profile machen Löschfristen leichter umsetzbar.
+
+### Sollten Sie Kunden sagen, dass Sie KI nutzen?
+
+Ja, kurz: für welche Aufgaben, wer prüft, und dass keine Kandidatin von Software ausgewählt oder abgelehnt wird. Kunden fragen zunehmend danach, und manche haben eigene KI-Richtlinien für Dienstleister. Kunden mit Betriebsrat werden die Frage ohnehin stellen.
+
+## Welche Werkzeuge passen
+
+Agentursysteme wie Bullhorn, Vincere oder Recruit CRM und im Zeitarbeitsumfeld Software wie zvoove haben Kandidatenprofile und Schnittstellen, und viele bringen eigene KI-Funktionen mit. Prüfen Sie, was diese Funktionen tun, bevor Sie sie einschalten: „KI-Matching“ und „Kandidaten-Scoring“ sind genau die Teile, die Sie in den Hochrisiko-Bereich bringen. Für die Aufnahme reichen die Transkription in Teams oder Zoom oder spezialisierte Notiz-Tools. Die Strukturierungsschicht mit Ihrem festen Profilformat und dem AGG-Filter würde ich sorgfältig aufsetzen.
+
+Beim Datenschutz gilt: Auftragsverarbeitungsvertrag, Verarbeitung in der EU, kein Training mit Ihren Daten, Speicherfristen passend zur Datenschutzerklärung und Löschung der Rohaufnahmen, sobald sie ihren Zweck erfüllt haben.
+
+## Häufige Fragen aus Personalberatungen
+
+### Stört es Kandidaten, wenn transkribiert wird?
+
+Die meisten nicht, vor allem wenn Sie erklären, dass Sie so richtig zuhören und sie beim Kunden genauer darstellen können. Bieten Sie die Alternative ohne Druck an.
+
+### Kann das Modell auch Stellenanzeigen schreiben?
+
+Ja, das ist unkritisch, solange ein Mensch sie prüft. Achten Sie auf Formulierungen, die ein Geschlecht oder Alter nahelegen („junges, dynamisches Team“), die Modelle manchmal übernehmen. Das gezielte Ausspielen von Anzeigen an bestimmte Personengruppen ist dagegen ausdrücklich in der Hochrisiko-Kategorie genannt.
+
+### Was, wenn das Transkript Fehler enthält?
+
+Die gibt es, am häufigsten bei Namen, Firmennamen und Zahlen. Dafür ist die fünfminütige Prüfung da. Zitate im Profil machen es leicht nachzuprüfen, was tatsächlich gesagt wurde.
+
+## Faustregel
+
+Das Modell schreibt auf, was die Kandidatin gesagt hat. Die Beraterin entscheidet, was es bedeutet. Sobald Software entscheidet, wer ein guter Kandidat ist, betreiben Sie ein Hochrisiko-System, und das braucht eine kleine Agentur selten.
+
+Wenn Ihre Profile dünner sind als Ihre Gespräche, [schreiben Sie mir, welches System Sie nutzen](/contact?intent=improve) und wie Ihre Erstgespräche ablaufen. Ich schlage Ihnen vor, wie strukturierte Profile auf der Dokumentationsseite der Grenze bleiben. Versicherungsmakler haben ein ähnliches Vorbereiten-und-Dokumentieren-Problem bei den [Jahresgesprächen](/de/posts/ai-for-insurance-brokers-renewals), und Architekturbüros führen ihr [Entscheidungsprotokoll](/de/posts/ai-for-architects-meeting-decisions) nach demselben Prinzip.

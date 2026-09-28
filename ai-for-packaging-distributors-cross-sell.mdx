@@ -1,0 +1,136 @@
+---
+id: "ai-for-packaging-distributors-cross-sell"
+title: "Cross-Selling on Repeat Orders: AI for Packaging Distributors"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Retail & wholesale", "Packaging distributors", "Cross-selling", "AI for small business"]
+description: "Customers who reorder boxes but buy tape elsewhere are an opportunity. A guide for packaging distributors to suggestions that help, not annoy, including PPWR."
+excerpt: "Customers who reorder boxes but buy tape elsewhere are an opportunity. A guide for packaging distributors to suggestions that help, not annoy, including PPWR."
+---
+
+A regional packaging distributor has a loyal customer: an online shop for garden supplies that reorders the same three box sizes every three weeks, like clockwork. For four years. What the distributor doesn't know is that the shop buys its tape, void fill and shipping labels from an online marketplace, because nobody ever asked. The shop's owner would happily have bought everything from one supplier. It just never came up.
+
+That's the cross-selling opportunity in packaging distribution: not pushing products customers don't need, but noticing the obvious gaps in what they already buy from you, and the changes they'll soon need to make. Repeat orders are perfect for it, because you know the customer, you know what they use, and a good suggestion saves them time.
+
+It's also easy to get wrong. A confirmation email stuffed with "you might also like" offers is spam. A sales rep who pitches bubble wrap on every call gets their calls declined. This post is about telling the difference, and using AI to make the good suggestions reliably.
+
+## Helpful or annoying?
+
+<Split title="Two ways to suggest extras on a reorder" leftTitle="Annoying cross-selling" rightTitle="Helpful suggestions" left={[
+  "Generic “customers also bought” lists",
+  "The same promotion for every customer",
+  "Products that don't fit how they pack",
+  "Suggestions on every single order",
+  "Pushing higher-margin items for their own sake",
+  "No reason given"
+]} right={[
+  "Gaps in what they obviously need but buy elsewhere",
+  "Based on their own order history and products",
+  "Timed to when they'll run low",
+  "Occasional, and only when it's relevant",
+  "Alternatives that save them money or keep them compliant",
+  "A one-line reason they recognise"
+]} />
+
+The right column comes down to one test: would a good account manager who knows this customer suggest it? If yes, it's service. If not, it's noise.
+
+## Where the good suggestions come from
+
+In packaging, products come in natural groups. A customer who buys one part of a group and not the others is either buying the rest elsewhere or making do without.
+
+| When a customer buys | They usually also need | What to check first |
+| --- | --- | --- |
+| Shipping boxes | Tape, void fill, labels, a tape dispenser | Do they buy any of these from you? Box volume versus tape volume |
+| Mailer bags | Labels, returns labels, larger bags for bulky items | Whether their product sizes have changed |
+| Food trays and containers | Matching lids, labels, carry bags | That lids fit the exact tray model |
+| Pallets | Stretch film, corner boards, strapping | Pallet volume versus film ordered |
+| Bottles and jars | Closures, tamper seals, outer cartons | Closure size and material compatibility |
+| Paper bags for a shop | Tissue paper, stickers, larger sizes for peak season | Seasonal pattern from last year |
+
+The model's job is to spot these gaps across all customers, using each customer's own history: "Customer orders 2,000 boxes a month and no tape from us" is a pattern a person would notice for their five biggest accounts and miss for the other two hundred.
+
+## Deciding what to suggest
+
+<Matrix title="Which suggestions are worth making" caption="Relevance comes from the customer's own data. Value is what the customer gains, not only your margin." xLabel="Relevance to this customer" yLabel="Value to the customer" quadrants={[
+  { title: "Valuable, not yet relevant: watch", text: "New product lines that might suit them later. Mention once in a regular review, not on an order." },
+  { title: "Valuable and relevant: suggest", text: "Obvious gaps in a product group, running low, cheaper equivalent, compliant replacement for a product that's changing.", highlight: true },
+  { title: "Low value, low relevance: don't", text: "Random promotions and generic bestsellers." },
+  { title: "Relevant, low value: bundle quietly", text: "Small add-ons like tape dispensers or label rolls. Offer as an option in the reorder, not as a pitch." }
+]} />
+
+## Compliance changes are the best reason to call
+
+The most useful suggestions right now aren't about extras at all. They're about products customers will need to change.
+
+<Stats title="The EU packaging rules in three dates and numbers">
+  <Stat value="12 Aug 2026" label="the Packaging and Packaging Waste Regulation applies across the EU" source="European Commission" href="https://environment.ec.europa.eu/news/new-eu-rules-packaging-enter-application-2026-08-11_en" />
+  <Stat value="25 ppb" label="limit for any single non-polymeric PFAS in food-contact packaging, from the same date" source="Food Safety Magazine" href="https://www.food-safety.com/articles/11228-pfas-free-food-packaging-by-august-2026" />
+  <Stat value="50%" label="maximum empty space in e-commerce, grouped and transport packaging, expected from 2030; void fill counts as empty" source="Packaging Gateway" href="https://www.packaging-gateway.com/news/eu-sets-50-empty-space-cap-for-e-commerce-packaging/" />
+</Stats>
+
+The EU's Packaging and Packaging Waste Regulation has [applied since 12 August 2026](https://environment.ec.europa.eu/news/new-eu-rules-packaging-enter-application-2026-08-11_en). Among its first requirements are limits on PFAS in food-contact packaging, which affect some grease-resistant papers and moulded fibre products. Later obligations include a maximum of [50% empty space in e-commerce and transport packaging](https://www.packaging-gateway.com/news/eu-sets-50-empty-space-cap-for-e-commerce-packaging/), expected from 2030, with void fill counted as empty space.
+
+For a distributor, that's a list of customers who will need different products, and who'd rather hear it from you than from an inspector or a retailer's compliance team. The model can find them: customers buying food-contact products affected by the PFAS limits, or shipping small items in large boxes with lots of void fill. A rep who calls with "we've looked at what you order, here's the compliant equivalent and here's a box size that halves your void fill" isn't selling. They're helping, and they'll keep the account for years.
+
+## Timing: before they run out
+
+The other good moment for a suggestion is just before a customer runs out of something they already buy. Repeat customers have rhythms: boxes every three weeks, stretch film every two months, paper bags ramping up before Christmas. The model learns each customer's cycle from their history and can flag when an expected order is late ("Gardenly usually reorders by the 12th; nothing yet") or when seasonal volume is coming ("last year their bag orders doubled from mid-November").
+
+A short, well-timed message works better than any promotion:
+
+> Hi Maria, your last box order was 23 days ago, and you usually reorder around now. Shall we send the usual A3, A5 and B2 quantities for delivery on Thursday? Reply YES, or tell us what to change.
+
+That message isn't cross-selling at all, and it's often the most profitable one, because it keeps an order from drifting to a competitor who happened to call first.
+
+## How it works
+
+<Flow title="From a reorder to a relevant suggestion" caption="The model finds gaps, timing and compliance issues. Sales decides which suggestions to make and how. Acceptance is tracked so the suggestions get better.">
+<Step title="Reorder arrives" who="Customer" time="as usual">By shop, email, EDI or phone. The order itself is processed normally.</Step>
+<Step title="Look at the whole picture" who="AI" tone="ai" time="seconds">The customer's history, product groups, what's missing, what's running low, which products are affected by upcoming rules.</Step>
+<Step title="Rank suggestions" who="AI" tone="ai">At most one or two, each with a reason: gap, timing, saving or compliance. Nothing if nothing is relevant.</Step>
+<Step title="Choose the channel" who="Sales" tone="human">Small add-ons as an option in the order confirmation; bigger changes as a call or visit from the account manager.</Step>
+<Step title="Make the suggestion" who="Sales" tone="human">The rep uses the model's summary to prepare, then talks to the customer.</Step>
+<Step title="Learn" who="System" time="continuous">Accepted, declined and ignored suggestions feed back, so irrelevant ideas stop appearing.</Step>
+</Flow>
+
+A note the account manager might receive before a call:
+
+> **Gardenly Online Shop:** reorders boxes A3, A5, B2 every 3 weeks, about 2,400 boxes a month. No tape, void fill or labels bought from us in 4 years; at that volume they use roughly 120 rolls of tape a month. Box B2 is used for small items (average order weight 0.4 kg per their shop), likely with lots of void fill; our C1 box would cut void fill by about half and matters for the 2030 empty space rule. **Suggest:** tape and labels at their volume price; trial of C1 for small orders.
+
+That's a two-minute conversation with a customer who'll probably say "why didn't you mention this earlier?"
+
+## What not to do
+
+Don't put suggestions on every order confirmation. Once a customer learns to ignore them, they ignore the good ones too. Don't suggest products the customer has explicitly declined in the last few months. Don't recommend alternatives that aren't truly equivalent: a cheaper tape that fails in cold warehouses loses you the account. And don't make compliance claims you can't back up: "PFAS-free" needs documentation from the manufacturer, not a guess.
+
+## Tools that fit
+
+Distributor ERPs such as Microsoft Dynamics 365 Business Central, SAP Business One or Odoo hold order history and product data; B2B shops add product relationships. Some have recommendation features. The AI layer reads order history and product data, finds gaps and timing, checks products against compliance information you maintain, and writes short notes for sales and short options for order confirmations. Keep it transparent: sales should always see why a suggestion was made.
+
+## Questions distributors ask
+
+### Won't customers feel watched?
+
+Not if the suggestion is useful and explained. "You order a lot of boxes and no tape from us, we could supply both" is ordinary good service. What feels intrusive is inference nobody asked for, or suggestions that ignore what the customer said last time.
+
+### How do we measure whether it works?
+
+Share of wallet per customer (how many product groups they buy from you), acceptance rate of suggestions, and retention. If acceptance is low, you're suggesting the wrong things or too often.
+
+### Can this run in our web shop automatically?
+
+Small, relevant add-ons can: matching lids, tape for boxes, the next size up in peak season. Bigger changes, and anything compliance-related, work better through a person who can answer questions.
+
+### Is this worth it for small customers?
+
+The small customers are where it matters most, because nobody has time to look at their accounts personally. A café that buys cups from you but lids elsewhere, or a small shop that orders mailers but never labels, won't get a visit from the account manager. A relevant option in their order confirmation, once, is exactly the right amount of attention.
+
+### Where does compliance information come from?
+
+From manufacturers' declarations of compliance and product specifications, maintained in your product data. The model can flag which products need checking; the facts must come from documentation.
+
+## Rule of thumb
+
+Suggest what a good account manager would suggest: the obvious gaps, the thing they're about to run out of, the cheaper equivalent and the compliant replacement. At most one or two at a time, always with a reason, and never on every order.
+
+If you'd like to know what your repeat customers are buying elsewhere, [tell me which ERP and shop you use](/contact?intent=improve), and I'll suggest how to find the gaps and turn them into useful conversations. The same order data powers cleaner [order entry](/posts/ai-for-wholesale-order-entry) and more accurate [product pages](/posts/ai-for-retail-product-descriptions).

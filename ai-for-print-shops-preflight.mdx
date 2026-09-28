@@ -1,0 +1,149 @@
+---
+id: "ai-for-print-shops-preflight"
+title: "Beyond Preflight: Catching Print Order Problems Before the Press Runs"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Manufacturing", "Print shops", "Order checking", "AI for small business"]
+description: "The PDF passed preflight, yet the job was reprinted: wrong size, date or fold. Five myths about AI in print shops, and where it catches what preflight can't."
+excerpt: "The PDF passed preflight, yet the job was reprinted: wrong size, date or fold. Five myths about AI in print shops, and where it catches what preflight can't."
+---
+
+A small print shop gets an order for 5,000 folded flyers for a garden centre's spring event. The PDF passes preflight without a single warning: fonts embedded, images at 300 dpi, CMYK, 3 mm bleed. The job runs overnight, is folded in the morning, and goes out at noon. At three, the customer calls. The flyer says "Saturday, 14 May". In this year, the 14th of May is a Thursday. The event is on Saturday the 16th.
+
+Technically, the print shop did nothing wrong. The customer supplied the file and approved the proof. In practice, the shop reprints at cost to keep a good customer, and the press time, paper and folding it needed for other jobs are gone.
+
+Preflight software is excellent at what it does: checking that a PDF is technically fit to print. It doesn't know what the customer ordered, what the document says, or whether a date and a weekday match. That gap between "technically correct file" and "correct job" is where AI adds something new to the print shop.
+
+## What preflight already catches
+
+<Stats title="The technical file problems print shops see most">
+  <Stat value="70%+" label="of respondents named low image resolution as a common problem in supplied PDFs" source="GWG survey, via Prepressure" href="https://www.prepressure.com/pdf/pdf-troubleshooter" />
+  <Stat value="50%+" label="named wrong colour spaces such as RGB, and the same share named missing bleed" source="GWG survey, via Prepressure" href="https://www.prepressure.com/pdf/pdf-troubleshooter" />
+  <Stat value="40%+" label="named fonts not embedded in the PDF" source="GWG survey, via Prepressure" href="https://www.prepressure.com/pdf/pdf-troubleshooter" />
+</Stats>
+
+These problems are well understood, and tools like Enfocus PitStop and callas pdfToolbox handle them reliably, often fixing them automatically against standards like PDF/X and the Ghent Workgroup's [PDF/X-based specifications](https://gwg.org/pdf-x-workflow/). None of this needs AI, and nothing in this post suggests replacing it. The question is what happens after the file is technically clean.
+
+## Myth 1: "If it passes preflight, the job is right"
+
+Preflight checks the PDF against technical rules. It doesn't compare the file to the order: whether the size matches what was ordered, whether a four-page order arrived as a two-page file, whether the fold marks match the chosen fold, whether spot colours in the file were ordered as CMYK. It doesn't read the content at all.
+
+The reality: many costly reprints come from mismatches and content errors that no technical check sees. Checking the file against the order and reading the content for obvious inconsistencies is a separate step, and it's where a language model with vision is genuinely useful.
+
+<Split title="What each check looks at" leftTitle="Technical preflight" rightTitle="Order and content check" left={[
+  "Image resolution",
+  "Colour spaces and ink coverage",
+  "Bleed and trim",
+  "Fonts embedded",
+  "Transparency, overprint, hairlines",
+  "PDF/X compliance"
+]} right={[
+  "Size and page count against the order",
+  "Fold, finishing and imposition against the file",
+  "Spot colours against what was ordered and priced",
+  "Dates, weekdays and times that don't match",
+  "Phone numbers, web addresses and emails that look wrong",
+  "Text cut off near the trim or hidden under a fold"
+]} />
+
+## Myth 2: "AI will replace preflight"
+
+It shouldn't. Preflight is deterministic: the same file gives the same result every time, and it can fix problems automatically. A language model is probabilistic: it notices things a rule can't express, like a date that doesn't match its weekday, but it can also miss things or flag false alarms.
+
+The reality: the two work in sequence. Preflight first, as it is today. Then an order and content check that produces a short list of questions for a person, not automatic fixes.
+
+## Myth 3: "Customers don't want to be asked questions"
+
+Nobody enjoys a call about their flyer. Everyone prefers it to 5,000 flyers with the wrong date. The key is asking few, specific questions, early, before the proof goes out: "Your flyer says Saturday 14 May, but the 14th is a Thursday this year. Should it be Saturday the 16th?"
+
+The reality: a precise question sent with the proof builds trust. It shows the shop actually looked at the job, not just the file.
+
+## Myth 4: "Proofreading is the customer's job"
+
+Contractually, usually yes. The customer approves the proof and carries the risk. Commercially, a reprint for a regular customer is often absorbed by the shop anyway, and even when it isn't, the customer remembers the hassle.
+
+The reality: the shop doesn't take on responsibility for the content. It adds a quick sanity check and passes the questions to the customer, who stays responsible for the answer. Most shops say this clearly on the proof: "We noticed these points; please check. Content remains your responsibility."
+
+## Myth 5: "This only pays off for big print shops"
+
+Large printers have prepress departments with experienced people who catch many of these problems by eye. Small shops often have one person doing prepress, customer service and running the digital press. They're the ones who don't have time to read every flyer, and the ones for whom a reprint hurts most.
+
+The reality: the smaller the shop, the more a few minutes of automated checking per job is worth.
+
+## How the check works
+
+<Flow title="From order and file to a proof with the right questions" caption="Preflight handles the technical file. The model compares file and order and reads the content. A person decides which questions go to the customer with the proof.">
+<Step title="Order and file arrive" who="Customer" time="web shop or email">Order details (product, size, pages, paper, finishing, quantity) and the PDF.</Step>
+<Step title="Technical preflight" who="System" time="seconds">Existing preflight profile: resolution, colour, bleed, fonts, PDF/X. Automatic fixes where agreed.</Step>
+<Step title="Compare file and order" who="AI" tone="ai" time="seconds">Size, page count, fold and finishing, spot colours, orientation, against what was ordered.</Step>
+<Step title="Read the content" who="AI" tone="ai">Date and weekday mismatches, suspicious phone numbers and addresses, text near trim or folds, obvious typos in headlines.</Step>
+<Step title="Prepress decides" who="Prepress" tone="human" time="1 to 2 min">Reviews the flagged points, drops false alarms, writes the questions.</Step>
+<Step title="Proof with questions" who="Prepress" tone="human">The proof goes out with a short list of specific points to confirm. The job waits for the answer.</Step>
+</Flow>
+
+## What to check on every job
+
+<Checklist title="Order and content checks that prevent most reprints" items={[
+  "Final size and orientation match the product ordered",
+  "Page count matches, including covers and blank pages",
+  "Fold type and panel widths match the file (a roll fold needs a shorter inside panel)",
+  "Spot colours in the file were ordered and priced, or will be converted",
+  "Every date matches its weekday; times and years make sense",
+  "Phone numbers, web addresses and emails are complete and plausible",
+  "No important text within the safety margin or across a fold",
+  "Variable data (names, numbers) complete, with no empty fields in the sample"
+]} />
+
+The fold line deserves attention. A tri-fold leaflet with equal panels looks fine on screen and folds badly on paper, because the inside panel has to be slightly narrower. The model can measure panel widths in the file and compare them with the chosen fold, a check that's tedious for a person and easy for software.
+
+## What it catches in practice
+
+A few typical findings, all from files that passed technical preflight:
+
+> Flyer, 5,000, A5 folded to A6: "Saturday 14 May" (14 May is a Thursday). Phone number has 9 digits, the customer's usual number has 10.
+>
+> Brochure, 16 pages ordered: PDF has 14 pages plus a separate cover file with 4 pages; confirm whether cover is included in the 16.
+>
+> Business cards, 4/4: back side uses Pantone 286 C, order is CMYK only; will be converted unless you want a spot colour (price change).
+
+Each is a two-line question. Each prevents a reprint, a delay or a surprised customer at pickup.
+
+## Start with your reprint log
+
+Before setting anything up, look at the last twelve months of reprints, credit notes and complaints. Sort each one into three groups: technical file problems that preflight should have caught, mismatches between file and order, and content errors in the customer's text. Most shops find the first group small, because preflight already works, and the other two larger than expected.
+
+That split tells you where to start. If most reprints are fold and size mismatches, begin with the order comparison. If they're dates and phone numbers, begin with the content check. And the log gives you a baseline: count reprints per thousand jobs now, and again after three months.
+
+## Tools that fit
+
+Web-to-print systems and print MIS tools (from open-source web shops with print plugins to industry MIS systems) hold the order data; preflight tools like PitStop, pdfToolbox or those built into RIPs handle the technical checks. The AI layer reads both: the order record and the PDF, rendered page by page. It returns a short list of findings to prepress, ideally inside the job ticket they already use.
+
+Customer files are confidential. Choose a provider that doesn't keep or train on your files, and be especially careful with personalised mailings, which contain personal data.
+
+## Questions print shop owners ask
+
+### How many false alarms does it produce?
+
+Some, especially on creative layouts where unusual text placement is intentional. That's why a person reviews the findings before anything goes to the customer. Tune the checks over the first weeks, and false alarms drop quickly.
+
+### Can it proofread the whole text?
+
+It can flag obvious errors, but full proofreading of customer text is a service in its own right, with its own responsibility. Most shops limit the automated check to clear inconsistencies (dates, numbers, cut-off text) and leave content responsibility with the customer.
+
+### Does it slow down the web-to-print flow?
+
+The check takes seconds. What slows things down is waiting for customer answers, which is why questions should go out with the proof, not after it.
+
+### Who is responsible if the check misses something?
+
+The same party as today. The check is an extra pair of eyes, not a guarantee, and your terms and proof approval process stay as they are. Say on the proof that the listed points were noticed during checking and that content responsibility remains with the customer. What changes is that far fewer errors reach the press in the first place.
+
+### What about large-format and packaging?
+
+The same idea works: check dieline against file, bleed against the cutting line, barcodes for readability, mandatory text for presence. Packaging in particular benefits, because errors are expensive and legal text requirements are strict.
+
+## Rule of thumb
+
+Let preflight check the file and let the model check the job: does the file match the order, and does the content make sense? Send the few questions that matter with the proof, and keep the customer responsible for the answers.
+
+If reprints are eating your margin, [tell me which web-to-print or MIS system you use](/contact?intent=improve), and I'll suggest how to add an order and content check to your workflow. Translation agencies catch similar surprises in [project intake](/posts/ai-for-translation-agencies-project-intake), and dental labs in [incomplete case orders](/posts/ai-for-dental-labs-case-intake).

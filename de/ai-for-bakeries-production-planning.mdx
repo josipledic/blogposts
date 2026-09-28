@@ -1,0 +1,144 @@
+---
+id: "de-ai-for-bakeries-production-planning"
+title: "Bäckerei: Mit KI-Prognosen weniger Retouren und keine leeren Regale"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Lebensmittel & Gastronomie", "Bäckereien", "Absatzprognose", "KI für kleine Unternehmen"]
+description: "Zu viel gebacken ist Retoure, zu wenig ist um elf ausverkauft. Wie Prognosen aus Verkaufsdaten, Wetter und Feiertagen kleinen Bäckereien die Planung erleichtern."
+excerpt: "Zu viel gebacken ist Retoure, zu wenig ist um elf ausverkauft. Wie Prognosen aus Verkaufsdaten, Wetter und Feiertagen kleinen Bäckereien die Planung erleichtern."
+---
+
+Jeden Nachmittag schließt in einer Bäckerei mit ein paar Filialen jemand eine Wette ab. Wie viele Brötchen für die Filiale am Bahnhof morgen? Wie viele Sauerteigbrote für die in der Altstadt? Die Backstube fängt um zehn an, also müssen die Zahlen bis sechs stehen. Die übliche Methode: die Bestellung vom gleichen Wochentag der Vorwoche, korrigiert nach Gefühl. Es soll regnen, samstags ist Markt, und es ist der Montag nach Pfingsten.
+
+Zu hoch gewettet, und abends kommen die Retouren zurück. Zu niedrig, und die Filiale ist um elf leer, und die Kundin, die ein Sauerteigbrot wollte, kauft im Supermarkt. Beides passiert jede Woche in jeder Filiale, und die Verluste sind leise: Umsätze, die nicht stattgefunden haben, schreibt niemand auf.
+
+Hier hat KI, im Sinne von Prognosemodellen und nicht von Chatbots, in kleinen Lebensmittelbetrieben eine echte Erfolgsbilanz. Was die Zahlen sagen und wie es in der Praxis funktioniert.
+
+<Stats title="Die Zahlen hinter der täglichen Wette">
+  <Stat value="3,8 bis 16 %" label="Retourenquoten, gemessen in sechs Handwerksbäckereien im Münsterland und Rheinland" source="Zu gut für die Tonne / FH Münster" href="https://www.zugutfuerdietonne.de/jetzt-engagieren/projekte-aus-der-praxis/details/reduktion-der-lebensmittelabfaelle-bei-brot-und-backwaren" />
+  <Stat value="30 %" label="weniger Retouren im Schnitt meldeten 2022 Bäckereien mit einem KI-Prognosedienst, ausgewertet in einer begutachteten Fallstudie" source="Hübner et al., Journal of Industrial Ecology" href="https://onlinelibrary.wiley.com/doi/10.1111/jiec.13528" />
+  <Stat value="8.659" label="Handwerksbäckereien gab es Ende 2025 in Deutschland, mit rund 35.000 Filialen und 18,14 Mrd. Euro Umsatz" source="Zentralverband des Deutschen Bäckerhandwerks" href="https://www.baeckerhandwerk.de/zahlen-fakten" />
+</Stats>
+
+Die 30 % stammen aus den Verkaufsberichten des Anbieters, ausgewertet in einer wissenschaftlichen Ökobilanz. Ein Hinweis also, kein Versprechen. Die Richtung passt aber zur Forschung: Bestellmengen, die echten Nachfragetreibern folgen, schlagen Mengen, die von der Vorwoche abgeschrieben sind. Und es geht um viel: Nach einer WWF-Studie landen in Deutschland jedes Jahr rund [1,7 Millionen Tonnen Brot und Backwaren](https://www.wwf.de/themen-projekte/landwirtschaft/ernaehrung-konsum/lebensmittelverschwendung/unser-taeglich-brot) im Abfall, entlang der gesamten Kette.
+
+## Warum „wie letzte Woche“ immer wieder danebenliegt
+
+„Wie letzten Dienstag“ funktioniert an normalen Tagen. Eine Bäckerei hat aber erstaunlich wenige normale Tage. Was die Nachfrage bewegt, ist meistens vorher bekannt:
+
+- **Wochentagsmuster,** und zwar je Filiale verschieden: Der Bahnhof brummt montags bis freitags, die Altstadt samstags.
+- **Wetter.** Sonne verschiebt die Nachfrage zu Snacks und belegten Brötchen, Regen verändert die Laufkundschaft komplett. Wie stark, hängt vom Standort ab.
+- **Feiertage und Schulferien,** und die Tage drumherum. In Deutschland unterscheiden sie sich je Bundesland, und Brückentage machen es nicht einfacher. Forschung mit Daten einer großen deutschen Bäckereikette zeigt, dass einfache Verfahren genau an diesen Sondertagen scheitern ([Huber und Stuckenschmidt, 2020](https://www.sciencedirect.com/science/article/abs/pii/S0169207020300224)).
+- **Lokale Ereignisse:** Wochenmarkt, Heimspiel, Stadtfest, Baustelle vor der Tür.
+- **Monatsanfang und Zahltage,** in manchen Filialen deutlicher als in anderen.
+
+Für eine Filiale und ein paar Artikel kann ein Mensch das alles im Kopf behalten. Für fünf Filialen und vierzig Artikel kann es niemand, schon gar nicht um fünf Uhr nachmittags.
+
+<Bars title="Eine Filiale, eine Woche, feste Bestellung von 600 Brötchen täglich" unit=" Brötchen übrig" caption="Beispielhaft. Mit fester Menge erzeugen der verregnete Mittwoch und der Sonntag Retouren, während der Samstag vor Mittag ausverkauft ist. Die am Samstag verlorenen Verkäufe stehen in keinem Bericht." data={[
+  { label: "Montag", value: 80 },
+  { label: "Dienstag", value: 55 },
+  { label: "Mittwoch (Regen)", value: 140, highlight: true },
+  { label: "Donnerstag", value: 45 },
+  { label: "Freitag", value: 20 },
+  { label: "Samstag (ausverkauft 11:30)", value: 0, highlight: true },
+  { label: "Sonntag", value: 95 }
+]} />
+
+Die Null am Samstag ist der schlechteste Balken im Diagramm, auch wenn sie wie der beste aussieht. Sie bedeutet: Ab halb zwölf gingen Kunden ohne Brötchen nach Hause.
+
+## Was ein Prognosemodell macht
+
+Ein Prognosemodell lernt aus Ihrer eigenen Geschichte: Verkäufe je Artikel, Filiale und Tag, zusammen mit dem Wetter an diesen Tagen, Feiertagen, Ferien und den Ereignissen, die Sie erfasst haben. Für morgen kombiniert es dieselben Größen, also Wetterbericht, Kalender und bekannte Ereignisse, und schlägt eine Menge je Artikel und Filiale vor.
+
+Damit es in der Bäckerei funktioniert, braucht es ein paar Dinge:
+
+**Es prognostiziert Nachfrage, nicht Verkäufe.** An Tagen, an denen ein Artikel ausverkauft war, unterschätzen die Verkäufe die Nachfrage. Gute Modelle berücksichtigen das, etwa über die Uhrzeit des letzten Verkaufs. Sonst wird ein Artikel, der immer ausverkauft ist, immer knapper bestellt.
+
+**Es lernt jede Filiale einzeln.** Bahnhof und Altstadt reagieren unterschiedlich auf Regen und Feiertage. Ein Durchschnitt verwischt genau die Muster, auf die es ankommt.
+
+**Es bleibt ein Vorschlag.** Die Filialleiterin, die weiß, dass morgen wegen eines Umzugs die Straße gesperrt ist, überschreibt ihn. Diese Korrekturen, mit kurzer Begründung, werden Daten für das nächste Mal.
+
+**Es zielt auf das richtige Verhältnis.** Eine Bäckerei hat lieber ein paar Brötchen übrig, als um elf Kunden wegzuschicken. Das Modell lässt sich so einstellen, dass es bei Brot und Brötchen einen kleinen, bewussten Überhang anstrebt und bei empfindlichen Sahneteilchen knapper plant.
+
+Ein Sprachmodell spielt dabei eine kleinere Rolle, als man denkt. Der Kern ist statistische Prognose auf Verkaufsdaten. Das Sprachmodell hilft an den Rändern: beim Lesen des örtlichen Veranstaltungskalenders, beim Umwandeln der Notizen aus den Filialen in strukturierte Ereignisse und beim Erklären, warum der Vorschlag für morgen höher ist als sonst.
+
+## Vorschläge, denen man vertraut
+
+Eine Zahl ohne Begründung wird überschrieben. Eine Filialleiterin, die seit fünfzehn Jahren bestellt, akzeptiert kein „Das System sagt 720 Brötchen“, wenn sie sonst 600 bestellt. Einer Begründung hört sie zu:
+
+> **Filiale Bahnhof, Dienstag: Brötchen 720 (sonst 600).** Am Montag enden die Herbstferien, der Pendlerverkehr kommt zurück. Vorhersage trocken und mild. An den letzten drei vergleichbaren Dienstagen nach Ferienende waren die Brötchen zwischen 11:40 und 12:15 Uhr ausverkauft. Sicherheit: mittel. Sauerteigbrot unverändert 34.
+
+Genau hier verdient sich das Sprachmodell seinen Platz: Es macht aus den Eingangsgrößen des Modells zwei Sätze, die eine Bäckerin mit ihrer Erfahrung abgleichen kann. Ist sie anderer Meinung, überschreibt sie und schreibt, warum. Nach ein paar Wochen zeigen die Korrekturen, wo dem Modell Ortskenntnis fehlt und wo Gewohnheiten der Filiale Geld gekostet haben.
+
+Klein anfangen hilft: zuerst Brot und Brötchen, wo die Mengen hoch und die Muster stabil sind, Kuchen und Spezialitäten später. Ein kurzer wöchentlicher Blick auf Prognose gegen Verkauf je Filiale hält alle ehrlich, das Modell eingeschlossen.
+
+## Der Tagesrhythmus
+
+<Timeline title="Ein Tag in einer Bäckerei, die nach Prognose backt" caption="Die Prognose ersetzt die Entscheidung am Nachmittag nicht. Sie gibt der Person, die entscheidet, einen besseren Ausgangspunkt und eine Begründung für jede Zahl.">
+<Phase when="14:00" title="Prognose für morgen">Vorschlag je Artikel und Filiale aus Verkaufshistorie, Wetterbericht, Kalender und bekannten Ereignissen.</Phase>
+<Phase when="15:00" title="Filialen passen an">Jede Filiale prüft ihre Liste und überschreibt, wo sie etwas weiß, was das Modell nicht weiß, mit einer Zeile Begründung.</Phase>
+<Phase when="18:00" title="Produktionsplan steht">Summen gehen an die Backstube: Teigmengen, Ofenbelegung, Packlisten je Filiale.</Phase>
+<Phase when="22:00 bis 4:00" title="Nachtproduktion">Die Backstube produziert nach Plan.</Phase>
+<Phase when="5:30" title="Auslieferung">Jede Filiale bekommt ihre Mengen.</Phase>
+<Phase when="11:00" title="Mittagscheck">Filialen mit Backstation backen vorgebackene Ware nach, wenn der Vormittag schneller lief als prognostiziert.</Phase>
+<Phase when="18:30" title="Schluss und Erfassung">Retouren und Ausverkaufszeiten je Artikel werden erfasst und fließen in die Prognose für morgen.</Phase>
+</Timeline>
+
+Der Mittagscheck verdient Aufmerksamkeit. Eine Filiale, die tagsüber vorgebackene Brötchen fertig backen kann, verträgt eine knappere Morgenlieferung, weil sie reagieren kann, wenn es besser läuft. Prognose und Backstation arbeiten zusammen.
+
+## Was es wert ist
+
+<Calc title="Überschlag: Retouren einer Bäckerei mit fünf Filialen" caption="Annahmen, keine Messwerte. Retourenquote, Kostenanteil und Öffnungstage sind bei Ihnen anders; die Retourenquote ist die Zahl, die Sie zuerst messen sollten." rows={[
+  ["Ausgelieferte Ware pro Tag, zum Verkaufspreis", "9.000 €"],
+  ["Retourenquote", "× 10 %"],
+  ["Retouren pro Tag, zum Verkaufspreis", "900 €"],
+  ["Anteil Herstellkosten am Verkaufspreis", "× 35 %"],
+  ["Kosten der Retouren pro Tag", "315 €"],
+  ["Öffnungstage pro Jahr", "× 300"],
+  ["Kosten der Retouren pro Jahr", "94.500 €"],
+  ["Angenommene Reduktion durch Prognose", "× 25 %"]
+]} result={["Eingesparte Herstellkosten pro Jahr, ohne Mehrumsatz", "≈ 23.600 €"]} />
+
+Nicht eingerechnet ist die andere Seite: Umsatz an Tagen, die bisher früh ausverkauft waren. Für viele Bäckereien ist er ähnlich viel wert wie die eingesparten Retouren, aber schwerer zu messen. Deshalb lohnt es sich, Ausverkaufszeiten zu erfassen.
+
+## Was Sie zum Start brauchen
+
+**Saubere Verkaufsdaten je Artikel, Filiale und Tag.** Moderne Kassensysteme haben sie. Zwei Jahre sind ideal, weil jeder Feiertag zweimal vorkommt, ein Jahr geht auch.
+
+**Retouren und Ausverkaufszeiten.** Wer Retouren heute nicht je Artikel erfasst, sollte jetzt damit anfangen. Ein Tablet in jeder Filiale zum Ladenschluss oder eine Waage mit Artikeltasten genügt. Ohne diese Daten lernt kein Modell den Unterschied zwischen Nachfrage und Verkauf.
+
+**Einen Kalender lokaler Ereignisse.** Märkte, Feste, Heimspiele, Baustellen. Ein geteilter Kalender, in den die Filialen eintragen, reicht.
+
+**Wetterdaten.** Der Deutsche Wetterdienst stellt Vorhersagen als offene Daten bereit, kommerzielle Anbieter liefern sie standortgenau per Schnittstelle.
+
+Lassen Sie die Prognose dann einige Wochen parallel zur normalen Bestellung laufen und vergleichen Sie beides mit dem tatsächlichen Verkauf. Das schafft Vertrauen bei den Filialleitungen und zeigt, wo das Modell Ortskenntnis braucht.
+
+## Welche Werkzeuge passen
+
+Manche Warenwirtschafts- und Kassensysteme für Bäckereien bringen inzwischen eine Prognose mit. Daneben gibt es spezialisierte Prognosedienste für Bäckereien, wie den in der Studie oben untersuchten, die sich an die Kassendaten anbinden und Bestellvorschläge je Filiale liefern. Für eine kleine Bäckerei ist ein spezialisierter Dienst meist sinnvoller als ein eigenes Modell. Eine eigene Lösung lohnt sich bei ungewöhnlichen Daten, mehreren Vertriebswegen (Filialen, Großkunden, Cafés) oder wenn die Prognose direkt in die eigene Bestellung einfließen soll.
+
+Prüfen Sie in jedem Fall drei Dinge: Prognostiziert es Nachfrage statt Verkäufe, behandelt es jede Filiale einzeln, und können die Filialleitungen einfach überschreiben?
+
+## Häufige Fragen aus Bäckereien
+
+### Lohnt sich das auch für eine einzelne Filiale?
+
+Ja, die Einsparung ist in Euro kleiner. Eine einzelne Filiale kennt ihre Kundschaft oft so gut, dass das Bauchgefühl ordentlich ist. Der Nutzen zeigt sich vor allem an Feiertagen, bei ungewöhnlichem Wetter und bei Ware mit kurzer Haltbarkeit.
+
+### Was ist mit Bestellungen von Cafés und Hotels?
+
+Das sind Bestellungen, keine Prognosen, und die werden fest eingeplant. Die Prognose betrifft den Verkauf in den eigenen Filialen. Bestellen Großkunden kurzfristig, kann derselbe Ansatz einen Puffer vorschlagen.
+
+### Wird das Modell nicht so lange reduzieren, bis alles ausverkauft ist?
+
+Nur wenn es schlecht eingerichtet ist. Deshalb muss es Nachfrage statt Verkäufe prognostizieren und bei Grundsortiment einen bewussten kleinen Überhang anstreben. Vereinbaren Sie das Ziel mit Ihren Filialleitungen: Wie viele Reste je Artikel sind akzeptabel, damit nichts ausverkauft ist?
+
+### Und die Retouren, die trotzdem bleiben?
+
+Es werden weniger, aber einige bleiben immer. Brot vom Vortag günstiger verkaufen, Überraschungstüten über Apps wie Too Good To Go und Spenden an die Tafel funktionieren zusätzlich zur Prognose, nicht statt ihr.
+
+## Faustregel
+
+Planen Sie morgen nach dem, was die Nachfrage wirklich treibt, nicht nach dem, was letzte Woche bestellt wurde. Erfassen Sie Retouren und Ausverkaufszeiten jeden Tag, denn genau diese Daten machen die Prognose besser, und lassen Sie die Menschen in den Filialen überschreiben, wenn sie etwas wissen, was die Zahlen nicht wissen.
+
+Wenn Ihre Tagesbestellung noch eine Bauchgefühl-Tabelle ist, [schreiben Sie mir, welches Kassensystem Sie nutzen](/contact?intent=improve) und wie viele Filialen Sie beliefern. Ich sage Ihnen, welche Daten Sie schon haben und was für den Start fehlt. Brauereien stehen vor derselben Frage im Wochenrhythmus, siehe [Abfüllung nach echter Nachfrage planen](/de/posts/ai-for-microbreweries-sales-forecast), und Hofläden kämpfen gegen Verderb in [frische Ware verkaufen, bevor sie verdirbt](/de/posts/ai-for-farm-shops-inventory).

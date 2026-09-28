@@ -1,0 +1,148 @@
+---
+id: "de-ai-for-roofers-storm-leads"
+title: "Nach dem Unwetter: Dachdecker-Anfragen mit KI sortieren"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Handwerk & Bau", "Dachdeckerbetriebe", "Sturm- und Hagelschäden", "KI für kleine Unternehmen"]
+description: "Nach einem Unwetter kommen an einem Tag die Anfragen eines Monats. Wie KI allen antwortet, undichte Dächer von Besichtigungen trennt und der Betrieb seriös bleibt."
+excerpt: "Nach einem Unwetter kommen an einem Tag die Anfragen eines Monats. Wie KI allen antwortet, undichte Dächer von Besichtigungen trennt und der Betrieb seriös bleibt."
+---
+
+Der Hagel beginnt an einem Donnerstag um 17:20 Uhr und dauert elf Minuten. Am Freitagmorgen hat ein Dachdeckerbetrieb mit zwei Leuten im Büro 140 Nachrichten auf dem Anrufbeantworter, 60 Kontaktformulare und dreißig Nachrichten über Facebook und WhatsApp. In einer normalen Woche sind es vielleicht fünfundzwanzig Anfragen.
+
+Irgendwo in diesem Stapel ist eine Familie, bei der Wasser durch die Decke über dem Kinderbett tropft. Daneben Dutzende „Ich glaube, unser Dach hat was abbekommen, kann mal jemand schauen?“, ein paar Anfragen von außerhalb des Einzugsgebiets, eine Hausverwaltung mit neun Objekten und eine ältere Dame, die wissen will, ob die Männer, die heute Morgen an ihrer Tür geklingelt haben, seriös sind.
+
+Das Büro wird den Stapel irgendwann abarbeiten. Die Frage ist, ob die Familie mit dem tropfenden Dach in einer Stunde Rückmeldung bekommt oder am Dienstag, und ob die übrigen zweihundert überhaupt etwas hören, bevor eine Drückerkolonne klingelt. Genau dafür würde ich KI in einem Dachdeckerbetrieb einsetzen: um einen Ansturm aufzufangen, für den kein Büro Personal vorhalten kann, ohne das Urteilsvermögen zu verlieren, das einen örtlichen Betrieb ausmacht.
+
+## Viel Schaden, und nach jedem Unwetter viel Konkurrenz
+
+<Stats title="Unwetter in Zahlen">
+  <Stat value="1,8 Mrd. €" label="Sturm- und Hagelschäden an versicherten Sachwerten in Deutschland 2024" source="GDV-Naturgefahrenstatistik" href="https://www.gdv.de/gdv/medien/medieninformationen/gdv-naturgefahrenstatistik-2024-hochwasserschaeden-mehr-als-verdoppelt-188734" />
+  <Stat value="5,7 Mrd. €" label="kosteten Starkregen, Überschwemmung, Sturm und Hagel 2024 insgesamt" source="GDV-Naturgefahrenstatistik" href="https://www.gdv.de/gdv/medien/medieninformationen/gdv-naturgefahrenstatistik-2024-hochwasserschaeden-mehr-als-verdoppelt-188734" />
+  <Stat value="+38 %" label="mehr gemeldeter Handwerkerbetrug in den USA zwischen 2023 und 2025, parallel zu großen Unwettern" source="NICB, via Carrier Management" href="https://www.carriermanagement.com/news/2026/05/19/288150.htm" />
+</Stats>
+
+Die Betrugszahl stammt aus den USA, aber das Muster kennt man hierzulande genauso. Nach jedem größeren Unwetter warnen Verbraucherzentralen und Polizei vor Wanderhandwerkern, die an Haustüren klingeln, sofortige Reparaturen anbieten und Vorkasse verlangen. Hausbesitzer sind deshalb zu Recht misstrauisch gegenüber aufdringlichen Nachrichten und allem, was nach „schnell unterschreiben“ klingt. Der Vorteil eines örtlichen Betriebs ist Vertrauen. Jede Automatisierung muss dieses Vertrauen schützen, nicht verbrauchen.
+
+## Was eigentlich in dem Stapel liegt
+
+Bevor irgendetwas gebaut wird, hilft es, den Stapel als vier verschiedene Stapel zu sehen.
+
+| Art der Anfrage | Wie sie klingt | Was sie braucht |
+| --- | --- | --- |
+| Es regnet rein | „Durch die Decke kommt Wasser.“ | Eine Notsicherung heute, kein Angebot |
+| Sichtbarer Schaden | „Ziegel liegen im Garten.“ „Das Dachfenster hat einen Sprung.“ | Eine Besichtigung diese Woche, falls nötig mit provisorischer Sicherung |
+| Möglicher Schaden | „Die Hagelkörner waren riesig, können Sie mal schauen?“ | Eine Besichtigung, wenn die Tour es erlaubt, bis dahin Fotos |
+| Passt nicht | Außerhalb des Gebiets, eine Leistung, die Sie nicht anbieten, ein Werbeanruf | Eine freundliche, nützliche Antwort, schnell |
+
+In einer normalen Woche sortiert das Büro das nebenbei im Kopf. In einer Unwetterwoche wird das Sortieren selbst zum Engpass. Genau diesen Teil kann Software übernehmen.
+
+## Die ersten 72 Stunden
+
+So würde ich den Ansturm strukturieren. Das Ziel für die ersten zwei Stunden ist einfach: Alle bekommen eine ehrliche Rückmeldung.
+
+<Timeline title="Eine Unwetterwoche, Stunde für Stunde">
+<Phase when="Stunde 0 bis 2" title="Allen antworten">Jeder Anruf, jedes Formular, jede Nachricht bekommt eine Antwort: Wir haben Ihre Nachricht, so realistisch melden wir uns, bitte steigen Sie nicht aufs Dach, und so schicken Sie uns Fotos.</Phase>
+<Phase when="Stunde 2 bis 12" title="In vier Listen sortieren">Jede Anfrage wird gelesen, Adresse und Beschreibung werden übernommen, Fotos angehängt und eine Liste vorgeschlagen. Alles, was nach eindringendem Wasser klingt, geht sofort an einen Menschen.</Phase>
+<Phase when="Tag 1" title="Undichte Dächer zuerst">Kolonnen fahren zu den Notsicherungen. Das Büro bestätigt jeden Einsatz telefonisch.</Phase>
+<Phase when="Tag 1 bis 3" title="Besichtigungen nach Gebiet">Sichtbare und mögliche Schäden werden nach Ortsteil gebündelt, damit niemand kreuz und quer durch den Landkreis fährt.</Phase>
+<Phase when="Ab Tag 3" title="Berichte für die Versicherung">Notizen und Fotos der Besichtigung werden zu einem klaren Bericht, den die Eigentümer an ihre Wohngebäudeversicherung schicken können.</Phase>
+</Timeline>
+
+Die Rückmeldung in den ersten zwei Stunden ist wichtiger, als sie aussieht. Wer schon von einem echten örtlichen Betrieb gehört hat, mit einer realistischen Zeitangabe, unterschreibt viel seltener beim ersten Fremden, der an der Tür klingelt.
+
+## Wie das Sortieren funktioniert
+
+<Flow title="Von 200 Anfragen zum Plan für den Tag" caption="Das Modell liest, überträgt und schlägt vor. Jeden dringenden Fall und jeden Kolonneneinsatz bestätigen Menschen.">
+<Step title="Anfragen kommen überall an" who="Telefon, Web, Messenger" time="den ganzen Tag">Sprachnachrichten werden verschriftlicht. Formulare und Nachrichten landen in einer Liste, doppelte Anfragen aus demselben Haushalt werden zusammengeführt.</Step>
+<Step title="Antworten und um Fotos bitten" who="KI" tone="ai" time="Minuten">Eine Antwort mit realistischer Zeitangabe, Sicherheitshinweis und einem Link, über den vom Boden aus aufgenommene Fotos hochgeladen werden können.</Step>
+<Step title="Übertragen und einordnen" who="KI" tone="ai">Adresse, Beschreibung, Fotos und eine vorgeschlagene Liste. Wörter wie tropft, Decke, Wasser, regnet rein bedeuten immer: Ein Mensch schaut zuerst.</Step>
+<Step title="Büro bestätigt dringende Fälle" who="Büro" tone="human" time="innerhalb einer Stunde">Ein Mensch ruft bei jedem Verdacht auf eindringendes Wasser zurück und entscheidet, ob heute eine Kolonne fährt.</Step>
+<Step title="Den Rest bündeln" who="System">Besichtigungen werden nach Gebiet gruppiert und als Touren für die nächsten Tage vorgeschlagen.</Step>
+<Step title="Besichtigung, dann Bericht" who="Dachdecker" tone="human">Aus Notizen und Fotos entsteht ein Berichtsentwurf, den der Dachdecker prüft und freigibt.</Step>
+</Flow>
+
+Die wichtigste Regel ist dieselbe wie beim Sanitär-Notdienst: Im Zweifel ist es dringend. Ein Rückruf bei jemandem, der am Ende nur einen kleinen Fleck an der Decke hat, kostet fünf Minuten. Ein undichtes Dach, das vier Tage auf der Liste „möglicher Schaden“ liegt, kostet eine Zimmerdecke.
+
+## Woher die Reihenfolge kommt
+
+Die Rangfolge sollte ausdrücklich festgelegt sein, denn in einer Unwetterwoche hat im Büro jeder ein anderes Bauchgefühl.
+
+<Matrix title="Wer zuerst Besuch bekommt" xLabel="Wie sicher ein Schaden vorliegt" yLabel="Dringt Wasser ein?" quadrants={[
+  { title: "Sofort zurückrufen", text: "Klingt dringend, ist aber unklar. Ein Mensch ruft an, fragt nach und bittet um Fotos." },
+  { title: "Kolonne heute", text: "Es regnet rein, der Schaden ist sichtbar. Erst sichern, dann kalkulieren.", highlight: true },
+  { title: "Sammeltour", text: "Möglicher Schaden, nichts Dringendes. Nach Gebiet in den nächsten ein bis zwei Wochen." },
+  { title: "Besichtigung diese Woche", text: "Klarer Schaden, noch dicht. Bald hinfahren, bevor der nächste Regen es dringend macht." }
+]} />
+
+Das Modell ordnet jede Anfrage anhand dessen ein, was die Eigentümer schreiben und schicken. Das Büro kann alles mit einem Klick verschieben, und jede Verschiebung zeigt, wie Kunden Schäden beschreiben.
+
+Bei der Notsicherung selbst bleibt es beim Handwerk: Ob eine Plane reicht oder schon für die provisorische Abdichtung ein Gerüst oder eine Hubarbeitsbühne nötig ist, entscheidet der Dachdecker vor Ort. Arbeitsschutz hat auch in der Unwetterwoche Vorrang.
+
+## Fotos: nützlich, aber keine Diagnose
+
+Eigentümer in der ersten Stunde um Fotos zu bitten ist eines der besten Dinge, die Sie tun können, solange Sie um die richtigen bitten und niemanden auf eine Leiter schicken.
+
+<Checklist title="Fotos, um die Sie Eigentümer bitten, alle vom Boden aus" items={[
+  "Jede Dachseite von der Straße oder aus dem Garten",
+  "Dachrinnen und Fallrohre, an denen Hageldellen gut zu sehen sind",
+  "Rollläden, Fensterbänke, Fassade und Außengerät der Wärmepumpe, die oft Hagelspuren zeigen",
+  "Ziegel, Bruchstücke oder Granulat auf dem Boden",
+  "Wasserflecken oder Tropfstellen innen, mit etwas zum Größenvergleich",
+  "Ein Hagelkorn neben einer Münze, falls eines aufgehoben wurde",
+  "Die Uhrzeit des Unwetters, falls bekannt"
+]} />
+
+Kann KI Hagelschäden auf einem Handyfoto erkennen? Das Offensichtliche manchmal: ein Loch, fehlende Ziegel, Wasser an der Decke. Bei allem, was feiner ist, würde ich ihr nicht vertrauen, und ich würde sie nie einem Eigentümer sagen lassen, sein Dach sei in Ordnung. Für die eigentliche Begutachtung gibt es Werkzeuge mit Drohnen- oder Luftbildern. Handyfotos aus dem Garten dienen der Einordnung, nicht dem Urteil.
+
+## Auf der richtigen Seite der Grenze bleiben
+
+Ein Dachdeckerbetrieb, der nach einem Unwetter automatisiert antwortet, muss aufpassen, nicht wie die Leute auszusehen, gegen die er antritt.
+
+<Split title="Was die Automatisierung tut und nie tut" leftTitle="Sie tut" rightTitle="Sie tut nie" left={[
+  "Antwortet allen schnell und ehrlich, mit realistischer Zeitangabe",
+  "Sagt deutlich, dass niemand aufs Dach steigen soll",
+  "Sortiert, bündelt und bereitet Besichtigungen vor",
+  "Entwirft Berichte aus den Notizen und Fotos des Dachdeckers",
+  "Beantwortet Fragen zu Betrieb, Meisterbrief und Versicherung"
+]} right={[
+  "Verspricht, dass die Versicherung alles zahlt",
+  "Drängt zur Unterschrift oder zu einer Abtretung von Versicherungsansprüchen",
+  "Schickt wiederholt Nachfassnachrichten an Leute, die nicht geantwortet haben",
+  "Beschreibt Schäden, die der Dachdecker nicht dokumentiert hat",
+  "Verhandelt mit der Versicherung im Namen der Eigentümer"
+]} />
+
+Die rechte Spalte ist nicht nur Anstand. Sie ist Positionierung. Nach jedem Unwetter werden Hausbesitzer mit Angeboten überschüttet. Der Betrieb, dessen Nachrichten ruhig, konkret und ehrlich sind, fällt auf. Und wer an der Haustür unterschreibt, hat bei einem außerhalb von Geschäftsräumen geschlossenen Vertrag ohnehin ein vierzehntägiges Widerrufsrecht. Ein seriöser Betrieb erwähnt das, statt es zu verschweigen.
+
+## Was das Büro vorbereitet haben sollte
+
+Die meisten Betriebe arbeiten mit Handwerkersoftware wie HERO, Das Programm oder openHandwerk. Die Unwetter-Annahme sitzt davor: Sie liest alle Kanäle, legt Anfragen mit den übernommenen Angaben und Fotos an und schreibt die vorgeschlagene Liste und Tour in das System, das Sie ohnehin nutzen.
+
+Zwei Dinge sollten vor der Unwettersaison vorbereitet sein, nicht während. Erstens die Antworttexte und die Foto-Checkliste, von Ihnen vorab freigegeben, damit nichts rausgeht, das Sie nicht gelesen haben. Zweitens Ihr Einzugsgebiet als echte Karte, damit Anfragen von außerhalb schnell eine freundliche Empfehlung bekommen, statt in der Liste zu liegen.
+
+Und denken Sie an die Offenlegung: Seit August 2026 müssen Menschen nach [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) erfahren, wenn sie mit einem KI-System interagieren. Ein Satz wie „Diese Antwort hat unser Assistent vorbereitet, unser Team hat sie geprüft“ ist ehrlich und kostet nichts.
+
+## Fragen, die Dachdecker stellen
+
+### Wirken automatische Antworten nicht wie Spam?
+
+Nicht, wenn sie konkret und nützlich sind. „Wir haben Ihre Nachricht zum Hagelschaden in der Ahornstraße erhalten. Heute kümmern wir uns zuerst um undichte Dächer und melden uns bis Montag bei Ihnen. Bitte steigen Sie nicht aufs Dach; so schicken Sie uns Fotos“ ist das Gegenteil von Spam. Nach Spam sieht „Jetzt KOSTENLOSE Dachprüfung sichern!!!“ aus.
+
+### Schafft das den Ansturm über ein Wochenende allein?
+
+Es kann über ein Wochenende antworten, sortieren und alles vorbereiten. Kolonnen losschicken oder etwas als „nicht dringend“ einstufen, ohne dass ein Mensch es gesehen hat, sollte es nicht. Eine kleine Bereitschaft für die Liste „regnet rein“ bleibt nötig.
+
+### Kann es die Schadenmeldung an die Versicherung schreiben?
+
+Es kann aus Notizen und Fotos des Dachdeckers einen klaren, sachlichen Bericht machen, den die Eigentümer an ihre Wohngebäudeversicherung schicken. Die Meldung selbst machen die Versicherungsnehmer, und das System darf nie Schäden hinzufügen, die nicht dokumentiert sind. Das schützt die Eigentümer und Ihren Betrieb.
+
+### Lohnt sich das, wenn Unwetter nur ein paarmal im Jahr kommen?
+
+Das hängt von Ihrer Region ab. Antworten und Sortieren kosten im Betrieb wenig und liegen zwischen den Unwettern ohne Kosten still. Wenn Sie eine Unwetterwoche im Jahr unter Anfragen begräbt, ist es viel wert, das vorbereitet zu haben. Sind Unwetter selten, reichen vielleicht vorbereitete Antworttexte und eine gemeinsame Tabelle.
+
+## Die Regel für die Unwetterwoche
+
+Allen innerhalb einer Stunde ehrlich antworten, die Kolonnen zuerst zu den undichten Dächern schicken und nie eine Maschine versprechen lassen, was kein Dachdecker gesehen hat.
+
+Wenn Ihr Büro nach einem Unwetter schon einmal untergegangen ist, [schreiben Sie mir, wie Anfragen bei Ihnen ankommen](/contact?intent=improve) und welche Software Sie nutzen. Ich sage Ihnen, was sich vor dem nächsten Mal vorzubereiten lohnt. Dieselbe Idee im Kleinen beschreibe ich beim [Sanitär-Notdienst](/de/posts/ai-for-plumbers-emergency-calls), und für Hausverwaltungen, bei denen nach jedem Sturm die Mieterseite anruft, beim [Weiterleiten von Schadensmeldungen](/de/posts/ai-for-property-managers-maintenance).

@@ -1,0 +1,144 @@
+---
+id: "de-ai-for-home-care-scheduling"
+title: "Ambulanter Pflegedienst: Tourenplanung mit KI, bevor ein Einsatz ausfällt"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Gesundheit", "Ambulante Pflegedienste", "Tourenplanung", "KI für kleine Unternehmen"]
+description: "Krankmeldungen, Fahrzeiten, Qualifikationen, Bezugspflege: Die Tourenplanung bricht jeden Morgen. Wo KI hilft, welche Art von KI und was bei der PDL bleibt."
+excerpt: "Krankmeldungen, Fahrzeiten, Qualifikationen, Bezugspflege: Die Tourenplanung bricht jeden Morgen. Wo KI hilft, welche Art von KI und was bei der PDL bleibt."
+---
+
+Um 6:10 Uhr vibriert das Diensthandy der Einsatzleitung. Maria, eine der verlässlichsten Pflegekräfte, hat ein krankes Kind und kann ihre Einsätze um 7:30 und 9:00 Uhr nicht fahren. Um 7:30 Uhr steht Herr Albers auf dem Plan, der an Demenz erkrankt ist und auf neue Gesichter unruhig reagiert. Um 9:00 Uhr Frau Kaya, die ihr Insulin zu einer festen Zeit braucht und nur zu zweit mit dem Lifter umgesetzt werden kann.
+
+Um 7:15 Uhr ist das Problem gelöst: Eine Kollegin, die Herrn Albers kennt, übernimmt, und eine examinierte Kraft fährt zu Frau Kaya. Was in der Eile niemand bemerkt: Durch die zweite Änderung liegen zwischen zwei Einsätzen jetzt fünfzehn Minuten, obwohl die Fahrt fünfunddreißig dauert. Um 11:00 Uhr wartet ein Klient, und eine Tochter ruft im Büro an und fragt, wo alle bleiben.
+
+So sieht der Alltag in der Einsatz- und Tourenplanung eines ambulanten Pflegedienstes aus. Der Plan ist ein Netz aus Bedingungen, und eine Änderung an einer Stelle reißt drei Schritte weiter ein Loch. Genau deshalb ist er ein guter Kandidat für KI, sofern man für jeden Teil des Problems die richtige Art von KI nimmt.
+
+## Warum der Plan so oft reißt
+
+Ambulante Pflege lebt von Menschen, und die sind knapp.
+
+<Stats title="Der Druck auf die Tourenplanung">
+  <Stat value="1,1 Mio." label="Pflegebedürftige wurden Ende 2023 zu Hause mit oder durch ambulante Pflegedienste versorgt" source="Destatis, Pflegestatistik 2023" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_478_224.html" />
+  <Stat value="5,7 Mio." label="Menschen waren Ende 2023 pflegebedürftig, 86 % davon wurden zu Hause versorgt" source="Destatis, Pflegestatistik 2023" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_478_224.html" />
+  <Stat value="75 %" label="betrug die mittlere Fluktuation bei Pflegekräften in US-Pflegediensten 2024, als Blick auf ein Extrem" source="Activated Insights, via McKnight's" href="https://www.mcknightshomecare.com/news/home-care-revenues-rise-as-client-caregiver-turnover-rates-drop-activated-insights-reports/" />
+</Stats>
+
+Die Zahl der Pflegebedürftigen wächst, die Zahl der Pflegekräfte nicht im selben Tempo. Rund 15.500 ambulante Dienste teilen sich den Markt, die meisten davon klein. Jede Krankmeldung, jede Kündigung und jeder neue Klient verschiebt den Plan, und die Einsatzleitung muss ihn neu zusammensetzen, oft vor sieben Uhr morgens.
+
+Dazu kommt die Abrechnung: Leistungen nach SGB XI und Behandlungspflege nach SGB V müssen zum Leistungsnachweis passen. Ein Einsatz, der zur falschen Zeit oder gar nicht stattfindet, ist nicht nur ein Versorgungsproblem, sondern auch eines für die Abrechnung.
+
+## Zwei Arten von KI, zwei verschiedene Aufgaben
+
+Hinter dem Schlagwort „KI-Tourenplanung“ stecken zwei sehr unterschiedliche Technologien. Sie zu verwechseln ist der häufigste Fehler, den ich in diesem Bereich sehe.
+
+<Split title="Jedes Werkzeug für das, was es kann" leftTitle="Optimierungsverfahren" rightTitle="Sprachmodelle" left={[
+  "Einsätze unter harten Bedingungen zuteilen: Qualifikation, Zeitfenster, Fahrzeit",
+  "Bei einer Krankmeldung die beste Vertretung vorschlagen",
+  "Nach einer Änderung den ganzen Tag auf Folgekonflikte prüfen",
+  "Arbeitszeit- und Ruhezeitregeln exakt einhalten",
+  "Rechnen, jedes Mal, ohne müde zu werden"
+]} right={[
+  "Eine Krankmeldung per SMS, Sprachnachricht oder App verstehen",
+  "Wünsche von Klienten aus Freitext-Notizen herauslesen",
+  "Einen Vorschlag für die Einsatzleitung in klaren Worten begründen",
+  "Nachrichten an Pflegekräfte und Angehörige entwerfen",
+  "Zusammenfassen, was sich heute für die nächste Schicht geändert hat"
+]} />
+
+Optimierungsverfahren sind der ältere, unspektakuläre Teil der KI, und sie sind hervorragend in genau dieser Art von Puzzle. Frei verfügbare Werkzeuge wie Googles OR-Tools lösen Tourenprobleme mit Zeitfenstern und Qualifikationen routinemäßig. Sprachmodelle dagegen sind gut mit unordentlicher menschlicher Sprache und schlecht darin, zuverlässig über Dutzende Bedingungen hinweg zu rechnen.
+
+Ein sinnvoller Aufbau setzt das Sprachmodell also an die Ränder, wo Menschen mit dem System sprechen, und das Optimierungsverfahren in die Mitte, wo der Plan tatsächlich berechnet wird. Wenn in einer Vorführung ein Chatbot „Ihre Woche umplant“, lohnt die Frage, wer von beiden eigentlich rechnet.
+
+## Die Konflikte, die sich zu erkennen lohnen
+
+Bevor irgendetwas gebaut wird, gehört eine Liste der Konflikte auf den Tisch, die Ihnen wirklich schaden. Mit dieser würde ich anfangen. Jeder Konflikt wird anders erkannt, deshalb haben Regeln, Optimierung und Sprachmodell jeweils ihren Platz.
+
+| Konflikt | Beispiel | Wie er erkannt wird |
+| --- | --- | --- |
+| Fehlende Qualifikation | Eine Pflegehilfskraft ist für eine Insulingabe eingeplant | Regel: erforderliche Qualifikation je Einsatz |
+| Bruch der Bezugspflege | Ein Klient mit Demenz bekommt eine Pflegekraft, die er nie gesehen hat | Optimierung: starke Bevorzugung vertrauter Pflegekräfte |
+| Unmögliche Fahrzeit | 15 Minuten eingeplant für 35 Minuten Fahrt | Optimierung mit echten Fahrzeiten, nicht Luftlinie |
+| Verschobene Fixzeit | Die Medikamentengabe um 9:00 Uhr rutscht auf 10:30 Uhr | Regel: harte Zeitfenster je Einsatz |
+| Arbeitszeitgrenzen | Zu wenig Ruhezeit zwischen Spät- und Frühdienst, zu lange Dienste | Regel: Arbeitszeitgesetz und eigene Dienstvereinbarungen |
+| Budget überschritten | Mehr Leistungen geplant, als Pflegegrad und Vereinbarung abdecken | Regel: Leistungen je Klient und Monat |
+| Wunsch übersehen | Eine Klientin, die ausdrücklich nur von Frauen gepflegt werden möchte | Modell liest es aus Notizen, Regel setzt es durch |
+
+Die letzte Zeile zeigt, wie die Teile zusammenspielen. Der Wunsch steht in einer Freitext-Notiz aus dem Erstgespräch vor zwei Jahren. Ein Modell findet ihn und macht daraus ein strukturiertes Feld. Ab dann setzt eine einfache Regel ihn jedes Mal durch.
+
+## Was automatisiert werden sollte und was nicht
+
+Nicht jede Planungsaufgabe verdient Automatisierung. Ich sortiere nach Häufigkeit und danach, wie schlimm ein Fehler wäre.
+
+<Matrix title="Wo Automatisierung in der Planung hingehört" xLabel="Wie oft es vorkommt" yLabel="Folgen eines Fehlers" quadrants={[
+  { title: "Beim Menschen lassen", text: "Neue Klienten und Pflegekräfte zusammenbringen, Gefährdungshinweise, Konflikte mit Angehörigen." },
+  { title: "Vorschlagen, dann freigeben", text: "Vertretungen bei Krankmeldungen und Folgekonflikte. Das System schlägt vor, die Einsatzleitung entscheidet.", highlight: true },
+  { title: "Gar nicht erst anfassen", text: "Einmalige Sonderwünsche, deren Einrichtung länger dauert als die Erledigung von Hand." },
+  { title: "Voll automatisieren", text: "Einsatzerinnerungen, Planbestätigungen, Hinweise auf fehlende Leistungsnachweise." }
+]} />
+
+Das Feld oben rechts ist das wertvollste. Krankmeldungen kommen jede Woche, und eine schlechte Vertretung trifft einen verletzlichen Menschen. Genau dort wollen Sie ein System, das die schwere Rechenarbeit in Sekunden erledigt, und eine Einsatzleitung, die die letzte Entscheidung trifft.
+
+## Eine Krankmeldung, Schritt für Schritt
+
+So läuft Marias Nachricht um 6:10 Uhr durch das System.
+
+<Flow title="Von der Krankmeldung zum geprüften Plan" caption="Das Modell liest und schreibt. Die Optimierung rechnet. Die Einsatzleitung entscheidet.">
+<Step title="Krankmeldung geht ein" who="Pflegekraft" time="6:10">SMS, Sprachnachricht oder App. Kein besonderes Format nötig.</Step>
+<Step title="Nachricht verstehen" who="KI" tone="ai" time="Sekunden">Das Modell erkennt Pflegekraft, Tag und betroffene Einsätze und fragt nach, wenn die Nachricht unklar ist.</Step>
+<Step title="Vertretungen vorschlagen" who="Optimierung" time="Sekunden">Für jeden Einsatz die besten Optionen nach Qualifikation, Bezugspflege, Fahrzeit und Arbeitszeit, mit Prüfung des ganzen Tages auf Folgekonflikte.</Step>
+<Step title="Optionen begründen" who="KI" tone="ai">„Anna kennt Herrn Albers und ist zehn Minuten entfernt. Ihr Einsatz um 8:30 Uhr rückt auf 9:15 Uhr, das liegt im Zeitfenster dieses Klienten.“</Step>
+<Step title="Einsatzleitung entscheidet" who="Einsatzleitung" tone="human" time="6:20">Ein Tipp zum Übernehmen oder eine andere Wahl. Warum eine Option vorne liegt, ist sichtbar.</Step>
+<Step title="Nachrichten gehen raus" who="System">Entwürfe an Anna, an die Tochter von Herrn Albers und an den 11-Uhr-Klienten, falls sich seine Zeit verschiebt. Der Plan in der Pflegesoftware wird aktualisiert.</Step>
+</Flow>
+
+Am meisten Aufmerksamkeit verdient die Prüfung des ganzen Tages. Menschen lösen gut das Problem, das vor ihnen liegt, und übersehen leicht die Folge drei Einsätze später. Software ist genau umgekehrt. Das ist das ganze Argument dafür, sie hinschauen zu lassen.
+
+## Der einfachste Einstieg: die abendliche Planprüfung
+
+Wenn ich morgen mit einem Pflegedienst anfangen würde, würde ich den Ablauf für Krankmeldungen nicht als Erstes anfassen. Ich würde eine abendliche Planprüfung bauen.
+
+Jeden Abend um 17 Uhr prüft das System den Plan für morgen gegen alle Regeln oben und schickt der Einsatzleitung eine kurze Liste: „Drei Punkte für morgen. Die Insulingabe bei Frau Kaya ist einer Kraft ohne passende Qualifikation zugeteilt. Zwei Einsätze von Anna überschneiden sich, sobald man die Fahrzeit einrechnet. Herr Albers bekommt eine Pflegekraft, die er noch nicht kennt.“ Nichts ändert sich automatisch. Die Einsatzleitung behebt, was wichtig ist, bevor der Tag beginnt.
+
+Das ist günstig, es kann nichts verschlimmern, und es liefert eine genaue Zahl, wie oft Ihr Plan vermeidbare Konflikte enthält. Diese Zahl zeigt, ob sich das größere System lohnt.
+
+<Timeline title="Von der Planprüfung zur unterstützten Planung">
+<Phase when="Woche 1 bis 2" title="Export und Regeln">Pläne, Qualifikationen der Mitarbeitenden und Anforderungen der Klienten aus der Pflegesoftware exportieren. Regeln mit Einsatzleitung und PDL aufschreiben.</Phase>
+<Phase when="Woche 3 bis 4" title="Abendliche Prüfung live">Die Prüfung läuft jeden Abend. Die Einsatzleitung markiert jeden Punkt als echt oder Fehlalarm, die Regeln werden besser.</Phase>
+<Phase when="Woche 5 bis 8" title="Vorschläge bei Krankmeldungen">Vertretungsvorschläge kommen dazu, jede Änderung gibt die Einsatzleitung frei.</Phase>
+<Phase when="Woche 9" title="Auswertung">Ausgefallene und verspätete Einsätze, Überstunden und Bezugspflege mit den Wochen vor der Prüfung vergleichen.</Phase>
+</Timeline>
+
+## Daten, Datenschutz und die Menschen dahinter
+
+Pflegedokumentation enthält Gesundheitsdaten. Nach DSGVO sind das [besondere Kategorien personenbezogener Daten](https://gdpr-info.eu/art-9-gdpr/): Sie brauchen einen Auftragsverarbeitungsvertrag, einen bekannten Datenstandort in der EU und Zugriff nur für die, die ihn brauchen. Für die Planung reichen außerdem oft deutlich weniger Daten als für die Pflege selbst: Qualifikationsanforderungen, Zeitfenster und Präferenzen, nicht der ganze Pflegebericht.
+
+Auch die Daten der Mitarbeitenden verdienen Sorgfalt. Ein System, das Pflegekräfte für Vertretungen sortiert, darf nicht unbemerkt zu einem System werden, das sie als Menschen bewertet. Ich würde die Kriterien offenlegen (Qualifikation, Entfernung, Arbeitszeit, Bezugspflege) und nie Leistungsbeurteilungen einspeisen, ohne dass Leitung, Mitarbeitende und gegebenenfalls der Betriebsrat das bewusst entschieden haben.
+
+<Callout title="Bezugspflege ist Pflege">
+Für viele Klienten, besonders Menschen mit Demenz, ist das vertraute Gesicht Teil der Versorgung. Jeder automatische Vorschlag sollte Bezugspflege fast wie eine harte Regel behandeln, und Änderungen erklärt ein Mensch den Angehörigen.
+</Callout>
+
+## Fragen, die Inhaber von Pflegediensten stellen
+
+### Ersetzt das MediFox, Vivendi oder unsere Pflegesoftware?
+
+Nein. Die Pflegesoftware bleibt das führende System für Klienten, Mitarbeitende, Einsätze und Abrechnung. Prüfung und Vorschläge lesen daraus und schreiben bestätigte Änderungen zurück, über eine Schnittstelle, wo es eine gibt, und über Export und Import, wo nicht.
+
+### Kann das Krankmeldungen um sechs Uhr automatisch regeln?
+
+Es kann alles außer der Entscheidung: die Nachricht verstehen, Optionen berechnen, den Tag prüfen und Nachrichten entwerfen. Die Einsatzleitung gibt mit einem Tipp frei. Vollautomatische Umplanung ist später für risikoarme Einsätze denkbar, aber dort würde ich nie anfangen.
+
+### Welche Daten braucht das?
+
+Einsätze mit Zeitfenstern und Qualifikationsanforderungen, Mitarbeitende mit Qualifikationen und Verfügbarkeit, Adressen für die Fahrzeiten, Wünsche der Klienten und Ihre Arbeitszeitregeln. Das meiste steckt schon in Ihrer Pflegesoftware. Die Wünsche verstecken sich oft im Freitext, und sie herauszuholen ist eine der ersten nützlichen Aufgaben für das Sprachmodell.
+
+### Lohnt sich das für einen kleinen Dienst?
+
+Die abendliche Prüfung lohnt sich für fast jeden Dienst mit mehr als einer Handvoll Touren, weil sie wenig kostet und teure Fehler findet. Der vollständige Ablauf für Krankmeldungen rechnet sich, sobald Ausfälle tägliches und nicht wöchentliches Thema sind.
+
+## Die Arbeitsteilung in einem Satz
+
+Die Optimierung rechnet, das Modell liest die Nachrichten, und die Einsatzleitung entscheidet. Wenn jeder Teil seine eigene Aufgabe macht, wartet der Klient um 11 Uhr nicht.
+
+Wenn Ihre Morgen mit einem Handy voller Krankmeldungen beginnen, [schreiben Sie mir, welche Pflegesoftware Sie nutzen](/contact?intent=improve) und wie Änderungen heute laufen. Ich sage Ihnen, ob eine abendliche Prüfung, ein Vorschlagssystem oder etwas Einfacheres der richtige Anfang ist. Tourenplanung mit unordentlichen Bedingungen gibt es auch anderswo; ich habe darüber für die [Schädlingsbekämpfung](/de/posts/ai-for-pest-control-routing) geschrieben, und über das Lesen unordentlicher Dokumente bei [Überweisungen in der Facharztpraxis](/de/posts/ai-for-medical-practices-referrals).
