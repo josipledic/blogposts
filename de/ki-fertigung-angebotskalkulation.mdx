@@ -1,0 +1,133 @@
+---
+id: "ki-fertigung-angebotskalkulation"
+translationOf: "ai-for-manufacturing-quotations"
+title: "Fertigung: Von der Anfrage zum Angebot in Stunden statt Tagen"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Produktion", "Lohnfertiger", "Angebotskalkulation", "KI für kleine Unternehmen"]
+description: "Eine Anfrage mit Zeichnungen, drei Stückzahlen und knapper Frist wartet drei Tage auf den Kalkulator. Wie kleine Fertiger mit KI Angebote in Stunden vorbereiten."
+excerpt: "Eine Anfrage mit Zeichnungen, drei Stückzahlen und knapper Frist wartet drei Tage auf den Kalkulator. Wie kleine Fertiger mit KI Angebote in Stunden vorbereiten."
+---
+
+Dienstagmorgen, Anfrage bei einem Zerspanungs- und Blechbetrieb mit 25 Mitarbeitenden. Die E-Mail ist kurz: „Bitte bieten Sie die angehängten Teile an, Stückzahlen 50, 200 und 1.000, Lieferung in sechs Wochen.“ Im Anhang: drei Zeichnungen als PDF, zwei STEP-Dateien und eine Qualitätssicherungsvereinbarung mit 30 Seiten. Der Kunde ist ein Medizintechnikhersteller, mit dem der Betrieb seit Jahren ins Geschäft kommen will.
+
+Der Kalkulator ist zugleich Arbeitsvorbereiter. Am Dienstag steht eine Maschine. Am Mittwoch geht ein großer Auftrag raus. Richtig angesehen wird die Anfrage am Donnerstagnachmittag: Werkstoff aus dem Schriftfeld, Toleranzen und Oberflächen aus den Hinweisen, ein Gewinde, das ein Sonderwerkzeug braucht, Eloxal über einen Lohnbeschichter, Bearbeitungszeiten aus der Erinnerung an „so was Ähnliches letztes Jahr“. Das Angebot geht am Freitag raus. Der Kunde antwortet höflich, er habe schon bestellt.
+
+Kleine Fertiger verlieren so ständig Aufträge, nicht weil Preis oder Qualität falsch waren, sondern weil das Angebot zu spät kam. Das Wissen zum Kalkulieren ist da. Die Zeit, alles zusammenzutragen, was der Kalkulator braucht, nicht.
+
+## Warum der Kalkulator der Engpass ist
+
+<Stats title="Fachleute sind die knappe Ressource">
+  <Stat value="121.000" label="Fachkräfte fehlten 2025 im Schnitt in den Kernberufen der Metall- und Elektroindustrie" source="KOFA" href="https://www.kofa.de/mitarbeiter-finden/branchen-im-fokus/fachkraefte-fuer-metall-und-elekroindustrie/" />
+  <Stat value="−24,1 %" label="sank die gesamte Fachkräftelücke 2025, in Metallberufen wie der spanenden Bearbeitung wuchs sie dagegen" source="KOFA Jahresrückblick 2025" href="https://www.kofa.de/daten-und-fakten/studien/jahresrueckblick-2025/" />
+</Stats>
+
+Gut kalkulieren braucht Jahre Werkstatterfahrung, und wer sie hat, plant meist auch die Fertigung, löst Probleme und bildet aus. Einkäufer erwarten dagegen schnellere Antworten denn je und schicken dieselbe Anfrage oft an mehrere Betriebe. Das erste glaubwürdige Angebot ist im Vorteil.
+
+## Zerlegt: Wo die Zeit des Kalkulators bleibt
+
+<Bars title="Kalkulationszeit für eine Anfrage mit drei Teilen" unit=" Minuten" caption="Beispielhaft für eine mittelschwere Anfrage. Viel Zeit fließt ins Suchen und Zusammentragen, nicht in die eigentliche Preisentscheidung." data={[
+  { label: "E-Mail, Zeichnungen, Spezifikationen, QSV lesen", value: 40, highlight: true },
+  { label: "Ähnliche frühere Aufträge und echte Kosten finden", value: 35, highlight: true },
+  { label: "Material prüfen und bepreisen", value: 20 },
+  { label: "Arbeitsplan und Bearbeitungszeiten schätzen", value: 45 },
+  { label: "Fremdleistungen: Beschichtung, Wärmebehandlung", value: 30 },
+  { label: "Angebot mit Annahmen schreiben", value: 20 }
+]} />
+
+Die beiden markierten Balken sind fast reine Informationsarbeit: Dokumente lesen und alte Aufträge suchen. Beim Arbeitsplan und den Bearbeitungszeiten ist das Urteil des Kalkulators unersetzlich, aber auch dort spart ein guter Ausgangspunkt aus ähnlichen Teilen Zeit.
+
+## Was in einer Anfrage versteckt ist
+
+| Was der Kalkulator braucht | Wo es meist steht | Was passiert, wenn es fehlt |
+| --- | --- | --- |
+| Werkstoff und Zustand | Schriftfeld, manchmal eigene Spezifikation | Falscher Materialpreis, falsche Schnittwerte |
+| Toleranzen und Oberflächen | Allgemeintoleranz im Schriftfeld (etwa ISO 2768-mK), Einzelmaße, Rauheitsangaben | Eine Toleranz, die Schleifen oder ein Sonderverfahren braucht, nicht kalkuliert |
+| Gewinde, Sondermerkmale | Angaben in der Zeichnung, 3D-Modell | Sonderwerkzeuge oder Arbeitsgänge fehlen |
+| Oberflächenbehandlung | Zeichnungshinweise, Spezifikationen | Eloxal, Galvanik oder Härten vergessen, oder falsche Farbe oder Klasse |
+| Prüfung und Dokumentation | Qualitätssicherungsvereinbarung | Erstmusterprüfbericht, Abnahmeprüfzeugnis 3.1 nach EN 10204, Messprotokolle nicht kalkuliert |
+| Stückzahlen und Termin | E-Mail, manchmal Tabelle | Rüstkosten falsch verteilt, Termin zugesagt, den die Fertigung nicht halten kann |
+| Verpackung und Kennzeichnung | QSV, Hinweise | Einzelverpackung, Etikettierung oder Teilekennzeichnung nicht kalkuliert |
+
+Die Qualitätssicherungsvereinbarung ist die klassische Falle. Dreißig Seiten Standardtext, mit zwei Anforderungen auf Seite 17, die richtig Geld kosten: ein Erstmusterprüfbericht und Materialzeugnisse zu jeder Charge.
+
+## Wo die KI hilft
+
+Das Modell liest und sucht. Der Kalkulator urteilt.
+
+<Flow title="Von der Anfrage-E-Mail zum Angebotsentwurf für den Kalkulator" caption="Das Modell liest Anforderungen aus, findet ähnliche Aufträge und entwirft. Der Kalkulator prüft jede Anforderung, legt Arbeitsplan und Preis fest und gibt frei.">
+<Step title="Anfrage kommt" who="Kunde" time="jederzeit">E-Mail oder Einkaufsportal mit Zeichnungen, 3D-Modellen, Spezifikationen und QSV.</Step>
+<Step title="Anforderungen auslesen" who="KI" tone="ai" time="Minuten">Werkstoff, Toleranzen, Oberflächen, Gewinde, Stückzahlen, Termin, Prüf- und Dokumentationspflichten, jeweils mit Seite oder Zeichnung.</Step>
+<Step title="Ungewöhnliches markieren" who="KI" tone="ai">Enge Toleranzen, Sonderverfahren, in langen Dokumenten versteckte Pflichten, fehlende Angaben für Rückfragen.</Step>
+<Step title="Ähnliche Aufträge finden" who="KI" tone="ai">Frühere Teile mit ähnlichem Werkstoff, ähnlicher Größe und ähnlichen Merkmalen, mit echten Zeiten, Ausschuss und Kosten aus dem ERP.</Step>
+<Step title="Kalkulator bepreist" who="Kalkulator" tone="human" time="30 bis 60 Min.">Prüft die Anforderungen, legt Arbeitsplan und Zeiten fest, holt Fremdleistungspreise, entscheidet den Preis.</Step>
+<Step title="Angebot mit Annahmen" who="KI und Kalkulator" tone="human">Entwurf mit Staffelpreisen, Lieferzeit und klarer Liste der Annahmen; der Kalkulator prüft und verschickt.</Step>
+</Flow>
+
+Den größten Unterschied macht „ähnliche Aufträge finden“. Die meisten Betriebe haben Jahre an Angeboten, Fertigungsaufträgen und Istzeiten im ERP, aber den richtigen Vergleich zu finden, braucht das Gedächtnis des Kalkulators und viel Scrollen. Ein Modell, das sagt „drei ähnliche Aluminiumgehäuse 2024 und 2025, Istzeiten 38 bis 44 Minuten, Ausschuss 2 bis 4 %, zuletzt angeboten zu 41 Euro bei 200 Stück“, liefert in Sekunden einen belastbaren Ausgangspunkt.
+
+## Die Anforderungsübersicht
+
+Vor jeder Kalkulation bekommt der Kalkulator eine Seite wie diese:
+
+> **Anfrage MedTec GmbH, 3 Teile, Stückzahlen 50 / 200 / 1.000, Lieferung 6 Wochen.** Teil A: EN AW-6082 T6, 120 × 80 × 35 mm, ±0,02 mm an zwei Bohrungen (Zeichnung 1, Maß 14 und 15), Ra 0,8 an den Bohrungsflächen, Eloxal farblos, Laserbeschriftung. Teil B: 1.4404, vier Gewindeeinsätze M5. Teil C: wie A, andere Taschentiefe. **Aus der QSV:** Erstmusterprüfbericht (Seite 17), Abnahmeprüfzeugnis 3.1 je Charge (Seite 9), Einzelverpackung (Seite 22). **Fehlt:** Eloxalfarbe für Teil C nicht angegeben, nachfragen. **Ähnliche Aufträge:** drei zu Teil A gefunden.
+
+Jede Zeile verweist auf ihre Quelle, der Kalkulator prüft in Minuten. Das Modell macht nicht den Preis. Es sorgt dafür, dass nichts übersehen wird, was den Preis beeinflusst.
+
+## Die Annahmenliste schützt beide Seiten
+
+Jedes Angebot sollte mit seinen Annahmen enden, und das Modell entwirft sie aus der Übersicht: Werkstoff wie angegeben mit Zeugnis 3.1, Toleranzen laut Zeichnung, Eloxal farblos, Erstmusterprüfbericht nur für die erste Lieferung, Einzelverpackung, Lieferung sechs Wochen nach Auftrag und freigegebenen Zeichnungen. Meint der Kunde etwas anderes, sagt er es vor der Bestellung, nicht nachdem die Teile gefertigt sind.
+
+## Staffelpreise, die zur Fertigung passen
+
+Drei Stückzahlen in einer Anfrage heißen drei verschiedene Kalkulationen: Bei 50 Stück dominieren Rüstzeit und Programmierung, bei 1.000 Stück Materialeinkauf, Werkzeugverschleiß und vielleicht eine andere Aufspannung oder Vorrichtung. Wer einfach einen Stückpreis mit Mengenrabatt versieht, liegt bei kleinen Mengen zu niedrig oder bei großen zu hoch.
+
+Das Modell kann die Kalkulation je Staffel vorbereiten, mit Rüst- und Einzelzeiten aus den Vergleichsaufträgen und einem Hinweis, wo sich bei größerer Stückzahl ein anderes Verfahren lohnen könnte, etwa eine Vorrichtung für mehrere Teile oder ein Rohteil näher an der Endkontur. Ob das sinnvoll ist, entscheidet der Kalkulator, aber die Frage wird wenigstens gestellt, statt unter Zeitdruck unterzugehen.
+
+## Was es wert ist
+
+<Calc title="Überschlag: Kalkulationszeit in einem kleinen Betrieb" caption="Annahmen, keine Messwerte. Erfassen Sie einen Monat lang Kalkulationsstunden und Angebotsdauer; wichtiger ist, wie viele Angebote Sie gewinnen, wenn sie schneller rausgehen." rows={[
+  ["Anfragen pro Monat", "40"],
+  ["Kalkulationszeit je Anfrage heute", "× 3 Std."],
+  ["Kalkulationsstunden pro Monat heute", "120 Std."],
+  ["Kalkulationszeit je Anfrage mit Auslesen und Vergleichsaufträgen", "× 1,25 Std."],
+  ["Kalkulationsstunden pro Monat mit Entwürfen", "50 Std."]
+]} result={["Freie Stunden des Kalkulators pro Monat", "≈ 70 Std."]} />
+
+Siebzig Stunden im Monat sind fast die halbe Arbeitszeit eines Kalkulators, zurück bei dem Menschen, der auch Ihre Fertigung plant. Die größere Wirkung ist die Angebotsdauer: Angebote am selben oder nächsten Tag statt am Ende der Woche.
+
+## Zeichnungen mit Sorgfalt behandeln
+
+Kundenzeichnungen sind vertraulich, und manche sind rechtlich kontrolliert: Rüstungs- und Dual-Use-Teile können unter Exportkontrollvorschriften fallen, die einschränken, wo Daten verarbeitet werden und wer sie sehen darf. Bevor Sie einen KI-Dienst an Ihr Anfragepostfach anbinden, prüfen Sie Geheimhaltungsvereinbarungen und Exportkontrollpflichten, wählen Sie einen Anbieter mit Verarbeitung in der EU und halten Sie kontrollierte Zeichnungen im Zweifel aus dem automatischen Ablauf heraus. Auch Ihre eigenen Kalkulationsdaten sind nach dem [Geschäftsgeheimnisgesetz](https://www.gesetze-im-internet.de/geschgehg/__2.html) nur geschützt, solange Sie angemessene Geheimhaltungsmaßnahmen treffen, und ein unkontrollierter Upload in einen beliebigen Chatbot ist das Gegenteil davon.
+
+## Welche Werkzeuge passen
+
+ERP-Systeme für Einzel- und Auftragsfertiger und spezialisierte Kalkulationssoftware übernehmen Preisbildung und Angebotsdokument, manche analysieren 3D-Modelle, um Bearbeitungsmerkmale zu schätzen. Die hier beschriebene KI-Schicht ergänzt sie: Sie liest das ganze Anfragepaket, auch die langen Dokumente, die niemand lesen will, liest Anforderungen aus, markiert Auffälliges und findet vergleichbare frühere Aufträge in Ihren eigenen Daten.
+
+## Häufige Fragen aus der Fertigung
+
+### Sollten wir jede Anfrage anbieten?
+
+Nein, und ein schnelles, höfliches „Wir bieten nicht an“ ist besser als ein langsames. Das Modell markiert Anfragen außerhalb Ihres Spektrums, also Werkstoffe, die Sie nicht bearbeiten, Größen jenseits Ihrer Maschinen, fehlende Zertifizierungen oder Stückzahlen weit weg von Ihrem Schwerpunkt, damit der Kalkulator in zwei Minuten entscheidet und am selben Tag antwortet.
+
+### Kann KI technische Zeichnungen zuverlässig lesen?
+
+Schriftfelder, Hinweise und klar bemaßte Merkmale liest sie gut, und sie wird schnell besser. Sie kann eine Toleranz falsch lesen oder eine kleine Angabe übersehen. Deshalb verweist jede ausgelesene Anforderung auf ihre Quelle, und der Kalkulator prüft jede einzelne. Ein sehr schneller erster Leser, nicht die Autorität.
+
+### Kann sie Bearbeitungszeiten schätzen?
+
+Sie kann eine Spanne aus ähnlichen früheren Aufträgen vorschlagen, oft ein guter Ausgangspunkt. Arbeitsplan und endgültige Zeit entscheidet der Kalkulator, weil sie von Ihren Maschinen, Vorrichtungen und Leuten abhängen.
+
+### Und wenn unsere Auftragsdaten unordentlich sind?
+
+Das sind sie in den meisten Betrieben. Fangen Sie mit dem an, was da ist: Teilenummern, Werkstoffe, Stückzahlen, angebotene Preise und, wo erfasst, Istzeiten. Selbst unvollständige Historie liefert bessere Vergleiche als das Gedächtnis allein, und sie wird besser, je konsequenter Istzeiten erfasst werden.
+
+### Akzeptieren Kunden lange Annahmenlisten?
+
+Erfahrene Einkäufer bevorzugen sie. Klare Annahmen zeigen, dass Sie die Anforderungen gelesen haben, und verringern späteren Streit. Halten Sie sie kurz und konkret.
+
+## Faustregel
+
+Lassen Sie das Modell jede Seite der Anfrage lesen und Ihre ähnlichen Aufträge finden, und den Kalkulator Arbeitsplan und Preis entscheiden. Verschicken Sie das Angebot mit ausgeschriebenen Annahmen, und zielen Sie auf den nächsten Tag, nicht auf das Ende der Woche.
+
+Wenn sich Anfragen auf dem Tisch Ihres Kalkulators stapeln, [schreiben Sie mir, welches ERP oder welche Kalkulationssoftware Sie nutzen](/de/kontakt?intent=improve). Ich zeige Ihnen, wie Angebote schneller fertig werden, ohne an Genauigkeit zu verlieren. Derselbe Ansatz hilft, [Erfahrungswissen zu sichern, bevor es in Rente geht](/de/posts/ki-zerspanung-erfahrungswissen), und Großhändler nutzen einen ähnlichen Leseschritt bei der [Auftragserfassung](/de/posts/ki-grosshandel-auftragserfassung).
