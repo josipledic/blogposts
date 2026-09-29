@@ -14,7 +14,20 @@ In MDX, avoid a bare `<` or `{` in prose (write "under 5", not "<5") and keep a 
 
 ## localized posts
 
-English posts live in the repository root. German versions use the same filename under `de/` and are served at `/de/posts/<slug>`, with `hreflang` links between the two. German posts are written for German-speaking readers rather than translated line by line, so their sources and examples can differ.
+English posts live in the repository root and are served at `/posts/<filename>`. German posts live under `de/` with a German filename, which is also their URL: `de/ki-telefonassistent-zahnarztpraxis.mdx` is served at `/de/posts/ki-telefonassistent-zahnarztpraxis`. Use lowercase German keywords with umlauts written out (`ae`, `oe`, `ue`, `ss`).
+
+A German post names its English original in the frontmatter:
+
+```
+id: "ki-telefonassistent-zahnarztpraxis"
+translationOf: "ai-for-dentists"
+```
+
+`translationOf` is the English filename without `.mdx`. The site uses it for the language switch and the `hreflang` links between the two versions, and it redirects the old `/de/posts/<english-filename>` address to the German one. A German post without `translationOf` is paired with an English post of the same filename, if there is one.
+
+Links between German posts use the German filenames (`/de/posts/<german-filename>`), and the call to action links to the German contact page, `/de/kontakt`.
+
+German posts are written for German-speaking readers rather than translated line by line, so their sources and examples can differ.
 
 ## deployment
 

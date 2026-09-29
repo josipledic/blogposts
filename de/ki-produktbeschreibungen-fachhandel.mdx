@@ -1,0 +1,150 @@
+---
+id: "ki-produktbeschreibungen-fachhandel"
+translationOf: "ai-for-retail-product-descriptions"
+title: "Fachhandel: Produktseiten schneller und korrekt mit KI"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Handel & Großhandel", "Fachhandel", "Produktdaten", "KI für kleine Unternehmen"]
+description: "Lieferanten-PDFs, halbe Tabellen und neue EU-Pflichten: ein Bauplan, wie Fachhändler mit KI korrekte Produktseiten bauen, ohne eine einzige Angabe zu erfinden."
+excerpt: "Lieferanten-PDFs, halbe Tabellen und neue EU-Pflichten: ein Bauplan, wie Fachhändler mit KI korrekte Produktseiten bauen, ohne eine einzige Angabe zu erfinden."
+---
+
+Ein Outdoor-Fachgeschäft nimmt eine neue Zeltmarke ins Sortiment: 140 Artikel, geliefert als Preisliste in Excel, als 90-seitiger Katalog im PDF, als Bilderordner und als Link zur Website der Marke. Jemand muss daraus 140 Produktseiten machen, mit korrektem Gewicht, Packmaß, Materialangaben, Wassersäule, Lieferumfang, Pflegehinweisen, Sicherheitshinweisen und einer Beschreibung, für wen welches Zelt gedacht ist. Bei zwanzig Minuten pro Artikel ist das mehr als eine Woche Arbeit, und die fehleranfälligste Woche der Saison.
+
+Sprachmodelle schreiben Produktbeschreibungen in Sekunden. Das ist nicht der schwierige Teil, und auch nicht der riskante. Riskant ist eine flüssige Beschreibung, die 1,9 kg nennt, wo das Zelt 2,4 kg wiegt, oder „absolut wasserdicht“ verspricht, wo die Marke „wasserabweisend“ schreibt. Für einen Fachhändler, dessen Wert darin liegt, beim Produkt recht zu haben, ist das schlimmer als gar keine Beschreibung.
+
+Dieser Beitrag ist ein Bauplan, wie Sie KI dort einsetzen, wo sie stark ist, beim Lesen und Strukturieren unordentlicher Lieferantendaten und beim Formulieren aus geprüften Fakten, und dabei jede Angabe nachvollziehbar halten.
+
+## Die Regeln sind strenger geworden
+
+<Stats title="Was eine Produktseite in der EU heute richtig haben muss">
+  <Stat value="13.12.2024" label="seitdem gilt die EU-Produktsicherheitsverordnung (GPSR), mit Pflichtangaben in jedem Online-Angebot" source="Fieldfisher" href="https://www.fieldfisher.com/en/insights/new-obligations-under-the-eu-general-product-safety-regulation" />
+  <Stat value="4 Angaben" label="muss jedes Angebot zeigen: Hersteller, bei Bedarf eine verantwortliche Person in der EU, Produktkennung sowie Warn- und Sicherheitshinweise" source="GPSR, Art. 19" href="https://www.xictron.com/en/blog/gpsr-product-safety-regulation-online-shop-2026/" />
+  <Stat value="28.06.2025" label="seitdem gilt das Barrierefreiheitsstärkungsgesetz für Onlineshops; Kleinstunternehmen sind bei Dienstleistungen ausgenommen" source="European Accessibility Act, via Travers Smith" href="https://www.traverssmith.com/knowledge/knowledge-container/a-new-milestone-for-accessibility-the-european-accessibility-act-now-applies/" />
+</Stats>
+
+Für Shops in der EU sind Produktseiten nicht mehr nur Werbung. Sie tragen rechtliche Informationen: wer das Produkt hergestellt hat und wie man ihn erreicht, Kennungen, Warnhinweise in der richtigen Sprache, bei Textilien die Faserzusammensetzung vor dem Kauf, und für viele Shops Inhalte, die mit Screenreadern funktionieren, also beschreibende Bildtexte und eine klare Struktur. Fehlt etwas, kommt in Deutschland oft nicht die Behörde zuerst, sondern die Abmahnung eines Mitbewerbers.
+
+## Zwei Wege zur Produktseite
+
+<Split title="Woher die Beschreibung kommt" leftTitle="Umgeschriebener Werbetext" rightTitle="Formuliert aus geprüften Merkmalen" left={[
+  "Beginnt beim Werbetext der Marke",
+  "Adjektive statt Zahlen",
+  "Aussagen ungeprüft übernommen",
+  "Technische Daten im Fließtext verstreut",
+  "Jede Seite anders aufgebaut",
+  "Niemand weiß, woher eine Aussage stammt"
+]} right={[
+  "Beginnt bei einem strukturierten Merkmalssatz",
+  "Zahlen mit Einheiten, gegen Quellen geprüft",
+  "Aussagen nur, wenn ein Merkmal sie stützt",
+  "Technische Daten in einheitlicher Tabelle, der Text erklärt sie",
+  "Gleicher Aufbau für jedes Produkt einer Kategorie",
+  "Jeder Wert mit dem Dokument verknüpft, aus dem er stammt"
+]} />
+
+Die rechte Spalte ist das Ziel eines Fachhändlers. Und genau dort hilft KI am meisten, denn langsam ist nicht das Schreiben, sondern das Herauslesen und Prüfen der Fakten.
+
+## Der Bauplan
+
+### Schritt 1: Festlegen, was ein Produkt ausmacht, je Kategorie
+
+Vor jeder KI steht die Entscheidung, welche Merkmale je Kategorie zählen. Für Zelte: Gewicht (Minimal- und Packgewicht), Packmaß, Personen, Materialien von Innen- und Außenzelt, Wassersäule von Außenzelt und Boden, Gestänge, Eingänge und Apsiden, Saisoneignung, Lieferumfang. Im Musikhaus sind es Korpusholz, Mensur, Tonabnehmer und so weiter. Diese Merkmalsliste ist das Rückgrat: Sie bestimmt, was die Seite zeigt, was das Modell ausliest und was „vollständig“ heißt.
+
+### Schritt 2: Aus den Lieferantenquellen auslesen
+
+Das Modell liest Preisliste, Katalog, Datenblätter und die Produktseiten der Marke und füllt die Merkmale je Artikel. Die wichtige Regel: Jeder Wert wird mit seiner Quelle gespeichert, Dokument und Seite, und was die Quellen nicht nennen, bleibt leer. Ein leeres Feld ist ehrlich. Ein geratenes nicht.
+
+### Schritt 3: Prüfen
+
+Automatische Prüfungen finden die meisten Auslesefehler: nicht passende Einheiten (Gramm statt Kilogramm), unplausible Werte (ein Zweipersonenzelt mit 250 g), Widersprüche zwischen Quellen (Katalog 2,4 kg, Preisliste 2,2 kg) und fehlende Pflichtfelder. Widersprüche und Lücken gehen an einen Menschen, der notfalls beim Lieferanten nachfragt.
+
+### Schritt 4: Die Seite nur aus Merkmalen formulieren
+
+Jetzt schreibt das Modell: eine kurze Einleitung, für wen das Produkt ist, eine verständliche Erklärung, was die Daten in der Praxis bedeuten („3.000 mm Wassersäule halten anhaltendem Starkregen stand; für Stürme oberhalb der Baumgrenze lieber die Version mit 5.000 mm“), Stichpunkte und beschreibende Bildtexte. Es nutzt nur geprüfte Merkmale und Ihre Schreibregeln und fügt nie eine Aussage hinzu, die kein Merkmal stützt.
+
+### Schritt 5: Den Pflichtblock ergänzen
+
+Hersteller mit Anschrift und elektronischer Adresse, bei Herstellern außerhalb der EU die verantwortliche Person, Produktkennungen, Warn- und Sicherheitshinweise, bei Textilien die Faserzusammensetzung, dazu kategoriespezifische Kennzeichnungen. Diese Angaben kommen aus strukturierten Feldern, nicht aus dem Fließtext. So sind sie auf jeder Seite vollständig und lassen sich zentral aktualisieren.
+
+### Schritt 6: Prüfung durch jemanden, der das Produkt kennt
+
+Anfangs prüft eine Fachkraft jede neue Seite, später Stichproben, wenn der Ablauf sitzt. Die Prüfung konzentriert sich auf das Wesentliche: Stimmen die Zahlen, stimmen die Aussagen, würde ich das einer Kundin im Laden so sagen?
+
+<Flow title="Von Lieferantendateien zur veröffentlichten Produktseite" caption="Das Modell liest aus, prüft und formuliert. Menschen klären Widersprüche und geben frei. Jeder veröffentlichte Wert lässt sich auf ein Lieferantendokument zurückführen.">
+<Step title="Lieferantenquellen" who="Lieferant" time="bei Eingang">Preislisten, Kataloge, Datenblätter, Bilder, Datenfeeds, Herstellerwebsites.</Step>
+<Step title="Merkmale auslesen" who="KI" tone="ai" time="Minuten je Sortiment">Füllt die Merkmalsliste je Artikel, mit Quelle zu jedem Wert. Unbekanntes bleibt leer.</Step>
+<Step title="Prüfen" who="System" time="Sekunden">Einheiten, plausible Bereiche, Widersprüche, fehlende Pflichtfelder.</Step>
+<Step title="Lücken klären" who="Fachkraft" tone="human" time="nach Bedarf">Klärt Widersprüche und Lücken, fragt beim Lieferanten nach.</Step>
+<Step title="Seite formulieren" who="KI" tone="ai" time="Sekunden">Beschreibung, Stichpunkte, Datentabelle und Bildtexte nur aus geprüften Merkmalen, im Ton des Hauses.</Step>
+<Step title="Prüfen und veröffentlichen" who="Fachkraft" tone="human" time="3 bis 5 Min. je Artikel">Gibt frei oder korrigiert; Pflichtangaben aus strukturierten Daten; Seite geht online.</Step>
+</Flow>
+
+## So sieht der Entwurf aus
+
+Der Katalog der Marke sagt: „Ultraleichte Freiheit für dein nächstes Abenteuer. Innovative Materialien halten dich bei jedem Wetter trocken.“ Der Entwurf aus Merkmalen sagt:
+
+> **Für wen:** zwei Wanderer, die auf mehrtägigen Touren im Sommer und in der Übergangszeit unterhalb der Baumgrenze jedes Gramm zählen.
+>
+> Mit 1,9 kg Packgewicht (1,6 kg minimal) gehört es zu den leichtesten freistehenden Zweipersonenzelten in unserem Sortiment. Das Außenzelt hat 3.000 mm Wassersäule und hält anhaltendem Starkregen stand, der Boden 5.000 mm. Zwei Eingänge und zwei Apsiden, niemand muss nachts über den anderen klettern. Packmaß 45 × 15 cm, passt in einen 40-Liter-Rucksack.
+>
+> **Nicht die richtige Wahl** für ausgesetzte, windige Stellplätze oder Schnee. Dafür lohnt ein Blick auf unsere Vierjahreszeitenzelte.
+
+Jede Zahl stammt aus einem geprüften Merkmal mit Quelle. „Bei jedem Wetter“ ist still verschwunden, weil kein Merkmal es stützt. Genau solche Sätze führen zu enttäuschten Kunden, Retouren und schlechten Bewertungen.
+
+## Vor der Veröffentlichung
+
+<Checklist title="Bevor eine Produktseite online geht" items={[
+  "Alle Pflichtmerkmale der Kategorie gefüllt, jedes mit Quelle",
+  "Keine offenen Widersprüche zwischen Lieferantenquellen",
+  "Zahlen mit Einheiten, passend zur Datentabelle",
+  "Keine Aussagen ohne stützendes Merkmal (wasserdicht, bio, zertifiziert, kindersicher)",
+  "Herstellerangaben, verantwortliche Person in der EU bei Bedarf, Produktkennung",
+  "Warn- und Sicherheitshinweise auf Deutsch, bei Textilien die Faserzusammensetzung",
+  "Beschreibender Bildtext zu jedem Produktbild",
+  "Ein Satz, für wen das Produkt ist und für wen nicht"
+]} />
+
+Die letzte Zeile ist die Stärke des Fachhandels. „Nicht das richtige Zelt, wenn Sie im Herbst oberhalb der Baumgrenze zelten“ schafft Vertrauen, verhindert Retouren und ist genau der Rat, für den Kunden zum Fachhändler kommen.
+
+## Seiten aktuell halten
+
+Lieferantendaten ändern sich: neues Modelljahr mit anderem Gewebe, korrigiertes Gewicht, neuer Sicherheitshinweis. Sind Merkmale und Quellen gespeichert, heißt Aktualisieren: neu auslesen, Änderungen anzeigen, nur die betroffenen Teile neu formulieren. Ohne diese Struktur öffnet jemand 140 Seiten und hofft, den Unterschied zu finden.
+
+Dieselbe Struktur speist alles andere: Filter im Shop, Vergleichstabellen, Marktplatzangebote, den Assistenten, der Kundenfragen beantwortet. Ein Satz geprüfter Merkmale, viele Einsatzzwecke.
+
+## Welche Werkzeuge passen
+
+PIM-Systeme wie Akeneo, Pimcore oder Plytix oder die Produktdatenfunktionen Ihres Shopsystems halten die Merkmale, viele inzwischen mit KI-Funktionen für Anreicherung und Übersetzung. Für einen kleinen Shop reicht zum Start eine gut strukturierte Tabelle je Kategorie. Die KI-Schicht liest Lieferantendokumente, füllt und prüft Merkmale mit Quellen und formuliert die Seiten. PIM oder Shopsystem bleiben der Ort, an dem freigegebene Daten liegen.
+
+## Häufige Fragen aus dem Fachhandel
+
+### Kann die KI nicht einfach aus dem Werbetext des Lieferanten schreiben?
+
+Kann sie, und so landen viele Shops bei Seiten voller Adjektive und ungeprüfter Aussagen. Nutzen Sie den Werbetext als eine Quelle unter mehreren, bauen Sie die Seite aber aus Merkmalen.
+
+### Wie lange dauert die Einrichtung?
+
+Die Merkmale der wichtigsten Kategorien festzulegen, dauert mit den Menschen, die die Produkte kennen, ein paar Tage. Danach geht jedes neue Sortiment deutlich schneller als von Hand, und die Ersparnis wächst mit jeder Aktualisierung.
+
+### Und Übersetzungen?
+
+Mit strukturierten Merkmalen wird Übersetzen viel verlässlicher: Zahlen und Einheiten bleiben gleich, nur Text und Hinweise werden übersetzt, und Warnhinweise sollten aus freigegebenen Texten kommen statt aus neuen Übersetzungen.
+
+### Was ist mit Produktbildern?
+
+Bilder kommen vom Lieferanten oder aus eigener Fotografie. Das Modell hilft bei zwei Dingen: bei beschreibenden Bildtexten, die sagen, was tatsächlich zu sehen ist („Zelt aufgebaut, beide Eingänge offen, beide Apsiden sichtbar“), was für die Barrierefreiheit zählt, und bei der Prüfung, ob das Bild zur Variante passt, das grüne Zelt also nicht das orangefarbene zeigt. Produktbilder zu erzeugen, die Dinge zeigen, die das Produkt nicht hat, ist dagegen tabu.
+
+### Gilt das Barrierefreiheitsgesetz auch für meinen kleinen Shop?
+
+Kleinstunternehmen mit weniger als zehn Beschäftigten und höchstens zwei Millionen Euro Jahresumsatz oder Bilanzsumme sind bei Dienstleistungen wie dem Onlineshop ausgenommen. Beide Bedingungen müssen erfüllt sein. Beschreibende Bildtexte und eine klare Struktur lohnen sich trotzdem, für Kundinnen mit Screenreader und ganz nebenbei für die Auffindbarkeit.
+
+### Straft Google KI-geschriebene Beschreibungen ab?
+
+Suchmaschinen achten darauf, ob Inhalte hilfreich und korrekt sind, nicht darauf, wie sie entworfen wurden. Seiten aus geprüften Daten mit echtem Rat, für wen ein Produkt passt, sind genau die Art Inhalt, die belohnt wird. Dünne, allgemeine, kopierte Texte schneiden schlecht ab, egal wer sie schreibt.
+
+## Faustregel
+
+Bauen Sie Produktseiten aus Fakten, nicht aus Adjektiven. Lassen Sie die KI die Lieferantendateien lesen, die Merkmale mit Quellen füllen und nur daraus formulieren. Behalten Sie jemanden, der das Produkt kennt, im Ablauf, und veröffentlichen Sie keine Aussage, auf die Sie nicht in einem Dokument zeigen können.
+
+Wenn neue Sortimente bei Ihnen Wochen brauchen, bis sie online sind, [schreiben Sie mir, wie Lieferantendaten bei Ihnen ankommen und welches Shopsystem Sie nutzen](/de/kontakt?intent=improve). Ich zeige Ihnen, wie Sie schneller von unordentlichen Dateien zu korrekten Seiten kommen. Dieselben geprüften Daten beantworten Kundenfragen in der [Kaufberatung im Onlineshop](/de/posts/ki-onlineshop-kundenservice), und Großhändler nutzen einen ähnlichen Ablauf für die [Auftragserfassung](/de/posts/ki-grosshandel-auftragserfassung).

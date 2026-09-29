@@ -1,0 +1,125 @@
+---
+id: "ki-bestattungsunternehmen-verwaltung"
+translationOf: "ai-for-funeral-homes-administration"
+title: "Bestattungshaus: Verwaltung mit KI, damit mehr Zeit für Angehörige bleibt"
+authorName: "Josip Ledić"
+date: "2026-09-25"
+tags: ["Persönliche Dienstleistungen", "Bestattungsunternehmen", "Verwaltung", "KI für kleine Unternehmen"]
+description: "Ein Beratungsgespräch, ein Dutzend Formulare, dieselben Angaben sechsmal getippt. Wie Bestatter KI für den Papierkram nutzen, und was menschlich bleiben muss."
+excerpt: "Ein Beratungsgespräch, ein Dutzend Formulare, dieselben Angaben sechsmal getippt. Wie Bestatter KI für den Papierkram nutzen, und was menschlich bleiben muss."
+---
+
+Stellen Sie sich ein Bestattungshaus in Familienhand in einer Kleinstadt vor. Drei Mitarbeitende, rund 250 Sterbefälle im Jahr. Am Dienstag um zehn kommt eine Familie zum Beratungsgespräch. Der Vater ist am Sonntag gestorben. Neunzig Minuten lang hört die Bestatterin zu: wer er war, was ihm wichtig war, ob Erd- oder Feuerbestattung, welches Lied, welches Foto, wer sprechen soll.
+
+Nebenbei schreibt sie. Vollständiger Name, Geburtsdatum, Sterbeort, Hausarzt, Angehörige, Friedhof und Grabstelle, Pfarrerin oder Trauerredner, der Termin, der für die Verwandtschaft von weiter weg passt, Traueranzeige, Blumen, Trauerbriefe, Sarg, Überführung. Manches fragt sie zweimal, weil es auf verschiedenen Formularen steht.
+
+Wenn die Familie gegangen ist, beginnt die zweite Schicht. Dieselben Angaben landen in der Bestattersoftware, in der Sterbefallanzeige fürs Standesamt, im Antrag bei der Friedhofsverwaltung, in der Anmeldung beim Krematorium, in einer Mail an die Pfarrei, in der Traueranzeige, in der Blumenbestellung, im Entwurf der Trauerkarte und in der Rechnung. Um sieben Uhr abends ist sie fertig. Am Mittwoch ruft die Familie an und fragt zum dritten Mal, welche Unterlagen noch gebraucht werden, weil in der Trauer niemand behalten kann, was besprochen wurde.
+
+Die Zeit mit der Familie ist die eigentliche Arbeit. Niemand sollte eine Maschine in der Nähe dieses Gesprächs haben wollen. Aber die Stunden des Abtippens danach und die klare schriftliche Zusammenfassung, die die Familie gebraucht hätte und nicht bekommen hat, sind genau die Stellen, an denen KI Zeit zurückgeben kann.
+
+<Stats title="Ein Beruf unter leisem Druck">
+  <Stat value="1,0 Mio." label="Menschen sind 2025 in Deutschland gestorben, etwa so viele wie im Vorjahr" source="Statistisches Bundesamt" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/01/PD26_015_126.html" />
+  <Stat value="rund 4.000" label="Bestattungsunternehmen gibt es in Deutschland, viele davon in Familienhand" source="Bundesverband Deutscher Bestatter, via domradio.de" href="https://www.domradio.de/artikel/trotz-wandel-gibt-es-noch-viele-bestattungsbetriebe-familienhand" />
+  <Stat value="3 Werktage" label="bleiben, um den Sterbefall beim Standesamt anzuzeigen; oft übernimmt das der Bestatter mit Vollmacht" source="§ 28 Personenstandsgesetz" href="https://www.gesetze-im-internet.de/pstg/__28.html" />
+</Stats>
+
+Rechnerisch betreut jedes Unternehmen rund 250 Sterbefälle im Jahr, oft mit wenigen Leuten, die zugleich nachts Überführungen fahren. Familien wünschen sich zunehmend persönliche Abschiede, vergleichen Preise und erwarten klare Kommunikation. Das ist gut. Es bedeutet aber auch mehr Optionen, mehr Beteiligte und mehr Fragen.
+
+## Ein Gespräch, viele Formulare
+
+Die Grundidee ist einfach: Angaben einmal sorgfältig erfassen und alles andere aus diesem einen Datensatz vorbereiten.
+
+<Flow title="Vom Beratungsgespräch zum vorbereiteten Papierkram" caption="Das Modell strukturiert und entwirft. Die Bestatterin prüft jede Angabe und verschickt alles selbst. Nichts geht ungelesen an eine Familie oder ein Amt.">
+<Step title="Beratungsgespräch" who="Bestatterin und Familie" tone="human" time="60-90 Min.">Das Gespräch bleibt genau, wie es ist. Notizen von Hand oder getippt, eine Aufnahme nur, wenn die Familie zustimmt.</Step>
+<Step title="Sterbefallakte" who="KI" tone="ai" time="Minuten">Macht aus den Notizen einen strukturierten Datensatz: Namen, Daten, Wünsche, Beteiligte, offene Fragen.</Step>
+<Step title="Prüfen" who="Bestatterin" tone="human" time="10 Min.">Liest die Akte, korrigiert Schreibweisen und Daten, füllt Lücken.</Step>
+<Step title="Entwürfe vorbereitet" who="KI" tone="ai">Vorausgefüllte Formulare, Nachrichten an Friedhof, Krematorium, Pfarrei oder Trauerredner, Floristik und Zeitung, Entwurf der Trauerkarte.</Step>
+<Step title="Prüfen und senden" who="Bestatterin" tone="human">Jeder Entwurf wird von einem Menschen gelesen und verschickt.</Step>
+<Step title="Schriftliche Zusammenfassung für die Familie" who="KI entwirft, Bestatterin sendet" tone="human" time="am selben Tag">Was entschieden ist, was als Nächstes passiert, was die Familie noch tun muss.</Step>
+</Flow>
+
+Ein Schreibfehler im Namen auf einem Formular oder in der Traueranzeige tut Familien weh und ist schwer zu korrigieren. Deshalb ist der Prüfschritt nicht verhandelbar, und das Modell soll alles markieren, wobei es unsicher ist („Katharina oder Catharina? Beides steht in den Notizen“), statt zu raten.
+
+## Die Zusammenfassung, die Familien brauchen
+
+Trauer macht es schwer, Informationen zu behalten. Eine klare schriftliche Zusammenfassung nach dem Gespräch, in einfacher Sprache, gehört zum Freundlichsten, was ein Bestattungshaus schicken kann, und fällt als Erstes weg, wenn es eng wird. Das Modell kann sie aus der geprüften Akte entwerfen:
+
+> Liebe Frau Schneider, danke, dass Sie sich heute die Zeit genommen haben. Hier noch einmal das Wichtigste, damit Sie nicht alles behalten müssen. **Die Trauerfeier** findet am Freitag, 17. Oktober, um 11 Uhr in der Friedhofskapelle Am Hang statt, anschließend die Beisetzung. Pfarrerin Wagner gestaltet die Feier und ruft Sie morgen an, um über Ihren Vater zu sprechen. **Noch offen:** das zweite Lied und wer ein paar Worte sagen möchte. Kein Druck, sagen Sie uns bis Dienstag Bescheid. **Was wir noch brauchen:** die Eheurkunde Ihrer Eltern und das Foto für die Trauerkarte. **Standesamt:** Die Sterbefallanzeige übernehmen wir mit Ihrer Vollmacht. Wenn etwas unklar ist oder Sie etwas ändern möchten, rufen Sie mich einfach an. Herzliche Grüße, Anne Berger
+
+Jede Angabe stammt aus der Akte, die die Bestatterin geprüft hat. Der Ton wird einmal festgelegt, in der Sprache Ihres Hauses, und von der Bestatterin angepasst, wann immer eine Familie etwas anderes braucht.
+
+## Die ersten zwei Wochen im Blick
+
+<Timeline title="Vom ersten Anruf bis zur Beisetzung" caption="Beispielhaft; Fristen und Formulare regeln die Bestattungsgesetze der Länder unterschiedlich. Das Modell behält jeden Schritt im Blick und erinnert das Team; die Arbeit machen Menschen.">
+<Phase when="Tag 0" title="Erster Anruf und Überführung">Jemand nimmt ab, Tag und Nacht, und holt den Verstorbenen nach der ärztlichen Leichenschau in die Obhut. Immer ein Mensch.</Phase>
+<Phase when="Tag 1 bis 2" title="Beratungsgespräch">Wünsche, Entscheidungen, Termine. Die Akte wird am selben Tag angelegt und geprüft.</Phase>
+<Phase when="Bis 3. Werktag" title="Standesamt">Sterbefallanzeige mit Todesbescheinigung und Urkunden, meist durch den Bestatter; danach kommen die Sterbeurkunden.</Phase>
+<Phase when="Tag 3 bis 7" title="Formulare und Beteiligte">Bei Feuerbestattung die zweite Leichenschau, Friedhof oder Krematorium, Pfarrei oder Trauerredner, Anzeigen, Blumen, Trauerkarten.</Phase>
+<Phase when="Innerhalb der Landesfrist" title="Trauerfeier und Beisetzung">Alles zwei Tage vorher bestätigt, mit einer letzten Zusammenfassung an die Familie.</Phase>
+<Phase when="Danach" title="Nachsorge">Rechnung, Urnenbeisetzung oder Grabmal, ein Anruf bei der Familie einige Wochen später.</Phase>
+</Timeline>
+
+Bei acht laufenden Sterbefällen mit je einem Dutzend Schritten rutscht leicht etwas durch: ein Antrag nicht verschickt, der Trauerredner nicht bestätigt, die Familie nicht informiert, dass die Urne abgeholt werden kann. Das Modell kann für jeden Fall die Checkliste führen, an Fälliges erinnern und die Nachrichten entwerfen. Die Arbeit und das Gespür dafür, was eine Familie braucht, bleiben beim Team.
+
+## Welche Unterlagen Familien mitbringen sollten
+
+Eine kurze schriftliche Liste nach dem ersten Anruf erspart Familien viel Sucherei und dem Team viele wiederholte Erklärungen:
+
+<Checklist title="Unterlagen, die häufig gebraucht werden" items={[
+  "Personalausweis oder Reisepass der verstorbenen Person",
+  "Geburtsurkunde bei Ledigen; Eheurkunde oder Auszug aus dem Eheregister bei Verheirateten",
+  "Bei Geschiedenen das Scheidungsurteil, bei Verwitweten die Sterbeurkunde des Ehepartners",
+  "Die ärztliche Todesbescheinigung, falls sie der Familie ausgehändigt wurde",
+  "Grabbrief oder Nachweis des Nutzungsrechts, wenn es ein Familiengrab gibt",
+  "Bestattungsvorsorgevertrag oder Sterbegeldversicherung sowie Renten- und Krankenversicherungsnummer"
+]} />
+
+Das Modell kann die passende Fassung für Erd- oder Feuerbestattung verschicken und die Rückfragen beantworten, die Familien immer haben („Was, wenn wir die Heiratsurkunde nicht finden?“), aus Ihren eigenen Hinweisen.
+
+## Was KI vorbereiten kann und was nur Menschen tun
+
+<Split title="Wo die Grenze verläuft" leftTitle="KI kann vorbereiten" rightTitle="Nur Menschen" left={["Notizen aus dem Beratungsgespräch zu einer Sterbefallakte ordnen", "Formulare und Nachrichten an Beteiligte aus dieser Akte vorausfüllen", "Schriftliche Zusammenfassungen und Listen der nächsten Schritte für Familien", "Traueranzeigen und Texte für Trauerkarten aus den Worten der Familie entwerfen", "Die Checkliste jedes Falls führen und das Team erinnern"]} right={["Den ersten Anruf nach einem Todesfall annehmen, Tag und Nacht", "Das Beratungsgespräch und jede Begegnung mit der Familie", "Versorgung, Aufbahrung, Abschiednahme und Trauerfeier", "Gespräche über Kosten, Entscheidungen und schwierige Familienverhältnisse", "Freigabe von allem, was an Familie, Beteiligte oder Behörden geht"]} caption="Das Modell übernimmt das Tippen. Die Bestatterin übernimmt die Fürsorge und prüft das Getippte." />
+
+## Traueranzeigen in den Worten der Familie
+
+Familien bitten oft um Hilfe bei der Traueranzeige, und Trauerredner brauchen einen kurzen Lebenslauf. Hier kann das Modell aus den Worten und Erinnerungen der Familie einen Entwurf machen: Daten, Namen der Angehörigen, ein paar Sätze darüber, wer er war. Es darf nichts ausschmücken. Hat die Familie gesagt „er liebte seinen Garten und seine Enkel“, erfindet die Anzeige keine Liebe zur klassischen Musik. Die Familie liest und gibt jedes Wort frei.
+
+<Callout title="Würde, Datenschutz und Ehrlichkeit" tone="warning">
+Angaben zur verstorbenen Person, zur Familie, zur Todesursache und zu familiären Verhältnissen sind zutiefst persönlich. Sie gehören in Ihre Bestattersoftware, zu Anbietern mit Auftragsverarbeitungsvertrag, nie in kostenlose Chatbots. Lassen Sie ein Modell niemals Preise außerhalb Ihrer Preisliste nennen, Aufwertungen vorschlagen oder sagen, was eine Familie wählen „sollte“. Ihre Preise für Leistungen müssen ohnehin nach der Preisangabenverordnung ausgewiesen sein. Wer Bestattungskosten trägt, regelt zunächst § 1968 BGB, und wenn Erben nicht zahlen können, kommt eine Sozialbestattung in Betracht; solche Gespräche führt immer ein Mensch. Und nutzen Familien einen Chat auf Ihrer Website, muss nach der KI-Verordnung seit August 2026 erkennbar sein, dass er automatisch antwortet.
+</Callout>
+
+## Nach der Beisetzung
+
+Auch in der Nachsorge fällt gut Gemeintes leicht durch. Ein Modell kann daran erinnern, eine Familie einige Wochen später anzurufen, den Brief entwerfen und die Unterlagen zu Urnenbeisetzung, Grabmal und Schlussrechnung vorbereiten. Es kann Familien außerdem eine klare Liste geben, wen sie noch informieren müssen: Rentenversicherung (bei Verwitweten mit dem Hinweis, dass der Vorschuss für das Sterbevierteljahr innerhalb von 30 Tagen über den Renten Service beantragt werden muss), Krankenkasse, Banken, Versicherungen, Arbeitgeber, Vermieter. Viele Bestatter übernehmen einen Teil davon als Leistung; die Liste hilft in beiden Fällen.
+
+## Wann Sie keine KI brauchen
+
+Ein Bestattungshaus mit wenigen Sterbefällen im Monat und einer Bestatterin, die den Papierkram gern sorgfältig selbst macht, braucht kein Modell. Gute Vorlagen, eine Checkliste pro Fall und die Gewohnheit, nach jedem Gespräch eine schriftliche Zusammenfassung zu schicken, bringen den größten Teil des Nutzens. KI hilft, wenn viele Fälle parallel laufen, wenn dieselben wenigen Leute auch Nachtdienste und Überführungen übernehmen oder wenn der Papierkram regelmäßig bis in den Abend reicht.
+
+## Werkzeuge, die passen
+
+Bestattersoftware wie Pacemo, Rapid Data oder RUHE SANFT verwaltet Sterbefälle, Formulare, Trauerdrucksachen, Korrespondenz und Rechnungen. Die KI-Schicht sitzt darüber: Sie ordnet Notizen in die Akte, bereitet Entwürfe daraus vor, führt die Checkliste jedes Falls und schreibt Zusammenfassungen für Familien, die die Bestatterin prüft, bevor irgendetwas verschickt wird.
+
+## Was Bestatter mich fragen
+
+### Passt KI überhaupt zu dieser Arbeit?
+
+Für den Papierkram ja, wenn es sorgfältig und vertraulich geschieht. Die Familien sehen das Modell nicht. Sie sehen eine Bestatterin, die mehr Zeit für sie hat, und eine klare Zusammenfassung in ihrem Postfach. Darum geht es.
+
+### Sollten Familien davon erfahren?
+
+Wenn sie mit etwas Automatischem sprechen, etwa einem Chat auf der Website, ja, klar erkennbar. Für interne Entwürfe, die ein Mensch prüft und verschickt, reicht bei vielen Häusern ein Hinweis in der Datenschutzerklärung.
+
+### Darf das Modell das Beratungsgespräch aufzeichnen?
+
+Nur mit ausdrücklicher Zustimmung der Familie, und viele werden das nicht wollen. Handschriftliche oder getippte Notizen funktionieren als Grundlage genauso. Bieten Sie die Wahl an und machen Sie eine Aufnahme nie zur Bedingung.
+
+### Und das Telefon in der Nacht?
+
+Den ersten Anruf nach einem Todesfall nimmt ein Mensch an. Ein automatisches System kann tagsüber bei Routinefragen helfen („Wann ist die Trauerfeier?“, „Wohin können wir Blumen schicken?“), aber nie bei jemandem, der anruft, weil gerade ein Angehöriger gestorben ist.
+
+## Faustregel
+
+Jede Minute mit der Familie schützen. Angaben einmal sorgfältig erfassen, das Modell den Papierkram und eine klare Zusammenfassung aus dieser Akte vorbereiten lassen und jedes Wort von einem Menschen prüfen und verschicken lassen. Der erste Anruf, das Gespräch und die Trauerfeier werden nie automatisiert.
+
+Wenn Ihre Abende mit dem Abtippen von Gesprächsnotizen vergehen, [schreiben Sie mir, welche Bestattersoftware Sie nutzen](/de/kontakt?intent=improve), und ich schlage Ihnen einen behutsamen Einstieg vor. Kanzleien begegnen vielen dieser Familien später, wenn ein Nachlass geregelt werden muss, und kennen den Ansturm beim [Erstkontakt](/de/posts/ki-kanzlei-mandatsanfragen). Ambulante Pflegedienste begleiten viele Familien vorher, bei [der Tourenplanung](/de/posts/ki-ambulanter-pflegedienst-tourenplanung).
