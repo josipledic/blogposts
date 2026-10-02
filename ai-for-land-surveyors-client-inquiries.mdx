@@ -1,0 +1,159 @@
+---
+id: "ai-for-land-surveyors-client-inquiries"
+title: "Land Surveyor Inquiries: Work Out Which Survey the Client Needs"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Professional services", "Land surveyors", "Client inquiries", "AI for small business"]
+description: "Clients ask for a survey and mean four different jobs. How a land surveying office can sort inquiries by purpose before quoting, with a surveyor deciding."
+excerpt: "Clients ask for a survey and mean four different jobs. How a land surveying office can sort inquiries by purpose before quoting, with a surveyor deciding."
+---
+
+An email lands at 8:10 on Monday: "Hi, I need a survey of my property. How much, and how soon?"
+
+Four people could have sent that sentence this week. One is adding a rear extension, and her architect needs the ground levels. One is arguing with a neighbour about a hedge. One is buying a house, and the lender has asked for "a survey". One is a developer whose title company wants an ALTA survey, with a list of optional items nobody has explained to him.
+
+Four different jobs, with different fieldwork, different deliverables and very different prices. The office replies asking for the address, gets half an answer three days later, makes a phone call, and finally sends a quote for the wrong survey, because "survey" was the only word anyone used.
+
+That's the problem I'd use AI for in a surveying office. Not to measure anything, and not to say where a line runs: a licensed surveyor does that. The job is the first conversation: finding out what the client is trying to do, which survey that points to, and what's missing before a quote can be written.
+
+## One word, six different jobs
+
+Clients rarely use your vocabulary. Here is how the same request breaks down in a US office. The last column is the question that settles it.
+
+| What the client says | What they may actually need | The question that settles it |
+| --- | --- | --- |
+| "I need a survey for the bank" | A mortgage location survey (the house on the lot), or on a commercial deal an ALTA/NSPS land title survey | Who is asking for it, and can you see their written requirement? |
+| "Where exactly is my property line?" | A boundary survey, with corners found or set | Is it for a fence, a dispute, a purchase, or curiosity? |
+| "My architect needs a survey" | A topographic survey: levels, trees, existing structures, utilities | What's being designed, and where on the lot? |
+| "The county wants a survey for my permit" | Often a site plan drawn over a boundary or topographic survey; what counts differs by jurisdiction | What does the permit checklist say, word for word? |
+| "Flood insurance is asking for a survey" | An elevation certificate on [FEMA's form](https://www.fema.gov/sites/default/files/documents/fema_form-ff-206-fy-22-152.pdf), which only a land surveyor, engineer or architect authorised by state law may certify | Is the property in a mapped flood zone, and who asked? |
+| "The builder needs the corners marked" | Construction staking | Are the plans final, and is the boundary already established? |
+
+Two things in that table matter more than the rest. First, the answer often hides in who is asking: a lender, a title company, a building department, an architect. Their written requirement beats the client's paraphrase of it. Second, one client can need two surveys in sequence, a boundary survey first and a topographic survey after. A quote for "a survey" covers neither properly.
+
+## Why the first conversation is worth fixing
+
+<Stats title="A small, licensed profession with strict standards">
+  <Stat value="52,000" label="surveyor jobs in the US in 2025" source="US Bureau of Labor Statistics, Occupational Outlook Handbook" href="https://www.bls.gov/ooh/architecture-and-engineering/surveyors.htm" />
+  <Stat value="50 + DC" label="jurisdictions that require surveyors to be licensed before they practise" source="US Bureau of Labor Statistics, Occupational Outlook Handbook" href="https://www.bls.gov/ooh/architecture-and-engineering/surveyors.htm" />
+  <Stat value="23 Feb 2026" label="date the 2026 ALTA/NSPS Land Title Survey standards took effect, replacing the 2021 version" source="American Land Title Association" href="https://www.alta.org/topics/topic-land-survey-standards" />
+</Stats>
+
+It's a small profession, and every one of those people is personally accountable for what they certify. That's why nobody wants a fast wrong answer. The ALTA/NSPS date matters for a practical reason: the standards are what title insurers and lenders use to judge a survey, and they include a menu of optional "Table A" items the client chooses from. ALTA published a redline comparing the 2026 and 2021 versions, including changes to Table A, so a list copied from an older deal may no longer match what the title company expects. A client holding last year's request can't be expected to know that. The office has to ask.
+
+And each wrong guess costs real time: a site visit for the wrong scope, a quote that gets revised twice, or a client who walks away because the first reply sounded like a questionnaire.
+
+## Two questions that sort most inquiries
+
+Before any software is involved, most inquiries fall into one of four boxes, decided by two questions: is something being built or changed, and is the boundary line itself in question?
+
+<Matrix title="Where an inquiry lands" caption="The two questions the assistant asks first. Lender or title company requirements and flood insurance are handled as separate rules, because someone else decides what they need." xLabel="Is the boundary line itself in question?" yLabel="Is something being built or changed?" quadrants={[
+  { title: "Building, boundary not in doubt", text: "Topographic survey for the designer, then a site plan for the permit. Staking later." },
+  { title: "Building, boundary in doubt", text: "Boundary survey first; everything else waits on it. Flag to the surveyor straight away.", highlight: true },
+  { title: "No project, no doubt", text: "Often no new survey at all: an existing survey, plat or records review may answer the question." },
+  { title: "No project, boundary in doubt", text: "Boundary survey. Ask early about neighbours and whether anyone has involved a lawyer.", highlight: true }
+]} />
+
+The bottom-left box deserves a second look. A client who "just wants to know where the line is" and has a recent survey in a drawer may not need a new one. An office that says so, honestly, usually gets the next job.
+
+## How the assistant handles an inquiry
+
+<Flow title="From 'I need a survey' to a quote the surveyor signs" caption="The assistant asks and sorts. The surveyor decides what the survey is and what it costs.">
+<Step title="Inquiry arrives" who="Client" time="any channel">Email, web form, voicemail, or an architect forwarding a client's request.</Step>
+<Step title="Ask the sorting questions" who="AI" tone="ai" time="minutes">Where is the property? What is the survey for? Who requires it, and by when? Is anything being built? Is there an existing survey, plat or title document? Can the site be accessed?</Step>
+<Step title="Propose a survey type" who="AI" tone="ai">Matches the answers against your own decision table, states how sure it is, and lists what's still missing.</Step>
+<Step title="Review and decide" who="Surveyor" tone="human" time="same day">Confirms the survey type and scope, and takes over anything involving a dispute, a lawyer, restricted access or an unusual request.</Step>
+<Step title="Draft the quote basis" who="AI" tone="ai">Lists scope, deliverables, records research and field-time assumptions from your own price rules. The surveyor edits and approves it.</Step>
+<Step title="Reply with the reason" who="Office" tone="human">The quote goes out with two plain sentences on why this survey and not another.</Step>
+</Flow>
+
+The last step is easy to skip and worth keeping. A client who understands why they need a topographic survey before the architect starts is a client who doesn't push back on the fee.
+
+## What lands on the surveyor's desk
+
+Here's the kind of brief I'd want at the start of a Monday, built from the inquiry email and one follow-up. The client and address are invented.
+
+```text
+INQUIRY BRIEF, Mon 08:10 (email plus 1 follow-up)
+Client: homeowner, 41 Alder Lane
+Purpose: rear extension, about 400 sq ft. Architect needs existing conditions.
+Required by: county permit checklist (client sent a screenshot). Deadline: submission 3 Nov.
+Boundary: east side, along a hedge. Client unsure where the line is. Neighbour not told.
+Existing documents: 2009 mortgage survey (photo attached), no plat.
+Likely: topographic survey of rear yard, plus boundary retracement of the east line.
+Missing: rear yard access, whether the checklist asks for a certified boundary.
+Flags: possible boundary friction. Surveyor to call, not email.
+```
+
+Compare that with "Hi, need a survey". The brief says "likely" and "missing", not "answer". It gives the surveyor a first call with something to confirm instead of something to discover.
+
+## What the assistant must never do
+
+A boundary opinion is surveying. Every state requires a license to practise, and an AI assistant doesn't have one. So the assistant routes, and the surveyor answers:
+
+- **It never says where a line runs**, or whether a fence, shed or hedge is on it, even from a photo of an old survey.
+- **It never tells a client a survey isn't needed** when a lender, title company or building department might require one.
+- **It never sets a price.** It assembles the facts for your price rules, and the surveyor signs every quote.
+- **It never contacts neighbours** or other parties on the client's behalf.
+- **It hands over immediately** when it sees words like "encroachment", "my neighbour says" or "my lawyer".
+
+Law firms draw the same line between collecting facts and giving advice, and [law firm intake with AI](/posts/ai-for-law-firm-intake) shows how that plays out in a different profession.
+
+## Cheaper fixes first
+
+An AI assistant isn't always the right first step. Three non-AI changes often remove more of the back-and-forth:
+
+**A web form with a required field.** "What do you need the survey for?" as a dropdown, plus address or parcel number, deadline and who is requiring it. A good form settles most inquiries before anyone reads them. The assistant is for what skips the form: phone messages, forwarded emails, half-sentences.
+
+**A one-page "which survey do I need?" explainer.** The table above, in your words, linked from the form and your email signature.
+
+**Fixed fees for standard jobs.** Where you can price a standard job without a conversation, publish the price and skip the quoting step entirely.
+
+And if you're a two-person office with five inquiries a month, you need the form and a template reply, not a model. AI starts to pay when messages arrive faster than someone can reasonably read them, or when several people answer with different habits. [Window installers qualifying leads before they drive out](/posts/ai-for-window-installers-leads) face the same economics: a wasted site visit costs more than any software.
+
+## What it costs
+
+Here is the time the status quo burns, with placeholders you should replace with your own numbers.
+
+<Calc title="Napkin math: chasing the basics" caption="Assumptions, not measurements. The bigger cost, a site visit for the wrong scope or a quote revised twice, isn't in this number." rows={[
+  ["Inquiries per month", "30"],
+  ["Share that arrive without enough detail to quote", "× 60%"],
+  ["Clarifying rounds per such inquiry", "× 2"],
+  ["Minutes per round (read, write, call back)", "× 15"],
+  ["Hours per month", "÷ 60 = 9"],
+  ["Value of a principal's hour", "× $110"]
+]} result={["Time spent chasing basics each month", "≈ $1,000"]} />
+
+On the setup side, my rough estimate is one to two weeks of part-time work for a first version: writing your decision table, price rules and escalation words, then testing it against 30 to 50 past inquiries. Running costs are small, typically a few dollars per hundred inquiries in model fees plus whatever form tool and inbox integration you already pay for. These are estimates, not quotes, and they vary with volume and tools. The expensive part is your own time deciding the rules, and that time pays off with or without AI.
+
+Most of this connects to what you already use. Your drawing and processing software, Civil 3D, Trimble Business Center, Leica Infinity or similar, stays untouched. The assistant works before it: in the inbox, the web form and whatever you use to track jobs, whether that's a CRM, a job tracker or a spreadsheet.
+
+## Data protection and professional rules
+
+Inquiries contain addresses, neighbour disputes and sometimes a mention of litigation. Treat them as sensitive: keep them in your own inbox or CRM, sign a data processing agreement with any AI provider, and don't let the assistant look up neighbours' details.
+
+If the assistant takes phone calls, tell callers who they are talking to. In the EU, [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has required that disclosure since 2 August 2026. Recording is a separate question: some US states need every party's consent, and the GDPR applies to EU clients. A greeting like "You're speaking with the automated assistant for Alder Survey. This call is recorded so the surveyor can call you back with the right questions" covers both.
+
+## Questions surveyors ask
+
+### Can AI tell a client which survey they need?
+
+It can propose one, based on the purpose and the requirement behind it, and say what's still missing. It can't confirm it. Which survey fits a given lender, title company or permit is a professional judgment, and the surveyor makes it.
+
+### Should the assistant quote a price?
+
+Not on its own. It can assemble the scope and the facts your price list needs and draft the quote basis. A surveyor reads it, adjusts for what the site visit will probably involve, and sends it.
+
+### What about ALTA surveys: should it explain Table A?
+
+It can explain what an ALTA/NSPS survey is and list the questions to ask: who is requiring it, whether the title company has sent its list of Table A items, and which edition of the standards they expect. It shouldn't recommend items. The client picks them, with the title company and lender, and the surveyor advises.
+
+### Do I have to tell people it's an AI?
+
+In the EU, yes, since August 2026. In the US the rules differ by state and use, but it's the simplest policy anyway. Clients who feel tricked about who they were talking to are harder to win back than clients who were told up front.
+
+## My rule of thumb
+
+Don't let the word "survey" stand. Ask what it's for and who is asking for it, and sort from there. If the assistant can't place an inquiry in a row of your table, a surveyor should call. Everything the assistant produces is a draft for a licensed person.
+
+If your inquiries arrive with half the picture, [tell me how they come in today](/contact?intent=improve), and I'll suggest the smallest version worth trying. Surveys also feed drawings that change over a project, which is the problem [engineering firms have with drawing revisions](/posts/ai-for-engineering-firms-document-control).

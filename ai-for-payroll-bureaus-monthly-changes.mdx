@@ -1,0 +1,158 @@
+---
+id: "ai-for-payroll-bureaus-monthly-changes"
+title: "Payroll Change Notices: From Messy Emails to Clean Inputs"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Professional services", "Payroll bureaus", "Monthly change notices", "AI for small business"]
+description: "Clients send payroll changes as emails, WhatsApps and photos. How AI turns them into one checked change sheet while the calculation stays in payroll software."
+excerpt: "Clients send payroll changes as emails, WhatsApps and photos. How AI turns them into one checked change sheet while the calculation stays in payroll software."
+---
+
+Picture the 26th of the month at a payroll bureau with forty small clients. At 6:40 a.m. a bakery owner sends this, between a photo of a handwritten rota and a question about Friday's deadline:
+
+> Hi! Lena was off ill Mon to Wed. Sophie started on the 15th, 20 hrs. Tom's last day was the 12th. Ali gets 150 extra for the weekend market. Hours in the photo, thanks!!
+
+That is five payroll events in 34 words: a sickness absence, a new starter, a leaver, a one-off payment and a month of hours. None of them is complete. Which Monday? Sophie has no surname, no date of birth and no National Insurance number, and she started eleven days ago. Is Ali's 150 gross or net, and is it a one-off? And one number in the photo of the hours sheet could be a 6 or a 0.
+
+Multiply that by forty clients. Your specialists can run payroll; that isn't the problem. The problem is the first hours of every month, spent turning this kind of message into something a payroll system will accept, and then waiting for the client to answer the questions.
+
+Reading a messy message and listing what is missing is something language models do well. Calculating a payslip is not, and it doesn't need to be. This post is about putting AI on the first job and keeping it far away from the second.
+
+## The rules change, the messages don't
+
+Payroll rules move every year, and clients never mention it. Three figures from this April alone:
+
+<Stats title="Three payroll rules that changed in April 2026 (UK)">
+  <Stat value="£12.71" label="National Living Wage per hour for workers aged 21 and over from 1 April 2026" source="GOV.UK" href="https://www.gov.uk/national-minimum-wage-rates" />
+  <Stat value="Day 1" label="Statutory Sick Pay is payable from the first full day of sickness since 6 April 2026; the 3-day waiting period and the lower earnings limit are gone" source="Business.gov.uk" href="https://www.business.gov.uk/campaign/employment-changes/employers/statutory-sick-pay/" />
+  <Stat value="£123.25" label="a week, or 80% of normal weekly earnings if that is lower, is the Statutory Sick Pay an eligible employee can get" source="GOV.UK" href="https://www.gov.uk/statutory-sick-pay/what-youll-get" />
+</Stats>
+
+Take Lena's absence. Until April, three days off sick fell inside the waiting period, so Statutory Sick Pay had nothing to pay on them. Now, for an eligible employee, it starts on the first full day, and the earnings limit that excluded some part-timers is gone. The client's message looks exactly like last year's. The correct payroll entry doesn't.
+
+The client doesn't know this and shouldn't have to. The bureau does, which is why "Lena was off ill" has to become an absence with a type and dates, so rules can be applied to it. The same goes for pay: an hourly rate under £12.71 for someone aged 21 or over is a flag, whatever the message says.
+
+## What happens to the message today
+
+Most bureaus run on some version of this. A specialist reads the message, works out which employees it means, opens the payroll software, keys in what is clear and writes back about what isn't. The reply arrives a day or two later, in a different channel, often with half the answers. Each round starts with re-reading.
+
+The deadlines don't wait for that loop. In the UK, the employer sends HMRC a Full Payment Submission [on or before each payday](https://www.gov.uk/running-payroll/reporting-to-hmrc), and a new employee has to be [reported on or before their first payday](https://www.gov.uk/new-employee). A starter detail that turns up on payday minus one gets solved at the worst possible moment.
+
+Most of the time isn't typing. It's the loop: read, decode, ask, wait, read again. That loop is the part to shrink. It is the same pattern as chasing documents at an [accounting firm](/posts/ai-for-accounting-document-intake), and the same principle works: know what you expect before the message arrives, and ask for what's missing once.
+
+## One change sheet per client
+
+The target is a change sheet: one structured list per client per month, with a line for every event. Not a summary, but a list the payroll system could be fed from. This is how the bakery message looks as sheet lines.
+
+| What the client wrote | What goes on the sheet | What gets flagged |
+| --- | --- | --- |
+| "Lena was off ill Mon to Wed" | Absence: Lena, sickness, three working days, dates inferred from the message date | Exact dates, whether she was due to work all three days, sick or holiday |
+| "Sophie started on the 15th, 20 hrs" | New starter: Sophie, start date, 20 hours a week | Surname, date of birth, address, National Insurance number, P45 or starter checklist, pay rate. The start date is already past |
+| "Tom's last day was the 12th" | Leaver: Tom, last day the 12th | P45 details, holiday owed or taken, final hours |
+| "Ali gets 150 extra" | One-off payment: Ali, 150, type unknown | Gross or net, one-off or recurring, reason: bonus, expenses or overtime |
+| Photo of the hours sheet | Hours per employee per day, read from the image, linked to the original | Illegible entries, totals that don't match contracted hours, any hourly rate below the minimum for the person's age |
+
+Two rules for the sheet. Every line links back to the original message or image, so the specialist can check the source in one click. And "unknown" is a valid value. If the message doesn't say whether the 150 is gross or net, the sheet says so. It never writes "probably gross".
+
+## From inbox to payroll input
+
+Here is the monthly flow I would build.
+
+<Flow title="A change message, from arrival to payroll input" caption="The AI reads and asks. The specialist decides. The payroll software calculates.">
+<Step title="Message arrives" who="Client" time="any day">An email, a WhatsApp, a photo or a form lands in the client's change inbox. The original is stored untouched.</Step>
+<Step title="Extract" who="AI" tone="ai" time="seconds">Turns the message into sheet lines: employee, event, dates, amounts, each with a link to the source.</Step>
+<Step title="Check and flag" who="AI" tone="ai" time="seconds">Compares each line with the client's master data and with simple rules: unknown name, missing fields, hours that don't match the contract, a starter past their first payday.</Step>
+<Step title="Ask once" who="Specialist" tone="human" time="same day">The AI drafts one message listing every open point, such as Sophie's surname and starter details, or whether Ali's 150 is gross. The specialist edits it and sends it.</Step>
+<Step title="Approve and enter" who="Specialist" tone="human">Reviews the sheet, flagged lines first, then keys the changes into the payroll software or imports them.</Step>
+<Step title="Calculate" who="Payroll software">Gross to net, tax, National Insurance, sick pay and pension are calculated by the payroll software, not by the model.</Step>
+<Step title="Plausibility check and release" who="Specialist" tone="human" time="before payday">Compares the draft payroll with last month: new names, zero pay, big swings. Approves, then the Full Payment Submission goes to HMRC on or before payday.</Step>
+</Flow>
+
+Steps 2 and 3 are where AI earns its place. Reading handwriting, parsing "Mon to Wed", matching "Sophie" to a new employee rather than an existing one and noticing that a field is empty are all language jobs.
+
+The human decision point is step 5. Nothing reaches the payroll system until a specialist has seen the line. I would go further: show flagged lines first, with the reason, and clean lines second. Review effort should go where the risk is.
+
+## Where AI is the wrong tool
+
+Three things I would keep out of the model's hands.
+
+**The calculation.** Gross to net, tax codes, National Insurance, sick pay and pensions belong to the payroll software, which the vendor updates for every year's rates and which produces the submission HMRC expects. Don't let a model produce a net figure, even as a sanity check. For that, use a rule: if net pay changes by more than, say, 20% against last month without a flagged reason, someone looks. That's code, not AI.
+
+**Rules you can write down.** A minimum wage check, a starter past their first payday, hours above contract: these are simple comparisons. Write them as code. They're exact, they don't drift and they cost nothing to run. The model reads the message; code checks the numbers.
+
+**Clients who will use a form.** The cheapest fix is a monthly change form with required fields (employee, event, date, gross or net), a cut-off day and a reminder. If a client's hours come from a rota tool, ask for the export instead of a photo; [staff rotas in a café](/posts/ai-for-cafes-staff-rota) are the other end of that data. Offer the form first. AI covers the clients who won't use it, and there will always be some. With a dozen clients, a form and a good template email may be all you need.
+
+## What a complete starter looks like
+
+For a new employee, [GOV.UK lists](https://www.gov.uk/new-employee/employee-information) what the employer needs: date of birth, gender, full address and start date, plus, from the P45, the full name, leaving date, pay and tax to date, student loan status, National Insurance number and existing tax code. If there is no recent P45, the employee fills in a starter checklist instead.
+
+<Checklist title="A new starter is complete when the sheet has" items={[
+  "Full name, including surname",
+  "Date of birth and gender",
+  "Full home address",
+  "Start date, weekly hours and pay rate",
+  "National Insurance number",
+  "P45 details, or a completed starter checklist if there is no recent P45",
+  "Student loan answer",
+  "Bank details, sent through a secure upload and not by WhatsApp"
+]} />
+
+That list is also what the model checks every new-starter message against. A gap gets flagged when the message arrives, not on payday minus one.
+
+## What it costs to run
+
+The numbers depend entirely on your clients, so here is the arithmetic with placeholders.
+
+<Calc title="Napkin math: a month of change messages at a 40-client bureau" caption="Assumptions, not measurements. Count a real month of messages at your bureau and replace every number." rows={[
+  ["Client companies", "40"],
+  ["Change messages per client per month", "× 10"],
+  ["Messages per month", "= 400"],
+  ["Minutes per message today: read, decode, key in, chase", "× 8"],
+  ["Hours per month today", "≈ 53"],
+  ["Minutes per message to check a prepared sheet", "× 3"],
+  ["Hours per month with the change sheet", "≈ 20"]
+]} result={["Specialist hours freed per month", "≈ 33"]} />
+
+At an assumed £40 an hour of loaded cost that is roughly £1,300 a month, but I would count it as capacity rather than cash. It is what lets a bureau take on the next ten clients without hiring.
+
+Setup, as a rough estimate and not a quote: a few days to build the intake and the sheet, and a few weeks of testing against real past messages, with a specialist correcting the first sheets. Running costs are modest. Model usage for 400 messages is small next to specialist time. The recurring items that matter are the secure intake, logging, and someone who owns the thing when a client changes how they write.
+
+## Payroll data needs a stricter inbox
+
+Pay, bank details, tax and National Insurance numbers, sickness: this is among the most sensitive data a small client holds. Sickness is data concerning health, which the UK GDPR treats as [special category data](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-is-special-category-data/). Three practical rules.
+
+**Have the contract.** An AI provider that processes this data for you is a processor. [Article 28 of the GDPR](https://gdpr-info.eu/art-28-gdpr/) requires a binding contract that sets out what it may do with the data, and the UK GDPR has the same requirement. Sign it before the first real message. Check where data is processed, whether inputs are stored or used for training, and how deletion works.
+
+**Mask before you send.** The model doesn't need a National Insurance number to notice that one is missing. Mask NI numbers, bank details and ID numbers with a simple pattern filter before the text reaches the model. The sheet links back to the unmasked original in your own system.
+
+**Retire WhatsApp for identity documents.** Messages are fine for "Lena was off Monday". Passport photos and bank details belong in a secure upload or form that you control and can delete from.
+
+## Tools that fit
+
+Payroll software such as Sage Payroll, BrightPay, Xero Payroll or IRIS holds the employees, does the calculation and sends the HMRC submissions. It stays the system of record. The AI layer sits in front of it: it reads messages, prepares the sheet and drafts the questions, and then a person keys the changes in or imports them. Whether your software accepts an import file or an API for changes decides how much typing remains, so check that before anything else.
+
+## Questions payroll bureaus ask
+
+### Can AI run payroll for me?
+
+No, and I wouldn't want it to. The calculation is rules and arithmetic, and your payroll software does it reliably. AI is useful before that step, turning messy client messages into clean inputs, and after it, spotting oddities in the draft run.
+
+### How do I know the extraction is accurate enough?
+
+Test it on your own history. Take three months of old messages from a handful of clients, run them through, and compare the sheets with what your specialists actually entered. Count two things: fields the model missed, and fields it invented. Invented values are the dangerous ones, so a model that leaves blanks and flags them beats one that fills them in. After go-live, spot-check a sample of sheets every month.
+
+### What if a message contradicts what we have on file?
+
+That is a flag, not a decision. If "Tom, 30 hours" arrives and the file says 20, the sheet shows both and the specialist asks the client. The model should never overwrite master data because a message said so.
+
+### Do my clients have to change how they send things?
+
+Not to start. That is the point of reading emails and photos. But a form with required fields still beats any extraction, so offer it, set a cut-off day, and let AI handle the messages that arrive anyway.
+
+## Where I'd start
+
+Take last month's messages from five clients and build the change sheets by hand once. You'll see which fields are always missing and which questions your specialists keep asking. Then run the same messages through an AI extraction and compare. If it flags what your specialist would have asked and invents nothing, you're ready for a pilot where the specialist still approves every sheet.
+
+The rule of thumb: the model reads and asks, the specialist decides, the payroll software calculates. Keep those three jobs separate and the first hours of the month get shorter without anyone's payslip depending on a guess.
+
+If the start of every month goes on decoding messages, [tell me which payroll software you use and how your clients send changes](/contact?intent=improve), and I'll suggest the smallest version worth testing. The same logic of reading first and asking once also works when clients keep sending [the same ten questions](/posts/ai-for-bookkeepers-client-questions) month after month.
