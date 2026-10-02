@@ -1,0 +1,169 @@
+---
+id: "ki-webagentur-aenderungswuensche"
+translationOf: "ai-for-web-agencies-change-requests"
+title: "Webagentur: Änderungswünsche bepreisen, bevor sie das Budget auffressen"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Kanzleien & Dienstleister", "Webagenturen", "Änderungswünsche", "KI für kleine Unternehmen"]
+description: "Kleine Website-Änderungen laufen als Gefallen und bleiben unbezahlt. Wie KI Mängel, Änderungen und neue Features sortiert, Aufwand schätzt und Angebote macht."
+excerpt: "Kleine Website-Änderungen laufen als Gefallen und bleiben unbezahlt. Wie KI Mängel, Änderungen und neue Features sortiert, Aufwand schätzt und Angebote macht."
+---
+
+Stellen Sie sich eine Webagentur mit zehn Leuten vor, 25 Kundenseiten mit monatlichem Wartungsvertrag. Am Dienstagmorgen kommen vier Nachrichten.
+
+Beim ersten Kunden verschickt das Kontaktformular seit Freitag keine E-Mails mehr. Der zweite möchte, dass die Telefonnummer im Header auf dem Handy direkt anrufbar ist. Die dritte schreibt: „Wir hätten gern einen Mitgliederbereich. Wie schwer kann das sein?“ Und der vierte meldet, dass das neue Banner auf der italienischen Seite nicht erscheint, weil nie jemand den italienischen Text geliefert hat.
+
+Alle vier bekommen innerhalb der Stunde dieselbe Antwort: „Klar, wir schauen uns das an!“ Dabei sind es vier verschiedene Dinge. Das erste ist ein Mangel, das zweite eine Änderung von zehn Minuten, das dritte ein Projekt, und das vierte ist gar nicht das Problem der Agentur. Die Antwort war gleich. Die Kosten, und wer sie tragen sollte, sind es nicht.
+
+In diesem Beitrag geht es um die Rechnung hinter dem „Klar“. Was ein kleiner Gefallen kostet, wie Sie die vier Arten von Anfragen unterscheiden und wo KI hilft: beim Sortieren, beim Schätzen aus Ihrer eigenen Historie und beim Entwurf der Antwort. Jeden Preis gibt weiterhin die Projektleitung frei.
+
+## Die Zahlen rund ums Problem
+
+<Stats title="Warum kleine Änderungen so schwer zu sehen sind">
+  <Stat value="52 %" label="der in den vorangegangenen 12 Monaten abgeschlossenen Projekte hatten Scope Creep oder unkontrollierte Änderungen, fünf Jahre zuvor waren es 43 % (alle Branchen, nicht nur Web)" source="PMI, Pulse of the Profession 2018" href="https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf" />
+  <Stat value="66,4 %" label="durchschnittliche abrechenbare Auslastung bei Dienstleistungsunternehmen 2025, der niedrigste Wert der Erhebung und weit unter den 75 %, die als optimal gelten" source="SPI Research, Benchmark 2026, via Deltek (Anbieter von Software für Dienstleister)" href="https://www.deltek.com/resources/articles/professional-services-benchmarks/" />
+</Stats>
+
+Keine der Zahlen betrifft speziell Webagenturen: PMI befragt Projektfachleute aller Branchen, SPI deckt Dienstleistungsunternehmen jeder Art ab. Sie beschreiben trotzdem einen Druck, den jede Agentur kennt. Rund ein Drittel der Arbeitszeit wird nicht abgerechnet (teils zu Recht, etwa Akquise und Weiterbildung), und etwa die Hälfte der Projekte läuft über den ursprünglichen Umfang hinaus. Unbepreiste kleine Änderungen sitzen genau in dieser Lücke.
+
+## Was eine „schnelle“ Änderung wirklich kostet
+
+Nehmen wir den Anruf-Button. Die eigentliche Änderung dauert zehn Minuten. Acht Jahre Softwareentwicklung im Produktivbetrieb haben mir gezeigt, dass die kleinsten Tickets selten die kleinsten Kosten haben, weil alles um die Änderung herum unsichtbar bleibt.
+
+<Bars title="Wohin 40 Minuten bei einer Zehn-Minuten-Änderung gehen" unit=" Min." caption="Beispielhafte Annahmen für eine kleine Änderung an einer CMS-Seite, keine Messwerte. Die Änderung selbst ist ein Viertel der Arbeit." data={[
+  { label: "Anfrage lesen und verstehen", value: 5 },
+  { label: "Rückfrage: eine Frage, eine Antwort", value: 5 },
+  { label: "Die Änderung selbst", value: 10, highlight: true },
+  { label: "Auf Staging testen: zwei Browser und ein Handy", value: 10 },
+  { label: "Ausrollen und Live-Seite prüfen", value: 5 },
+  { label: "Antworten, Ticket pflegen, Zeit buchen", value: 5 }
+]} />
+
+Die Agentur erinnert sich an zehn Minuten. Der Kalender erinnert sich an vierzig, plus die Zeit, die der Entwickler braucht, um wieder in das hineinzufinden, was er vorher gemacht hat. Die steht in keinem Stundenzettel. Jetzt multiplizieren wir.
+
+<Calc title="Überschlag: eine Agentur, ein Monat" caption="Annahmen, keine Messwerte. Ihre Tickethistorie und Zeiterfassung liefern die echten Zahlen. Aufs Jahr gerechnet sind das etwa 20.000 €, oder jeden Monat mehr als zwei Arbeitstage einer Person." rows={[
+  ["Kleine Anfragen pro Monat über alle Kunden", "60"],
+  ["Als kurzer Gefallen erledigt: kein Ticket, keine Zeitbuchung, kein Preis", "× 40 %"],
+  ["Echter Zeitaufwand pro Gefallen (die 40 Minuten von oben, gerundet)", "× 45 Min."],
+  ["Verrechnungssatz", "× 95 € pro Stunde"]
+]} result={["Verschenkte Arbeit pro Monat (18 Stunden)", "≈ 1.700 €"]} />
+
+Ein Teil davon ist richtig so: Eine kleine Kulanzänderung für einen guten Kunden ist günstige Kundenpflege. Das Problem ist nicht Großzügigkeit, sondern unsichtbare Großzügigkeit. Wenn niemand sie festhält, kann niemand entscheiden, ob sie sich lohnt. Und die 40 % sind die Zahl, die Sie zuerst messen sollten. Wenn Sie sie für Ihre Agentur nicht kennen, ist der erste Schritt nicht KI, sondern ein Monat ehrliches Mitschreiben. Tischlereien kennen das Muster als „Können wir nicht eben noch ...“-Nachrichten, die [zu unbezahlter Arbeit werden](/de/posts/ki-tischlerei-aenderungswuensche). Das Material ist anders, das Leck dasselbe.
+
+## Vier Arten von Anfragen, vier verschiedene Antworten
+
+| Art | Beispiel | Wer zahlt | Die richtige erste Antwort |
+| --- | --- | --- | --- |
+| Mangel | Das Kontaktformular verschickt keine E-Mails mehr | Die Agentur, wenn der Fehler in der gelieferten Leistung liegt | Bestätigen, nachstellen, beheben, die Ursache nennen |
+| Änderung | Die Telefonnummer im Header soll auf dem Handy anrufbar sein | Der Kunde, zu einem Preis, den er vorher sieht | Umfang, Preis oder Aufwand, Bitte um Freigabe |
+| Neues Feature | Ein Mitgliederbereich | Der Kunde, nach einem ordentlichen Angebot | Kurzes Klärungsgespräch, dann ein schriftliches Angebot |
+| Graubereich | Banner fehlt, weil der Text nie kam; ein Update beim Hoster hat das Theme zerschossen | Hängt von Ursache und Vertrag ab | Sagen, was vom Kunden fehlt, oder Hoster und Drittanbieter prüfen |
+
+Die Tabelle ist leicht. Schwer ist, dass Anfragen ihre Zeile nicht ankündigen. „Die Seite sieht auf meinem Handy komisch aus“ kann ein Mangel sein (ein kaputtes Layout wurde ausgeliefert), eine Änderung (dem Kunden gefällt das abgenommene Design nicht mehr) oder ein Inhaltsproblem (das hochgeladene Bild hat 8 MB). Um das zu trennen, braucht es das ursprüngliche Pflichtenheft, die abgenommenen Entwürfe und die Ticketgeschichte. Das ist Leseaufgabe, und ein Sprachmodell liest unermüdlich.
+
+## Wo die rechtliche Linie verläuft
+
+Rechtlich zählt vor allem Ihr Vertrag. In Deutschland hat der Bundesgerichtshof in einem Urteil vom 4. März 2010 (III ZR 79/09) einen [Internet-System-Vertrag](https://medien-internet-und-recht.de/volltext.php?mir_dok_id=2149), einschließlich der Erstellung einer individuellen Website, als Werkvertrag eingeordnet (§§ 631 ff. BGB). Die Agentur schuldet ein funktionierendes Ergebnis, nicht nur Stunden. Für Änderungswünsche folgt daraus dreierlei:
+
+- **Ein Mangel liegt vor, wenn dem Werk die vereinbarte Beschaffenheit fehlt.** Nach [§ 633 BGB](https://www.gesetze-im-internet.de/bgb/__633.html) ist das Werk frei von Sachmängeln, wenn es die vereinbarte Beschaffenheit hat. Eine Funktion, die im Pflichtenheft stand und nicht funktioniert, müssen Sie beheben. Ein neuer Wunsch ist kein Mangel, so klein er auch ist.
+- **Die Abnahme zieht die Linie in der Zeit.** Nach [§ 640 BGB](https://www.gesetze-im-internet.de/bgb/__640.html) behält ein Kunde, der ein Werk trotz bekanntem Mangel abnimmt, die meisten Mängelrechte nur, wenn er sie sich bei der Abnahme vorbehält. Und die Agentur kann eine angemessene Frist setzen, nach der das Werk als abgenommen gilt, wenn der Kunde nicht mindestens einen Mangel nennt. Ein Abnahmeprotokoll mit einer Liste bekannter Punkte macht aus „Mangel oder Änderung?“ ein Datum statt eines Streits.
+- **Preis vor Arbeit.** Nach [§ 632 BGB](https://www.gesetze-im-internet.de/bgb/__632.html) gilt eine Vergütung als stillschweigend vereinbart, wenn die Leistung nur gegen Vergütung zu erwarten ist. Wegen eines Buttons will das niemand ausfechten. Nennen Sie den Preis vorher.
+
+Ein [Leitfaden einer Kanzlei zu Webdesigner-Verträgen](https://kanzlei-herfurtner.de/webdesigner-vertraege/) ergänzt zwei Punkte. Mängelansprüche bei einer Website verjähren regelmäßig zwei Jahre nach Abnahme (§ 634a BGB), ein „Bug“, der drei Jahre nach dem Launch gemeldet wird, ist also normalerweise kein Gewährleistungsfall mehr. Und Stundenkontingente oder laufende Betreuung ohne messbares Endergebnis können dienstvertraglich sein, während Wartungsverträge, die auf Funktionsfähigkeit und Störungsbeseitigung gerichtet sind, nach [Einschätzung der IT-Recht Kanzlei](https://www.it-recht-kanzlei.de/internet-systemvertrag-werkvertrag.html) als Werkverträge einzuordnen sind. Was Ihr Wartungsvertrag abdeckt, steht also in Ihrem Vertrag.
+
+Das ist keine Rechtsberatung. Der Teil, der immer gilt: „Mangel“ und „Änderung“ bedeuten nur etwas, wenn Pflichtenheft und Abnahme dokumentiert sind.
+
+## Wie KI in die Annahme passt
+
+Kleine IT-Dienstleister sortieren ihre Ticketschlangen ähnlich, und die [ersten Dinge, die sich dort zu automatisieren lohnen](/de/posts/ki-it-dienstleister-ticketsystem), sehen ähnlich aus. Für eine Webagentur würde ich diesen Ablauf bauen.
+
+<Flow title="Von der Einzeiler-Anfrage zur bepreisten Antwort" caption="Der Assistent liest, sortiert und entwirft. Die Projektleitung entscheidet jede Kategorie und jeden Preis. Nichts geht ungeprüft an den Kunden.">
+<Step title="Anfrage kommt an" who="Kunde" time="jederzeit">E-Mail, Supportformular, Chat oder ein gemeinsamer Slack-Kanal. Alles landet im Ticketsystem, auch Gefallen, um die im Telefonat gebeten wurde.</Step>
+<Step title="Sortieren und Unterlagen prüfen" who="KI" tone="ai" time="Sekunden">Mangel, Änderung, neues Feature oder Graubereich, mit dem entscheidenden Satz als Zitat. Sie findet die passende Stelle im Pflichtenheft, den abgenommenen Entwurf oder die Klausel im Wartungsvertrag und listet, was fehlt: URL, Screenshot, Gerät.</Step>
+<Step title="Aus der Historie schätzen" who="KI" tone="ai">Findet die fünf ähnlichsten abgeschlossenen Tickets, zeigt deren tatsächliche Stunden und schlägt eine Spanne vor.</Step>
+<Step title="Antwort entwerfen" who="KI" tone="ai">Umfang in einem Satz, Preis oder Aufwand, was bei einem Ja passiert, und offene Fragen an den Kunden.</Step>
+<Step title="Prüfen und senden" who="Projektleitung" tone="human" time="am selben Tag">Bestätigt die Kategorie, passt den Preis an, entscheidet über Kulanz, sendet. Strittige Mängel gehen an die Geschäftsführung oder Kundenbetreuung.</Step>
+<Step title="Freigabe, Umsetzung, Buchung" who="Kunde, dann Entwickler" tone="human">Der Kunde antwortet mit Ja. Die Zeit wird aufs Ticket gebucht, und die tatsächlichen Stunden speisen die Historie.</Step>
+</Flow>
+
+Für die Anruf-Button-Anfrage sieht die Projektleitung zum Beispiel Folgendes:
+
+```text
+TICKET 2291, Lindner Optik, 09:12
+Kategorie: ÄNDERUNG (Sicherheit: hoch)
+Anfrage: Telefonnummer im Header soll auf dem Handy anrufbar sein.
+Nicht im abgenommenen Pflichtenheft: Version 3, Abschnitt 4.2 nennt im Header nur Logo und Menü.
+Ähnliche Tickets: 5, tatsächliche Stunden 0,5 / 0,5 / 0,75 / 1,0 / 0,5 (Median 0,5).
+Vorschlag: 0,75 Std., 71 €, inklusive Staging-Test und Ausrollen.
+Antwortentwurf: zur Prüfung bereit.
+```
+
+Und die Antwort, nachdem die Projektleitung sie geprüft hat:
+
+> Guten Morgen Frau Lindner, ja, wir können die Telefonnummer im Header auf dem Handy anrufbar machen. Das ist eine Änderung am abgenommenen Design und kein Fehler, deshalb nenne ich Ihnen vorab den Preis: etwa 45 Minuten, 71 € netto, live innerhalb von zwei Werktagen nach Ihrer Freigabe. Antworten Sie einfach mit „Ja“, dann buchen wir es ein. Wenn Sie noch weitere kleine Änderungen auf der Liste haben, bündeln wir sie zu einem Preis.
+
+Vergleichen Sie das mit „Klar, wir schauen uns das an!“ Der Kunde bekommt einen Preis und einen nächsten Schritt. Die Agentur bekommt eine Dokumentation.
+
+<Split title="Wer was macht" leftTitle="Der Assistent" rightTitle="Nur ein Mensch" left={[
+  "Sortiert jede Anfrage und zitiert seine Belege",
+  "Findet die passende Stelle im Pflichtenheft oder das frühere Ticket",
+  "Zeigt ähnliche Tickets mit tatsächlichen Stunden",
+  "Entwirft die Antwort mit Umfang, Preis und Rückfragen",
+  "Markiert Fristen, juristische Begriffe und scharfen Ton"
+]} right={[
+  "Entscheidet, ob etwas ein Mangel ist, vor allem bei Streit",
+  "Legt den endgültigen Preis und jede Kulanz fest",
+  "Sendet alles, was Geld oder Schuld berührt",
+  "Übernimmt Eskalationen und alles Rechtliche",
+  "Sagt freundlich Nein, wenn die Antwort Nein ist"
+]} />
+
+## Wie gut können KI-Schätzungen sein?
+
+Zwei Preprints von 2026 zur Schätzung von Story Points, den Aufwandseinheiten von Softwareteams, sind vor allem wegen ihrer Bescheidenheit interessant. In der [einen](https://arxiv.org/abs/2603.06276) sagten vier Sprachmodelle auf 16 Projekten aus öffentlichen Jira-Trackern Story Points ohne jedes Trainingsmaterial voraus und schlugen überwachte Deep-Learning-Modelle, die mit 80 % der Projektdaten trainiert waren. In der [anderen](https://arxiv.org/abs/2604.03443) schlug ein Ansatz, der ähnliche frühere Aufgaben abruft und das Modell daraus schätzen lässt, die Vergleichsmodelle mehrfach, aber die Unterschiede waren statistisch nicht signifikant.
+
+Beide nutzen öffentliche Issue-Tracker-Daten, keine Änderungswünsche von Agenturen, und beide sind Preprints. Mein Fazit: Ein Modell, das auf ähnliche Tickets zugreift, ist eine brauchbare zweite Meinung, kein Orakel. Testen Sie es deshalb an sich selbst. Nehmen Sie sechs Monate abgeschlossener Tickets, blenden Sie die tatsächlichen Stunden aus, lassen Sie das System schätzen und vergleichen Sie. Liegt es bei den meisten kleinen Tickets innerhalb von etwa 30 %, kann es Spannen vorschlagen. Wenn nicht, sind Ihre Tickets zu uneinheitlich oder Ihre Zeitbuchungen zu dünn, auch das ist gut zu wissen.
+
+## Wann Sie keine KI brauchen
+
+Viele Agenturänderungen sind Standard: eine Textänderung, ein Bildtausch, eine Landingpage aus einer Vorlage, ein zusätzliches Formularfeld. Bepreisen Sie sie in einer Preisliste („kleine Änderung: X € je angefangene halbe Stunde“) und führen Sie eine Regel ein: kein Ticket, keine Arbeit. Ein Formular auf Ihrer Supportseite und eine Tabelle bringen den Großteil des Nutzens.
+
+KI lohnt sich, wenn Anfragen über fünf Kanäle kommen und drei Personen sie auf drei Arten bepreisen. Einen unklaren Vertrag repariert sie nicht, und einen Mitgliederbereich kann sie nicht aus einer Einzeiler-Mail bepreisen. Dafür braucht es ein Gespräch.
+
+## Was das kostet
+
+Das sind meine Annahmen, keine Angebote. Wenn Ihre Tickets schon in einem Tool mit Schnittstelle liegen, etwa Jira, Redmine, Asana oder Teamwork, würde ich drei bis fünf Tage einplanen, um es anzubinden, die Kategorie-Regeln aus Ihren Verträgen abzuleiten und gegen Ihre Historie zu testen. Der Modellverbrauch liegt bei wenigen tausend Tokens pro Ticket, in der Regel Cent-Beträge (prüfen Sie die aktuellen Preise). Die eigentlichen laufenden Kosten sind die Prüfung durch die Projektleitung, zwei bis drei Minuten pro Ticket.
+
+Amortisation mit der Überschlagsrechnung von oben: Wird die Hälfte der 24 Gefallen zu bepreisten Anfragen, die Kunden akzeptieren, sind das 12 Anfragen à 45 Minuten, neun Stunden, rund 850 € im Monat. Ein Aufbau von vier Tagen entspricht bei demselben Satz etwa 3.000 € interner Zeit und zahlt sich in unter vier Monaten aus, vorausgesetzt, die Kunden sagen Ja. Testen Sie diesen Teil zuerst.
+
+## Datenschutz: Tickets enthalten mehr, als man denkt
+
+In Tickets stehen Namen und E-Mail-Adressen der Mitarbeitenden des Kunden, Screenshots aus Admin-Bereichen mit Kundenbestellungen, Formulareinsendungen und manchmal ein hastig eingefügtes Passwort. Drei Regeln:
+
+- **Kennen Sie Ihre Rolle.** Wenn Ihre Agentur an Systemen des Kunden arbeitet, in denen personenbezogene Daten liegen, verarbeiten Sie häufig in dessen Auftrag. [Art. 28 DSGVO](https://dsgvo-gesetz.de/art-28-dsgvo/) verlangt dann einen Auftragsverarbeitungsvertrag (AVV), und Sie dürfen keinen weiteren Auftragsverarbeiter, auch keinen KI-Anbieter, ohne vorherige gesonderte oder allgemeine schriftliche Genehmigung des Verantwortlichen hinzuziehen. Nehmen Sie den Anbieter in Ihre Unterauftragnehmerliste auf und informieren Sie Ihre Kunden.
+- **Nutzen Sie den richtigen Zugang.** Ein privates Chatfenster ist keine Auftragsverarbeitung. Nehmen Sie einen Anbieter mit unterzeichnetem AVV, Verarbeitung möglichst in der EU und ohne Training mit Ihren Daten. Bei Anbietern außerhalb der EU kommt die Frage der Drittlandübermittlung hinzu.
+- **Erst schwärzen.** Entfernen Sie Zugangsdaten, Kundendaten in Screenshots und unveröffentlichte Kundeninhalte, bevor etwas ein Modell erreicht.
+
+## Fragen, die Agenturinhaber stellen
+
+### Sind kleine Änderungen gratis in Ordnung?
+
+Ja, mit Absicht. Geben Sie jedem Kunden ein Kulanzkontingent, buchen Sie jede kleine Änderung mit Preis null und dem Vermerk „Kulanz“ und sagen Sie dem Kunden, was er bekommen hat. Gratisarbeit ist in Ordnung. Unsichtbare Arbeit nicht.
+
+### Kann KI entscheiden, ob etwas ein Mangel ist?
+
+Sie kann die Belege zusammentragen: die Stelle im Pflichtenheft, den abgenommenen Entwurf, das Abnahmedatum, frühere Tickets zur selben Seite. Die Entscheidung, gerade eine strittige, gehört einer Person, die dafür geradesteht.
+
+### Darf ich Kundentickets in ChatGPT kopieren?
+
+Nicht in einen privaten Account und nicht ungeschwärzt. Nutzen Sie eine API oder einen Business-Tarif mit unterzeichnetem AVV, entfernen Sie vorher Zugangsdaten und personenbezogene Daten und prüfen Sie, ob Ihre Kundenverträge den Unterauftragnehmer erlauben.
+
+### Wie bringe ich Kunden dazu, für kleine Änderungen zu zahlen?
+
+Zeigen Sie den Preis vor der Arbeit, nicht danach. Gestört hat meist die Überraschung, nicht der Preis. Ein vorausbezahltes Paket mit Änderungsstunden oder eine klare Preisliste macht aus „Können Sie eben noch ...“ eine Zahl statt eines unangenehmen Gesprächs.
+
+## Wo ich anfangen würde
+
+Nichts beginnt ohne Ticket. Kein Ticket ohne eine von vier Kategorien. Nichts aus der Kategorie Änderung beginnt, bevor der Kunde einen Preis gesehen hat. Schreiben Sie vor jeder KI einen Monat lang jede Anfrage mit, Gefallen eingeschlossen, mit echten Minuten. Wenn ein großer Teil davon unsichtbar war, ist diese Zahl Ihr Business Case. Dann lassen Sie ein Modell sortieren und entwerfen, und lassen Sie die Person, der die Kundenbeziehung gehört, auf dem Senden-Knopf.
+
+Wenn Sie wissen wollen, was Ihre kleinen Anfragen wirklich kosten, [schreiben Sie mir, welches Ticketsystem Sie nutzen und wie Ihre Wartungsverträge formuliert sind](/de/kontakt?intent=improve), und ich schlage Ihnen den kleinsten Aufbau vor, der einen Test wert ist. Agenturen mit laufenden Betreuungsverträgen haben ein verwandtes Problem im [monatlichen Kundenreporting](/de/posts/ki-agentur-reporting), wo die Stunden in die Erklärung von Zahlen fließen statt in Änderungen an Seiten.
