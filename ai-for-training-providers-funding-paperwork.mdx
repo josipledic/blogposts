@@ -1,0 +1,156 @@
+---
+id: "ai-for-training-providers-funding-paperwork"
+title: "Training Providers: Funded Course Paperwork Without the Backlog"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Education & community", "Training providers", "Funding paperwork", "AI for small business"]
+description: "Funded courses come with attendance lists, absence reports and funder deadlines. Where AI checks completeness and drafts summaries, and who still signs."
+excerpt: "Funded courses come with attendance lists, absence reports and funder deadlines. Where AI checks completeness and drafts summaries, and who still signs."
+---
+
+Picture a training provider with six funded courses running at once: 84 participants, almost all of them paying with someone else's money. It's the second Monday of the month. The administrator has a stack of sign-in sheets from last month, three sick notes in three different formats, one participant whose funding voucher doesn't match the course start date, and a funder report due on Friday.
+
+None of this is hard. All of it is exact. A missing signature or a wrong date rarely draws a complaint. It holds up a payment, and in the worst case the provider repays money it already spent on trainers and rent.
+
+That's the real shape of publicly funded training. The course is the product, but the paperwork is how you get paid for it. This post is about the second part: what a model can check or draft, and which decisions stay with a person.
+
+## Funded training runs on evidence
+
+I'll use Germany as the worked example, because its rulebook is public and detailed. Participants there often arrive with a Bildungsgutschein, a voucher from the employment agency that lets them pick an approved course, and the provider needs a quality approval (AZAV) for both itself and the course. The pattern is the same elsewhere, and I'll come back to England and the US below.
+
+<Stats title="The scale of funded training paperwork in Germany">
+  <Stat value="320,000" label="entries into publicly funded continuing vocational training in 2024, about 230,000 under unemployment insurance and 90,000 under basic income support" source="Federal Government answer, Bundestag Drucksache 21/2498" href="https://dserver.bundestag.de/btd/21/024/2102498.pdf" />
+  <Stat value="210,338" label="approved continuing-education measures and modules (section 81 SGB III) valid at the end of 2025; 65,779 of them were newly approved in 2025, and 5,630 providers hold an approval for this field" source="DAkkS data under section 181 (9) SGB III, May 2026" href="https://www.dakks.de/files/Dokumentensuche/Dateien/2026_Datenabfrage_181_Abs9_ERfassung_Auswertung.pdf" />
+  <Stat value="3 months" label="maximum validity of a Bildungsgutschein, the voucher a jobseeker takes to an approved provider" source="Federal Employment Agency, instructions on vocational training (valid from 1 January 2026)" href="https://www.arbeitsagentur.de/datei/dok_ba031590.pdf" />
+</Stats>
+
+Behind those numbers, every participant is a small file: a voucher, a start date, an attendance record, absences, an outcome. Multiply by a course list and you get the backlog. Weiterbildung Hamburg e.V., an association of training providers, wrote in July 2026 that [too many resources go into documentation and proof](https://www.weiterbildung-hamburg.net/2026/07/08/fuer-eine-zukunftsfaehige-azav-mehr-qualitaet-statt-buerokratie-strukturen-fuer-innovationen-schaffen/) rather than course quality. That's an association's position, not a neutral measurement, but anyone who has run a funded course will recognize it.
+
+## Tearing down one funded course
+
+Here is where one participant's paper trail runs today in a typical small provider, and where it breaks. The German details come from the Employment Agency's own instructions for this funding, in force since 1 January 2026.
+
+| Step | What happens today | Where it breaks |
+| --- | --- | --- |
+| Voucher arrives | The participant brings the voucher. The provider fills in its own copy, which has to be submitted before the course starts | The voucher has lapsed (three months at most) or names a different course goal. Nobody notices until week three |
+| Enrolment | Data is typed from the voucher, an ID and emails into one or two systems | Typos, a name spelled differently from the funder's record |
+| Daily attendance | Paper sign-in sheet or a learning platform log | Missing signatures, late arrivals not noted, a sheet that never made it back to the office |
+| Absence | Phone calls, messages and sick notes | Participants must tell both the provider and the funder, so the provider often learns half the story |
+| Exceptions | Non-start, unexcused absence, drop-out or a failed exam each need a separate report to the funder | The report is written weeks later, from memory |
+| Monthly close | Attendance totals, invoice, funder report | Totals disagree between sheets and invoice |
+| Renewal | Course approvals are limited in time: [three years as a rule, five at most](https://www.gesetze-im-internet.de/azav/__5.html) | Evidence gathered in a rush before the audit |
+
+Two details from that rulebook show why the exact day matters. If the provider is paid directly, a participant who joins a full month late reduces the payment by one monthly rate per full month of delay. After a drop-out, two further monthly amounts are paid, with the participant's last day of attendance as the reference date. Those are the dates that live on your sign-in sheets.
+
+The rules also say who decides what. The provider must report participants who don't start, stay away without excuse, leave early or fail the exam. The decision that a measure counts as aborted, and from which day, belongs to the funder's case worker. A provider reports facts. It doesn't rule on them.
+
+The sick-note rule has a trap in it too. Participants in statutory health insurance must tell both the provider and the agency about an illness right away, and since 2024 the agency retrieves the electronic certificate itself. Participants on basic income support, those with private insurance, and anyone submitting a child-sick note still send paper certificates to the agency or job centre. Which path applies depends on each participant's insurance and benefit status, and the office only finds out if somebody asks.
+
+## The same pattern in England and the US
+
+In England, providers on procured adult skills funding are [paid monthly in arrears using actual delivery from their ILR submissions](https://www.gov.uk/government/publications/post-16-revenue-funding-payments-and-allocations/payments-and-allocations-for-post-16-settings-for-academic-year-2026-to-2027), meaning the Individualised Learner Record. The Department for Education's [deadlines for 2026 to 2027](https://www.gov.uk/government/publications/advice-individualised-learner-record-ilr-returns/advice-individualised-learner-record-ilr-funding-returns-2026-to-2027) include in-year returns on 5 December 2026, 6 February 2027, 5 June 2027 and 12 September 2027, and a final return on 23 October 2027. A wrong start date in the ILR is the English version of a wrong date on a German sign-in sheet.
+
+In the US, states that run WIOA training programs keep a list of eligible training providers. When setting eligibility criteria, governors must take into account [whether providers timely and accurately submitted the information needed for performance reports](https://www.law.cornell.edu/cfr/text/20/680.460), among other factors. Different forms, same dependency: data quality becomes funding.
+
+## What a model can do with this
+
+A language model is good at three jobs in this process: reading messy documents, comparing them against a checklist, and drafting routine text. It's bad at being the record, and at judgment calls that the funder reserves for itself. I'd split the work like this.
+
+<Flow title="From a pile of documents to a signed monthly report" caption="The model reads, compares and drafts. The coordinator decides what gets reported, and the funder decides what counts as a drop-out.">
+<Step title="Documents arrive" who="Participants and office" time="all month">Voucher scans, sick-note emails, photographed sign-in sheets and messages land in one shared mailbox or folder.</Step>
+<Step title="Read and extract" who="AI" tone="ai" time="minutes">The assistant pulls names, dates and absence periods into a table and links each item to its source document.</Step>
+<Step title="Check against the rules" who="AI" tone="ai" time="minutes">It flags a voucher that expires before the start date, a name that differs between documents, a sick note with no matching sign-in gap, and sheets with missing signatures.</Step>
+<Step title="Review the flags" who="Course coordinator" tone="human" time="30 min">The coordinator decides which absences are excused, what needs a call to the participant, and which cases need a report to the funder.</Step>
+<Step title="Draft the messages" who="AI" tone="ai">Reminders to participants ('please also tell your case worker') and a draft of each exception report, with the facts and dates filled in.</Step>
+<Step title="Sign and submit" who="Coordinator" tone="human" time="monthly">The coordinator checks the draft against the sign-in sheets and submits it in the funder's own system. The assistant never submits anything.</Step>
+</Flow>
+
+The design choice that matters most is the last one. The assistant drafts and the coordinator files. When an auditor asks who confirmed that report, the answer is a named person who looked at the source documents.
+
+### Job one: a completeness check at enrolment
+
+This is the cheapest place to catch problems: the participant is still reachable and the course hasn't started. The checklist uses the German voucher as the example. Swap in your funder's items.
+
+<Checklist title="Before an enrolment is confirmed" items={[
+  "Voucher or funding letter received, and the name matches the ID and our records",
+  "Voucher still valid on the course start date (three months at most in Germany)",
+  "Course title and educational goal on the voucher match the course booked",
+  "Provider's copy of the voucher completed and submitted before the start",
+  "Start date, schedule and full-time or part-time status recorded",
+  "Participant knows whom to tell about illness, and that the funder must be told too",
+  "Data protection notice handed over, contact details checked",
+  "Special cases flagged: basic income support, private insurance, childcare, travel costs"
+]} />
+
+An accounting firm chasing clients for receipts has [exactly this shape of problem](/posts/ai-for-accounting-document-intake): required items, incoming documents, and a human who has to notice what's missing. The model does the noticing. The person does the chasing.
+
+### Job two: attendance and absence summaries
+
+Once a month, the model turns sign-in sheets, platform logs and absence notes into one table per course: days present, absences with their documented reason, and unexplained gaps. It doesn't decide whether an absence is excused. It lists what the documents say and what's missing.
+
+Keep the arithmetic out of the model. Monthly rates, late-entry reductions and drop-out payments are deterministic rules, and a spreadsheet or a few lines of ordinary code will calculate them the same way every time. Let the model read and flag. Let the formula count.
+
+### Job three: answering participants
+
+Participants ask the same questions every cohort. Who do I tell when I'm sick? Where do I hand in the travel cost form? A simple assistant that answers only from your own information sheet can take most of these. It must say when it doesn't know, and send anything about eligibility, money or a possible drop-out to a person. It never promises an outcome the funder controls.
+
+If you serve participants in the EU, tell them they're talking to an AI. [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has applied since 2 August 2026, and a chatbot has to make that clear unless it's obvious. If you also run language courses, [level placement](/posts/ai-for-language-schools-placement) is a separate place where a model can help before enrolment.
+
+## What it costs
+
+The numbers depend on how much admin you have and how clean your records are. Here's a starting calculation, with every figure an assumption.
+
+<Calc title="Napkin math: monthly admin time for six funded courses" caption="Assumptions, not measurements. Time your own month first. The saving depends on how many documents arrive as scans, emails and photos rather than structured data." rows={[
+  ["Participants across all courses", "84"],
+  ["Admin time per participant per month (attendance, absences, reports)", "× 45 min"],
+  ["Admin hours per month", "= 63 h"],
+  ["Share saved by checks and drafts (assumed)", "× 40%"],
+  ["Hours saved per month", "≈ 25 h"],
+  ["Loaded cost per admin hour", "× €35"],
+  ["Tooling and usage cost per month (assumed)", "− €150"]
+]} result={["Net saving per month", "≈ €730"]} />
+
+Setup is a few weeks of part-time work: writing your funder's rules down as checks, connecting the mailbox or folder, and running one course in parallel before anyone relies on it. The bigger gain is often not the hours. It's finding a lapsed voucher in week one instead of week three.
+
+## When AI is the wrong tool
+
+**You already own software that does this.** German providers can buy dedicated systems such as AZAV-Pilot, AZAVO, Matiamu or Kursdatis for participant administration and funder reports. In England, systems such as Aptem, Onefile and Tribal's MAYTAS handle learner records, and their vendors say their products include ILR validation and checks. Switch on what you pay for before adding anything new.
+
+**The sign-in sheet is the problem.** If attendance lives on paper that someone has to chase, a tablet or QR check-in at the door fixes more than any model reading photos of crumpled sheets.
+
+**You're tempted to score people.** A model that ranks participants by drop-out risk is a short step from one that influences who gets a place or who gets support. The AI Act lists systems that decide admission to vocational training or evaluate learning outcomes as high-risk in Annex III. The Digital Omnibus moved those obligations to 2 December 2027, [according to the sources I checked in September 2026](https://www.aiactblog.nl/en/posts/article-50-transparency-obligations-practical-2026), and dates like this keep moving. Summaries of documents are one thing. Scoring participants is another, and I'd leave it out.
+
+## Data protection
+
+Participant files hold more than names. They include employment status, benefit status and sick notes, and [data concerning health is a special category under Article 9 of the GDPR](https://gdpr-info.eu/art-9-gdpr/). In practice that means:
+
+- Don't paste sick notes or voucher scans into a consumer chatbot. Use a service you have a [processor agreement under Article 28](https://gdpr-info.eu/art-28-gdpr/) with, preferably with EU hosting and no training on your data.
+- In Germany, data you receive from the employment agency is social data. [Section 78 of Book X of the Social Code](https://www.gesetze-im-internet.de/sgb_10/__78.html) limits a recipient to the purpose it was transmitted for and requires the same confidentiality as the agency itself.
+- Ask your funder and your certification body how long you must keep which records. I wouldn't set a retention period from a blog post, and certainly not from a model's answer.
+- In the US, your state workforce board and funding contract set the rules for participant records. Ask before you upload anything.
+
+Finding the money in the first place is a [different problem from reporting on it](/posts/ai-for-nonprofits-grant-research).
+
+## Questions training providers ask
+
+### Can AI submit reports to the funder for me?
+
+I wouldn't let it. Funders expect a named person behind the report. Let the assistant draft and check, then have your coordinator verify it against the source documents and submit it.
+
+### Is an AI attendance summary accepted as proof?
+
+Treat it as a working document, not the record. The signed sheet or the system log is what counts. Before you replace any record your funder or certification body has asked for, ask them in writing.
+
+### Do I need to tell participants it's an AI?
+
+If you use a chatbot with participants in the EU, yes, unless it's obvious. The disclosure duty in Article 50 of the AI Act has applied since 2 August 2026. A sentence in the first message does the job.
+
+### Is it worth it for a provider with one or two courses?
+
+Usually not as a custom build. For a handful of participants, a good checklist, a shared inbox and a monthly reminder will do. The case gets stronger with several courses, several funders, or messy inputs.
+
+## Where I'd start
+
+Pick one course and one month. Write down the five mistakes that cost you most last year, turn them into checks, and run them over last month's documents. If the model finds problems your team had already found, you've learned something. If it finds ones you hadn't, you have your case. Either way, keep the rule: the model finds the gaps, a person makes the call, and a signed original stays the record.
+
+If your month-end looks like the one at the top, [tell me which funders you report to and where your participant records live today](/contact?intent=improve), and I'll suggest the smallest piece worth testing.

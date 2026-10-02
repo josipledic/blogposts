@@ -1,0 +1,161 @@
+---
+id: "ai-for-tutoring-centres-progress-reports"
+title: "Tutoring Progress Reports Parents Actually Read"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Education & community", "Tutoring centres", "Progress reports", "AI for small business"]
+description: "Tutors keep session notes, yet parents only hear 'she's doing fine'. How a tutoring centre can turn notes into monthly reports with AI, tutor in charge."
+excerpt: "Tutors keep session notes, yet parents only hear 'she's doing fine'. How a tutoring centre can turn notes into monthly reports with AI, tutor in charge."
+---
+
+Picture a tutoring centre with 60 pupils and six tutors. At 5:30 p.m. a mother arrives early to collect her daughter and asks the question every tutor knows is coming: "Is it helping?" The tutor, halfway through a handover, says, "She's getting there. Fractions are better." That is true. It is also all the parent will hear this month.
+
+The tutor's notes are better than that answer. Four sessions, a few lines each, in a notebook or a spreadsheet: the topic, how many questions she got right, what tripped her up. The information exists. It never reaches the parent in a usable form, so when the next payment is due she decides on the only evidence she has: the next school test and the invoice.
+
+That is a writing problem more than a teaching problem, and turning notes into clear sentences is something AI does well. I'd use it to draft one short report per pupil per month from the tutor's own notes, with the tutor deciding what gets said.
+
+## What parents are paying for, and how long they stay
+
+<Stats title="Private tutoring in numbers">
+  <Stat value="30%" label="of 11 to 16 year olds in state schools in England and Wales said they had ever had private tuition (2022 survey), joint highest since the series began in 2005" source="Sutton Trust, Tutoring: The new landscape" href="https://www.suttontrust.com/news-opinion/all-news-opinion/new-data-shows-large-inequalities-in-use-of-private-tutoring/" />
+  <Stat value="11%" label="had private tuition within the 2021/22 school year, which suggests that for many families tuition is a phase, not a habit" source="Sutton Trust, Tutoring: The new landscape" href="https://www.suttontrust.com/news-opinion/all-news-opinion/new-data-shows-large-inequalities-in-use-of-private-tutoring/" />
+  <Stat value="+5 months" label="of additional progress on average from one to one tuition, with small group tuition at about four months" source="Education Endowment Foundation, Teaching and Learning Toolkit" href="https://educationendowmentfoundation.org.uk/education-evidence/teaching-learning-toolkit/one-to-one-tuition" />
+</Stats>
+
+Tutoring is common and often short. A 2025 Sutton Trust poll puts the share who have received private tutoring at 45% in London and 27% in the rest of England, according to [its February 2026 release](https://www.suttontrust.com/news-opinion/all-news-opinion/disadvantaged-pupils-missing-out-on-the-benefits-of-private-tutoring/). Families start for a reason, such as a poor mock result, and many stop when it fades. Every month is a small renewal decision.
+
+The EEF's toolkit also finds that tuition works best when it is linked to what the pupil does in school and when progress is monitored. So the report is not decoration. It is the part of good tutoring that the parent can see.
+
+## Three reports nobody reads
+
+**The one-liner.** "Making good progress." Copied to thirty pupils. Parents learn to skim it, and then to skim everything the centre sends.
+
+**The term report.** Two a year, long, written from memory in the week before the holidays. What it describes has already changed.
+
+**The invoice.** Nothing else. The monthly bill is the only message, and a bill raises one question: is this still worth it?
+
+All three fail for the same reason. The writer is out of time, and the notes live somewhere other than the report.
+
+## What a useful monthly report holds
+
+Five parts, 120 to 180 words, readable on a phone in a minute:
+
+- **What we worked on.** The topic in the words the pupil's school uses, not tutor shorthand.
+- **One piece of evidence.** A number or a short example from the notes: "3 of 8 right on 3 September, 6 of 8 on 10 September." Evidence beats adjectives.
+- **What is still hard.** One or two things, said plainly.
+- **What happens next month.** So parents know the plan and can tell you when school has moved the goalposts, say a test date.
+- **One thing to do at home.** Small, specific, optional.
+
+What it leaves out matters as much: predicted marks, comparisons with other pupils, labels like "weak at maths", and anything about a child's health or behaviour that you wouldn't say to the parent's face.
+
+## From session notes to a monthly report
+
+One rule holds the pipeline together: the model writes only from what the tutor recorded.
+
+<Flow title="From a 30-second note to a report in the parent's inbox" caption="The tutor supplies the facts and signs off. The model does the writing in between. Anything worrying becomes a phone call, not a paragraph.">
+<Step title="Log a short note after each session" who="Tutor" tone="human" time="1 min">A few fields, not an essay: topic, questions right out of total, what tripped the pupil up, homework set.</Step>
+<Step title="Collect the month" who="Tutoring software" time="last working day">The month's notes per pupil, plus the goal agreed at enrolment, such as a test date or a target grade.</Step>
+<Step title="Draft the report" who="AI" tone="ai" time="seconds per pupil">Writes the five parts using only the notes. Where something is missing, it flags the gap for the tutor instead of filling it.</Step>
+<Step title="Read, correct, decide" who="Tutor" tone="human" time="5 min">Checks every number against the notes, deletes any claim they wouldn't say out loud, adds one personal line, and decides whether this pupil needs a call instead.</Step>
+<Step title="Send with one question" who="Centre" time="same day">A short message with the report, ending with a question the parent can answer in a line: "Is the test still on the 28th?"</Step>
+<Step title="Spot-check" who="Centre lead" tone="human" time="monthly">Read five reports against their notes. Count how often tutors had to correct the draft.</Step>
+</Flow>
+
+Here is what that looks like for a hypothetical pupil. These are the tutor's notes for September:
+
+> **Priya, Year 9 maths.** 3 Sep: adding fractions with different denominators, 3 of 8 right, skips finding the common denominator first. 10 Sep: same topic, 6 of 8, needed a hint on two. Likes the pizza picture. School test on 28 Sep. 17 Sep: percentages, 5 of 8, quick with 10% and 50%, stuck on 15%. Missed homework (football tournament). 24 Sep: percentages, 6 of 8. Started practice paper, stuck on word problems.
+
+And a draft the model might return:
+
+> **September: Priya, Year 9 maths.** We worked on adding fractions with different denominators, then on percentages. On 3 September Priya got 3 of 8 fraction questions right, mostly because she skipped finding a common denominator. A week later it was 6 of 8, with a hint needed on only two. In percentages she is quick with 10% and 50% and still stuck on 15%. Word problems in the practice paper are the hardest part right now. **Next month:** finish the practice paper under test conditions and build the 10% method into other percentages. **At home:** ask Priya to explain one fraction question to you, two minutes, no pressure. *[Tutor: add how the practice paper went, and whether to mention the missed homework.]*
+
+Look at what the draft did not do. It didn't call her "good at maths" or promise a pass. It used only numbers from the notes. And it left two things for the tutor, because the notes didn't say. That bracketed flag is the most important line in the output.
+
+## Where the line sits
+
+<Split title="Draft versus judgement" leftTitle="The model does" rightTitle="The model never does" left={[
+  "Turns the tutor's logged notes into five short parts in plain language",
+  "Pulls the numbers out of the notes and sets them side by side",
+  "Flags what is missing: no homework note, no result for the practice paper",
+  "Suggests a next-month focus for the tutor to accept or change"
+]} right={[
+  "Grades work or predicts school marks or exam results",
+  "Says anything about ability, diagnosis, motivation or behaviour",
+  "Compares one pupil with others",
+  "Invents progress, examples or quotes that the notes don't contain",
+  "Sends anything to a parent without a tutor's approval"
+]} caption="The tutor is the one who knows the pupil. The model only saves them typing." />
+
+The same pattern drives [parent updates in childcare](/posts/ai-for-childcare-parent-updates): facts captured during the day, a draft at the end, a person who reads it first.
+
+## Children's data: keep the prompt small
+
+These are records about minors, and some of what tutors know is sensitive. I'd settle a few rules before any note goes near a model. I'm not a lawyer, so use this as a checklist for the conversation with yours.
+
+**Know your lawful basis.** For a report to the parent who pays you, the contract usually carries the processing, so you don't need consent for that. Consent matters for extras: photos of a pupil's work, recordings, and tools the child uses directly.
+
+**Article 8 only bites when the child is the user.** If you offer an online service directly to a child, say a homework chatbot on your site, and rely on consent, [Article 8 of the GDPR](https://gdpr-info.eu/art-8-gdpr/) requires a parent's consent below age 16, and member states may lower that to 13. Germany [kept it at 16](https://www.proliance.ai/blog/dsgvo-und-kinder-fragen-und-antworten-zum-thema-datenschutz-minderjahrige), and the [UK sets 13](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/children-and-the-uk-gdpr/what-are-the-rules-about-an-iss-and-consent/). A report pipeline that only staff operate doesn't offer a service to children, but it still needs open information for parents and minimal data. In the US, COPPA covers online services directed at children under 13 and calls for [verifiable parental consent](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions).
+
+**Send less.** A first name or pupil code, not the surname, school or address. No diagnoses. A note saying a pupil has dyslexia, dyscalculia or ADHD can count as data concerning health, a special category under [Article 9](https://gdpr-info.eu/art-9-gdpr/), and it doesn't belong in a prompt without a clear basis.
+
+**Use a processor you have a contract with.** That means a data processing agreement, processing in the EU or UK or another valid transfer route, and a setting that keeps your data out of model training. A free consumer account has none of the three.
+
+**Mind the AI Act.** [Annex III](https://artificialintelligenceact.eu/annex/3/) lists AI systems "intended to be used to evaluate learning outcomes, including when those outcomes are used to steer the learning process" as high-risk. Drafting sentences from a tutor's own recorded observations is not obviously that. A tool that scores pupils' answers or sets their level is, which is one more reason to keep the assessment with the tutor. Dates are in flux, so here is the state as of September 2026: the Digital Omnibus moves the Annex III obligations from August 2026 to 2 December 2027, and the Council gave its final approval on 29 June 2026, according to [a Cloud Security Alliance summary](https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-omnibus-vii-deadline-delay-20260/).
+
+## When a public body pays, the report becomes evidence
+
+In Germany, families on certain means-tested benefits can get tutoring paid under the "Bildung und Teilhabe" package. [Section 28(5) of Social Code Book II](https://www.gesetze-im-internet.de/sgb_2/__28.html) covers "Lernförderung" that is suitable and additionally necessary to reach the essential learning goals, and says the pupil doesn't have to be at risk of repeating a year. The school confirms the need up front, and at renewal at least some job centres want more: one [application form](https://www.jobcenter-staedteregion-aachen.de/fileadmin/media/Bildung_und_Teilhabe/Antrag_Lernfoerderung_20200108.pdf) (the version online dates from 2020) asks for proof of regular attendance from the provider and a reason why the support hasn't yet closed the gap. Attendance is already in your records, and the reason can come straight from the session notes. If a school or funder pays for your sessions, ask what they need to see.
+
+## What it costs, and what it saves
+
+<Calc title="Napkin math: one month at a 60-pupil centre" caption="Assumptions, not measurements. Your tutors' real writing and logging times will move these numbers." rows={[
+  ["Pupils getting a monthly report", "60"],
+  ["Writing each report from memory today", "60 × 15 min = 15 h"],
+  ["Logging notes after sessions (8 per pupil, 1 min each)", "60 × 8 × 1 min = 8 h"],
+  ["Reviewing and editing each draft", "60 × 5 min = 5 h"],
+  ["Time with the new process", "8 h + 5 h = 13 h"]
+]} result={["Time saved per month", "≈ 2 h"]} />
+
+Two hours. I'd be wary of anyone who sells this as a big time saver. The gain is that all 60 families get a report with specifics every month, and none is written from memory. If tutors already log lessons for billing, the notes cost less and the saving grows.
+
+The model cost for 60 short reports should be small, I'd guess a few euros a month, but check your provider's price list. The real setup work is the note form and the instructions, then a few weeks of reading drafts against notes. At an assumed €120 per pupil per month, one family that stays a month longer pays for the model many times over. I haven't found a study showing that reports reduce cancellations, so measure it rather than assume it.
+
+Tutoring platforms such as [TutorCruncher](https://tutorcruncher.com/) and [Teachworks](https://www.teachworks.com/) already hold schedules, student records, lesson reports and invoices, and TutorCruncher advertises a newer product for automated parent reporting. That is a vendor claim worth testing before you build your own. Music teachers get a similar effect from [voice notes that become practice plans](/posts/ai-for-music-schools-administration).
+
+## When you don't need AI
+
+A centre with 15 pupils and three tutors doesn't need a model. A five-field template, filled in by the tutor in four minutes at month end, does the job.
+
+The same goes if writing isn't the problem. If parents don't open the reports, fix delivery: a three-line message with the details one tap away beats an attachment. And for a struggling pupil or an upset parent, no report replaces a phone call.
+
+<Checklist title="Before the first report goes out" items={[
+  "Tutors log a short, structured note after every session",
+  "The model sees a first name or pupil code, never surname, school or address",
+  "No diagnoses or health details in any prompt",
+  "A data processing agreement is in place, and the data stays out of model training",
+  "Parents are told in your enrolment terms and privacy notice that software helps draft reports",
+  "Every draft is read and approved by the tutor before sending",
+  "No grades, predictions, comparisons or ability labels in any report"
+]} />
+
+## What parents and centre owners ask
+
+### Can I put a pupil's name into a chatbot?
+
+Not into a free consumer account, and not with the surname, school or a diagnosis. Use a first name or pupil code in a business tool under a data processing agreement, and keep identifying details in your own system.
+
+### Do I need parents' consent to use AI for reports?
+
+Not automatically. The contract with the parent usually covers the reports themselves. But your privacy notice has to say who receives the data, and I'd tell parents plainly that tutors use software to draft reports and always review them.
+
+### Will parents mind that AI helped write it?
+
+What they mind is a report that is vague or wrong. If it is specific, accurate and from the tutor who knows their child, how the sentences were assembled matters much less. Be open about it.
+
+## Where I'd start
+
+Pick ten pupils for next month. Design the note form first: five fields, one minute. Have tutors fill it in for four weeks with no AI at all. If the notes are thin, no model will rescue the reports. Then draft ten reports, check each against the notes, and send only what a tutor has approved. After two months, ask parents "Was this report useful?" and compare renewals with the previous term.
+
+The notes are the product. The model just turns them into sentences.
+
+If you run a centre and want to try this, [tell me what your tutors write down today](/contact?intent=improve), and I'll suggest the smallest version worth testing.
