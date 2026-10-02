@@ -1,0 +1,140 @@
+---
+id: "ai-for-football-agencies-contract-deadlines"
+title: "Football Agents: Tracking Contracts, Clauses and FIFA Deadlines"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Professional services", "Football agencies", "Contract and deadline tracking", "AI for small business"]
+description: "Eighty players, a dozen leagues, five languages and FIFA deadlines. How a football agency can keep every contract date and clause in view, and where AI fits."
+excerpt: "Eighty players, a dozen leagues, five languages and FIFA deadlines. How a football agency can keep every contract date and clause in view, and where AI fits."
+---
+
+Picture a boutique football agency in the last week of August. Two partners, five staff, around 80 players and a handful of coaches spread over a dozen countries. The phones don't stop. A sporting director in Italy wants to know whether a winger's loan can be made permanent. A club in the Gulf is two weeks late with an instalment. A 19-year-old's representation agreement runs out in three weeks, and another agent has already called his father.
+
+None of this information is secret to the agency. It's all written down somewhere: in a PDF attached to an email from 2024, in a WhatsApp voice note in Croatian, in a spreadsheet one of the partners keeps on his laptop. The problem is that nobody can see all of it at once, at the moment it matters.
+
+This is a hypothetical agency, and I'm not an agent. But the problem it has is the same one I've written about for [insurance brokers and their renewals](/posts/ai-for-insurance-brokers-renewals): a business that lives on relationships, carrying hundreds of dates that each cost money when they slip. Here's how I'd approach it.
+
+## The money behind the paperwork
+
+<Stats title="Why the dates matter more every year">
+  <Stat value="USD 1.37bn" label="paid by clubs in service fees to club agents in international transfers, men's football, 1 January to 1 December 2025" source="FIFA, Football Agents Report 2025" href="https://inside.fifa.com/news/club-agent-service-fees-reach-new-heights-2025" />
+  <Stat value="+90%" label="increase on 2024, above the previous record of USD 889.4 million set in 2023" source="FIFA" href="https://inside.fifa.com/news/club-agent-service-fees-reach-new-heights-2025" />
+  <Stat value="2 years" label="maximum term of a representation agreement with a player or coach, with no automatic renewal allowed" source="FIFA Football Agent Regulations" href="https://digitalhub.fifa.com/m/1e7b741fa0fae779/original/FIFA-Football-Agent-Regulations.pdf" />
+</Stats>
+
+The fee totals tell you the stakes. The last number tells you the workload. Every player relationship now has a hard end date at most two years out, and it can only be extended with a new agreement. An agency with 80 players is renewing, on average, more than three representation agreements a month just to stand still.
+
+## What an agency actually has to keep track of
+
+When I list the dates and conditions an agency carries, it's longer than most people outside football expect. Here is my reading of the main ones, from public sources. An agent will know the details better than I do, and the rules differ by country.
+
+| What | Rule or typical source | What happens if it slips |
+| --- | --- | --- |
+| Representation agreement end | At most 2 years, no automatic renewal (FFAR) | The player is free to sign with someone else |
+| FIFA Agent Platform reporting | Agreements, changes, terminations and fees uploaded within 14 days | Breach of reporting duties, which can trigger a provisional licence suspension |
+| Annual FIFA licence fee | Due before 1 October each licence year | Same as above |
+| Player contract end and club options | Each player contract | A weaker negotiating position, or a free transfer nobody planned for |
+| Loan with option or obligation to buy | Loan agreement | The option lapses, or nobody prepares the next move |
+| Release clause | Mandatory in every Spanish contract | You don't know the number when a club calls |
+| Appearance, goal and team bonuses | Player contract | Bonuses go unclaimed or unchecked |
+| Fee instalments | Usually spread over the contract term | Cash flow gaps, late payments nobody chases |
+| Minors | 6-month approach rule, guardian's written consent, CPD course | Fines and suspension of up to two years |
+
+A few of these deserve a sentence each.
+
+**Reporting.** According to [FIFA's agent FAQ](https://inside.fifa.com/transfer-system/agents/faq-agents), an agent who doesn't meet the CPD requirements, pay the annual fee or meet the reporting obligations has their licence provisionally suspended automatically. The 14-day upload window for representation agreements and their changes is described in [Altenburger's summary of the regulations](https://www.altenburger.ch/blog/new-fifa-football-agent-regulations).
+
+**Instalments.** Agents acting for a player or a buying club are usually paid in instalments over the length of the contract, as [The Ball Business explains](https://theballbusiness.com/how-do-football-agents-get-paid-instalments-vs-lump-sum-payments/). Payment tracks the salary the player actually receives, and future instalments can fall away if the contract ends early. So every transfer creates a payment schedule that runs for years.
+
+**Release clauses.** In Spain, a buyout clause is part of every professional footballer's contract under Real Decreto 1006/1985, which [Confilegal notes](https://confilegal.com/20200120-la-clausula-de-rescision-por-voluntad-del-futbolista-en-espana-es-unica-en-inglaterra-alemania-o-francia-no-existe/) has no equivalent in England, Germany or France. For an agency with many Spanish clients, that's one more number per player that has to be at hand.
+
+**Minors.** Under the regulations, an agent may not approach a minor or the guardian earlier than six months before the minor can sign a first professional contract, needs the guardian's written consent first, and must complete the CPD course on minors, as [The Ball Business summarises Article 13](https://theballbusiness.com/representing-minors-as-a-fifa-football-agent-article-13-of-ffar-explained).
+
+**Windows.** And the calendar isn't one calendar. MLS, for example, ran its 2026 primary window from 26 January to 26 March and its secondary window from 13 July to 2 September, [according to the league](https://www.mlssoccer.com/news/mls-transfer-windows-key-dates-for-the-2026-season). Add Europe, Türkiye and the Gulf, and an agency with players in a dozen countries is working to several sets of deadlines at once.
+
+## Where the information lives today
+
+<Split title="The same contract, before and after" leftTitle="Where it lives today" rightTitle="Where it should live" left={[
+  "A PDF attached to an email from the club's lawyer",
+  "Bonus terms explained in a voice note in Spanish",
+  "The option deadline in one partner's head",
+  "Instalment dates in a spreadsheet on one laptop",
+  "Amendments signed later, filed somewhere else"
+]} right={[
+  "One record per player, linked to the signed documents",
+  "Each date and amount with the page it came from",
+  "A named person responsible for each deadline",
+  "Alerts before every date, not on it",
+  "A short weekly brief everyone in the agency reads"
+]} caption="Nothing on the left is wrong. It just doesn't scale past what two partners can remember." />
+
+This is where AI helps, and the job is narrower than people think. The negotiating, the relationships and the judgement stay with the agents. The job for software is reading the documents nobody has time to reread and turning them into a register that warns people early.
+
+## The setup I'd build
+
+<Flow title="From signed contract to a warning two months early" caption="The model reads and proposes. A person checks every extracted field once, then the register does the reminding.">
+<Step title="Contract arrives" who="Agency" time="day 0">A signed player contract, loan agreement, amendment or representation agreement is dropped into one folder or forwarded to one address.</Step>
+<Step title="Read and extract" who="AI" tone="ai" time="minutes">Dates, options, release clause, bonuses, fee instalments and parties are pulled out, each with the page and clause it came from. Spanish, Italian, German or Croatian, it doesn't matter.</Step>
+<Step title="Check once" who="Agent or assistant" tone="human" time="10 to 20 min">Someone who knows the deal confirms or corrects each field against the source. Unclear clauses are marked for the lawyer, not guessed.</Step>
+<Step title="Register updated" who="System">The player's record now shows every date, amount and condition, with links to the documents.</Step>
+<Step title="Early warnings" who="System" time="60, 30, 7 days">A WhatsApp or email alert goes to the responsible person before each deadline: representation renewal, option, window close, instalment due.</Step>
+<Step title="Monday brief" who="AI" tone="ai" time="weekly">A one-page summary: what expires in the next 90 days, which payments are late, which reports are due on the FIFA platform.</Step>
+</Flow>
+
+The check step is not optional. A model that misreads "1 July 2027" as "1 June 2027" in one contract out of 50 is still a very good reader and still a liability if nobody checks. Once a person has confirmed a field, it doesn't need to be read again until the next amendment.
+
+The "ask it" part is where it becomes pleasant to use. Once the register exists, a partner can send a voice message in the car: "Which loans have a purchase option expiring before the winter window?" and get a list back, with links to the clauses. That's a search over data a person has already checked, not the model's memory.
+
+## What it costs, and what it saves
+
+<Calc title="Napkin math for a mid-sized agency" caption="Assumptions, not measurements. Replace every line with your own numbers." rows={[
+  ["Documents in the back catalogue (contracts, loans, amendments, representation agreements)", "300"],
+  ["Extraction plus a 15 minute human check each", "× 15 min"],
+  ["One-time effort to build the register", "≈ 75 hours"],
+  ["New or changed documents per month afterwards", "≈ 15"],
+  ["Ongoing checking time per month", "≈ 4 hours"]
+]} result={["Time to catch one lapsed agreement or unclaimed instalment", "Usually the first season"]} />
+
+I'd expect setup to take a few weeks, most of it on the back catalogue and on agreeing what exactly to track. Running costs for the models are small at this volume, far below what one assistant costs. The comparison that matters isn't the software bill. It's the value of one representation agreement that lapses during a window, or one instalment that nobody chases for six months.
+
+## Where AI is the wrong tool
+
+**Negotiation and relationships.** Nobody hires an agency for its database. Software should free time for phone calls and dinners, not replace them.
+
+**Interpreting a disputed clause.** If the question is whether a bonus is owed under an ambiguous clause, that's a lawyer's question, and possibly one for FIFA's Football Tribunal. The register should flag the clause and stop.
+
+**Medical information.** Player contracts and correspondence can include health data. I'd keep medical reports out of the system entirely in the first version.
+
+**When a spreadsheet would do.** An agency with 15 players and one partner who reads every contract doesn't need any of this. A shared spreadsheet with dates and a calendar reminder covers most of it. AI earns its place when the volume, the languages and the number of people involved outgrow what anyone can keep in their head.
+
+Ready-made products exist too. Several vendors sell agency software with contract registers and alerts, including [agentDNA](https://www.agent-dna.com/), [ATHLIVO](https://athlivo.co/solutions/player-management) and [Score Technologies](https://scoretech.ai/), which says it uses AI to extract clauses and track conditional bonuses. Those are the vendors' own descriptions. If your team will happily work in a new system, try one. If everything really happens on WhatsApp and email, a thin layer on top of the tools you already use is often the better fit.
+
+## Data protection and the rules in flux
+
+Player contracts are personal data, and some of what surrounds them, like injuries and medical reports, counts as health data under [Article 9 GDPR](https://gdpr-info.eu/art-9-gdpr/). Any AI provider that processes the documents needs a data processing agreement under [Article 28](https://gdpr-info.eu/art-28-gdpr/). I'd host in the EU, make sure the provider doesn't train on the documents, and limit who can see which player.
+
+The regulations themselves are also moving. On 16 July 2026, the EU Court of Justice ruled on the FIFA agent regulations in case C-209/23, and left the Regional Court in Mainz to apply its guidance to several of the contested rules, [as Lagom Sports Compliance summarises](https://www.lagomsportscompliance.com/insights-events/cjeu-football-agent-regulations-case-c-209-23-eu-aml). The register should store which rule applies and when it was checked, so updating it is a matter of changing a field, not rebuilding the system. That's the state as I checked it in September 2026.
+
+## Questions agents ask
+
+### Can AI read football contracts reliably?
+
+It reads dates, amounts and parties from clean PDFs well, in most European languages, and it can point to the clause it took them from. It makes occasional mistakes, which is why every extracted field gets one human check before it's trusted.
+
+### Is it safe to upload player contracts to an AI tool?
+
+Not to a consumer chatbot. Use a business setup with a data processing agreement, EU hosting and no training on your data, and keep medical documents out.
+
+### What do FIFA's rules require agents to keep up with?
+
+Among other things: representation agreements of at most two years with no automatic renewal, uploads to the FIFA Agent Platform within 14 days of signing, changing or ending them, the annual licence fee, and the CPD requirements. Check the current regulations, because parts of them are still being litigated.
+
+### Do we have to change how the agency works?
+
+Ideally no. The point of building on top of email, a shared folder and WhatsApp is that agents keep working the way they do now. The only new habit is sending every signed document to one place.
+
+## My rule of thumb
+
+If a date can cost you a player or a payment, it shouldn't live only in someone's head or in a chat history. Put every signed document in one place, let software read it and remind you early, and keep a person checking the facts and making every call.
+
+If you run an agency and want to see what this looks like on a few sample contracts, [tell me how you track deadlines today](/contact?intent=improve), and I'll build a small demo on made-up data first. The same pattern shows up in [recruitment agencies](/posts/ai-for-recruitment-agencies-candidate-notes) and in [law firm intake](/posts/ai-for-law-firm-intake).

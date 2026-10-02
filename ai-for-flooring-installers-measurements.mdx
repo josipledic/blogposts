@@ -1,0 +1,144 @@
+---
+id: "ai-for-flooring-installers-measurements"
+title: "Flooring Quotes From Measurements: Where the Margin Leaks"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Trades & construction", "Flooring installers", "Measurements and quotes", "AI for small business"]
+description: "Area is the easy part of a flooring quote. Waste, subfloor prep, moisture tests and skirting are where margin disappears. A teardown, and what AI can check."
+excerpt: "Area is the easy part of a flooring quote. Waste, subfloor prep, moisture tests and skirting are where margin disappears. A teardown, and what AI can check."
+---
+
+A flooring quote is won or lost before anyone lays a board, and the margin is usually lost in the same place.
+
+Take a hypothetical job: a hallway and living room, 38 square metres, herringbone oak on a cement screed. The fitter measures with a laser, writes the area on the back of an envelope, multiplies by the price per square metre, and sends a one-page quote. It looks fine. The customer says yes.
+
+Then the job runs. The screed is not level in one corner and needs a levelling compound nobody priced. The herringbone eats far more material than the 5% allowed. Two door thresholds and the old skirting boards were never on the quote. The screed was poured recently, and nobody has said who tests the moisture or what happens if it fails the test. Each item is a small amount. Together they are the profit.
+
+None of this needs a clever tool. It needs a complete quote. The question is how to make sure every job gets one when the fitter writes it at 7 p.m. after a day on his knees.
+
+## The quote, line by line
+
+Here is the quote I would build for that job, with where each line typically leaks. Use it as a template, not as prices.
+
+| Quote line | How it leaks | How to catch it |
+| --- | --- | --- |
+| Area to be laid | Rooms measured to the finished wall, niches and bay windows forgotten, stairs or landings left out | Laser measure, room-by-room sketch, total reconciled against the floor plan |
+| Waste allowance | One flat percentage for every job, regardless of pattern or room shape | Allowance set by laying pattern, raised for awkward rooms |
+| Subfloor preparation | Levelling, grinding, priming, filling cracks treated as free | Flatness check at the visit, prep lines on the quote by area |
+| Moisture test | Nobody agrees who measures, who pays, or what happens on failure | Test, result and consequence written into the quote |
+| Underlay, adhesive, accessories | Wrong adhesive coverage or underlay for the covering, small items forgotten | Bill of materials tied to the covering manufacturer's installation guide |
+| Skirting and thresholds | Skirting length guessed, transitions between rooms missing | Count doors and openings, measure linear metres of skirting |
+| Old floor removal and disposal | Assumed to be a quick rip-up, then glue residue and a skip | Photo of the old floor, question about adhesive type, disposal line |
+| Moving furniture, access, parking | Nobody asks about the fourth floor or the stairs | Fixed questions at the site visit |
+| Time | Labour priced from area alone, ignoring pattern and cutting time | Labour per m2 by pattern, from your own past jobs |
+
+Every row is something a fitter knows. The problem is not knowledge, it is recall at the end of a long day. That is what a checklist is for, and it is where AI can be useful: a checklist that reads the fitter's notes.
+
+## Area is a formula
+
+The first thing I would say to anyone tempted to use AI here: do not use it to calculate the area. Length times width, added up across rooms, is arithmetic. A spreadsheet or a laser measure with its companion app does it without mistakes. A language model does it with a small chance of a mistake, and you will not know which quote has it.
+
+Measurement rules matter too. The German floor-covering standard ATV DIN 18365, part of the VOB/C, describes billing by the area actually laid, measured up to the limiting unplastered or unclad building components, with deductions for openings only as the standard allows ([overview of the measurement rules](https://www.bau-doch-selber.de/vob/din-18365.html)). Parquet work has its own standard, DIN 18356. Whatever your contract says, decide how you measure and say it on the quote: to the raw wall or the finished wall, niches in or out, doors and thresholds counted how.
+
+## Waste: the pattern sets the price
+
+This is where most of the quiet leaks happen. Cutting waste depends on the laying pattern and the room. The figures below are typical ranges from retailer and calculator guides, which differ by a few points between sources. One German calculator site lists straight laying at 6.5%, offset at 9%, diagonal at 12.5% and herringbone at 17.5% ([rechner-portal.de](https://rechner-portal.de/haushalt-wohnen/raeume-flaechen/bodenbelag-menge)). A US calculator site summarising hardwood guidance gives about 5% for straight laying and 15% to 20% for herringbone ([CraftedCalcs](https://craftedcalcs.com/guides/waste-factor-by-material/)). I could not check these against a single binding standard, so treat them as a range, and follow the installation guide of the product you are laying. Some herringbone products also need equal numbers of left and right-hand planks, which changes how you order.
+
+The cost of getting it wrong is easy to see.
+
+<Calc title="Napkin math: a flat 5% allowance on a herringbone job" caption="Assumptions, not measurements. Waste allowances vary by product, pattern and room, and material prices vary by supplier." rows={[
+  ["Measured area", "38 m2"],
+  ["Material ordered at a flat 5% allowance", "39.9 m2"],
+  ["Material needed at a 17% allowance", "44.5 m2"],
+  ["Shortfall", "≈ 4.6 m2"],
+  ["Material price, assumed", "× €85 per m2"]
+]} result={["Extra material bought late or absorbed", "≈ €390"]} />
+
+That is one job. There is a second cost that does not show in the calculation: a second order from a different batch can come in a different shade, and a fitter waiting for a delivery is a fitter not earning. AI does not cut the waste. What it does is ask, every time, "pattern: herringbone, allowance on this quote: 5%, is that right?"
+
+## Moisture: the test that protects you
+
+Screed moisture is the classic source of expensive damage and of arguments about who is responsible. In Germany, the readiness of a screed for covering (Belegreife) is commonly checked with a CM measurement. The [BG BAU](https://bauportal.bgbau.de/bauportal-42021/thema/hochbau/auf-dem-weg-zur-belegreife-bestimmung-der-restfeuchte-in-estrichen) gives the reference values for the carbide method as follows.
+
+| Screed | Reference value (CM-%) | Note |
+| --- | --- | --- |
+| Cement screed, unheated | up to 2.0 | |
+| Cement screed, heated | up to 1.8 | Heating protocol and pre-heating matter |
+| Calcium sulfate screed | up to 0.5 | For flooring trades, 0.3 is the decisive value according to BG BAU |
+
+Two warnings. These are reference values, and the correct limit depends on the covering, the screed type and the current technical sheets, including those of the [Bundesverband Parkett und Fußbodentechnik](https://bv-parkett.de/fileadmin/user_upload/download-intern/2023_intern/Hinweisblatt-2023-04-Belegreife.pdf). Screeds with accelerating additives are a separate topic. And outside Germany, other methods and limits apply, so take the method from the covering manufacturer's installation guide and your national standard.
+
+The business point is larger than the number. A flooring contractor is expected to check the substrate before laying, and to report concerns in writing if it is not suitable. If your quote says nothing about moisture, you have left the decision, and often the blame, open. A sentence on the quote does the job: "Floor covering is laid only on a substrate that passes the required moisture test. The test is carried out by X and charged at Y. If the test is not passed, laying is postponed and the customer is informed in writing."
+
+## The small lines: prep, thresholds, skirting
+
+Flatness deserves its own line. Levelling compound is a material, labour and drying-time cost, and it is nearly always forgotten until the straight edge shows a gap. The Bundesverband Parkett und Fußbodentechnik publishes a technical sheet on [flatness of substrates](https://bv-parkett.de/fileadmin/user_upload/download-oeffentlich/BVPF-Hinweisblatt-02_2016-EbenheitUntergruende.pdf). The test at the site visit takes two minutes with a straight edge. The quote line takes thirty seconds once you know the answer.
+
+Thresholds and skirting are the other quiet leak. A transition strip between two rooms costs little on its own, but twelve of them on a larger flat, plus 45 metres of skirting that turned out to be 62, is an afternoon.
+
+## Where the AI sits
+
+The fitter's inputs are a sketch, some photos, and voice notes from the site visit. The AI turns them into a first draft.
+
+<Flow title="From site visit to quote draft" caption="The fitter collects facts and decides prices. The assistant drafts and checks, and flags what is missing.">
+<Step title="Site visit" who="Fitter" tone="human" time="30 to 60 min">Laser measure, sketch, photos of screed, old floor, doors and thresholds. Voice notes on access, heating, cracks and moisture.</Step>
+<Step title="Transcribe and structure" who="AI" tone="ai" time="minutes">Room list with areas (from the fitter's own measurements), pattern, covering, subfloor notes, skirting and thresholds, access.</Step>
+<Step title="Check against the list" who="AI" tone="ai">Flags missing or contradictory items: pattern and allowance do not match, heated screed with no heating-protocol note, no moisture test line, no skirting length.</Step>
+<Step title="Draft the quote lines" who="AI" tone="ai">Line items in your own wording, quantities from your notes, prices left blank or filled from your price list, open questions listed.</Step>
+<Step title="Review and price" who="Fitter" tone="human" time="10 min">Answers the open questions, adjusts the allowance and prep lines, sets the price and the conditions.</Step>
+<Step title="Send" who="Office" tone="neutral">The quote goes out from your quoting software, with photos attached where they explain a line.</Step>
+</Flow>
+
+The check against the list is where I would put the most effort. A model is good at reading a messy note like "old building, third floor, screed looks old, small crack by the window, no heating, parquet, herringbone, door to kitchen" and saying: "Herringbone, allowance not set. Old screed, crack: priming and filling line? Moisture test not mentioned. Door thresholds: two?" It is not making decisions. It is the colleague who asks the obvious questions.
+
+<Split title="What stays with the fitter" leftTitle="The assistant does" rightTitle="The fitter decides" left={[
+  "Turns voice notes and photos into a structured site report",
+  "Lists forgotten items against your own quote checklist",
+  "Flags mismatches, such as pattern and waste allowance",
+  "Drafts line text and a short explanation for the customer",
+  "Keeps the open questions together until they are answered"
+]} right={[
+  "Measures the room, and owns the final area figures",
+  "Judges the substrate: flatness, cracks, moisture, suitability",
+  "Sets the waste allowance for this pattern and this room",
+  "Sets prices, and decides what is included or extra",
+  "Decides when to report concerns in writing or decline the job"
+]} caption="Areas come from your laser, prices from your price list, and moisture values from the measuring protocol. The assistant never invents any of them." />
+
+## What it costs and what to use
+
+Most of the tools already exist: a Bluetooth laser measure with its app, your craft software for quotes and price lists (in Germany, for example Plancraft, HERO or Craftboxx), and a phone that records voice notes. The AI step reads the notes and the photos and writes into a quote draft, either inside your software if it offers an interface or as a document you paste in.
+
+Setting up the checklist logic and the drafting prompts with your own quote template is a small project, a few days of work for someone like me, and then a few cents to a few euros per quote in running cost depending on how many photos it reads. These are rough estimates, not offers. The larger cost is the fitter's time in agreeing what goes on the checklist, and that is worth doing with or without AI.
+
+## When you don't need AI
+
+If you write ten quotes a month, a proper template does almost everything. Put the quote lines from the table above in your software as required fields, with the waste allowance tied to the pattern. Add a one-page site-visit sheet with the questions on it: access, heating, moisture, old floor, doors, skirting. A fitter who fills it in at the visit has already done the work of the assistant. AI helps when quote volume is high, when several people write quotes, or when the notes come as voice messages and photos that nobody has time to type up.
+
+## Data protection
+
+Site notes and photos show customers' homes and addresses. Keep them in your company system, use a provider with a data processing agreement if a cloud model reads them, and delete them according to your retention rules. Do not send names and phone numbers to a model that does not need them, since the assistant can work with a job number.
+
+## Questions flooring installers ask
+
+### Can an AI measure a room from photos?
+
+Phone scans and photo-based tools exist and they are useful for sketches. I would not order material from them without checking key dimensions with a laser. The area figure on your quote should come from a measurement you trust, and be calculated by a formula.
+
+### What waste percentage should I use?
+
+It depends on the product, the pattern and the room. Retailer and calculator guides give roughly 5% to 7% for straight laying, 10% to 15% for diagonal and 15% to 20% for herringbone, but the installation guide of the product you are laying decides. Put the allowance on the quote so the customer sees where the extra square metres come from.
+
+### Who is responsible if the screed is too wet?
+
+It depends on the contract and the facts, and I am not a lawyer. What I can say is that a contractor is expected to check the substrate and report concerns before laying. A quote that names the test, the person responsible and the consequence makes that discussion much easier, before the job and after.
+
+### Should the assistant talk to customers?
+
+For quotes, I would keep it internal. The customer hears from you, with a clear draft behind it. Customer-facing assistants make more sense for scheduling and basic questions.
+
+## My rule of thumb
+
+Let the laser and a formula handle the area, let the fitter judge the floor, and let the assistant ask, on every job, what the quote forgot. A checklist that never skips a line is worth more than a clever model.
+
+If your quotes are written late and leak in small places, [tell me how you prepare them today](/contact?intent=improve), and I will suggest the smallest version worth testing. Similar thinking applies to [landscaping estimates](/posts/ai-for-landscapers-estimates), where the site walk stays human, and to [photo documentation for painters](/posts/ai-for-painters-handover-documentation), where the evidence you need at handover starts on day one.

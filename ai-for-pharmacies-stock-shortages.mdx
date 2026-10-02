@@ -1,0 +1,166 @@
+---
+id: "ai-for-pharmacies-stock-shortages"
+title: "Drug Shortages at the Pharmacy: Answer 'Is It In Yet?' Faster"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Healthcare", "Pharmacies", "Drug shortages", "AI for small business"]
+description: "Shortages cost a pharmacy hours of calls, callbacks and 'is it in yet?' questions. Where AI can draft the messages and lists while the pharmacist decides."
+excerpt: "Shortages cost a pharmacy hours of calls, callbacks and 'is it in yet?' questions. Where AI can draft the messages and lists while the pharmacist decides."
+---
+
+A customer hands over a prescription for a blood pressure tablet she has taken for years. The pharmacy doesn't have it. The pharmacist checks two wholesalers: not available. She tells the customer to come back at four. At two, the customer phones to ask whether it's in. At three, her daughter phones with the same question. At half past three, the pharmacist calls the practice to ask whether the doctor would switch her to another medicine, and the receptionist says the doctor will call back tomorrow.
+
+One prescription. Four phone calls, a callback that hasn't happened yet, and a customer who will return tomorrow and ask again. Now multiply that by every shortage on the list this week.
+
+This is where I think AI can help a pharmacy, and it is a narrow, unglamorous job: keeping track of who is waiting for what, drafting the messages that go out, and answering the status question. It is not choosing the medicine. That stays with the pharmacist, every single time.
+
+## What shortages cost in hours
+
+<Stats title="The shortage workload, in numbers">
+  <Stat value="20 hours" label="per week spent on shortage handling by the average German pharmacy in the past year" source="ABDA, Zahlen, Daten, Fakten 2026" href="https://www.abda.de/aktuelles-und-presse/newsroom/detail/statistisches-jahrbuch-die-apotheke-zahlen-daten-fakten-2026-veroeffentlicht/" />
+  <Stat value="12 hours" label="per week on average across community pharmacies in 27 European countries, more than double five years ago" source="PGEU Medicines Shortages Report 2025" href="https://www.pgeu.eu/publications/pgeu-press-release-medicine-shortages-persist-across-europe-as-pharmacies-absorb-growing-pressure-new-pgeu-report-shows/" />
+  <Stat value="227" label="active drug shortages in the US in the second quarter of 2026, the third quarterly rise in a row, against a peak of 323 in early 2024" source="ASHP, via AJMC" href="https://www.ajmc.com/view/active-us-drug-shortages-rise-for-third-straight-quarter" />
+</Stats>
+
+The German figure comes with context. ABDA counted 1,514 shortage reports covering 1,041 products in 2025, and an earlier ABDA survey of pharmacy teams (Apothekenklima-Index 2024, run by IQVIA) put the weekly effort at 20 to 30 hours per team. According to ABDA's [fact sheet on shortages](https://www.abda.de/fileadmin/user_upload/assets/Faktenblaetter/Faktenblatt_Lieferengpaesse.pdf), about eight in ten teams count shortages among the biggest annoyances of their working day, and the main burdens are talking to patients, consulting prescribers and querying wholesalers.
+
+England tells the same story: in a 2025 survey by Community Pharmacy England, [reported by Pharmacy Business](https://www.pharmacy.biz/pharmacy-medicine-shortages-patient-risk-2025-survey/), one in four pharmacy teams spent more than two hours a day sourcing alternatives.
+
+Twenty hours is half a full-time job. Not all of it can be automated, and some of it shouldn't be. But a good part of it is bookkeeping and wording, and that part is worth a look.
+
+## Teardown: one unavailable prescription, step by step
+
+Before adding any tool, it helps to lay out what happens today. Here is the path of a single prescription item that can't be supplied from stock.
+
+**1. Check and query.** The item isn't on the shelf, so the team queries wholesalers. In Germany, the ALBVVG law (in force since 27 July 2023) ties the right to exchange an item to its non-availability: it counts as unavailable when two different availability queries to full-range wholesalers come back empty, as [Pharmazeutische Zeitung](https://www.pharmazeutische-zeitung.de/ab-morgen-mehr-freiheiten-fuer-apotheken-141410/) and [DeutschesApothekenPortal](https://www.deutschesapothekenportal.de/rezept-retax/apothekenfragen-archiv/vollstaendiger-beitrag/duerfen-wir-nach-albvvg-eine-andere-wirkstaerke-abgeben/) explain. Your software usually does the query in a few clicks. The cost is seconds per item, multiplied by dozens of items a day. The rules have been adjusted since 2023, so check the current framework agreement before you rely on any detail here.
+
+**2. Decide.** Under the German rules the pharmacist chooses between waiting for delivery, supplying an active-ingredient-identical product where the rules allow, deviating from pack size or strength within the prescribed total amount, or asking the prescriber. Where the rules allow an exchange, Germany also lets the pharmacy bill a 50 cent net surcharge, according to [Apotheke Adhoc](https://www.apotheke-adhoc.de/nachrichten/detail/politik/ab-august-50-cent-bei-nichtverfuegbarkeit/). This is clinical and legal judgement. It is the one step I would not touch.
+
+**3. Tell the customer.** This is the first place where time leaks. Someone tells the customer at the counter, or phones later, or sends a message. What gets said depends on who is on shift.
+
+**4. Ask the practice.** Fax, phone, or message to the prescriber's practice. The message has to name the patient, the item, what isn't available and what the pharmacist proposes. People write this from scratch every time, and incomplete requests mean another round.
+
+**5. Track.** Who is waiting? Who has been told? Which delivery is due when? Who asked the doctor and hasn't heard back? In many pharmacies this lives in a notebook, a whiteboard, or one person's head.
+
+**6. Answer "is it in yet?"** Customers phone, come back early or send messages. Each question interrupts whoever is at the counter.
+
+Steps 1 and 2 are software and judgement. Steps 3 to 6 are communication and tracking, and that is where the hours go.
+
+## What the workflow looks like with AI in the loop
+
+<Flow title="From 'not available' to a customer who already knows" caption="The assistant drafts, tracks and answers status questions. The pharmacist makes every decision about what the customer receives.">
+<Step title="Item can't be supplied" who="Pharmacy software" time="0 min">The shortage case is created with the prescription reference, the wholesaler responses and the expected delivery date, if there is one.</Step>
+<Step title="Pharmacist decides" who="Pharmacist" tone="human" time="1 to 3 min">Wait, exchange within the rules, or ask the prescriber. The decision is recorded in the case. The assistant never proposes a drug.</Step>
+<Step title="Drafts are prepared" who="AI" tone="ai" time="seconds">A status message for the customer with no medicine name in it, and, if needed, a query for the practice containing the pharmacist's chosen option.</Step>
+<Step title="Staff review and send" who="PTA or pharmacist" tone="human" time="1 min">A quick read, a fix if needed, and send. Nothing goes out unreviewed at first.</Step>
+<Step title="Daily open-case list" who="AI" tone="ai" time="every morning">Open cases sorted by urgency: delivery arrived, practice reply overdue, customer waiting more than two days, chronic medication at risk of running out.</Step>
+<Step title="Status questions" who="AI, then staff" tone="ai" time="instant">A customer asking 'is it in yet?' gets the status from the case data. Anything beyond status goes to a person.</Step>
+</Flow>
+
+The real gain isn't the drafting. It's the open-case list and the status answers. Drafting a message takes a pharmacist two minutes; chasing forty cases from memory takes an afternoon.
+
+### What the drafts look like
+
+Here is a customer message for a case where the pharmacist has decided to wait for delivery:
+
+> Hello Ms Keller, your order at Linden Pharmacy is on its way from our wholesaler and should arrive by Thursday noon. We will send you a message the moment it's here. If you have less than three days of your medicine left, please call us on 0123 456 789 and we will find a solution.
+
+Notice what isn't in it: the medicine's name, the diagnosis, or any suggestion to take something else. Text messages and email are not a private channel, so the wording stays neutral.
+
+And a query for the practice, where the pharmacist has decided that no supply of the prescribed active ingredient is in sight and a switch is needed:
+
+```text
+Patient: Keller, Anna, born 04.03.1958
+Prescription of 12.09.2026: item 1 (as prescribed)
+Not available at two wholesalers as of 15.09.2026, no delivery date.
+Pharmacist's proposal: [active ingredient and dose, chosen by
+the pharmacist]. Please confirm or issue a new prescription.
+Reply to: fax 0123 456 790 or pharmacy@linden-apotheke.example
+```
+
+The pharmacist writes the proposal in brackets; the assistant formats everything around it. The practice gets a complete request once instead of a vague one twice. If you work with specialist practices, [referral letters and faxes](/posts/ai-for-medical-practices-referrals) have the same problem from the other side.
+
+## The line I'd draw
+
+<Split title="Who does what in a shortage" leftTitle="The assistant does" rightTitle="The assistant never does" left={[
+  "Keeps the list of open cases and sorts it every morning",
+  "Drafts status messages and practice queries from the pharmacist's decision",
+  "Answers 'is it in yet?' from case data, in plain words",
+  "Flags customers on long-term medication who are close to running out",
+  "Reminds staff that a practice reply is overdue"
+]} right={[
+  "Suggests, compares or recommends an alternative drug or strength",
+  "Decides whether an exchange is permitted",
+  "Gives dosing, interaction or substitution advice to customers",
+  "Names the medicine in text messages or email",
+  "Contacts practices or customers without a person having reviewed the draft"
+]} />
+
+The first row on the right matters most. A model that talks fluently about medicines will sooner or later say something wrong, and with a pharmacy's name on it. Keep the assistant on logistics: what was ordered, what is known about delivery, what the pharmacist decided. If a customer asks anything clinical, the answer is "I'll pass you to the pharmacist".
+
+| Task | Who decides | What the assistant adds |
+| --- | --- | --- |
+| Is the item available? | Wholesaler data, your software | Nothing. Use your software's query |
+| Wait, exchange or ask the prescriber? | Pharmacist | Nothing |
+| Wording of the customer message | PTA or pharmacist | First draft, consistent tone |
+| Query to the practice | Pharmacist | Complete, formatted draft |
+| Who is still waiting? | Team | Sorted list, overdue flags |
+| 'Is it in yet?' | Team | Status from case data, handoff for anything else |
+
+## What it costs to set up and run
+
+I'd expect the work to fall into three parts: getting the open shortage cases out of your pharmacy software (an export, a report or an interface, depending on the product), a small assistant that drafts and tracks, and the review routine in your team. Pharmacy software in Germany comes from a handful of vendors, such as awinta, CGM LAUER, Pharmatechnik (IXOS) or CIDA, and in the UK from systems like Cegedim Pharmacy Manager or EMIS ProScript Connect. What your system can export varies, so the first conversation is always about that.
+
+As a rough planning range, and this is my assumption, not a quote: a one-off setup in the low thousands of euros if the data comes out as a file, more if an interface is needed, plus a monthly fee in the tens to low hundreds of euros for the assistant and messaging. If your current process already costs a person-half-day every week, that is easy to weigh.
+
+<Calc title="Napkin math: time freed per year" caption="Only the first row comes from a source (ABDA average). The rest are assumptions to replace with your own log of a typical week." rows={[
+  ["Hours per week on shortages (ABDA average, past year)", "20"],
+  ["Share that is routine messaging and list keeping", "× 30%"],
+  ["Share of that which drafting support can cut", "× 50%"],
+  ["Hours saved per week", "= 3"],
+  ["Weeks per year", "× 52"],
+  ["Staff cost per hour, loaded", "× €30"]
+]} result={["Staff time freed per year", "≈ €4,700"]} />
+
+That is time, not cash. Whether it becomes cash depends on what the team does with it, which for most pharmacies is more counselling and fewer overtime hours. If you track your own week for a fortnight, you will know whether 30 percent is too high or too low.
+
+## Data protection: this is health data and a professional secret
+
+In Germany, pharmacists are professional secret holders under [section 203 of the Criminal Code (StGB)](https://www.gesetze-im-internet.de/stgb/__203.html). Passing customer information to an outside provider is allowed only under conditions, including obligating that provider to secrecy, and a processing agreement under the GDPR (AVV) does not replace that. On top of it, data about prescribed medicines is health data under Article 9 of the GDPR. In practice, that means an EU-hosted provider, a processing agreement, a written secrecy obligation, no training on your data and only the fields the task needs. Ask your data protection officer before you start, and keep diagnoses and medicine names out of the assistant's inputs wherever the task allows it.
+
+In the US, a pharmacy is a HIPAA covered entity, so the vendor needs a business associate agreement before it touches patient information. In all cases, a chatbot that talks to customers has to say it is an AI. In the EU, the transparency duty in [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has applied since 2 August 2026, according to the European Commission.
+
+## When you don't need AI
+
+Some of this is solved by simpler means.
+
+- **A shared list.** If you have fewer than ten open cases a week, a spreadsheet with a column for "customer told", "practice asked" and "delivery due" does the tracking for free.
+- **Templates.** A fixed text for "delivery expected on X" in your software's messaging module covers most customer notices without any model.
+- **The wholesaler's own tools.** Many wholesalers and pharmacy systems show delivery dates and back-order status already. Use them before building anything.
+- **A conversation at the counter.** For long-term customers, telling them early, in person, that their medicine is hard to get is often worth more than any message.
+
+AI earns its place when volume rises beyond what a notebook holds, and when the wording and follow-up are inconsistent across shifts.
+
+## Questions pharmacists ask
+
+### Can an AI assistant suggest which alternative medicine to give?
+
+It shouldn't, and I wouldn't build it that way. Choosing an exchange is a professional decision with legal rules attached, and a wrong suggestion is a patient safety problem. The assistant can format the pharmacist's decision into a message. It should not make the decision.
+
+### Can I use a general chatbot like ChatGPT for the customer messages?
+
+Not with patient data pasted in. A consumer chat tool is rarely covered by a processing agreement or a secrecy obligation. A drafting task that uses no names and no medicine names, such as a generic template, is different. For anything with real cases, use an EU-hosted provider with the contracts above.
+
+### How do I tell customers a medicine is unavailable without causing worry?
+
+Lead with what you are doing and when they will hear from you: "We've ordered it, expected Thursday, we'll message you." Offer a phone number for anyone close to running out. Keep the medicine name out of written messages and let the conversation about alternatives happen with the pharmacist.
+
+### Will this still matter once shortages ease?
+
+Shortage counts move up and down, as the US figures above show, but the pattern of open cases, waiting customers and practice queries is permanent. The tooling is useful at 20 shortages or at 200, just less urgent.
+
+## My rule of thumb
+
+Let the assistant keep the list and write the first draft. Let the pharmacist decide everything that touches a medicine, and read every message before it goes out until you trust it. If the assistant ever says something about a drug, turn it off and tighten the rules.
+
+If you run a pharmacy and want to see which part of the shortage workload is worth automating, [tell me how you track open cases today](/contact?intent=improve), and I'll suggest the smallest version worth testing. Related reading: [checking prescriptions before a claim bounces at medical supply stores](/posts/ai-for-medical-supply-stores-prescriptions), and [reorder reminders at opticians](/posts/ai-for-opticians-contact-lens-reorders), where the challenge is customers who quietly buy elsewhere.

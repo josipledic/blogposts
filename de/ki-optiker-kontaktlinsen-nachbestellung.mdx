@@ -1,0 +1,138 @@
+---
+id: "ki-optiker-kontaktlinsen-nachbestellung"
+translationOf: "ai-for-opticians-contact-lens-reorders"
+title: "Augenoptiker: Kontaktlinsen-Nachbestellung und Recall, die ankommen"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Gesundheit", "Augenoptiker", "Nachbestellung und Recall", "KI für kleine Unternehmen"]
+description: "Fast jede zweite Kontaktlinse wird online gekauft. Wie Augenoptiker Nachbestell- und Recall-Nachrichten auf den Tag legen, an dem der Vorrat endet."
+excerpt: "Fast jede zweite Kontaktlinse wird online gekauft. Wie Augenoptiker Nachbestell- und Recall-Nachrichten auf den Tag legen, an dem der Vorrat endet."
+---
+
+Fast die Hälfte aller Kontaktlinsen in Deutschland wird inzwischen online gekauft. Das meldet der Zentralverband der Augenoptiker und Optometristen (ZVA) in seinem aktuellen Branchenbericht, und es ist der höchste Online-Anteil aller Produktbereiche der Augenoptik. In den USA liegt der Wert laut einer Umfrage des Vision Council bei 37 Prozent. Brillen werden dagegen noch überwiegend im Geschäft gekauft.
+
+Ich kann nicht belegen, wie viele dieser Kunden ein unabhängiges Geschäft wegen eines Fehlers verlassen haben. Ich vermute aber, dass viele wegen etwas gegangen sind, das nicht passiert ist. Niemand hat ihnen geschrieben, als der Vorrat zur Neige ging. Die erste Erinnerung kam von einem Online-Shop mit Bestellknopf.
+
+Das lässt sich ändern, und es beginnt mit einem Datum, das Ihre Software längst kennt.
+
+## Die Zahlen hinter dem Problem
+
+<Stats title="Kontaktlinsen und der inhabergeführte Augenoptiker">
+  <Stat value="10.700" label="augenoptische Betriebe in Deutschland 2025, die zehn größten Unternehmen vereinen 55 % des Branchenumsatzes" source="ZVA-Branchenbericht 2025/2026" href="https://www.zva.de/news/zva-branchenbericht-2025-2/" />
+  <Stat value="rund 50 %" label="Online-Anteil am Kontaktlinsenumsatz in Deutschland, der höchste aller augenoptischen Produktbereiche" source="ZVA-Branchenbericht 2025/2026" href="https://www.zva.de/news/zva-branchenbericht-2025-2/" />
+  <Stat value="über 7 Mrd. €" label="Umsatz der deutschen Augenoptik 2025, ein Plus von 0,6 %, also unter der Inflationsrate" source="ZVA-Branchenbericht 2025/2026, via Presseportal" href="https://www.presseportal.de/pm/51178/6265544" />
+</Stats>
+
+Der ZVA nennt außerdem die schwierige Nachfolgeplanung in inhabergeführten Betrieben als anhaltendes Problem. Ein Markt, der nur stagniert, macht die Kunden, die Sie schon haben, wichtiger als die, die Sie gewinnen wollen. Ein Kontaktlinsenträger ist der wiederkehrendste Kunde, den ein Augenoptiker hat: Die Linsen gehen an einem vorhersehbaren Tag zur Neige, mehrmals im Jahr.
+
+## Warum der Nachbestellzeitpunkt entscheidet
+
+Wer sechs Packungen Monatslinsen kauft, hat an der Kasse gesagt, wann er keine mehr hat: sechs Monate nach dem Kaufdatum. Wer Tageslinsen im 90er-Pack nimmt, kommt etwa 90 Tage aus. Das Datum ist Arithmetik, keine Prognose.
+
+In vielen Betrieben passiert mit diesem Datum nichts. Der Kunde denkt selbst daran, oder ein Online-Shop erinnert ihn, oder er trägt das letzte Paar zu lange und kommt mit gereizten Augen zur Kontrolle. Das Geschäft bekommt den Umsatz nur, wenn der Kunde zuerst an es denkt.
+
+Die nützliche Frage lautet also: Wer schreibt dem Kunden drei Wochen, bevor das letzte Paar eingesetzt wird, mit einem Link, der das Nachbestellen einfacher macht als der Weg woandershin?
+
+## Ein Nachbestellzyklus, der dem Vorrat folgt
+
+<Timeline title="Ein Linsenträger, ein Vorrat von sechs Monatspackungen">
+<Phase when="Tag 0, an der Kasse" title="Vorrat erfassen">Marke, Packungszahl, Tragezyklus. Das System errechnet das Ende des Vorrats und einen Kontrolltermin.</Phase>
+<Phase when="Etwa 3 Wochen vor Vorratsende" title="Erste Erinnerung">Eine kurze, persönliche Nachricht mit der Linse, die der Kunde wirklich trägt, und einem Link zur Nachbestellung mit einem Tipp.</Phase>
+<Phase when="Etwa 10 Tage vorher" title="Zweiter Hinweis, nur bei Bedarf">Geht nur an Kunden, die noch nicht nachbestellt haben. Anderer Wortlaut, derselbe Link.</Phase>
+<Phase when="Tag des Vorratsendes" title="Ein Mensch ruft die Stillen an">Das Team entscheidet, wen es anruft: langjährige Träger und alle, deren Kontrolle überfällig ist.</Phase>
+<Phase when="Monat 10 bis 11" title="Recall zur Kontrolle">Einladung zur Nachkontrolle oder Augenprüfung, nach dem Intervall, das Ihr Betrieb festlegt.</Phase>
+<Phase when="60 Tage nach dem Abbruch" title="Eine letzte persönliche Nachricht">Eine einzige, freundliche Nachricht. Dann Schluss. Niemand will die fünfte E-Mail.</Phase>
+</Timeline>
+
+Die Form des Zyklus zählt mehr als die Software. Eine Erinnerung, die am Tag eintrifft, an dem das letzte Paar eingesetzt wird, wirkt wie Drängeln. Eine, die drei Wochen vorher kommt, wirkt wie Service.
+
+## Was das in Euro bedeutet
+
+Die Zahlen unterscheiden sich von Betrieb zu Betrieb erheblich. Hier die Rechnung mit Platzhaltern, die Sie durch Ihre ersetzen können.
+
+<Calc title="Überschlag: Was stilles Abwandern einen Betrieb kostet" caption="Annahmen, keine Messwerte. Ersetzen Sie jede Zahl durch Ihre. Der Jahresumsatz pro Träger kombiniert Linsen und Pflegemittel, Nachkontrolle und eine Brille alle drei Jahre." rows={[
+  ["Aktive Linsenträger in der Kartei", "200"],
+  ["Anteil, der pro Jahr abwandert (zum Online-Shop oder aufhört)", "× 15 %"],
+  ["Verlorene Träger pro Jahr", "= 30"],
+  ["Jahresumsatz pro Träger (Linsen 350 €, Nachkontrolle 45 €, Brille 140 €)", "× 535 €"],
+  ["Umsatz, der jedes Jahr verloren geht", "≈ 16.000 €"],
+  ["Anteil, der durch gut getimte Erinnerungen zurückkommt", "× 30 %"]
+]} result={["Umsatz, der pro Jahr bleibt", "≈ 4.800 €"]} />
+
+Das ist überschaubar, summiert sich aber über Jahre, weil jeder zurückgewonnene Träger bleibt. Wie sich das aufschaukelt, zeigt die nächste Grafik.
+
+<Bars title="Von 100 Linsenträgern: Wie viele kaufen nach 3 Jahren noch bei Ihnen" unit=" von 100" max={100} caption="Annahmen: eine gleichbleibende jährliche Abwanderung von 25 %, 15 % oder 10 %. Der 10-%-Fall entspricht ungefähr der Ausgangslage von 15 %, wenn 30 % der Abgewanderten zurückkommen. Die echten Quoten stehen in Ihrer eigenen Kartei." data={[
+  { label: "25 % Abwanderung pro Jahr, kein Kontakt", value: 42, display: "42 von 100" },
+  { label: "15 % Abwanderung pro Jahr, heute", value: 61, display: "61 von 100", highlight: true },
+  { label: "10 % Abwanderung pro Jahr, gut getimte Erinnerungen", value: 73, display: "73 von 100" }
+]} />
+
+Zwölf Kunden mehr von hundert nach drei Jahren, das ist der eigentliche Gewinn. Es ist auch eine Zahl, die ich lieber in Ihrem Betrieb messen als versprechen würde.
+
+## Wo KI ins Spiel kommt und wo nicht
+
+Der Zeitplan und die Liste brauchen kein Modell. Ihre Branchensoftware oder eine Tabelle kann „Kunden, deren Linsen in 21 Tagen zur Neige gehen“ ausgeben. Viele Systeme können an dieser Stelle auch eine Nachricht aus einer Vorlage versenden. Wenn Ihres das kann, fangen Sie damit an und hören Sie hier auf zu lesen.
+
+| Situation | Einfache geplante Erinnerung | KI-Entwurf |
+| --- | --- | --- |
+| Gleiche Linse, gleicher Kunde, Zyklus von 6 Monaten | Genügt. Eine Vorlage mit Name und Linse | Nicht nötig |
+| Kunde, der zweimal die Marke gewechselt und eine Kontrolle ausgelassen hat | Ein Standardtext verfehlt den Punkt | Nennt, was der Kunde jetzt trägt, und dass die Kontrolle überfällig ist |
+| Kunde, der antwortet „Kann ich auf Tageslinsen wechseln?“ | Landet im Postfach | Entwirft eine Antwort und gibt sie an eine Optometristin weiter |
+| Vierzig Antworten pro Woche in verschiedenen Worten | Das Team liest und tippt jede einzeln | Sortiert Antworten in Nachbestellung, Frage, Beschwerde |
+| Nachricht in der Sprache des Kunden | Eigene Vorlagen pro Sprache | Formuliert auf Deutsch, Englisch oder Türkisch aus einem Datensatz |
+
+KI hat ihren Platz also in der Mitte der Tabelle: Wortlaut persönlich machen, Antworten lesen und Sonderfälle an einen Menschen geben. Sie wählt keine Linsen, beurteilt keine Augengesundheit und ändert keinen Tragezyklus.
+
+So könnte ein Entwurf aussehen, gebaut aus dem Datensatz (Marke, letzte Bestellung, letzte Kontrolle) und vom Team gelesen, bevor er rausgeht:
+
+> Hallo Frau Yilmaz, Ihre Acuvue-Oasys-Linsen reichen voraussichtlich bis zum 14. Soll ich eine neue Packung für Sie zurücklegen? Antworten Sie mit JA oder tippen Sie auf diesen Link, dann liegt sie bis Freitag im Geschäft bereit. Ihre letzte Kontrolle war im März 2025, da wäre jetzt auch ein guter Zeitpunkt für einen Termin. Herzliche Grüße, Jonas von Neumann Optik
+
+Die Entscheidung des Teams ist klein, aber real. Es prüft, ob die hinterlegte Linse noch die angepasste ist, ob die Anpassung für eine Nachbestellung noch gilt und ob der Kunde ein Problem gemeldet hat. Erwähnt eine Antwort Schmerzen, Rötung, plötzlich verschwommenes Sehen oder Lichtempfindlichkeit, bricht der Assistent ab, sagt dem Kunden, er solle sich noch am selben Tag an den Betrieb oder den augenärztlichen Notdienst wenden, und alarmiert die Optometristin. Diese Regel ist nicht verhandelbar.
+
+### Die Nachbestellung mit einem Tipp
+
+Der Link braucht keinen Webshop. Ein vorausgefülltes Formular oder eine Antwortadresse, die eine Aufgabe anlegt, reicht: Der Kunde bestätigt Linse und Abholung oder Versand, das Team gleicht es mit dem Datensatz ab. Wer schon einen Webshop hat, kann dorthin verlinken. In beiden Fällen sollte der Kunde einen Klick vom Ziel entfernt sein, denn das ist er beim Online-Anbieter auch.
+
+## Regeln, die bestimmen, wann Sie nachbestellen dürfen
+
+Kontaktlinsen sind ein reguliertes Produkt, die Erinnerung muss also zu den Regeln Ihres Marktes passen.
+
+In den USA setzt die [Contact Lens Rule](https://www.ftc.gov/business-guidance/resources/contact-lens-rule-guide-prescribers-sellers) der Handelsbehörde FTC ein Mindestverfallsdatum von einem Jahr für Verschreibungen fest, mit Ausnahmen aus Gründen der Augengesundheit. Sie gibt Verschreibern außerdem acht Geschäftsstunden, um auf eine Bestätigungsanfrage eines Verkäufers zu antworten. Antworten Sie nicht rechtzeitig, gilt die Verschreibung als bestätigt, und der Online-Händler darf liefern. In den USA verliert Schweigen also nicht nur eine Erinnerung, es lässt einen Mitbewerber die Bestellung ausführen.
+
+Im Vereinigten Königreich empfiehlt der NHS, [die Augen alle zwei Jahre testen zu lassen](https://www.nhs.uk/nhs-services/opticians/visiting-an-optician/), häufiger, wenn der Optometrist dazu rät. Das College of Optometrists [weist darauf hin](https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/the-routine-eye-examination/frequency-of-eye-examinations), dass Kontaktlinsenträger häufiger Nachkontrollen brauchen können, der NHS einen Sehtest aber nicht öfter zahlt, nur weil jemand Linsen trägt. Das Nachkontrollintervall bestimmt die fachliche Empfehlung, nicht der Marketingkalender.
+
+In Deutschland legt die Optometristin oder der Augenoptikermeister Ihres Betriebs die Intervalle für die Nachkontrolle fest. Eine Zahl nenne ich hier bewusst nicht.
+
+## Datenschutz und Erlaubnis
+
+Sehwerte, Augenerkrankungen und Linsenhistorie sind im praktischen Sinn Gesundheitsdaten, und in der EU fallen sie unter Art. 9 DSGVO. Halten Sie den Assistenten beim Nötigsten: Name, Kontaktkanal, Linsenmarke und Daten, keine Diagnosen. Nehmen Sie einen Anbieter mit Hosting in der EU und schließen Sie einen Auftragsverarbeitungsvertrag (AVV) ab. Sagen Sie Ihren Kunden, wie ihre Daten verwendet werden.
+
+Erinnerungen berühren auch das Werberecht. [§ 7 UWG](https://www.gesetze-im-internet.de/uwg_2004/__7.html) erlaubt E-Mail-Werbung an Bestandskunden für ähnliche Produkte nur, wenn Sie die Adresse im Zusammenhang mit dem Verkauf erhalten haben, der Kunde nicht widersprochen hat und bei der Erhebung sowie in jeder Nachricht auf sein Widerspruchsrecht hingewiesen wurde. Eine Erinnerung, die sich nur um die Kontrolle dreht, ist eine Servicenachricht. Sobald ein Nachbestellangebot darin steht, behandeln Sie sie als Werbung. Im Zweifel holen Sie die Einwilligung an der Kasse ein, wo das leicht geht. SMS und Anrufe haben eigene Regeln. Schreibt ein Kunde direkt mit einem Assistenten, verlangt die Transparenzpflicht nach [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act), dass sich der Assistent als KI zu erkennen gibt.
+
+## Was die Einrichtung kostet
+
+Ich rechne für eine erste Version mit drei Dingen: ein sauberer Export der Kunden mit letztem Linsenkauf, Tragezyklus und Kontrolltermin, ein Nachrichtenassistent, der formuliert und Antworten sortiert, und eine kurze Prüfroutine. Als Planungsspanne, und das ist eine Annahme und kein Angebot: eine einmalige Einrichtung im niedrigen vierstelligen Eurobereich, wenn die Daten als Datei herauskommen, und eine monatliche Gebühr im zweistelligen Bereich für den Assistenten plus Nachrichtenkosten. Eine einfache geplante Erinnerung in Ihrer eigenen Software kostet nichts extra. Prüfen Sie das zuerst.
+
+## Fragen, die Augenoptiker stellen
+
+### Woher weiß ich, wann die Linsen eines Kunden zur Neige gehen?
+
+Aus dem Kaufdatensatz. Packungszahl mal Tragedauer ergibt das Vorratsende, wenn die Linsen wie angepasst getragen werden. Das Datum ist eine Schätzung, keine Tatsache: Wer Linsen nur zwei Tage pro Woche trägt, kommt viel länger aus. Deshalb sollte die erste Nachricht fragen und nichts unterstellen.
+
+### Nerven Erinnerungen die Kunden?
+
+Manche ja, deshalb holen Sie die Einwilligung ein, bleiben bei zwei Nachrichten pro Zyklus und hören nach einem Abbruch auf. Die meisten Kunden sagen, sie hätten es vergessen. Eine Erinnerung mit Ein-Tipp-Link ist Komfort.
+
+### Kann der Assistent Fragen der Kunden zu ihren Augen beantworten?
+
+Nein, außer praktischen Fragen wie Öffnungszeiten, welche Linse hinterlegt ist oder wann eine Packung bereitliegt. Alles zu Tragekomfort, Sehen oder Augengesundheit geht an eine Optometristin. Das sagt der Assistent dem Kunden und alarmiert den Betrieb.
+
+### Ist ein Online-Shop nicht ohnehin billiger?
+
+Oft ja. Nicht jeder Kunde ist über den Preis zu gewinnen. Sie können das Nachbestellen genauso einfach machen, es mit einer Nachkontrolle verbinden, die ein Online-Shop nicht bieten kann, und die Kunden halten, denen das wichtig ist. Viele kaufen trotzdem online, und das ist in Ordnung.
+
+## Meine Faustregel
+
+Beginnen Sie mit der einfachsten Erinnerung, die Ihre Software versenden kann, drei Wochen vor Vorratsende und mit einem Tipp zur Nachbestellung. Setzen Sie KI nur dort ein, wo eine Vorlage nicht reicht: Wortlaut, der zum Kunden passt, Antworten sortieren und alles Klinische an einen Menschen geben. Messen Sie die Abwanderung vorher und nachher.
+
+Wenn Sie einen inhabergeführten Betrieb führen und sehen möchten, was Ihre Kundendaten hergeben, [schreiben Sie mir, welche Software Sie nutzen und wie Sie Linsenkunden heute betreuen](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Test wert ist. Dieselbe datumsgesteuerte Idee funktioniert bei [Wartungsverträgen im SHK-Betrieb](/de/posts/ki-shk-wartungsvertraege). Die Hörakustik hat ein verwandtes Problem bei der [Anpassdokumentation](/de/posts/ki-hoerakustiker-anpassung-dokumentation), und wenn Sie Gestelle und Zubehör online verkaufen, lohnen sich [Produktbeschreibungen](/de/posts/ki-produktbeschreibungen-fachhandel).

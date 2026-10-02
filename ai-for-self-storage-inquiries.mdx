@@ -1,0 +1,162 @@
+---
+id: "ai-for-self-storage-inquiries"
+title: "Self-Storage: Answer “What Size Do I Need?” at 11pm"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Property", "Self-storage", "Unit size inquiries", "AI for small business"]
+description: "The size question decides the booking, and it often arrives after hours. How self-storage operators can answer it from rooms and boxes and hold the unit."
+excerpt: "The size question decides the booking, and it often arrives after hours. How self-storage operators can answer it from rooms and boxes and hold the unit."
+---
+
+Picture a Tuesday at 22:50. A couple has sold their flat, the handover is in nine days, and the new place won't be ready for four months. They search "storage near me", open three facility websites on a phone, and hit the same question on all of them: which size do you need? A dropdown offers 2, 5, 10, 15 and 25 square metres.
+
+They have no idea. Nobody thinks of a sofa, a wardrobe and thirty boxes in square metres. So they type "We're moving out of a two-room flat, which unit is right?" into a contact form and go to bed. The form promises a reply within one business day.
+
+The facility that answers at 9:15 the next morning is competing with whoever answered at 23:00. A visitor who gets a clear recommendation in two minutes has little reason to wait for another one tomorrow. That's where I'd use AI in a self-storage business: not to run the facility, but to answer the question that comes before every rental.
+
+## Why one question decides the booking
+
+<Stats title="Self-storage in numbers">
+  <Stat value="10,571" label="stores and 17.7 million m² of storage space in Europe; Germany holds 13.6% of that space" source="FEDESSA and CBRE, European Self Storage Industry Report 2025" href="https://www.fedessa.org/static/f6762ae6-c097-4bdd-84ac37c2b12e3cb7/70e08602-eab5-407b-98f4a1c839f22677/FEDESSA-European-Industry-Report-2025.pdf" />
+  <Stat value="75.0%" label="average store occupancy in Germany, at an average net rent of €292 per m² per year, excluding VAT" source="FEDESSA and CBRE, European Self Storage Industry Report 2025" href="https://www.fedessa.org/static/f6762ae6-c097-4bdd-84ac37c2b12e3cb7/70e08602-eab5-407b-98f4a1c839f22677/FEDESSA-European-Industry-Report-2025.pdf" />
+  <Stat value="13.4%" label="of US households rented at least one storage unit in 2024, up from 11.1% in 2022" source="Self Storage Association study, as reported by PwC and ULI" href="https://www.pwc.com/us/en/industries/financial-services/asset-wealth-management/real-estate/emerging-trends-in-real-estate-pwc-uli/property-type-outlook/self-storage.html" />
+</Stats>
+
+Two readings of these numbers. First, empty space is the real cost. A 75% average means one square metre in four sits empty, and at €292 a year each of them is about €24 a month you don't collect. For a facility with 1,000 lettable square metres (my assumption), one percentage point of occupancy is 10 m², roughly €2,900 a year at the German average.
+
+Second, demand follows life events, and life events happen in the evening. EasyBee, which sells AI call handling to storage operators, says [70% of the inquiries in its own deployments](https://www.easybee.ai/blog/ai-call-center-for-selfstorage) arrive outside standard business hours. That's a vendor figure, so I'd treat it as an upper bound and count your own: phone logs and form timestamps will tell you.
+
+## What the 11pm inquiry costs you today
+
+The next morning someone reads the form, realises "two-room flat" says very little, and writes back with questions: which big items, how many boxes, from when, for how long? The customer answers at lunch. A size and a price go out in the afternoon. Meanwhile the customer asked two other facilities, and one replied the same night.
+
+That's two to four messages over a day or two, perhaps eight to ten minutes of staff time each (my assumption). The bigger loss is the customer who rents elsewhere before your answer arrives. A wrong size costs too: too small, and they're back on move-in day wanting a unit that may not be free; too big, and they pay for air, notice after a month, and swap down or leave.
+
+## Why "which size?" has no single formula
+
+Ask different operators how much space a flat's contents need, and you get different answers.
+
+| Contents | Suggested unit | Source |
+| --- | --- | --- |
+| One-bedroom flat | 35 to 50 sq ft, roughly 3 to 5 m² | [Safestore, UK](https://www.safestore.co.uk/storage-sizes/) |
+| Two-bedroom home | 75 sq ft, roughly 7 m² | [Safestore, UK](https://www.safestore.co.uk/storage-sizes/) |
+| Three-bedroom home | 100 sq ft, roughly 9 m² | [Safestore, UK](https://www.safestore.co.uk/storage-sizes/) |
+| Complete 60 m² flat | About 6 m², following a rule of 10% of floor area | [MyPlace, Germany](https://www.myplace.de/de/lagerraum-mieten/die-richtige-lagerraum-groesse-finden) |
+| Flat of 60 to 100 m², stacked to a 2.5 m ceiling | 3 to 5 m² | [lagermeile.de, Germany](https://lagermeile.de/wieviel-m%C2%B2-benoetige-ich-in-einem-selfstorage/) |
+
+For a 60 m² flat, one German operator's rule gives about 6 m², while another's range starts at 3 m². Both can be right. The difference lives in assumptions: how high you stack, whether furniture is taken apart, and whether the customer needs a walkway to the boxes at the back.
+
+So I wouldn't give an assistant a generic formula. I'd give it your table, built from your last 200 move-ins: what people said they were storing, which unit they booked, and who came back for a swap in the first month. Swap requests are the most honest feedback on your sizing.
+
+What the assistant asks is simple, and worth writing down:
+
+- **Big items.** Bed, sofa, wardrobe, desk, washing machine, bikes, a piano, and whether each can be taken apart.
+- **Boxes.** A rough count.
+- **Access.** How often they'll visit. Weekly visits mean a walkway, which means more space.
+- **Time.** From when and for how long. A four-month stay and a four-year stay lead to different units and prices.
+- **A photo,** if the customer prefers. A picture of the garage is often more accurate than a typed list.
+
+## From a late-night question to a held unit
+
+The same assistant can answer in the website chat during opening hours. After hours it's the first responder.
+
+<Flow title="From 'what size do I need?' to a reserved unit" caption="The assistant asks, sizes and holds. A person handles every exception and signs off anything that doesn't fit the rules.">
+<Step title="Question arrives" who="Visitor" time="22:50">Website chat, WhatsApp or a contact form: 'We're moving out of a two-room flat, which unit is right?'</Step>
+<Step title="Greet, disclose, ask" who="AI" tone="ai" time="1 to 2 min">The assistant says it is the facility's automated assistant, then asks about big items, boxes, access, start date and duration. A photo is welcome.</Step>
+<Step title="Size with a range and a reason" who="AI" tone="ai" time="seconds">It proposes a unit from your own size table, for example 6 m², or 5 m² if the wardrobe comes apart, and says how sure it is and why.</Step>
+<Step title="Answer the usual questions" who="AI" tone="ai">Price from your published list, access hours, insurance requirement, goods that aren't allowed. All taken from your documents, never improvised.</Step>
+<Step title="Hold the unit" who="System" time="24 to 48 hours">If a fitting unit is free in your booking software, the assistant holds it and sends the booking link or a viewing slot. The contract is signed in your own system.</Step>
+<Step title="Review and exceptions" who="Facility staff" tone="human" time="next morning">Staff check flagged conversations: vehicles, business stock, valuables, long stays, anything near the goods rules, or a visitor who asked for a person. They confirm, adjust or call.</Step>
+</Flow>
+
+**A range with a reason beats a number.** "I'd say 6 m², because you need to reach the boxes. If you take the wardrobe apart and stack to the ceiling, 5 m² could work" is honest, and it protects you from "but you told me 5."
+
+**The unit is held, not sold.** The assistant checks live availability, holds a unit for a day or two, and sends the booking link. Contract, payment and ID checks happen in your normal system. An assistant that recommends a size you don't have free is worse than one that says "that size is full until the 15th, here's the next option."
+
+**Honest sizing sells.** When a quarter of your space is empty, nudging everyone to the next size up looks tempting. But customers in the wrong size tell their friends. Recommend what fits, and mention the next size only when it's a real option.
+
+## What lands on the manager's screen
+
+The summary should let someone confirm in a minute:
+
+```text
+RESERVATION HELD, 22:58
+Contents: 2-room flat, about 55 m². Double bed, sofa, wardrobe (can be taken apart), washing machine, about 25 boxes.
+Needed: from 12 March for about 4 months. Will visit rarely.
+Recommended: 6 m² (5 m² if wardrobe dismantled and stacked to the ceiling).
+Held: unit B-14 until 12 March, 12:00. Booking link sent.
+Asked about: insurance (pointed to terms), access hours (answered).
+Flags: none.
+```
+
+Compare that with an email that says "Hi, how big a unit do I need?" and a phone number. At move-in, nobody has to ask the questions again.
+
+## What it says and what it hands over
+
+The assistant answers from your documents: prices, access hours, availability, insurance requirements and the list of goods that aren't allowed. It decides nothing that carries legal or financial weight.
+
+<Callout title="Goods, insurance and the line the assistant never crosses" tone="warning">
+Operators typically ban flammable and other hazardous materials, perishable food, waste and anything illegal, and many make customers protect or insure their contents. Shurgard, for example, publishes a [list of what you cannot store](https://www.shurgard.com/en-gb/self-storage/why-shurgard/what-you-can-store) and says customers need [protection for their stored items against loss or damage](https://www.shurgard.com/en-gb/self-storage/why-shurgard/moving-in). The assistant repeats your rules. It doesn't judge whether a borderline item is acceptable, doesn't advise whether a customer's own policy covers the contents, and never says it's fine to store something your terms exclude. Those go to a person.
+</Callout>
+
+Also for a person: vehicles, business stock, valuables, very large or long rentals, complaints, disputes about charges, and anyone who asks for a human. A visible "talk to a person" button covers the last one.
+
+The assistant shouldn't ask why someone needs storage. People store things because of moves, separations, renovations or bereavements. "What are you storing and when do you need it?" is enough.
+
+## Data protection, contracts and the AI notice
+
+A sizing chat collects personal data: names, contact details, addresses, move dates, sometimes photos of someone's home. That falls under GDPR. Ask only what you need, say what you do with the answers, sign a data processing agreement with the assistant's provider, prefer EU processing, and delete transcripts once they've served their purpose.
+
+Since 2 August 2026, [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has required AI systems that talk to people to tell them so, unless it's obvious. The duty sits first with the provider of the system, so ask your vendor how its product handles it. The legal summaries I read in September 2026, such as a [research note from the Cloud Security Alliance](https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-article-50-transparency-20260729/), say the Digital Omnibus changes did not postpone this duty. The rules are moving, so check the current state before launch. Either way, the first line of the chat does the job: "I'm the automated assistant of this facility."
+
+If you rent to consumers online: in the EU, consumers who conclude a contract at a distance generally have a [14-day right of withdrawal](https://eur-lex.europa.eu/EN/legal-content/summary/consumer-information-right-of-withdrawal-and-other-consumer-rights.html). The listed exceptions, such as hotel or car rental tied to specific dates, don't obviously cover a storage unit. Whether your booking flow needs the notice is a question for your lawyer. For the design it means one thing: the assistant never forms the contract. It points to the booking flow, where your notice and terms sit.
+
+## What it costs, and what it brings back
+
+The setup is mostly writing, not programming: the size table, prices, the availability link, the rules on goods, access and insurance, and a short list of triggers that hand a conversation to a person. My rough estimate is one to three weeks of work for a small operator, depending on how your booking software exposes availability. Running costs are a platform fee plus model usage; at 60 to 100 conversations a month I'd budget in the low hundreds of euros, and treat that as an assumption until you have a quote.
+
+Facility management software such as [SiteLink](https://www.sitelink.com/products/web-edition) already holds units, rates and availability, and offers API connections for websites and other tools. The assistant reads from it and writes the hold back.
+
+<Calc title="Napkin math: inquiries lost to a slower reply" caption="Assumptions, not measurements. Your inquiry log and your rates give the real figures. The rent per m² is the German average of €292 a year, rounded." rows={[
+  ["Inquiries per month (chat, form, phone, email)", "60"],
+  ["Share that arrive when nobody can reply within the hour", "× 40%"],
+  ["Share of those who rent elsewhere before you reply", "× 20%"],
+  ["Rentals lost per month", "≈ 5"],
+  ["Average unit size", "× 6 m²"],
+  ["Average rent per m² and month", "× €24"],
+  ["Average stay", "× 10 months"]
+]} result={["Rent over the full stays of one month's lost rentals", "≈ €7,000"]} />
+
+Winning back one of those five rentals brings in about €1,400 over the stay (6 m² × €24 × 10 months), against a monthly running cost in the low hundreds. If your log shows only five after-hours inquiries a month, the maths changes.
+
+## When a simpler fix is enough
+
+Before any AI, ask whether a plain size calculator and online booking would do. A page where a visitor ticks "bed, sofa, wardrobe, 20 boxes" and gets a recommended unit is not AI, and neither is a form that holds a unit without a call. For a small facility with under 20 inquiries a month, a good size guide, a clear price table and a shared inbox may be all you need.
+
+AI earns its place when inquiries come as free text and photos, in several languages, at all hours, and a fixed calculator can't handle "a piano, a drum kit and my late father's books." It's the wrong tool for anything that is a judgment about risk or law: borderline goods, insurance claims, disputes.
+
+## Questions self-storage operators ask
+
+### Can a chatbot recommend the right storage unit size?
+
+Yes, within limits. It can turn rooms, big items and boxes into a sensible range, especially from your own size table. It can't see the garage, so give it an easy way to add a photo or reach a person.
+
+### Do I have to tell customers they're talking to an AI?
+
+In the EU, yes, unless it's obvious from context. Article 50 of the AI Act has required this since 2 August 2026, and the duty sits first with the provider of the system. A one-line greeting does it, and it's simply fair.
+
+### Can the assistant take payments and sign contracts?
+
+I'd keep it out of that. Let it hold a unit and send the booking link. Contract terms, payment, ID checks and the withdrawal notice belong in your booking system, where they're consistent and traceable.
+
+### What about customers who want to store a car or business stock?
+
+Those go to a person. Your terms and insurance matter most there, and a wrong answer is expensive.
+
+## Where I'd start
+
+Build the size table first, from your own move-ins, and write the questions the assistant asks. Test it on last month's inquiries and compare its recommendations with what customers booked. Then let it answer after hours for a month, with staff reviewing every conversation the next morning.
+
+The rule of thumb: answer the size question in the customer's words, say how sure you are and why, hold the unit, and send everything unusual to a person.
+
+If you'd like to test this on your own inquiries, [tell me which booking software you use and how inquiries reach you](/contact?intent=improve), and I'll suggest the smallest version worth trying. Storage customers are often movers, and [moving companies already build an inventory from a video call](/posts/ai-for-moving-companies-inventory), which is exactly the list an assistant needs. [Coworking spaces](/posts/ai-for-coworking-spaces-sales) face the same "which plan fits me?" question, and [property managers](/posts/ai-for-property-managers-maintenance) triage requests that arrive at any hour.

@@ -1,0 +1,187 @@
+---
+id: "ki-spedition-frachtanfragen"
+translationOf: "ai-for-freight-forwarders-quote-requests"
+title: "Spedition: Frachtanfragen, bei denen keine Angabe fehlt"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Transport & Logistik", "Speditionen", "Frachtanfragen", "KI für kleine Unternehmen"]
+description: "Spotanfragen kommen als Einzeiler per E-Mail. Wie KI fehlendes Gewicht, Maße und Incoterms findet, den Kunden einmal fragt und Sie den Preis selbst setzen."
+excerpt: "Spotanfragen kommen als Einzeiler per E-Mail. Wie KI fehlendes Gewicht, Maße und Incoterms findet, den Kunden einmal fragt und Sie den Preis selbst setzen."
+---
+
+Stellen Sie sich eine Spedition mit vierzehn Mitarbeitenden vor. Dienstag, 08:52 Uhr, eine E-Mail: „Können Sie uns 8 Paletten Hamburg nach Lyon anbieten, Abholung Donnerstag? Danke.“ Angehängt ist eine Packliste als Excel-Datei, mit Nettogewichten pro Karton und ohne Palettenmaße.
+
+Die Disponentin liest die Mail zweimal. Sie weiß nicht, wie hoch die Paletten sind, ob sie sich stapeln lassen, wer die Ausfuhrabfertigung übernimmt und ob in den Kartons etwas steckt, das als Gefahrgut gilt. Sie schreibt zurück, mit zwei Fragen. Der Kunde beantwortet eine davon um 11:20 Uhr. Sie fragt die nächsten zwei. Die letzte Antwort kommt nach der Mittagspause, und das Angebot geht um 15:30 Uhr raus. Da hat der Kunde längst um zwölf einem anderen Anbieter zugesagt.
+
+Niemand hat hier etwas falsch gemacht. Langsam war das Warten zwischen berechtigten Fragen. Genau dort würde ich KI in einer Spedition ansetzen: nicht beim Preis, sondern damit jede Frage einmal gestellt wird, vollständig, in der ersten Antwort.
+
+## Wo bei einer Spotanfrage die Stunden bleiben
+
+Zerlegen Sie den Ablauf, und die Zeit steckt nicht in der Kalkulation.
+
+1. **Lesen.** Die Angaben stehen im Mailtext, in einer PDF-Packliste, in einer Excel-Datei, manchmal in einem weitergeleiteten Verlauf mit dem Lieferanten des Kunden.
+2. **Erkennen, was fehlt.** Eine erfahrene Disponentin fragt nach der Stapelbarkeit. Ein neuer Kollege fragt nach dem Gewicht und sonst nichts.
+3. **Zurückschreiben.** Zwei, drei Fragen auf einmal, weil niemand einem Kunden, der eine Zeile geschrieben hat, eine Mail voller Fragen schicken will.
+4. **Warten.** Der langsamste Schritt, und keiner hat ihn in der Hand.
+5. **Abtippen.** Jemand überträgt die Antworten ins Transportmanagementsystem (TMS) oder in eine Preistabelle.
+6. **Kalkulieren und senden.** Der Teil, der Urteilsvermögen braucht.
+
+Die Schritte 1, 2, 3 und 5 sind Lesen, Prüfen, Schreiben und Tippen. Das kann KI gut, und es passiert, bevor überhaupt etwas ansteht, wofür man erfahrene Leute braucht.
+
+Zählt Tempo wirklich? Anbieter von Angebotssoftware veröffentlichen gern Tabellen mit Abschlussquoten nach Antwortzeit. [GoFreight](https://gofreight.com/blog/education/quote-faster-win-more-speed-to-lead), das Speditionssoftware verkauft, ist einer davon und schreibt, Verlader fragten üblicherweise mehrere Spediteure gleichzeitig an. Eine Methode hinter diesen Tabellen habe ich nicht gefunden, also gebe ich die Zahlen nicht weiter. Die unabhängige Evidenz ist älter und allgemein: Eine [Untersuchung von 2.241 Unternehmen in der Harvard Business Review](https://www.researchgate.net/publication/298137032_The_short_life_of_online_sales_leads) fand, dass Firmen, die eine Web-Anfrage innerhalb einer Stunde aufgriffen, fast siebenmal so oft zu einem qualifizierten Gespräch kamen wie solche, die eine Stunde länger brauchten. Es ging nicht um Fracht, aber wer schon einmal eine Spotanfrage um zwölf Uhr verloren hat, erkennt die Richtung.
+
+Zur Größenordnung: Über 15 Landesverbände vertritt der [DSLV](https://www.dslv.org/de/die-branche) rund 2.500 Speditions- und Logistikbetriebe. Die Branche setzte laut DSLV 2023 etwa 123,1 Mrd. € um und beschäftigte 2024 insgesamt 592.622 Menschen. Wie viele Frachtanfragen unvollständig ankommen, habe ich dagegen in keiner belastbaren öffentlichen Quelle gefunden. Zählen Sie deshalb selbst, wie die Checkliste unten vorschlägt.
+
+## Was ein Angebot braucht und was meist ankommt
+
+Jede Spedition hat diese Liste im Kopf. Sie aufzuschreiben ist der erste nützliche Schritt, mit oder ohne KI.
+
+| Angabe | Was oft ankommt | Warum sie das Angebot ändert |
+| --- | --- | --- |
+| Be- und Entladestelle | Eine Stadt oder ein Land: „Hamburg nach Lyon“ | Die Postleitzahl bestimmt Tarifzone und Route. Privatadresse, abgelegene Baustelle oder Hafenterminal ändern Fahrzeug und Zeitbedarf |
+| Ware und Verpackung | „8 Paletten“ oder nur die Kartonzahl | Palettentyp (Europalette 120 x 80 cm oder Industriepalette), Höhe, lose Stücke, Palettentausch ja oder nein |
+| Gewicht | Nettogewicht oder eine Schätzung | Auf das Transportdokument gehört das Bruttogewicht inklusive Verpackung |
+| Stapelbarkeit | Nichts | Bestimmt, wie viel Ladefläche die Sendung belegt, siehe Grafik unten |
+| Incoterm | Nichts oder der falsche | Regelt, wer die Abholung bucht, wer welche Strecke zahlt und wer die Ausfuhr verzollt |
+| Gefahrgut | Schweigen oder „irgendwas Chemisches“ | UN-Nummer, Klasse, Verpackungsgruppe und Menge ändern Fahrzeug, Fahrer und Preis oder machen den Transport unmöglich |
+| Zeitfenster und Zugang | „So schnell wie möglich“ | Anlieferfenster, Hebebühne, Rampe oder Stapler an beiden Enden, Wartezeit |
+| Warenwert | Nichts | Die Haftung des Frachtführers hängt am Gewicht, nicht am Wert. Der Warenwert zählt, wenn der Kunde eine Transportversicherung will |
+
+Zur Zeile Incoterm: Die [Incoterms 2020 der ICC](https://www.iccwbo.nl/incoterms) sind elf Dreibuchstaben-Klauseln wie EXW, FCA oder DAP, die Kosten, Gefahr und Pflichten zwischen Verkäufer und Käufer aufteilen. Sie waren bei meiner Prüfung im September 2026 noch die aktuelle Fassung. Wer „ab Werk“ schreibt, meint es vielleicht nicht so, und wer die Abholung ohne Rückfrage kalkuliert, merkt es an der Rampe.
+
+### Dieselben 8 Paletten, doppelter Platzbedarf
+
+Die Stapelbarkeit verdient ein eigenes Bild, denn bei keiner Angabe rechnen Kunden weniger damit, dass sie zählt.
+
+<Bars title="Ladefläche von 8 gleichen Europaletten" unit=" LDM" caption="Beispielrechnung, kein Tarif. Sie nutzt die übliche Konvention von 0,4 Lademetern (LDM) je Europalette, also Länge mal Breite geteilt durch 2,4 m, und zählt zwei gestapelte Paletten als einen Stellplatz. Frachtführer wenden eigene Regeln und Mindestgewichte an." source="Lademeter-Konvention, Wikipedia" href="https://de.wikipedia.org/wiki/Lademeter" data={[
+  { label: "Alle 2-fach stapelbar", value: 1.6, display: "1,6 LDM" },
+  { label: "4 stapelbar, 4 nicht", value: 2.4, display: "2,4 LDM" },
+  { label: "Keine stapelbar", value: 3.2, display: "3,2 LDM", highlight: true }
+]} />
+
+Ein Sattelzug mit 13,6 m Ladelänge fasst etwa 33 Europaletten-Stellplätze, 3,2 Lademeter sind also ein spürbares Stück vom Lkw. Fragt niemand, kalkuliert das Angebot entweder zu niedrig und verliert Geld oder zu hoch und verliert den Auftrag.
+
+## Vollständige Angaben sind mehr als Höflichkeit
+
+Fehlende Angaben kosten nicht nur Zeit. Das Recht legt die Verantwortung weitgehend auf den Absender. Nach [§ 408 HGB](https://www.gesetze-im-internet.de/hgb/__408.html) gehören Anzahl, Zeichen und Nummern der Frachtstücke sowie das Rohgewicht in den Frachtbrief. Bei Gefahrgut verlangt [§ 410 HGB](https://dejure.org/gesetze/HGB/410.html), dass der Absender dem Frachtführer rechtzeitig in Textform die genaue Art der Gefahr mitteilt. Für den grenzüberschreitenden Straßengüterverkehr verlangt das [CMR-Übereinkommen](https://unece.org/DAM/trans/conventn/cmr_e.pdf) in Artikel 6 vergleichbare Angaben und macht den Absender in Artikel 7 für Unrichtigkeiten verantwortlich. Auch die [ADSp 2017](https://www.dslv.org/fileadmin/Redaktion/PDFs/07_Publikationen/ADSp/DSLV-ADSp-2017.pdf) verpflichten den Auftraggeber, die nötigen Angaben zu machen, einschließlich der Gefahrgutklassifizierung. Sie gelten allerdings nur, wenn sie vereinbart sind. Prüfen Sie also Ihre eigenen Verträge.
+
+Auf der Straße legt das [ADR](https://unece.org/sites/default/files/2025-01/2412006_E_ECE_TRANS_352_Vol.I_WEB_0.pdf) die Einstufung gefährlicher Güter beim Absender fest. Die Ausgabe 2025 gilt seit dem 1. Januar 2025.
+
+Das Recht sagt Ihnen, wen Sie fragen sollten, und dass Sie schriftlich fragen sollten. Es hilft nicht mehr, wenn der Lkw schon an der Rampe steht und die Ladung nicht passt.
+
+## Eine E-Mail statt drei
+
+So würde ich den Ablauf für eingehende Spotanfragen bauen. Er läuft auf dem gemeinsamen Angebotspostfach.
+
+<Flow title="Von der vagen Mail zum kalkulierten Angebot" caption="Der Assistent liest, prüft und entwirft. Die Disponentin entscheidet, was rausgeht und was es kostet.">
+<Step title="Anfrage kommt an" who="Angebotspostfach" time="08:52">Mailtext, Anhänge und weitergeleitete Verläufe werden als eine Anfrage zusammengeführt.</Step>
+<Step title="Auslesen, was da ist" who="KI" tone="ai" time="Sekunden">Strecke, Stückzahl, Gewichte, Termine und Hinweise auf Gefahrgut landen in einer festen Liste. Jeder Wert nennt den Satz oder die Zelle, aus der er stammt.</Step>
+<Step title="Gegen Ihre Pflichtliste prüfen" who="KI" tone="ai" time="Sekunden">Die Liste hängt von der Sendungsart ab: Komplettladung, Teilpartie, grenzüberschreitend, Gefahrgut. Jede fehlende Angabe wird markiert, auffällige Werte auch, etwa ein Nettogewicht, wo das Bruttogewicht gebraucht wird.</Step>
+<Step title="Eine Rückfrage" who="Disponentin" tone="human" time="2 Min.">Der Assistent entwirft eine einzige Antwort mit allen offenen Fragen, nummeriert. Die Disponentin liest, ändert bei Bedarf und sendet.</Step>
+<Step title="Antworten einarbeiten" who="KI" tone="ai" time="wenn der Kunde antwortet">Die Antwort aktualisiert denselben Datensatz. Ist noch etwas offen, fragt die Nachfrage nur danach.</Step>
+<Step title="Kalkulieren und anbieten" who="Disponentin" tone="human" time="Minuten">Der Datensatz liegt vorbefüllt im TMS oder in der Preistabelle. Die Disponentin prüft Preise und Kapazität und setzt den Preis. Der Assistent entwirft das Anschreiben.</Step>
+</Flow>
+
+Was die Disponentin bei Schritt 3 in zehn Sekunden sieht, könnte so aussehen:
+
+```text
+ANFRAGE 0412, Di 08:52, Hartmann Armaturen GmbH
+Strecke: Hamburg 22525 nach Lyon 69007, Abholung Donnerstag
+Ware: 8 Paletten, Armaturen in Kartons
+Gewicht: 2.960 kg (Packliste, netto, brutto nicht bestätigt)
+FEHLT: Palettenmaß und Höhe, stapelbar ja oder nein, Incoterm,
+       Zeitfenster an beiden Enden, Hebebühne bei Anlieferung,
+       Gefahrgut ja oder nein, Warenwert
+Entwurf: 7 Fragen in einer Mail, wartet auf Ihr OK
+```
+
+Und der Entwurf selbst ist kurz, im Ton der Disponentin:
+
+> Danke für die Anfrage. Für die Abholung am Donnerstag brauche ich sieben Angaben, und ich frage lieber einmal als dreimal: (1) Palettentyp und Höhe, (2) ob die Paletten stapelbar sind, (3) den Incoterm, (4) Zeitfenster an beiden Enden, (5) Rampe oder Hebebühne bei der Anlieferung, (6) ob etwas davon Gefahrgut nach ADR ist und (7) den Warenwert, falls Sie eine Transportversicherung wünschen.
+
+Drei Entscheidungen erledigen den größten Teil der Arbeit.
+
+**Der Assistent meldet, was fehlt, und rät nicht.** Eine fehlende Stapelbarkeit bleibt fehlend, nie „wahrscheinlich ja“. Was erschlossen wurde, wird als erschlossen gekennzeichnet.
+
+**Das Angebot nennt seine Annahmen.** Weiß der Kunde nicht, ob die Paletten stapelbar sind, steht im Angebot: „kalkuliert als nicht stapelbar, 120 x 80 cm, 3.100 kg brutto; Neuberechnung bei abweichender Ware“. Den Satz entwirft der Assistent. Er schützt Sie und zeigt dem Kunden, was er korrigieren muss.
+
+**Am Anfang sendet die Disponentin alles selbst.** Nach einigen hundert Entwürfen mit nur kleinen Änderungen können einfache Fälle direkt durchlaufen. Ich würde mit Freigabe starten.
+
+## Wo ich KI raushalten würde
+
+<Split title="Die Grenze" leftTitle="Der Assistent" rightTitle="Der Assistent nie" left={[
+  "Liest Mails und Anhänge und listet auf, was da ist",
+  "Markiert fehlende und zweifelhafte Angaben gegen Ihre Liste",
+  "Entwirft eine Rückfrage und das Anschreiben zum Angebot",
+  "Befüllt den Angebotsdatensatz in TMS oder Preistabelle vor",
+  "Zeigt die letzten ähnlichen Angebote auf der Relation zum Vergleich"
+]} right={[
+  "Setzt oder verhandelt den Preis",
+  "Stuft Gefahrgut ein oder entscheidet über Freistellungen nach ADR",
+  "Legt Zolltarifnummern fest",
+  "Sagt Abholtermine oder Kapazität zu",
+  "Sendet in den ersten Monaten etwas ungeprüft an Kunden"
+]} />
+
+Der Preis hängt von Relation, Auslastung, der Historie des Kunden und davon ab, was der Lkw auf dem Rückweg macht. Das gehört einem Menschen. Gefahrgut ist die schärfste Grenze. Der Assistent kann merken, dass in den Kartons Farbe, Batterien oder Spraydosen stecken, und die ADR-Frage stellen. Er kann den Transportabschnitt eines Sicherheitsdatenblatts lesen und die UN-Nummer in den Entwurf übernehmen. Eingestuft wird aber vom Absender, und bei der Spedition prüft ein Mensch das Ergebnis gegen das Datenblatt, bevor angeboten wird.
+
+Manchmal gewinnt eine einfachere Lösung. Kommen die meisten Anfragen von zehn Stammkunden, schlägt ein Anfrageformular mit Pflichtfeldern, einer Auswahl für Incoterms und einem Ja-oder-Nein für Gefahrgut jede KI, ebenso ein Stammdatenblatt je Kunde mit Palettenmaßen und Adressen. KI lohnt sich bei den Einzeilern von Kunden, die Ihr Formular nie nutzen werden, und bei Anhängen, die niemand abtippen will.
+
+## Was es kostet und was es bringt
+
+Die Modellkosten sind klein: Eine Anfrage hat ein paar hundert Wörter und kostet Cent-Beträge. Teuer ist die Arbeit drumherum: Postfach anbinden, Ihre Pflichtliste je Sendungsart schreiben, eine Prüfansicht bauen und den Datensatz ins TMS bringen. Für eine erste Version, die bei „entwirft die Rückfrage und zeigt den Datensatz“ stehen bleibt, rechne ich mit einigen Wochen Teilzeitarbeit und monatlich zweistelligen Euro-Beträgen für Werkzeuge. Nehmen Sie das als grobe Schätzung und holen Sie ein Festpreisangebot ein, bevor Sie sich festlegen.
+
+<Calc title="Überschlag: Was dreimal Nachfragen kostet" caption="Annahmen, keine Messwerte. Zählen Sie eine Woche lang Ihre eigenen Anfragen und Zeiten und ersetzen Sie jede Zeile." rows={[
+  ["Frachtanfragen pro Woche", "60"],
+  ["Anteil mit fehlenden Angaben", "× 50 %"],
+  ["Mehraufwand je unvollständiger Anfrage", "× 25 Min."],
+  ["Mehraufwand pro Woche", "≈ 12,5 Std."],
+  ["Kosten je Bürostunde", "× 45 €"],
+  ["Wochen pro Monat", "× 4,3"]
+]} result={["Kosten des Hin und Hers pro Monat", "≈ 2.400 €"]} />
+
+Halbiert der Assistent diesen Aufwand, kommen rund 1.200 € im Monat zurück. Das ist bescheiden, und ich würde es bescheiden lassen. Die größere Wirkung, wenn es sie gibt, ist das Angebot, das um 10:00 statt um 15:30 Uhr rausgeht. Sehen werden Sie sie nur, wenn Sie Zeit bis zum Angebot und Zuschlagsquote messen.
+
+## Datenschutz
+
+Angebotsmails enthalten personenbezogene Daten: Namen, Telefonnummern und E-Mail-Adressen der Ansprechpartner an Be- und Entladestelle. Damit gilt die DSGVO, sobald solche Nachrichten an einen KI-Dienst gehen. Sie brauchen einen Auftragsverarbeitungsvertrag (AVV) mit dem Anbieter, eine klare Aussage, wo die Daten liegen, und eine Einstellung, die verhindert, dass sie zum Training von Modellen genutzt werden. Die [Orientierungshilfe der Datenschutzkonferenz zu KI und Datenschutz](https://www.datenschutzkonferenz-online.de/orientierungshilfen.html) vom Mai 2024 hilft bei Auswahl und Einsatz.
+
+Der zweite Punkt ist die geschäftliche Vertraulichkeit. Packlisten und Rechnungen enthalten Preise und Lieferantennamen, und manche Rahmenverträge von Verladern schränken ein, wo das verarbeitet werden darf. Lesen Sie zuerst die Verträge Ihrer größten Kunden.
+
+## Erst an den Anfragen des letzten Monats testen
+
+<Checklist title="Ein Testlauf von einer Woche, bevor Sie etwas bauen" items={[
+  "Die letzten 50 Frachtanfragen aus dem Postfach ziehen, nicht aus dem Gedächtnis",
+  "In jeder markieren, welche Pflichtangaben fehlten, und die Rückfragerunden zählen",
+  "Die Zeit von der Anfrage bis zum Angebot messen und von der ersten Antwort bis zum Angebot",
+  "Die Pflichtliste je Sendungsart schreiben: Komplettladung, Teilpartie, grenzüberschreitend, Gefahrgut",
+  "Die 50 Anfragen durch die Extraktion laufen lassen und jedes Feld mit der Lesart eines Menschen vergleichen",
+  "Festlegen, wer Rückfragen freigibt und sendet und wer kalkuliert",
+  "AVV und Vertraulichkeitsklauseln Ihrer größten Kunden prüfen"
+]} />
+
+Beim Vergleich zeigt sich, ob es für Ihre Kunden funktioniert, die jeder auf eigene Art schreiben. Schauen Sie auf die Fehler, nicht auf den Durchschnitt: Ein selbstsicher genanntes falsches Gewicht ist schlimmer als ein leeres Feld.
+
+## Fragen aus Speditionen
+
+### Kann KI auch Packlisten und PDFs lesen, nicht nur E-Mails?
+
+In der Regel ja. Textbasierte PDFs und Tabellen funktionieren gut. Scans und Fotos sind unzuverlässiger, Handschrift noch mehr. In jedem Fall sollte der Assistent melden, was er nicht lesen konnte, statt zu raten.
+
+### Kann der Assistent den Preis nennen?
+
+Ich würde ihn nicht lassen. Er kann die letzten Angebote auf derselben Relation zeigen, aber der Preis hängt von Kapazität, Marge und Kunde ab, und ein falscher Preis kostet mehr als ein langsamer.
+
+### Was ist mit Kunden, die die Fragen nie beantworten?
+
+Dann nennt das Angebot seine Annahmen, und Sie entscheiden, ob Sie es überhaupt senden. Der Assistent kann nach ein paar Stunden einmal erinnern, und Sie haben einen klaren Nachweis, was wann gefragt wurde.
+
+### Funktioniert das mit meinem TMS?
+
+Hat Ihr TMS eine Schnittstelle oder nimmt es Importdateien an, ja. Wenn nicht, kann der Assistent trotzdem eine strukturierte Zusammenfassung zum Einkopieren liefern, was das Lesen und Prüfen schon spart. Fangen Sie damit an und ergänzen Sie die Anbindung später, ob an CarLo, ein anderes Speditionsprogramm oder eine Excel-Tabelle.
+
+## Die Regel für das Angebotspostfach
+
+Einmal fragen, vollständig fragen, den Preis selbst setzen. Jede Frage, die Sie vorhersehen können, gehört in die erste Antwort, und der Preis gehört einem Menschen.
+
+Wenn Sie das an Ihrem eigenen Angebotspostfach ausprobieren möchten, [schreiben Sie mir, welches TMS Sie nutzen und wie eine typische Anfrage aussieht](/de/kontakt?intent=improve), und ich schlage die kleinste Variante vor, die einen Test wert ist. Dasselbe Muster gibt es anderswo: [Fertiger, die aus einer Anfrage ein Angebot machen](/de/posts/ki-fertigung-angebotskalkulation), jagen denselben fehlenden Spezifikationen hinterher, [Übersetzungsbüros](/de/posts/ki-uebersetzungsbuero-projektanfragen) Wortzahlen und Quelldateien, und [Kurierdienste](/de/posts/ki-kurierdienst-zustellprobleme) bezahlen unvollständige Adressen mit einer zweiten Fahrt.

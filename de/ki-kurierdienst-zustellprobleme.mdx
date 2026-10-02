@@ -1,0 +1,177 @@
+---
+id: "ki-kurierdienst-zustellprobleme"
+translationOf: "ai-for-courier-services-failed-deliveries"
+title: "Kurierdienst: Fehlzustellungen vermeiden, bevor der Fahrer losfährt"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Transport & Logistik", "Kurierdienste", "Fehlzustellungen", "KI für kleine Unternehmen"]
+description: "Eine Fehlzustellung verschenkt den Stopp und bezahlt einen zweiten. Wie Kurierdienste mit Adressprüfung und Vorab-Nachricht Probleme vor der Abfahrt lösen."
+excerpt: "Eine Fehlzustellung verschenkt den Stopp und bezahlt einen zweiten. Wie Kurierdienste mit Adressprüfung und Vorab-Nachricht Probleme vor der Abfahrt lösen."
+---
+
+Ein Fahrer hält um 10:40 Uhr vor einem Gewerbehof. Auf dem Lieferschein steht „Hinterhaus, 3. OG“. Am Klingelschild stehen drei Namen, keiner davon der Firmenname vom Auftrag, und unter der Telefonnummer auf dem Etikett meldet sich niemand, denn es ist die Nummer des Absenders, nicht die des Empfängers. Elf Minuten später fährt der Fahrer weiter, und das Paket bleibt im Wagen.
+
+Das ist der erste Preis: ein Stopp, der nichts geliefert hat. Der zweite kommt morgen. Dasselbe Paket belegt einen weiteren Stopp, im Büro nimmt jemand einen genervten Anruf entgegen, und eine ohnehin knappe Tour wird länger. Eine Fehlzustellung wird zweimal bezahlt, und die zweite Zahlung verfolgt niemand.
+
+Die billigste Fehlzustellung ist die, von der Sie am Vorabend um 18:00 Uhr erfahren, nicht um 10:40 Uhr vor der Tür. Das ist der Kern dieses Beitrags, und das meiste davon braucht keine KI. Hier ist, wo KI ihren Platz verdient.
+
+## Was die veröffentlichten Zahlen zum Fehlversuch sagen
+
+<Stats title="Die letzte Meile in drei Zahlen">
+  <Stat value="über 96 %" label="der Hermes-Pakete in Deutschland wurden im Geschäftsjahr 2025/26 beim ersten Zustellversuch zugestellt (Angabe des Unternehmens selbst)" source="Hermes Newsroom" href="https://newsroom.hermesworld.com/logistik-mythen-zur-zustellung-funf-gangige-annahmen-zur-paketlogistik-und-was-die-praxis-zeigt-34633/" />
+  <Stat value="≈ 8 %" label="der Erstzustellungen in Deutschland scheiterten laut einer Umfrage von Loqate (Anbieter von Adressprüfung) Ende 2020, bei durchschnittlich 14,69 € Kosten je Bestellung für Händler" source="Loqate-Studie via postbranche.de" href="https://www.postbranche.de/2021/03/16/neue-loqate-studie-enthuellt-kosten-von-fehlerhaften-lieferungen-im-ecommerce-boom/" />
+  <Stat value="41 %" label="der gesamten Lieferkettenkosten entfallen auf die letzte Meile, laut Capgemini-Studie von 2019 für Handel und Konsumgüter" source="Capgemini Research Institute" href="https://www.capgemini.com/insights/research-library/the-last-mile-delivery-challenge/" />
+</Stats>
+
+Deutschland ist ein guter Testfall, weil die Branche ihre Zahlen veröffentlicht. Laut [BPEX](https://bpex-ev.de/presse/meldung/kep-studie-2026), dem Bundesverband Paket und Expresslogistik (früher BIEK), beförderte der KEP-Markt 2025 rund 4,37 Milliarden Sendungen, setzte etwa 28,4 Milliarden Euro um und beschäftigte rund 270.000 Menschen. Das Personal macht 40,5 % der Kosten der Branche aus.
+
+Arbeitszeit ist die Rechnung, und ein Fehlstopp verbrennt sie doppelt.
+
+Die beiden Fehlerquoten oben passen nicht zusammen, und ich würde auch nicht versuchen, sie zusammenzuzwingen. Die Hermes-Zahl stammt von einem großen Paketdienst mit PaketShops, Paketboxen und Empfänger-App und bedeutet: unter 4 % scheitern. Die Loqate-Zahl stammt aus einer Händlerumfrage, die fünf Jahre älter ist, von einem Unternehmen, das die Lösung verkauft, und bedeutet: rund 8 %. Anderes Jahr, andere Definition, andere Pakete. Ich lese beides als Spanne von unter 4 % bis etwa 8 % und halte keine der beiden Zahlen für Ihre.
+
+Ihre hängt davon ab, wen Sie beliefern. Büros, Praxen und Mehrfamilienhäuser mit engen Zeitfenstern sind eine andere Mischung als die Haustür im Einfamilienhaus. Maßgeblich ist nur die Zahl, die Sie selbst messen.
+
+## Woher Fehlversuche kommen und welche Lösung am billigsten ist
+
+Die Händler in derselben Loqate-Umfrage nannten die Adressen als Ursache: 74 % sagten, schlechte Adressdaten verursachten bis zu ein Viertel ihrer fehlgeschlagenen Lieferungen. Das ist eine Herstellerangabe, lesen Sie sie entsprechend. Sie passt aber zu dem, was ich erwarten würde. Der Rest ist die übliche Liste: niemand da, ein Tor- oder Türcode, den der Fahrer nicht hat, und die falsche Person an der Tür.
+
+Bevor Sie ein Werkzeug auswählen, sortieren Sie Ihre Fehlversuche nach Ursache und schauen Sie auf die mittlere Spalte.
+
+| Warum der Versuch scheitert | Billigste Lösung | Wo KI etwas beiträgt |
+| --- | --- | --- |
+| Niemand ist zu Hause oder am Empfang | Zeitfenster per SMS oder E-Mail am Vorabend, mit der Möglichkeit, einen anderen Zeitpunkt zu wählen | Freitext-Antworten („nach 18 Uhr“, „fragen Sie die Nachbarin“) lesen und in eine Stopp-Notiz verwandeln |
+| Adresse unvollständig: Etage, Firmenname oder Hausaufgang fehlen | Pflichtfelder im Auftragsformular oder in der Schnittstelle des Auftraggebers | Lücken in alten Freitext-Adressen erkennen und beim Empfänger nachfragen |
+| Zugang: Torcode, Pförtner, defekte Klingel | Ein Feld „Zugangshinweis“ im Auftrag | Codes und Hinweise aus Antworten und E-Mails in dieses Feld übernehmen |
+| Falsche oder fehlende Telefonnummer | Nummer beim Anlegen des Auftrags prüfen | Kaum etwas. Das ist ein Datenproblem |
+| Empfänger verweigert, oder die Sendung braucht Unterschrift | Auftraggeber bitten, das schon bei der Bestellung zu markieren | Nichts. Die Disposition entscheidet |
+
+Viele Tourenplanungs-Tools wie Onfleet, Track-POD, OptimoRoute oder Routific bieten schon Kundenbenachrichtigungen (prüfen Sie, was Ihres enthält), und ein Pflichtfeld „Etage“ kostet nichts. KI lohnt sich dort, wo Nachrichten als Freitext eintreffen, in mehreren Sprachen, und jemand sie bei Hunderten Stopps am Tag lesen und beantworten muss.
+
+Dasselbe Muster gibt es weiter vorn in der Kette, wenn [Großhändler unordentliche Bestellungen einlesen](/de/posts/ki-grosshandel-auftragserfassung): Die Eingabe ist ungeordnet, ein Modell macht daraus einen sauberen Entwurf, und ein Mensch prüft, was zählt.
+
+## Überschlag: Was ein Fehlversuch kostet
+
+Nehmen wir einen angenommenen Kurierdienst mit 12 Fahrern und 900 Stopps am Tag. Alles Folgende sind Annahmen, die Sie durch Ihre eigenen Zahlen ersetzen sollten.
+
+<Calc title="Überschlag: Die monatliche Rechnung für Fehlversuche" caption="Annahmen, keine Messwerte. Ein Stopp kostet 5 € für Fahrer, Fahrzeug und Kraftstoff; ein Fehlversuch verschenkt den ersten Besuch, bezahlt einen zweiten und bringt 3 € Büroaufwand dazu. Nehmen Sie Ihre eigenen Stoppkosten und die Fehlerquote aus Ihren Messwochen." rows={[
+  ["Stopps pro Monat (900 am Tag, 22 Tage)", "19.800"],
+  ["Fehlerquote beim ersten Versuch", "× 6 %"],
+  ["Fehlversuche pro Monat", "≈ 1.190"],
+  ["Kosten je Fehlversuch (5 € verschenkt, 5 € zweiter Besuch, 3 € Büro)", "× 13 €"],
+  ["Monatliche Kosten der Fehlversuche", "≈ 15.400 €"],
+  ["Anteil, der durch Adressprüfung und Bestätigung entfällt", "× ein Drittel"]
+]} result={["Mögliche Ersparnis pro Monat", "≈ 5.100 €"]} />
+
+Die 14,69 € aus der Loqate-Studie sind die Kosten eines Händlers je fehlgeschlagener Bestellung, nicht die eines Kurierdienstes, liegen aber in der Nähe meiner 13 €. Das spricht zumindest dafür, dass die Größenordnung nicht abwegig ist.
+
+Zwei Vorbehalte. Erstens zählt die Ersparnis nur für Fehlversuche, die Sie tatsächlich verhindern. Ein Drittel ist geraten, und der Pilot unten soll diese Annahme durch eine Messung ersetzen.
+
+Zweitens kostet Vorbeugung laufend Geld. Angenommen, Sie schicken zwei Nachrichten pro Stopp, und jede kostet 5 Cent: Das sind bei diesem Volumen rund 2.000 € im Monat, noch vor Modell und Anbindung. E-Mail und App-Benachrichtigungen sind billiger, und nicht jeder Stopp braucht eine Nachricht. Stammkunden mit festem Zeitfenster und Stopps, die der Auftraggeber schon bestätigt hat, können Sie auslassen.
+
+Zur Planung würde ich für den Aufbau einen niedrigen bis mittleren vierstelligen Betrag einmalig ansetzen und einige hundert Euro im Monat für den Betrieb, ohne Nachrichtengebühren. Das sind meine eigenen groben Schätzungen für einen kleinen Aufbau, keine Angebote.
+
+## Der Ablauf: am Vorabend bestätigen, nicht an der Tür
+
+So würde ich den Ablauf bauen. Die Aufträge der Auftraggeber kommen weiter so an wie heute. Die neue Arbeit passiert zwischen „Auftrag eingegangen“ und „Fahrer fährt los“.
+
+<Flow title="Vom eingehenden Auftrag zur Notiz in der Fahrer-Tour" caption="Der Assistent prüft, fragt und hält fest. Jede Ausnahme entscheidet die Disposition, und der Fahrer bestätigt weiterhin an der Tür.">
+<Step title="Auftrag geht ein" who="Dispositionssoftware" time="Vorabend">Aufträge kommen wie bisher über die Schnittstelle des Auftraggebers, per Datei oder per E-Mail.</Step>
+<Step title="Adresse prüfen" who="KI" tone="ai" time="Sekunden">Liest die Adresse und markiert Lücken: keine Etage, kein Firmenname, zwei mögliche Hausnummern. Ergänzt, was sich aus früheren Lieferungen an denselben Ort ergibt.</Step>
+<Step title="Empfänger fragen" who="KI" tone="ai" time="Vorabend">Schickt eine kurze Nachricht mit dem geplanten Zeitfenster und höchstens zwei Fragen: Ist jemand da, und gibt es etwas, das der Fahrer wissen sollte?</Step>
+<Step title="Antwort lesen" who="KI" tone="ai" time="Minuten">Macht aus Freitext-Antworten eine strukturierte Notiz mit Sicherheitsmarkierung: neues Zeitfenster, Nachbar, Abstellort, Zugangscode, falsche Adresse.</Step>
+<Step title="Ausnahmen entscheiden" who="Disposition" tone="human" time="vor 7:00 Uhr">Gibt alles frei oder lehnt ab, was ein Risiko trägt: Abgabe beim Nachbarn oder am Abstellort, Adressänderungen, Sendungen mit Unterschrift oder Ausweiskontrolle.</Step>
+<Step title="Mit Notiz fahren" who="Fahrer" tone="human" time="auf der Tour">Sieht pro Stopp eine einzeilige Notiz, liefert oder ruft an und hält das Ergebnis mit Foto oder Unterschrift fest.</Step>
+</Flow>
+
+Ein paar Entscheidungen erledigen den größten Teil der Arbeit.
+
+**Einmal fragen, und die Antwort leicht machen.** Höchstens zwei Fragen. Wer ein Formular ausfüllen soll, tut es nicht, wer in einem halben Satz antworten kann, tut es.
+
+**Das Zeitfenster ist das Versprechen der Disposition, nicht des Assistenten.** Der Assistent bietet nur Fenster an, die die Disposition freigegeben hat. Er sagt nie „der Fahrer ist um 10:15 Uhr da“, weil er das nicht wissen kann.
+
+**Unsicherheit gehört in die Notiz.** Steht in einer Antwort „vielleicht meine Nachbarin“, vermerkt die Notiz das, und ein Mensch ruft an, statt zu raten. Ein falscher Abstellort ist der Weg, auf dem aus einer Fehlzustellung ein verlorenes Paket und ein Streit wird.
+
+**Die Schleife füttert sich selbst.** Jeder Fehlversuch bekommt einen Grund, und die Adress- und Zugangsangaben, die am Ende funktioniert haben, wandern zurück in den Kundenstamm. Die Prüfung derselben Adresse findet nächste Woche die Etage schon vor.
+
+## Was aus einer Antwort wird
+
+So könnte die Notiz aussehen, die der Fahrer bekommt. Die Nachricht des Empfängers kam als einfacher Text, mit Tippfehlern.
+
+```text
+ANTWORT, 07:52: „bin bis 14 uhr auf arbeit, nachbarin frau kaya 2. og kann annehmen, klingel kaputt, rufen sie mich an 0171 5550142“
+
+STOPP-NOTIZ
+Zeitfenster: nach 14:00 Uhr, oder Nachbarin (Frau Kaya, 2. OG).
+Klingel defekt: bei Ankunft 0171 5550142 anrufen.
+Abgabe beim Nachbarn: vom Empfänger in Nachricht 07:52 erlaubt, protokolliert.
+Freigabe Disposition nötig: ja (Nachbarabgabe). Sicherheit: hoch.
+```
+
+Die Notiz ist kurz genug, um sie an der Ampel zu lesen, und sie enthält das, was in einem späteren Streit zählt: wer wem wann was erlaubt hat.
+
+Solche Notizen sind nahe Verwandte der [Einsatzvorbereitung, die ich für die Schädlingsbekämpfung beschrieben habe](/de/posts/ki-schaedlingsbekaempfung-einsatzplanung): Wer vor der Tür steht, weiß schon, was er sonst erst durch Scheitern erfahren würde.
+
+## Wo die Grenze liegt
+
+<Split title="Die Grenze" leftTitle="Der Assistent" rightTitle="Der Assistent nie" left={[
+  "Prüft Adressen auf fehlende Etage, Firmenname oder Hausaufgang",
+  "Schickt die Bestätigungsnachricht und sagt, dass er automatisch ist",
+  "Liest Antworten als Freitext und in mehreren Sprachen",
+  "Schreibt die Stopp-Notiz mit Sicherheitsmarkierung",
+  "Bietet nur Zeitfenster an, die die Disposition freigegeben hat"
+]} right={[
+  "Gibt allein eine Abgabe beim Nachbarn oder am Abstellort frei",
+  "Ändert eine Lieferadresse, weil eine Antwort es verlangt",
+  "Verspricht eine genaue Ankunftszeit",
+  "Wiederholt Zugangscodes irgendwo außer in der Stopp-Notiz des Fahrers",
+  "Beantwortet Fragen zu Schaden, Verlust oder Haftung"
+]} />
+
+Zur Adressänderung noch ein Satz. Auf eine SMS kann jeder antworten. Eine geänderte Adresse braucht die Bestätigung des Auftraggebers oder der ursprünglichen Kontaktperson, sonst haben Sie sich einen bequemen Weg gebaut, fremde Pakete umzuleiten.
+
+## Datenschutz und die Regeln für Nachrichten
+
+Namen, Telefonnummern und Adressen von Empfängern sind personenbezogene Daten. Ein paar Punkte würde ich klären, bevor irgendetwas live geht.
+
+**Rollen und Verträge.** Die Kontaktdaten des Empfängers kommen meist vom Auftraggeber. Ob Sie für ihn als Auftragsverarbeiter oder in eigener Verantwortung handeln, hängt von Ihrem Vertrag ab, halten Sie das schriftlich fest. Der Anbieter für Nachrichten und der KI-Anbieter sind Ihre Auftragsverarbeiter. Das heißt: ein Auftragsverarbeitungsvertrag (AVV) nach Artikel 28 DSGVO mit jedem von beiden, möglichst mit Hosting in der EU.
+
+**Servicenachricht oder Werbung.** Eine reine Zustellinformation ist keine Werbung. Sobald Sie einen Rabattcode oder ein Zusatzangebot hineinpacken, wird die ganze Nachricht zur Werbung, und [§ 7 UWG](https://www.gesetze-im-internet.de/uwg_2004/__7.html) verlangt für Werbung per E-Mail in der Regel eine vorherige Einwilligung. Zu Abwicklungs-E-Mails mit Werbeanteil gibt es [eine Einordnung der IT-Recht Kanzlei](https://www.it-recht-kanzlei.de/werbung-in-abwicklungsmails-systemmails-abmahnbar.html). Halten Sie die Zustellnachricht sauber.
+
+**Sagen, dass es eine KI ist.** Seit dem 2. August 2026 verlangt die KI-Verordnung, dass Menschen erfahren, wenn sie mit einem KI-System interagieren, es sei denn, das ist offensichtlich. Die [FAQ der Kommission zu Artikel 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) erklärt die Regel. Wenn der Assistent Antworten selbst beantwortet, sagen Sie es in der ersten Nachricht: „Hier schreibt der automatische Assistent von Hafen Kurier.“
+
+**Zugangscodes und Speicherdauer.** Ein Torcode ist ein Sicherheitsdetail, kein Kundenmerkmal. Zeigen Sie ihn dem Fahrer am Tag selbst, halten Sie ihn aus allgemeinen Notizen heraus und löschen Sie ihn nach der Zustellung, außer der Kunde bittet Sie, ihn zu behalten. Erheben Sie das Nötigste und speichern Sie es kurz.
+
+## Vier Wochen mit einer Tourengruppe
+
+Ich würde nicht alles auf einmal einschalten. Ein Pilot, der eine echte Zahl liefert:
+
+1. **Woche 1 und 2: messen.** Versehen Sie jeden Fehlversuch mit einem Grund: niemand da, Adresse, Zugang, verweigert, sonstiges. Zählen Sie pro Tourengruppe. Das ist Ihre Ausgangslage.
+2. **Woche 3: die kostenlosen Dinge beheben.** Pflichtfelder für Etage und Firma im Auftragsformular, ein Feld „Zugangshinweis“ und die Benachrichtigung, die Ihre Dispositionssoftware ohnehin hat.
+3. **Woche 3 und 4: den Assistenten in einer Tourengruppe einsetzen.** Adressprüfung, Nachricht am Vorabend, Antworten lesen. Eine vergleichbare andere Gruppe bleibt, wie sie ist.
+4. **Ende Woche 4: vergleichen.** Fehlversuche pro 1.000 Stopps in beiden Gruppen, Büro-Minuten für Umplanungen und jede Sendung, die ohne protokollierte Erlaubnis beim Nachbarn landete.
+
+Beim letzten Punkt wäre ich streng. Eine falsch freigegebene Abgabe ist ein Grund, die Regeln zu verschärfen, und keine Zahl, die man wegmittelt.
+
+## Fragen, die Kurierdienste stellen
+
+### Wie kann ich Fehlzustellungen bei meinem Kurierdienst verringern?
+
+Sortieren Sie zwei Wochen lang die Fehlversuche nach Ursache und beheben Sie die größte mit dem billigsten Werkzeug. Für die meisten kleinen Kurierdienste ist das eine Nachricht am Vorabend mit Zeitfenster plus Pflichtfelder für die Adresse beim Auftraggeber. KI hilft, sobald Antworten und Adressen als Freitext eintreffen.
+
+### Was ist eine gute Erstzustellquote?
+
+Das hängt von Ihren Empfängern ab. Ein großer Paketdienst meldet für das Geschäftsjahr 2025/26 über 96 %, und eine Herstellerumfrage von Ende 2020 sah die Fehlerquote beim ersten Versuch in Deutschland bei rund 8 %. Wer Büros und Mehrfamilienhäuser beliefert, vergleicht sich besser mit der eigenen Ausgangslage aus dem letzten Monat als mit einem Paketdienst mit PaketShop-Netz.
+
+### Darf ich Empfänger vor der Zustellung ohne Einwilligung anschreiben?
+
+Eine rein informative Zustellnachricht gilt in der Regel nicht als Werbung, solange sie nichts Werbliches enthält. Für die Verarbeitung der Kontaktdaten brauchen Sie trotzdem eine Rechtsgrundlage, und Sie sollten die Regeln für Ihren Kanal prüfen. Sobald Werbung dazukommt, ändert sich das Bild.
+
+### Kann KI meine Disposition ersetzen?
+
+Nein, und ich würde es nicht versuchen. Der Assistent liest und entwirft. Die Disposition entscheidet alles, was ein Risiko trägt: Abgabe beim Nachbarn, Adressänderungen, hochwertige Sendungen. Was sich ändert: Die Disposition prüft zehn markierte Ausnahmen, statt zweihundert Empfänger anzurufen.
+
+## Wo ich anfangen würde
+
+Zählen Sie zwei Wochen lang Fehlversuche nach Grund, beheben Sie den häufigsten mit einem Formularfeld oder einer Fensternachricht, und fragen Sie erst dann, was ein Modell dazu beitragen kann. Wenn die meisten Fehlversuche „niemand da“ sind, ist die Nachricht am Vorabend das Produkt. Wenn die meisten „Adresse unklar“ sind, ist es die Adressprüfung. KI ist der Teil, der die Antworten liest und die Notiz schreibt.
+
+Wenn Sie Ihre eigenen Fehlerzahlen gemeinsam ansehen möchten, [schreiben Sie mir, welche Dispositionssoftware Sie nutzen und wie Ihre Fehlversuche aussehen](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Test wert ist. Dieselbe Gewohnheit, Probleme vor der Abfahrt zu finden, hilft auch auf der Angebotsseite, etwa bei [Speditionen und ihren Frachtanfragen](/de/posts/ki-spedition-frachtanfragen).

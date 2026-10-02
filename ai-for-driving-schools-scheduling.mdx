@@ -1,0 +1,160 @@
+---
+id: "ai-for-driving-schools-scheduling"
+title: "Driving School Admin: Scheduling, Exam Slots and the Waiting List"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Education & community", "Driving schools", "Lesson scheduling", "AI for small business"]
+description: "Instructors are scarce and exam slots are out of your hands. What driving school software already does, and the narrow band where an AI assistant helps."
+excerpt: "Instructors are scarce and exam slots are out of your hands. What driving school software already does, and the narrow band where an AI assistant helps."
+---
+
+Picture a driving school with four instructors, six cars and one person in the office. It's Monday, 8:10, and the weekend left nineteen messages. One instructor called in sick, which cancels six lessons at once. A mother wants to know whether her 17-year-old can start before the summer holidays. A student asks for "anything Thursday after four" to replace a lesson that vanished. Two people ask what the special drives are and whether they can be done in winter. And one student passed the theory test eleven months ago, has no practical exam booked, and nobody has noticed.
+
+None of this is hard. All of it takes time, from the same person who also answers the phone, sends invoices and books exams.
+
+This post is a decision guide, not a pitch. Driving school software often does more than schools use. An AI assistant adds value in a narrow band, and it's worth knowing exactly where that band is before you pay for anything. I use Germany as the main example, because its rules are the most detailed (12 mandatory special drives, a 12-month theory deadline, exams run by TÜV and DEKRA), and Great Britain as the contrast.
+
+## Three queues, and you control one of them
+
+A driving school runs three queues at once. **Lessons**: instructor hours and cars, which you schedule. **Exams**: slots held by the examiners at TÜV or DEKRA in Germany, or by DVSA in Great Britain, which you don't control. **Starters**: people who want to begin and are waiting for a place. Each queue pushes on the other two.
+
+<Stats title="The pressure behind the queues">
+  <Stat value="44%" label="of learner drivers in Germany failed the theory test in 2025, and 37% failed the practical test" source="TÜV-Verband figures, via ZDFheute" href="https://www.zdfheute.de/panorama/fahrschule-fuehrerschein-pruefung-schnieder-reform-100.html" />
+  <Stat value="about 54" label="years: the average age of driving instructors in Germany in 2024, with over a third older than 60" source="MOVING Branchenreport 2025, via DVPI" href="https://dvpi.de/news/moving_branchenreport_2025.html" />
+  <Stat value="about €3,400" label="is the average cost of a class B licence in Germany, according to the Federal Transport Ministry" source="ZDFheute, on the licence reform" href="https://www.zdfheute.de/politik/deutschland/fuehrerschein-reform-plaene-ueberblick-schnieder-100.html" />
+</Stats>
+
+Read the first two together. Many learners loop back through all three queues after a failed test, and the people who teach them are not getting younger. Capacity won't grow by itself, so every empty lesson slot costs more.
+
+The exam queue is the one you can't touch. In Great Britain, the median wait between booking and taking a car practical test was [11.1 weeks in August 2026](https://www.gov.uk/government/statistical-data-sets/driving-test-and-theory-test-data-cars), against DVSA's own goal of 7 weeks or fewer, and [DVSA says](https://www.gov.uk/government/speeches/car-practical-driving-test-waiting-times) it can't yet give a date for getting there. In Germany the wait is local: trade press has reported [weeks of waiting in Lower Saxony and Bremen](https://www.fahrschule-online.de/nachrichten/niedersachsen-und-bremen-lange-wartezeiten-auf-pruefungstermin-3553289) and [hardly any in NRW](https://www.fahrschule-online.de/nachrichten/nrw-kaum-wartezeit-auf-fuehrerscheintermin-3552223). Ask your own Prüfstelle.
+
+What you control is whether a student is ready and booked when a slot appears, and whether their theory certificate is still valid. In Germany it counts for 12 months. If the practical exam isn't passed in that time, the theory test has to be taken again ([§ 17 FeV](https://www.gesetze-im-internet.de/fev_2010/BJNR198000010.html)). A long exam wait can quietly cost a student another theory fee.
+
+## What your school software already does
+
+Cloud-based management systems such as [Fahrschulcockpit](https://fahrschulcockpit.de/) and [ClickClickDrive](https://www.clickclickdrive.de/fahrschule-partner) cover the basics: student records, instructor and vehicle diaries, scheduling and invoicing. Fahrschulcockpit also gives students an app for appointments and exam practice.
+
+Before you add anything, switch on what you already pay for: online booking, automatic lesson reminders, a waiting list that keeps its order, and a record of every student's lessons and special drives. That is rules and records, and software does rules and records better than a language model.
+
+Where a language model helps is words. It can understand a free-text message, answer the tenth identical question, draft a reply, and boil a pile of records down to three lines. The matrix sorts the usual office work.
+
+<Matrix title="Who handles which kind of office work" caption="Frequency decides whether automation pays. Free text and judgement decide whether it's the software, an assistant, or a person." xLabel="How much free text or judgement it needs" yLabel="How often it comes up" quadrants={[
+  { title: "Frequent and rule-based: the school software", text: "Lesson reminders, online booking, invoices, the order of the waiting list, counting lessons and special drives." },
+  { title: "Frequent and free-form: where an assistant earns its keep", text: "'When can I start?', 'What does it cost?', what to bring to the first lesson, reschedule requests written in plain language, parents' questions.", highlight: true },
+  { title: "Rare and rule-based: a checklist", text: "Documents needed for the licence application, how to apply for an exam, what happens after a failed test." },
+  { title: "Rare and delicate: a person decides", text: "Whether a student is exam-ready, who gets a rare exam slot, an anxious learner, a complaint, a conflict between instructors." }
+]} />
+
+The top-right quadrant is the decision. If your office spends hours a week there, an assistant pays. If most of your pain sits top-left, switch on features you already have. The bottom-right is human on purpose.
+
+## Rescheduling: the workflow I'd build first
+
+Rescheduling touches all three queues, so I'd start there. It's frequent, it arrives as free text, and a bad reply is small and visible. ([Music schools](/posts/ai-for-music-schools-administration) have the same make-up-lesson juggling, minus the daylight and the motorway.)
+
+<Flow title="From 'my lesson is cancelled' to a refilled slot" caption="The software holds the rules and the diary. The assistant reads, proposes and drafts. The office decides every exception.">
+<Step title="Message arrives" who="Student or parent" time="any channel">Email, messenger or the school app: "Can't make Thursday, anything Friday?"</Step>
+<Step title="Read and match" who="AI" tone="ai" time="seconds">Finds the student and the lesson, tells a question from a cancellation from a reschedule request, and notes the lesson type.</Step>
+<Step title="Check the diary" who="School software">Free slots for that instructor and car, the student's preferred days, and lesson-type limits such as motorway or darkness.</Step>
+<Step title="Offer two or three slots" who="AI" tone="ai">Proposes only slots the diary shows as free, applies your written cancellation rule, and never mentions exam dates.</Step>
+<Step title="Office confirms exceptions" who="Office" tone="human" time="batch, twice a day">Late-cancellation fees, students who cancel often, anything that touches an exam application.</Step>
+<Step title="Freed slot goes out" who="AI" tone="ai" time="minutes">The slot is offered to waiting-list students who said yes to short notice. First yes gets it.</Step>
+</Flow>
+
+Three design choices do most of the work.
+
+**The diary decides, not the assistant.** It proposes only slots the software shows as free for that instructor and car, so it can't double-book anyone.
+
+**Lesson type matters.** A motorway drive needs time to get to a motorway, and a dusk drive in June can't happen at 17:00. Tag the lesson types in your software, so the assistant doesn't offer what can't be taught.
+
+**The cancellation rule is yours.** Whether a lesson cancelled twelve hours before is charged lives in your training contract. The assistant applies it, and the office decides about exceptions.
+
+## The exam pipeline: ready when the slot comes
+
+Class B needs 12 special drives of 45 minutes: 5 on country roads, 4 on motorways and 3 in dusk or darkness, as set out in the [driver training regulation](https://www.bussgeldkatalog.de/sonderfahrten/) (§ 5 FahrschAusbO). Add the 12-month theory deadline and an exam application, and every student has a small pipeline that someone has to watch.
+
+| What to track | Where it lives | Why it matters |
+| --- | --- | --- |
+| Date the theory test was passed | School software | The certificate expires after 12 months |
+| Special drives done (5 country, 4 motorway, 3 dusk) | Student record | Twelve in total, and the dusk ones are seasonal |
+| Lessons booked before the expected exam date | Diary | An exam slot with no practice scheduled before it is a wasted slot |
+| Instructor's readiness note | The instructor | The instructor decides, not the assistant |
+| Exam application status | School software and Prüfstelle | The dates come from TÜV or DEKRA |
+
+The software already holds most of this. What a person lacks is time to read it across 150 students. A weekly digest does that: who is within eight weeks of theory expiry, who has finished all twelve special drives, who has no lesson booked in the next fortnight. The assistant compiles it. The instructor decides who is ready, and the assistant never says "you'll pass".
+
+<Bars title="Share of tests not passed in Germany, 2025" unit="%" caption="TÜV-Verband figures for learner drivers. Learners under 18 (accompanied driving from 17) do better. First-attempt pass rates were 63% for theory and 65% for practical." source="TÜV-Verband figures, via ZDFheute" href="https://www.zdfheute.de/panorama/fahrschule-fuehrerschein-pruefung-schnieder-reform-100.html" data={[
+  { label: "Theory test, all learners", value: 44, highlight: true },
+  { label: "Theory test, under 18", value: 35 },
+  { label: "Practical test, all learners", value: 37, highlight: true },
+  { label: "Practical test, under 18", value: 24 }
+]} />
+
+With a 37% failure rate, more than one in three practical tests ends in another booking. Each one sends the student back into all three queues: more lessons in your diary, a new exam application and another wait.
+
+## The waiting list: a list, plus one thing
+
+A waiting list is an ordered list with preferences: days, times, how soon they want to start. That's a feature of your software, not a job for AI. The one thing I'd add is the moment a slot frees up. [Salons solve the same problem](/posts/ai-for-hair-salons-scheduling) with last-minute gaps: offer the slot to the few people who said yes to short notice, first yes gets it, no mass messages.
+
+The other half is honesty. When you're at capacity, the most useful answer to "when can I start?" is a real date from the real list, and an assistant reading that list can give it at 21:00 on a Sunday. If the date is nine weeks away, say so. I'd expect people to respect that more than three days of silence, though that's my judgement, not a measured figure.
+
+## Where AI is the wrong tool
+
+- **Building the timetable.** Fitting instructors, cars, daylight, lesson types and exam dates together is constraint scheduling. Software that enforces the rules should do it. A model can suggest a swap, but it should never write to the diary without those checks.
+- **Reminders.** An automatic text the evening before a lesson is a plain software feature.
+- **Missing FAQ.** If the same five questions arrive every week, write a one-page FAQ and link it in your first reply. An assistant answering from that page is good. An assistant improvising is not.
+- **Exam readiness and rare exam slots.** Whether a student is ready, and who gets a slot nobody else can offer, is a judgement about people and fairness.
+- **The teaching.** It stays in the car.
+
+## What it costs, roughly
+
+<Calc title="Napkin math: lesson slots that stay empty" caption="Assumptions, not measurements. Your diary shows the real numbers." rows={[
+  ["Lessons cancelled or moved per week (four instructors)", "28"],
+  ["Share that end up empty because nobody could be offered the slot in time", "× 50%"],
+  ["Empty lesson slots per week", "= 14"],
+  ["Price of a 45-minute lesson", "× €65"],
+  ["Weeks per month", "× 4.3"]
+]} result={["Lesson revenue left unused each month", "≈ €3,900"]} />
+
+If a waiting list and an assistant refilled a third of those slots, that would be roughly €1,300 a month. It would also give instructors paid hours back.
+
+Against that, a hosted assistant connected to your school software is a few days of setup and, in my planning range, tens to a few hundred euros a month to run. That's my own estimate, not a quote. If your diary shows only two or three empty slots a month, the maths doesn't work, so stay with software features.
+
+## Data protection and what the assistant may say
+
+Student data is ordinary personal data plus a lot of messages from parents. Rules I'd set from day one:
+
+- **Contract partner first.** For an adult student, a mother asking about their lesson times is a third party. Check who the contract partner is before the assistant shares lesson details.
+- **A processing agreement with the provider.** Under the GDPR, any AI provider that touches student data needs a data processing agreement ([Article 28](https://gdpr-info.eu/art-28-gdpr/)).
+- **Keep medical and ID documents out.** Eyesight certificates, first aid certificates and ID copies stay in the school software. The assistant doesn't need them.
+- **Mind the records.** Each student needs a training record ([§ 6 FahrlGDV](https://freirecht.de/g/FahrlGDV:6)), so deletion rules need care. Ask your instructors' association what retention applies before you set the assistant's log length.
+- **Say it's an assistant.** [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) requires that people are told when they're talking to an AI, and it has applied since August 2026.
+
+The assistant also never promises an exam date, never predicts a pass, and never advises on eligibility, such as eyesight or medical conditions. Those go to a person.
+
+## Questions driving school owners ask
+
+### Is driving school software enough, or do I need AI on top?
+
+For rules and records, the software is enough, so use all of it first. AI helps with free-text messages, repeated questions and summaries. If your office isn't buried in those, skip it.
+
+### Can an AI chatbot answer students' and parents' questions about the licence?
+
+Yes, if it answers from your own FAQ, price list and training contract, and hands over anything it isn't sure about. Legal or medical advice is not its job.
+
+### How do I fill a cancelled driving lesson at short notice?
+
+Keep a waiting list with preferences and a consent flag for short-notice offers. When a slot frees up, offer it to two or three matching people at once, and give it to the first yes.
+
+### Will the licence reform change this?
+
+Probably, but not yet. The cabinet agreed a reform draft on 20 May 2026 and it reached the Bundestag on 29 July 2026 as Drucksache 21/7404. Planned changes include digital theory instruction and dropping the fixed minimum number of special drives, leaving it to the instructor. As of late September 2026 [it hasn't passed](https://www.anwalt.de/rechtstipps/fuehrerscheinreform-2027-was-sich-bei-fahrschule-theoriepruefung-und-fahrstunden-aendern-soll-281309.html), and the government is aiming for early 2027. Until then the current rules apply, so keep numbers like 12 special drives as settings in your software, not baked into the assistant.
+
+### Can AI shorten the wait for the practical exam?
+
+No. The slots belong to TÜV, DEKRA or DVSA. What you can do is keep students' lessons running while they wait, and submit the application as soon as the instructor says they're ready.
+
+## Where I'd start
+
+Software for rules, an assistant for words, the instructor for judgement. Start with one workflow, rescheduling messages, and run it for a month. Count empty lesson slots per week before and after. Keep exam readiness human, and tell people they're talking to an assistant.
+
+If you'd like to try it, [tell me which school software you use and what a typical Monday looks like in the office](/contact?intent=improve), and I'll suggest the smallest version worth testing. Another education business with a placement puzzle is the [language school](/posts/ai-for-language-schools-placement), where the question is level and course, not instructor and car.

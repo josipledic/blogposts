@@ -1,0 +1,154 @@
+---
+id: "ai-for-taxi-companies-patient-transport"
+title: "Patient Transport Rides: The Paperwork Behind Every Trip"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Transport & logistics", "Taxi companies", "Patient transport", "AI for small business"]
+description: "A dialysis ride only pays if the authorization behind it holds up. How taxi firms can use AI to check trip paperwork before the first ride, not after a denial."
+excerpt: "A dialysis ride only pays if the authorization behind it holds up. How taxi firms can use AI to check trip paperwork before the first ride, not after a denial."
+---
+
+Picture a taxi company with eight cars and two wheelchair vans. On a Monday, the regional Medicaid broker sends over a new patient: dialysis, three mornings a week, starting Wednesday. The dispatcher assigns the first trip. The driver picks the patient up at 5:45 a.m. and gets her there on time.
+
+Three weeks later the claims come back denied. The authorization expired the week before the first ride, and the renewal request sat in an email thread nobody opened again. The company has now driven nine round trips it may never be paid for.
+
+Nothing went wrong on the road. The patient arrived, the driver was punctual, the car was clean. What failed was the paperwork around the ride, and it failed quietly, weeks before anyone could see it.
+
+That's the odd thing about patient transport. The ride is the easy part. What you sell to the payer is a ride you can prove was authorized, was needed, took place and was documented, and every single ride in a series has to carry that proof. This is where I'd use AI in a taxi company that does this work. Not to drive, and not to decide who is entitled to what, but to read the paperwork before the first ride and keep track of it until the last.
+
+## Why one patient means a whole series of trips
+
+<Stats title="Patient transport in numbers (US Medicaid)">
+  <Stat value="60 million+" label="non-emergency medical transportation ride-days in fiscal year 2018, for about 3.2 million Medicaid beneficiaries" source="MACPAC, June 2021 report to Congress" href="https://www.macpac.gov/wp-content/uploads/2021/06/Chapter-5-Mandated-Report-on-Non-Emergency-Medical-Transportation.pdf" />
+  <Stat value="70.1" label="average ride-days a year among users with end-stage renal disease, against 12.8 for users without the conditions studied" source="MACPAC, FY 2018 data" href="https://www.macpac.gov/wp-content/uploads/2021/06/Chapter-5-Mandated-Report-on-Non-Emergency-Medical-Transportation.pdf" />
+  <Stat value="86 of 100" label="sampled Medicaid transport claim lines in Massachusetts (2016 to 2017) did not meet federal or state requirements" source="HHS Office of Inspector General, 2021" href="https://oig.hhs.gov/oas/reports/region1/11900004.asp" />
+</Stats>
+
+In the US, non-emergency medical transportation (NEMT) is a required Medicaid benefit, according to the [Medicaid and CHIP Payment and Access Commission (MACPAC)](https://www.macpac.gov/subtopic/non-emergency-medical-transportation/). States can run it themselves, hire a third-party broker, or push it through managed care plans. Brokers such as ModivCare, MTM and Verida take the ride requests and pass them to networks of independent transport providers: small taxi companies, wheelchair-van operators and the like. If you are a small firm doing patient trips, you probably work for a broker, and the broker's rules are your rules.
+
+The [National Institute of Diabetes and Digestive and Kidney Diseases](https://www.niddk.nih.gov/health-information/kidney-disease/kidney-failure/hemodialysis) says in-center hemodialysis is usually three sessions a week of about four hours each. That's six trips a week, there and back, or roughly 150 over six months. Among the diagnoses MACPAC examined, end-stage renal disease had the highest use of these rides.
+
+So one set of papers sits behind 70 or 150 trips. If it's wrong, it's wrong every time. If it's right, the series runs by itself.
+
+And someone does look. The HHS Inspector General's audit of Massachusetts found that 86 of 100 sampled claim lines for 2016 and 2017 did not meet requirements, and that the services weren't adequately documented. Its [Indiana audit](https://oig.hhs.gov/oas/reports/region5/51800043.asp) found 18 of 120 sampled claims non-compliant. In Washington, the state Medicaid agency's [contract guidance](https://www.hca.wa.gov/assets/billers-and-providers/brokers_hipaa_business_associates.pdf) requires brokers to verify at least 10% of trips before they happen and at least 10% afterwards, and calls this a primary focus of state and federal audits. You won't know which of your trips will be picked.
+
+## Following one trip through the paperwork
+
+Here is what I'd draw on a whiteboard for any firm that takes these trips. The request arrives, from a broker portal or a clinic's front desk. Someone checks that it's authorized. The dispatcher assigns a car with the right equipment. On the day, the driver collects the proof: times, addresses, a signature, sometimes GPS. After that the claim goes in, and weeks later it's paid or it isn't.
+
+That last step is the problem. Almost every failure on this list surfaces only at the end.
+
+| Step | What goes wrong | When you find out |
+| --- | --- | --- |
+| Authorization | Expired, dates that don't cover the series, or an address that differs from the one the patient gives you | When the claim is denied, weeks later |
+| Eligibility | Coverage changed or lapsed between booking and the ride | At claim review, after the trips are done |
+| Level of service | Booked as ambulatory when the patient needs a wheelchair van, or the other way round | On the day, with a patient at the curb and the wrong vehicle |
+| Trip record | Missing pickup or drop-off time, no signature, an address that doesn't match the assignment | At claim review or in an audit |
+| Series end | A standing order runs out mid-month and nobody asked for a renewal | When the broker stops assigning trips or denies the claim |
+| Filing | The claim goes in after the broker's deadline | When it's rejected; deadlines differ by broker |
+
+This is my list of places to look, not a ranking. Your broker's denial reports will show which rows you actually hit.
+
+What every row has in common is timing. The discovery comes after the work has been done, and often after the next twenty trips have been booked on the same bad paperwork. The fix is to move the discovery to before the first ride. It's the same principle as in [tow dispatch](/posts/ai-for-towing-companies-dispatch): the facts you capture at the first contact decide whether the job pays.
+
+## What the assistant does with the paper
+
+The assistant's job is reading and comparing. It takes whatever arrives, whether a broker export, an emailed PDF or a photographed form, and checks it against your own rules and the broker's.
+
+<Flow title="From a new series to a clean claim" caption="The assistant reads, compares and reminds. A person accepts every series and answers every flag.">
+<Step title="Paperwork arrives" who="Dispatch or office" time="when received">A broker export, an emailed authorization, a photo of a form from the clinic. All of it goes to one place.</Step>
+<Step title="Read and extract" who="AI" tone="ai" time="seconds">Patient name, trip IDs, dates, addresses, level of service, authorization number and validity.</Step>
+<Step title="Check against the rules" who="AI" tone="ai" time="seconds">Compares the extracted fields with your checklist and the broker's rules. Flags anything expired, missing or mismatched, in plain words.</Step>
+<Step title="Decide" who="Dispatcher or office manager" tone="human" time="before the first ride">Accept the series, send it back, or call the patient or the clinic. The assistant never confirms coverage.</Step>
+<Step title="Calendar and reminders" who="AI" tone="ai">Builds the series calendar with the end date and trips remaining, drafts the patient's day-before text, and raises a renewal request three weeks before expiry.</Step>
+<Step title="Close the trip record" who="Driver and AI" tone="ai" time="same day">After each ride, checks that times, addresses and signature are complete and consistent. Gaps go back to the driver while he still remembers.</Step>
+</Flow>
+
+A few design choices do most of the work.
+
+**It flags and never fixes.** If the dates on an authorization look wrong, the assistant drafts the question for the broker or the clinic. It doesn't edit the record, and it never fills in a trip time or a signature that didn't happen.
+
+**It never says a trip is covered.** Coverage is the broker's and the state's decision. The assistant can say "authorization on file, dates cover the whole series" or "something is missing", and nothing stronger.
+
+**The renewal clock starts early.** A standing order that expires on a Friday should be on someone's desk three weeks earlier. A request that reaches [a busy practice front desk](/posts/ai-for-medical-practices-referrals) on the last day is easy to lose.
+
+## The checklist it runs
+
+<Checklist title="Before the first trip of a series" items={[
+  "Authorization number is present and its dates cover the whole series",
+  "Patient name and ID match across the authorization, the booking and your records",
+  "Pickup and destination addresses are complete, including apartment, door code and facility entrance",
+  "Level of service matches the patient's needs: ambulatory, wheelchair or stretcher",
+  "The end date is in the calendar, with a renewal reminder three weeks before",
+  "You know what the broker needs after each ride: times, signature, mileage or GPS",
+  "Anything odd goes to a person before the first ride, not after the claim"
+]} />
+
+## Capture the proof while the driver remembers
+
+[MACPAC's report](https://www.macpac.gov/wp-content/uploads/2021/06/Chapter-5-Mandated-Report-on-Non-Emergency-Medical-Transportation.pdf) describes what some brokers and states now use as integrity tools: GPS on provider vehicles, and tablets on which drivers enter trip details and patients sign digitally at the end. It also notes that adoption is uneven, and that some states require brokers to make sure providers have GPS while others don't.
+
+What your assistant does depends on which world you're in. If your drivers already use an app that records times, location and signature, you don't need AI to read paper. You need something that matches each completed trip against its assignment and flags the gaps on the same day. If your drivers still fill in paper trip sheets, an assistant that reads a photo of the sheet at the end of a shift can catch the usual slips: a missing signature, a drop-off time earlier than the pickup, an address that differs from the authorization.
+
+Same-day matters. A missing signature spotted on Tuesday leaves time to ask the driver or the patient. Found at the claim stage, it's much harder, and the trip may be lost.
+
+## What it costs, and what's riding on it
+
+<Calc title="Napkin math: the revenue behind one dialysis series" caption="Assumptions, not measurements. Your broker's rates and your patient's schedule will give you the real figures." rows={[
+  ["Dialysis sessions per week", "3"],
+  ["Trips per session (there and back)", "× 2"],
+  ["Weeks in the series", "× 26"],
+  ["Trips in the series", "= 156"],
+  ["Average paid per trip", "× $32"]
+]} result={["Revenue riding on one set of paperwork", "≈ $5,000"]} />
+
+Set that against the cost of checking. A document-reading assistant on top of the dispatch and email tools you already have is a few days of work to write your rules and test them against a month of old trips, plus a monthly fee that for a firm this size is likely in the low hundreds of dollars. That's my estimate, not a quote, and it depends on volume and what the tool has to connect to. If it saves one series a year, the numbers are on your side.
+
+The cost on the other side is harder to put a number on. MACPAC reports that late pickups and driver no-shows are the main complaints from riders, and that focus group participants missed appointments because of them, in one case multiple dialysis sessions. A missed ride isn't only a lost fare.
+
+## When AI is the wrong tool
+
+Before you buy anything, try these. They cost less and are sometimes enough.
+
+- **A hard stop.** No first trip of a series without a complete file. It costs nothing, and it removes most of the table above.
+- **A spreadsheet and a Monday review.** One row per series, with the authorization end date. A firm with a dozen regular patients can run on this for years.
+- **The broker's portal.** The broker verifies eligibility and authorization on its side. Don't rebuild that. Check your side: the file, the vehicle, the trip record.
+- **Driver software that already logs everything.** Times, GPS and signatures captured in an app beat any AI that reads paper. Use AI for the gaps between systems: emails, PDFs, photos of forms.
+
+AI starts to pay off when the paperwork arrives in too many shapes for one person to track, or when volume has outgrown a spreadsheet and a good memory.
+
+## Patient data and the rules
+
+Trip data is health data in disguise. A pickup address and a dialysis clinic's name tell a reader a lot about a patient. Treat it that way.
+
+In the US, one state agency's [guidance](https://www.hca.wa.gov/assets/billers-and-providers/brokers_hipaa_business_associates.pdf) says its contracts designate the NEMT brokers as HIPAA business associates of the Medicaid agency. What flows down to you as a subcontracted provider depends on your contract, so read it, and ask a lawyer if the answer isn't clear.
+
+A tool vendor that handles trip data for you needs a written agreement on how the data is used, stored and deleted, including a promise that it isn't used to train models. Get that before any real trip goes through the tool. Keep what you collect to what the trip needs.
+
+Messages to patients need care too. A day-before text can say the day, the time and the pickup address. It shouldn't say "dialysis" or name the clinic, because phones sit on tables and light up on lock screens. And if the assistant talks or chats with patients directly, they should be told it's an AI. In the EU that's a legal duty under [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act), in force since 2 August 2026.
+
+## Questions taxi owners ask
+
+### What happens if a trip isn't documented properly?
+
+It depends on the state and the broker, but the audits show what's at stake. The Inspector General estimated that $14.1 million in Massachusetts claims for 2016 and 2017 didn't comply, and put the federal share of Indiana's non-compliant claims at $3.5 million. Both audits recommended tighter broker oversight of provider documentation, which means the checks reach you.
+
+### Can AI check an authorization with the broker for me?
+
+It can read what you receive and compare it with your records and the rules you give it. It can't confirm eligibility or authorization on the broker's side. That lives in the broker's system, where the broker does the verifying. If your broker offers a portal or data feed, the assistant can pull from it. Otherwise a person looks it up.
+
+### Do HIPAA rules apply to a taxi company?
+
+Possibly. It depends on your contracts and how you bill. Brokers are business associates of state agencies, and your subcontract may pass those duties to you. Check with your broker and a lawyer, and if HIPAA applies, make sure any vendor that touches trip data works under a proper agreement.
+
+### Can the assistant text patients their pickup times?
+
+Yes, and it's one of the simplest useful jobs. Keep the text to day, time and address, and check the consent rules for text messages first.
+
+## Where I'd start
+
+Check the paper before the first ride, not after the thirtieth.
+
+Take your next ten new patient series and run the checklist above by hand. Count how many fail. If none do, you don't need AI for this, and you've lost an afternoon. If two or three do, you've found your first use case, and you know which rows of the table to automate first.
+
+If you take patient trips and want to know how many are paid on first submission, [tell me which broker portal and dispatch software you use](/contact?intent=improve), and I'll suggest the smallest version worth testing. The same check-before-you-hand-over pattern shows up when [medical supply stores check prescriptions](/posts/ai-for-medical-supply-stores-prescriptions).

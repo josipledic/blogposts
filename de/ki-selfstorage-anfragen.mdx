@@ -1,0 +1,163 @@
+---
+id: "ki-selfstorage-anfragen"
+translationOf: "ai-for-self-storage-inquiries"
+title: "Selfstorage: „Welche Größe brauche ich?“ auch nachts beantworten"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Immobilien", "Selfstorage", "Anfragen und Größenberatung", "KI für kleine Unternehmen"]
+description: "Die Größenfrage entscheidet die Buchung und kommt oft abends. Wie Selfstorage-Betreiber sie aus Zimmern und Kartons beantworten und die Box reservieren."
+excerpt: "Die Größenfrage entscheidet die Buchung und kommt oft abends. Wie Selfstorage-Betreiber sie aus Zimmern und Kartons beantworten und die Box reservieren."
+---
+
+Stellen Sie sich einen Dienstag vor, 22:50 Uhr. Ein Paar hat die Wohnung verkauft, die Übergabe ist in neun Tagen, und die neue Wohnung wird erst in vier Monaten fertig. Die beiden suchen nach „Lagerraum in meiner Nähe“, öffnen drei Webseiten auf dem Handy und stoßen überall auf dieselbe Frage: Welche Größe brauchen Sie? Ein Dropdown bietet 2, 5, 10, 15 und 25 Quadratmeter an.
+
+Keine Ahnung. Niemand denkt bei Sofa, Kleiderschrank und dreißig Umzugskartons in Quadratmetern. Also tippen sie „Wir lösen eine Zwei-Zimmer-Wohnung auf, welche Box passt?“ ins Kontaktformular und gehen schlafen. Das Formular verspricht eine Antwort innerhalb eines Werktags.
+
+Der Anbieter, der am nächsten Morgen um 9:15 Uhr antwortet, konkurriert mit dem, der um 23:00 Uhr geantwortet hat. Wer in zwei Minuten eine klare Empfehlung bekommt, hat wenig Grund, auf eine zweite zu warten. Genau hier würde ich KI in einem Selfstorage-Betrieb einsetzen: nicht, um die Anlage zu betreiben, sondern um die Frage zu beantworten, die vor jeder Vermietung steht.
+
+## Warum eine Frage über die Buchung entscheidet
+
+<Stats title="Selfstorage in Zahlen">
+  <Stat value="10.571" label="Anlagen mit 17,7 Mio. m² Lagerfläche in Europa; auf Deutschland entfallen 13,6 % dieser Fläche" source="FEDESSA und CBRE, European Self Storage Industry Report 2025" href="https://www.fedessa.org/static/f6762ae6-c097-4bdd-84ac37c2b12e3cb7/70e08602-eab5-407b-98f4a1c839f22677/FEDESSA-European-Industry-Report-2025.pdf" />
+  <Stat value="75,0 %" label="durchschnittliche Auslastung der Anlagen in Deutschland, bei einer durchschnittlichen Nettomiete von 292 € pro m² und Jahr, ohne MwSt." source="FEDESSA und CBRE, European Self Storage Industry Report 2025" href="https://www.fedessa.org/static/f6762ae6-c097-4bdd-84ac37c2b12e3cb7/70e08602-eab5-407b-98f4a1c839f22677/FEDESSA-European-Industry-Report-2025.pdf" />
+  <Stat value="13,4 %" label="der US-Haushalte mieteten 2024 mindestens eine Lagerbox, nach 11,1 % im Jahr 2022" source="Self Storage Association, zitiert von PwC und ULI" href="https://www.pwc.com/us/en/industries/financial-services/asset-wealth-management/real-estate/emerging-trends-in-real-estate-pwc-uli/property-type-outlook/self-storage.html" />
+</Stats>
+
+Zwei Lesarten dieser Zahlen. Erstens: Leerstand ist der eigentliche Kostenfaktor. Bei 75 % Durchschnitt liegt jeder vierte Quadratmeter brach, und bei 292 € im Jahr sind das gut 24 € Miete im Monat, die Sie nicht einnehmen. Für eine Anlage mit 1.000 vermietbaren Quadratmetern (meine Annahme) bedeutet ein Prozentpunkt Auslastung 10 m², beim deutschen Durchschnitt etwa 2.900 € im Jahr.
+
+Zweitens: Die Nachfrage folgt Lebensereignissen, und die passieren abends. EasyBee, ein Anbieter von KI-Anrufbearbeitung für Selfstorage-Betreiber, gibt an, dass [70 % der Anfragen in den eigenen Einsätzen](https://www.easybee.ai/blog/ai-call-center-for-selfstorage) außerhalb der üblichen Geschäftszeiten eingehen. Das ist eine Herstellerangabe. Ich würde sie als Obergrenze lesen und selbst zählen: Telefonliste und Zeitstempel der Formulare zeigen es Ihnen.
+
+## Was die Anfrage um 23 Uhr heute kostet
+
+Am nächsten Morgen liest jemand das Formular, merkt, dass „Zwei-Zimmer-Wohnung“ wenig verrät, und schreibt zurück: Welche großen Möbel, wie viele Kartons, ab wann, für wie lange? Die Kundin antwortet in der Mittagspause. Am Nachmittag gehen Größe und Preis raus. Inzwischen hat sie bei zwei anderen Anbietern angefragt, und einer hat noch in der Nacht geantwortet.
+
+Das sind zwei bis vier Nachrichten über ein bis zwei Tage, mit vielleicht acht bis zehn Minuten Arbeitszeit pro Nachricht (meine Annahme). Der größere Verlust ist die Kundin, die woanders mietet, bevor Ihre Antwort ankommt. Auch die falsche Größe kostet: zu klein, und sie steht am Einzugstag wieder da und will eine Box, die vielleicht nicht frei ist. Zu groß, und sie zahlt für Luft, merkt es nach einem Monat und wechselt oder kündigt.
+
+## Warum es für „Welche Größe?“ keine einheitliche Formel gibt
+
+Fragen Sie verschiedene Anbieter, wie viel Platz der Inhalt einer Wohnung braucht, und Sie bekommen verschiedene Antworten.
+
+| Inhalt | Empfohlene Box | Quelle |
+| --- | --- | --- |
+| Komplette Wohnung mit 60 m² | Etwa 6 m², nach der Regel 10 % der Wohnfläche | [MyPlace, Deutschland](https://www.myplace.de/de/lagerraum-mieten/die-richtige-lagerraum-groesse-finden) |
+| Wohnung mit 60 bis 100 m², bis zur Deckenhöhe von 2,5 m gestapelt | 3 bis 5 m² | [lagermeile.de, Deutschland](https://lagermeile.de/wieviel-m%C2%B2-benoetige-ich-in-einem-selfstorage/) |
+| Wohnung mit einem Schlafzimmer | 35 bis 50 sq ft, rund 3 bis 5 m² | [Safestore, Großbritannien](https://www.safestore.co.uk/storage-sizes/) |
+| Haus oder Wohnung mit zwei Schlafzimmern | 75 sq ft, rund 7 m² | [Safestore, Großbritannien](https://www.safestore.co.uk/storage-sizes/) |
+| Haus oder Wohnung mit drei Schlafzimmern | 100 sq ft, rund 9 m² | [Safestore, Großbritannien](https://www.safestore.co.uk/storage-sizes/) |
+
+Für eine Wohnung mit 60 m² kommt die Regel des einen deutschen Anbieters auf etwa 6 m², während die Spanne des anderen bei 3 m² beginnt. Beide können stimmen. Der Unterschied liegt in den Annahmen: wie hoch gestapelt wird, ob Möbel zerlegt werden und ob die Kundin einen Gang zu den Kartons hinten braucht.
+
+Deshalb würde ich einem Assistenten keine allgemeine Formel mitgeben, sondern Ihre eigene Tabelle, gebaut aus Ihren letzten 200 Einzügen: Was haben die Leute angegeben, welche Box haben sie gebucht, und wer kam im ersten Monat zum Tauschen zurück? Tauschwünsche sind die ehrlichste Rückmeldung zu Ihrer Größenberatung.
+
+Was der Assistent fragt, ist einfach und sollte schriftlich feststehen:
+
+- **Große Teile.** Bett, Sofa, Kleiderschrank, Schreibtisch, Waschmaschine, Fahrräder, ein Klavier, und ob sich alles zerlegen lässt.
+- **Kartons.** Eine grobe Anzahl.
+- **Zugang.** Wie oft die Kundin kommt. Wer wöchentlich kommt, braucht einen Gang, und der braucht Platz.
+- **Zeitraum.** Ab wann und wie lange. Vier Monate und vier Jahre führen zu anderen Boxen und Preisen.
+- **Ein Foto,** wenn die Kundin das lieber mag. Ein Bild von der Garage ist oft genauer als eine getippte Liste.
+
+## Von der späten Frage zur reservierten Box
+
+Derselbe Assistent kann tagsüber im Chat der Webseite antworten. Nach Feierabend ist er der erste Ansprechpartner.
+
+<Flow title="Von „Welche Größe brauche ich?“ zur reservierten Box" caption="Der Assistent fragt, empfiehlt und reserviert. Ein Mensch kümmert sich um jede Ausnahme und gibt alles frei, was nicht in die Regeln passt.">
+<Step title="Die Frage kommt an" who="Interessentin" time="22:50">Website-Chat, WhatsApp oder Kontaktformular: „Wir lösen eine Zwei-Zimmer-Wohnung auf, welche Box passt?“</Step>
+<Step title="Begrüßen, offenlegen, nachfragen" who="KI" tone="ai" time="1 bis 2 Min.">Der Assistent sagt, dass er der automatische Assistent der Anlage ist, und fragt nach großen Teilen, Kartons, Zugang, Startdatum und Dauer. Ein Foto ist willkommen.</Step>
+<Step title="Größe mit Spanne und Begründung" who="KI" tone="ai" time="Sekunden">Er schlägt eine Box aus Ihrer eigenen Größentabelle vor, etwa 6 m², oder 5 m², wenn sich der Schrank zerlegen lässt, und sagt, wie sicher er ist und warum.</Step>
+<Step title="Die üblichen Fragen beantworten" who="KI" tone="ai">Preis aus Ihrer veröffentlichten Liste, Zugangszeiten, Versicherungspflicht, nicht erlaubte Gegenstände. Alles aus Ihren Unterlagen, nichts improvisiert.</Step>
+<Step title="Box reservieren" who="System" time="24 bis 48 Stunden">Ist in Ihrer Buchungssoftware eine passende Box frei, hält der Assistent sie und schickt den Buchungslink oder einen Besichtigungstermin. Der Vertrag wird in Ihrem eigenen System geschlossen.</Step>
+<Step title="Prüfen und Ausnahmen" who="Team der Anlage" tone="human" time="am nächsten Morgen">Das Team sieht die markierten Gespräche durch: Fahrzeuge, Geschäftswaren, Wertsachen, lange Mietdauer, alles in der Nähe der Verbotsliste oder wer nach einem Menschen gefragt hat. Es bestätigt, passt an oder ruft an.</Step>
+</Flow>
+
+**Eine Spanne mit Begründung schlägt eine Zahl.** „Ich würde 6 m² nehmen, weil Sie an die Kartons kommen müssen. Wenn Sie den Schrank zerlegen und bis zur Decke stapeln, können auch 5 m² reichen“ ist ehrlich und schützt Sie vor „aber Sie hatten 5 gesagt“.
+
+**Die Box wird gehalten, nicht verkauft.** Der Assistent prüft die aktuelle Verfügbarkeit, hält eine Box für ein bis zwei Tage und schickt den Buchungslink. Vertrag, Zahlung und Identitätsprüfung laufen in Ihrem normalen System. Ein Assistent, der eine Größe empfiehlt, die gar nicht frei ist, ist schlechter als einer, der sagt: „Diese Größe ist bis zum 15. belegt, hier ist die nächste Option.“
+
+**Ehrliche Beratung verkauft.** Wenn ein Viertel Ihrer Fläche leer steht, ist es verlockend, alle eine Größe höher zu beraten. Aber wer die falsche Größe hat, erzählt es weiter. Empfehlen Sie, was passt, und nennen Sie die nächste Größe nur, wenn sie eine echte Option ist.
+
+## Was auf dem Bildschirm der Anlagenleitung ankommt
+
+Die Zusammenfassung soll in einer Minute bestätigt werden können:
+
+```text
+RESERVIERUNG GEHALTEN, 22:58
+Inhalt: 2-Zimmer-Wohnung, ca. 55 m². Doppelbett, Sofa, Kleiderschrank (zerlegbar), Waschmaschine, ca. 25 Kartons.
+Bedarf: ab 12. März für ca. 4 Monate. Kommt selten vorbei.
+Empfehlung: 6 m² (5 m², wenn Schrank zerlegt und bis zur Decke gestapelt).
+Gehalten: Box B-14 bis 12. März, 12:00 Uhr. Buchungslink verschickt.
+Gefragt nach: Versicherung (auf Vertragsbedingungen verwiesen), Zugangszeiten (beantwortet).
+Markierungen: keine.
+```
+
+Vergleichen Sie das mit einer E-Mail „Hallo, wie groß muss die Box sein?“ und einer Telefonnummer. Beim Einzug muss niemand die Fragen noch einmal stellen.
+
+## Was er sagt und was er abgibt
+
+Der Assistent antwortet aus Ihren Unterlagen: Preise, Zugangszeiten, Verfügbarkeit, Versicherungspflicht und die Liste der Gegenstände, die nicht eingelagert werden dürfen. Er entscheidet nichts, was rechtliches oder finanzielles Gewicht hat.
+
+<Callout title="Verbotene Gegenstände, Versicherung und die Linie, die der Assistent nie überschreitet" tone="warning">
+Anbieter schließen üblicherweise leicht entzündliche Stoffe, leicht verderbliche Lebensmittel, Waffen und Lebewesen aus, und viele schreiben einen Versicherungsschutz vor. Eine [Übersicht verbotener Gegenstände](https://storeroom.at/verbotene-gegenstaende-im-selfstorage/) finden Sie zum Beispiel bei einem österreichischen Anbieter. Die eigene Hausratversicherung deckt Eingelagertes laut dem Verbraucherportal der Versicherungswirtschaft nur für kurze Zeit, [dieversicherer.de erklärt, worauf es ankommt](https://www.dieversicherer.de/versicherer/wohnen/news/selfstorage-versicherung-143972). Der Assistent wiederholt Ihre Regeln. Er beurteilt nicht, ob ein Grenzfall erlaubt ist, berät nicht dazu, ob die Police der Kundin den Inhalt abdeckt, und sagt nie, dass etwas in Ordnung sei, was Ihre Bedingungen ausschließen. Das geht an einen Menschen.
+</Callout>
+
+Ebenfalls an einen Menschen: Fahrzeuge, Geschäftswaren, Wertsachen, sehr große oder lange Mietverhältnisse, Beschwerden, Streit über Rechnungen und alle, die nach einer Person fragen. Ein sichtbarer Button „Mit einem Menschen sprechen“ deckt Letzteres ab.
+
+Der Assistent sollte nicht fragen, warum jemand Lagerraum braucht. Menschen lagern wegen Umzügen, Trennungen, Renovierungen oder Todesfällen ein. „Was lagern Sie ein, und ab wann brauchen Sie die Box?“ genügt.
+
+## Datenschutz, Vertrag und der KI-Hinweis
+
+Ein Größenchat erhebt personenbezogene Daten: Namen, Kontaktdaten, Adressen, Umzugstermine, manchmal Fotos aus der Wohnung. Das fällt unter die DSGVO. Fragen Sie nur, was Sie brauchen, sagen Sie, was Sie mit den Antworten tun, schließen Sie mit dem Anbieter des Assistenten einen Auftragsverarbeitungsvertrag (AVV), bevorzugen Sie eine Verarbeitung in der EU und löschen Sie Gesprächsprotokolle, sobald sie ihren Zweck erfüllt haben.
+
+Seit dem 2. August 2026 verlangt [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act), dass Menschen erfahren, dass sie mit einem KI-System sprechen, sofern das nicht offensichtlich ist. Die Pflicht liegt zuerst beim Anbieter des Systems, fragen Sie also Ihren Dienstleister, wie sein Produkt sie umsetzt. Die juristischen Zusammenfassungen, die ich im September 2026 gelesen habe, etwa eine [Research Note der Cloud Security Alliance](https://labs.cloudsecurityalliance.org/research/csa-research-note-eu-ai-act-article-50-transparency-20260729/), sagen, dass die Änderungen durch das Digital Omnibus diese Pflicht nicht verschoben haben. Die Lage ist in Bewegung, prüfen Sie den aktuellen Stand vor dem Start. Die erste Zeile des Chats löst es ohnehin: „Ich bin der automatische Assistent dieser Anlage.“
+
+Wenn Sie online an Verbraucher vermieten: Bei Fernabsatzverträgen steht Verbrauchern nach [§ 312g BGB](https://www.gesetze-im-internet.de/bgb/__312g.html) grundsätzlich ein Widerrufsrecht zu, die Frist beträgt nach [§ 355 BGB](https://www.gesetze-im-internet.de/bgb/__355.html) 14 Tage. Die Ausnahmen in § 312g Absatz 2 BGB, etwa für Beherbergung zu anderen als Wohnzwecken oder Kraftfahrzeugvermietung mit festem Termin oder Zeitraum, decken eine Lagerbox nicht ohne Weiteres ab. Die zugrunde liegenden [EU-Regeln zum Widerrufsrecht](https://eur-lex.europa.eu/EN/legal-content/summary/consumer-information-right-of-withdrawal-and-other-consumer-rights.html) nennen dieselben Ausnahmen. Ob Ihr Buchungsablauf eine Belehrung braucht, klärt Ihre Anwältin oder Ihr Anwalt. Für das Design heißt das: Der Assistent schließt nie den Vertrag. Er verweist auf den Buchungsablauf, in dem Ihre Belehrung und Ihre AGB stehen.
+
+## Was es kostet und was es zurückbringt
+
+Die Einrichtung ist vor allem Schreibarbeit, keine Programmierung: die Größentabelle, Preise, die Anbindung an die Verfügbarkeit, die Regeln zu Gegenständen, Zugang und Versicherung und eine kurze Liste von Auslösern, die ein Gespräch an einen Menschen geben. Meine grobe Schätzung für einen kleinen Betreiber: ein bis drei Wochen Arbeit, je nachdem, wie Ihre Buchungssoftware die Verfügbarkeit bereitstellt. Laufende Kosten sind eine Plattformgebühr plus Modellnutzung. Bei 60 bis 100 Gesprächen im Monat würde ich einen niedrigen dreistelligen Eurobetrag ansetzen und das als Annahme behandeln, bis ein Angebot vorliegt.
+
+Verwaltungssoftware für Selfstorage wie [SiteLink](https://www.sitelink.com/products/web-edition) hält Boxen, Preise und Verfügbarkeit bereits und bietet API-Anbindungen für Webseiten und andere Werkzeuge. Der Assistent liest daraus und schreibt die Reservierung zurück.
+
+<Calc title="Überschlag: Anfragen, die an eine langsamere Antwort verloren gehen" caption="Annahmen, keine Messwerte. Ihr Anfragenprotokoll und Ihre Preise liefern die echten Zahlen. Die Miete pro m² ist der deutsche Durchschnitt von 292 € im Jahr, gerundet." rows={[
+  ["Anfragen pro Monat (Chat, Formular, Telefon, E-Mail)", "60"],
+  ["Davon eingehend, wenn niemand binnen einer Stunde antworten kann", "× 40 %"],
+  ["Davon mieten woanders, bevor Sie antworten", "× 20 %"],
+  ["Verlorene Vermietungen pro Monat", "≈ 5"],
+  ["Durchschnittliche Boxgröße", "× 6 m²"],
+  ["Durchschnittsmiete pro m² und Monat", "× 24 €"],
+  ["Durchschnittliche Mietdauer", "× 10 Monate"]
+]} result={["Miete über die gesamte Mietdauer der in einem Monat verlorenen Vermietungen", "≈ 7.000 €"]} />
+
+Gewinnen Sie eine dieser fünf Vermietungen zurück, bringt das über die Mietdauer etwa 1.400 € (6 m² × 24 € × 10 Monate), bei laufenden Kosten im niedrigen dreistelligen Bereich pro Monat. Zeigt Ihr Protokoll nur fünf Anfragen pro Monat außerhalb der Zeiten, sieht die Rechnung anders aus.
+
+## Wann eine einfachere Lösung reicht
+
+Fragen Sie sich vor jeder KI, ob ein schlichter Größenrechner und eine Online-Buchung genügen. Eine Seite, auf der man „Bett, Sofa, Schrank, 20 Kartons“ anklickt und eine Box empfohlen bekommt, ist keine KI, und ein Formular, das eine Box ohne Anruf reserviert, auch nicht. Für eine kleine Anlage mit unter 20 Anfragen im Monat reichen oft ein guter Größenratgeber, eine klare Preistabelle und ein gemeinsames Postfach.
+
+KI lohnt sich, wenn Anfragen als Freitext und Fotos kommen, in mehreren Sprachen, zu allen Uhrzeiten, und ein fester Rechner an „ein Klavier, ein Schlagzeug und die Bücher meines verstorbenen Vaters“ scheitert. Für alles, was eine Einschätzung von Risiko oder Recht verlangt, ist sie das falsche Werkzeug: Grenzfälle bei Gegenständen, Versicherungsfälle, Streit.
+
+## Fragen, die Selfstorage-Betreiber stellen
+
+### Kann ein Chatbot die richtige Lagerbox-Größe empfehlen?
+
+Ja, in Grenzen. Er kann Zimmer, große Teile und Kartons in eine sinnvolle Spanne übersetzen, besonders mit Ihrer eigenen Größentabelle. Die Garage sieht er nicht, geben Sie ihm also einen einfachen Weg, ein Foto zu schicken oder einen Menschen zu erreichen.
+
+### Muss ich Kunden sagen, dass sie mit einer KI sprechen?
+
+In der EU ja, sofern es nicht offensichtlich ist. Artikel 50 der KI-Verordnung verlangt das seit dem 2. August 2026, die Pflicht liegt zuerst beim Anbieter des Systems. Eine Begrüßungszeile genügt, und es ist schlicht fair.
+
+### Kann der Assistent Zahlungen annehmen und Verträge abschließen?
+
+Ich würde ihn davon fernhalten. Er soll die Box halten und den Buchungslink schicken. Vertragsbedingungen, Zahlung, Identitätsprüfung und Widerrufsbelehrung gehören in Ihr Buchungssystem, wo sie einheitlich und nachvollziehbar sind.
+
+### Was ist mit Kunden, die ein Auto oder Geschäftswaren einlagern wollen?
+
+Die gehen an einen Menschen. Ihre Bedingungen und die Versicherung zählen hier am meisten, und eine falsche Antwort ist teuer.
+
+## Wo ich anfangen würde
+
+Bauen Sie zuerst die Größentabelle aus Ihren eigenen Einzügen und schreiben Sie die Fragen auf, die der Assistent stellt. Testen Sie ihn mit den Anfragen des letzten Monats und vergleichen Sie seine Empfehlungen mit dem, was die Kunden gebucht haben. Lassen Sie ihn dann einen Monat lang nach Feierabend antworten, mit Durchsicht aller Gespräche durch das Team am nächsten Morgen.
+
+Die Faustregel: Beantworten Sie die Größenfrage in den Worten der Kundin, sagen Sie, wie sicher Sie sind und warum, halten Sie die Box, und geben Sie alles Ungewöhnliche an einen Menschen.
+
+Wenn Sie das mit Ihren eigenen Anfragen ausprobieren möchten, [schreiben Sie mir, welche Buchungssoftware Sie nutzen und wie Anfragen bei Ihnen ankommen](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Versuch wert ist. Selfstorage-Kunden sind oft Umziehende, und [Umzugsunternehmen erstellen ihre Umzugsgutliste längst per Videobesichtigung](/de/posts/ki-umzugsunternehmen-umzugsgutliste), also genau die Liste, die ein Assistent braucht. [Coworking-Spaces](/de/posts/ki-coworking-space-mitgliedschaften) kennen dieselbe Frage „Welches Modell passt zu mir?“, und [Hausverwaltungen](/de/posts/ki-hausverwaltung-schadensmeldungen) sortieren Meldungen, die zu jeder Uhrzeit eingehen.

@@ -1,0 +1,152 @@
+---
+id: "ai-for-psychotherapy-practices-waitlist"
+title: "Psychotherapy Waitlists: What to Automate and What Never to Touch"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Healthcare", "Psychotherapy practices", "Waitlist admin", "AI for small business"]
+description: "A psychotherapy practice can automate the waiting: acknowledgements, list upkeep, how the process works. Urgency, crisis and therapy stay with people."
+excerpt: "A psychotherapy practice can automate the waiting: acknowledgements, list upkeep, how the process works. Urgency, crisis and therapy stay with people."
+---
+
+Picture the inbox of a solo psychotherapy practice on a Monday at 7:40. Fourteen new messages came in over the weekend. Nine ask the same question: do you have a place, and how long is the wait? Three are from people already on the list who wonder whether they were forgotten. One is a practical question from a GP's office. And one, in the fifth line of an otherwise routine inquiry, says the writer doesn't see the point of going on.
+
+That last message is the whole design problem. The first thirteen can be handled by software. The fourteenth cannot, and software must never be the thing that decides which is which.
+
+So this is a different kind of post from most in this series. Usually I argue for what AI can take over. Here the job is to draw a line, and I'd rather draw it too early than too late. My position: automate the waiting, never the person. Everything about the queue can be administered. Everything about the human being in the queue stays with a therapist.
+
+I'm writing about the German system, because that's where waitlist pressure is best documented and the rules are specific. The principle holds anywhere.
+
+## Why the list exists in the first place
+
+<Stats title="The waitlist in numbers (Germany)">
+  <Stat value="47.4%" label="of practices reported average waits of more than six months for therapy to begin in 2022, up from 38.3% in 2021" source="BPtK background paper, July 2023" href="https://api.bptk.de/uploads/20230713_bptk_hintergrundpapier_weiterentwicklung_psychotherapeutischen_versorgung_d38b567ee6.pdf" />
+  <Stat value="+40%" label="weekly appointment requests per practice between January 2020 and June 2022, from 4.9 to 6.9 on average" source="BPtK background paper, July 2023" href="https://api.bptk.de/uploads/20230713_bptk_hintergrundpapier_weiterentwicklung_psychotherapeutischen_versorgung_d38b567ee6.pdf" />
+  <Stat value="142 days" label="average wait until therapy started in claims data for the first quarter of 2019, about 4.7 months" source="BPtK" href="https://www.bptk.de/pressemitteilungen/psychisch-kranke-warten-142-tage-auf-eine-psychotherapeutische-behandlung/" />
+</Stats>
+
+These numbers are a few years old and come from the profession's own chamber, the BPtK, so read them as a direction rather than today's exact figure. The direction is clear enough. Practices receive more requests than they can place, and most requests end in a waitlist or a no.
+
+That changes what the admin work is. It isn't scheduling. It's repeated small acts of communication: acknowledging a request, explaining what happens next, asking months later whether the person still needs a place, telling someone kindly that nothing is free. Each one takes a few minutes. None of them requires clinical judgment. All of them pile up on a therapist who would rather be in session.
+
+## What the process looks like from the inbox
+
+Since April 2018, the psychotherapeutic consultation hour (Sprechstunde) is the required entry point into statutory outpatient psychotherapy, as the [Psychotherapeutenkammer NRW explains](https://www.ptk-nrw.de/de/aktuelles/nachrichten-2019/detail/article/ab-april-2018-ist-die-psychotherapeutische-sprechstunde-pflicht.html). It's where a therapist clarifies whether there is a suspected illness and what kind of help fits. Patients can also go through the appointment service under 116117, which arranges a Sprechstunde within four weeks, according to [116117.de](https://www.116117.de/de/psychotherapie.php).
+
+Most inquiries to a practice fall into a handful of types:
+
+- "Do you have a place?" (the largest group)
+- "How does this work, do I need a referral, what is the Sprechstunde?"
+- "I'm on your list, is it still worth waiting?"
+- Logistics: cancelling, moving, sending documents
+- Messages that contain distress, sometimes openly, sometimes in passing
+
+The first four are administration. The fifth is not, and it doesn't arrive labelled. That's why the decision below isn't about message types alone. It's about what a wrong answer costs.
+
+## A decision guide: what to automate, what to draft, what to never touch
+
+<Matrix title="Sorting waitlist work by frequency and risk" caption="The bottom-right quadrant is where I'd start. The top row is where AI either does nothing or follows a script that a clinician wrote." xLabel="How often it comes up" yLabel="What a wrong answer can cost" quadrants={[
+  { title: "Rare and risky: never AI", text: "Rating how urgent someone is, judging risk, anything that sounds like therapy, diagnosis or advice about medication, deciding who gets the next free slot." },
+  { title: "Common and risky: fixed script only", text: "Messages with signs of distress. The assistant shows crisis numbers at once and alerts a human. It doesn't ask follow-up questions or keep chatting.", highlight: true },
+  { title: "Rare and safe: answer library", text: "Directions, opening hours, how to cancel, which documents to bring to a first appointment." },
+  { title: "Common and safe: automate", text: "Acknowledging a request, explaining how Sprechstunde and waitlist work, pointing to 116117, periodic 'do you still need a place?' check-ins that update the list.", highlight: true }
+]} />
+
+The second quadrant deserves the most thought, so I'll come back to it. First, the safe one.
+
+## What I would automate
+
+**The acknowledgement.** Someone who writes to a therapist is often at a low point and has just spent energy on it. Silence for three weeks reads as rejection. An immediate, warm, accurate reply that says "we received your message, this is how our list works, this is roughly how long it takes, here is what you can do meanwhile" is better than a slower human one. It should be drafted by you, in your words, once. The assistant fills in the details.
+
+**The explanation.** Most people don't know what a Sprechstunde is or that 116117 exists. A clear paragraph that explains both, and that they can ask the appointment service for an earlier slot, helps many of them more than a place on your list would.
+
+**List upkeep.** This is the quiet win. Every few weeks the assistant asks everyone on the list a single question: do you still need a place? Yes, no, or I found one. Replies update the list. People who don't reply get one reminder. The therapist opens the list when a slot frees up and sees only people who said yes recently. No more calling someone who found treatment elsewhere four months ago.
+
+**Collecting the boring facts.** Name, contact, insurance type, rough availability, whether a Sprechstunde has already happened. Not symptoms, not history.
+
+## What I would never build
+
+<Split title="The line in a psychotherapy practice" leftTitle="The assistant does" rightTitle="The assistant never does" left={[
+  "Acknowledges every request, says it is automated, and says when a human will read the message",
+  "Explains Sprechstunde, the waitlist and the appointment service under 116117",
+  "Shows crisis numbers in every reply, not only when it thinks they are needed",
+  "Asks waitlisted people whether they still need a place and updates the list",
+  "Hands anything unusual to a named person at the practice"
+]} right={[
+  "Rates urgency or sorts the list by how unwell someone seems",
+  "Answers questions about symptoms, diagnoses, medication or whether therapy is right for someone",
+  "Continues a conversation with a person who describes distress",
+  "Promises a place, a date or a wait time the therapist hasn't confirmed",
+  "Decides who gets a free slot"
+]} caption="Everything on the right depends on clinical judgment, and on someone being responsible for the outcome." />
+
+Ranking people by urgency sounds helpful, because waitlists feel unfair. But an urgency score from an AI system is a clinical judgment made by something that can't be held responsible for it. The EU's AI Act already treats a related category, emergency healthcare patient triage systems, as high-risk. That sits in [Annex III](https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3) of the regulation, and a tool that scores urgency for a practice would drift into it, and potentially into medical device rules as well. The date for those obligations has moved: under the Digital Omnibus that entered into force in July 2026, standalone Annex III systems now fall under the rules from 2 December 2027, [as law firm Gibson Dunn summarises](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/). That's the state as I checked it in September 2026, and it has changed before. I'm not a lawyer, and that's not my main reason. My main reason is that I wouldn't want to be the person who built it.
+
+## The message that mentions not wanting to live
+
+<Callout title="Don't rely on detection" tone="warning">
+No classifier catches every message that signals a crisis, and none should be the only safeguard. So the design rule is the opposite of clever: every automatic reply and every web form confirmation contains the same short crisis paragraph, whatever the content. In Germany: 112 in an emergency, the TelefonSeelsorge on 0800 111 0 111 or 0800 111 0 222 (free, around the clock), and the ärztlicher Bereitschaftsdienst under 116117. The assistant may additionally flag messages with distress language to a human right away, but that flag is a bonus, not the net.
+</Callout>
+
+The [TelefonSeelsorge](https://www.telefonseelsorge.de/) lists 0800 111 0 111, 0800 111 0 222 and 116 123 as free numbers. In the US, the equivalent is [988](https://988lifeline.org/), by call or text. A practice abroad would use its own national line.
+
+Two more rules. First, say clearly on the form and in the auto-reply that messages aren't read outside office hours, and never imply monitoring you don't provide. Second, if the assistant does flag something, a named person reads it the same day, and there's a written plan for what they do next. A flag nobody reads is worse than no flag, because it creates the impression that someone is watching.
+
+## Data protection: the inquiry itself is sensitive
+
+A request for a therapy place already says something about a person's health. Art. 9 of the GDPR treats health data as a special category, and the [Psychotherapeutenkammer Berlin's guidance for practices](https://www.psychotherapeutenkammer-berlin.de/media/1387) is a good starting point for what that means day to day. Add the professional secrecy rule in § 203 of the German Criminal Code: if you pass secrets to people who help you, including IT and AI providers, you have to make sure they are bound to confidentiality. [Paragraphs 3 and 4](https://www.gesetze-im-internet.de/stgb/__203.html) spell out that duty, and you can be held liable if you don't.
+
+In practice, for any vendor that touches patient messages:
+
+1. A data processing agreement (AVV) under Art. 28 GDPR, plus a written confidentiality obligation for the provider and its staff that satisfies § 203.
+2. Servers in the EU, and a contract that rules out training on your data.
+3. A form that collects the minimum. No free-text field asking "what is your problem?". A therapist who never receives symptom descriptions can't lose them.
+4. Clear disclosure that the assistant is automated. [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) requires it for chatbots from August 2026.
+
+For US practices, the equivalent is a business associate agreement under [HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html) with any vendor that handles patient information. Skip any AI tool that won't sign one.
+
+## What it costs, and what it saves
+
+The honest number is smaller than vendors imply.
+
+<Calc title="Napkin math: one practice's waitlist admin" caption="Assumptions, not measurements. The 6.9 requests per week is the BPtK average for 2022; everything else is my placeholder. Use your own inbox." rows={[
+  ["New requests per week", "6.9"],
+  ["Minutes to read, reply and note each one", "× 12"],
+  ["Waitlist check-ins per week (60 people, each asked every 8 weeks)", "7.5"],
+  ["Minutes per check-in, including updating the list", "× 8"],
+  ["Admin time per week today", "≈ 2.4 hours"],
+  ["Share handled without typing, therapist reviews exceptions", "× 70%"]
+]} result={["Time back per week", "≈ 1.7 hours"]} />
+
+Under two hours a week is real. It won't change the practice, and for a one-person practice it may not justify a tool. The benefit that matters more isn't time. It's that the 11 pm message gets an answer with crisis numbers in it, and that the list is accurate when a slot opens.
+
+Setup, as a rough guess: a few days of work to write the reply texts, connect the form and the list, and test. After that, small monthly costs for the language model and the form or messaging tool. If your practice software (medatixx, Psyprax, CGM and others) already has a waitlist function and mail merge, check that first.
+
+## When a simpler fix is better
+
+A lot of this works without AI, and sometimes better. A contact form with fixed fields, an auto-reply template with the crisis paragraph, and a spreadsheet or your practice software's list get you most of the way. A mail-merge message every two months asking "still need a place?" handles the upkeep. A static page that explains Sprechstunde and 116117 answers half the questions before they're asked.
+
+AI earns its place when replies need to fit the message: someone asks two questions in one email, writes in a second language, or mixes a logistics question with something personal. It also helps when the volume is high enough, say a group practice, that the list maintenance is a weekly job for someone. If you're a solo therapist with one inquiry a day, start with the template.
+
+## Questions therapists ask
+
+### Can an AI chatbot answer inquiries for a therapy practice?
+
+It can handle the administrative ones: how the waitlist works, what a Sprechstunde is, whether the practice has free places. It shouldn't answer anything about symptoms, diagnosis, or whether a person needs therapy, and it shouldn't hold a conversation with someone in distress. The assistant is a receptionist, never a clinician.
+
+### Is it allowed under § 203 StGB and the GDPR?
+
+It can be, with conditions. The provider must be bound to confidentiality, there must be a data processing agreement, and you should collect as little health information as possible. Your professional chamber's guidance and your data protection officer should sign off before you go live. This isn't legal advice.
+
+### What should happen if someone writes about suicide?
+
+The reply contains crisis numbers, the same as every reply. A named person at the practice sees the message the same day if you've set up flagging, and follows a written procedure. The assistant never carries on the conversation and never tries to assess risk.
+
+### Should the AI decide who gets the next free slot?
+
+No. Fit between patient and therapist, urgency and the therapist's own capacity are professional decisions. The assistant can show the therapist who on the list said yes recently. The therapist chooses.
+
+## Where I'd start
+
+Automate the envelope, never the contents. If a task is about the queue, such as receipts, explanations and list upkeep, software can do it. If it's about the person, a human does it, and the crisis numbers go in every reply so that nothing depends on software noticing.
+
+If you run a practice and want to test this on your inbox, [tell me how inquiries and the list work today](/contact?intent=improve), and I'll suggest the smallest version worth trying. The same confidentiality questions come up in [law firm intake](/posts/ai-for-law-firm-intake), and [specialist practices juggling referrals](/posts/ai-for-medical-practices-referrals) face a similar pile of messages that look alike and aren't.

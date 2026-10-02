@@ -1,0 +1,174 @@
+---
+id: "ai-for-consignment-shops-intake"
+title: "Consignment Intake: Price, Describe and List Items in Minutes"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Retail & wholesale", "Consignment shops", "Item intake", "AI for small business"]
+description: "Intake is the bottleneck of every consignment shop. How AI can draft descriptions, price bands and consignor records while staff keep every real decision."
+excerpt: "Intake is the bottleneck of every consignment shop. How AI can draft descriptions, price bands and consignor records while staff keep every real decision."
+---
+
+It's Saturday, 10:20. A woman walks in with two tote bags and a shoebox: 23 items she'd like to put on consignment. There is one person at the counter, and two customers waiting to pay.
+
+Every one of those 23 items needs the same things before it can sell. Brand and size read off a label. A judgement on condition. A price. A short description. Photos. A tag. A line in the consignor's account. Done properly, that is ten to fifteen minutes an item. Done in a hurry, it is how a good coat ends up tagged at €9, or sits in the back room for three weeks.
+
+The intake counter is where a consignment shop makes or loses much of its margin, and it's where I'd use AI. Not to decide what an item is worth or whether a handbag is real, but to do the typing and the first-draft comparison, so the person at the counter can spend her minutes on the parts that need hands and eyes.
+
+## Why the counter matters more every year
+
+<Stats title="Resale keeps growing, and so does the competition">
+  <Stat value="$78.8B" label="projected size of the US secondhand apparel market by 2030, a forecast in a report by thredUP, which runs a resale platform" source="thredUP 2026 Resale Report, via Retail Dive" href="https://retaildive.com/news/us-resale-market-surpass-78-billion-in-2030-secondhand/816470/" />
+  <Stat value="€10.8B" label="value of goods sold through Vinted in 2025, up 47% on the year, as reported by the company" source="Vinted annual results, via FashionUnited" href="https://fashionunited.uk/news/business/vinted-reaches-1-1-billion-euros-in-revenue-for-2025-accepting-a-strategic-drop-in-profits/2026040987347" />
+  <Stat value="56%" label="of German consumers said in a PwC survey that they have already bought used clothing; 44% had bought second-hand luxury brands" source="PwC Germany, Global Consumer Insights Survey (2023)" href="https://www.pwc.de/de/pressemitteilungen/2023/secondhand-mode-im-aufwind-umsatz-steigt-bis-2025-auf-bis-zu-6-milliarden-euro.html" />
+</Stats>
+
+Read the first two with caution: thredUP and Vinted are resale platforms, and a growing market is the story they want to tell. The direction is still hard to argue with, and the third number shows buying second-hand is no longer a niche habit.
+
+For a consignment shop, that means customers compare your rail with a phone full of online listings, each with six photos, measurements and a sharp price. A shop that tags items by hand on Saturday and photographs them on Wednesday is competing with that.
+
+## Where the minutes go today
+
+Here is a typical intake for one item in a shop without much tooling (my estimates, not measurements).
+
+1. **Triage (1 min).** In season, clean, in good shape, a brand you can sell?
+2. **Identify (2 min).** Read the label, find the size, look up the model if it's unfamiliar.
+3. **Price research (3 to 5 min).** Recall what similar things sold for, or search online.
+4. **Photos and measurements (2 min).**
+5. **Description and listing (3 to 4 min).** Title, text, category, defects.
+6. **Tag and record (2 min).** Item number, consignor account, price, date.
+
+Staff minutes aren't the only cost. Three others matter more.
+
+**Prices set by mood.** At 10:20 on a busy Saturday, a price is whatever feels right. Too low and you give away margin that you and the consignor would have shared. Too high and the item sits, the consignor earns nothing, and the rack goes stale.
+
+**Items that wait.** An item in a bag behind the counter can't sell. In a seasonal category, a week's delay can be most of the selling window.
+
+**Thin descriptions.** "Black coat, size M" tells a buyer nothing, and a description that leaves out a stain is a complaint waiting to happen.
+
+## Who drafts, who decides
+
+A person still looks at every item. The AI turns what the person sees and says into a clean record, and suggests a price from your own history. The person checks and decides.
+
+| Step | What the AI drafts | What a person decides |
+| --- | --- | --- |
+| Identify | Brand, category, colour, material and size from label and photos | Whether it's right. Anything unclear gets a question, not a guess |
+| Condition | Turns a 15-second spoken note into a standard grade and wording | The grade itself, with the item in hand |
+| Price | A price band from similar items you sold, with the comparables shown | The tag price, never below the floor in the consignor's contract |
+| Listing | Title, description, measurements, category, keywords | Every claim in it, especially defects |
+| Consignor record | Item line, split, pickup deadline, markdown dates from the contract | Exceptions to the standard terms |
+| Authenticity | Flags luxury brands and risky categories | Everything: a specialist check or no listing |
+
+The last row is deliberate: a model can read a logo, but it can't judge the stitching on a handbag.
+
+<Flow title="From the counter to the rack and the shop window" caption="Staff spend their time on triage, condition and the price decision. The system handles typing, drafts and records.">
+<Step title="Consignor drops off" who="Staff" tone="human" time="1 min per item">Quick triage against your rules. The consignor signs one contract for the whole batch.</Step>
+<Step title="Photos plus a spoken note" who="Staff" tone="human" time="1 to 2 min">Four standard photos at a fixed photo spot, then a 15-second note: 'light pilling at the cuffs, no smell, lining fine'.</Step>
+<Step title="Draft card" who="AI" tone="ai" time="seconds">Reads label and photos, structures the condition note, drafts title and description, and suggests a price band with comparables.</Step>
+<Step title="Check and price" who="Staff" tone="human" time="1 min">Corrects the draft, sets the price, ticks the authenticity flag if it's a luxury item.</Step>
+<Step title="Record and tag" who="Consignment software">Item number, barcode tag, consignor account, split, pickup deadline and markdown dates are created.</Step>
+<Step title="Listing goes live" who="System" time="same day">Shop window or online listing is published from the approved draft. No retyping.</Step>
+<Step title="Sale, markdown, payout" who="Consignment software">Markdowns follow the contract. When an item sells, the consignor's balance updates and the statement is drafted.</Step>
+</Flow>
+
+## A price band, not a price
+
+The best data for pricing a consignment item is your own sales. You know what a coat of that kind sold for in your shop, how long it took, and what you had to mark down. A model can search that history faster than anyone can remember it.
+
+I'd ask for a band with the evidence shown:
+
+```text
+DRAFT CARD (illustrative, staff to confirm)
+Item: Wool coat, women's, Max Mara label (read from label photo)
+Size: EU 40 on label, chest 98 cm (staff measurement)
+Condition (staff note): very good, small pull on left cuff, no odour
+Price band: €85 to €110, from 6 similar items sold in the last 9 months
+Typical time to sell: 41 days (median of those 6)
+Suggested tag price: €95. Floor in contract: €60
+Flags: luxury label, authenticity check before listing
+Consignor: account 2291, pickup deadline 14 Nov, markdown after 30 days
+```
+
+Showing the comparables matters. A price with no explanation gets accepted or ignored. A price with six sold items beside it gets argued with sensibly.
+
+Two limits. With thin data, say two similar items ever sold, the band means little and the draft should say so. And sold prices on marketplaces can help, but check each site's terms before collecting anything.
+
+## Descriptions that survive a complaint
+
+A listing is a promise. In Germany, a business selling to a consumer can't just say 'bought as seen': a deviation from what the buyer can normally expect must be pointed out specially and agreed separately ([section 476 of the Civil Code](https://www.gesetze-im-internet.de/bgb/__476.html)). In the UK, the Consumer Rights Act 2015 says goods supplied by a trader must match their description ([section 11](https://www.legislation.gov.uk/ukpga/2015/15/section/11)), and a fault specifically drawn to the buyer's attention beforehand doesn't count against satisfactory quality ([section 9](https://www.legislation.gov.uk/ukpga/2015/15/section/9)). Both assume you sell in your own name as a business, as a German shop does under [section 383 of the Commercial Code](https://www.gesetze-im-internet.de/hgb/__383.html), so check how your consignment terms are set up. The practical rule travels: if the stain is in the text, you're on solid ground.
+
+So the model gets one rule above all: describe only what the draft card says. It may turn 'small pull on left cuff' into a clear sentence. It may not add 'like new', 'barely worn' or 'from a smoke-free home' unless a person typed it. Language models like to flatter an item. Put defects early in the text, and have staff read every listing once before it goes live.
+
+## The consignor's side: contract, records, tax
+
+The contract is where consignment goes wrong, so I'd treat it as data, not a PDF in a drawer. The fields that matter: the split, the price floor and who may change prices, the markdown schedule, the pickup deadline and what happens to unsold items after it, who bears loss or damage, and when payouts happen.
+
+A model can read each signed contract into those fields and flag anything unusual. After that, the arithmetic belongs to deterministic software. Balances, payout statements and tax must be exactly right every time, and that isn't a language model's job.
+
+<Callout title="Tax and records are per item" tone="note">
+Second-hand goods bought from private sellers are often taxed on the margin, not the full price. In the UK, the [VAT margin scheme](https://www.gov.uk/vat-margin-schemes/keeping-records) requires a stock book that tracks each item individually. In Germany, the Differenzbesteuerung in [section 25a of the VAT act](https://www.gesetze-im-internet.de/ustg_1980/__25a.html) needs selling price, purchase price and tax base recorded per item, and a commission sale counts as a supply from consignor to shop and on to the buyer ([section 3 para. 3](https://www.gesetze-im-internet.de/ustg_1980/__3.html)). Which rules fit your consignment terms is a question for your accountant, and a good reason to keep one item ID from intake to sale.
+</Callout>
+
+AI does earn its keep here without touching the money: drafting the message to a consignor whose pickup deadline is next week, or a statement email that explains in plain words why three items were marked down.
+
+## Authenticity: where the model stops
+
+<Callout title="Luxury goods need a person, or a specialist" tone="warning">
+An image model can read a label and recognise a bag's shape. It can't verify that the item is genuine, and a confident wrong answer is worse than none. For handbags, watches, jewellery and sneakers above a price you choose, require a human check or a specialist service before listing. Services such as Entrupy sell authentication for handbags and sneakers; their accuracy claims are theirs, and you still carry the risk of selling a fake. If a high-value check isn't conclusive, decline the item.
+</Callout>
+
+Jewellery raises the same issue at the repair counter, and [the jeweller's intake post](/posts/ai-for-jewellers-repair-intake) covers recording condition without letting a model claim what a stone is.
+
+## What it costs
+
+<Calc title="Napkin math: a mid-size shop, 150 items a week" caption="Assumptions, not measurements: 12 minutes per item today, 5 with a draft plus check. Time a real week at your own counter before deciding anything." rows={[
+  ["Items taken in per week", "150"],
+  ["Minutes saved per item", "× 7"],
+  ["Hours saved per week", "= 17.5"],
+  ["Staff cost per hour, fully loaded", "× €20"],
+  ["Weeks per month", "× 4.3"],
+  ["Running cost: model usage and tooling", "minus €150"]
+]} result={["Time value freed per month", "≈ €1,350"]} />
+
+Two notes on that figure. Saved time only becomes money if you use it: items listed the day they arrive, more time on the floor. And setup isn't free. My rough estimate for a small version, on top of your existing consignment software, is a few days of build work and then a modest monthly model bill. I'd price it only after seeing your system.
+
+## When you don't need AI
+
+If you take in 20 items a week, you don't need a model. A required-fields intake form, a fixed photo spot with a plain background and a one-page price grid by brand tier and condition get you most of the benefit.
+
+A cheaper fix works at any size: limit drop-offs. Appointment slots, a cap of 20 items per visit and seasonal intake windows remove the Saturday pile without software. AI starts to pay when volume grows, when several staff price differently, or when you list online and need decent text for every item.
+
+## Tools and data you already have
+
+Consignment software holds the records. ConsignCloud, Ricochet and SimpleConsign are well-known options in English-speaking markets, and some may already offer AI features, so check before you build. Marketplaces help too: eBay was reported in April 2025 to have added an AI tool to its mobile app that suggests listing details from a photo and title for private sellers in the US, UK and Germany ([Retail Dive](https://retaildive.com/news/ebay-mobile-seller-listing-generative-AI/745054)). It knows nothing about your consignor contract, floor prices or sales history, though.
+
+On privacy: consignor data is personal data. Name, address and bank details belong in your consignment system and should stay there. The AI step needs the item (photos, label, condition note) and your sold history, not the consignor's identity. With an external model provider you need a data processing agreement under GDPR, and I'd prefer EU hosting. Keep ID copies out of the process unless a rule requires them, and delete them once the purpose ends.
+
+## Testing it on last quarter's sales
+
+Before a customer sees an AI draft, test offline. Take 100 items you sold last quarter, hide the sale prices, and let the model suggest bands from the rest of your history. Count how often the real price fell inside the band, and how often the band was too wide to be useful. For descriptions, have the model draft 30 listings and let a colleague mark every claim the condition notes don't support.
+
+If the real price fell inside the band only about half the time, start with a price grid and use the model for text. That's a fine outcome too.
+
+## Questions shop owners ask about AI intake
+
+### Can AI price second-hand clothes accurately?
+
+It gives a useful range when you have enough sold history for similar items, and gets worse the rarer the item. Treat it as a second opinion with evidence, not a price tag. A person holding the item judges condition better than any photo.
+
+### Can AI tell me whether a designer bag is real?
+
+Not reliably enough to bet your name on it. Use a human check or a specialist authentication service for luxury items, and let the model only flag which items need one.
+
+### Do I have to charge VAT on the full price of consignment items?
+
+Often not, if a margin scheme applies, but it depends on your country, the consignor and your contract. Ask your accountant, and make sure each item record carries the figures the scheme requires.
+
+### What if the AI writes something false in a listing?
+
+You're responsible for what you publish, whoever or whatever drafted it. That's why the draft may only restate what staff confirmed, and a person reads every listing before it goes live.
+
+## The rule I'd use at the counter
+
+Let the model type, compare and draft. Let a person hold the item, judge the condition, approve the price and sign off the claims. Keep money and tax in software that does exact sums, and send anything luxury to a human check.
+
+If your Saturday pile is the problem, [tell me what you use for consignment records today](/contact?intent=improve), and I'll suggest the smallest intake change worth testing. Listing accuracy is the same challenge for [used car dealers](/posts/ai-for-used-car-dealers-listings), and [specialist retailers](/posts/ai-for-retail-product-descriptions) face it with new stock: accurate text, at scale, with someone accountable for it.

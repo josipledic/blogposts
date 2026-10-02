@@ -1,0 +1,175 @@
+---
+id: "ki-secondhand-laden-warenannahme"
+translationOf: "ai-for-consignment-shops-intake"
+title: "Secondhand-Laden: Kommissionsware schneller annehmen und einstellen"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Handel & Großhandel", "Secondhand-Läden", "Warenannahme", "KI für kleine Unternehmen"]
+description: "Die Warenannahme ist der Engpass im Secondhand-Laden. Wie KI Beschreibung, Preisband und Einlieferer-Daten vorbereitet, während das Team entscheidet."
+excerpt: "Die Warenannahme ist der Engpass im Secondhand-Laden. Wie KI Beschreibung, Preisband und Einlieferer-Daten vorbereitet, während das Team entscheidet."
+---
+
+Samstag, 10:20 Uhr. Eine Frau kommt mit zwei Stofftaschen und einem Schuhkarton in den Laden: 23 Teile, die sie in Kommission geben möchte. Am Tresen steht eine Person, und zwei Kundinnen warten an der Kasse.
+
+Jedes dieser 23 Teile braucht dasselbe, bevor es verkauft werden kann. Marke und Größe vom Etikett ablesen. Den Zustand beurteilen. Einen Preis finden. Eine kurze Beschreibung schreiben. Fotos machen. Ein Preisschild anbringen. Eine Zeile im Konto der Einlieferin anlegen. Sauber gemacht, dauert das zehn bis fünfzehn Minuten pro Stück. In Eile gemacht, ist es der Grund, warum ein guter Mantel für 9 € ausgezeichnet wird oder drei Wochen im Lager liegt.
+
+An der Annahme gewinnt oder verliert ein Kommissionsladen einen großen Teil seiner Marge, und genau dort würde ich KI einsetzen. Nicht, um zu entscheiden, was ein Teil wert ist oder ob eine Handtasche echt ist. Sondern um das Tippen und den ersten Preisvergleich zu übernehmen, damit die Person am Tresen ihre Minuten für das nutzt, was Hände und Augen braucht.
+
+## Warum die Annahme jedes Jahr wichtiger wird
+
+<Stats title="Der Markt wächst, und mit ihm die Konkurrenz">
+  <Stat value="5 bis 6 Mrd. €" label="schätzte PwC 2023 für den deutschen Secondhand-Modemarkt bis 2025, nach rund 3,5 Mrd. € im Jahr 2022 (eine Prognose, kein Messwert)" source="PwC Deutschland, Pressemitteilung 2023" href="https://www.pwc.de/de/pressemitteilungen/2023/secondhand-mode-im-aufwind-umsatz-steigt-bis-2025-auf-bis-zu-6-milliarden-euro.html" />
+  <Stat value="56 %" label="der Deutschen gaben in einer PwC-Umfrage an, schon gebrauchte Kleidung gekauft zu haben; 44 % hatten Secondhand-Luxusmarken gekauft" source="PwC Global Consumer Insights Survey, Deutschland (2023)" href="https://www.pwc.de/de/pressemitteilungen/2023/secondhand-mode-im-aufwind-umsatz-steigt-bis-2025-auf-bis-zu-6-milliarden-euro.html" />
+  <Stat value="10,8 Mrd. €" label="Warenwert, der 2025 über Vinted verkauft wurde, ein Plus von 47 % zum Vorjahr, laut Angaben des Unternehmens" source="Vinted-Jahreszahlen, via FashionUnited" href="https://fashionunited.uk/news/business/vinted-reaches-1-1-billion-euros-in-revenue-for-2025-accepting-a-strategic-drop-in-profits/2026040987347" />
+</Stats>
+
+Die Prognose ist eine Schätzung von 2023, und Vinted ist eine Plattform, der ein wachsender Markt gut ins Bild passt. Die Richtung ist trotzdem kaum zu bestreiten: Gebrauchtes zu kaufen ist keine Nische mehr.
+
+Für einen Secondhand-Laden heißt das: Ihre Kundschaft vergleicht Ihre Kleiderstange mit einem Handy voller Online-Angebote, jedes mit sechs Fotos, Maßen und einem scharf kalkulierten Preis. Wer am Samstag von Hand auszeichnet und am Mittwoch fotografiert, konkurriert genau damit.
+
+## Wohin die Minuten heute gehen
+
+So sieht die Annahme eines Teils in einem Laden ohne viel Technik typischerweise aus (meine Schätzungen, keine Messwerte).
+
+1. **Sichtung (1 Min.).** Saisonal passend, sauber, guter Zustand, eine Marke, die sich verkauft?
+2. **Bestimmen (2 Min.).** Etikett lesen, Größe finden, das Modell nachschlagen, wenn es unbekannt ist.
+3. **Preisrecherche (3 bis 5 Min.).** Sich erinnern, wofür Ähnliches ging, oder online suchen.
+4. **Fotos und Maße (2 Min.).**
+5. **Beschreibung und Inserat (3 bis 4 Min.).** Titel, Text, Kategorie, Mängel.
+6. **Preisschild und Erfassung (2 Min.).** Artikelnummer, Konto der Einlieferin, Preis, Datum.
+
+Die Arbeitszeit ist nicht der einzige Preis. Drei weitere Kosten wiegen schwerer.
+
+**Preise nach Tagesform.** Um 10:20 Uhr an einem vollen Samstag ist der Preis, was sich gerade richtig anfühlt. Zu niedrig, und Sie verschenken Marge, die Sie und die Einlieferin sich hätten teilen können. Zu hoch, und das Teil steht, die Einlieferin verdient nichts, und die Stange wird alt.
+
+**Ware, die wartet.** Was in einer Tasche hinter dem Tresen liegt, verkauft sich nicht. In einer Saisonkategorie kann eine Woche Verzug den größten Teil des Verkaufsfensters kosten.
+
+**Dünne Beschreibungen.** „Schwarzer Mantel, Gr. M“ sagt der Käuferin nichts, und ein Text, der einen Fleck verschweigt, ist eine Reklamation auf Vorrat.
+
+## Wer entwirft, wer entscheidet
+
+Ein Mensch sieht sich weiterhin jedes Teil an. Die KI macht aus dem, was er sieht und sagt, einen sauberen Datensatz und schlägt anhand Ihrer eigenen Verkäufe einen Preis vor. Der Mensch prüft und entscheidet.
+
+| Schritt | Was die KI vorbereitet | Was ein Mensch entscheidet |
+| --- | --- | --- |
+| Bestimmen | Marke, Kategorie, Farbe, Material und Größe aus Etikett und Fotos | Ob es stimmt. Bei Unklarem gibt es eine Rückfrage, keine Vermutung |
+| Zustand | Macht aus einer 15-Sekunden-Sprachnotiz eine Zustandsstufe und eine Formulierung | Die Stufe selbst, mit dem Teil in der Hand |
+| Preis | Ein Preisband aus ähnlichen, bei Ihnen verkauften Teilen, mit den Vergleichsfällen | Den Preis auf dem Schild, nie unter der Preisuntergrenze aus dem Kommissionsvertrag |
+| Inserat | Titel, Beschreibung, Maße, Kategorie, Suchbegriffe | Jede Aussage darin, besonders die Mängel |
+| Einlieferer-Datensatz | Artikelzeile, Aufteilung, Abholfrist, Preisstaffel aus dem Vertrag | Ausnahmen von den üblichen Konditionen |
+| Echtheit | Markiert Luxusmarken und riskante Kategorien | Alles: Prüfung durch eine Fachperson oder kein Inserat |
+
+Die letzte Zeile ist Absicht: Ein Modell kann ein Logo lesen, aber nicht die Nähte einer Handtasche beurteilen.
+
+<Flow title="Vom Tresen an die Stange und ins Schaufenster" caption="Das Team investiert seine Zeit in Sichtung, Zustand und Preisentscheidung. Das System übernimmt Tippen, Entwürfe und Erfassung.">
+<Step title="Einlieferin gibt Ware ab" who="Team" tone="human" time="1 Min. pro Teil">Schnelle Sichtung nach Ihren Regeln. Die Einlieferin unterschreibt einen Kommissionsvertrag für die ganze Lieferung.</Step>
+<Step title="Fotos und Sprachnotiz" who="Team" tone="human" time="1 bis 2 Min.">Vier Standardfotos an einer festen Fotostelle, dann eine 15-Sekunden-Notiz: „leichte Knötchen an den Ärmeln, kein Geruch, Futter in Ordnung“.</Step>
+<Step title="Entwurfskarte" who="KI" tone="ai" time="Sekunden">Liest Etikett und Fotos, strukturiert die Zustandsnotiz, entwirft Titel und Beschreibung und schlägt ein Preisband mit Vergleichsfällen vor.</Step>
+<Step title="Prüfen und bepreisen" who="Team" tone="human" time="1 Min.">Korrigiert den Entwurf, legt den Preis fest und setzt bei Luxusware das Häkchen für die Echtheitsprüfung.</Step>
+<Step title="Erfassen und auszeichnen" who="Kommissionssoftware">Artikelnummer, Barcode-Anhänger, Konto der Einlieferin, Aufteilung, Abholfrist und Preisstaffel werden angelegt.</Step>
+<Step title="Inserat geht online" who="System" time="am selben Tag">Schaufenster oder Online-Inserat entsteht aus dem freigegebenen Entwurf. Nichts wird neu getippt.</Step>
+<Step title="Verkauf, Preissenkung, Auszahlung" who="Kommissionssoftware">Preissenkungen folgen dem Vertrag. Beim Verkauf aktualisiert sich das Guthaben der Einlieferin, und die Abrechnung wird vorbereitet.</Step>
+</Flow>
+
+## Ein Preisband statt eines Preises
+
+Die besten Daten für den Preis eines Kommissionsteils sind Ihre eigenen Verkäufe. Sie wissen, wofür so ein Mantel bei Ihnen ging, wie lange es dauerte und wie weit Sie runtergehen mussten. Ein Modell durchsucht diese Historie schneller, als sich jemand erinnern kann.
+
+Ich würde ein Band mit sichtbarer Begründung verlangen:
+
+```text
+ENTWURFSKARTE (Beispiel, Team bestätigt)
+Artikel: Wollmantel, Damen, Etikett Max Mara (vom Etikettenfoto gelesen)
+Größe: 40 laut Etikett, Brustumfang 98 cm (gemessen vom Team)
+Zustand (Notiz Team): sehr gut, kleiner Zieher am linken Ärmel, kein Geruch
+Preisband: 85 bis 110 €, aus 6 ähnlichen Verkäufen der letzten 9 Monate
+Typische Verkaufsdauer: 41 Tage (Median dieser 6)
+Vorschlag Preisschild: 95 €. Preisuntergrenze laut Vertrag: 60 €
+Hinweise: Luxusetikett, Echtheitsprüfung vor dem Inserat
+Einlieferin: Konto 2291, Abholfrist 14.11., Preissenkung nach 30 Tagen
+```
+
+Die Vergleichsfälle sind wichtig. Ein Preis ohne Begründung wird übernommen oder ignoriert. Ein Preis mit sechs verkauften Teilen daneben wird sinnvoll hinterfragt.
+
+Zwei Grenzen. Bei dünner Datenlage, etwa zwei ähnlichen Verkäufen insgesamt, sagt das Band wenig, und der Entwurf soll das auch so sagen. Und Verkaufspreise von Marktplätzen können helfen, aber prüfen Sie vorher die Nutzungsbedingungen, bevor Sie dort Daten abgreifen.
+
+## Beschreibungen, die eine Reklamation überstehen
+
+Ein Inserat ist ein Versprechen. Wer als Unternehmer an Verbraucher verkauft, kann nicht einfach „gekauft wie gesehen“ schreiben: Eine Abweichung von dem, was Käufer üblicherweise erwarten dürfen, muss vor dem Kauf eigens mitgeteilt und ausdrücklich und gesondert vereinbart werden ([§ 476 BGB](https://www.gesetze-im-internet.de/bgb/__476.html)). Dazu kommt die Beweislastumkehr: Zeigt sich innerhalb eines Jahres nach Übergabe ein Mangel, wird vermutet, dass er schon bei der Übergabe da war ([§ 477 BGB](https://www.gesetze-im-internet.de/bgb/__477.html)). Und weil ein Laden, der Kommissionsware im eigenen Namen verkauft, nach [§ 383 HGB](https://www.gesetze-im-internet.de/hgb/__383.html) selbst Verkäufer ist, trifft das Sie, nicht die Einlieferin. Steht der Fleck im Text, sind Sie auf der sicheren Seite.
+
+Deshalb bekommt das Modell eine Regel, die über allen anderen steht: Beschreibe nur, was auf der Entwurfskarte steht. Es darf aus „kleiner Zieher am linken Ärmel“ einen klaren Satz machen. Es darf nicht „neuwertig“, „kaum getragen“ oder „aus rauchfreiem Haushalt“ ergänzen, wenn das niemand eingetippt hat. Sprachmodelle schönen gern. Mängel gehören früh in den Text, und das Team liest jedes Inserat einmal, bevor es live geht.
+
+## Die Seite der Einlieferer: Vertrag, Belege, Steuer
+
+Am Kommissionsvertrag scheitert vieles, deshalb würde ich ihn als Daten behandeln, nicht als PDF in der Schublade. Wichtig sind: die Aufteilung, die Preisuntergrenze und wer Preise ändern darf, die Preisstaffel, die Abholfrist und was danach mit nicht verkaufter Ware passiert, wer bei Verlust oder Beschädigung haftet und wann ausgezahlt wird.
+
+Ein Modell kann jeden unterschriebenen Vertrag in diese Felder lesen und Auffälliges markieren. Danach gehört das Rechnen in deterministische Software. Guthaben, Abrechnungen und Steuer müssen jedes Mal exakt stimmen, und das ist keine Aufgabe für ein Sprachmodell. Wie lange Abrechnungen und Belege aufbewahrt werden müssen, regelt [§ 147 AO](https://www.gesetze-im-internet.de/ao_1977/__147.html): je nach Unterlage sechs, acht oder zehn Jahre.
+
+<Callout title="Steuer und Aufzeichnung gelten pro Gegenstand" tone="note">
+Gebrauchtware aus privater Hand wird oft nach der Differenz besteuert, nicht nach dem vollen Preis. Die Differenzbesteuerung nach [§ 25a UStG](https://www.gesetze-im-internet.de/ustg_1980/__25a.html) verlangt, dass aus den Aufzeichnungen Verkaufspreis, Einkaufspreis und Bemessungsgrundlage hervorgehen, grundsätzlich je Gegenstand. Nur bei Gegenständen bis 750 € Einkaufspreis ist eine Gesamtdifferenz zulässig. Beim Kommissionsgeschäft liegt umsatzsteuerlich eine Lieferung zwischen Einlieferer und Kommissionär vor, danach eine zweite an die Käuferin ([§ 3 Abs. 3 UStG](https://www.gesetze-im-internet.de/ustg_1980/__3.html)). Welche Regeln zu Ihren Vertragsbedingungen passen, klärt Ihr Steuerberater. Es ist ein guter Grund, vom Eingang bis zum Verkauf dieselbe Artikelnummer zu führen.
+</Callout>
+
+Hier verdient die KI trotzdem ihr Geld, ohne das Geld anzufassen: die Nachricht an eine Einlieferin, deren Abholfrist nächste Woche endet, oder eine Abrechnungsmail, die in einfachen Worten erklärt, warum drei Teile reduziert wurden.
+
+## Echtheit: Hier endet das Modell
+
+<Callout title="Luxusware braucht einen Menschen oder eine Fachstelle" tone="warning">
+Ein Bildmodell kann ein Etikett lesen und die Form einer Tasche erkennen. Ob das Stück echt ist, kann es nicht belegen, und eine selbstsichere falsche Antwort ist schlimmer als keine. Bei Handtaschen, Uhren, Schmuck und Sneakern ab einem Preis, den Sie festlegen, verlangen Sie vor dem Inserat eine Prüfung durch eine Person oder einen spezialisierten Dienst. Dienste wie Entrupy verkaufen Echtheitsprüfungen für Handtaschen und Sneaker. Deren Genauigkeitsangaben sind ihre eigenen, und das Risiko, eine Fälschung zu verkaufen, bleibt bei Ihnen. Ist eine Prüfung bei hochwertiger Ware nicht eindeutig, lehnen Sie das Stück ab.
+</Callout>
+
+Bei Schmuck stellt sich dasselbe Problem an der Reparaturannahme. [Der Beitrag zur Juwelier-Annahme](/de/posts/ki-juwelier-reparaturannahme) zeigt, wie man den Zustand festhält, ohne ein Modell behaupten zu lassen, was ein Stein ist.
+
+## Was es kostet
+
+<Calc title="Überschlag: ein mittlerer Laden, 150 Teile pro Woche" caption="Annahmen, keine Messwerte: 12 Minuten pro Teil heute, 5 mit Entwurf plus Prüfung. Messen Sie eine echte Woche an Ihrem Tresen, bevor Sie etwas entscheiden." rows={[
+  ["Angenommene Teile pro Woche", "150"],
+  ["Gesparte Minuten pro Teil", "× 7"],
+  ["Gesparte Stunden pro Woche", "= 17,5"],
+  ["Personalkosten pro Stunde, inklusive Nebenkosten", "× 20 €"],
+  ["Wochen pro Monat", "× 4,3"],
+  ["Laufende Kosten: Modellnutzung und Werkzeuge", "minus 150 €"]
+]} result={["Freigesetzter Zeitwert pro Monat", "≈ 1.350 €"]} />
+
+Zwei Anmerkungen zu dieser Zahl. Gesparte Zeit wird nur zu Geld, wenn Sie sie nutzen: Teile am Eingangstag einstellen, mehr Zeit auf der Fläche. Und die Einrichtung ist nicht umsonst. Meine grobe Schätzung für eine kleine Version, aufgesetzt auf Ihre vorhandene Kommissionssoftware: einige Tage Aufbau und danach eine überschaubare monatliche Modellrechnung. Ich würde sie erst nach einem Blick in Ihr System beziffern.
+
+## Wann Sie keine KI brauchen
+
+Wenn Sie 20 Teile pro Woche annehmen, brauchen Sie kein Modell. Ein Annahmeformular mit Pflichtfeldern, eine feste Fotostelle mit ruhigem Hintergrund und eine Preistabelle nach Markenklasse und Zustand bringen den größten Teil des Nutzens.
+
+Ein günstiger Hebel funktioniert bei jeder Größe: die Abgabe begrenzen. Annahme nach Termin, höchstens 20 Teile pro Besuch und saisonale Annahmezeiten beseitigen den Samstagsstapel ohne Software. KI lohnt sich, wenn die Menge wächst, mehrere Leute unterschiedlich bepreisen oder Sie online verkaufen und für jedes Teil einen ordentlichen Text brauchen.
+
+## Werkzeuge und Daten, die Sie schon haben
+
+Die Datensätze liegen in der Kommissionssoftware. Für Secondhand-Läden im deutschsprachigen Raum gibt es unter anderem Circle-Hand, CASHTEX, triStan und Flea Lover, die Kommissionsabrechnung und Differenzbesteuerung abbilden wollen. Manche haben vielleicht schon KI-Funktionen, schauen Sie also nach, bevor Sie etwas bauen. Auch Marktplätze helfen: eBay hat nach Berichten im April 2025 in der App ein KI-Werkzeug eingeführt, das aus Foto und Titel Inseratsdetails vorschlägt, für Privatverkäufer in den USA, Großbritannien und Deutschland ([Retail Dive](https://retaildive.com/news/ebay-mobile-seller-listing-generative-AI/745054)). Es weiß aber nichts über Ihren Kommissionsvertrag, Ihre Preisuntergrenzen oder Ihre Verkaufshistorie.
+
+Zum Datenschutz: Die Daten Ihrer Einlieferer sind personenbezogene Daten. Name, Anschrift und Bankverbindung gehören in die Kommissionssoftware und sollten dort bleiben. Der KI-Schritt braucht das Teil (Fotos, Etikett, Zustandsnotiz) und Ihre Verkaufshistorie, nicht die Identität der Einlieferin. Mit einem externen Modellanbieter brauchen Sie einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO, und ich würde Hosting in der EU bevorzugen. Ausweiskopien gehören nicht in den Ablauf, wenn keine Pflicht sie verlangt, und sie werden gelöscht, sobald der Zweck entfällt.
+
+## Erst an den Zahlen des letzten Quartals testen
+
+Bevor eine Kundin einen KI-Entwurf sieht, testen Sie offline. Nehmen Sie 100 Teile, die Sie im letzten Quartal verkauft haben, blenden Sie die Verkaufspreise aus und lassen Sie das Modell aus dem Rest Ihrer Historie Preisbänder vorschlagen. Zählen Sie, wie oft der echte Preis im Band lag und wie oft das Band zu breit war, um zu helfen. Bei den Beschreibungen lassen Sie 30 Inserate entwerfen, und ein Kollege markiert jede Aussage, die die Zustandsnotizen nicht stützen.
+
+Lag der echte Preis nur etwa jedes zweite Mal im Band, beginnen Sie mit einer Preistabelle und nutzen das Modell für den Text. Auch das ist ein gutes Ergebnis.
+
+## Fragen aus dem Secondhand-Laden
+
+### Kann KI Preise für Secondhand-Kleidung vorschlagen?
+
+Sie liefert eine brauchbare Spanne, wenn genug Verkaufshistorie für ähnliche Teile vorliegt, und wird schlechter, je seltener das Teil ist. Betrachten Sie sie als zweite Meinung mit Belegen, nicht als Preisschild. Den Zustand beurteilt, wer das Teil in der Hand hat, besser als jedes Foto.
+
+### Kann KI erkennen, ob eine Designertasche echt ist?
+
+Nicht verlässlich genug, um Ihren Namen darauf zu setzen. Nutzen Sie bei Luxusware eine Prüfung durch eine Person oder einen spezialisierten Dienst, und lassen Sie das Modell nur markieren, welche Teile eine solche Prüfung brauchen.
+
+### Muss ich bei Kommissionsware Umsatzsteuer auf den vollen Preis zahlen?
+
+Oft nicht, wenn die Differenzbesteuerung nach § 25a UStG greift. Das hängt aber von Einlieferer, Vertrag und Ihrer Situation ab. Fragen Sie Ihren Steuerberater, und sorgen Sie dafür, dass jeder Artikeldatensatz die Zahlen enthält, die die Regelung verlangt.
+
+### Wer haftet, wenn die KI im Inserat etwas Falsches schreibt?
+
+Sie, denn Sie veröffentlichen den Text, egal wer ihn entworfen hat. Deshalb darf der Entwurf nur wiedergeben, was das Team bestätigt hat, und deshalb liest ein Mensch jedes Inserat, bevor es live geht.
+
+## Die Regel für die Annahmetheke
+
+Lassen Sie das Modell tippen, vergleichen und entwerfen. Lassen Sie einen Menschen das Teil in die Hand nehmen, den Zustand beurteilen, den Preis freigeben und die Aussagen abzeichnen. Halten Sie Geld und Steuer in Software, die exakt rechnet, und schicken Sie alles Luxuriöse zur menschlichen Prüfung.
+
+Wenn der Samstagsstapel Ihr Problem ist, [schreiben Sie mir, womit Sie heute Ihre Kommissionsdaten führen](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Änderung an der Annahme vor, die einen Test wert ist. Die Genauigkeit von Inseraten ist auch für [Gebrauchtwagenhändler](/de/posts/ki-gebrauchtwagenhaendler-inserate) das Thema, und [Fachhändler](/de/posts/ki-produktbeschreibungen-fachhandel) kennen sie von Neuware: genaue Texte, in großer Zahl, mit jemandem, der dafür geradesteht.

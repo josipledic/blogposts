@@ -1,0 +1,173 @@
+---
+id: "ai-for-electricians-inspection-reports"
+title: "Electrical Inspection Reports: From Site Notes to Signed PDF Faster"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Trades & construction", "Electricians", "Inspection reports", "AI for small business"]
+description: "Test values come from the tester, never from a model. How electrical firms can use AI to draft defect wording and repair quotes while the electrician signs."
+excerpt: "Test values come from the tester, never from a model. How electrical firms can use AI to draft defect wording and repair quotes while the electrician signs."
+---
+
+Picture a five-person electrical firm that has just tested the wiring in a landlord's 24 flats. The testing took three days. The report is going to take longer than that.
+
+The measurements are safe in the tester's memory. The defects are not. They live in a notebook, in the electrician's head, and in 60 photos on a phone that also holds family pictures. Someone now has to match every finding to a circuit, write it up in language a landlord can act on, give it a code, and then price the repairs, because the landlord's first question will be "what is this going to cost me?"
+
+That's the slow part of periodic testing. Not the testing, the paperwork after it. It's also a good place to use AI, as long as one rule holds: the numbers come from the tester, the words can come from a model, and the signature comes from the electrician.
+
+## Why the report is the bottleneck
+
+Periodic testing is mandatory in more places than people outside the trade tend to realise, and every regime ends in a document. Two examples, side by side:
+
+| | England: rented homes | Germany: workplaces |
+| --- | --- | --- |
+| Rule | [Electrical Safety Standards Regulations 2020](https://www.gov.uk/government/publications/electrical-safety-standards-in-the-private-rented-sector-guidance-for-landlords-tenants-and-local-authorities/guide-for-landlords-electrical-safety-standards-in-the-private-rented-sector) | [DGUV Vorschrift 3, section 5](https://publikationen.dguv.de/widgets/pdf/download/article/1052) |
+| Who must arrange it | The landlord | The employer |
+| Who may test | A qualified, competent person | An Elektrofachkraft, or someone working under their direction and supervision |
+| Interval | At least every 5 years | Fixed installations: 4 years as a guide value. Portable equipment: depends on use |
+| The document | Electrical installation condition report (EICR) with codes C1, C2, C3 and FI | Prüfprotokoll |
+| What follows | Copy to the tenant within 28 days. Any C1, C2 or FI makes the report unsatisfactory, and remedial work is due within 28 days | Defects have to be fixed without delay; unsafe equipment is not used |
+
+The English rules come from [the government's landlord guide](https://www.gov.uk/government/publications/electrical-safety-standards-in-the-private-rented-sector-guidance-for-landlords-tenants-and-local-authorities/guide-for-landlords-electrical-safety-standards-in-the-private-rented-sector), and according to [the National Residential Landlords Association](https://www.nrla.org.uk/resources/looking-after-your-property/electrical-safety-inspections) a landlord who ignores them risks a fine of up to £30,000. The German interval is a guide value from [DGUV Information 203-071](https://publikationen.dguv.de/widgets/pdf/download/article/787): fixed installations every four years, while for portable equipment a defect rate under 2 percent lets you stretch the interval, to two years at most in offices. The employer's duty to fix defects without delay and to take unsafe equipment out of use is in section 3 of [DGUV Vorschrift 3](https://publikationen.dguv.de/widgets/pdf/download/article/1052).
+
+Look at what the 28 days do. A landlord who gets a report with a C2 on it has a month to get it fixed, and the electrician who wrote the report is the obvious person to ask, but only if the quote arrives while the landlord is still reading. A slow report is a lost repair job.
+
+The reason all of this exists is not abstract. The German insurers' damage research institute IFS found electricity behind [30 percent of the building fires it investigated between 2016 and 2025](https://www.ifs-ev.org/schadenverhuetung/ursachenstatistiken/ursachenstatistik-brandschaeden-2025/), the largest single cause. Testing finds the loose terminal before it becomes a fire. The report is the record that someone looked.
+
+## Where the hours go after the test
+
+Here's what happens in most small firms once the van is parked.
+
+**Values get moved.** Insulation resistance, loop impedance, RCD trip times: from the tester into the report. Some firms still retype them.
+
+**Notes get matched.** "Cooker isolator in the kitchen, terminals burnt, photo 6" has to be tied to circuit 3 on the board and to the right photo, hours or days after the electrician stood there.
+
+**Words get written.** A defect description a landlord's agent can read, a code, a recommended action. Written fresh each time, even though most of the defects are ones the firm has written up a hundred times before.
+
+**The quote gets built.** Someone re-reads the defect list and prices it, usually at the end of a long week.
+
+The first step has an existing fix. Makers of testers sell reporting software that takes results straight from the instrument: Gossen Metrawatt's [IZYTRONIQ](https://www.gossenmetrawatt.de/en/products/software-and-accessories/software/measuring-and-test-technology/izytroniq-business/) syncs with its testers over Bluetooth or USB, and Megger's [installation testers](https://www.megger.com/en/type/low-voltage-installation-testing/multifunction-installation-testers) send results to its CertSuite software. Those are the makers' own product descriptions, and other manufacturers have similar tools. If your values are still retyped, fix that first. It needs no AI at all.
+
+## One rule: who writes which part
+
+The design of the whole system fits in one table. For every part of the report, decide where it comes from and whether a model may touch it.
+
+| Part of the report | Where it comes from | Can the model write it? |
+| --- | --- | --- |
+| Board details and circuit schedule | Your survey and the previous report | No. It reads them to link findings to circuits, and never edits them |
+| Measured values | The tester's export | No. Imported as data, never retyped or summarised by a model |
+| Pass or fail against limits | Tester software or a fixed rule table | No. Comparing a number to a limit is arithmetic, not language |
+| Defect description | The electrician's note and photo | Yes, as a draft the electrician edits |
+| Code (C1, C2, C3, FI) | The electrician's judgement | A suggestion at most. The electrician decides |
+| Overall assessment | A fixed rule: any C1, C2 or FI means unsatisfactory | No. It follows from the codes |
+| Repair quote | Accepted defects plus your price list | Yes, as a draft. You set the prices |
+| Declaration and signature | The electrician | Never |
+
+Two lines in that table carry most of the weight. A language model has no business producing or summarising a measured value, because a copied number is a number that can be wrong, and a wrong insulation resistance on a signed report is your problem. And the code is a safety judgement. A model can suggest one, but it's the person who stood at the board who knows whether that discoloured insulation was warm.
+
+## The flow, step by step
+
+<Flow title="From the board to a signed report and a quote" caption="The tester owns the numbers. The model drafts words and the quote. The electrician decides every code and signs.">
+<Step title="Inspect and test" who="Electrician" tone="human" time="on site">Visual inspection and testing as usual. At each defect, a 15-second voice note and a photo.</Step>
+<Step title="Sync the results" who="Tester software" time="end of day">Measured values go from the instrument to the reporting software as data. Nobody retypes them.</Step>
+<Step title="Match notes to circuits" who="AI" tone="ai" time="minutes">Each voice note is transcribed and linked to a circuit, a location and its photos, using the board schedule from the survey.</Step>
+<Step title="Draft the observations" who="AI" tone="ai" time="minutes">Wording comes from your approved phrases for common defects. A proposed code is shown. Any mismatch between a note and the test data is flagged, not resolved.</Step>
+<Step title="Review and decide" who="Electrician" tone="human" time="20 to 30 min">Check each draft against its photo. Set the code, fix the wording, clear every flag. Nothing moves forward until this is done.</Step>
+<Step title="Draft the quote" who="AI" tone="ai" time="minutes">Remedial work for every accepted defect becomes quote lines from your price list. You adjust hours and prices and approve.</Step>
+<Step title="Sign and send" who="Electrician" tone="human">The signed PDF and the quote leave together, so the landlord can act while the report is still fresh.</Step>
+</Flow>
+
+Three design decisions do most of the work.
+
+**Structured input, not a chat.** The model gets a defined set of inputs: the schedule, the transcribed notes, the photo list and the price list. It produces entries in a fixed format. That's much easier to check than free text.
+
+**Flags, not guesses.** Say a note reads "RCD slow to trip" and the export shows a trip time within limits, or no RCD test at all for that circuit. The draft shouldn't pick a side. It marks the conflict and the electrician resolves it.
+
+**Your wording, not the model's memory.** I wouldn't let a model quote regulation or clause numbers from memory. Give it the phrases you already trust and let it fill in the location, the circuit and the photo reference.
+
+## What a draft entry looks like
+
+Here's a hypothetical entry, built from a voice note.
+
+```text
+Voice note, 14:12: "Cooker isolator in the kitchen, terminals look burnt,
+brown insulation, photo 6. That's circuit 3 on the board."
+
+DRAFT observation 4, for electrician review
+Location:   Kitchen, cooker control unit, supplied from circuit 3
+Finding:    Discoloured insulation and signs of overheating at the
+            isolator terminals. Photo 6.
+Proposed:   C2, potentially dangerous. Electrician to confirm.
+Test data:  Circuit 3 results linked from the tester export, unchanged
+Action:     Replace control unit and terminations, retest circuit 3
+Quote line: Replace cooker control unit, 1.5 h plus parts (price list 214)
+Flags:      None
+```
+
+Compare that with the same finding reconstructed from memory on Thursday evening. The draft says where and what, points to the evidence, and leaves the code with the person who saw the terminals.
+
+## What it costs, and what it saves
+
+<Calc title="Napkin math: report paperwork" caption="Assumptions, not measurements. Time your last five reports end to end and use those numbers instead." rows={[
+  ["Reports per week", "6"],
+  ["Paperwork per report today (values, wording, quote)", "75 min"],
+  ["With an AI draft to review and edit", "30 min"],
+  ["Time saved per week", "6 × 45 min = 4.5 h"],
+  ["Weeks per month", "× 4.3"],
+  ["Hours saved per month", "≈ 19 h"],
+  ["Internal cost per hour", "× £40"]
+]} result={["Paperwork time freed each month", "≈ £770"]} />
+
+Model calls for text drafts like this cost little, well under a pound per report on my rough estimate. The real work is plumbing: connecting the tester export, building the wording library, setting up the quote template. For a firm that already has reporting software and a price list, I'd expect days of setup, not weeks. If the tester can't export data, fix that first.
+
+A quote that goes out with the report, instead of three weeks later, is also a repair job you win more often than one you chase.
+
+## Try this before any AI
+
+<Callout title="A defect library does most of the job" tone="note">
+Most of your findings will be the same few dozen defects. Before using a model, write a library of 30 to 50 of them: standard wording, code, remedial action and price for each, stored in your reporting or job software. Pick from the list on site or at the desk. The model then only has to deal with the odd findings, match notes to circuits and catch mismatches. If the library alone gets you home by five, you've saved the cost of an AI project.
+</Callout>
+
+Some other places AI is the wrong tool. Don't photograph the tester's screen and have a model read the number: a 0.31 misread as 0.37 is exactly the mistake that doesn't look like one. Use the export. Don't ask a model whether an installation is safe to re-energise, or how urgent a finding is. And don't let it interpret a regulation for you; that reading belongs to someone who is accountable for it.
+
+## Data, standards and who is responsible
+
+**Personal data.** A report holds addresses, tenant names, occupancy details and photos of people's homes, sometimes of the people themselves. That is personal data under the UK and EU GDPR. If a vendor processes it for you, [Article 28 of the GDPR](https://gdpr-info.eu/art-28-gdpr/) requires a written contract and a processor with sufficient guarantees. Check where the data is processed, whether it is used to train anything, and how long it is kept. And send less: the model needs the circuit and the location, not the tenant's name.
+
+**Standards move, and templates age.** In the UK, BS 7671:2018+A4:2026 was published on 15 April 2026, and according to [BSI](https://knowledge.bsigroup.com/articles/bs-7671-2018-a4-2026-get-the-latest-amendment-to-the-uks-wiring-regulations) and [NICEIC](https://niceic.com/amendment-four/) the previous version is withdrawn on 15 October 2026 (September 2026 status). That's your cue to update report forms and the wording library. In Germany the combined DIN VDE 0701-0702 was split into DIN EN 50678 (VDE 0701) for testing after repair and DIN EN 50699 (VDE 0702) for recurring tests, and [the old standard was withdrawn in September 2023](https://mebedo-ac.de/blog/die-neue-din-en-50678-vde-0701-und-din-en-50699-vde-0702/). If your template still cites the old number, fix the template before a model copies it into a hundred reports.
+
+**The signature stays human.** The legal weight sits with the qualified person who inspects, tests, assesses and signs. How the first draft of a sentence was produced doesn't change that, and it doesn't reduce your responsibility for it. Keep the voice note and photo behind each finding filed with the report. If you hold a scheme registration or professional indemnity cover, ask your provider whether it has rules on AI-drafted documents.
+
+## Before you sign
+
+<Checklist title="Checks for a report that started as an AI draft" items={[
+  "Every measured value matches the tester export, with nothing typed or edited by hand",
+  "Every observation names a circuit or location and has at least one photo",
+  "You compared each draft with its photo, not only with the wording",
+  "Each code is your decision, and any C1, C2 or FI makes the overall assessment unsatisfactory",
+  "Every flag about a mismatch between a note and the test data is cleared",
+  "Form version and standards named in the report are current",
+  "Quote lines come from your price list and you set the prices",
+  "Declaration, signature and next inspection date are filled in by you"
+]} />
+
+## Questions electricians ask
+
+### Can AI fill in an EICR or a DGUV V3 test report for me?
+
+It can draft the descriptive parts: defect wording, a link between notes and circuits, a first version of the quote. It shouldn't enter or summarise measured values, which come from the tester export. The codes, the overall assessment and the signature are yours.
+
+### Why not let it read the values off a photo of the tester display?
+
+Because reading numbers off photos is one of the places where models make quiet mistakes, and a quiet mistake on a signed report is the worst kind. A synced export is exact. Keep the photo as evidence only.
+
+### Is a report with AI-drafted wording still valid?
+
+The validity comes from the competent person who did the inspection and testing and signed the result. If you checked each entry against the evidence and own the codes, the draft was a time-saving tool. I'm not a lawyer, though, so check with your scheme provider or insurer if you want certainty.
+
+## Where I'd start
+
+Eight years of building production software taught me one habit that applies here: never let a copy of a number replace the original. Let the tester own the numbers, let the model write the first draft of the words, and let the electrician own the code and the signature.
+
+To begin, take your last 20 reports and list every defect you wrote. You'll find the same dozen over and over. Turn those into a library, and add the model only for the rest.
+
+If the paperwork after the test is eating your evenings, [tell me which tester and reporting software you use](/contact?intent=improve), and I'll suggest the smallest version worth trying. The same photos-in, document-out pattern works for [security installers' site surveys](/posts/ai-for-security-installers-surveys) and for [daily reports from voice notes](/posts/ai-for-construction-daily-reports), and heat pump installers face a similar paperwork pile with [grant applications](/posts/ai-for-heat-pump-installers-grant-paperwork).

@@ -1,0 +1,147 @@
+---
+id: "ai-for-care-homes-shift-handover"
+title: "Shift Handover in Care Homes: Nothing Lost Between Early and Late"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Healthcare", "Care homes", "Shift handover", "AI for small business"]
+description: "Falls, fluids, wound changes and doctor calls sit in dozens of entries. How AI drafts a flagged handover summary while the nurse still hands over in person."
+excerpt: "Falls, fluids, wound changes and doctor calls sit in dozens of entries. How AI drafts a flagged handover summary while the nurse still hands over in person."
+---
+
+It's 13:40 on a unit of 28 residents. The early-shift nurse has been on her feet since six. Handover is at 14:00, and she has about fifteen minutes to pass on what happened to 28 people.
+
+Here's what she needs to get across about one of them, Mrs K. (a made-up resident, but a familiar pattern). She fell at 7:10 and seemed unhurt. She drank about 400 ml by lunchtime, well below her usual. The GP was called at 10:30 and will visit tomorrow. The dressing on her sacral wound was changed at 11:15 and the skin looked redder than yesterday. Each of those facts is recorded. They sit in four entries among about 140 others written that morning, by three different people.
+
+What reaches the late shift is usually the thing the nurse remembers at 14:00 with two colleagues waiting. Probably the fall. Maybe the doctor. The fluids and the wound, less certain. Nobody did anything wrong. The information existed. It just had to travel through one tired person's memory in under a minute.
+
+That's the gap I'd use AI for in a care home. Not to replace the handover or the nurse's judgment, but to make sure the four facts about Mrs K. are on the page, at the top, with their time stamps, before the nurse opens her mouth.
+
+## What's at stake at every handover
+
+<Stats title="Care homes in Germany, and why the paperwork matters">
+  <Stat value="800,000" label="people (14% of everyone in need of care) were looked after in care homes in December 2023" source="Destatis press release, December 2024" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_478_224.html" />
+  <Stat value="16,505" label="care homes in Germany in 2023 (Pflegeheime under the long-term care insurance)" source="Destatis, care statistics" href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Gesundheit/Pflege/Tabellen/pflegeeinrichtungen-deutschland.html" />
+  <Stat value="up to 1/3" label="of nurses' working time goes on documentation in German long-term care, according to the introduction of a 2026 time-motion study" source="Journal of Medical Internet Research, 2026" href="https://www.jmir.org/2026/1/e86078/" />
+</Stats>
+
+I'm using German numbers because the examples below follow German care homes, but the pattern is the same in any country: documentation takes a large slice of the shift, and the handover is where it should pay off. The study behind that last figure evaluated a commercial voice documentation product, so I'd treat its "up to a third" as a framing statement and not a measured average for your home.
+
+Handover itself has been studied for a long time. The Joint Commission, a US hospital accreditor, put it plainly in its [Sentinel Event Alert 58](https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-58): each hand-off runs the risk of key treatment information being garbled, forgotten or not passed on. Its recommendations are unglamorous. Standardise what the sender must communicate, and hand over face to face in a place without distractions. The WHO has a [patient safety solution on hand-over communication](https://cdn.who.int/media/docs/default-source/patient-safety/patient-safety-solutions/ps-solution3-communication-during-patient-handovers.pdf) that also favours a standardised approach. Both were written about hospitals, but a care home is a place where the same 28 people are handed over three times a day.
+
+## Why the notes don't solve it
+
+Care homes in Germany have spent years trying to reduce documentation. The Strukturmodell (structure model) for lighter documentation, described by the [Federal Ministry of Health](https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/e/entbuerokratisierung-der-pflegedokumentation), is built around the structured information collection (SIS) at the start of care. The idea is that routine care isn't written up line by line, and the daily report concentrates on deviations from the plan.
+
+That's a good change, and it makes handover summaries easier, not harder. A report that holds mainly exceptions is a report worth summarising. But it also means the important entries are scattered in time, written by different people, phrased in free text ("seemed more confused than usual", "didn't want lunch"), and mixed with routine notes.
+
+Structured fields are easier. If your software records drinking amounts in a fluid chart, "under the target in the care plan" is a database query, not an AI task. The free-text entries are where a language model earns its place, because nobody wrote them in a form that a filter can catch.
+
+## A handover day, with the draft in it
+
+<Timeline title="From early shift to late shift, with a draft in the middle">
+<Phase when="06:00 to 13:00" title="Entries as usual">Staff document in the care software as they do now. Nothing changes for them, except that short voice notes or typed entries are welcome, because the draft reads all of them.</Phase>
+<Phase when="13:15" title="The draft is built">The assistant reads the shift's entries for every resident and produces one block per resident, with flagged items first. Each line points back to the entry it came from.</Phase>
+<Phase when="13:20" title="The nurse reviews">The responsible nurse reads the draft against what she knows, corrects it, adds what isn't written down, and removes nothing she can't justify. About eight minutes for a unit of 28, if the draft is good.</Phase>
+<Phase when="14:00" title="Verbal handover">Early and late shift meet. The flagged items are discussed first, face to face, with the draft on a screen or paper. Questions are asked here.</Phase>
+<Phase when="14:15" title="Late shift takes over">The late shift can open the draft for any resident. Anything said aloud in handover that isn't in the draft gets added as an entry.</Phase>
+</Timeline>
+
+Two details matter more than they look. The review step isn't optional. The draft reaches the late shift only after a nurse has signed it off, and that nurse is accountable for it. And the verbal handover stays. The draft replaces the hunt through entries, not the conversation.
+
+## What the draft looks like
+
+```text
+MRS K., ROOM 14
+FLAGGED
+- FALL 07:10 (entry by J.): found on floor by bed, no complaints, no visible injury. Incident form filed. Vitals at 07:25 in entry.
+- FLUIDS: 400 ml recorded by 13:00. Care plan target: 1,500 ml per day. Entries at 09:10, 11:30, 12:40.
+- WOUND (sacral) 11:15: dressing changed. Entry says: "redder than yesterday". No photo attached.
+- GP CALLED 10:30: visit tomorrow. Nothing else agreed in the entry.
+NO ENTRY TODAY: bowel movement, weight.
+OPEN: confirm GP visit time with practice. Re-check wound at 18:00 (per care plan).
+ROUTINE: breakfast eaten in full, physio 10:00 done.
+```
+
+Look at the line that says "no entry today". That's the most important design decision in the whole system. A summary that leaves out what isn't recorded turns silence into good news. "Nothing recorded about fluids" is different from "fluids fine", and the draft has to say so. In software I've built, the bugs that do damage aren't the crashes. They're the silent omissions, where the output looks complete and isn't.
+
+The flagged items are the same categories you'd have in a good paper handover sheet, agreed by your nursing management and team: falls, fluid or food refusal, wound changes, doctor contacts, new confusion or behaviour changes, pain, anything about medication given or refused, open tasks. The assistant applies your list. It doesn't invent one.
+
+## What the assistant does and never does
+
+<Split title="The line in a care home" leftTitle="The assistant does" rightTitle="The assistant never does" left={[
+  "Collects the shift's entries per resident and puts flagged items first",
+  "Links every line to the entry it came from, with time and author",
+  "States what was not recorded, so silence isn't read as fine",
+  "Lists open tasks and appointments from the entries and the care plan",
+  "Produces the draft in the same structure every time, so readers know where to look"
+]} right={[
+  "Judges how serious a fall, a wound or a low fluid intake is",
+  "Suggests, changes or comments on medication",
+  "Leaves out an entry because it seems unimportant",
+  "Writes a fact that isn't in an entry",
+  "Replaces the verbal handover or the nurse's sign-off"
+]} caption="The draft reorganises what the team wrote. Clinical judgment stays with the nurse." />
+
+If you know SBAR, the situation, background, assessment, recommendation format, you'll see the pattern. The assistant can fill Situation and Background from the entries, because those are facts someone wrote down. Assessment and Recommendation are the nurse's. I'd leave them blank in the draft on purpose, as a prompt for her and not a slot for the model.
+
+## Privacy and the rules
+
+Care home records are health data under Art. 9 of the GDPR, and nurses are among the professions covered by the secrecy rule in [§ 203 of the German Criminal Code](https://www.gesetze-im-internet.de/stgb/__203.html). Passing resident data to an external AI or software provider means the provider must be bound to confidentiality, as paragraphs 3 and 4 set out, and you can be liable if it isn't.
+
+For any tool that reads the entries:
+
+1. A data processing agreement (AVV) under Art. 28 GDPR and a written confidentiality obligation that satisfies § 203.
+2. EU hosting, and a contract that rules out training on your data.
+3. Access limited to staff who already have access to the residents concerned, and a log of who read what.
+4. The works council, if you have one, is involved early. Systems that can monitor employees' work generally trigger co-determination rights in Germany, and a tool that reads every entry a nurse writes is one of those.
+5. In the US, a business associate agreement under [HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html) with any vendor that touches resident information.
+
+Regulation of AI is a moving target. A tool that merely summarises staff entries for internal use is not what the EU AI Act lists as high-risk, but the moment it scores risks or recommends clinical actions it may count as a medical device. Ask any vendor directly, and ask for the answer in writing.
+
+## What it costs and what it saves
+
+<Calc title="Napkin math: handover preparation on four units" caption="Assumptions, not measurements. Time saved is only useful if it returns to care and isn't filled with new tasks. Measure your own handovers for a week first." rows={[
+  ["Handovers per day, per unit", "3"],
+  ["Minutes saved preparing each one (hunting through entries)", "× 10"],
+  ["Days per month", "× 30.4"],
+  ["Hours saved per month, per unit", "≈ 15"],
+  ["Units", "× 4"]
+]} result={["Hours saved per month", "≈ 60"]} />
+
+Setup cost is mostly integration work: getting the entries out of your care software through an interface or export, writing the flagging rules with your nursing management, and testing. My rough estimate is a few days of work and modest running costs for the language model, plus whatever your software vendor charges for interface access. Care software such as Vivendi or MEDIFOX DAN may already have a "reports since last shift" view, so check what you have before building anything.
+
+Because this touches people, I'd run the pilot on one unit for four weeks. During the first two, compare the draft against the actual entries line by line. Count every item that was missing, invented or wrongly flagged. If the count isn't close to zero, tighten the rules before the third week.
+
+<Checklist title="Before the draft reaches a real handover" items={[
+  "Flag categories agreed by nursing management and the unit team, written down",
+  "Data processing agreement, confidentiality obligation and EU hosting in place",
+  "Works council informed, if you have one",
+  "Two weeks of past shifts tested: no invented facts, no silently dropped entries",
+  "Draft shows 'nothing recorded' explicitly, per category",
+  "A named nurse signs off each draft before the late shift sees it",
+  "Staff know the verbal handover continues and what to do when the draft is wrong"
+]} />
+
+## Questions care home managers ask
+
+### Can AI write the handover in a care home?
+
+It can draft it from the entries, with flagged items first, and a nurse then reviews it. It shouldn't decide what matters clinically, add facts that nobody recorded, or replace the conversation between shifts. Think of it as a prepared reading list, not a replacement for the colleague.
+
+### Is it allowed to give resident data to an AI tool?
+
+Under the right conditions. You need a data processing agreement, a confidentiality obligation that satisfies § 203, EU hosting, and a contract that rules out training on your data. Check with your data protection officer first. This isn't legal advice.
+
+### Does this conflict with the Strukturmodell and lean documentation?
+
+No, it fits it. A report that concentrates on deviations is the best input for a summary. The assistant shouldn't push staff to write more. If anything, it makes short, clear entries more valuable, because the draft is only as good as what goes in.
+
+### What if the AI gets it wrong?
+
+Then the nurse catches it during review, and you log the miss and tighten the rules. That's why the sign-off exists. If misses keep happening, the tool is not ready for your unit and you stop.
+
+## My rule of thumb for handover
+
+If a line in the handover can't be traced to an entry a human wrote, it doesn't go on the page. And if something wasn't recorded, the page says so.
+
+If you run a care home and want to try this on one unit, [tell me how handover works on your floor today](/contact?intent=improve), and I'll suggest the smallest version worth testing. For the other side of care work, [home care rounds and scheduling](/posts/ai-for-home-care-scheduling) is about getting the route right. The voice-note approach works in other places too: [site managers dictating daily reports](/posts/ai-for-construction-daily-reports) use it, and so do [childcare providers sharing the day with parents](/posts/ai-for-childcare-parent-updates).

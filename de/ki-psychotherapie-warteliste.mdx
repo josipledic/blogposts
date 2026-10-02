@@ -1,0 +1,151 @@
+---
+id: "ki-psychotherapie-warteliste"
+translationOf: "ai-for-psychotherapy-practices-waitlist"
+title: "Psychotherapie-Warteliste: Was KI übernehmen darf und was nie"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Gesundheit", "Psychotherapie-Praxen", "Wartelistenverwaltung", "KI für kleine Unternehmen"]
+description: "Eine Psychotherapie-Praxis kann das Warten automatisieren: Eingangsbestätigung, Listenpflege, Erklärungen. Dringlichkeit, Krise und Therapie bleiben bei Menschen."
+excerpt: "Eine Psychotherapie-Praxis kann das Warten automatisieren: Eingangsbestätigung, Listenpflege, Erklärungen. Dringlichkeit, Krise und Therapie bleiben bei Menschen."
+---
+
+Stellen Sie sich das Postfach einer Einzelpraxis für Psychotherapie an einem Montag um 7:40 Uhr vor. Über das Wochenende sind vierzehn Nachrichten gekommen. Neun stellen dieselbe Frage: Haben Sie einen Platz, und wie lange dauert es? Drei stammen von Menschen, die schon auf der Liste stehen und wissen wollen, ob man sie vergessen hat. Eine ist eine organisatorische Frage aus einer Hausarztpraxis. Und eine, in der fünften Zeile einer sonst nüchternen Anfrage, schreibt, dass sie keinen Sinn mehr darin sieht weiterzumachen.
+
+Diese letzte Nachricht ist das ganze Designproblem. Die ersten dreizehn kann Software bearbeiten. Die vierzehnte nicht, und Software darf nie diejenige sein, die entscheidet, welche welche ist.
+
+Dieser Beitrag ist deshalb anders als die meisten in dieser Reihe. Sonst begründe ich, was KI übernehmen kann. Hier geht es darum, eine Grenze zu ziehen, und ich ziehe sie lieber zu früh als zu spät. Meine Position: das Warten automatisieren, nie den Menschen. Alles, was die Warteschlange betrifft, lässt sich verwalten. Alles, was den Menschen in der Warteschlange betrifft, bleibt bei einer Therapeutin oder einem Therapeuten.
+
+## Warum es die Liste überhaupt gibt
+
+<Stats title="Die Warteliste in Zahlen">
+  <Stat value="47,4 %" label="der Praxen meldeten 2022 durchschnittliche Wartezeiten von mehr als sechs Monaten bis Therapiebeginn, nach 38,3 % im Jahr 2021" source="BPtK-Hintergrundpapier, Juli 2023" href="https://api.bptk.de/uploads/20230713_bptk_hintergrundpapier_weiterentwicklung_psychotherapeutischen_versorgung_d38b567ee6.pdf" />
+  <Stat value="+40 %" label="wöchentliche Terminanfragen je Praxis zwischen Januar 2020 und Juni 2022, im Schnitt von 4,9 auf 6,9" source="BPtK-Hintergrundpapier, Juli 2023" href="https://api.bptk.de/uploads/20230713_bptk_hintergrundpapier_weiterentwicklung_psychotherapeutischen_versorgung_d38b567ee6.pdf" />
+  <Stat value="142 Tage" label="im Schnitt bis zum Beginn der Therapie in Abrechnungsdaten für das erste Quartal 2019, etwa 4,7 Monate" source="BPtK" href="https://www.bptk.de/pressemitteilungen/psychisch-kranke-warten-142-tage-auf-eine-psychotherapeutische-behandlung/" />
+</Stats>
+
+Die Zahlen sind einige Jahre alt und stammen von der Berufsvertretung selbst, der Bundespsychotherapeutenkammer. Lesen Sie sie als Richtung, nicht als heutigen Stand. Die Richtung ist klar genug: Praxen bekommen mehr Anfragen, als sie versorgen können, und die meisten Anfragen enden auf einer Warteliste oder mit einer Absage.
+
+Das verändert, was die Verwaltungsarbeit ist. Es geht nicht um Terminplanung. Es geht um viele kleine Kommunikationsakte: eine Anfrage bestätigen, erklären, wie es weitergeht, Monate später nachfragen, ob jemand noch einen Platz braucht, freundlich mitteilen, dass nichts frei ist. Jeder Akt dauert ein paar Minuten. Keiner erfordert ein klinisches Urteil. Alle zusammen stapeln sich bei jemandem, der lieber in der Sitzung säße.
+
+## Wie der Prozess aus Sicht des Postfachs aussieht
+
+Seit April 2018 ist die psychotherapeutische Sprechstunde der verpflichtende Einstieg in die ambulante Psychotherapie der gesetzlichen Kassen, wie die [Psychotherapeutenkammer NRW erklärt](https://www.ptk-nrw.de/de/aktuelles/nachrichten-2019/detail/article/ab-april-2018-ist-die-psychotherapeutische-sprechstunde-pflicht.html). Dort klärt die Therapeutin, ob der Verdacht auf eine Erkrankung besteht und welche Hilfe passt. Patientinnen und Patienten können außerdem die Terminservicestelle unter 116117 nutzen, die laut [116117.de](https://www.116117.de/de/psychotherapie.php) einen Termin in der Sprechstunde innerhalb von vier Wochen vermittelt.
+
+Die meisten Anfragen an eine Praxis gehören zu wenigen Typen:
+
+- „Haben Sie einen Platz?“ (die größte Gruppe)
+- „Wie läuft das ab, brauche ich eine Überweisung, was ist die Sprechstunde?“
+- „Ich stehe auf Ihrer Liste, lohnt sich das Warten noch?“
+- Organisatorisches: absagen, verschieben, Unterlagen schicken
+- Nachrichten, in denen Belastung steckt, manchmal offen, manchmal nebenbei
+
+Die ersten vier sind Verwaltung. Die fünfte nicht, und sie kommt nicht mit Etikett. Deshalb hängt die folgende Entscheidung nicht nur am Nachrichtentyp, sondern daran, was eine falsche Antwort kostet.
+
+## Ein Entscheidungsraster: automatisieren, vorformulieren, nie anfassen
+
+<Matrix title="Wartelistenarbeit nach Häufigkeit und Risiko sortiert" caption="Unten rechts würde ich anfangen. In der oberen Reihe tut die KI entweder nichts oder folgt einem Skript, das ein Kliniker geschrieben hat." xLabel="Wie oft es vorkommt" yLabel="Was eine falsche Antwort kosten kann" quadrants={[
+  { title: "Selten und riskant: nie KI", text: "Dringlichkeit einstufen, Risiko beurteilen, alles, was nach Therapie, Diagnose oder Medikamentenrat klingt, entscheiden, wer den nächsten freien Platz bekommt." },
+  { title: "Häufig und riskant: nur festes Skript", text: "Nachrichten mit Anzeichen von Belastung. Der Assistent zeigt sofort Krisennummern und benachrichtigt einen Menschen. Er fragt nicht nach und unterhält sich nicht weiter.", highlight: true },
+  { title: "Selten und unkritisch: Antwortbibliothek", text: "Anfahrt, Sprechzeiten, Absageregeln, welche Unterlagen zum ersten Termin mitzubringen sind." },
+  { title: "Häufig und unkritisch: automatisieren", text: "Anfrage bestätigen, Sprechstunde und Warteliste erklären, auf die 116117 hinweisen, regelmäßige Nachfrage „Brauchen Sie noch einen Platz?“ mit Aktualisierung der Liste.", highlight: true }
+]} />
+
+Das zweite Feld verdient die meiste Überlegung, dazu gleich mehr. Zuerst das unkritische.
+
+## Was ich automatisieren würde
+
+**Die Eingangsbestätigung.** Wer einer Therapeutin schreibt, ist oft an einem Tiefpunkt und hat dafür Kraft aufgewendet. Drei Wochen Schweigen wirken wie eine Absage. Eine sofortige, freundliche, richtige Antwort („Ihre Nachricht ist angekommen, so funktioniert unsere Liste, so lange dauert es ungefähr, das können Sie in der Zwischenzeit tun“) ist besser als eine langsamere von Hand. Den Text schreiben Sie einmal selbst, in Ihren Worten. Der Assistent setzt nur die Details ein.
+
+**Die Erklärung.** Viele wissen nicht, was eine Sprechstunde ist oder dass es die 116117 gibt. Ein klarer Absatz dazu, und der Hinweis, dass sie dort einen früheren Termin erfragen können, hilft vielen mehr als ein Platz auf Ihrer Liste.
+
+**Die Listenpflege.** Das ist der stille Gewinn. Alle paar Wochen stellt der Assistent allen auf der Liste eine einzige Frage: Brauchen Sie noch einen Platz? Ja, nein oder „habe schon einen gefunden“. Antworten aktualisieren die Liste. Wer nicht antwortet, bekommt eine Erinnerung. Wird ein Platz frei, sehen Sie nur Menschen, die kürzlich Ja gesagt haben. Schluss mit dem Anruf bei jemandem, der vor vier Monaten woanders untergekommen ist.
+
+**Die langweiligen Fakten.** Name, Kontakt, Versicherungsart, grobe Zeiten, ob schon eine Sprechstunde stattgefunden hat. Keine Symptome, keine Vorgeschichte.
+
+## Was ich nie bauen würde
+
+<Split title="Die Grenze in der Psychotherapie-Praxis" leftTitle="Der Assistent" rightTitle="Der Assistent nie" left={[
+  "Bestätigt jede Anfrage, sagt, dass er automatisch antwortet, und nennt, wann ein Mensch die Nachricht liest",
+  "Erklärt Sprechstunde, Warteliste und Terminservicestelle unter 116117",
+  "Zeigt Krisennummern in jeder Antwort, nicht nur, wenn er sie für nötig hält",
+  "Fragt Wartende, ob sie noch einen Platz brauchen, und aktualisiert die Liste",
+  "Gibt alles Ungewöhnliche an eine benannte Person in der Praxis weiter"
+]} right={[
+  "Stuft Dringlichkeit ein oder sortiert die Liste danach, wie krank jemand wirkt",
+  "Beantwortet Fragen zu Symptomen, Diagnosen, Medikamenten oder dazu, ob Therapie das Richtige ist",
+  "Führt ein Gespräch mit jemandem weiter, der Belastung schildert",
+  "Verspricht einen Platz, ein Datum oder eine Wartezeit, die die Therapeutin nicht bestätigt hat",
+  "Entscheidet, wer einen freien Platz bekommt"
+]} caption="Alles rechts hängt an klinischem Urteil und daran, dass jemand für das Ergebnis verantwortlich ist." />
+
+Menschen nach Dringlichkeit zu ordnen klingt hilfreich, weil Wartelisten sich ungerecht anfühlen. Aber ein Dringlichkeitswert von einem KI-System ist ein klinisches Urteil, getroffen von etwas, das dafür nicht verantwortlich gemacht werden kann. Die KI-Verordnung stuft eine verwandte Kategorie, Systeme zur Triage in der Notfallversorgung, bereits als Hochrisiko ein. Das steht in [Anhang III](https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3), und ein Werkzeug, das für eine Praxis Dringlichkeit bewertet, würde in diese Richtung rutschen, womöglich auch in das Medizinprodukterecht. Der Termin für diese Pflichten hat sich verschoben: Nach dem im Juli 2026 in Kraft getretenen Digital Omnibus gelten die Regeln für eigenständige Anhang-III-Systeme ab dem 2. Dezember 2027, [so fasst es die Kanzlei Gibson Dunn zusammen](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/). Das ist der Stand, den ich im September 2026 geprüft habe, und er hat sich schon einmal geändert. Ich bin kein Jurist, und das ist auch nicht mein Hauptgrund. Mein Hauptgrund ist, dass ich nicht derjenige sein möchte, der so etwas gebaut hat.
+
+## Die Nachricht, in der steht, dass jemand nicht mehr leben will
+
+<Callout title="Verlassen Sie sich nicht auf Erkennung" tone="warning">
+Kein Klassifizierer erkennt jede Nachricht, die auf eine Krise hinweist, und keiner sollte die einzige Sicherung sein. Die Designregel ist deshalb das Gegenteil von clever: Jede automatische Antwort und jede Bestätigung eines Webformulars enthält denselben kurzen Krisenabsatz, egal, was in der Nachricht steht. In Deutschland: 112 im Notfall, die TelefonSeelsorge unter 0800 111 0 111 oder 0800 111 0 222 (kostenfrei, rund um die Uhr) und der ärztliche Bereitschaftsdienst unter 116117. Zusätzlich darf der Assistent Nachrichten mit Belastungssprache sofort an einen Menschen melden, aber diese Meldung ist ein Bonus, nicht das Netz.
+</Callout>
+
+Die [TelefonSeelsorge](https://www.telefonseelsorge.de/) nennt 0800 111 0 111, 0800 111 0 222 und 116 123 als kostenfreie Nummern. In den USA entspricht dem die [988](https://988lifeline.org/) per Anruf oder SMS.
+
+Zwei weitere Regeln. Erstens: Schreiben Sie im Formular und in der automatischen Antwort klar, dass Nachrichten außerhalb der Sprechzeiten nicht gelesen werden, und erwecken Sie nie den Eindruck einer Überwachung, die Sie nicht leisten. Zweitens: Wenn der Assistent etwas meldet, liest eine benannte Person es noch am selben Tag, und es gibt einen schriftlichen Plan, was sie dann tut. Eine Meldung, die niemand liest, ist schlechter als keine, denn sie erzeugt den Eindruck, jemand passe auf.
+
+## Datenschutz: Schon die Anfrage ist sensibel
+
+Eine Anfrage nach einem Therapieplatz sagt bereits etwas über die Gesundheit eines Menschen. Art. 9 DSGVO behandelt Gesundheitsdaten als besondere Kategorie, und die [Hinweise der Psychotherapeutenkammer Berlin für Praxen](https://www.psychotherapeutenkammer-berlin.de/media/1387) sind ein guter Startpunkt dafür, was das im Alltag heißt. Dazu kommt die Schweigepflicht nach § 203 StGB: Wer Geheimnisse an Personen weitergibt, die ihm zuarbeiten, auch IT- und KI-Dienstleister, muss sicherstellen, dass diese zur Verschwiegenheit verpflichtet sind. Die [Absätze 3 und 4](https://www.gesetze-im-internet.de/stgb/__203.html) regeln diese Pflicht, und wer sie versäumt, kann selbst haften.
+
+In der Praxis gilt für jeden Anbieter, der Patientennachrichten berührt:
+
+1. Ein Auftragsverarbeitungsvertrag (AVV) nach Art. 28 DSGVO, dazu eine schriftliche Verpflichtung von Anbieter und Mitarbeitenden zur Verschwiegenheit, die § 203 genügt.
+2. Server in der EU und ein Vertrag, der das Training mit Ihren Daten ausschließt.
+3. Ein Formular, das so wenig wie möglich erhebt. Kein Freitextfeld „Was ist Ihr Anliegen?“. Wer nie Symptombeschreibungen erhält, kann sie auch nicht verlieren.
+4. Klare Kennzeichnung, dass der Assistent automatisch antwortet. [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) verlangt das für Chatbots ab August 2026.
+
+Was in den USA dem AVV entspricht, ist das Business Associate Agreement nach [HIPAA](https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html). Das nur als Hinweis für den Fall, dass Sie mit US-Anbietern arbeiten: Werkzeuge, die keinen solchen Vertrag anbieten, scheiden aus.
+
+## Was es kostet und was es spart
+
+Die ehrliche Zahl ist kleiner, als Anbieter nahelegen.
+
+<Calc title="Überschlag: Wartelistenverwaltung einer Praxis" caption="Annahmen, keine Messwerte. Die 6,9 Anfragen pro Woche sind der BPtK-Durchschnitt für 2022, alles andere sind meine Platzhalter. Nehmen Sie Ihr eigenes Postfach." rows={[
+  ["Neue Anfragen pro Woche", "6,9"],
+  ["Minuten zum Lesen, Antworten und Notieren", "× 12"],
+  ["Listennachfragen pro Woche (60 Personen, alle acht Wochen gefragt)", "7,5"],
+  ["Minuten pro Nachfrage inklusive Listenpflege", "× 8"],
+  ["Verwaltungszeit pro Woche heute", "≈ 2,4 Stunden"],
+  ["Anteil ohne Tippen erledigt, Therapeutin prüft Ausnahmen", "× 70 %"]
+]} result={["Zeit zurück pro Woche", "≈ 1,7 Stunden"]} />
+
+Knapp zwei Stunden pro Woche sind real. Sie sind kein Durchbruch, und für eine Einzelpraxis rechtfertigen sie womöglich kein eigenes Werkzeug. Der Nutzen, der mehr zählt, ist nicht Zeit. Er liegt darin, dass die Nachricht um 23 Uhr eine Antwort mit Krisennummern bekommt und dass die Liste stimmt, wenn ein Platz frei wird.
+
+Der Aufbau, grob geschätzt: ein paar Tage Arbeit für Antworttexte, Anbindung von Formular und Liste und Tests. Danach kleine monatliche Kosten für das Sprachmodell und das Formular- oder Nachrichtenwerkzeug. Wenn Ihre Praxissoftware (medatixx, Psyprax, CGM und andere) schon eine Wartelistenfunktion und Serienbriefe hat, prüfen Sie das zuerst.
+
+## Wann die einfachere Lösung besser ist
+
+Vieles davon funktioniert ohne KI, manchmal besser. Ein Kontaktformular mit festen Feldern, eine Antwortvorlage mit dem Krisenabsatz und eine Tabelle oder die Liste Ihrer Praxissoftware bringen Sie weit. Ein Serienbrief alle zwei Monate mit der Frage „Brauchen Sie noch einen Platz?“ erledigt die Pflege. Eine statische Seite, die Sprechstunde und 116117 erklärt, beantwortet die Hälfte der Fragen, bevor sie gestellt werden.
+
+KI lohnt sich, wenn Antworten zur Nachricht passen müssen: Jemand stellt zwei Fragen in einer Mail, schreibt in einer anderen Sprache oder mischt eine organisatorische Frage mit etwas Persönlichem. Sie lohnt sich auch, wenn das Volumen hoch genug ist, etwa in einer Gemeinschaftspraxis, dass die Listenpflege für jemanden ein wöchentlicher Job ist. Wer als Einzeltherapeutin eine Anfrage am Tag bekommt, fängt besser mit der Vorlage an.
+
+## Fragen von Therapeutinnen und Therapeuten
+
+### Darf ein KI-Chatbot Anfragen für eine Psychotherapie-Praxis beantworten?
+
+Die organisatorischen ja: wie die Warteliste funktioniert, was eine Sprechstunde ist, ob die Praxis freie Plätze hat. Zu Symptomen, Diagnosen oder der Frage, ob jemand Therapie braucht, sollte er nichts sagen, und mit Menschen in Not führt er kein Gespräch. Der Assistent ist Empfang, nie Kliniker.
+
+### Ist das mit § 203 StGB und der DSGVO vereinbar?
+
+Es kann es sein, unter Bedingungen. Der Anbieter muss zur Verschwiegenheit verpflichtet sein, es braucht einen AVV, und Sie sollten so wenig Gesundheitsangaben wie möglich erheben. Die Hinweise Ihrer Kammer und Ihre Datenschutzbeauftragte sollten vor dem Start zustimmen. Das ist keine Rechtsberatung.
+
+### Was soll passieren, wenn jemand über Suizid schreibt?
+
+Die Antwort enthält Krisennummern, wie jede Antwort. Eine benannte Person in der Praxis sieht die Nachricht noch am selben Tag, wenn Sie die Meldung eingerichtet haben, und folgt einem schriftlichen Vorgehen. Der Assistent führt das Gespräch nie weiter und versucht nie, das Risiko einzuschätzen.
+
+### Soll die KI entscheiden, wer den nächsten freien Platz bekommt?
+
+Nein. Passung zwischen Patient und Therapeutin, Dringlichkeit und die eigene Kapazität sind fachliche Entscheidungen. Der Assistent kann zeigen, wer auf der Liste zuletzt Ja gesagt hat. Die Therapeutin wählt.
+
+## Wo ich anfangen würde
+
+Den Umschlag automatisieren, nie den Inhalt. Wenn eine Aufgabe die Warteschlange betrifft, also Bestätigungen, Erklärungen und Listenpflege, kann Software sie erledigen. Wenn sie den Menschen betrifft, erledigt das ein Mensch, und die Krisennummern stehen in jeder Antwort, damit nichts davon abhängt, dass Software etwas bemerkt.
+
+Wenn Sie eine Praxis führen und das mit Ihrem Postfach testen möchten, [schreiben Sie mir, wie Anfragen und Liste heute laufen](/de/kontakt?intent=improve), und ich schlage die kleinste Variante vor, die einen Versuch wert ist. Dieselben Vertraulichkeitsfragen stellen sich bei der [Mandatsaufnahme in der Kanzlei](/de/posts/ki-kanzlei-mandatsanfragen), und [Facharztpraxen mit Überweisungen](/de/posts/ki-facharztpraxis-ueberweisungen) haben einen ähnlichen Stapel Nachrichten, die gleich aussehen und es nicht sind.

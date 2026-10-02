@@ -1,0 +1,160 @@
+---
+id: "ai-for-medical-supply-stores-prescriptions"
+title: "Medical Supply Stores: Catch Order Errors Before the Claim Bounces"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Healthcare", "Medical supply stores", "Prescription checks", "AI for small business"]
+description: "A missing quantity or signature can get a claim denied or repaid months later. How a supply store can check every order at the counter, with AI's help."
+excerpt: "A missing quantity or signature can get a claim denied or repaid months later. How a supply store can check every order at the counter, with AI's help."
+---
+
+Picture a four-person medical supply store on a Thursday at 4:40 p.m. A woman hands over her father's order for intermittent urinary catheters. It is signed. It names the practitioner. It says "catheters, as needed." There is no quantity, no frequency, and the date is a smudge.
+
+The clerk is alone at the counter, and the father is waiting at home. She enters the order, ships a month of supplies, and the claim goes out. Maybe it gets paid. Months later a reviewer asks for the paperwork behind it, and the order doesn't say how many catheters or how often. Now the payment is in question, and nobody can ask the practice what the doctor meant, because the practice moved on long ago.
+
+The gap was visible at 4:40 p.m. Fixing it then cost one phone call. Fixing it later costs the claim. That is the idea behind everything below: check the order at the door, not at the claim.
+
+## How big the problem is
+
+<Stats title="What the audit numbers say about supplier paperwork">
+  <Stat value="24.1%" label="estimated improper payment rate for DMEPOS in Medicare fee-for-service, for claims from July 2023 to June 2024" source="CMS, 2025 supplemental improper payment data" href="https://www.cms.gov/data-research/monitoring-programs/improper-payment-measurement-programs/comprehensive-error-rate-testing-cert/cert-reports/2025-medicare-fee-service-supplemental-improper-payment-data-2" />
+  <Stat value="$2.3 billion" label="projected improper payments for DMEPOS claims in that period" source="CMS, 2025 supplemental improper payment data" href="https://www.cms.gov/data-research/monitoring-programs/improper-payment-measurement-programs/comprehensive-error-rate-testing-cert/cert-reports/2025-medicare-fee-service-supplemental-improper-payment-data-2" />
+  <Stat value="6" label="elements every standard written order for DMEPOS must contain, from the patient's name to the practitioner's signature" source="CMS, DMEPOS order requirements" href="https://cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/medical-review-and-education/dmepos-order-requirements" />
+</Stats>
+
+DMEPOS stands for durable medical equipment, prosthetics, orthotics and supplies, the category a medical supply store bills under Medicare. "Improper" doesn't mean fraud. CMS's error-rate program samples paid claims, asks for the paperwork behind them, and counts a payment as improper when that paperwork doesn't support it. According to [AAPC's summary of the 2025 report](https://www.aapc.com/blog/93992-hhs-releases-medicare-fee-for-service-improper-payments-rates-for-2025/), urological supplies, surgical dressings and glucose monitors were among the service types with documentation problems.
+
+That is an estimate for Medicare fee-for-service only. Medicaid and private payers have their own rules and their own audits. But the pattern carries over: money is at risk whenever the order or the records don't support the claim.
+
+## What a complete order looks like
+
+For Medicare, the baseline is the standard written order. CMS lists the elements it must contain, and the list is short:
+
+- the beneficiary's name or Medicare Beneficiary Identifier
+- the order date
+- a general description of the item
+- the quantity to be dispensed, if applicable
+- the treating practitioner's name or NPI
+- the treating practitioner's signature
+
+The same [CMS page](https://cms.gov/data-research/monitoring-programs/medicare-fee-service-compliance-programs/medical-review-and-education/dmepos-order-requirements) adds the details that trip people up. The description can be general ("wheelchair"), a HCPCS code, a code narrative or a brand and model. The order date should reflect when the practitioner first communicated the order. For certain items, a written order is required before delivery, and some also need a documented face-to-face encounter. Extra details such as length of need or frequency can be added, but they have to be backed up by the medical record.
+
+Short lists are good news, because short lists can be checked by a machine at the moment the order arrives. This is the version I'd put next to the intake desk:
+
+<Checklist title="Counter checklist for every incoming order" items={[
+  "Patient name or MBI is present and matches the patient file",
+  "Order date is present and readable",
+  "Item description is specific enough to know what to dispense",
+  "Quantity is stated, and frequency of use for recurring supplies",
+  "Practitioner name or NPI is present and matches the practice on file",
+  "Signature is present",
+  "For items that need a written order before delivery: the order really came first",
+  "Where the payer's policy asks for visit notes: they are requested, not assumed"
+]} />
+
+None of this needs AI. A rule can tell whether the signature box has ink in it. What a rule cannot do is read a crooked fax, or decide whether "wound care supplies, weekly" is specific enough for the item you're about to ship.
+
+## What rules catch and what needs judgment
+
+| Gap on the order | Caught by | Who resolves it |
+| --- | --- | --- |
+| No signature, or no practitioner name or NPI | Rule | The practice. You cannot add it |
+| Quantity or frequency missing on a supply order | Rule | The practitioner, in writing |
+| Description too vague to tell what to dispense, such as "supplies, as needed" | AI flags it and drafts the question | The practitioner |
+| Order dated after the delivery, on an item that needs a written order first | Rule | Billing lead, who decides how to proceed, never by backdating |
+| Handwriting or fax quality too poor to read | AI reads, marks uncertain fields | Staff member checks against the image |
+| Visit notes don't match what the payer's policy asks for | AI compares and lists the gaps | The practice sends records, the billing lead decides |
+
+The rows marked Rule are plain software, and you should build them first because they are cheap, predictable and explainable to an auditor. The AI part is the reading, the judgment about vague text, and the writing of the question. Those are the parts where a tired clerk at 4:40 p.m. is least reliable, and where a model is the same at 8 a.m. and at closing time.
+
+## From counter to claim
+
+<Flow title="One order, checked before it ships" caption="The tool reads, checks and drafts. A person sends the question, and a person decides whether the claim goes out.">
+<Step title="Order arrives" who="Fax, portal or counter" time="minutes">Scans and faxes land in one intake folder or inbox, whatever the source.</Step>
+<Step title="Read into fields" who="AI" tone="ai" time="seconds">Patient, date, item, quantity, practitioner and signature are pulled into a form. Anything unclear is marked, not guessed.</Step>
+<Step title="Run the checklist" who="Rules and AI" tone="ai" time="seconds">Your rules test every field. The model judges vague wording and compares notes against the item.</Step>
+<Step title="Review and send the query" who="Intake staff" tone="human" time="same day">A staff member reads the drafted question, edits it and sends it through the practice's usual secure channel.</Step>
+<Step title="Practice replies" who="Practice">The corrected order or the missing records come back and are attached to the same file.</Step>
+<Step title="Release or hold the claim" who="Billing lead" tone="human">One person looks at the file as a whole and decides: ship and bill, or hold.</Step>
+</Flow>
+
+Three design decisions do most of the work.
+
+**Same day, not same week.** The value is in speed. A question sent within the hour gets answered while the patient's visit is still in the practice's memory.
+
+**The checklist belongs to you.** Your billing lead writes it, per payer and per item type, and changes it when a payer changes its policy. The model applies it. It doesn't invent requirements.
+
+**Uncertain means flagged.** If the tool can't read a digit in a quantity, it says so. A confident wrong reading is worse than no reading.
+
+## What the question to the practice looks like
+
+The quality of the query decides whether practices find this helpful or annoying. A good one is short, specific and answerable from the chart in a minute.
+
+> Order dated 3 Sept for Mr. R. (date of birth on file), intermittent catheters. The order has no quantity or frequency of use. Could you confirm how many per day or per month and send a corrected, signed order? A copy of the latest visit note covering catheter use would also complete our file. We'd like to ship as soon as we have it.
+
+Compare that with the usual "please call us about your order." The practice can answer this in a minute without a phone call, and over a few months practices learn what you need. The number of questions drops on its own.
+
+One rule sits above all the others. **The tool never completes an order.** It doesn't fill in a quantity because the last order had one, it doesn't guess a signature date, and nobody backdates anything. The order is the practitioner's document. Your job is to get it corrected by the person who wrote it.
+
+## What it costs to set up and run
+
+I'd expect the work to fall into four parts: getting incoming orders into one place, a reading and checking step, a small review screen for your staff, and a connection to your billing system. US supplier software commonly comes from vendors such as Brightree or WellSky, and some referral sources send orders through electronic ordering platforms such as [Parachute Health](https://info.wellsky.com/082225-parachute-partner-highlight.html), which WellSky describes as a partner of its Bonafide software. What your system can export decides how much of this is easy.
+
+As a rough planning range, and this is my assumption, not a quote: a one-off setup in the low to mid thousands of dollars if orders can arrive as files, more if an interface is needed, plus a monthly fee in the tens to low hundreds of dollars for the reading and drafting. The comparison is your own late-found gaps.
+
+<Calc title="Napkin math: staff time lost to late-found gaps" caption="All assumptions, not measurements. Count your own holds and reworked orders for two weeks and replace every number. Denied or repaid claims come on top and are not included." rows={[
+  ["New orders per week", "60"],
+  ["Share arriving with a gap", "× 15%"],
+  ["Weeks per month", "× 4.3"],
+  ["Gaps found late per month", "≈ 39"],
+  ["Minutes lost per gap (phone tag, rework, re-checking)", "× 40"],
+  ["Hours per month", "≈ 26"],
+  ["Loaded cost per staff hour", "× $30"]
+]} result={["Staff time lost per month", "≈ $780"]} />
+
+On those assumptions, staff time alone is modest, roughly a part-time shift per month. The money that matters is in the claims that get denied or repaid because a gap slipped through. How many that is, only your own payer reports can tell you, and it decides whether the tool pays for itself.
+
+## Patient data: a business associate agreement first
+
+If you bill insurers electronically, you are almost certainly a HIPAA covered entity. Confirm that with whoever handles compliance for you. [HHS guidance](https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html) says a covered entity that uses a cloud provider to create, receive, maintain or transmit electronic protected health information on its behalf needs a business associate agreement with that provider. An AI service that reads your orders is in the same position.
+
+In practice: use a business-grade service with a signed agreement, ask whether your data is used for training (it shouldn't be), and send the check only what it needs. A rule that tests whether a diagnosis is present doesn't need the diagnosis text. A consumer chat account is the wrong place for orders with patient names on them.
+
+## When a simpler fix does the job
+
+Some of this is solved without any model.
+
+- **A small store with few orders.** Under about twenty a week, the counter checklist above, laminated and used every time, may be all you need.
+- **One referral source causing most gaps.** Look at your last twenty holds. If half come from one practice or one hospital discharge desk, a pre-filled order form or a conversation with their office manager fixes the cause. An electronic ordering portal that asks for the required fields before the practice can submit does the same at scale.
+- **Required fields in your billing software.** Check whether yours can refuse to save an order without a quantity or an NPI. If it can, switch that on first.
+- **Medical judgment.** Whether an item is medically necessary, or which code applies, is for clinicians and your billing specialists. A model that guesses at either is a liability, not a time saver.
+
+AI earns its place when the orders arrive as messy scans and free text, from many sources, in volumes your staff can't read closely every time. For a close cousin of this pattern, [dental labs checking incomplete cases at intake](/posts/ai-for-dental-labs-case-intake) face the same problem with shades and margins instead of quantities and signatures.
+
+## The same problem under German rules
+
+Outside the US, the shape differs but the pattern doesn't. In Germany, a doctor's order for an aid goes on Form 16 (Muster 16), and the [GKV directory of aids](https://www.aerzteblatt.de/news/aktualisiertes-hilfsmittelverzeichnis-enthalt-47825-hilfsmittel-in-42-produktgruppen-7305ed0d-d466-4f73-b2cc-3ee0b532b0fb) listed 47,825 items in 42 product groups at its latest update, as reported by Deutsches Ärzteblatt. An order is generally valid for [28 calendar days](https://www.kvb.de/fileadmin/kvb/Mitglieder/Verordnungen/VO-aktuell/2023-DS/KVB-VA-230821-SOP-Gueltigkeit-von-Verordnungen.pdf), according to the Bavarian association of statutory health insurance physicians. A stale date or a missing diagnosis there leads to the insurer refusing payment after delivery, which German suppliers call a Retax. The German edition of this post covers that system in detail.
+
+## Questions suppliers ask me
+
+### Can AI fill in the missing fields on a doctor's order?
+
+No, and it shouldn't try. A quantity, a frequency or a signature has to come from the practitioner. The tool finds the gap and drafts the request. A person sends it, and the corrected order comes back from the practice.
+
+### Is it safe to put orders with patient names into an AI tool?
+
+Only with the right setup: a business associate agreement, a provider that doesn't train on your data, and access limited to the staff who handle orders. Without those, don't. Ask your compliance contact before the first test, not after.
+
+### Can it read faxes and handwriting?
+
+Reasonably well on clean scans, and worse on poor faxes. That's why the design marks uncertain fields for a person instead of guessing. Test it on a month of your own faxes before you trust it, and count how often a human has to correct it.
+
+### Do the same checks work for Medicaid and private payers?
+
+The skeleton is the same, but the details aren't. Each payer has its own policies for which items need prior authorization, what the order must contain and which notes it wants. Keep one checklist per payer and item type, owned by your billing lead.
+
+## Where I'd start
+
+Look at your last twenty denied or held claims and write down what was wrong with the order. Turn the top three reasons into rules, run them on every incoming order for a month, and only then add a model for the reading and the questions. Keep a person on the send button and on the release of the claim.
+
+If your claims keep bouncing for reasons you could have seen at the counter, [tell me which billing system you use and what your last rejections said](/contact?intent=improve), and I'll suggest the smallest check worth building. Chasing a practice for a missing piece is the same job as [chasing clients for missing documents](/posts/ai-for-accounting-document-intake), and the health-data care is similar to what [pharmacies handling drug shortages](/posts/ai-for-pharmacies-stock-shortages) have to do.

@@ -1,0 +1,171 @@
+---
+id: "ai-for-towing-companies-dispatch"
+title: "Towing Dispatch: Right Location, Right Truck on the First Call"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Transport & logistics", "Towing companies", "Dispatch intake", "AI for small business"]
+description: "A driver on a motorway shoulder can't say where they are. How an AI phone assistant collects location, drive type and safety facts before you send a truck."
+excerpt: "A driver on a motorway shoulder can't say where they are. How an AI phone assistant collects location, drive type and safety facts before you send a truck."
+---
+
+The call comes in at 18:10, in the rain. "My car just died. I'm on the motorway. I think I passed a sign for some town a while ago." Behind the voice you can hear trucks going by at 80 mph.
+
+The dispatcher has about ninety seconds to work out where the caller is, what kind of vehicle it is, whether anyone is in danger, and which truck to send. The caller can't answer the first question, doesn't know the answer to the second ("it's a grey hatchback, I think electric?"), and is in no state to think about the third.
+
+A tow company's whole day is built on this one conversation. If the location is wrong, a driver spends forty minutes finding the car. If the vehicle is wrong, a hook-and-chain truck arrives for an all-wheel-drive electric car that can only go on a flatbed, and the job starts over. This post is about getting that first call right, and the part AI can play in it.
+
+## Why the first call decides the job
+
+<Stats title="The scale of roadside work">
+  <Stat value="3.69 million" label="breakdown call-outs by ADAC's road patrol in Germany in 2025, roughly one every nine seconds" source="ADAC" href="https://presse.adac.de/meldungen/adac-ev/clubleistungen/pannenzahlen-steigen-weiter.html" />
+  <Stat value="45.4%" label="of those ADAC call-outs in 2025 were caused by a flat or faulty 12-volt battery, regardless of drive type" source="ADAC breakdown statistics 2026" href="https://presse.adac.de/meldungen/adac-ev/technik/adac-pannenstatistik-2026.html" />
+  <Stat value="123" label="US roadside assistance providers struck and killed by passing vehicles between 2015 and 2021, against about 34 visible in national crash data" source="AAA Foundation for Traffic Safety" href="https://aaafoundation.org/research/roadside-assistance-providers-fatally-struck-by-vehicles-at-the-roadside-incidence-and-characteristics/" />
+</Stats>
+
+Most breakdowns are small problems: a dead battery is the top cause. But they often happen somewhere dangerous, for the driver and for the tow operator who arrives. In the US, AAA also reported more than 27 million roadside calls in 2024, about 13 million of them needing a tow and about 7 million a battery, according to [AAA's own figures](https://newsroom.aaa.com/2025/04/aaa-urges-drivers-to-stay-proactive-on-auto-repair-and-maintenance).
+
+The information in the first ninety seconds decides how quickly the right truck is on the road and how long the customer waits in a dangerous place.
+
+## What goes wrong in a normal intake call
+
+**"Where are you?" gets a guess.** People on motorways don't know the exit, the direction or the kilometre. Some give the last town they saw, which can be 30 km behind them. Some read out a road name that exists in two places.
+
+**The vehicle is described by colour.** The dispatcher needs to know the drive type, not the paint. Automatic or manual? Front, rear or all-wheel drive? Electric, hybrid or petrol? Is the car lowered, or an oversized van that won't fit a standard flatbed?
+
+**Safety comes last.** The caller is standing in the lane or next to the car on the traffic side, and nobody asked. Dispatchers know the rules, but with two phones ringing it's the first thing to get skipped.
+
+**Payer and authority are unclear.** Is this a private customer, a motor club job, an insurer's assistance policy? That changes the price, the paperwork and sometimes who you're allowed to tow for.
+
+None of this is a knowledge problem. The problem is asking all of it, every time, at 2 a.m., in the same order, while also dispatching.
+
+## An intake that captures the right facts
+
+The aim isn't a clever conversation. It's a form that happens to be filled in by voice. Here are the facts I'd want on every job, and why.
+
+| What to capture | How to get it | Why it matters |
+| --- | --- | --- |
+| Caller is safe | First question, before anything else | Away from traffic, behind the barrier, hazard lights on. If anyone is hurt, the call changes to an emergency call |
+| Exact location | SMS link that shares the phone's position, backed up by spoken road, direction and nearest marker | A voice description is a guess. A shared position is a point on a map |
+| Make, model, plate | Spoken, then confirmed by text | Lets dispatch look up dimensions, ground clearance and towing rules |
+| Drive type | Direct question: electric, hybrid or petrol, automatic or manual, all-wheel drive or not | Decides flatbed or hook, and whether the wheels may roll at all |
+| What happened | One open question, then two follow-ups | Dead battery, flat tyre, accident, ditch, locked-in garage: each needs different kit |
+| People and pets | Direct question | Affects how many can ride in the truck, and whether the car should be left |
+| Destination | Customer's preferred garage or home | Sets distance and price |
+| Who pays | Private, motor club, insurer assistance, company account | Decides the route the job takes and the paperwork |
+| Call-back number | Read back digit by digit | The one field you can't recover later |
+
+The location row is where AI earns the most. Many towing systems already do what I'd build here: send the customer a text with a link, the customer taps it, and their phone shares its position. [Towbook](https://towbook.com/features), a US towing platform, describes this as a text that asks the customer to share their GPS coordinates, which then appear on the dispatch screen once the customer approves. A phone assistant can do the same on its own, in the middle of the call, while it's still asking about the vehicle.
+
+For the spoken backup, it helps to know what German motorway markers look like. ADAC's guidance on [finding your position after a breakdown](https://www.adac.de/rund-ums-fahrzeug/unfall-schaden-panne/unfall/standortbestimmung-unfall/) covers how to work out your position on a motorway. The assistant can ask a stranded driver for the nearest marker or emergency phone and the direction of travel, which narrows the search considerably even when the phone's GPS link fails.
+
+## Safety comes first, every time
+
+The assistant's first job isn't data. It's a short script. A stranded driver should be told what the ADAC tells drivers on a motorway: [hazard lights on, vest on while still in the car, exit on the passenger side, and wait behind the guardrail](https://www.adac.de/rund-ums-fahrzeug/unfall-schaden-panne/panne/autopanne-tipps/). The warning triangle goes [at least 150 metres behind the car on a motorway](https://www.adac.de/rund-ums-fahrzeug/unfall-schaden-panne/panne/warndreieck-aufstellen/), but only if it's safe to walk there.
+
+Rules differ by country, so the script has to match where you operate. What shouldn't change is the order: safety, then location, then vehicle. And if anyone is injured, the assistant stops collecting data and sends the caller to the emergency number while alerting the dispatcher.
+
+In the EU, new car models approved after 31 March 2018 must have [eCall](https://europa.eu/youreurope/citizens/travel/security-and-emergencies/emergency-assistance-vehicles-ecall/index_en.htm), which places a 112 call automatically after a serious crash. A caller with a newer car who has had an accident may already have emergency services on the way, and the assistant can ask whether they've been contacted.
+
+## The flow, end to end
+
+<Flow title="From a panicked call to a dispatch-ready job" caption="The assistant collects and confirms. The dispatcher chooses the truck, quotes the price and owns every decision.">
+<Step title="Call arrives" who="Phone system" time="0:00">Overflow and after-hours calls go to the assistant. During the day it can also pick up when every line is busy.</Step>
+<Step title="Disclose and check safety" who="AI" tone="ai" time="0:10">It says it is the company's automated assistant, asks if anyone is hurt, and gives the standard safety instructions.</Step>
+<Step title="Send the location link" who="AI" tone="ai" time="0:30">An SMS with a one-tap link goes to the caller's phone. The assistant keeps talking while it loads, and asks for road, direction and nearest marker as a backup.</Step>
+<Step title="Vehicle and drive type" who="AI" tone="ai" time="1 to 2 min">Make, model, electric or not, automatic or manual, all-wheel drive, what happened, how many people, where to.</Step>
+<Step title="Summary to dispatch" who="System" time="2 min">The dispatcher sees a pin on the map, a four-line summary and a flag for anything unusual: electric or all-wheel drive, low clearance, injured people.</Step>
+<Step title="Dispatcher decides" who="Dispatcher" tone="human" time="1 min">Chooses the truck and driver, confirms the price, and calls back if anything looks off.</Step>
+<Step title="Customer is kept informed" who="AI" tone="ai">Confirmation text with the driver's name and estimated arrival, which the dispatcher has set, and a follow-up if the ETA changes.</Step>
+</Flow>
+
+The design choices that matter most:
+
+**The assistant never promises an arrival time or a price.** It can say "the dispatcher will confirm the price and arrival time by text in a few minutes". Those are the dispatcher's decisions, because only they know where the trucks are.
+
+**Anything unusual goes to a human.** A vehicle that can't be identified, a caller who can't share a location, an angry caller: the assistant hands over rather than pressing on.
+
+## Why drive type is the detail that costs money
+
+Most hook-up trucks can tow a petrol hatchback. That doesn't hold for every car on the road any more.
+
+ADAC's guide to [towing electric cars](https://www.adac.de/rund-ums-fahrzeug/unfall-schaden-panne/unfall/elektroauto-abschleppen/) says there is no single rule. Most manufacturers prohibit towing on the car's own wheels, because an electric motor can generate current uncontrollably when the wheels turn. Some allow it under conditions, and the owner's manual is the authority. A basic requirement is that the gear selector can be put in neutral, which is often impossible when the 12-volt system is dead, and a dead 12-volt battery is exactly why many electric cars stop. ADAC's general towing advice adds that automatic cars can be towed in neutral only for a few kilometres, otherwise heat can damage the gearbox, and all-wheel-drive cars often need a flatbed or a lifted axle.
+
+For a dispatcher, that turns into a rule of thumb: if the answer to "electric, hybrid, automatic or all-wheel drive?" is yes to any of them, send a flatbed unless you know better. The assistant can ask the question every time, flag it, and never guess. That alone prevents one of the most expensive mistakes in the trade: sending the wrong truck.
+
+## What the assistant does not do
+
+The assistant never quotes a price, promises an arrival time, decides which truck goes, or gives repair advice. If someone is injured it sends the caller to the emergency number instead of staying on the line, and if a caller objects to recording it hands over to a person.
+
+## When this isn't the answer
+
+**Jobs from motor clubs and assistance platforms.** If much of your work comes from a motor club or an insurer's assistance network, those jobs arrive through their own dispatch systems, with the location, vehicle and payer already attached. In Germany, ADAC works through a [partner network](https://www.adac.de/services/pannenhilfe/gelbe-engel/mobilitaetspartner/) of towing and recovery companies. The assistant does nothing for those jobs. It helps with the direct customers, the ones who found you on a map.
+
+**A very low call volume.** If you take five calls a night, a call-forwarding rule to the person on duty and a written checklist next to the phone do the same job for free.
+
+**Accidents with injuries.** The emergency services handle those. Your assistant's job is to send the caller to them, not to triage.
+
+If those cover most of your volume, the return from this project is small. If you rely on direct customers, especially at night and on weekends when the phone is hardest to cover, the case is stronger.
+
+## What a bad first call costs
+
+The numbers are specific to your operation, so here is the calculation with placeholder values. Replace them with your own job log.
+
+<Calc title="Napkin math: trips wasted by bad intake data" caption="Assumptions, not measurements. Your dispatch log will show how many jobs needed a second truck or a long search." rows={[
+  ["Direct-customer jobs per week", "40"],
+  ["Share with wrong location, wrong truck type or missing information", "× 8%"],
+  ["Weeks per month", "× 4.3"],
+  ["Wasted trips per month", "≈ 14"],
+  ["Cost of one wasted trip (driver, truck, fuel, lost slot)", "× €120"]
+]} result={["Cost of bad intake data per month", "≈ €1,650"]} />
+
+Against that, an AI phone assistant typically costs a monthly platform fee plus a per-minute charge, and the setup is mainly writing your rules and connecting your dispatch software. If the wasted-trip figure in your own log is well below the assistant's cost, don't buy it.
+
+## What it connects to
+
+Most towing companies already have dispatch software. In Germany that includes products like [ET360](https://et360.de/), [CATAMA](https://www.catama-software.de/branchen/abschleppdienst/) and [BMS Abschleppsoftware](https://www.bms-abschleppsoftware.de/produkte/modul-auftragsdispo-fuer-schleppdienst/), which handle dispatch, driver apps and invoicing. In the US, Towbook is widely used. The assistant sits in front of this software: it doesn't replace it. The best setup writes the job straight into your dispatch tool. The minimum is an email or a message in the format your dispatcher already reads.
+
+A location link is personal data, and so is a voice recording. Tell callers that the call is handled by an automated assistant: from 2 August 2026, [Article 50 of the EU AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) requires that people be told when they interact with an AI system. Say what the link is for, use it only for this job, and delete it when the job and any billing dispute window have ended. Ask your provider for a data processing agreement if you're in the EU. In the US, some states require all parties to consent to call recording, so the greeting should cover that too.
+
+## A pilot that doesn't strand anyone
+
+<Timeline title="Four weeks to a reliable intake">
+<Phase when="Week 1" title="Write the script and the rules">Agree the safety script, the questions, the drive-type rules and what triggers a hand-over. Pull a month of jobs and mark which ones went wrong at intake.</Phase>
+<Phase when="Week 2" title="Test with recorded calls">Replay a sample of past calls through the assistant and compare its summaries with what the dispatcher noted.</Phase>
+<Phase when="Weeks 3 to 4" title="Live on overflow only">The assistant takes calls only when nobody can pick up. The dispatcher reviews every summary the next morning.</Phase>
+<Phase when="End of week 4" title="Decide">Count jobs where the assistant's location and vehicle data were right, jobs that needed a correction, and any call where the safety script should have triggered and didn't.</Phase>
+</Timeline>
+
+Overflow only is the right place to start. A call nobody answers is lost anyway, so the assistant can only improve on that, and your best dispatcher stays in charge of everything else.
+
+## Before you turn it on
+
+<Checklist title="Go-live checklist" items={[
+  "Safety script agreed and matched to local rules",
+  "Injured caller: transfer to emergency number works, tested",
+  "Location link tested on iPhone and Android, with and without data",
+  "Drive-type question asked on every job, never skipped",
+  "Summary format agreed with the dispatchers who will read it",
+  "Motor club and insurer jobs excluded from the flow",
+  "Greeting discloses the AI and the recording",
+  "Data processing agreement signed, retention period set"
+]} />
+
+## Questions towing company owners ask
+
+### Can an AI phone assistant find a caller's location?
+
+Not on its own from a voice. What works is a text message link the caller taps, which shares the phone's position with your system, plus spoken details like road, direction and nearest marker as a backup. It depends on the caller having a phone with data and agreeing to share.
+
+### Will stranded drivers trust an automated voice?
+
+Some won't, and they should be able to ask for a person at any time. Most callers want two things: to know that someone is coming, and to be asked only the questions that matter. A short, calm assistant that says so does that better than a busy signal.
+
+### What about electric cars and all-wheel-drive cars?
+
+That's the main reason to ask the drive-type questions on every call. Most electric cars shouldn't be towed on their own wheels, according to ADAC, so the default should be a flatbed unless your dispatcher knows the manual says otherwise.
+
+## Where I'd start
+
+Begin with the questions, not the technology. Write down the six things your dispatcher wishes every caller told them, put the safety script first, and make drive type a mandatory question. Then use a phone assistant only for the calls nobody can answer.
+
+If you want to see what your own overflow calls look like, [tell me how your dispatch works today](/contact?intent=improve), and I'll suggest the smallest version worth testing. Related reading: [after-hours calls for plumbers](/posts/ai-for-plumbers-emergency-calls) faces the same triage problem with different stakes, [garage service intake](/posts/ai-for-auto-repair-diagnostics-intake) deals with the other end of the same breakdown, and [seasonal tyre changeovers](/posts/ai-for-tyre-shops-seasonal-changeover) show how another vehicle business handles a rush.

@@ -1,0 +1,147 @@
+---
+id: "ki-pflegeheim-schichtuebergabe"
+translationOf: "ai-for-care-homes-shift-handover"
+title: "Pflegeheim: Schichtübergabe, bei der nichts verloren geht"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Gesundheit", "Pflegeheime", "Schichtübergabe", "KI für kleine Unternehmen"]
+description: "Sturz, Trinkmenge, Wundwechsel und Arztanruf stehen verstreut in der Doku. Wie KI die Übergabe vorbereitet, während die Pflegekraft mündlich übergibt."
+excerpt: "Sturz, Trinkmenge, Wundwechsel und Arztanruf stehen verstreut in der Doku. Wie KI die Übergabe vorbereitet, während die Pflegekraft mündlich übergibt."
+---
+
+Es ist 13:40 Uhr auf einem Wohnbereich mit 28 Bewohnerinnen und Bewohnern. Die Pflegefachkraft im Frühdienst ist seit sechs Uhr auf den Beinen. Um 14:00 Uhr ist Übergabe, und sie hat etwa fünfzehn Minuten, um zu berichten, was mit 28 Menschen passiert ist.
+
+Das ist, was sie über eine von ihnen weitergeben müsste, Frau K. (eine erfundene Bewohnerin, aber ein vertrautes Muster). Sie ist um 7:10 Uhr gestürzt und wirkte unverletzt. Sie hat bis mittags etwa 400 ml getrunken, deutlich weniger als sonst. Die Hausärztin wurde um 10:30 Uhr angerufen und kommt morgen. Der Verband an der Wunde am Steißbein wurde um 11:15 Uhr gewechselt, die Haut sah röter aus als gestern. Jede dieser Tatsachen ist dokumentiert. Sie stehen in vier Einträgen unter etwa 140 anderen, die an diesem Vormittag von drei verschiedenen Personen geschrieben wurden.
+
+Beim Spätdienst kommt meist an, woran sich die Kollegin um 14:00 Uhr erinnert, während zwei Kollegen warten. Wahrscheinlich der Sturz. Vielleicht die Ärztin. Die Trinkmenge und die Wunde weniger sicher. Niemand hat etwas falsch gemacht. Die Information war da. Sie musste nur in unter einer Minute durch das Gedächtnis eines müden Menschen wandern.
+
+Für diese Lücke würde ich KI im Pflegeheim einsetzen. Nicht, um die Übergabe oder das Urteil der Pflegekraft zu ersetzen, sondern damit die vier Fakten zu Frau K. auf der Seite stehen, ganz oben, mit Uhrzeit, bevor die Kollegin den Mund aufmacht.
+
+## Was bei jeder Übergabe auf dem Spiel steht
+
+<Stats title="Pflegeheime in Deutschland und warum die Dokumentation zählt">
+  <Stat value="800.000" label="Menschen (14 % aller Pflegebedürftigen) wurden im Dezember 2023 vollstationär in Pflegeheimen versorgt" source="Destatis, Pressemitteilung Dezember 2024" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_478_224.html" />
+  <Stat value="16.505" label="Pflegeheime gab es 2023 in Deutschland" source="Destatis, Pflegestatistik" href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Gesundheit/Pflege/Tabellen/pflegeeinrichtungen-deutschland.html" />
+  <Stat value="bis zu 1/3" label="der Arbeitszeit von Pflegekräften geht in der deutschen Langzeitpflege laut Einleitung einer Zeitmessungsstudie von 2026 für Dokumentation drauf" source="Journal of Medical Internet Research, 2026" href="https://www.jmir.org/2026/1/e86078/" />
+</Stats>
+
+Die letzte Zahl stammt aus der Einleitung einer Studie, die ein kommerzielles Sprachdokumentationsprodukt untersucht hat. Ich würde „bis zu einem Drittel“ deshalb als Rahmenaussage lesen und nicht als gemessenen Durchschnitt für Ihr Haus. Sicher ist: Dokumentation nimmt einen großen Teil der Schicht ein, und die Übergabe ist der Moment, in dem sie sich auszahlen sollte.
+
+Übergaben werden schon lange untersucht. Die Joint Commission, eine US-Akkreditierungsstelle für Krankenhäuser, hat es in ihrem [Sentinel Event Alert 58](https://www.jointcommission.org/en-us/knowledge-library/newsletters/sentinel-event-alert/issue-58) nüchtern formuliert: Bei jeder Übergabe besteht das Risiko, dass wichtige Behandlungsinformationen verzerrt, vergessen oder nicht weitergegeben werden. Die Empfehlungen sind unspektakulär. Festlegen, was der Übergebende mitteilen muss, und persönlich übergeben, an einem Ort ohne Ablenkung. Auch die WHO hat eine [Patientensicherheits-Lösung zur Kommunikation bei Übergaben](https://cdn.who.int/media/docs/default-source/patient-safety/patient-safety-solutions/ps-solution3-communication-during-patient-handovers.pdf), die ein standardisiertes Vorgehen bevorzugt. Beide entstanden mit Blick auf Krankenhäuser, aber im Pflegeheim werden dieselben 28 Menschen dreimal am Tag übergeben.
+
+## Warum die Dokumentation das Problem nicht löst
+
+Pflegeheime in Deutschland bemühen sich seit Jahren, Dokumentation zu verschlanken. Das Strukturmodell zur Entbürokratisierung, das das [Bundesgesundheitsministerium beschreibt](https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/e/entbuerokratisierung-der-pflegedokumentation), baut auf der Strukturierten Informationssammlung (SIS) zu Beginn der Pflege auf. Die Idee: Routinepflege wird nicht Zeile für Zeile aufgeschrieben, und der Pflegebericht konzentriert sich auf Abweichungen vom Plan.
+
+Das ist eine gute Änderung, und sie macht Übergabe-Zusammenfassungen leichter, nicht schwerer. Ein Bericht, der vor allem Ausnahmen enthält, ist eine Zusammenfassung wert. Er bedeutet aber auch: Die wichtigen Einträge liegen zeitlich verstreut, stammen von verschiedenen Personen, sind frei formuliert („wirkte heute verwirrter“, „wollte nicht zu Mittag essen“) und stehen zwischen Routinenotizen.
+
+Strukturierte Felder sind einfacher. Wenn Ihre Software Trinkmengen in einem Trinkprotokoll erfasst, ist „unter dem Zielwert aus der Maßnahmenplanung“ eine Datenbankabfrage und keine KI-Aufgabe. Die Freitexteinträge sind der Ort, an dem ein Sprachmodell seinen Platz verdient, denn sie hat niemand in einer Form geschrieben, die ein Filter fängt.
+
+## Ein Übergabetag mit dem Entwurf
+
+<Timeline title="Vom Frühdienst zum Spätdienst, mit einem Entwurf dazwischen">
+<Phase when="06:00 bis 13:00" title="Einträge wie bisher">Die Mitarbeitenden dokumentieren in der Pflegesoftware wie gewohnt. Für sie ändert sich nichts, außer dass kurze Sprachnotizen oder knappe Einträge willkommen sind, denn der Entwurf liest alle.</Phase>
+<Phase when="13:15" title="Der Entwurf entsteht">Der Assistent liest die Einträge der Schicht zu jeder Bewohnerin und jedem Bewohner und erstellt einen Block pro Person, Auffälliges zuerst. Jede Zeile verweist auf den Eintrag, aus dem sie stammt.</Phase>
+<Phase when="13:20" title="Die Pflegekraft prüft">Die verantwortliche Pflegefachkraft liest den Entwurf gegen ihr Wissen, korrigiert ihn, ergänzt, was nirgends steht, und streicht nichts, was sie nicht begründen kann. Etwa acht Minuten für einen Bereich mit 28 Personen, wenn der Entwurf gut ist.</Phase>
+<Phase when="14:00" title="Mündliche Übergabe">Früh- und Spätdienst treffen sich. Die markierten Punkte werden zuerst besprochen, persönlich, mit dem Entwurf auf Bildschirm oder Papier. Hier werden Fragen gestellt.</Phase>
+<Phase when="14:15" title="Spätdienst übernimmt">Der Spätdienst kann den Entwurf zu jeder Person öffnen. Was in der Übergabe mündlich gesagt wurde und nicht im Entwurf steht, wird als Eintrag ergänzt.</Phase>
+</Timeline>
+
+Zwei Details wiegen mehr, als es aussieht. Die Prüfung ist nicht optional. Der Entwurf geht erst zum Spätdienst, wenn eine Pflegefachkraft ihn freigegeben hat, und sie ist dafür verantwortlich. Und die mündliche Übergabe bleibt. Der Entwurf ersetzt die Suche durch die Einträge, nicht das Gespräch.
+
+## Wie der Entwurf aussieht
+
+```text
+FRAU K., ZIMMER 14
+AUFFÄLLIG
+- STURZ 07:10 (Eintrag J.): neben dem Bett am Boden gefunden, keine Beschwerden, keine sichtbare Verletzung. Sturzprotokoll erstellt. Vitalwerte 07:25 im Eintrag.
+- TRINKMENGE: bis 13:00 400 ml erfasst. Ziel laut Maßnahmenplanung: 1.500 ml pro Tag. Einträge 09:10, 11:30, 12:40.
+- WUNDE (Steißbein) 11:15: Verband gewechselt. Eintrag: „röter als gestern“. Kein Foto angehängt.
+- HAUSARZT ANGERUFEN 10:30: Besuch morgen. Sonst nichts vereinbart.
+HEUTE KEIN EINTRAG: Stuhlgang, Gewicht.
+OFFEN: Besuchszeit mit Praxis bestätigen. Wunde um 18:00 erneut prüfen (laut Maßnahmenplanung).
+ROUTINE: Frühstück vollständig gegessen, Krankengymnastik 10:00 erledigt.
+```
+
+Sehen Sie sich die Zeile „heute kein Eintrag“ an. Das ist die wichtigste Designentscheidung im ganzen System. Eine Zusammenfassung, die weglässt, was nicht dokumentiert ist, macht aus Stille eine gute Nachricht. „Zur Trinkmenge nichts erfasst“ ist etwas anderes als „Trinkmenge in Ordnung“, und der Entwurf muss das sagen. In Software, die ich gebaut habe, sind nicht die Abstürze die Fehler, die Schaden anrichten. Es sind die stillen Auslassungen, bei denen das Ergebnis vollständig aussieht und es nicht ist.
+
+Die markierten Kategorien entsprechen dem, was auf einem guten Papier-Übergabebogen stünde, abgestimmt von Pflegedienstleitung und Team: Stürze, Essens- oder Trinkverweigerung, Wundveränderungen, Arztkontakte, neue Verwirrtheit oder Verhaltensänderungen, Schmerzen, alles zu gegebener oder verweigerter Medikation, offene Aufgaben. Der Assistent wendet Ihre Liste an. Er erfindet keine.
+
+## Was der Assistent tut und nie tut
+
+<Split title="Die Grenze im Pflegeheim" leftTitle="Der Assistent" rightTitle="Der Assistent nie" left={[
+  "Sammelt die Einträge der Schicht pro Bewohner und stellt Auffälliges voran",
+  "Verlinkt jede Zeile mit dem Eintrag, aus dem sie stammt, samt Uhrzeit und Verfasser",
+  "Benennt, was nicht dokumentiert wurde, damit Stille nicht als „in Ordnung“ gelesen wird",
+  "Listet offene Aufgaben und Termine aus Einträgen und Maßnahmenplanung",
+  "Erstellt den Entwurf immer in derselben Struktur, damit alle wissen, wo sie hinschauen müssen"
+]} right={[
+  "Beurteilt, wie ernst ein Sturz, eine Wunde oder eine geringe Trinkmenge ist",
+  "Schlägt Medikation vor, ändert sie oder kommentiert sie",
+  "Lässt einen Eintrag weg, weil er unwichtig erscheint",
+  "Schreibt eine Tatsache, die in keinem Eintrag steht",
+  "Ersetzt die mündliche Übergabe oder die Freigabe durch die Pflegekraft"
+]} caption="Der Entwurf ordnet, was das Team geschrieben hat. Das fachliche Urteil bleibt bei der Pflegekraft." />
+
+Wenn Sie SBAR kennen, also Situation, Hintergrund, Einschätzung, Empfehlung, erkennen Sie das Muster. Situation und Hintergrund kann der Assistent aus den Einträgen füllen, denn das sind Fakten, die jemand aufgeschrieben hat. Einschätzung und Empfehlung gehören der Pflegekraft. Ich würde sie im Entwurf bewusst leer lassen, als Aufforderung an sie und nicht als Feld für das Modell.
+
+## Datenschutz und Regeln
+
+Pflegeakten enthalten Gesundheitsdaten nach Art. 9 DSGVO, und Pflegefachkräfte gehören zu den Berufen, für die die Schweigepflicht nach [§ 203 StGB](https://www.gesetze-im-internet.de/stgb/__203.html) gilt. Wer Bewohnerdaten an einen externen KI- oder Softwareanbieter weitergibt, muss sicherstellen, dass dieser zur Verschwiegenheit verpflichtet ist, wie es die Absätze 3 und 4 regeln, und kann haften, wenn das nicht geschieht.
+
+Für jedes Werkzeug, das die Einträge liest:
+
+1. Ein Auftragsverarbeitungsvertrag (AVV) nach Art. 28 DSGVO und eine schriftliche Verschwiegenheitsverpflichtung, die § 203 genügt.
+2. Hosting in der EU und ein Vertrag, der das Training mit Ihren Daten ausschließt.
+3. Zugriff nur für Mitarbeitende, die ohnehin Zugriff auf die betroffenen Bewohner haben, und ein Protokoll, wer was gelesen hat.
+4. Der Betriebsrat, falls es einen gibt, wird früh eingebunden. Systeme, die Arbeit von Beschäftigten überwachen können, lösen in Deutschland in der Regel Mitbestimmungsrechte aus, und ein Werkzeug, das jeden Eintrag einer Pflegekraft liest, gehört dazu.
+
+Die Regulierung von KI ist ein bewegliches Ziel. Ein Werkzeug, das Einträge der Mitarbeitenden nur intern zusammenfasst, fällt nicht unter das, was die KI-Verordnung als Hochrisiko listet. Sobald es aber Risiken bewertet oder klinische Maßnahmen empfiehlt, kann es als Medizinprodukt gelten. Fragen Sie jeden Anbieter direkt und lassen Sie sich die Antwort schriftlich geben.
+
+## Was es kostet und was es spart
+
+<Calc title="Überschlag: Übergabevorbereitung auf vier Wohnbereichen" caption="Annahmen, keine Messwerte. Gesparte Zeit nützt nur, wenn sie zurück in die Pflege fließt und nicht mit neuen Aufgaben gefüllt wird. Messen Sie zuerst eine Woche Ihre eigenen Übergaben." rows={[
+  ["Übergaben pro Tag und Bereich", "3"],
+  ["Gesparte Minuten bei der Vorbereitung jeder Übergabe (Suche durch Einträge)", "× 10"],
+  ["Tage pro Monat", "× 30,4"],
+  ["Gesparte Stunden pro Monat und Bereich", "≈ 15"],
+  ["Bereiche", "× 4"]
+]} result={["Gesparte Stunden pro Monat", "≈ 60"]} />
+
+Die Einrichtung ist vor allem Integrationsarbeit: Die Einträge müssen über eine Schnittstelle oder einen Export aus Ihrer Pflegesoftware kommen, die Markierungsregeln entstehen gemeinsam mit der Pflegedienstleitung, dazu Tests. Meine grobe Schätzung: einige Tage Arbeit und überschaubare laufende Kosten für das Sprachmodell, dazu, was Ihr Softwarehersteller für den Schnittstellenzugang verlangt. Pflegesoftware wie Vivendi oder MEDIFOX DAN hat womöglich schon eine Ansicht „Berichte seit der letzten Schicht“. Prüfen Sie, was Sie haben, bevor Sie etwas bauen.
+
+Weil es um Menschen geht, würde ich den Pilot auf einem Bereich vier Wochen laufen lassen. In den ersten zwei vergleichen Sie den Entwurf Zeile für Zeile mit den tatsächlichen Einträgen. Zählen Sie jeden fehlenden, erfundenen oder falsch markierten Punkt. Liegt die Zahl nicht nahe null, verschärfen Sie die Regeln, bevor die dritte Woche beginnt.
+
+<Checklist title="Bevor der Entwurf in eine echte Übergabe kommt" items={[
+  "Markierungskategorien von Pflegedienstleitung und Team abgestimmt und schriftlich festgehalten",
+  "AVV, Verschwiegenheitsverpflichtung und EU-Hosting stehen",
+  "Betriebsrat informiert, falls vorhanden",
+  "Zwei Wochen vergangener Schichten getestet: keine erfundenen Fakten, keine still verlorenen Einträge",
+  "Entwurf zeigt „nichts dokumentiert“ pro Kategorie ausdrücklich an",
+  "Eine benannte Pflegefachkraft gibt jeden Entwurf frei, bevor der Spätdienst ihn sieht",
+  "Das Team weiß, dass die mündliche Übergabe bleibt und was zu tun ist, wenn der Entwurf falsch liegt"
+]} />
+
+## Fragen von Heim- und Pflegedienstleitungen
+
+### Kann KI die Übergabe im Pflegeheim schreiben?
+
+Sie kann sie aus den Einträgen vorbereiten, Auffälliges zuerst, und eine Pflegefachkraft prüft sie dann. Sie sollte nicht entscheiden, was klinisch wichtig ist, keine Fakten ergänzen, die niemand dokumentiert hat, und das Gespräch zwischen den Schichten nicht ersetzen. Sehen Sie sie als vorbereitete Lektüre, nicht als Ersatz für die Kollegin.
+
+### Darf ich Bewohnerdaten an ein KI-Werkzeug geben?
+
+Unter den richtigen Bedingungen. Sie brauchen einen AVV, eine Verschwiegenheitsverpflichtung, die § 203 genügt, EU-Hosting und einen Vertrag, der das Training mit Ihren Daten ausschließt. Klären Sie das vorher mit Ihrem Datenschutzbeauftragten. Das ist keine Rechtsberatung.
+
+### Widerspricht das dem Strukturmodell und der schlanken Dokumentation?
+
+Nein, es passt dazu. Ein Bericht, der sich auf Abweichungen konzentriert, ist die beste Grundlage für eine Zusammenfassung. Der Assistent sollte das Team nicht zu mehr Schreiben drängen. Im Gegenteil: Er macht kurze, klare Einträge wertvoller, denn der Entwurf ist nur so gut wie das, was hineinkommt.
+
+### Was, wenn die KI danebenliegt?
+
+Dann fängt die Pflegekraft das bei der Prüfung ab, und Sie halten den Fehler fest und verschärfen die Regeln. Dafür gibt es die Freigabe. Wenn sich die Fehler häufen, ist das Werkzeug für Ihren Bereich nicht reif, und Sie hören auf.
+
+## Meine Faustregel für die Übergabe
+
+Steht eine Zeile in der Übergabe, die sich nicht auf einen von Menschen geschriebenen Eintrag zurückführen lässt, gehört sie nicht auf die Seite. Und wurde etwas nicht dokumentiert, sagt die Seite das.
+
+Wenn Sie ein Pflegeheim leiten und das auf einem Bereich ausprobieren möchten, [schreiben Sie mir, wie die Übergabe bei Ihnen heute abläuft](/de/kontakt?intent=improve), und ich schlage die kleinste Variante vor, die einen Test wert ist. Für die andere Seite der Pflege geht es in der [Tourenplanung im ambulanten Dienst](/de/posts/ki-ambulanter-pflegedienst-tourenplanung) darum, die Route richtig zu legen. Der Weg über Sprachnotizen funktioniert auch anderswo: [Bauleiter, die Bautagebücher diktieren](/de/posts/ki-bautagebuch-sprachnachricht), nutzen ihn ebenso wie [Kitas, die Eltern über den Tag informieren](/de/posts/ki-kita-elterninformationen).
