@@ -1,0 +1,172 @@
+---
+id: "ai-for-campsites-booking-questions"
+title: "Campsite Booking Questions, Ranked: What to Automate First"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Hospitality & events", "Campsites", "Booking questions", "AI for small business"]
+description: "Will a 7.4 m motorhome fit? Do you take dogs? How many amps? Campsite inbox questions ranked by frequency, with what to automate, draft or hand to the office."
+excerpt: "Will a 7.4 m motorhome fit? Do you take dogs? How many amps? Campsite inbox questions ranked by frequency, with what to automate, draft or hand to the office."
+---
+
+It's a Monday in March, Easter is four weeks away, and the campsite office has two people and 180 pitches. Three messages are waiting.
+
+The first: "Hello, we have a 7.4 m motorhome with a bike rack and an awning, two adults and a Labrador, we'd like electricity, arriving Friday around 22:00 for three nights in May. Anything free?" The second: "Are you open in November?" The third: "Do you take dogs?" The answer to that one is on the website, on a page nobody opens.
+
+All three look like availability questions. The first one isn't. Whether a 7.4 m motorhome fits depends on the bike rack, the awning, whether the tow car stays on the pitch, and which pitch it would be, and the guest has told you only half of that. Get it wrong and you have a late arrival on a Friday night, a guest who can't get onto the pitch, and an office that closed at six.
+
+Most campsite messages are repeats, answerable from data you already own. A few look easy and aren't. This post ranks the usual questions by frequency, says which I'd automate first, and shows how to turn pitch rules into data, so "will it fit?" becomes a calculation instead of a guess.
+
+## Why the inbox keeps growing
+
+<Stats title="Camping in Germany: more guests, more first-timers">
+  <Stat value="44.7 million" label="guest overnight stays on German campsites in 2025, a record and 24.9% above 2019" source="Destatis, press release N020, March 2026" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/03/PD26_N020_45412_61.html" />
+  <Stat value="1,002,562" label="motorhomes registered on 1 April 2025, more than double the 2017 stock" source="Kraftfahrt-Bundesamt (KBA), press release 23/2025" href="https://www.kba.de/DE/Presse/Pressemitteilungen/Allgemein/2025/pm23_2025_wohnmobile.html" />
+  <Stat value="40%" label="of motorhome and caravan users in a 2026 survey use a rented vehicle (35% in 2023)" source="ADAC camping survey, August 2026" href="https://www.adac.de/reise-freizeit/ratgeber/reisetipps/umfrage-camping-vorlieben-der-deutschen/" />
+</Stats>
+
+Demand has grown faster than supply. Destatis counted 3,097 campsites in 2021, about 9% more than the 2,835 of 2012 ([figures published by PiNCAMP](https://www.pincamp.de/unternehmen/camping-statistik/anzahl-campingplaetze/)), while overnight stays doubled in the 20 years to 2025. The numbers are German, the questions are not. The same pitches draw more inquiries, more of them from people new to camping. A guest in a rented motorhome knows "the 6 m model with four berths", not the awning depth or what a CEE plug is.
+
+Prices moved too. Destatis reports a night on a motorhome pitch 32.2% dearer in 2025 than in 2020, and a campsite pitch fee 28.7% dearer. So the assistant must read your current price list, never last year's emails.
+
+## Tag last season's messages
+
+Before choosing any tool, tag last season's emails, form entries and WhatsApp messages with one category each. A morning with a spreadsheet is enough. This is the shape I'd expect, with invented numbers for a mid-sized family campsite.
+
+<Bars title="What a season of inquiries might look like" unit="%" caption="Assumed distribution for illustration, not a measurement. Your mix will differ, which is the reason to count. Highlighted bars are where I'd start." data={[
+  { label: "Is a pitch free, and what does it cost?", value: 30, highlight: true },
+  { label: "Will my vehicle fit?", value: 18, highlight: true },
+  { label: "Arrival, late arrival, early check-in", value: 12, highlight: true },
+  { label: "Dogs, quiet hours, barbecues", value: 10 },
+  { label: "Electricity and hookups", value: 9 },
+  { label: "Are you open in the off-season?", value: 9 },
+  { label: "Change or cancel a booking", value: 8 },
+  { label: "Groups, events, long stays, complaints", value: 4 }
+]} />
+
+Here four categories make up 70% of the traffic. One warning: the top question is the easiest to answer and the second is the most expensive to get wrong, so frequency alone doesn't tell you where to start.
+
+## What to automate, what to draft, what to hand over
+
+| Question | Where the answer comes from | What I'd do |
+| --- | --- | --- |
+| Is a pitch free, and what does it cost? | Live booking calendar, current price list | Answer automatically with a booking link. Never promise a pitch the calendar lacks |
+| Will my vehicle fit? | The pitch data table (below) | Assistant collects measurements, rules match, assistant drafts. Staff approve offers at first |
+| Arrival, late arrival, early check-in | Your site rules | Answer automatically, and save the arrival time in the booking |
+| Dogs, quiet hours, barbecues | Your house rules | Answer automatically, quoting your own text |
+| Electricity and hookups | Amps and plug type per pitch | Answer from the table, and warn about heavy appliances |
+| Open in the off-season? | Season calendar, winter facilities list | Answer automatically, saying what is closed |
+| Change or cancel | Booking system, your terms | Draft for review. Staff decide about fees |
+| Groups, events, long stays, complaints | Nothing in a table | Hand to the office with a short summary |
+
+## Availability: let the calendar answer
+
+The most common question is also the one where AI is the wrong tool. If your booking system shows live availability and takes bookings, the best answer is a link, and the question disappears. A pitch finder in a web form costs less and breaks less than any assistant.
+
+An assistant earns its place with the messy version: "any three nights between 20 and 30 May", "the weekend after Pentecost", or a WhatsApp message that mixes dates, vehicle and dog in one sentence. It reads the calendar with read-only access, proposes up to three options and sends the booking link. The reservation itself is created by your booking system, never by the model.
+
+## Will it fit? Make the pitch rules data
+
+Vehicle length is the number guests give you and the wrong number to match on. What counts is the footprint: the vehicle, the bike rack or drawbar, a tow car if it stays on the pitch, and the awning or tent to the side. A figure copied from the registration papers leaves out all of that.
+
+A sanity check: under [section 32 of the StVZO](https://www.gesetze-im-internet.de/stvzo_2012/__32.html) a motor vehicle may be at most 12 m long, and a vehicle with a trailer at most 18 m. A claimed 14 m motorhome is a typo, and the assistant should ask instead of matching.
+
+Write each pitch down once, as a row in a table. This is invented example data:
+
+| Pitch | Max. unit length | Max. width with awning | Power | Car on pitch | Dogs | Open |
+| --- | --- | --- | --- | --- | --- | --- |
+| A12 | 8.0 m | 4.0 m | 16 A | yes | yes | April to October |
+| B07 | 6.5 m | 3.5 m | 10 A | no, car park | yes | April to October |
+| C03 | 10.0 m | 4.5 m | 16 A | yes | no | all year |
+| T14, tents only | n/a | n/a | 6 A | no | yes | May to September |
+
+Then write the matching rule in plain words, so that anyone in the office can read and change it:
+
+```text
+Footprint length = vehicle + bike rack or drawbar + tow car if it stays on the pitch
+Footprint width  = vehicle width + awning or tent depth to the side
+A pitch matches if the footprint is within its limits, its power is at least
+what was asked for, dogs are allowed when dogs are coming, the pitch is open
+on every requested night, and it is not booked.
+```
+
+The division of labour matters. The model reads the message and fills in the form: dates, vehicle, rack, awning, dogs, power. It asks for what's missing in one friendly message: "overall length including bike rack, will the car stay on the pitch, awning or tent?" The matching is ordinary code or a spreadsheet formula. I would not let a language model decide whether 7.4 m fits into 8 m. It will usually be right, occasionally confidently wrong, and you'd find out at the gate.
+
+It's the same shape as sizing a storage unit from a description of a flat, covered in [self-storage inquiries](/posts/ai-for-self-storage-inquiries): language in, your table in the middle, a checked answer out.
+
+## The power question hides a fault
+
+Campsites are often fused lower than guests assume. A camping retailer's guide notes that sites are fused at [4, 6, 10 or at best 16 amps](https://www.fritz-berger.de/blog/hilfe-beratung/strom-gas/so-funktioniert-die-stromversorgung-am-campingplatz.html), and that even a kettle or hairdryer can trip the fuse. A guest who plans to run an air conditioner on a 6 A pitch is likely to have a dark first evening and a queue at your office.
+
+So the assistant states the amps of the pitch it offers, asks which heavy appliances are coming, and suggests a 16 A pitch where you have one. It gives no electrical advice beyond your own wording. If a guest mentions a medical device that needs power, a person calls back.
+
+## The easy half: arrival, dogs, opening dates
+
+Arrival times, house rules and opening dates are fixed facts, and an assistant can quote them safely when the source text is yours. Its one extra duty is recording what it learns: the 22:00 arrival goes into the booking, so the late shift knows to wait or to explain self check-in. [Independent hotels](/posts/ai-for-independent-hotels-guest-messages) face the same pre-arrival pattern, and much of what works there carries over.
+
+For off-season questions, keep a season table: open dates, which pitches stay available in winter, whether the sanitary block is heated, when water is shut off for frost. "Are you open in November?" is only as good as that table.
+
+## From message to confirmed pitch
+
+<Flow title="One inquiry, from inbox to booking" caption="The assistant reads and drafts, rules match, the office decides anything unusual. The booking system, not the model, holds the reservation.">
+<Step title="Inquiry arrives" who="Guest" time="any channel">Email, contact form or WhatsApp, in German, Dutch, English or a mix.</Step>
+<Step title="Extract and ask" who="AI" tone="ai" time="seconds">Pulls out dates, vehicle, rack, awning, dogs and power, and asks for whatever is missing.</Step>
+<Step title="Match pitches" who="System" time="instant">Your rules check footprint, power, dogs, season and calendar.</Step>
+<Step title="Draft the reply" who="AI" tone="ai">Offers up to three pitches with the current price and a booking link.</Step>
+<Step title="Office checks" who="Office staff" tone="human" time="twice a day">Approves, edits or takes over. Price exceptions, groups and complaints go to a person.</Step>
+<Step title="Guest books" who="Booking system" tone="neutral">The reservation is created. Arrival time and special needs are saved with it.</Step>
+<Step title="Pre-arrival message" who="AI" tone="ai" time="2 days before">Directions, check-in procedure, house rules, registration link where needed.</Step>
+</Flow>
+
+The human decision sits in step 5. At first I'd send nothing about a specific pitch unread. After a month of good drafts, pure rule answers like opening dates can go out directly.
+
+## What it costs
+
+Booking software built for campsites, such as [igumbi](https://www.igumbi.com/de/fuer/campingplatz-software) or [direst](https://direst.de), holds your pitches and calendar and takes direct bookings. Portals like PiNCAMP and camping.info already deliver structured requests, so the assistant sits in front of the messy channels: your mailbox, contact form and WhatsApp. Setup is mostly writing: the pitch table, the rules and about 30 standard answers, then two to three weeks in shadow mode, where the assistant drafts and the office compares with what they would have sent.
+
+<Calc title="Napkin math: one busy season" caption="Assumptions, not measurements. Replace them with your own tag counts and wage cost." rows={[
+  ["Inquiries per week in season", "60"],
+  ["Minutes to research and answer one today", "× 7"],
+  ["Share the assistant answers or drafts", "× 70%"],
+  ["Busy-season weeks per year", "× 26"],
+  ["Office hours freed per season", "≈ 127 h"],
+  ["Staff cost per hour", "× €25"],
+  ["Assistant running cost, €150 a month for 7 months", "− €1,050"]
+]} result={["Net saving per season", "≈ €2,100"]} />
+
+If that figure looks small, it is. I wouldn't sell this as cost cutting. I'd sell it as the difference between replying in ten minutes and replying the next afternoon, when the guest has booked elsewhere.
+
+## Rules that touch a campsite inbox
+
+**No right of withdrawal.** Under [section 312g of the German Civil Code](https://www.gesetze-im-internet.de/bgb/__312g.html), consumers have no statutory right of withdrawal for holiday accommodation booked for a specific date or period. Your own cancellation terms apply, so the assistant quotes them and never waives a fee.
+
+**Registration forms.** Since 2025 the registration form (Meldeschein) is only required from foreign guests, who sign it on arrival or confirm electronically in the ways the law allows. Campsites are covered ([section 29 BMG](https://www.gesetze-im-internet.de/bmg/__29.html)). Forms are kept for one year after departure and destroyed within three months ([section 30 BMG](https://www.gesetze-im-internet.de/bmg/__30.html)). Don't ask for passport numbers by email or chat, and keep them out of the assistant.
+
+**Personal data.** Use a provider that signs a data processing agreement under [Article 28 GDPR](https://gdpr-info.eu/art-28-gdpr/) and hosts in the EU, not a free consumer chatbot. A guest who writes "wheelchair" or "oxygen concentrator" has shared health data, a special category under [Article 9 GDPR](https://gdpr-info.eu/art-9-gdpr/). Store the need ("level pitch, 16 A"), not the story.
+
+**Say it's an AI.** A chat window that answers guests with nobody reading first has to say so. [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has applied since 2 August 2026. As I read it, drafts that staff read and send under their own name are a different case, but I'd still mention the tool in your privacy notice.
+
+## When a better form beats AI
+
+A 40-pitch family site with a good booking widget may not need an assistant. A form that asks five questions up front (dates, overall length, awning or tent, power, dogs) and shows only matching pitches does most of the work. Add a FAQ page, an auto-reply that links to it and a season table, and the most frequent questions are covered for nothing.
+
+AI starts to pay when messages arrive in several channels and languages, with dates written in prose. If the office loses under five hours a week to repeat questions, stay with the form.
+
+## Questions campsite owners ask
+
+### Can an AI chatbot take bookings for my campsite?
+
+It can collect the details and propose pitches. Your booking system should create the reservation, under hard rules such as one booking per pitch per night. A model that writes to the calendar directly is how you get double bookings.
+
+### What if guests don't know their vehicle length?
+
+Ask for the model name or the rental company, look the dimensions up in your own table and add a buffer. Staff still check the real unit at the gate.
+
+### Will it answer Dutch or English inquiries?
+
+Current language models handle that well, and it matters: foreign guests spent 735,000 nights on Black Forest campsites alone in 2025, according to the same Destatis release. Keep your rules in one language, and have anything touching your terms checked, since the legal text is the German one.
+
+## Where I'd start
+
+Tag a season of messages, put every pitch into a table, and let code do the matching. Automate availability links, arrival and house rules first, draft the fit answers for a person to approve, and send groups, complaints and health details straight to the office.
+
+If your inbox looks like that Monday in March, [tell me which booking system you use and roughly how many pitches you run](/contact?intent=improve), and I'll suggest the smallest version worth testing. Guests who write in as a group are a separate problem, and [city tour guides face the same thing](/posts/ai-for-city-tour-guides-group-bookings) with "23 people, sometime in May".
