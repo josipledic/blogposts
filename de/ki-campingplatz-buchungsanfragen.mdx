@@ -1,0 +1,173 @@
+---
+id: "ki-campingplatz-buchungsanfragen"
+translationOf: "ai-for-campsites-booking-questions"
+title: "Campingplatz: Welche Buchungsfragen Sie zuerst automatisieren"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Gastgewerbe & Events", "Campingplätze", "Buchungsanfragen", "KI für kleine Unternehmen"]
+description: "Passt das 7,4-m-Wohnmobil? Hunde? Wie viel Ampere? Die häufigsten Fragen im Campingplatz-Postfach nach Häufigkeit sortiert und was die KI davon übernimmt."
+excerpt: "Passt das 7,4-m-Wohnmobil? Hunde? Wie viel Ampere? Die häufigsten Fragen im Campingplatz-Postfach nach Häufigkeit sortiert und was die KI davon übernimmt."
+---
+
+Es ist Montag im März, Ostern ist vier Wochen entfernt, und im Büro des Campingplatzes sitzen zwei Leute für 180 Stellplätze. Drei Nachrichten warten.
+
+Die erste: „Guten Tag, wir kommen mit einem 7,4 m langen Wohnmobil mit Fahrradträger und Vorzelt, zwei Erwachsene und ein Labrador, gern mit Strom, Anreise Freitag gegen 22 Uhr, drei Nächte im Mai. Ist etwas frei?“ Die zweite: „Haben Sie im November geöffnet?“ Die dritte: „Sind Hunde erlaubt?“ Die Antwort auf die dritte steht auf der Website, auf einer Seite, die niemand öffnet.
+
+Alle drei klingen nach Verfügbarkeit. Die erste ist es nicht. Ob ein 7,4-m-Wohnmobil passt, hängt vom Fahrradträger ab, vom Vorzelt, davon, ob das Zugfahrzeug auf dem Platz steht, und davon, welcher Stellplatz gemeint ist. Die Hälfte davon hat Ihnen der Gast nicht verraten. Geht es schief, steht am Freitagabend ein Gast vor einem Platz, auf den er nicht kommt, und das Büro ist seit sechs Uhr zu.
+
+Die meisten Nachrichten an Campingplätze wiederholen sich und lassen sich aus Daten beantworten, die Sie schon haben. Ein paar sehen einfach aus und sind es nicht. Dieser Beitrag sortiert die üblichen Fragen nach Häufigkeit, sagt, welche ich zuerst automatisieren würde, und zeigt, wie Stellplatzregeln zu Daten werden, damit „Passt das?“ eine Rechnung ist und keine Schätzung.
+
+## Warum das Postfach immer voller wird
+
+<Stats title="Camping in Deutschland: mehr Gäste, mehr Neulinge">
+  <Stat value="44,7 Mio." label="Gästeübernachtungen auf deutschen Campingplätzen 2025, ein Rekord und 24,9 % mehr als 2019" source="Statistisches Bundesamt, Pressemitteilung N020, März 2026" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/03/PD26_N020_45412_61.html" />
+  <Stat value="1.002.562" label="Wohnmobile waren am 1. April 2025 zugelassen, mehr als doppelt so viele wie 2017" source="Kraftfahrt-Bundesamt (KBA), Pressemitteilung 23/2025" href="https://www.kba.de/DE/Presse/Pressemitteilungen/Allgemein/2025/pm23_2025_wohnmobile.html" />
+  <Stat value="40 %" label="der Reisemobil- und Caravan-Nutzer in einer Umfrage 2026 fahren ein Mietfahrzeug (2023: 35 %)" source="ADAC Camping-Umfrage, August 2026" href="https://www.adac.de/reise-freizeit/ratgeber/reisetipps/umfrage-camping-vorlieben-der-deutschen/" />
+</Stats>
+
+Die Nachfrage ist schneller gewachsen als das Angebot. Das Statistische Bundesamt zählte 2021 laut [Veröffentlichung von PiNCAMP](https://www.pincamp.de/unternehmen/camping-statistik/anzahl-campingplaetze/) 3.097 Campingplätze, rund 9 % mehr als die 2.835 von 2012. Die Übernachtungen haben sich in den 20 Jahren bis 2025 mehr als verdoppelt. Auf denselben Plätzen treffen also mehr Anfragen ein, auch von Menschen, die neu im Camping sind. Wer ein Mietwohnmobil fährt, kennt „das 6-Meter-Modell mit vier Schlafplätzen“, aber nicht die Vorzelttiefe und nicht den CEE-Stecker.
+
+Auch die Preise haben sich bewegt. Laut Destatis kostete eine Nacht auf dem Wohnmobilstellplatz 2025 32,2 % mehr als 2020, die Campingplatzgebühr 28,7 % mehr. Der Assistent muss deshalb Ihre aktuelle Preisliste lesen und nie die E-Mails vom Vorjahr.
+
+## Eine Saison Nachrichten auszählen
+
+Bevor Sie ein Werkzeug wählen: Versehen Sie die E-Mails, Formulareinträge und WhatsApp-Nachrichten der letzten Saison mit je einer Kategorie. Ein Vormittag mit einer Tabelle reicht. So sähe die Verteilung bei einem mittelgroßen Familienplatz aus, mit erfundenen Zahlen.
+
+<Bars title="Wie eine Saison Anfragen aussehen könnte" unit=" %" caption="Angenommene Verteilung zur Veranschaulichung, keine Messung. Ihre Mischung wird anders aussehen, deshalb lohnt das Zählen. Die hervorgehobenen Balken sind mein Startpunkt." data={[
+  { label: "Ist ein Platz frei, und was kostet er?", value: 30, highlight: true },
+  { label: "Passt mein Fahrzeug?", value: 18, highlight: true },
+  { label: "Anreise, späte Ankunft, früher Check-in", value: 12, highlight: true },
+  { label: "Hunde, Ruhezeiten, Grillen", value: 10 },
+  { label: "Strom und Anschlüsse", value: 9 },
+  { label: "Haben Sie in der Nebensaison geöffnet?", value: 9 },
+  { label: "Buchung ändern oder stornieren", value: 8 },
+  { label: "Gruppen, Veranstaltungen, Langzeit, Beschwerden", value: 4 }
+]} />
+
+Hier machen vier Kategorien 70 % des Aufkommens aus. Eine Warnung beim Lesen: Die häufigste Frage ist am leichtesten zu beantworten, die zweithäufigste am teuersten zu verpatzen. Die Häufigkeit allein sagt Ihnen also nicht, wo Sie anfangen sollten.
+
+## Automatisieren, entwerfen lassen oder abgeben
+
+| Frage | Woher die Antwort kommt | Mein Vorschlag |
+| --- | --- | --- |
+| Ist ein Platz frei, und was kostet er? | Live-Belegungskalender, aktuelle Preisliste | Automatisch beantworten, mit Buchungslink. Nie einen Platz zusagen, den der Kalender nicht hat |
+| Passt mein Fahrzeug? | Stellplatztabelle (unten) | KI erfragt die Maße, Regeln gleichen ab, KI entwirft die Antwort. Anfangs prüft das Büro jedes Angebot |
+| Anreise, späte Ankunft, früher Check-in | Ihre Platzordnung | Automatisch beantworten, Ankunftszeit in der Buchung vermerken |
+| Hunde, Ruhezeiten, Grillen | Ihre Platzordnung | Automatisch beantworten, Ihren eigenen Text zitieren |
+| Strom und Anschlüsse | Ampere und Steckertyp je Platz | Aus der Tabelle beantworten, vor Großverbrauchern warnen |
+| In der Nebensaison geöffnet? | Saisonkalender, Liste der Winterangebote | Automatisch beantworten, auch was geschlossen ist |
+| Buchung ändern oder stornieren | Buchungssystem, Ihre Bedingungen | Entwurf zur Prüfung. Über Gebühren entscheidet das Büro |
+| Gruppen, Veranstaltungen, Langzeit, Beschwerden | Nichts, was in eine Tabelle passt | Mit kurzer Zusammenfassung ans Büro geben |
+
+## Verfügbarkeit: Der Kalender antwortet
+
+Die häufigste Frage ist zugleich die, für die KI das falsche Werkzeug ist. Zeigt Ihr Buchungssystem live freie Plätze und nimmt Buchungen an, ist der beste Antwortsatz ein Link, und die Frage verschwindet. Ein Stellplatzfinder im Webformular ist günstiger und weniger störanfällig als jeder Assistent.
+
+Ihren Platz verdient sich ein Assistent bei der unordentlichen Variante: „irgendwelche drei Nächte zwischen dem 20. und 30. Mai“, „das Wochenende nach Pfingsten“ oder eine WhatsApp-Nachricht, die Datum, Fahrzeug und Hund in einem Satz mischt. Er liest den Kalender nur lesend, schlägt bis zu drei Optionen vor und schickt den Buchungslink. Die Reservierung selbst legt Ihr Buchungssystem an, nie das Modell.
+
+## Passt das? Stellplatzregeln als Daten
+
+Die Fahrzeuglänge ist die Zahl, die Gäste nennen, und die falsche, um danach zu entscheiden. Entscheidend ist der Platzbedarf: Fahrzeug, Fahrradträger oder Deichsel, das Zugfahrzeug, falls es auf dem Platz steht, und Vorzelt oder Zelt an der Seite. Eine Länge aus dem Fahrzeugschein lässt all das weg.
+
+Ein Plausibilitätstest: Nach [§ 32 StVZO](https://www.gesetze-im-internet.de/stvzo_2012/__32.html) darf ein Kraftfahrzeug höchstens 12 m lang sein, ein Fahrzeug mit Anhänger höchstens 18 m. Ein angebliches Wohnmobil von 14 m ist ein Tippfehler, und der Assistent soll nachfragen, statt abzugleichen.
+
+Schreiben Sie jeden Stellplatz einmal als Zeile in eine Tabelle. Das sind erfundene Beispieldaten:
+
+| Platz | Max. Länge der Einheit | Max. Breite mit Vorzelt | Strom | Auto auf dem Platz | Hunde | Geöffnet |
+| --- | --- | --- | --- | --- | --- | --- |
+| A12 | 8,0 m | 4,0 m | 16 A | ja | ja | April bis Oktober |
+| B07 | 6,5 m | 3,5 m | 10 A | nein, Parkplatz | ja | April bis Oktober |
+| C03 | 10,0 m | 4,5 m | 16 A | ja | nein | ganzjährig |
+| T14, nur Zelte | entfällt | entfällt | 6 A | nein | ja | Mai bis September |
+
+Dann schreiben Sie die Abgleichregel in einfachen Worten auf, damit jeder im Büro sie lesen und ändern kann:
+
+```text
+Platzbedarf Länge = Fahrzeug + Fahrradträger oder Deichsel + Zugfahrzeug, wenn es auf dem Platz steht
+Platzbedarf Breite = Fahrzeugbreite + Tiefe von Vorzelt oder Zelt an der Seite
+Ein Platz passt, wenn der Platzbedarf innerhalb seiner Grenzen liegt, der Strom
+mindestens der gewünschten Stärke entspricht, Hunde erlaubt sind, wenn Hunde
+mitkommen, der Platz in allen gewünschten Nächten geöffnet und nicht belegt ist.
+```
+
+Auf die Arbeitsteilung kommt es an. Das Modell liest die Nachricht und füllt das Formular aus: Daten, Fahrzeug, Träger, Vorzelt, Hunde, Strom. Fehlendes fragt es in einer freundlichen Nachricht ab: „Gesamtlänge inklusive Fahrradträger, bleibt das Auto auf dem Platz, Vorzelt oder Zelt?“ Der Abgleich ist gewöhnlicher Code oder eine Tabellenformel. Ob 7,4 m auf einen 8-m-Platz passen, würde ich keinem Sprachmodell überlassen. Meist liegt es richtig, gelegentlich ist es überzeugt falsch, und Sie merken es am Schlagbaum.
+
+Dieselbe Form hat die Größenberatung beim Selfstorage, die ich in [Selfstorage: Anfragen und Größenberatung](/de/posts/ki-selfstorage-anfragen) beschreibe: Sprache hinein, Ihre Tabelle in der Mitte, eine geprüfte Antwort heraus.
+
+## Die Stromfrage hat einen Haken
+
+Campingplätze sind oft schwächer abgesichert, als Gäste annehmen. Der Campingausrüster Fritz Berger schreibt in einem Ratgeber, Plätze seien mit [4, 6, 10 oder im besten Fall 16 Ampere abgesichert](https://www.fritz-berger.de/blog/hilfe-beratung/strom-gas/so-funktioniert-die-stromversorgung-am-campingplatz.html), und schon ein Wasserkocher oder Föhn könne die Sicherung auslösen. Wer auf einem 6-A-Platz eine Klimaanlage betreiben will, sitzt wahrscheinlich am ersten Abend im Dunkeln und steht danach im Büro.
+
+Der Assistent nennt deshalb die Ampere des angebotenen Platzes, fragt nach Großverbrauchern und schlägt, wo vorhanden, einen 16-A-Platz vor. Elektrotechnische Ratschläge über Ihre eigenen Formulierungen hinaus gibt er nicht. Erwähnt ein Gast ein medizinisches Gerät, das Strom braucht, ruft eine Person zurück.
+
+## Der einfache Teil: Anreise, Hunde, Öffnungszeiten
+
+Ankunftszeiten, Platzordnung und Öffnungszeiten sind feste Fakten, die ein Assistent gefahrlos nennen kann, solange der Quelltext von Ihnen stammt. Eine zusätzliche Pflicht hat er: Er hält fest, was er erfährt. Die Ankunft um 22 Uhr kommt in die Buchung, damit die Spätschicht weiß, dass sie warten oder das Selbst-Check-in erklären muss. [Hotels](/de/posts/ki-hotel-gaestekommunikation) kennen dasselbe Muster vor der Anreise, und vieles von dort lässt sich übertragen.
+
+Für Fragen zur Nebensaison führen Sie einen Saisonkalender: Öffnungstage, welche Plätze im Winter nutzbar sind, ob das Sanitärgebäude beheizt ist, wann das Wasser wegen Frost abgestellt wird. „Haben Sie im November geöffnet?“ ist nur so gut wie diese Tabelle.
+
+## Von der Nachricht zum bestätigten Platz
+
+<Flow title="Eine Anfrage, vom Postfach bis zur Buchung" caption="Die KI liest und entwirft, Regeln gleichen ab, das Büro entscheidet über Ungewöhnliches. Die Reservierung hält das Buchungssystem, nicht das Modell.">
+<Step title="Anfrage kommt an" who="Gast" time="jeder Kanal">E-Mail, Kontaktformular oder WhatsApp, auf Deutsch, Niederländisch, Englisch oder gemischt.</Step>
+<Step title="Auslesen und nachfragen" who="KI" tone="ai" time="Sekunden">Zieht Daten, Fahrzeug, Träger, Vorzelt, Hunde und Strom heraus und fragt nach, was fehlt.</Step>
+<Step title="Plätze abgleichen" who="System" time="sofort">Ihre Regeln prüfen Platzbedarf, Strom, Hunde, Saison und Kalender.</Step>
+<Step title="Antwort entwerfen" who="KI" tone="ai">Bietet bis zu drei Plätze an, mit aktuellem Preis und Buchungslink.</Step>
+<Step title="Büro prüft" who="Büro" tone="human" time="zweimal täglich">Gibt frei, ändert oder übernimmt. Preisausnahmen, Gruppen und Beschwerden gehen an einen Menschen.</Step>
+<Step title="Gast bucht" who="Buchungssystem" tone="neutral">Die Reservierung wird angelegt. Ankunftszeit und besondere Wünsche werden dabei gespeichert.</Step>
+<Step title="Nachricht vor der Anreise" who="KI" tone="ai" time="2 Tage vorher">Anfahrt, Ablauf des Check-ins, Platzordnung, Link zum Meldeschein, wo nötig.</Step>
+</Flow>
+
+Die menschliche Entscheidung liegt in Schritt 5. Anfangs würde ich nichts zu einem konkreten Platz ungelesen verschicken. Nach einem Monat guter Entwürfe können reine Regelantworten wie Öffnungszeiten direkt rausgehen.
+
+## Was es kostet
+
+Buchungssoftware für Campingplätze wie [igumbi](https://www.igumbi.com/de/fuer/campingplatz-software) oder [direst](https://direst.de) hält Ihre Plätze und den Kalender und nimmt Direktbuchungen an. Portale wie PiNCAMP und camping.info liefern bereits strukturierte Anfragen, der Assistent sitzt also vor den unordentlichen Kanälen: Ihrem Postfach, dem Kontaktformular und WhatsApp. Die Einrichtung ist vor allem Schreibarbeit: Stellplatztabelle, Regeln und etwa 30 Standardantworten, dann zwei bis drei Wochen im Schattenbetrieb, in denen die KI Entwürfe schreibt und das Büro sie mit dem vergleicht, was es selbst geschrieben hätte.
+
+<Calc title="Überschlag: eine volle Saison" caption="Annahmen, keine Messwerte. Ersetzen Sie sie durch Ihre eigenen Zählungen und Personalkosten." rows={[
+  ["Anfragen pro Woche in der Saison", "60"],
+  ["Minuten, um eine heute zu recherchieren und zu beantworten", "× 7"],
+  ["Anteil, den der Assistent beantwortet oder entwirft", "× 70 %"],
+  ["Wochen mit Hochbetrieb pro Jahr", "× 26"],
+  ["Freigesetzte Bürostunden pro Saison", "≈ 127 Std."],
+  ["Personalkosten pro Stunde", "× 25 €"],
+  ["Laufende Kosten des Assistenten, 150 € im Monat für 7 Monate", "− 1.050 €"]
+]} result={["Nettoersparnis pro Saison", "≈ 2.100 €"]} />
+
+Wenn Ihnen die Zahl klein vorkommt, stimmt das. Ich würde das Projekt nicht als Kostensenkung verkaufen, sondern als den Unterschied zwischen einer Antwort in zehn Minuten und einer am nächsten Nachmittag, wenn der Gast längst woanders gebucht hat.
+
+## Rechtliches rund ums Campingplatz-Postfach
+
+**Kein Widerrufsrecht.** Nach [§ 312g Abs. 2 Nr. 9 BGB](https://www.gesetze-im-internet.de/bgb/__312g.html) haben Verbraucher bei Verträgen über Beherbergung zu anderen als Wohnzwecken mit festem Termin oder Zeitraum kein gesetzliches Widerrufsrecht. Es gelten Ihre Stornobedingungen. Der Assistent nennt sie und verzichtet nie auf eine Gebühr.
+
+**Meldeschein.** Seit 2025 müssen nur noch ausländische Gäste einen Meldeschein ausfüllen, bei Ankunft handschriftlich unterschrieben oder elektronisch bestätigt, wie es das Gesetz vorsieht. Campingplätze sind erfasst ([§ 29 BMG](https://www.gesetze-im-internet.de/bmg/__29.html)). Meldescheine bewahren Sie ein Jahr ab dem Abreisetag auf und vernichten sie innerhalb von drei Monaten danach ([§ 30 BMG](https://www.gesetze-im-internet.de/bmg/__30.html)). Fragen Sie Passnummern nicht per E-Mail oder Chat ab, und halten Sie sie vom Assistenten fern.
+
+**Personenbezogene Daten.** Nutzen Sie einen Anbieter, der einen Auftragsverarbeitungsvertrag nach [Art. 28 DSGVO](https://dsgvo-gesetz.de/art-28-dsgvo/) abschließt und in der EU hostet, keinen kostenlosen Verbraucher-Chatbot. Wer „Rollstuhl“ oder „Sauerstoffkonzentrator“ schreibt, teilt Gesundheitsdaten mit, eine besondere Kategorie nach [Art. 9 DSGVO](https://dsgvo-gesetz.de/art-9-dsgvo/). Speichern Sie den Bedarf („ebener Platz, 16 A“), nicht die Geschichte dahinter.
+
+**Als KI kenntlich machen.** Ein Chatfenster, das Gästen antwortet, ohne dass vorher jemand mitliest, muss sich als KI zu erkennen geben. [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) gilt seit dem 2. August 2026. Entwürfe, die Ihre Mitarbeitenden lesen und unter eigenem Namen verschicken, sind nach meinem Verständnis ein anderer Fall, aber ich würde das Werkzeug trotzdem in der Datenschutzerklärung nennen.
+
+## Wann ein besseres Formular reicht
+
+Ein Familienplatz mit 40 Stellplätzen und gutem Buchungswidget braucht vielleicht gar keinen Assistenten. Ein Formular, das fünf Fragen vorab stellt (Zeitraum, Gesamtlänge, Vorzelt oder Zelt, Strom, Hunde) und nur passende Plätze zeigt, erledigt das meiste. Dazu eine FAQ-Seite, eine Antwort per E-Mail, die darauf verlinkt, und ein Saisonkalender, und die häufigsten Fragen sind gratis abgedeckt.
+
+KI lohnt sich, wenn Nachrichten über mehrere Kanäle und in mehreren Sprachen kommen, mit Daten in Fließtext. Verliert das Büro weniger als fünf Stunden pro Woche an Wiederholungsfragen, bleiben Sie beim Formular.
+
+## Fragen von Platzbetreibern
+
+### Kann ein KI-Chatbot Buchungen für meinen Campingplatz annehmen?
+
+Er kann die Angaben sammeln und Plätze vorschlagen. Die Reservierung sollte Ihr Buchungssystem anlegen, nach festen Regeln wie einer Buchung pro Platz und Nacht. Wenn ein Modell direkt in den Kalender schreibt, entstehen Doppelbuchungen.
+
+### Was, wenn Gäste ihre Fahrzeuglänge nicht kennen?
+
+Fragen Sie nach dem Modellnamen oder dem Vermieter, schlagen Sie die Maße in Ihrer Tabelle nach und rechnen Sie einen Puffer ein. Das tatsächliche Fahrzeug prüft weiterhin Ihr Team am Schlagbaum.
+
+### Beantwortet die KI auch niederländische oder englische Anfragen?
+
+Aktuelle Sprachmodelle können das gut, und es ist wichtig: Gäste aus dem Ausland verbrachten allein im Schwarzwald 2025 laut derselben Destatis-Mitteilung 735.000 Nächte auf Campingplätzen. Halten Sie Ihre Regeln in einer Sprache, und lassen Sie alles prüfen, was Ihre Bedingungen berührt, denn der Rechtstext ist der deutsche.
+
+## So würde ich anfangen
+
+Zählen Sie eine Saison Nachrichten aus, legen Sie jeden Stellplatz in eine Tabelle und lassen Sie Code abgleichen. Automatisieren Sie zuerst Verfügbarkeitslinks, Anreise und Platzordnung, lassen Sie die Antworten zur Passung entwerfen und von einem Menschen freigeben, und geben Sie Gruppen, Beschwerden und Gesundheitsangaben direkt ans Büro.
+
+Wenn Ihr Postfach so aussieht wie dieser Montag im März, [schreiben Sie mir, welches Buchungssystem Sie nutzen und wie viele Stellplätze Sie haben](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Test wert ist. Gruppenanfragen sind ein eigenes Problem, und [Stadtführer kennen es](/de/posts/ki-stadtfuehrungen-gruppenbuchungen) von „23 Leuten, irgendwann im Mai“.

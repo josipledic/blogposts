@@ -1,0 +1,177 @@
+---
+id: "ai-for-wedding-planners-vendor-coordination"
+title: "Wedding Planners: One Source of Truth for Twelve Vendors"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Hospitality & events", "Wedding planners", "Vendor coordination", "AI for small business"]
+description: "The ceremony moves by 30 minutes and half the vendors keep the old time. How a planner can keep one master sheet and let AI draft the briefs and run sheet."
+excerpt: "The ceremony moves by 30 minutes and half the vendors keep the old time. How a planner can keep one master sheet and let AI draft the briefs and run sheet."
+---
+
+It's Tuesday evening, four days before the wedding, and the officiant's office moves the ceremony from 15:00 to 15:30. The planner sends the new time to the caterer, the photographer, the DJ and the shuttle company.
+
+The caterer confirms. The photographer replies "perfect, see you at 14:00", the old arrival time, and nobody notices. The DJ sends a thumbs-up on WhatsApp. The shuttle company, which got the schedule as a PDF three weeks ago, says nothing.
+
+On Saturday the shuttle collects the first guests for a 15:00 ceremony, the kitchen plates dinner for 18:00 instead of 18:30, and the planner spends the afternoon on the phone. Nobody was careless. Every vendor did something reasonable with the message they happened to read. The schedule simply lives in twelve places, and only the planner knows which copy is current.
+
+That's the problem I'd use AI for in a wedding planning business. Not to plan the wedding, but to keep one version of the facts and generate everything else from it. In software we call this a single source of truth, and most of the bugs it prevents look exactly like that Saturday.
+
+## A wedding is a small supply chain
+
+<Stats title="What a wedding asks of the person in the middle">
+  <Stat value="13" label="wedding professionals the average US couple hires, for an average of 117 guests" source="The Knot Worldwide, 2026 Real Weddings Study (10,000+ couples married in 2025)" href="https://www.theknotww.com/press-releases/the-knot-worldwide-unveils-2026-real-weddings-study" />
+  <Stat value="$34,000" label="average spend per wedding in the same study" source="The Knot Worldwide, 2026 Real Weddings Study" href="https://www.theknotww.com/press-releases/the-knot-worldwide-unveils-2026-real-weddings-study" />
+  <Stat value="52%" label="of couples say responsiveness is key to building trust with a wedding professional" source="The Knot Worldwide, 2026 Real Weddings Study" href="https://www.theknotww.com/press-releases/the-knot-worldwide-unveils-2026-real-weddings-study" />
+</Stats>
+
+Thirteen professionals, hired at different times, each with their own contract and habits. The planner is the only one who sees how a change ripples through the others. A later ceremony moves the cocktail hour, which moves dinner, which moves the shuttle, the cake cutting and the DJ's first set. Holding that picture is a large part of what couples pay for.
+
+The inbox isn't about to get quieter. The Knot's survey also found that [36% of engaged couples now use AI](https://www.theknotww.com/press-releases/the-knot-worldwide-unveils-2026-real-weddings-study), nearly double the previous year, and drafting communications is one of the things they use it for. That's one company's survey of US couples, so read it as a direction, not a measurement for your market. Expect more messages, faster, with more changes in them. The planner's side has to be at least as organised.
+
+## Where the truth leaks today
+
+Most planners already keep a master document: a spreadsheet, a Notion page, a timeline in Word. The trouble is the gap between it and what vendors actually said. It leaks in five places.
+
+**Changes agreed in a thread, not in the document.** "Could we start setup at 12:00 instead of 13:00?" "Sure." The sheet still says 13:00.
+
+**Terms buried in contracts nobody re-reads.** Coverage hours, overtime rates, balance due dates, cancellation terms, the vendor meal.
+
+**Replies that confirm the wrong version.** "Got it" in response to a message with two attachments, one of them outdated.
+
+**Lists that drift.** Meal choices and allergies sit in the RSVP tool, in the caterer's spreadsheet and in a message from the bride's mother.
+
+**Knowledge in one head.** The assistant planner knows about the new time. The lead doesn't.
+
+A leak costs minutes when it's found on Tuesday and a lot more on Saturday. And the checking is itself the time sink: rereading threads, comparing PDFs, asking "did you get the latest schedule?" for the third time.
+
+## The blueprint: one sheet, every fact with a source
+
+Here's the setup I'd build. It has three parts: a master sheet, an assistant that reads incoming messages and proposes changes to it, and generated documents (vendor briefs and the run sheet) that nobody edits by hand.
+
+| What the sheet holds | Where the assistant finds it | Who confirms it |
+| --- | --- | --- |
+| Arrival, setup and teardown time per vendor | Vendor emails, venue access rules | The vendor, in writing, against the current version |
+| Service hours and overtime terms | Contract PDFs | The planner reads the clause |
+| Deposits and balance due dates | Contracts and invoices | Planner and couple |
+| Day-of contact: name and mobile | Email signatures, forms | The vendor |
+| Guest counts per meal, dietary and allergy needs | RSVP export, the couple's messages | The couple, then the caterer |
+| Venue constraints: power, noise limit, access, insurance certificates | Venue contract and house rules | The venue manager |
+| Open questions | All of the above | The planner |
+
+Two rules make this trustworthy. First, every value stores the sentence it came from and the message that contained it, so "why does it say 13:00?" takes ten seconds to answer. Second, the assistant can only propose. A value moves to "confirmed" when the vendor has confirmed the current version, and a person checks that.
+
+## What happens when the ceremony moves
+
+<Flow title="From one changed time to twelve consistent vendors" caption="The assistant reads, compares and drafts. The planner decides what changes and sends every brief.">
+<Step title="Change arrives" who="Vendor or couple" time="Tue 18:12">The officiant's office moves the ceremony to 15:30. It comes by email, by WhatsApp or by phone, in which case the planner notes it.</Step>
+<Step title="Extract the proposed change" who="AI" tone="ai" time="minutes">The assistant quotes the sentence, matches it to the sheet and lists everything that depends on it: cocktail hour, dinner, shuttle, music cues, photo schedule.</Step>
+<Step title="Approve, adjust or reject" who="Planner" tone="human">The planner checks the quote and the knock-on changes, corrects them where local knowledge says otherwise, and approves. Nothing in the sheet changes before this point.</Step>
+<Step title="Update and regenerate" who="AI" tone="ai" time="minutes">The sheet updates. The run sheet and each affected vendor brief are redrafted, with changed lines marked.</Step>
+<Step title="Send and collect confirmations" who="Planner" tone="human" time="same evening">Each brief goes out from the planner's own address and asks for a reply that names the version.</Step>
+<Step title="Chase the gaps" who="AI" tone="ai" time="next morning">The assistant lists vendors who haven't confirmed the current version, with a draft reminder for each. The planner sends or calls.</Step>
+</Flow>
+
+Reading "could we push everything back half an hour?" and finding the five things that move with it is something current language models do well. Not perfectly, which is why every extraction shows its quote. The approval step is where your experience comes in. You may know that this officiant always overruns, or that the venue's noise curfew makes a later dinner awkward. The model doesn't.
+
+## What a vendor receives
+
+Each vendor gets only their own lines, plus the lines that touch them. The photographer doesn't need the dietary counts and the caterer doesn't need the first-dance song. Shorter documents get read.
+
+```text
+DJ BRIEF, version 7, updated Tue 19:05 (changed lines marked >)
+Wedding: Keller and Okafor, Sat 12 Sept, Eichenhof barn
+> 15:30  Ceremony (was 15:00). Processional cue at 15:28.
+> 16:30  Cocktail hour (was 16:00). Background playlist only.
+> 18:30  Dinner (was 18:00). No music until the speeches.
+20:15  First dance, then open floor
+Setup: 15:00 to 16:30 in the barn, power at the stage wall.
+Day-of contact: Lena (planner), 0151 555 0114
+Please reply "confirmed v7".
+```
+
+That last line does a lot of work. A reply that says "confirmed v7" lets the assistant match it to the right version automatically. "OK thx" forces someone to guess what it was about. The same logic applies to every supplier on the list, including [the florist](/posts/ai-for-florists-wedding-briefs), whose consultation brief is one of the inputs to your sheet.
+
+## Contracts: dates and terms, not legal advice
+
+The second job is reading what was signed. Twelve contracts come in twelve layouts. A model can pull out coverage hours, overtime rates, deposit and balance dates, cancellation terms and what the vendor needs from the venue, and write each into the sheet with a page reference.
+
+What it can't do is tell you whether a clause holds up or what happens if the DJ cancels in July. That's a question for a lawyer. Scanned contracts also trip up text extraction, so every number needs its page reference and a human glance. A wrong balance date costs real money.
+
+## Guest data: allergies are health data
+
+Dietary lists need more care than anything else in the sheet. Under the GDPR, [data concerning health](https://gdpr-info.eu/art-9-gdpr/) belongs to the special categories of personal data, which may only be processed under narrow conditions such as explicit consent. The same article covers data revealing religious beliefs, so a halal or kosher request can fall under it too. If you work in the EU, this applies to the guest data you handle.
+
+In practice:
+
+- **Collect it properly.** Ask for dietary and allergy information in the RSVP form with explicit consent, and say who will see it: the planner and the caterer.
+- **Share the minimum.** The caterer needs counts per diet and, for allergies, which guest sits where. The photographer, the DJ and the shuttle company need none of it.
+- **Choose the tool carefully.** Don't paste RSVP exports into a free consumer chat account. Use a tool where you have a data processing agreement, which [Article 28 GDPR](https://gdpr-info.eu/art-28-gdpr/) requires for any processor, and where your inputs aren't used for training.
+- **Delete after the wedding.** Guest lists are no use to you once the day has passed.
+- **Settle responsibilities in your contract.** Agree with the couple in writing who is responsible for which guest data.
+
+The allergy question itself belongs to the caterer. EU food law requires [allergen information](https://food.ec.europa.eu/food-safety/labelling-and-nutrition/food-information-consumers-legislation/mandatory-food-information_en) for food sold without prepackaging, such as a caterer's dinner. Your job is to get each guest's information to the kitchen accurately and early. The assistant must never tell anyone a dish is safe. That answer comes from the caterer, in writing. If you'd like to see the caterer's side of the same hand-off, I wrote about [catering inquiries](/posts/ai-for-catering-inquiries).
+
+## From signing to Saturday
+
+<Timeline title="How the sheet runs from contract to wedding day">
+<Phase when="8 weeks out" title="Build the sheet from the contracts">Contracts are read once. Deposits and balance dates go into a payment calendar and every vendor gets a first brief.</Phase>
+<Phase when="4 weeks out" title="Confirm everything once">Each vendor confirms their brief version in writing. Conflicts between vendors, such as two deliveries at one door at 14:00, show up now rather than on the day.</Phase>
+<Phase when="2 weeks out" title="Lock the numbers">Final headcount, meal choices and the allergy list go to the caterer. Run sheet version 1 goes to everyone.</Phase>
+<Phase when="Final week" title="Expect changes">Every change goes through the approve-and-regenerate loop. Unconfirmed vendors are chased daily.</Phase>
+<Phase when="Day before" title="Freeze">Final briefs go out, the planner prints the run sheet and the sheet stops changing.</Phase>
+<Phase when="Wedding day" title="People only">Changes are made by phone and on site. The sheet is updated afterwards.</Phase>
+</Timeline>
+
+I'd keep AI out of the wedding day itself. On Saturday the planner is standing on a lawn with a phone, and what's needed is judgement and a calm voice, not a chat window.
+
+## What it costs
+
+This is the calculation I'd run with a planner before building anything.
+
+<Calc title="Napkin math: coordination time per year" caption="Assumptions, not measurements. Track the real coordination time of one wedding first; yours will differ." rows={[
+  ["Coordination admin per wedding (threads, rechecking, briefs)", "30 h"],
+  ["Share the assistant takes over", "× 35%"],
+  ["Hours saved per wedding", "≈ 10.5 h"],
+  ["Weddings per year", "× 20"],
+  ["Hours saved per year", "≈ 210 h"],
+  ["Value of one planner hour", "× €50"]
+]} result={["Time worth about", "≈ €10,500 per year"]} />
+
+On the cost side, these are my rough estimates, not a quote. A business plan for a general AI assistant is a double-digit euro amount per user and month. A custom assistant wired into your mailbox and master sheet is a small project of days rather than months, and model usage is a minor line item next to the hours above. The expensive part is your own time on the first two weddings, when you check every extraction.
+
+## When a template beats AI
+
+Honestly, a lot of this works without AI.
+
+- **A handful of weddings a year.** A disciplined sheet, version numbers on every document and the "reply with confirmed v7" habit get you most of the way.
+- **Vendors who mostly call.** There's nothing to read. The fix is a habit: log every call in the sheet the same day.
+- **Planning software that already does it.** If you use Aisle Planner, HoneyBook or Planning Pod, their timelines and vendor portals can serve as your sheet. Add AI only for reading the inbox and drafting the briefs.
+- **Wedding day changes.** Phone calls, not software.
+
+AI starts to pay when you run several weddings in parallel, when the threads are long and the vendors many, and when a stale PDF has already burned you once.
+
+## Questions wedding planners ask
+
+### Can AI read my vendor contracts and tell me what I owe and when?
+
+It can pull out deposit and balance dates, coverage hours, overtime rates and cancellation terms, and show where each came from. It can't judge whether a clause is enforceable, and scanned PDFs need a human check. Treat the result as a first pass, not legal advice.
+
+### Can I put guest allergy lists into an AI tool?
+
+Only with care. Allergies are health data under the GDPR, so you need explicit consent from the guest and a tool covered by a data processing agreement. Share only what each vendor needs, and delete the lists after the wedding. The caterer, not the AI, decides what's safe to serve.
+
+### Will vendors reply to briefs that AI drafted?
+
+They reply to briefs that are short, accurate and clearly from you. Vendors don't care how a brief was drafted, only that it's the latest version and the times are right. You send it, from your address, in your voice.
+
+### What about vendors who only use WhatsApp?
+
+Pick one channel for confirmed changes and move decisions into it. A quick message such as "Confirming by email as well, here's v7" works. Anything agreed on WhatsApp or by phone still goes into the sheet the same day, with the sentence that was said.
+
+## Where I'd start
+
+If a time or a number lives in two places, one of them will be wrong by Saturday. Write it in one place, generate everything else from it, and make the vendor's "confirmed" name the version.
+
+Start with one upcoming wedding. Run the assistant next to your normal process in read-only mode for a few weeks and compare what it extracts with what you did. Only when it matches should it start drafting briefs.
+
+If you want to try this, [tell me how you track vendors and changes today](/contact?intent=improve), and I'll suggest the smallest version worth testing. The same single-source idea helps venues too, [from the first inquiry onwards](/posts/ai-for-event-venues-inquiries).

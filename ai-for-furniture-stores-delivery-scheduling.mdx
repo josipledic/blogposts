@@ -1,0 +1,153 @@
+---
+id: "ai-for-furniture-stores-delivery-scheduling"
+title: "Furniture Deliveries: Answer 'Where Is My Sofa?' Before They Ask"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Retail & wholesale", "Furniture stores", "Delivery scheduling", "AI for small business"]
+description: "Furniture takes weeks to arrive and customers keep calling. How AI reads supplier confirmations, flags date changes and lets staff tell customers first."
+excerpt: "Furniture takes weeks to arrive and customers keep calling. How AI reads supplier confirmations, flags date changes and lets staff tell customers first."
+---
+
+Picture a furniture store with six people on the floor and two delivery crews. In March a couple orders a corner sofa and a sideboard. The salesperson writes "delivery around week 20" on the contract. It's now the second week of May, and the phone rings in the middle of a kitchen consultation.
+
+The salesperson puts the caller on hold, opens the order, and finds nothing new. What she can't see is a PDF in the purchasing mailbox: the manufacturer confirmed the sofa weeks ago, for week 23. Nobody told the couple, because nobody connected the PDF to the order. They have been waiting for a call that no one knew they were waiting for.
+
+Nobody lied. A date changed in a document that never reached the person who needed it. That's the narrow job I'd give AI in a furniture store: read what suppliers send, compare it with what the customer was promised, and make sure the customer hears first. A person still decides every date that changes.
+
+## The numbers behind the waiting
+
+<Stats title="Why furniture is a waiting business">
+  <Stat value="€25.4bn" label="German furniture retail sales in 2025 (excluding appliances), down from €25.7bn" source="IFH Köln, via MÖBELMARKT" href="https://www.moebelmarkt.de/beitrag/deutscher-m%C3%B6belhandel-2025-verzeichnet-leichten-umsatzr%C3%BCckgang" />
+  <Stat value="6 to 8 weeks" label="usual delivery time for a made-to-measure kitchen, stretching to 10 or 12 weeks around manufacturers' summer shutdowns" source="kueche.de, a kitchen planning portal" href="https://kueche.de/kuechenwissen/kuechenkauf/lieferzeit-kueche" />
+  <Stat value="30 days" label="latest delivery under German consumer sales law when no time was agreed or can be inferred (§ 475 BGB)" source="Gesetze im Internet" href="https://www.gesetze-im-internet.de/bgb/__475.html" />
+</Stats>
+
+I'm using Germany because it's the market where I can point at good data, but the pattern is the same everywhere. A store sells today and delivers weeks later, and in the gap sit a manufacturer's production plan, a freight carrier, your warehouse and your fitting team. Any of them can move the date.
+
+For customers, the wait is long enough to be stressful. The Verbraucherzentrale Hamburg, a consumer advice centre, describes delivery times for furniture and kitchens as often lasting several months, and for that reason [advises customers to refuse deposits](https://www.vzhh.de/themen/einkauf-reise-freizeit/einkauf-online-shopping/aerger-beim-kauf-von-moebeln-kuechen-das-koennen-sie-tun): a deposit is an interest-free loan to the seller, and it's lost if the seller goes insolvent.
+
+## Where the status calls come from
+
+Walk through one order and count the reasons to call:
+
+- "Is it still coming in week 20?" (the most common one, and the one you can answer before it's asked)
+- "Can we move delivery by a week? The old flat isn't empty until the first."
+- "Which day exactly? I need to take time off work."
+- "Is the fitter coming with it, or do we assemble it ourselves?"
+- "One box is missing" or "the leg is scratched" (the day after)
+
+The answers exist, but in five places: the contract (the date you promised), the supplier's confirmation (the date they promised you), the supplier portal, a field in your merchandise system, and the warehouse. Nobody sees them side by side. So a salesperson spends six minutes finding out what one of those places says, then calls back.
+
+<Calc title="What status contacts cost in staff time" caption="Assumptions for a store with two delivery crews, not measurements. Tally your own calls, emails and walk-ins for two weeks and replace these numbers." rows={[
+  ["Deliveries per week", "40"],
+  ["Status contacts per order (calls, emails, walk-ins)", "× 2.5"],
+  ["Minutes per contact (find the order, check the supplier, call back)", "× 6"],
+  ["Staff hours per week", "= 10"],
+  ["Working weeks per year", "× 46"],
+  ["Loaded cost per staff hour", "× €30"]
+]} result={["Staff time spent on status questions per year", "≈ €13,800"]} />
+
+That number is the small one. Every ring also interrupts a consultation with someone who's about to spend thousands on a kitchen. And a crew that arrives at a building where nobody is home wastes half a day. Assume €300 for two people and a truck, and one failed delivery a week: roughly another €14,000 a year.
+
+## Reading the supplier confirmation
+
+The supplier's order confirmation (in the German trade, the Auftragsbestätigung or AB) is the document that matters most and gets the least attention. It lists what the manufacturer will actually build, in which fabric and size, and in which week it will ship. It arrives as a PDF, an email, a portal download or, for larger suppliers, an EDI file. Every supplier formats it differently.
+
+Two jobs follow from it:
+
+1. **Compare the date.** The confirmed week against the week the customer was told.
+2. **Compare the order.** Fabric, colour, width, number of pieces against what was sold.
+
+The second job is easy to underrate. A wrong tabletop dimension caught at the confirmation stage costs one email. Caught on the delivery truck, it costs a return, a second production run and an angry customer. The document-management vendor [PROXESS](https://www.proxess.de/dokumentenmanagement-im-moebel-und-kuechenhandel-ganz-ohne-schubladendenken-oder-inselloesungen/), which sells to furniture stores and kitchen studios, makes the same point on its own site: small errors in dimensions or order numbers can endanger a whole project.
+
+Reading a PDF in ten different layouts and matching it to the right sales order is messy-document work a language model handles well, much like [order entry for wholesalers](/posts/ai-for-wholesale-order-entry). Here's the flow I'd build.
+
+<Flow title="From supplier PDF to a customer who already knows" caption="The AI reads, matches and drafts. A person decides whenever a date moves or an item differs.">
+<Step title="Supplier confirmation arrives" who="Supplier" time="any day">A PDF in the purchasing mailbox, an email, a portal download or an EDI file, with the confirmed delivery week.</Step>
+<Step title="Read and match" who="AI" tone="ai" time="seconds">Extracts order reference, items, sizes, fabrics and confirmed week, and matches them to the sales order. Anything it can't match with confidence goes to a person.</Step>
+<Step title="Compare with the promise" who="AI" tone="ai">Checks the confirmed week against the date the customer was told, and the items against the order: wrong fabric, wrong width, missing piece.</Step>
+<Step title="Decide what happens" who="Sales or purchasing" tone="human" time="same day">On track: carry on. Date slips or item differs: a person decides whether to correct the order with the supplier, call the customer or offer an alternative.</Step>
+<Step title="Tell the customer" who="Staff" tone="human">The assistant drafts the message with the new week, the reason if known and the next step. Staff review and send. Plain 'confirmed as promised' notes go out from a fixed template.</Step>
+<Step title="Goods arrive, propose slots" who="AI" tone="ai">When goods are checked in, it proposes two or three delivery windows from crew calendars, piece weight, fitting time and access notes such as floor, lift and parking.</Step>
+<Step title="Dispatcher confirms" who="Dispatcher" tone="human">The dispatcher picks the slot. The customer gets a time window and a link to reschedule, plus a reminder the day before.</Step>
+</Flow>
+
+Three rules keep it honest. **The assistant never invents a date.** It passes on a week that appears on a supplier document or a slot the dispatcher has set. **It never promises more than the document says**, so "the manufacturer has confirmed week 23" doesn't turn into "your sofa will arrive on Tuesday". And **it never offers concessions**, such as a discount or a loan sofa. Those are staff decisions.
+
+## One order, eight weeks, six messages
+
+Here's what the customer hears over one order if the system works. The timings are an illustration, not a benchmark.
+
+<Timeline title="The life of a sofa order">
+<Phase when="Day 0" title="Sale">The contract names a delivery week, not 'about eight weeks'. The customer gets a confirmation that repeats it.</Phase>
+<Phase when="Week 1" title="Supplier confirms">The AB arrives and is compared with the promise. A match triggers 'confirmed by the manufacturer'. A mismatch goes to staff before anyone is told. No AB yet? A chase email to the supplier.</Phase>
+<Phase when="Weeks 2 to 5" title="Production">Silence is the risk here. One short note around the halfway point ('still confirmed for week 20, nothing needed from you') is true as long as nothing has changed.</Phase>
+<Phase when="Week 6" title="Goods check-in">Goods arrive at the warehouse and are checked against the order. Damage or missing pieces are reported to the supplier now, not at the customer's door.</Phase>
+<Phase when="Week 7" title="Slot booked">The customer picks a delivery window, or the dispatcher calls those who prefer the phone.</Phase>
+<Phase when="Week 8" title="Delivery">A reminder the day before with the time window. The next day, a short message asking whether everything arrived complete and undamaged.</Phase>
+</Timeline>
+
+## The date you promised is a legal fact
+
+Delivery dates are not only a courtesy. In Germany, the Verbraucherzentrale [tells customers](https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/moebelkauf-das-koennen-sie-tun-wenn-sich-die-lieferung-verzoegert-5427) to get a fixed date, such as a calendar week, written into the contract. According to its guidance, a retailer who misses a fixed date is in default without a reminder. If only a vague period was agreed, the customer first has to send a reminder, then set a reasonable extension, and can withdraw only if that is missed too. Where no time was agreed at all, § 475 BGB (linked above) requires delivery without delay and no later than 30 days after the contract.
+
+The UK is similar. Under [section 28 of the Consumer Rights Act 2015](https://www.legislation.gov.uk/ukpga/2015/15/section/28), unless a time or period was agreed, delivery is due without undue delay and within 30 days. If the agreed time was essential, the consumer can treat the contract as ended. Otherwise they can set a further reasonable period. In the US, the FTC's [rule for mail, internet and telephone orders](https://www.ftc.gov/business-guidance/resources/business-guide-ftcs-mail-internet-or-telephone-order-merchandise-rule) says that if you can't ship by the promised date, or within 30 days if none was stated, you must ask the customer to consent to the delay.
+
+Three practical consequences follow:
+
+- The date on your contract and the date on the supplier's confirmation are two different things. The gap between them is where the trouble starts.
+- A message that moves a date has consequences, so a person approves it.
+- The assistant never says "delayed because of X" unless the supplier document says so.
+
+I'm not a lawyer, and the details depend on your contract wording. Have your delivery clauses checked once before you automate anything around them.
+
+## Cheaper fixes first
+
+Before any AI, look at what you already have.
+
+| Situation | Simplest fix | AI needed? |
+| --- | --- | --- |
+| Suppliers offer EDI or a portal feed | Import confirmations straight into your system | No |
+| Your merchandise system has confirmation checks and date monitoring | Switch them on and add status messages from templates | Probably not |
+| Fewer than about 30 open orders | One person, one weekly review of confirmations | No |
+| Confirmations arrive as PDFs and emails in many layouts | Read and match with AI, human checks the exceptions | Yes |
+| Customers want to choose or move their slot | A booking link with time windows | No, a scheduling tool |
+| Route planning for the crews | Routing features in your software | No, a language model is the wrong tool |
+
+Furniture trade software often covers more than you'd expect. WinMAX, an ERP for the furniture and kitchen trade, [lists](https://www.clasen-online.de/) order confirmation control, appointment monitoring and tour planning among its features. PROXESS says its document reader uses AI to check supplier confirmations and assign them to the order in the merchandise system. That's a vendor claim, but the lesson stands: ask your software provider what they already offer before you build anything.
+
+## What it costs
+
+My estimates, not quotes. The AI processing is the small part: reading a few hundred supplier PDFs a month should cost single or double-digit euros in model fees. A first version that reads a shared mailbox, handles the layouts of your two or three biggest suppliers and writes into a spreadsheet takes days to build, plus a few weeks of testing on real documents. Connecting it to your merchandise system depends on the interface the vendor offers: some have an import, others only an export.
+
+The recurring cost is human: someone reviews the exceptions. Ten minutes a day is a good trade for ten hours a week of status calls. Two hours a day means the supplier layouts are too messy, and the fix is on the supplier side.
+
+## Data protection
+
+Supplier confirmations are mostly business data, but the reference line often carries the customer's name, and delivery details carry address, floor, phone number and sometimes remarks like "key with the neighbour" or "only home after 6 pm". All of that is personal data.
+
+Sending it to an AI service means that service is a processor. Under the GDPR (and UK GDPR) you need a data processing agreement under [Article 28](https://gdpr-info.eu/art-28-gdpr/), clarity on where the data is processed, and a guarantee that it isn't used to train models. Keeping customers informed about their own order falls under performing the contract, [Article 6(1)(b)](https://gdpr-info.eu/art-6-gdpr/). Send only what each step needs: the model doesn't need the phone number to read a confirmation.
+
+Keep status messages free of advertising. In Germany, § 7 of the unfair competition act ([UWG](https://www.gesetze-im-internet.de/uwg_2004/__7.html)) ties advertising by email to the recipient's consent (with narrow exceptions), and a delivery notice that also promotes the matching coffee table invites trouble. Outside the EU, check your local rules on messaging customers before you switch on SMS.
+
+## Questions furniture store owners ask
+
+### Can AI tell customers when their furniture will arrive?
+
+Only by passing on a date that a supplier document or your dispatcher has set. It can't know the date, and it shouldn't guess. Its value is that it reads the confirmation the day it arrives and flags the order, not that it predicts anything.
+
+### What if the supplier keeps moving the date?
+
+Then the most useful output is the pattern, not the individual message. Count how often each supplier's confirmed week slips, and by how much. That list is better ammunition for a talk with the supplier, or for deciding which range to keep selling, than any complaint call.
+
+### Do I need AI if my software already checks order confirmations?
+
+Probably not. If confirmations arrive as data and your system compares dates and sends messages, use that. AI earns its place when the input is a pile of PDFs and emails in different layouts and your staff retype or eyeball them.
+
+## Where I'd start
+
+Count first. For two weeks, put a tally sheet next to the phones: every call, email or walk-in about the status of an order, and how long it took. Then take the supplier who generates the most orders, run their last 20 confirmations through a model, and compare its reading with what your staff would have found. If it matches, switch on drafts with a person approving each one.
+
+My rule of thumb: a customer should never have to ask for a date you already hold, and never be given one you don't.
+
+If you'd like to try this on your own orders, [tell me which software and which suppliers you work with](/contact?intent=improve), and I'll suggest the smallest version worth testing. Kitchen studios have the same problem with more at stake: the [planning brief](/posts/ai-for-kitchen-studios-planning-briefs) is where a delivery date starts, and the [pre-sale questions](/posts/ai-for-ecommerce-support) that arrive by chat and email are where the next order comes from.

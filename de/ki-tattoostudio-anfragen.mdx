@@ -1,0 +1,182 @@
+---
+id: "ki-tattoostudio-anfragen"
+translationOf: "ai-for-tattoo-studios-consultations"
+title: "Tattoostudio: Anfragen mit Größe, Stelle, Budget und Anzahlung"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Persönliche Dienstleistungen", "Tattoostudios", "Anfragen und Anzahlungen", "KI für kleine Unternehmen"]
+description: "„Was kostet ein kleines?“ Instagram-DMs fressen die Woche von Tätowierern. Wie ein KI-Assistent Größe, Stelle, Budget und Anzahlung klärt, und Sie entscheiden."
+excerpt: "„Was kostet ein kleines?“ Instagram-DMs fressen die Woche von Tätowierern. Wie ein KI-Assistent Größe, Stelle, Budget und Anzahlung klärt, und Sie entscheiden."
+---
+
+Stellen Sie sich das Handy einer Tätowiererin an einem Montagmorgen vor. Über Nacht sind elf neue Instagram-Nachrichten eingegangen. Drei lauten komplett: „Was kostet ein kleines?“ Eine besteht aus dem Screenshot eines fremden Tattoos, sonst nichts. Eine fragt nach Samstag. Und eine stammt, wie nach der dritten Rückfrage herauskommt, von einer 17-Jährigen.
+
+Unhöflich oder ungewöhnlich ist davon nichts. Ein Tattoo ist ein individueller Auftrag, der nach Größe, Stelle, Detailgrad und Zeit kalkuliert wird, und das weiß vorher niemand, der fragt. Also führt die Frau, die mit der Nadel ihr Geld verdient, einen Teil des Tages ein Interview per Textnachricht, eine Frage pro Stunde, verteilt auf Instagram, WhatsApp und E-Mail.
+
+Dieses Interview ist ein guter Job für einen KI-Assistenten, mit einer harten Grenze: Er fragt und erklärt, und die Tätowiererin entscheidet.
+
+## Wer Ihnen schreibt
+
+<Stats title="Wer anfragt, und wie lange Sie Zeit zum Antworten haben">
+  <Stat value="1 von 5" label="Deutschen war in einer bundesweiten Befragung der Universität Leipzig tätowiert (2.510 Personen, Herbst 2016); bei den Frauen von 25 bis 34 etwa die Hälfte" source="Universität Leipzig" href="https://www.uni-leipzig.de/newsdetail/artikel/schoenheitstrend-tattoos-und-koerperhaarentfernungen-werden-bei-den-deutschen-immer-beliebter-2017-09" />
+  <Stat value="32 %" label="der Erwachsenen in den USA haben ein Tattoo, 22 % mehr als eines (Befragung 2023)" source="Pew Research Center" href="https://www.pewresearch.org/short-reads/2023/08/15/32-of-americans-have-a-tattoo-including-22-who-have-more-than-one/" />
+  <Stat value="24 Stunden" label="beträgt meist das Zeitfenster, in dem ein Unternehmen über die Schnittstelle von Meta auf eine Instagram-Nachricht antworten kann; mit dem Human-Agent-Tag sind manuelle Antworten 7 Tage lang möglich" source="Meta for Developers" href="https://developers.facebook.com/documentation/business-messaging/messenger-platform/policy" />
+</Stats>
+
+Die ersten beiden Zahlen zeigen: Tattoos sind in der Mitte der Gesellschaft angekommen, im Postfach eines Studios stecken also viele Menschen, die zum ersten Mal fragen und nicht wissen, wie die Preisfindung läuft. Die deutsche Zahl stammt von 2016, damals stieg der Anteil. Die dritte zählt, sobald Sie automatisieren: Antworten über den offiziellen Weg laufen auf einer Uhr.
+
+## Ein DM-Verlauf, auseinandergenommen
+
+Hier steht, was diese Nachrichten eigentlich fragen und was die Tätowiererin klären muss, bevor das Gespräch irgendwohin führt.
+
+| Was die Kundin schreibt | Was die Tätowiererin wissen muss | Warum es zählt |
+| --- | --- | --- |
+| „Was kostet ein kleines?“ | Größe in cm, Stelle, schwarz oder farbig, Detailgrad | Preis und Sitzungsdauer ergeben sich daraus |
+| „So in der Art“ plus Screenshot | Von wem die Arbeit stammt, was bleiben soll, wie viel Freiraum die Artistin hat | Ob sie den Auftrag annimmt, hängt oft daran |
+| „Am Arm“ | Welche Stelle, Foto der Stelle, vorhandene Tattoos oder Narben | Die Stelle beeinflusst Technik und Heilung; bei Narben und Cover-ups ist das Gespräch ein anderes |
+| „Mein Budget liegt bei 100“ | Mindestpreis, Stundensatz, ob die Idee dazu passt | Besser in Nachricht zwei geklärt als in Nachricht neun |
+| „Samstag?“ | Welche Artistin, wie lang die Sitzung dauert, wessen Bücher offen sind | Ein vierstündiges Motiv passt nicht in eine Zweistundenlücke |
+| „Ich bin 17, meine Mama findet das okay“ | Altersregel des Studios, Ausweis beim Termin | Gesetz und Praxis unterscheiden sich je nach Land |
+
+Eine Frage nach der anderen, das sind schnell zwölf Nachrichten. Manche dieser Verläufe enden, bevor etwas gebucht ist, und welche, weiß die Tätowiererin erst am Ende.
+
+## Was der Posteingang heute kostet
+
+Belastbare Zahlen für Tattoostudios gibt es kaum. [tatme](https://www.prmitteilung.de/2026/08/14/software-fuer-tattoo-studios-tatme-digitalisiert-termin-und-einwilligung), ein Lübecker Unternehmen, das Buchungssoftware für Tattoo-Artists verkauft, schreibt in einer Pressemitteilung, Artists verlören jeden Tag Stunden in Direktnachrichten und Zettelwirtschaft. Das ist ein Verkaufsargument des Anbieters, also nehmen Sie es als Anlass zum Messen und nicht als Fakt.
+
+<Calc title="Überschlag: Zeit für Anfragen" caption="Annahmen, keine Messwerte. Zählen Sie zwei Wochen lang Ihre eigenen Verläufe, bevor Sie einer dieser Zeilen trauen." rows={[
+  ["Neue Anfragen pro Woche", "25"],
+  ["Minuten Chat pro Anfrage, alle Runden", "× 12"],
+  ["Chat-Stunden pro Woche", "≈ 5"],
+  ["Anteil, den der Assistent übernimmt (Erstantwort, fehlende Angaben, Standardfragen)", "× 60 %"],
+  ["Arbeitswochen pro Jahr", "× 46"],
+  ["Gewonnene Stunden pro Jahr", "≈ 138"],
+  ["Wert einer Stunde Artist-Zeit (Platzhalter; nicht jede frei gewordene Stunde wird gebucht)", "× 50 €"]
+]} result={["Wert pro Jahr", "≈ 6.900 €"]} />
+
+Dazu kommt ein zweiter Posten, den ich nicht beziffern kann: Wer drei Tage auf eine Antwort wartet, bucht womöglich woanders.
+
+## Erst ein Formular, dann der Link in der Bio
+
+Die einfachste Lösung ist keine KI. Ein kurzes Anfrageformular mit Feldern für Idee, Größe, Stelle, Referenzen und Zeiten, verlinkt in der Instagram-Bio und als erste Antwort auf jede DM verschickt, nimmt das meiste aus dem Chat-Interview heraus. tatme beschreibt genau dieses Vorgehen, und TattooGenda wirbt mit Anzahlungen und automatischen Erinnerungen. Das sind Anbieterbeschreibungen, prüfen Sie also, was das jeweilige Werkzeug kann und wie es mit Daten umgeht. Instagram bietet außerdem eingebaute [häufige Fragen](https://help.instagram.com/4153704678000867/), die erscheinen, wenn jemand eine Nachricht beginnt.
+
+Für eine Einzelkämpferin mit fünf Anfragen pro Woche kann das schon reichen.
+
+KI lohnt sich, wenn Menschen das Formular ignorieren und trotzdem DMs schicken, und das werden sie. Jemand schreibt um 23 Uhr: „Was Kleines am Handgelenk, so wie bei meiner Freundin, was kostet das?“ Der Assistent macht daraus dieselben Felder, fragt nur nach, was fehlt, und beantwortet die Standardfragen, die sonst je zehn Minuten kosten.
+
+## Wie der Assistent eine Anfrage bearbeitet
+
+<Flow title="Von „Was kostet ein kleines?“ zur Entscheidung" caption="Der Assistent fragt und erklärt nach Ihren schriftlichen Regeln. Ja, Nein und Preis bleiben bei der Tätowiererin.">
+<Step title="Nachricht kommt an" who="Kundin" time="jederzeit">Eine DM, eine WhatsApp-Nachricht, eine E-Mail oder das Formular auf der Website. Die meisten bestehen aus einer Zeile.</Step>
+<Step title="Begrüßen, offenlegen, fragen" who="KI" tone="ai" time="Sekunden">Sagt, dass der automatische Assistent des Studios schreibt, verweist auf das Formular und fragt je ein bis zwei Dinge: Stelle, Größe in cm, Stil, schwarz oder farbig, Referenzen, erstes Tattoo oder Cover-up.</Step>
+<Step title="Veröffentlichte Regeln erklären" who="KI" tone="ai">Antwortet nur aus Ihrem schriftlichen Merkblatt: Mindestpreis, Anzahlung, Altersregel, wessen Bücher offen sind. Auf „Was kostet das?“ nennt er Mindestpreis oder Stundensatz und sagt, dass die Tätowiererin erst nach Sicht der Idee ein Angebot macht.</Step>
+<Step title="Zusammenfassung" who="KI" tone="ai" time="2 Min.">Felder, Referenzbilder, Hinweise und ein Antwortvorschlag landen im Postfach der Tätowiererin, der Verlauf hängt an.</Step>
+<Step title="Tätowiererin entscheidet" who="Tätowiererin" tone="human" time="10 Min., einmal am Tag">Ja, Nein, nicht mein Stil oder erst mal reden. Legt Preisrahmen und Sitzungsdauer fest. Der Assistent kann eine freundliche Absage entwerfen.</Step>
+<Step title="Anzahlung und Termin" who="System">Nach einem Ja bekommt die Kundin die Bedingungen in den Worten, die Sie freigegeben haben, einen Zahlungslink und freie Termine. Der Termin ist reserviert, wenn die Zahlung eingeht.</Step>
+<Step title="Erinnerung" who="KI" tone="ai" time="48 Stunden vorher">Adresse, Link zur Einverständniserklärung und Ihr Merkblatt zur Vorbereitung. Umbuchungswünsche gehen an die Tätowiererin.</Step>
+</Flow>
+
+Drei Entscheidungen tragen den größten Teil der Arbeit.
+
+**Er erfindet nie einen Preis.** Der Preis hängt davon ab, was die Tätowiererin in der Referenz sieht und wie die Haut ist. Der Assistent nennt nur, was Sie veröffentlicht haben, und sagt, wer die echte Zahl nennt.
+
+**Ungewöhnliches geht unverändert nach oben.** Cover-ups, Narben, Hände, Hals oder Gesicht, Gedenkmotive, jemand, der nach unter 18 klingt: Die Zusammenfassung sagt das in der ersten Zeile.
+
+**Eine Frage nach der anderen.** Sieben Fragen auf einmal bringen Ein-Wort-Antworten oder Schweigen.
+
+## Was im Postfach der Tätowiererin ankommt
+
+Die Zusammenfassung muss sich in einer halben Minute lesen lassen. Etwa so:
+
+```text
+NEUE ANFRAGE, Di 09:12 (Instagram)
+Stelle: linker Unterarm innen, ca. 10 cm hoch
+Idee: Pflanzenzweig, Fineline, nur Schwarz. 3 Referenzen (Link)
+Erstes Tattoo: ja. Cover-up: nein.
+Budget: „ca. 150“. Mindestpreis im Studio 80, Schätzung macht die Tätowiererin.
+Zeiten: samstags ab 14 Uhr, im November flexibel
+Alter: gibt an, 18 oder älter zu sein, Ausweis wird im Studio geprüft
+Hinweis: Referenz 2 sieht nach dem Werk einer anderen Artistin aus. Nachfragen, was gefällt.
+Antwortvorschlag: Ja zu einem Beratungstermin, Anzahlungsbedingungen angehängt.
+```
+
+Vergleichen Sie das mit dem Scrollen durch einen viertägigen Verlauf. Nützlich ist vor allem die Hinweiszeile: Der Assistent hat etwas bemerkt, das die Tätowiererin ansprechen will, und das Ansprechen ihr überlassen.
+
+## Die Antworten einmal aufschreiben
+
+Der Assistent ist nur so gut wie das Merkblatt, aus dem er antwortet, und die meisten Studios haben diese Antworten nie aufgeschrieben.
+
+<Checklist title="Das Merkblatt, aus dem der Assistent antwortet" items={[
+  "Mindestpreis und Stundensatz, oder wie Sie kalkulieren (pro Motiv, Stunde oder Tag)",
+  "Höhe der Anzahlung, wofür sie angerechnet wird und die Absagefrist, in Ihrem genauen Wortlaut",
+  "Altersregel, und dass der Ausweis im Studio geprüft wird",
+  "Wer welche Stile sticht und wessen Bücher offen sind",
+  "Was Sie nicht tun: Werke anderer Artists nachstechen, bestimmte Stellen, bestimmte Cover-ups",
+  "Ihr Absatz zu Farben und Hygiene: welche Marken, was der Lieferant bestätigt",
+  "Pflegehinweise und das Merkblatt zur Vorbereitung auf den Tag",
+  "An wen sich Kunden bei Problemen mit einem heilenden Tattoo wenden"
+]} />
+
+## Anzahlung oder Terminkaution, und wer über Ausnahmen entscheidet
+
+Studios verlangen eine Anzahlung, weil ein Nichterscheinen eine Lücke reißt, die niemand mehr füllt. Der Assistent sorgt für Verlässlichkeit: Er nennt Ihre Bedingungen jedes Mal genau gleich, bevor jemand zahlt. Über Ausnahmen wie Krankheit oder einen Notfall in der Familie entscheidet er nie. Eine abgesagte Lücke lässt sich außerdem mit einer kurzen Warteliste leichter füllen, dieselbe Idee wie bei [freien Lücken im Terminbuch eines Salons](/de/posts/ki-friseursalon-terminplanung).
+
+Rechtlich ist das nicht egal. Ein Beitrag der Kanzlei [KKP.LAW](https://www.kleymann.com/aktuelles/news/tattoorecht-anzahlung-oder-terminkaution/) zum Tattoorecht unterscheidet zwei Dinge. Eine Anzahlung ist Teil des Preises und kann deshalb nicht einfach verfallen, wenn der Vertrag aufgehoben wird. Eine Terminkaution sichert nur den Termin, und das Studio kann vereinbaren, dass sie verfällt, wenn die Kundin nicht erscheint. Außerdem sollte der Betrag nach Ansicht der Kanzlei individuell vereinbart werden und nicht in den AGB stehen, wo solche Klauseln meist als unwirksam gelten. Das ist die Sicht einer Kanzlei und kein Gerichtsurteil. Zeigen Sie Ihren Wortlaut deshalb einer Anwältin, bevor der Assistent ihn verschickt.
+
+## Alter: Der Assistent fragt, die Tür prüft
+
+In Deutschland gibt es kein gesetzliches Mindestalter. Nach der [Jugendinformationsseite des Bundesjustizministeriums](https://www.recht-relaxed.de/WebS/RechtRelaxed/DE/KoerperSex/TattoosPiercings/tattoosPiercings_node.html) gilt ein Tattoo rechtlich als Körperverletzung, die nur ohne Strafe bleibt, wenn die Person einwilligt. Ob Jugendliche das selbst können, hängt von ihrer Reife ab, und in der Praxis wird ab 18 tätowiert, oder ab 16 mit schriftlicher Einwilligung der Eltern. Zum Vergleich: In Großbritannien ist es nach dem [Tattooing of Minors Act 1969](https://www.legislation.gov.uk/ukpga/1969/24) eine Straftat, unter 18-Jährige zu tätowieren, außer die Tätowiererin durfte begründet annehmen, dass die Person 18 war, und nahm das auch an.
+
+Das Studio legt die Regel fest, der Assistent wendet sie an. Er fragt „Sind Sie 18 oder älter?“, hält die Antwort fest und gibt alles andere an die Tätowiererin. Ein Chat kann ein Alter nicht prüfen. Ein Mensch mit Blick auf den Ausweis an der Tür kann es.
+
+## Die Frage nach den Farben
+
+Kunden fragen auch nach den EU-Regeln für Tattoofarben, weil sie gehört haben, Farben seien verboten worden. Nach Angaben der [Europäischen Kommission](https://cyprus.representation.ec.europa.eu/news/chemicals-new-eu-rules-safer-ink-tattoos-across-eu-2022-01-04_en) gilt seit dem 4. Januar 2022 eine Beschränkung gefährlicher Stoffe in Tätowiermitteln, das Verbot für Pigment Blue 15 und Pigment Green 7 folgte am 4. Januar 2023.
+
+Das Bundesinstitut für Risikobewertung mahnt in seinen [Fragen und Antworten zu Tätowiermitteln](https://www.bfr.bund.de/fragen-und-antworten/thema/fragen-und-antworten-zu-taetowiermitteln/) zur Vorsicht: Tätowiermittel werden nicht zugelassen, der Hersteller ist für die Sicherheit verantwortlich, eine Positivliste unbedenklicher Farben gibt es nicht, und die überwiegende Mehrheit der Komplikationen sind lokale Hautreizungen oder allergische Hautreaktionen. Das BfR verweist außerdem auf die europäische Norm DIN EN 17169 zu sicherer und hygienischer Praxis, die nicht verbindlich ist.
+
+Der Assistent sollte also nicht sagen „Unsere Farben sind sicher“. Er sagt, was Sie wissen: welche Marken Sie nutzen, was Ihr Lieferant zur Beschränkung bestätigt, ob Sie nach DIN EN 17169 arbeiten. Alles andere geht an Sie.
+
+## Datenschutz und Plattformregeln
+
+**Sagen Sie, dass es ein Bot ist.** Nach Angaben der Europäischen Kommission gilt [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) seit dem 2. August 2026, Menschen müssen also erfahren, dass sie mit einem KI-System sprechen.
+
+**Gesundheitsfragen gehören nicht in die DMs.** Allergien, Hauterkrankungen, Medikamente und Schwangerschaft sind Gesundheitsdaten, die [Artikel 9 DSGVO](https://gdpr-info.eu/art-9-gdpr/) streng schützt. Ich würde diese Fragen dem Einwilligungsbogen im Studio überlassen, wie im Beitrag zur [Beratungsdokumentation im Kosmetikstudio](/de/posts/ki-kosmetikstudio-beratungsdokumentation) beschrieben, und den Assistenten so einstellen, dass er sie nicht stellt. Erzählt eine Kundin von sich aus etwas, gibt er es an die Tätowiererin weiter und legt die Details nicht ab.
+
+**Wissen, wer was verarbeitet.** Referenzbilder und Fotos der Stelle sind personenbezogene Daten. Jeder KI- oder Formularanbieter, der sie sieht, ist Ihr Auftragsverarbeiter, und [Artikel 28 DSGVO](https://gdpr-info.eu/art-28-gdpr/) verlangt einen Vertrag (AVV). Fragen Sie, wo die Daten verarbeitet werden und ob damit Modelle trainiert werden, und legen Sie eine Löschfrist für unbeantwortete und abgelehnte Anfragen fest.
+
+**WhatsApp hat eigene Bedingungen.** Seit dem 15. Januar 2026 schließen die Bedingungen von Meta Anbieter allgemeiner KI-Assistenten von der WhatsApp-Business-Plattform aus. [TechCrunch berichtet](https://techcrunch.com/2025/10/18/whatssapp-changes-its-terms-to-bar-general-purpose-chatbots-from-its-platform), Meta habe erklärt, Unternehmen, die KI für den Service an eigenen Kunden einsetzen, seien nicht betroffen. Prüfen Sie zuerst die Einrichtung Ihres Anbieters.
+
+## Wo KI das falsche Werkzeug ist
+
+**Das Motiv.** Kunden bringen KI-generierte Bilder als Referenz mit, und das ist in Ordnung. Ob ein Entwurf auf der Haut funktioniert und ob die Tätowiererin ihn sticht, entscheidet sie, und die Zeichnung ist das, wofür die Kundin zahlt. Der Assistent erstellt oder verändert nie Entwürfe.
+
+**Der Preis, das Nein und das heikle Ja.** Der Assistent liest vor, was Sie veröffentlicht haben. Cover-ups, ein fremdes Tattoo zum Überarbeiten, ein Motiv für einen verstorbenen Menschen: Diese Gespräche brauchen einen Menschen.
+
+**Das kleine Studio.** Eine Tätowiererin mit Link in der Bio, Formular und ein paar gespeicherten Antworten braucht kein Modell.
+
+## Was der Betrieb kostet
+
+Das ist meine grobe Schätzung, kein Angebot. Rechnen Sie mit zwei bis vier Tagen Einrichtung, vor allem für das Merkblatt und den Test mit Ihren letzten fünfzig echten Verläufen. Die KI-Nutzung kostet bei 100 Anfragen im Monat wenige Euro. Ein Buchungs- oder Formularwerkzeug, falls Sie noch keins haben, kommt mit einigen Dutzend Euro im Monat dazu.
+
+## Fragen von Tätowierern und Studioinhabern
+
+### Kann ein KI-Chatbot einen Tattoopreis nennen?
+
+Nur die Zahlen, die Sie veröffentlicht haben, etwa Mindestpreis oder Stundensatz. Ein echtes Angebot hängt von Referenz und Stelle ab, also sagt der Assistent, wer es nennt und wann.
+
+### Stört es Kunden, mit einem Bot zu schreiben?
+
+Manche schon, und die können das Formular nutzen oder auf die Tätowiererin warten. Wer um 23 Uhr eine DM schickt, will meist wissen, wie es weitergeht. Eine kurze, klare Nachricht mit Fragen zu Stelle und Größe leistet das besser als Schweigen.
+
+### Kann er die Anzahlung einziehen?
+
+Er kann die Bedingungen und einen Zahlungslink schicken. Das Geld sollte über Ihren Zahlungsdienstleister oder Ihr Buchungswerkzeug laufen, und die Reservierung des Termins bleibt Entscheidung der Tätowiererin. Mehrere Buchungswerkzeuge für Tattoostudios nennen Anzahlungen auf ihren eigenen Seiten, prüfen Sie also, ob Ihres das schon kann.
+
+## Wo ich anfangen würde
+
+Schreiben Sie zuerst das Merkblatt, es nützt auch, wenn Sie nie etwas bauen. Legen Sie ein Formular in die Bio. Lassen Sie dann einen Monat lang einen Assistenten nur die Erstantwort und die fehlenden Angaben übernehmen, und verbessern Sie das Merkblatt, sobald die Tätowiererin eine Zusammenfassung korrigiert.
+
+Die Faustregel: Die erste Antwort sofort, das letzte Ja persönlich.
+
+Wenn Ihr Postfach aussieht wie das am Anfang dieses Beitrags, [schreiben Sie mir, wo Anfragen heute bei Ihnen eingehen](/de/kontakt?intent=improve), und ich skizziere die kleinste Einrichtung, die ich zuerst testen würde. Aus einem vagen Wunsch ein klares Briefing zu machen, ist auch die Kernaufgabe bei [Beratungsgesprächen in der Floristik](/de/posts/ki-floristik-hochzeitsbriefing), falls Sie dasselbe Muster in einem anderen Gewerk sehen möchten.

@@ -1,0 +1,176 @@
+---
+id: "ai-for-courier-services-failed-deliveries"
+title: "Failed Deliveries Cost Couriers Twice: Fix Them Before Dispatch"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Transport & logistics", "Courier services", "Failed deliveries", "AI for small business"]
+description: "A failed delivery wastes the stop and pays for a second one. How small couriers use address checks and messages to fix problems before the van leaves."
+excerpt: "A failed delivery wastes the stop and pays for a second one. How small couriers use address checks and messages to fix problems before the van leaves."
+---
+
+A driver pulls up outside a converted warehouse at 10:40. The delivery note says "Unit 4". The buzzer panel has three Unit 4s, no company names, and nobody answers the phone number on the label, because it's the sender's number, not the recipient's. Eleven minutes later the driver moves on, and the parcel goes back on the van.
+
+That's the first cost: a stop that delivered nothing. The second one arrives tomorrow. The same parcel takes up another stop, someone in the office takes an annoyed call, and a route that was already tight gets longer. A failed delivery is paid for twice, and the second payment is the one nobody tracks.
+
+The cheapest failed delivery is the one you find out about at 18:00 the evening before, not at 10:40 on the doorstep. That's the idea of this post, and most of it doesn't need AI. Here's where AI does earn its place.
+
+## The published numbers on a failed attempt
+
+<Stats title="The last mile in three numbers">
+  <Stat value="over 96%" label="of Hermes parcels in Germany were delivered on the first attempt in fiscal 2025/26 (the carrier's own figure)" source="Hermes newsroom" href="https://newsroom.hermesworld.com/logistik-mythen-zur-zustellung-funf-gangige-annahmen-zur-paketlogistik-und-was-die-praxis-zeigt-34633/" />
+  <Stat value="≈ 8%" label="of first deliveries in Germany failed, at €14.69 per order for retailers, in a late-2020 survey by Loqate, a vendor of address verification" source="Loqate study via postbranche.de" href="https://www.postbranche.de/2021/03/16/neue-loqate-studie-enthuellt-kosten-von-fehlerhaften-lieferungen-im-ecommerce-boom/" />
+  <Stat value="41%" label="of overall supply chain costs go to the last mile, in Capgemini's 2019 study for retail and consumer products" source="Capgemini Research Institute" href="https://www.capgemini.com/insights/research-library/the-last-mile-delivery-challenge/" />
+</Stats>
+
+Germany is a good test case because its industry publishes numbers. According to [BPEX](https://bpex-ev.de/presse/meldung/kep-studie-2026), the federal association for parcel and express logistics (formerly BIEK), the courier, express and parcel market moved 4.37 billion shipments in 2025, earned about €28.4 billion and employed around 270,000 people. Personnel makes up 40.5% of the industry's costs.
+
+Labour is the bill, and a failed stop burns labour twice.
+
+The two failure numbers above don't agree, and I wouldn't try to force them to. The Hermes figure comes from a large carrier with parcel shops, lockers and a recipient app, and it means under 4% fail. The Loqate figure comes from a retailer survey five years earlier, by a company that sells the fix, and it means about 8%. Different years, different definitions, different parcels. I read them as a range of under 4% to about 8%, and I'd treat neither as your number.
+
+Yours depends on who you deliver to: offices, clinics and apartment blocks on tight windows are a different mix from front doors. The only figure that matters is the one you measure.
+
+## Where failures come from, and which fix is cheapest
+
+Retailers in that same Loqate survey pointed at addresses: 74% said poor address data causes up to a quarter of their failed deliveries. That's a vendor claim, so read it with that in mind. The rest is the usual list: nobody home, a gate or door code the driver doesn't have, the wrong person at the door.
+
+Before choosing any tool, sort your failures by cause and look at the middle column below.
+
+| Why the attempt fails | Cheapest fix | Where AI adds something |
+| --- | --- | --- |
+| Nobody is home or at the desk | A delivery window by text or e-mail the evening before, with a way to pick another time | Reading free-text replies ("after 6", "ask the neighbour") and turning them into a stop note |
+| Address incomplete: no floor, company name or unit | Required fields in the shipper's order form or interface | Spotting gaps in old free-text addresses and asking the recipient for the missing detail |
+| Access problem: gate code, concierge, dead buzzer | An "access info" field on the order | Pulling codes and instructions out of replies and e-mails into that field |
+| Wrong or missing phone number | Check the number when the order is created | Little. This one is a data problem |
+| Recipient refuses, or the parcel needs a signature | Ask the shipper to flag these at order time | Nothing. A dispatcher decides |
+
+Many routing tools, such as Onfleet, Track-POD, OptimoRoute or Routific, already offer customer notifications (check what yours includes), and a required "floor" field costs nothing. AI earns its place where messages arrive in free text, in several languages, and someone has to read and act on them for hundreds of stops a day.
+
+The same pattern shows up upstream, where [wholesalers read messy orders](/posts/ai-for-wholesale-order-entry): the input is untidy, a model turns it into a clean draft, and a person checks what matters.
+
+## Napkin math: what a failed attempt costs
+
+Take a hypothetical courier with 12 drivers and 900 stops a day. Everything below is an assumption to be replaced with your own numbers.
+
+<Calc title="Napkin math: the monthly bill for failed first attempts" caption="Assumptions, not measurements. A stop costs €5 in driver time, van and fuel; a failure wastes the first visit, pays for a second and adds €3 of office handling. Use your own cost per stop and your own failure rate from the weeks you measure." rows={[
+  ["Stops per month (900 a day, 22 days)", "19,800"],
+  ["First-attempt failure rate", "× 6%"],
+  ["Failed attempts per month", "≈ 1,190"],
+  ["Cost per failed attempt (€5 wasted, €5 second visit, €3 office)", "× €13"],
+  ["Monthly cost of failed attempts", "≈ €15,400"],
+  ["Share avoided by address checks and confirmations", "× one third"]
+]} result={["Possible saving per month", "≈ €5,100"]} />
+
+The Loqate figure of €14.69 is a retailer's cost per failed order, not a courier's, but it sits in the same neighbourhood as my €13, which at least suggests the order of magnitude isn't absurd.
+
+Two cautions. First, the saving only counts for failures you actually prevent. A third is a guess, and the pilot below replaces it with a measurement.
+
+Second, prevention has a running cost. Say you send two messages per stop and each costs 5 cents: that's about €2,000 a month at this volume, before the model and the integration. E-mail and app notifications are cheaper, and not every stop needs a message. Repeat customers with a standing window and stops the shipper already confirmed can be skipped.
+
+For planning, I'd budget a low-to-mid four-figure one-off setup and a few hundred euros a month to run, excluding message fees. Those are my own rough estimates for a small build, not quotes.
+
+## The flow: confirm the evening before, not at the door
+
+Here's the process I'd build. The shipper's orders still arrive the way they do today. The new work happens between "order received" and "driver leaves".
+
+<Flow title="From an incoming order to a note in the driver's route" caption="The assistant checks, asks and writes things down. The dispatcher decides every exception, and the driver still confirms at the door.">
+<Step title="Order arrives" who="Dispatch software" time="evening before">Orders come in from the shipper's interface, a file or an e-mail, as they do today.</Step>
+<Step title="Check the address" who="AI" tone="ai" time="seconds">Reads the address and flags gaps: no floor, no company name, two possible house numbers. Fills what it can from earlier deliveries to the same place.</Step>
+<Step title="Ask the recipient" who="AI" tone="ai" time="evening before">Sends a short message with the planned window and at most two questions: will someone be there, and is there anything the driver should know.</Step>
+<Step title="Read the reply" who="AI" tone="ai" time="minutes">Turns free-text answers into a structured note with a confidence flag: new window, neighbour, safe place, access code, wrong address.</Step>
+<Step title="Decide the exceptions" who="Dispatcher" tone="human" time="before 7:00">Approves or declines anything with risk: neighbour or safe-place drops, address changes, parcels that need a signature or an ID check.</Step>
+<Step title="Drive with the note" who="Driver" tone="human" time="on the route">Sees a one-line note per stop, delivers or calls, and records the result with a photo or signature.</Step>
+</Flow>
+
+A few design choices do most of the work.
+
+**Ask once, and make the answer easy.** Two questions at most. A recipient who has to fill in a form won't, and one who can answer in half a sentence will.
+
+**The window is the dispatcher's promise, not the assistant's.** The assistant only offers windows that dispatch has released. It never says "the driver will be there at 10:15", because it doesn't know that.
+
+**Uncertainty goes on the note.** When a reply says "maybe my neighbour", the note says so, and a person calls instead of guessing. A wrong "safe place" is how a failed delivery becomes a lost parcel and a dispute.
+
+**The loop feeds itself.** Every failure gets a reason code, and the address and access details that finally worked go back into the customer record. Next week's check for the same address finds the unit number already there.
+
+## What a reply turns into
+
+Here's what the assistant might hand the driver. The recipient's message came in as plain text, with typos.
+
+```text
+REPLY, 07:52: "at work till 2, neighbour Ms Kaya 2nd floor can take it, bell broken, call me 0171 555 0142"
+
+STOP NOTE
+Window: after 14:00, or neighbour (Ms Kaya, 2nd floor).
+Bell broken: call 0171 555 0142 on arrival.
+Neighbour drop: authorised by recipient in message 07:52, logged.
+Needs dispatcher OK: yes (neighbour drop). Confidence: high.
+```
+
+The note is short enough to read at a red light, and it carries the one thing that matters in a later dispute: who agreed to what, and when.
+
+Notes like this are close cousins of the [pre-visit briefs I described for pest control](/posts/ai-for-pest-control-routing): the person on the doorstep arrives knowing what they would otherwise learn by failing.
+
+## Where the line is
+
+<Split title="The line" leftTitle="The assistant does" rightTitle="The assistant never does" left={[
+  "Checks addresses for missing floor, company name or unit",
+  "Sends the confirmation message and says it is automated",
+  "Reads replies in free text and in several languages",
+  "Writes the stop note with a confidence flag",
+  "Offers only the time windows dispatch has released"
+]} right={[
+  "Approves a neighbour or safe-place drop on its own",
+  "Changes a delivery address because a reply asked for it",
+  "Promises an exact arrival time",
+  "Repeats access codes anywhere except the driver's stop note",
+  "Answers damage, loss or liability questions"
+]} />
+
+The address-change rule deserves a sentence. Anyone can reply to a text. A changed address needs confirmation from the shipper or the original contact, otherwise you've built a convenient way to redirect other people's parcels.
+
+## Data protection and message rules
+
+Recipient names, phone numbers and addresses are personal data. A few points I'd settle before anything goes live.
+
+**Roles and contracts.** The recipient's contact details usually come from the shipper. Whether you act as a processor for them or as a controller in your own right depends on your contract, so agree that in writing. The message provider and the AI provider are your processors, which means a data processing agreement under Article 28 GDPR with each, and ideally EU hosting.
+
+**Service messages versus marketing.** The UK regulator says a message is not direct marketing if it is information only and contains nothing promotional. Its own example is a text saying an engineer will arrive at 10am on Tuesday; see the [ICO guidance](https://ico.org.uk/for-organisations/advice-for-small-organisations/direct-marketing-and-data-protection/marketing-and-data-protection-in-detail/). Add a discount code or a cross-sell, and it becomes marketing with all the consent rules attached. German law follows the same logic: under [section 7 of the UWG](https://www.it-recht-kanzlei.de/werbung-in-abwicklungsmails-systemmails-abmahnbar.html) a confirmation e-mail that adds advertising is treated as advertising. Keep the delivery message clean.
+
+**Tell people it's an AI.** Since 2 August 2026 the EU AI Act requires that people are told when they interact with an AI system, unless that is obvious. The [Commission's FAQ on Article 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) explains the rule. If the assistant answers replies itself, say so in the first message: "This is the automated assistant of Harbour Couriers."
+
+**Access codes and keep-time.** A gate code is a security detail, not a customer attribute. Show it to the driver on the day, keep it out of general notes, and delete it after the delivery unless the customer asks you to remember it. Collect the minimum and keep it briefly.
+
+## Four weeks on one route group
+
+I wouldn't switch everything on at once. A pilot that gives you a real number:
+
+1. **Weeks 1 and 2: measure.** Tag every failed attempt with a reason: nobody home, address, access, refused, other. Count them per route group. This is your baseline.
+2. **Week 3: fix the free things.** Required floor and company fields on your order form, an "access info" field, and the notification your dispatch software already has.
+3. **Weeks 3 and 4: add the assistant on one route group.** Address check, evening-before message, reply reading. Another comparable group stays as it is.
+4. **End of week 4: compare.** Failed attempts per 1,000 stops in both groups, minutes of office time on rescheduling, and any parcel that went to a neighbour without a logged authorisation.
+
+I'd be strict about that last item. One wrongly released drop is a reason to tighten the rules, not a statistic to average away.
+
+## Questions couriers ask
+
+### How do I reduce failed deliveries for my courier business?
+
+Sort failures by cause for two weeks, then fix the biggest cause with the cheapest tool. For most small couriers that's an evening-before message with a window, plus required address fields from the shipper. AI helps once replies and addresses arrive as free text.
+
+### What is a good first-attempt delivery rate?
+
+It depends on your recipients. A large parcel carrier reports over 96% for fiscal 2025/26, and a late-2020 vendor survey put German first-attempt failures near 8%. For a courier serving offices and apartment blocks, compare yourself against your own baseline from the last month, not against a carrier with a parcel shop network.
+
+### Can I text recipients before delivery without their consent?
+
+A purely informational delivery message is generally not treated as marketing, in the UK or under comparable rules in the EU, as long as it carries nothing promotional. You still need a lawful basis for processing the contact data, and you should check the rules for your country and channel. Add advertising and the picture changes.
+
+### Can AI replace my dispatcher?
+
+No, and I wouldn't try. The assistant reads and drafts. The dispatcher decides anything with risk: neighbour drops, address changes, high-value parcels. What changes is that the dispatcher reviews ten flagged exceptions instead of phoning two hundred recipients.
+
+## Where I'd start
+
+Count failures by reason for two weeks, fix the top reason with a form field or a window message, and only then ask what a model could add. If most of your failures are "nobody home", the evening-before message is the product. If most are "address unclear", it's the address check. AI is the part that reads the replies and writes the note.
+
+If you want to look at your own failure numbers together, [tell me which dispatch software you use and what your failures look like](/contact?intent=improve), and I'll suggest the smallest version worth testing. The same habit of catching problems before the vehicle leaves helps on the quoting side too, as in [freight forwarders handling quote requests](/posts/ai-for-freight-forwarders-quote-requests).

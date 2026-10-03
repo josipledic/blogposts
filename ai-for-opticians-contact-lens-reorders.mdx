@@ -1,0 +1,137 @@
+---
+id: "ai-for-opticians-contact-lens-reorders"
+title: "Contact Lens Reorders and Eye Test Recalls for Independent Opticians"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Healthcare", "Opticians", "Recalls and reorders", "AI for small business"]
+description: "Roughly half of contact lenses in Germany are bought online. How independent opticians can time reorder and recall messages to the day a customer runs out."
+excerpt: "Roughly half of contact lenses in Germany are bought online. How independent opticians can time reorder and recall messages to the day a customer runs out."
+---
+
+Roughly half of all contact lenses in Germany are now bought online. That is the figure the trade association ZVA reports for its latest industry report, and it's the highest online share of any product category in optics. In the US, the Vision Council's survey puts it at 37 percent. Glasses, by comparison, are still mostly bought in a shop.
+
+I can't prove how many of those customers left an independent optician because of anything the optician did wrong. But I suspect many of them left because of something the optician didn't do. Nobody wrote to them when their supply ran low. The first reminder to arrive was from an online shop with a reorder button.
+
+That is fixable, and the fix starts with a date your software already has.
+
+## The numbers behind the problem
+
+<Stats title="Contact lenses and the independent optician">
+  <Stat value="10,700" label="optical businesses in Germany in 2025, with the ten largest companies holding 55% of industry revenue" source="ZVA Branchenbericht 2025/2026" href="https://www.zva.de/news/zva-branchenbericht-2025-2/" />
+  <Stat value="about 50%" label="online share of contact lens sales in Germany, the highest of any optical product category" source="ZVA Branchenbericht 2025/2026" href="https://www.zva.de/news/zva-branchenbericht-2025-2/" />
+  <Stat value="37%" label="of contact lenses bought online in the US, against 85% of prescription eyeglasses bought in person" source="The Vision Council survey, via Healio" href="https://www.healio.com/news/optometry/20240321/survey-shows-most-optical-products-purchased-in-store" />
+</Stats>
+
+The ZVA also reports that German optics passed seven billion euros in revenue, with sales broadly flat in 2025 (up 0.6 percent, below inflation), and that succession is a problem for owner-run shops. A flat market means the customers you already have matter more than the ones you hope to win. A contact lens wearer is the most repeatable customer an optician has: lenses run out on a predictable date, several times a year.
+
+## Why reorder time decides it
+
+A customer who buys six boxes of monthly lenses has told you, at the till, exactly when they will run out: six months from the purchase date. A daily-lens customer with a 90-pack runs out in about 90 days. The date is arithmetic, not prediction.
+
+Yet in many practices nothing happens with that date. The customer remembers, or an online shop reminds them, or they stretch their last pair and come back for a check-up with irritated eyes. The independent only gets the sale if the customer thinks of them first.
+
+So the useful question is: who writes to the customer three weeks before the last pair goes in, with a link that makes reordering easier than going elsewhere?
+
+## A reorder cycle that follows the supply
+
+<Timeline title="One lens wearer, one supply of six monthly boxes">
+<Phase when="Day 0, at the counter" title="Record the supply">Brand, number of boxes, wearing schedule. The system calculates the run-out date and a check-up date.</Phase>
+<Phase when="About 3 weeks before run-out" title="First reminder">A short, personal message with the lens the customer actually wears and a one-tap reorder link.</Phase>
+<Phase when="About 10 days before" title="Second nudge, only if needed">Sent only to customers who haven't reordered. Different wording, same link.</Phase>
+<Phase when="Run-out day" title="A person calls the ones who stay silent">Staff decide whom to call: the long-standing wearers and anyone whose aftercare is overdue.</Phase>
+<Phase when="Month 10 to 11" title="Check-up recall">An invitation to the aftercare or eye test, based on your own interval.</Phase>
+<Phase when="60 days after a lapse" title="One last personal note">A single, warm message. Then stop. Nobody wants a fifth email.</Phase>
+</Timeline>
+
+The shape of the cycle matters more than the software. A reminder that arrives on the day the last pair goes in feels like nagging. One that arrives three weeks earlier feels like service.
+
+## What the money looks like
+
+Numbers differ hugely between practices, so here is the arithmetic with placeholders you can replace.
+
+<Calc title="Napkin math: what silent lapsing costs a practice" caption="Assumptions, not measurements. Replace each figure with yours. Yearly revenue per wearer combines lenses and care products, aftercare, and glasses bought every third year." rows={[
+  ["Active lens wearers on file", "200"],
+  ["Share who lapse each year (to online shops, or stop)", "× 15%"],
+  ["Wearers lost per year", "= 30"],
+  ["Yearly revenue per wearer (lenses €350, aftercare €45, glasses €140)", "× €535"],
+  ["Revenue walking away each year", "≈ €16,000"],
+  ["Share won back by well-timed reminders", "× 30%"]
+]} result={["Revenue kept per year", "≈ €4,800"]} />
+
+Small, but it adds up over years, because each recovered wearer stays. Compounding is what the next chart shows.
+
+<Bars title="Of 100 lens wearers, how many still buy from you after 3 years" unit=" of 100" max={100} caption="Assumptions: a constant yearly lapse rate of 25%, 15% or 10%. The 10% case is roughly the 15% baseline after winning back 30% of lapsers. The real rates are in your own customer list." data={[
+  { label: "25% lapse a year, no contact", value: 42, display: "42 of 100" },
+  { label: "15% lapse a year, today", value: 61, display: "61 of 100", highlight: true },
+  { label: "10% lapse a year, timely reminders", value: 73, display: "73 of 100" }
+]} />
+
+Twelve more customers out of a hundred after three years is the real prize. It's also a number I'd rather measure in your practice than promise.
+
+## Where AI comes in, and where it doesn't
+
+The schedule and the list don't need a model. Your practice software, or a spreadsheet, can produce "customers whose lenses run out in 21 days". Many systems can also send a templated message at that point. If yours can, start there and stop reading.
+
+| Situation | Plain scheduled reminder | AI-drafted message |
+| --- | --- | --- |
+| Same lens, same customer, 6-month cycle | Enough. A template with name and lens | Not needed |
+| Customer who changed brand twice and skipped a check-up | Generic text misses the point | Mentions what they wear now and that the check-up is overdue |
+| Customer who replied 'can I switch to dailies?' | Falls into the inbox | Drafts an answer and flags it for an optometrist |
+| Forty replies a week in different words | Staff read and type each | Sorts replies into reorder, question, complaint |
+| Message in the customer's language | Separate templates per language | Drafts in German, English or Turkish from one record |
+
+So AI earns its place in the middle of the table: personalising the wording, reading replies, and routing the odd ones to a person. It does not choose lenses, judge eye health or change the wearing schedule.
+
+Here is what a draft might look like, built from the record (brand, last order, last check-up) and then read by staff before it goes out:
+
+> Hi Anna, your Acuvue Oasys lenses should run out around the 14th. Want me to have a new box ready for you? Reply YES or tap this link and we'll have it at the shop by Friday. Your last check-up was in March 2025, so it would be a good time to book that too. Best, Jonas at Neumann Optik
+
+The decision point for staff is small but real. They check that the lens on file is still the lens prescribed, that the prescription or fitting is valid for a reorder, and that the customer hasn't reported a problem. If a reply mentions pain, redness, sudden blurred vision or light sensitivity, the assistant stops, tells the customer to contact the practice or an eye casualty service the same day, and alerts the optometrist. That rule is not negotiable.
+
+### The one-tap reorder
+
+The reorder link doesn't need a webshop. A pre-filled form, or an email reply address that creates a task, is enough: the customer confirms the lens, the delivery or pickup choice, and staff confirm it against the record. If you already run a webshop, the link can go there. Either way, the customer should be one click from done, because the online competitor is.
+
+## Rules that decide when you can reorder
+
+Contact lenses are a regulated product, so the reminder must follow the rules of your market.
+
+In the US, the FTC's [Contact Lens Rule](https://www.ftc.gov/business-guidance/resources/contact-lens-rule-guide-prescribers-sellers) sets a minimum prescription expiry of one year, with exceptions based on the patient's eye health. It also gives prescribers eight business hours to answer a seller's verification request, and if you don't answer in time the prescription counts as verified and the online seller can ship. So in the US, silence doesn't just lose a reminder, it lets a competitor fill the order. Your recall date should sit before the expiry date.
+
+In the UK, the NHS says to have your [eyes tested every two years](https://www.nhs.uk/nhs-services/opticians/visiting-an-optician/), more often if your optometrist advises. The College of Optometrists [points out](https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/the-routine-eye-examination/frequency-of-eye-examinations) that contact lens wearers may need more frequent aftercare appointments, but that an NHS sight test isn't funded more often simply because someone wears lenses. Set the aftercare interval by clinical advice, not by marketing calendar.
+
+In Germany, the aftercare intervals are for the practice's optometrist to set. I'm not going to put a number on them here.
+
+## Data protection and permission
+
+A customer's prescription values, eye conditions and lens history are health data in the practical sense, and in the EU they fall under Article 9 of the GDPR. Keep the assistant on the minimum: name, contact channel, lens brand and dates, not diagnoses. Use a provider with EU hosting and a processing agreement (AVV), and tell customers how their data is used.
+
+Sending reminders also touches marketing law. In Germany, [section 7 of the Act Against Unfair Competition (UWG)](https://www.gesetze-im-internet.de/uwg_2004/__7.html) allows email advertising to existing customers for similar products only if you got the address through the sale, the customer hasn't objected, and they were told at collection and in every message that they can object. A reminder that is purely about a health check-up is a service message, but as soon as it includes a reorder offer, treat it as marketing. When in doubt, ask for consent at the counter, where it's easy. A text message or a call raises its own rules. If a customer chats with an assistant directly, the EU's transparency duty under [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) requires the assistant to identify itself as AI.
+
+## What it costs to set up
+
+I'd expect a first version to need three things: a clean export of customers with their last lens purchase, wearing schedule and check-up date; a message assistant that drafts and sorts replies; and a short review routine. As a planning range, and this is an assumption rather than a quote, a one-off setup in the low thousands of euros if the data comes out as a file, and a monthly fee in the tens of euros for the assistant plus message costs. A simple scheduled reminder in your own software costs nothing extra. Check that first.
+
+## Questions opticians ask
+
+### How do I know when a customer's lenses run out?
+
+From the purchase record. Number of boxes times the wear period gives the run-out date, assuming they wear them as prescribed. The date is an estimate, not a fact: someone who wears lenses two days a week will run out much later. That's why the first message should ask, not assume.
+
+### Will customers find reminders annoying?
+
+Some will, which is why you ask for consent, keep it to two messages a cycle, and stop after a lapse. Most customers tell you they forgot. A reminder with a one-tap link is convenience.
+
+### Can the assistant answer a customer's questions about their eyes?
+
+No, beyond practical questions such as opening hours, which lens is on file or when a box is ready. Anything about comfort, vision or eye health goes to an optometrist. The assistant tells the customer that, and alerts the practice.
+
+### Isn't an online shop cheaper anyway?
+
+Often, yes. You won't win every customer on price. What you can do is make reordering as easy, tie it to an aftercare visit that an online shop can't give, and keep the customers who value that. Plenty of customers will still buy online, and that is fine.
+
+## My rule of thumb
+
+Start with the plainest reminder your software can send, timed three weeks before the supply ends, with a one-tap way to reorder. Add AI only for the parts a template can't do: wording that fits the customer, sorting replies, and flagging anything clinical for a person. Measure the lapse rate before and after.
+
+If you run an independent practice and want to see what your customer data could support, [tell me which software you use and how you handle lens customers today](/contact?intent=improve), and I'll suggest the smallest version worth testing. The same date-driven idea works for [HVAC maintenance agreements](/posts/ai-for-hvac-maintenance-reminders). Hearing care has a related problem in [fitting documentation](/posts/ai-for-hearing-aid-acousticians-fitting-notes), and if you sell frames and accessories online, [product descriptions](/posts/ai-for-retail-product-descriptions) are worth a look.

@@ -1,0 +1,160 @@
+---
+id: "ai-for-chimney-sweeps-scheduling"
+title: "Chimney Sweeps and the Appointment Letter Nobody Answers"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Trades & construction", "Chimney sweeps", "Appointment planning", "AI for small business"]
+description: "Hundreds of announced appointments, many residents not home, replies on four channels. How AI helps a chimney sweep reschedule without losing control."
+excerpt: "Hundreds of announced appointments, many residents not home, replies on four channels. How AI helps a chimney sweep reschedule without losing control."
+---
+
+Picture a district chimney sweep in Germany on a Monday morning. Forty letters went out last week, each proposing a slot for a Kehrung, an inspection or an emissions measurement. By 8 a.m. the office has eleven replies: three emails, four WhatsApp messages, two voicemails and two notes that were taped back onto a front door. One says "I'm at work until 6, ask the neighbour". One says "we sold the house in March". One just says "no".
+
+Nobody in that office is bad at their job. The problem is structural: the appointment is mandatory, the resident didn't choose it, and the announcement is the first time they hear about it. Every slot that doesn't work costs a second drive, or a phone call, or both.
+
+This is a numbers-first look at how big that problem is, which part of it AI can take over, and which part should stay with a person who holds a chimney sweep's licence.
+
+## How big one district actually is
+
+<Stats title="The scale of the German chimney sweep trade">
+  <Stat value="7,700" label="Kehrbezirke (sweep districts) in Germany, served by around 7,500 businesses with about 21,000 employees" source="Bundesverband des Schornsteinfegerhandwerks, Zahlen und Fakten 2022" href="https://www.schornsteinfeger.de/aktuelle-pressemeldungen/zahlen-und-fakten-das-schornsteinfegerhandwerk-im-jahr-2022" />
+  <Stat value="32 million" label="combustion systems measured or inspected under the 1. BImSchV and the KÜO, including about 11.7 million single-room fireplaces" source="Bundesverband des Schornsteinfegerhandwerks, Erhebungen 2025" href="https://www.schornsteinfeger.de/sites/default/files/downloads/Erhebungen_2025.pdf" />
+  <Stat value="≈ 3,900" label="households per district: my division of the trade's 30 million households by its 7,700 districts" source="Bundesverband des Schornsteinfegerhandwerks, Zahlen und Fakten 2022" href="https://www.schornsteinfeger.de/aktuelle-pressemeldungen/zahlen-und-fakten-das-schornsteinfegerhandwerk-im-jahr-2022" />
+</Stats>
+
+Roughly 3,900 households per district is an average, and rural and city districts differ a lot. But it explains the workload. The Feuerstättenschau, the fire place inspection, has to happen twice within seven years, with at least three years between the two visits, according to [§ 14 of the Schornsteinfeger-Handwerksgesetz](https://www.gesetze-im-internet.de/schfhwg/__14.html). On top of that come the sweeping and inspection intervals from the KÜO and the emissions measurements. Even a fraction of those households means a lot of announcements for one business to schedule.
+
+The announcement itself is regulated too. Under [§ 3 of the KÜO](https://www.gesetze-im-internet.de/k_o/BJNR129200009.html), the authorised district sweep has to announce a Feuerstättenschau at least five working days ahead, unless the owner waives that. So the letter goes out, and then the resident's calendar meets the sweep's route.
+
+## What a failed appointment costs
+
+The problem isn't the average appointment. It's the tail. Here is how I'd expect 100 announced appointments to resolve in a district with no reply tooling, as an illustration, not a measurement:
+
+<Bars title="Where 100 announced appointments end up" unit=" of 100" caption="Illustrative assumption for a district where residents can only reply by phone or letter. Your own appointment log will give the real split, and it's worth pulling out before you buy anything." data={[
+  { label: "Fine as announced", value: 55 },
+  { label: "Rescheduled after a reply", value: 25, highlight: true },
+  { label: "Nobody home, second trip", value: 12, highlight: true },
+  { label: "Needs a follow-up (owner vs tenant, key, dispute)", value: 8, highlight: true }
+]} />
+
+The 45 that need more than one touch are where the hours go. A rescheduled appointment needs someone to read the reply, find a free slot near another job, write back and confirm. A missed one needs a trip that produced nothing.
+
+<Calc title="Napkin math: what 45 in 100 costs each month" caption="Assumptions, not measurements. Replace every line with numbers from your own appointment log." rows={[
+  ["Announced appointments per month", "300"],
+  ["Share needing more than one touch", "× 45%"],
+  ["Office minutes per case (read, rebook, confirm)", "× 12 min"],
+  ["Office time on rescheduling", "≈ 27 hours"],
+  ["Wasted trips (12% of 300 = 36)", "× 25 min"],
+  ["Driving and waiting time with no result", "≈ 15 hours"]
+]} result={["Time spent on second touches per month", "≈ 42 hours"]} />
+
+At an assumed cost of €40 per hour, that is roughly €1,700 a month, and it is time not spent on work that can be invoiced. The office part, 27 of the 42 hours, is what AI can shrink. The wasted trips are a routing and reminder problem, and I'll get to those.
+
+## Which replies fit a pattern
+
+If you read a month of replies, most of them fall into a handful of types:
+
+| What the resident writes | Type | What the assistant drafts | Who decides |
+| --- | --- | --- | --- |
+| "Can't do Tuesday, how about Thursday afternoon?" | Reschedule | Two alternative slots on the same street or route, with a confirmation text | Automatic within rules, sweep sees the day plan |
+| "I'm not in, my neighbour has a key" | Access arrangement | A confirmation that asks for the neighbour's name and flat number | Automatic |
+| "We sold the house" or "tenant moved out" | Owner or contact change | A question for the new contact details and a flag for the office | Office updates the records |
+| "Why do I have to pay for this?" | Question on cost or duty | A draft that cites the notice and the fee basis | Sweep reviews before sending |
+| "Another sweep already did this" | Free-market work | A request for the proof and a flag | Office checks against the records |
+| Angry, threatening or legal wording | Dispute | Nothing. It stops and alerts the sweep | Sweep |
+
+Each row is about judgement, not language. Reading "how about Thursday afternoon?" in German, English, broken WhatsApp voice-to-text or a photographed note is something language models do well. Deciding what happens when a resident refuses access is a legal step, and it stays with the licensed sweep and the authority.
+
+## The flow from letter to visit
+
+<Flow title="From announcement to a confirmed slot" caption="The assistant reads, proposes and drafts. The sweep owns the route and every reply that touches cost, duty or conflict.">
+<Step title="Announcement goes out" who="Sweep software" time="5+ working days ahead">Letter, email or door notice with the proposed slot and a way to answer: a link, a QR code, a phone number.</Step>
+<Step title="Replies arrive on every channel" who="Residents" time="days 1 to 5">Email, WhatsApp, voicemail, web form, a note on the door.</Step>
+<Step title="Read and classify" who="AI" tone="ai" time="seconds">Each reply is sorted into a type from the table above and matched to the address and appointment.</Step>
+<Step title="Propose a new slot" who="AI" tone="ai" time="seconds">It looks at the route plan and offers two or three slots next to existing jobs, not anywhere in the calendar.</Step>
+<Step title="Confirm or escalate" who="Sweep or office" tone="human" time="once a day">Routine reschedules are confirmed automatically. Anything on cost, duty or conflict waits in a short queue for a person.</Step>
+<Step title="Reminder with access question" who="AI" tone="ai" time="2 days before">A short message: time, who will let us in, who to call.</Step>
+<Step title="Visit, or a proper escalation" who="Sweep" tone="human">If the resident still can't be reached, the legal escalation steps are a human decision.</Step>
+</Flow>
+
+The decision points are the confirm step and the last one. The assistant never invents a legal consequence and never tells a resident they will be fined. Anything that sounds like a dispute goes straight to the sweep.
+
+## Routes are not an AI problem
+
+Clustering streets into a sensible day is a routing problem. A language model is a poor tool for it, and you don't need one. Use a proper route planner or the map function in your sweep software, and let the assistant work with the result: "offer slots on Birkenweg on Thursday, because that's where we're working anyway."
+
+That division matters, because it is where AI projects for trades go wrong. The model doesn't compute the route. It reads the messy human reply and puts it into a structure the planning tool understands. If you want a closer look at how this works for a mobile service business, the [pest control routing post](/posts/ai-for-pest-control-routing) covers it in detail.
+
+## What to fix before using AI at all
+
+Some of the best gains here need no model.
+
+**Give residents a way to answer that isn't a phone call.** A booking link or QR code in the announcement lets most people pick their own slot. Software built for sweeps, such as Kehrtour, offers digital announcements with online booking, and according to its own blog, an email that isn't opened is followed by a letter automatically. That is a vendor description, but the mechanism is sound.
+
+**Plan for slower post.** Since January 2025, letter carriers in Germany have three working days to deliver 95% of letters, up from two, according to the same vendor's [blog on the new Postgesetz](https://www.kehrtour.de/blog/neues-postgesetz-das-aendert-sich-f%C3%BCr-schornsteinfeger/). With a five working day announcement period, that gap is tight.
+
+**Keep a plain list of repeat problem addresses.** Landlords, holiday homes and commercial buildings that never answer are better handled by a standing phone call and a key arrangement.
+
+If booking links cover, say, two thirds of your appointments, the AI assistant is only needed for the replies that don't fit a link. That is a smaller and cheaper project.
+
+## Outside Germany: the same problem, without a letter
+
+In the US and UK, chimney sweeping is customer-initiated, not assigned by district. The scheduling problem is still the same shape. The Chimney Safety Institute of America says, following NFPA 211, that [chimneys, fireplaces and vents should be inspected at least once a year](https://www.csia.org/homeowner-resources). In the UK, [HETAS advises sweeping at least twice a year when burning wood or bituminous coal and at least once a year for smokeless fuels](https://www.hetas.co.uk/consumer/advice-hub/advice-articles/when-should-i-get-my-chimney-swept/), ideally just before the heating season.
+
+So the demand peaks in autumn, everyone wants the same three weeks, and the same handful of questions arrive by text and email. The value is an assistant that replies quickly, proposes slots along one route, and sends an annual reminder when the season approaches. There's a safety argument behind the reminders as well: the US National Fire Protection Association counts an estimated average of [38,881 home heating equipment fires a year](https://www.nfpa.org/education-and-research/research/nfpa-research/fire-statistical-reports/heating-equipment) for 2019 to 2023, and around three in ten involved a fireplace or chimney.
+
+## Data protection and legal limits
+
+A sweep's records hold names, addresses, phone numbers and details of heating systems, and sometimes of who is home when. A few rules I'd apply:
+
+- **The official records stay in their system.** In Germany that means the Kehrbuch and the Feuerstättenbescheid remain in the sweep's approved software. The assistant works on appointments and replies, not on the legal record.
+- **A data processing agreement is needed.** Under Article 28 of the GDPR, any AI provider that sees resident data has to sign one. Prefer EU hosting, and check that the provider does not train on your messages.
+- **Call recording needs consent.** In Germany, recording a call without consent is a criminal offence under § 201 StGB. Transcribe only what the caller has agreed to.
+- **Say it's an assistant.** The EU's [AI Act, Article 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act), requires that people are told when they're talking to an AI.
+- **Some work is not open to competition.** Since January 2013, owners can choose a registered sweep for many tasks, but the Feuerstättenschau, the Feuerstättenbescheid and new installation acceptance stay with the authorised district sweep, [as Haufe explains](https://www.haufe.de/immobilien/wirtschaft-politik/eigentuemer-koennen-schornsteinfeger-ab-2013-frei-waehlen_84342_158260.html). Different rules apply to the two kinds of work, so your templates should keep them apart.
+
+## What it costs
+
+These are my rough estimates, not quotes, and they depend on your software.
+
+| Item | Rough range | Note |
+| --- | --- | --- |
+| Setup: message triage on your existing email and WhatsApp Business | 2 to 4 days of work | More if it has to write into your sweep software |
+| Running: AI usage and messaging | About €50 to €200 a month | Scales with message volume |
+| Your time: writing the reply rules and templates | 1 to 2 days | The part people skip |
+| Review time afterwards | 10 to 15 minutes a day | The escalation queue |
+
+If the calculation above is close to your reality, the office time saved pays for this within the first month or two. If your log shows 90 of 100 appointments going fine, don't build anything.
+
+## Four weeks to a first version
+
+<Timeline title="A cautious rollout for one district">
+<Phase when="Week 1" title="Read your own log">Pull a month of replies and count the types. Note which channel each came through and which ones ended in a second trip.</Phase>
+<Phase when="Week 2" title="Add the booking link">Put a booking link or QR code in the announcement. Measure how many residents use it.</Phase>
+<Phase when="Week 3" title="Draft replies in shadow mode">The assistant drafts a reply for every incoming message, and a person sends or edits it. Compare the drafts with what you would have written.</Phase>
+<Phase when="Week 4" title="Automate the routine types only">Reschedules and access arrangements go out after a check. Cost, duty and dispute replies stay manual.</Phase>
+</Timeline>
+
+## Questions sweeps ask
+
+### Can AI schedule chimney sweep appointments on its own?
+
+It can propose slots and draft confirmations, but I wouldn't let it confirm anything that touches cost, duty or a dispute. Routine reschedules within your route plan are a fair candidate for automation after a few weeks of review.
+
+### What is the Feuerstättenschau and how often is it required?
+
+It is the inspection of all fire places in a building by the authorised district sweep. It has to be done twice within seven years, with at least three years between visits, under § 14 SchfHwG. The Feuerstättenbescheid that follows sets the dates for the next work.
+
+### Will residents accept replies from an assistant?
+
+Most residents want a slot that works, fast. A short reply that offers two options and is clearly labelled as automated is usually better received than a call back three days later. Keep the tone plain and always offer a phone number.
+
+### Do I need this if I already use scheduling software?
+
+Maybe not. If your software already sends announcements, takes online bookings and reminds residents, the gain left for AI is the free-text replies. Measure how many there are before deciding.
+
+## My rule of thumb
+
+Fix the channel first: a booking link in every announcement. Then use AI for the replies that don't fit a link, let it propose slots next to jobs you already have, and keep every reply about cost, duty or conflict with a person.
+
+If you want to test this on one district, [tell me how your announcements and replies work today](/contact?intent=improve), and I'll suggest the smallest version worth trying. A related problem is getting customers to book in the first place, which I wrote about for [HVAC maintenance agreements](/posts/ai-for-hvac-maintenance-reminders).

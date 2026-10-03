@@ -1,0 +1,154 @@
+---
+id: "ai-for-scaffolding-companies-rental-tracking"
+title: "Scaffolding Hire Periods: Stop Giving Away Free Weeks"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Trades & construction", "Scaffolding companies", "Rental periods", "AI for small business"]
+description: "Quotes include a hire period, then charge weekly. Overruns go unbilled when nobody tracks end dates on 40 sites. What a spreadsheet fixes and where AI helps."
+excerpt: "Quotes include a hire period, then charge weekly. Overruns go unbilled when nobody tracks end dates on 40 sites. What a spreadsheet fixes and where AI helps."
+---
+
+Forty live sites. A quarter of them are past the hire period written into the quote. On six of those, nobody has sent an extension notice or put the extra weeks on an invoice. At £80 a week, that is £480 a week, or roughly £25,000 a year, of scaffolding standing around for free.
+
+Those are my assumptions, not survey results. I'm not aware of a reliable published figure for how often this happens, and I wouldn't trust a vendor's number if I saw one. But the mechanism is easy to recognise. The quote says six weeks, then weekly hire. The painters overrun. The customer mentions on the phone that they "need it a bit longer". Nobody writes it down, and nobody notices when week seven starts.
+
+The fix has two parts, and only one of them involves AI. I'll start with the one that doesn't.
+
+## The three dates behind every scaffolding quote
+
+Almost every scaffolding quote rests on three dates: the day the scaffold is handed over, the day the included hire period ends, and the day the customer releases it for dismantling. Everything between the second and the third is billable, if the quote says so.
+
+<Stats title="How hire periods usually work">
+  <Stat value="6 to 8 weeks" label="of hire usually included in the initial price of a UK scaffolding quote, then charged weekly" source="BestBuilders guide to scaffolding hire (a UK builder directory)" href="https://www.bestbuilders.co.uk/guides/insights/how-long-can-scaffolding-stay-up-on-a-job-2026-uk" />
+  <Stat value="£40 to £100" label="typical weekly charge for a full-size scaffold once the included period ends" source="BestBuilders guide to scaffolding hire" href="https://www.bestbuilders.co.uk/guides/insights/how-long-can-scaffolding-stay-up-on-a-job-2026-uk" />
+  <Stat value="7 days" label="longest gap between inspections of a scaffold used for construction work, until it is removed" source="HSE, scaffolding FAQ" href="https://www.hse.gov.uk/construction/faq-scaffold.htm" />
+</Stats>
+
+The included period differs from firm to firm, which is exactly the point: the one that counts is the one in your quote and your terms. In Germany, the standard contract terms for scaffolding work (ATV DIN 18451, part of the VOB/C) used to include a flat four-week base period. The revision that [came into force on 5 October 2023](https://www.geruestbauhandwerk.de/aktuelles/ueberarbeitete-atv-din-18451-in-kraft-getreten/) dropped it. Hire is now agreed and billed as its own service from the first day. Different rulebook, same consequence: someone has to know when the free part stops.
+
+## Where the dates actually live
+
+Ask where each of those dates is recorded today and you usually get five different answers.
+
+| Date | Where it is recorded today | Who knows it |
+| --- | --- | --- |
+| Handover | Handover certificate, a photo of the scaffold tag | Site team |
+| Included period and weekly rate | The quote PDF | Office |
+| "Can we keep it another fortnight?" | A phone call or a WhatsApp message | Whoever picked up |
+| Customer asks for dismantling | Email, text, or a call to the foreman | Often one person |
+| Dismantling done | Crew timesheet | Dispatcher |
+
+Nothing is wrong with any single place. The problem is that nobody sees all five for forty sites at once. The office sees the quote, the foreman hears the phone call, and the invoice is raised from the quote, so it matches the quote even when the site has long since moved on. A partial strip-out makes it worse: when the east elevation comes down and the west stays up, the billable area changes in the middle of the hire.
+
+The trades on the other side of the scaffold have the same gap. [Painters keep photos and sign-offs](/posts/ai-for-painters-handover-documentation) that fix when work finished, and none of it reaches the scaffolding firm's records.
+
+The release itself is the date that matters most, and it's the one most often given by phone. Some German scaffolders use a dedicated release form for it, the Freimeldung, [like this one](https://www.sanow-jena.de/geruestfreimeldung.html), so the end of the hire is written down with a date.
+
+## What a spreadsheet already fixes
+
+Before any AI: one row per live site, with columns for handover date, included weeks, weekly rate and a formula for "which week are we in". That list catches most overruns where the dates are known. It is plain date arithmetic, and a language model adds nothing to it.
+
+If you already run scaffolding software, check it first. According to their own websites, [PRICEWORX](https://www.priceworx.co.uk/trades/scaffolding/coventry) monitors hire periods per plot and flags overruns, [The Scaffold Software](https://thescaffoldsoftware.co.uk/) shows hire weeks counting down on each job card, and [Avontus Quantify](https://www.avontus.com/quantify/) combines scaffold tags, inspections and rental invoicing. German vendors such as [HERO](https://hero-software.de/anwendungen/geruestbau-software) and [OPTIMUS](https://www.rpssoftware.de/handwerk/geruestbau-software/) advertise automatic standing-time calculation too. Those are vendor descriptions, not tested claims, but the category clearly exists.
+
+All of them share one weakness: they count from the dates somebody typed in. If the extension agreed on the phone never reaches the record, the software is counting the wrong thing, very precisely.
+
+There's also a cheaper fix that needs no software at all. At the start of the last included week, send one short message: "Your included hire period ends on 14 October. After that hire is £80 per week. Reply if you need it longer or want it taken down." Schedule it from a calendar. The customer now has an end date in writing, and some will ask for dismantling the same day.
+
+## Where AI earns its place: the messages nobody files
+
+The dates that never reach the record are sitting in free text: customer emails, WhatsApp chats, foremen's voice notes, scribbles on the handover certificate. Reading those is something language models do reasonably well, and it's the same raw material as [voice notes turned into daily reports](/posts/ai-for-construction-daily-reports).
+
+Three jobs, each small:
+
+**Extract the date.** "Painters need until the end of the month" becomes a record: site, expected end, who said it, when. "Can come down Friday" becomes a release date.
+
+**Match it to the right site.** Customers write "the house on Elm Road", not "job 2291". The model proposes the match and shows the message, so a person can confirm it at a glance.
+
+**Spot the conflict.** A release on Tuesday followed by "one more week please" on Thursday is exactly what a human skims past and a careful reader would flag.
+
+Once a week, the register plus these extracted dates produce one list for the office. Something like this (names and numbers are illustrative):
+
+```text
+MONDAY HIRE CHECK: 40 live sites
+
+PAST INCLUDED PERIOD, NO NOTICE SENT (6)
+Elm Road 12 (Hargreaves Builders): 8 weeks included, now week 11.
+  Email 3 Sep: "painters need until the end of the month".
+  No extension recorded. Suggested: notice for 3 weeks at £80.
+
+RELEASE RECEIVED, NOT YET DISMANTLED (2)
+Mill Lane 4: released by email Tue 22 Sep. Crew not booked.
+  Check your terms, and who is waiting for whom.
+
+ENDS WITHIN 7 DAYS (5)
+Park View 31 and 4 more: reminder drafted, not sent.
+```
+
+Under the first item sits a drafted notice in your own wording. Here is the decision point: the office manager spends ten minutes on six sites and chooses for each one. Send the notice as drafted. Waive it, because your crew was late or the customer is worth a goodwill week. Or phone first. The model never sends anything and never decides to waive. Overbilling a good customer costs more than a week's rate, and only you know the history.
+
+## The napkin math
+
+Here is the calculation with placeholders I'd use in a first conversation. Replace every figure with your own.
+
+<Calc title="Napkin math: weeks standing for free" caption="Assumptions, not measurements. Count your live sites and last quarter's invoices for real figures. The leak stays constant as long as the ratios do." rows={[
+  ["Live sites at any time", "40"],
+  ["Share past the included hire period", "× 25%"],
+  ["Of those, share with no notice or invoice", "× 60%"],
+  ["Weekly rate after the included period", "× £80"],
+  ["Weeks per year", "× 52"]
+]} result={["Hire given away each year", "≈ £25,000"]} />
+
+Six sites at £80 is £480 a week, and a year has 52 of them. If your real overrun share is a tenth of my assumption, the figure is still worth a Monday morning. If it's double, you'll want to know sooner.
+
+## Inspections are a second clock
+
+The same problem exists for inspections, with stricter consequences. In the UK, [HSE guidance](https://www.hse.gov.uk/construction/faq-scaffold.htm) says a scaffold used for construction should be inspected before first use and then every 7 days until it is removed, and again after conditions likely to cause deterioration, such as adverse weather, or after a substantial alteration. In Germany, TRBS 2121 Teil 1 expects a competent person (befähigte Person) to inspect the scaffold after erection and before handing it to the user, and [DGUV Information 201-011](https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/DGUV-Informationen/201_011/201_011.pdf) recommends doing the handover together with the user and documenting it in a protocol.
+
+A weekly due list is a calendar job. AI has a narrow role here: check that every inspection report arriving in the inbox matches a live site, carries a date, a tag number and a signature, and flag the sites where the last report is missing or old.
+
+<Callout title="A model can chase a record, but it can't carry out an inspection" tone="warning">
+The inspection is done on the scaffold by a competent person. Never let a tool pre-fill inspection fields or sign for anyone, and never accept a generated report as a substitute for walking the structure. A tidy record of an inspection nobody carried out is worse than a gap, because it looks like protection.
+</Callout>
+
+## Data protection
+
+Customer emails and site chats contain names, phone numbers, addresses and sometimes photos of people's homes. When a hosted AI service reads them, it is usually your processor, and [Article 28 GDPR](https://gdpr-text.com/read/article-28/) requires a written contract that covers, among other things, processing only on your documented instructions, confidentiality of staff, and deletion or return of the data at the end.
+
+In practice, I'd check four things before connecting a mailbox: where the data is processed, whether your inputs are used to train models, how deletion works, and whether the contract is signed. And one habit matters more than any tool: customer details belong in company accounts and not only in a foreman's private WhatsApp. If the information never leaves his phone, no system can read it.
+
+## What it costs, and a four-week start
+
+Rough figures, labelled as my estimates: reading a few hundred short messages a week costs a few pounds a month in model fees at current prices, so check current pricing. The real cost is setup time, a few days to build the register, connect the mailbox and test, plus 10 to 15 minutes each Monday. If your scaffolding software has an export or an API, use it. If not, a shared spreadsheet is a perfectly good register.
+
+<Timeline title="Four weeks to the first Monday list">
+<Phase when="Week 1" title="Build the register">One row per live site: handover date, included weeks, weekly rate, customer contact, release received (yes or no). A spreadsheet is fine. Add the week-five message to your routine.</Phase>
+<Phase when="Week 2" title="Look back">Run the last three months of site emails and chat notes through the extraction and compare the result with what you invoiced. That gives you your real number for the Calc box.</Phase>
+<Phase when="Weeks 3 to 4" title="Monday list, human review">The list goes to the office every Monday. A person checks every match and sends or discards every notice.</Phase>
+<Phase when="End of week 4" title="Decide">Count the weeks you billed that would have been missed, notices a customer disputed, and messages attached to the wrong site.</Phase>
+</Timeline>
+
+I'd be strict about that last count. One notice sent to the wrong customer costs more goodwill than the week it recovers, so tighten the matching before you widen the rollout.
+
+## Common questions
+
+### How do you track scaffold hire periods across dozens of sites?
+
+Start with a register that has one row per site: handover date, included weeks, weekly rate, expected end, release received. Review it every Monday. Scaffolding software does the same with less typing. AI is only worth adding once you know the missing dates are hiding in emails and chats.
+
+### Can I still bill extra weeks I forgot to charge?
+
+Often yes, if your quote or terms state the weekly rate and you can show the dates. Whether a late invoice gets paid is as much a customer-relationship question as a legal one, and for larger sums a short call with a solicitor beats guessing. The older the claim, the harder it is to prove, which is one more reason to check weekly.
+
+### What if the customer says the overrun wasn't their fault?
+
+Sometimes they're right. If the customer released the scaffold on a Tuesday and your crew came the following Wednesday, the extra week is arguably yours. Keep the release message, the dismantling date and the reason for any delay next to each other. The model can line those up. Whether to bill, split or waive is your decision.
+
+### Is it safe to feed customer emails into an AI tool?
+
+It can be, with a contract that meets Article 28 GDPR, a known processing location and a clear deletion rule. Use company mailboxes, not private chats, and tell your staff what is being read and why.
+
+## Where I'd start
+
+Every live scaffold has three dates: handed over, included period ends, release received. If the office can't name all three for every site on Monday morning, you are giving weeks away. Start with the sheet and the week-five message, and add AI when you find the missing dates hiding in messages.
+
+If you'd like to see what your own site list and mailbox would turn up, [tell me how you track sites today](/contact?intent=improve), and I'll suggest the smallest version worth trying. The same pattern shows up wherever demand arrives in bursts: after a hailstorm, [roofing firms](/posts/ai-for-roofers-storm-leads) take on new sites faster than anyone can write them down, and every one of them may need scaffolding.

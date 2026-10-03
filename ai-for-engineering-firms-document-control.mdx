@@ -1,0 +1,165 @@
+---
+id: "ai-for-engineering-firms-document-control"
+title: "Drawing Revisions at Small Engineering Firms: Know What Changed"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Professional services", "Engineering firms", "Document control", "AI for small business"]
+description: "Building from a superseded drawing is costly and avoidable. How small engineering firms can use AI to compare revisions and keep the drawing register true."
+excerpt: "Building from a superseded drawing is costly and avoidable. How small engineering firms can use AI to compare revisions and keep the drawing register true."
+---
+
+The email lands at 16:50 on a Tuesday. "Plans updated, new set attached." Fourteen PDFs from the architect, revision D. The revision table on the ground floor plan reads "D: adjusted following meeting of 5 March". Three of the changes are circled in revision clouds. A fourth is not.
+
+Picture a four-person structural office with a dozen live projects. Nobody has an hour to lay revision C over revision D on fourteen sheets, so the engineer skims the clouds and moves on. The fourth change, a lift shaft shifted 300 mm east, stays buried in the architect's background. Three weeks later the formwork plans go out with the old shaft position. Six weeks after that, someone on site notices the shaft doesn't line up with the slab opening.
+
+Nobody here was careless. The one fact that mattered, "the shaft moved", was never written down anywhere the engineer would look.
+
+In software, every change carries a diff and a short message saying what changed and why. Drawing sets mostly carry neither. That gap is where I'd put AI to work, with a compare tool underneath it and a human who decides what each change means.
+
+## Two directions, one failure
+
+Revision problems run both ways. Incoming, you design on someone else's background and don't notice it changed. Outgoing, someone builds from a revision of your drawing that you have already replaced. Both end the same way: nobody can say, quickly and with certainty, which revision is current for whom.
+
+Detailed execution design is where the revision count piles up, because everyone is still changing things. In Germany's fee ordinance for architects and engineers (HOAI), it is also the biggest block of a structural engineer's work: [section 51 weights it at 40 percent](https://www.gesetze-im-internet.de/hoai_2013/__51.html) of the fee, with lower weights in a few special cases.
+
+What errors cost is hard to pin down, and drawing control is one cause among many. The UK's Get It Right Initiative, a coalition of clients, consultants and contractors, says [key international studies put the direct cost of avoidable error at about 5% of project value](https://getitright.uk.com/), and that its own research puts the true figure, with indirect costs and latent defects included, closer to 21%. Those numbers cover every kind of error, not just revision mistakes, but they're reason enough not to leave revision control to memory.
+
+Small offices feel it most, because nobody is a document controller. In a 2025 member survey of German architecture and engineering offices (1,583 engineering offices took part), [the median engineering office had 6.0 full-time equivalents, and 46.8% had five or fewer](https://www.vbi.de/wp-content/uploads/2026/02/250714_Mitgliederbefragung_2025_extern.pdf). It was voluntary, so the smallest practices are probably underrepresented. In an office that size, "document control" is whoever opens the email.
+
+The usual process: transmittals arrive as emails or share links, each worded differently. Comparing means flipping between two PDFs or trusting the clouds. The register is a spreadsheet, updated when there's time. And nobody records who acknowledged the new revision, so "does the contractor have it?" gets a guess.
+
+## Start with the register, not the AI
+
+Before a model touches anything, you need one list that says what's current. In Germany it's the Planlaufliste, elsewhere a drawing register. One row per drawing, with enough columns to answer one question: what can the site build from today?
+
+| Column | Example | Who fills it |
+| --- | --- | --- |
+| Drawing number | S-201 | Engineer |
+| Title | Ground floor slab, formwork | Engineer |
+| Revision | C (supersedes A and B) | Engineer |
+| Status | For review, or released for construction | Engineer |
+| Issue date and recipients | 14 April: architect, contractor, checking engineer | Register |
+| Change note | Slab opening at lift shaft moved 300 mm east to follow architect revision D | AI drafts, engineer approves |
+| Based on | Architect plan set, revision D of 12 March | AI extracts, engineer confirms |
+| Check status | Reviewed by checking engineer, 2 April | Engineer |
+| Acknowledged | Contractor, 16 April | Recipient's reply, or a phone call |
+
+The "based on" column is the one most offices lack. It ties your revision to the background you designed on, so when the architect issues D you can see at once which of your sheets depend on C.
+
+If this looks like ISO 19650, it's the same idea: the standard gives every file a revision and a status. In the UK National Annex, revisions run P01, P02 for preliminary issues and C01 for contractual ones, and status codes tell the recipient what a file may be used for, for example [S3 "suitable for review and comment" or S4 "suitable for stage approval"](https://www.ukbimframework.org/wp-content/uploads/2021/02/Guidance-Part-C_Facilitating-the-common-data-environment-workflow-and-technical-solutions_Edition-1.pdf). That guidance dates from 2020 and the Annex was revised in 2021, so check the current edition. A small office doesn't need the full standard, but two ideas are worth stealing: a revision number that only goes up, and a status that says what the recipient may do with the file.
+
+None of this involves AI. A register, plus a rule that nothing leaves the office without a row in it, prevents more errors than any model. The AI part is keeping the register true when you're busy.
+
+## Three jobs worth automating
+
+**Reading what arrives.** A transmittal email and its attachments hold the register data: numbers, titles, revisions, dates, status stamps. A model can read the email and the title blocks, match every sheet to your register, and flag the cases that matter: new sheets, newer or older revisions, duplicates, and sheets your register has never seen.
+
+**Describing what changed.** The hard one, covered below.
+
+**Writing and chasing the outgoing issue.** A transmittal should list every sheet with its revision and status, name what it supersedes, and say in two or three lines what changed. A model drafts that from the register and your change notes. A few days later it lists the recipients who haven't acknowledged, so someone phones them instead of finding out on site.
+
+## Describing changes: find first, then explain
+
+Models read text on a drawing well. Geometry and symbols are a different matter. In [AECV-Bench](https://arxiv.org/abs/2601.04819), an academic benchmark of multimodal models on architectural and engineering drawings, text-centric questions reached up to 0.95 accuracy, while reliably counting doors and windows on floor plans was often only 0.40 to 0.55. The authors conclude that current systems work as document assistants and call for tool-augmented, human-in-the-loop workflows.
+
+That matches how I'd build it. Let a compare tool find the differences, because that part is deterministic. [Bluebeam Revu](https://support.bluebeam.com/revu/features/compare-documents-vs-overlay-pages.html) has two ways: Compare Documents highlights the differences between two PDFs with cloud markups, and Overlay Pages merges the content of two or more files and shows edited content in a separate colour. If the architect sends models rather than PDFs, a model-based comparison in your BIM software will be more precise still.
+
+The model then gets what the tool found, before-and-after crops of each changed region, the revision table, the cloud annotations and the architect's note. Its job is to describe each change in plain language and cross-check the result against what the architect claimed:
+
+```text
+Architect plan set, revision D against C (14 sheets, received 12 March)
+Revision note: "adjusted following meeting of 5 March"
+
+MARKED BY THE ARCHITECT, CONFIRMED IN COMPARE
+- A-102 ground floor: door D14 now hinged on the other side. No structural effect.
+- A-103 first floor: new opening near grid 4/B, roughly 1.0 x 1.4 m.
+  Affects the slab. Check with the architect.
+- A-210 section B-B: slab callout now reads 300 mm, was 250 mm.
+
+CHANGED, NOT MARKED
+- A-102 ground floor: lift shaft moved about 300 mm east (grid C to D).
+  Affects slab opening and shaft walls. Ask the architect to confirm.
+
+MARKED, NO CHANGE FOUND
+- A-301 elevation: cloud around the parapet detail, nothing differs from C. Ask.
+
+UNCHANGED: 10 sheets
+```
+
+The two buckets at the bottom are where the value is. "Changed, not marked" is the fourth change from the opening scenario. "Marked, no change found" catches a stale cloud or a promise the drawing doesn't keep. Either goes back to the architect as a specific question, and gives you a polite way to ask for better revision notes.
+
+<Callout title="Three things the assistant never does" tone="warning">
+It never decides that a change is harmless, never releases a drawing, and never marks an older revision as superseded. Each of those is a signature that stays with an engineer. Where the compare tool and the model disagree, a person looks at the sheet.
+</Callout>
+
+## The workflow
+
+<Flow title="From a new plan set to a confirmed revision" caption="Software finds the differences, the model explains them, the engineer decides what they mean. Step 5 is the whole point.">
+<Step title="Transmittal arrives" who="Architect or client" time="any time">An email or share link with a new plan set. Nothing is opened yet.</Step>
+<Step title="Intake check" who="AI" tone="ai" time="minutes">Reads title blocks and email text, matches each sheet to the register, flags new, newer, older, duplicate and unknown sheets.</Step>
+<Step title="Compare" who="Compare tool" time="minutes">Each changed sheet is compared against the revision you hold, which produces a list of changed regions.</Step>
+<Step title="Change summary" who="AI" tone="ai" time="minutes">Describes each region, checks it against the architect's clouds and note, and sorts the results into marked and confirmed, changed but not marked, and marked but not found.</Step>
+<Step title="Impact decision" who="Engineer" tone="human" time="the real work">Opens only the flagged regions. Each one is marked: affects my design, affects another discipline, no effect, or ask the architect. The register's "based on" column is updated.</Step>
+<Step title="Release and notify" who="Engineer, with an AI draft" tone="human">The engineer sets the status and releases. The model drafts the transmittal with superseded revisions and change notes, and the engineer reads it and sends it.</Step>
+<Step title="Chase acknowledgments" who="AI" tone="ai" time="after 3 working days">Lists recipients who haven't confirmed. A person phones them.</Step>
+</Flow>
+
+## What it costs
+
+Setup is mostly the register and the "no row, no issue" rule: a day or two, no AI involved. Getting intake and change summaries reliable on your own past plan sets takes a few more days. Running costs are small: a plan set is a few dozen page images and some text. At current API prices I'd expect cents to low single-digit euros per set, so tens of euros a month at the volume below. That's my estimate, and it varies by provider and sheet size.
+
+<Calc title="Napkin math: time saved per week" caption="Assumptions, not measurements. Count your own incoming plan sets for two weeks before you believe any of this." rows={[
+  ["Incoming plan sets per week", "8"],
+  ["Minutes saved per set (45 down to 20, review included)", "× 25"],
+  ["Outgoing issues per week", "10"],
+  ["Minutes saved per issue (20 down to 8)", "× 12"],
+  ["Minutes saved per week", "= 320"],
+  ["Working weeks per year", "× 46"]
+]} result={["Hours saved per year", "≈ 245"]} />
+
+At an assumed internal cost of 60 euros an hour, that's about 14,700 euros of time a year. It isn't the real argument, though. One slab opening in the wrong place costs more than that.
+
+## When a spreadsheet and a rule are enough
+
+- **Two or three live projects, one careful architect.** If revision notes are good and you can compare sheets by hand in ten minutes, skip the AI. The register and the rule do the work.
+- **Your clients already run a project platform.** Tools like Dalux, Trimble Connect, Procore or Autodesk Docs keep a register and distribute files. Use theirs, and add only the change summary.
+- **Calculations and design checks.** Not for a language model. The summary tells you where to look, never that the structure is still fine.
+
+## Confidentiality, data protection and responsibility
+
+Transmittal emails and project contact lists contain personal data. Under the GDPR, an AI provider that processes them on your behalf is a processor, which means you need a data processing agreement under [Article 28](https://gdpr-info.eu/art-28-gdpr/). Choose a provider that doesn't train on your data, and know where it processes it.
+
+Drawings are mostly not personal data, but they are often confidential: client IP, security-sensitive buildings. Check your NDAs and client contracts for rules on third-party tools before uploading anything. If in doubt, start with title blocks and notes, not full sheets.
+
+Responsibility stays where it was. In England, for higher-risk residential buildings (at least 18 metres or 7 storeys, with at least two homes), [the Building Safety Act requires the accountable person to keep prescribed information and, so far as possible, keep it up to date](https://www.legislation.gov.uk/ukpga/2022/30/section/88). A clean revision history is the raw material for that. In Germany, structural execution drawings that need a third-party check go to a Prüfingenieur, and [only once errors are corrected is the plan stamped and released](https://www.staatsanzeiger.de/beruf-und-karriere/pruefingenieure-verantwortlich-fuer-die-sicherheit-der-gebaeude/). The model building code also wants [permits, building documents and structural proofs on site from the start of construction](https://www.vpb.de/fileadmin/user_upload/2_Unser_Wissen/2.13_Angebote_Dritter/musterbauordnung.pdf) (section 72 of the 2002 edition; state codes number it differently). A model's change note is a working note, not a deliverable. The engineer owns whatever goes out.
+
+## A pilot on one project
+
+<Timeline title="Five weeks, one live project">
+<Phase when="Week 1" title="Register and rule">Build the register for one live project, including the "based on" column. Agree that nothing is issued without a row.</Phase>
+<Phase when="Week 2" title="Replay">Take the architect's last three plan sets. You know what really changed. Run intake and change summary, and note what the model caught and missed.</Phase>
+<Phase when="Weeks 3 to 4" title="Shadow mode">On the next real plan sets, compare the usual way and run the assistant in parallel. Log every difference.</Phase>
+<Phase when="Week 5" title="Decide">Count changes found by each method, false alarms and minutes spent. A structural change the assistant missed sends you back to week 2.</Phase>
+</Timeline>
+
+Until the assistant has found everything the engineer found, keep manual comparison on every sheet that carries load.
+
+## Questions engineers ask before trying this
+
+### Can AI compare two drawing revisions on its own?
+
+Not reliably, if it's just looking at two images. Use a compare tool to find the changes and the model to describe them, with an engineer making the call.
+
+### Is it safe to upload client drawings to an AI service?
+
+It depends on your NDA, the client contract and the provider's terms. Get a data processing agreement, check whether your data trains the model, and start with text before full sheets.
+
+### What if the architect's revision notes are useless?
+
+Then the comparison matters more. The "changed, not marked" list is a ready-made question to send back, and a good argument for requiring clouds and notes next time.
+
+## Where I'd start
+
+Never design on a revision you haven't compared, and never issue one without saying what changed. Let software find the differences, let the model describe them, and let an engineer decide what they mean. Build the register first. The AI comes second.
+
+If plan sets arrive faster than anyone can compare them, [tell me how revisions move through your office today](/contact?intent=improve), and I'll suggest the smallest version worth testing. The paper trail has other halves: [architects keep a decision log](/posts/ai-for-architects-meeting-decisions) for what was agreed in meetings, [daily reports](/posts/ai-for-construction-daily-reports) show which revision is actually being built, and [land surveyors](/posts/ai-for-land-surveyors-client-inquiries) supply the site survey your drawings sit on.

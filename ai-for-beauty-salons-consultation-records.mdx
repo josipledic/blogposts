@@ -1,0 +1,164 @@
+---
+id: "ai-for-beauty-salons-consultation-records"
+title: "Beauty Salon Consultation Records: Allergies, Consent, Aftercare"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Personal services", "Beauty salons", "Consultation records", "AI for small business"]
+description: "A peel, a tint or a microneedling session starts with a form nobody reads closely. How salons can build better records, flag answers and time aftercare."
+excerpt: "A peel, a tint or a microneedling session starts with a form nobody reads closely. How salons can build better records, flag answers and time aftercare."
+---
+
+Picture a Saturday morning at a cosmetic studio. A client has booked a superficial peel and, at the front desk, ticks "no" down the paper form while chatting. What she doesn't write down: she finished a course of prescription acne tablets five months ago, she had a cold sore last week, and she came back from ten days in the sun on Thursday.
+
+None of this is unusual, and none of it is her fault. A clipboard two minutes before the treatment is the worst moment to ask about medication. The questions are on the page; nobody has had time to read the answers.
+
+That is a records problem more than a safety problem, and it has three parts: asking the right questions early enough, getting consent that means something, and following up after the client has gone home. AI can do real work around all three. It cannot make the decision at the centre.
+
+## What a paper card can't do
+
+Most studios run on a client card filled in at the first visit, a signature at the bottom and a leaflet at checkout. Where that breaks:
+
+- **The card is a snapshot.** Medication, pregnancy and skin conditions change. A card from three years ago answers yesterday's question.
+- **Ticks hide detail.** "Medication: yes" doesn't say which one or when it ended.
+- **Nobody reads it properly.** It gets a glance, with the client already on the couch.
+- **The leaflet is read once.** When a client rings on day 3 with a red, swollen eyelid, the card often can't say what was applied, what the patch test showed or what she was told.
+
+The cost is easy to ignore until something goes wrong: a few minutes per client for re-asking and filing, plus the risk. A reaction with no record behind it is hard to explain to the client or an insurer. And records have a long shelf life. Under German civil law, a damages claim for injury to health can still be brought up to 30 years after the act, however late the client learns of the harm ([§ 199 (2) BGB](https://www.gesetze-im-internet.de/bgb/__199.html)). Limits differ by country, but the record may have to answer a question years from now.
+
+## Where the law gets specific: device treatments
+
+For most treatments, what a consultation record must contain is set by your supplier and your insurer. Germany is the exception for one family of treatments, and its rules make a decent template for the rest.
+
+The NiSV, the German ordinance on non-ionising radiation, covers lasers, intense pulsed light, radio-frequency and similar devices used cosmetically. Under [§ 3](https://www.gesetze-im-internet.de/nisv/__3.html), the person applying the treatment must advise the client beforehand on the effects, health risks and side effects, alternatives, the individual treatment plan including the device, and the possible need for a specialist medical check first. That conversation goes into a consultation protocol and the client consents on that basis. Protocol and consent are kept for ten years, then deleted at the end of that year, using automatic deletion where the software allows it.
+
+Two more lines matter. Since 31 December 2022, only people with proven expertise (Fachkunde) may use lasers or intense light sources commercially for cosmetic purposes, says the [federal environment ministry's FAQ](https://www.bundesumweltministerium.de/themen/strahlenschutz/nichtionisierende-strahlung/ueberblick-nichtionisierende-strahlung/faq-strahlenschutz-bei-kosmetischen-und-nichtmedizinischen-anwendungen). And with lasers and intense light, some applications are reserved for physicians whatever a form says: ablative treatments, anything that breaks the skin barrier, vascular or pigmented skin changes, and removing tattoos or permanent make-up ([§ 5](https://www.gesetze-im-internet.de/nisv/__5.html)). Elsewhere, ask your licensing body or insurer what applies. The NiSV list is still a good skeleton for any treatment.
+
+## What the record should capture
+
+Typical questions per treatment: a starting point to agree with your product supplier or a doctor, not a clinical standard.
+
+| Treatment | Ask about | Also record |
+| --- | --- | --- |
+| Chemical peel | Cold sores or other infections, acne medication and when it ended, sun-sensitising medication, scarring tendency, pregnancy or breastfeeding, recent sun | Peel type and strength, skin type, sun protection advice given |
+| Microneedling | Scarring tendency, blood thinners, active infection or acne, cold sores, pregnancy | Needle depth, products used, photos if the client agrees |
+| Lash and brow tint | Earlier reactions to tints, eye infections, recent eye surgery, known allergies | Patch test date, site and result, product and batch, aftercare given |
+| Laser, IPL, radio-frequency | Medication, skin conditions, tanning, pregnancy, previous reactions | Full consultation protocol, consent, device and settings |
+
+The peel row has a source. A [dermatology guideline written for physicians](https://ijdvl.com/standard-guidelines-of-care-for-chemical-peels/) lists the history to take before a peel: herpes simplex, isotretinoin, a prescription acne drug, in the last six months (for medium and deep peels), keloid tendency, current medication, immune problems and sun exposure. For tints, trade educators quoted by [Professional Beauty](https://professionalbeauty.co.uk/experts-allergens-tinting-products) say to patch test 48 hours before the treatment and follow the manufacturer's instructions, and they warn that patch tests reduce risk but are not 100% predictive.
+
+## Flags belong to you, not to the model
+
+This is the part I'd be most careful with, because medical sources don't agree on every point.
+
+<Callout title="A flag is a prompt for a person, not a verdict" tone="warning">
+A review in the journal Cosmoderma treats pregnancy as a relative contraindication for chemical peels, while EyeWiki, the American Academy of Ophthalmology's wiki, lists pregnancy and breastfeeding among possible contraindications. The Cosmoderma review also says older advice against any peel during isotretinoin treatment has been revised for superficial and medium-depth peels, while EyeWiki still calls isotretinoin in the past six months a soft contraindication. When specialists disagree, an AI model should not settle it. You write the rule table, with your supplier's instructions and a doctor's input. The assistant applies it and shows which rule matched.
+</Callout>
+
+The detail is in the [Cosmoderma review](https://cosmoderma.org/a-perspective-on-whats-new-in-chemical-peels/) and the [EyeWiki entry](https://eyewiki.org/Chemical_Peels_of_the_Eyelids_and_Face). In practice you end up with two kinds of rules: hard stops ("active cold sore: no peel today") and soft flags ("isotretinoin ended five months ago: therapist decides, consider a doctor"). The therapist can overrule a soft flag, in writing, with a reason.
+
+## How the build works
+
+<Flow title="From booking to a day-3 check-in" caption="The assistant asks, flags and follows up. The therapist reads the flags before the client arrives and makes every decision.">
+<Step title="Form goes out" who="System" time="2 days before">The booking triggers a short form for that treatment. Returning clients confirm or change their last answers.</Step>
+<Step title="Client answers" who="Client" time="at home">A "yes" to medication opens "which one, and when did it end?". Free text is allowed.</Step>
+<Step title="Read and flag" who="AI" tone="ai" time="seconds">Free-text answers are matched against your rule table. A one-screen summary lists flagged items first and marks missing answers.</Step>
+<Step title="Therapist decides" who="Therapist" tone="human" time="before arrival">Proceed, adapt, postpone, or send the client to a doctor first. The decision and the reason go into the record.</Step>
+<Step title="Consent and treatment" who="Therapist and client" tone="human">The treatment is explained in person, the client consents by her own action, and product, batch and patch test result are logged.</Step>
+<Step title="Aftercare messages" who="AI" tone="ai" time="per protocol">Short messages at the times your protocol sets, each asking how the skin feels.</Step>
+<Step title="Replies sorted" who="AI, then a person" tone="human" time="same day">"Fine, thanks" gets a thank-you. Swelling, blistering, pain or a photo goes to a therapist.</Step>
+</Flow>
+
+The model's most useful job is the third step, because free-text answers are where the important information hides. The therapist's screen might look like this:
+
+> **Client S., peel, Saturday 10:00.** Form completed Thursday. **For your attention:** (1) acne tablets, "finished in April", about five months ago. (2) Cold sore "last week, nearly gone". (3) Ten days on holiday, "a bit tanned". Pregnancy and breastfeeding: no. Everything else unchanged. **Rules matched:** recent cold sore (hard stop pending a look), acne medication within six months (soft flag), recent sun (soft flag). **Missing:** nothing. This summary does not clear or refuse treatment.
+
+Compare that with a ticked column on a clipboard. On Friday the therapist can phone the client, move the appointment or look at the lip first. That beats a surprise on Saturday.
+
+## Aftercare that arrives when it's needed
+
+Aftercare instructions only work if the client reads them when they apply. A leaflet at checkout is one chance; a message the same evening and again on day 2 or 3 gives three. The peel guideline above says clear instructions must be given for the period afterwards, including broad-spectrum sunscreen and only bland moisturisers until peeling is complete. Your protocol and product instructions set the timings and wording; the assistant sends them.
+
+The check-in matters as much as the instructions. "How does your skin feel today? Reply with a word or a photo" turns a surprise phone call on day 5 into a manageable conversation on day 2. It's the same loop as in [vet clinics](/posts/ai-for-veterinary-clinics-follow-up): treat, instruct, check in before a small problem becomes a large one.
+
+Two cautions. Keep the messages free of promotions: once a message advertises your next treatment, marketing rules apply, such as § 7 UWG in Germany. And keep health detail out of the message. "Your aftercare notes from today" with a link beats naming the treatment and symptoms in an SMS.
+
+## What the assistant does and doesn't do
+
+<Split title="The line" leftTitle="The assistant does" rightTitle="The assistant never does" left={[
+  "Turns your paper card into a short digital form that changes by treatment",
+  "Reads free-text answers and matches them to your rule table",
+  "Writes a one-screen summary for the therapist, flagged items first",
+  "Sends aftercare messages at the times your protocol sets",
+  "Sorts replies and hands anything worrying to a person the same day"
+]} right={[
+  "Clears a client for treatment, or refuses one",
+  "Interprets symptoms, suggests creams or says to wait and see",
+  "Adds rules your supplier and you did not write",
+  "Marks consent as given without the client's own action",
+  "Puts promotions into aftercare messages"
+]} />
+
+## The finished record
+
+<Checklist title="A complete treatment record" items={[
+  "Client's own answers, dated, with free text kept as written",
+  "Flags raised, who reviewed them, and the decision with a reason",
+  "Treatment, product, batch and settings",
+  "Patch test date, site and result, where one applies",
+  "Consent to the treatment, recorded separately from consent to data processing",
+  "Photo consent, if photos are taken, as its own choice",
+  "Aftercare sent and the client's replies",
+  "Retention date and who deletes the record"
+]} />
+
+## Health data, consent and the AI itself
+
+Allergies, medication and pregnancy are health data. Under [Article 9 of the GDPR](https://gdpr-info.eu/art-9-gdpr/), processing them is prohibited unless an exception applies, and in a salon the usual one is explicit consent. If that consent sits in a document that covers other matters, [Article 7(2)](https://gdpr-info.eu/art-7-gdpr/) requires it to be clearly distinguishable. That's why the checklist keeps the two consents apart.
+
+Any form tool or AI provider that sees these answers is your processor, and [Article 28](https://gdpr-info.eu/art-28-gdpr/) requires a contract with it. Before you sign, ask where the data is processed, whether it trains models, who the sub-processors are and how deletion works. Write down a retention period per record type, because storage should last no longer than necessary. The NiSV's ten years is one reference point; the 30-year limit above is an argument for longer where liability is a real concern. Ask your insurer and a data protection adviser.
+
+If clients chat with an AI assistant, tell them so: according to the European Commission, [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has applied since 2 August 2026.
+
+## When a plain form is enough
+
+A one-therapist studio with 80 regular clients may not need AI at all. A conditional digital form, a PDF in the client's file and a printed aftercare card cover most of it. According to Phorest, which sells salon software, [consultation forms can be sent by SMS or email before the visit](https://www.phorest.com/gb/features/digital-consultation-forms/) and stay on the client card, and [Fresha lists the same](https://www.fresha.com/for-business/salon/best-salon-software) for forms and signed waivers. Both are vendor claims; check the features and data processing terms.
+
+AI starts to pay off with several treatments and therapists, when free-text answers matter, and when aftercare follow-up outgrows what anyone can do by hand. For NiSV treatments it can prepare the paperwork but not replace the consultation: the law puts the advising on the person applying the treatment.
+
+## What it costs
+
+Here is the time side, with placeholder numbers.
+
+<Calc title="Napkin math: time given back" caption="Assumptions, not measurements. Time is the smaller benefit; the real return is a record you can rely on when something goes wrong." rows={[
+  ["Treatments per week with a form to read or refresh", "20"],
+  ["Minutes saved per client (reading, re-asking, filing, finding)", "× 4"],
+  ["Working weeks per year", "× 46"],
+  ["Hours saved per year", "≈ 61"],
+  ["Value of an hour of therapist time", "× €40"]
+]} result={["Value of time saved per year", "≈ €2,450"]} />
+
+On the cost side, this is my rough estimate, not a quote. Expect two to four days of setup, mostly writing the rule table with your supplier and testing the forms against last month's real appointments. If your booking software includes forms, that part may cost nothing extra. A separate form tool would be tens of euros a month, and AI summaries and drafts a few euros more.
+
+## Questions salon owners ask
+
+### Can AI tell me whether a client is safe to treat?
+
+No, and I'd avoid any product that claims to. It can apply the rules you wrote and show which ones matched. The decision to proceed, adapt or refer stays with the therapist, and with a doctor when unclear.
+
+### How long do I have to keep consultation forms?
+
+For NiSV device treatments in Germany, ten years, then deletion. For other treatments the ordinance sets no period, so choose one you can justify, write it down per record type and ask your insurer.
+
+### Does the client have to agree to the AI reading their answers?
+
+Explicit consent is the usual legal basis for health data. Tell clients in plain words that a tool helps prepare the summary, who the provider is and what happens to the data.
+
+### What if a client reacts badly after a treatment?
+
+Mild redness or itching is for the therapist to judge, using your protocol. The educators quoted by Professional Beauty call rapid swelling of the eyelids or face, intense pain, blistering or difficulty breathing medical emergencies. The assistant's only job then is to tell the client to seek medical help now and alert a person. It doesn't assess and it doesn't wait for office hours.
+
+## Where I'd start
+
+Pick the one treatment where a missed answer would hurt most, probably the peel or the tint. Write its rule table with your supplier, send the form two days ahead, read the flags yourself before the client arrives, and send two aftercare messages. Add the next treatment after a month without surprises.
+
+If you want to try this, [tell me which treatments you offer and which booking software you use](/contact?intent=improve), and I'll suggest the smallest version worth testing. A hair side has [a different booking problem](/posts/ai-for-hair-salons-scheduling), while [tattoo studios](/posts/ai-for-tattoo-studios-consultations) face the same consent-and-aftercare questions.

@@ -1,0 +1,137 @@
+---
+id: "ai-for-wineries-direct-sales"
+title: "Winery Direct Sales: Keep Customers Buying Between Visits"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Food & drink", "Wineries", "Direct sales", "AI for small business"]
+description: "Direct sales are 46% of German winery revenue. How AI can sort your customer list, draft personal new-vintage letters and answer order questions."
+excerpt: "Direct sales are 46% of German winery revenue. How AI can sort your customer list, draft personal new-vintage letters and answer order questions."
+---
+
+Almost half of what a German winery earns comes from customers who buy straight from the winery. In 2024 that was 46% of revenue, the biggest single channel, according to a sales analysis of about 400 wineries commissioned by the German Wine Institute. Among the channels that lost ground, it lost the least.
+
+That is the good news. The uncomfortable part is where those customers live: in a program installed years ago, as a list of names and orders that nobody has sorted since the last cellar-door weekend. It is the most valuable thing the winery owns, and the usual way of finding out that a regular has stopped buying is a Christmas season that comes in short.
+
+This post is about getting more out of that list. Not a clever model that finds strangers, but the plain work of knowing who bought what, noticing who went quiet, and writing each of them a letter that sounds like it came from the winemaker.
+
+## What the numbers say
+
+<Stats title="German wine, 2024 and 2025">
+  <Stat value="46%" label="of German winery revenue came from direct sales in 2024, the largest channel" source="Deutsches Weininstitut, analysis by Hochschule Geisenheim (about 400 wineries)" href="https://www.deutscheweine.de/news-medien/meldungen/meldung/1417/analyse-weing%C3%BCter-verzeichnen-absatz-und-umsatzr%C3%BCckg%C3%A4nge" />
+  <Stat value="-0.7%" label="change in direct sales revenue in 2024, against -3.6% for all channels together" source="Deutsches Weininstitut, analysis by Hochschule Geisenheim" href="https://www.deutscheweine.de/news-medien/meldungen/meldung/1417/analyse-weing%C3%BCter-verzeichnen-absatz-und-umsatzr%C3%BCckg%C3%A4nge" />
+  <Stat value="21.5 l" label="of wine drunk per person over 16 in Germany in 2024/25, down from 22.2 l the year before" source="Deutsches Weininstitut" href="https://www.deutscheweine.de/news-medien/meldungen/meldung/1613/weinkonsum-sinkt-um-eine-flasche-pro-jahr" />
+</Stats>
+
+Direct sales sold 4% fewer litres in 2024, yet revenue slipped only 0.7%, because revenue per litre rose 3.4%. Apart from export, which held steady, the other channels did worse. Overall, German wineries sold 6.6% less wine, and their volume fell to 88% of the 2021 level. The latest breakdown by channel I could find is for 2024; I couldn't find a 2025 edition when I looked in September 2026.
+
+<Bars title="Revenue change in 2024 by sales channel, German wineries" unit="%" caption="Bars show the size of the decline in percent. Direct sales lost the least. Export held steady and is not shown." source="Deutsches Weininstitut, analysis by Hochschule Geisenheim" href="https://www.deutscheweine.de/news-medien/meldungen/meldung/1417/analyse-weing%C3%BCter-verzeichnen-absatz-und-umsatzr%C3%BCckg%C3%A4nge" data={[
+  { label: "Direct sales", value: 0.7, display: "-0.7%", highlight: true },
+  { label: "Specialist wine retail", value: 3.5, display: "-3.5%" },
+  { label: "All channels", value: 3.6, display: "-3.6%" },
+  { label: "Restaurants and bars", value: 7.7, display: "-7.7%" }
+]} />
+
+The market underneath is thinning. Destatis counted [14,150 farms with vineyards in 2023, down from 20,290 in 2010](https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/Wein/Tabellen/betriebe-rebflaechen-qualitaetsweinanbau-groessenklassen.html), about 30% fewer, on slightly more vineyard area. Fewer, larger producers are selling to a country where each adult over 16 drinks about a bottle less per year than the year before. In that market, the customers who already know your wine are the part you can still influence.
+
+The US shows the same pattern. Sovos, which sells alcohol shipping compliance software, reports with WineBusiness Analytics that [US winery direct-to-consumer shipments fell 15% in volume and 6% in value in 2025](https://sovos.com/press-releases/2026-direct-to-consumer-wine-shipping-report-reveals-record-declines-as-market-downturn-deepens/), while the average price per bottle shipped rose 11%. That is a vendor report, so weigh it accordingly, but it points the same way as the German data: fewer bottles, higher prices, and a premium on the customers you already have.
+
+## What your customer list already knows
+
+Whether it is Winestro.Cloud, DWine, WEGA, a shop system, or an Excel sheet, the old program usually holds what matters: customer, address, and every order with item, quantity and date. What it can't do is ask questions. Here is how I'd cut it.
+
+| Segment | How to find it | What it gets |
+| --- | --- | --- |
+| Loyal regulars | Ordered in each of the last three years | Early access to the new vintage and a personal note from the winemaker. No discount needed |
+| Lapsed customers | Last order more than 18 months ago | One personal letter that names what they used to buy |
+| One-time buyers | A single order, often after a wine fair or cellar-door event | A short thank-you and a suggestion built on the wine they chose |
+| Gift buyers | One order in November or December, often shipped to someone else | A reminder in early November with a ready-made gift box |
+| Sparkling or case buyers | Large orders of one type | The new release of that type, before it is listed anywhere else |
+
+Most of these cuts are a filter, not a model. The segment worth the most attention is the second one. A customer who skipped one new-vintage release is easy to win back. One who skipped three has quietly found another winery.
+
+## Where AI earns its place
+
+Four jobs, from least to most customer-facing.
+
+**Cleaning and grouping.** Real customer files hold duplicates ("Müller, H." and "Hans Müller"), moved-away addresses and free-text notes. A model can propose which records are the same person for you to confirm, and sort the notes into themes. One caution: free-text notes sometimes contain allergies or other private circumstances. Keep those out of anything you send to an AI service.
+
+**Personal new-vintage letters.** You give the model a customer's order history, your price list and your own tasting notes for the new wines. It drafts a letter that mentions what the customer bought before and what is new. A sample, for an invented customer:
+
+> Dear Mrs. Hartmann, the 2025 dry Riesling is bottled and ready. You took six bottles of the 2023 and twelve of the 2024, so I have set a case aside for you. The Spätburgunder you ordered in 2022 is sold out, but the 2023 is on the list. If you'd like to taste before you decide, the cellar is open on Saturdays from 10 to 16. Anna
+
+The draft is useful because it is specific. It is also where mistakes hide. "The 2023 is close in style" would be a claim the model has no way to make, so it only gets your tasting notes and never writes the comparison itself.
+
+**Order questions.** "Is the 2024 Pinot still available?" "What does delivery to Austria cost?" "Can I collect on Saturday?" Most are answered by your price list, shipping table and opening hours. The assistant drafts the reply from those, and stock levels come from your system, never from the model's memory. Start with drafts that you send. Once they have been right for a few weeks, let it send the simple ones.
+
+**Tasting bookings.** Requests for a tasting for eight people on a Saturday arrive as emails, messages and phone calls. Given your rules (group size, days, price, the minimum order) the assistant proposes slots and drafts the confirmation. You approve the booking.
+
+## From order list to letter in the post
+
+<Flow title="One round of letters, with the decisions kept for the owner" caption="The model sorts and drafts. The winemaker decides who gets what, and signs every letter.">
+<Step title="Export orders" who="Winery software" time="Once a quarter">Customers, items, dates and amounts as a file. No bank details, no health notes.</Step>
+<Step title="Group customers" who="AI" tone="ai" time="minutes">Merges likely duplicates, flags lapsed, one-time and loyal customers, and lists what each person bought in the last three vintages.</Step>
+<Step title="Choose segments and offers" who="Winemaker" tone="human" time="about 1 hour">Decides who gets a mailing, which wines, what price and how many bottles are held back. Removes anyone who objected or complained.</Step>
+<Step title="Draft the letters" who="AI" tone="ai" time="minutes">Writes one letter per customer from order history, price list and your own tasting notes.</Step>
+<Step title="Read, correct, sign" who="Winemaker" tone="human" time="half a day">Checks facts, prices and stock, strikes anything that sounds like a health claim, signs.</Step>
+<Step title="Send and answer" who="Office and AI" time="next 6 weeks">Letters go out by post. Replies and order questions get drafted answers that you approve. Count the orders after six weeks.</Step>
+</Flow>
+
+The human steps are the point. Which customer gets which offer, and what a wine is like, are the winemaker's decisions. The model saves the hours of sorting and typing that normally stop these letters from being written at all.
+
+## What one round might be worth
+
+<Calc title="Napkin math: winning back lapsed customers" caption="Assumptions, not measurements. Your own order history gives the real figures, and revenue is not profit." rows={[
+  ["Customers who ordered at least once in the past five years", "3,000"],
+  ["Share with no order in the last 18 months", "× 30%"],
+  ["Share who order again after a personal letter", "× 8%"],
+  ["Average order (about 12 bottles)", "× €210"]
+]} result={["Extra revenue from one round", "≈ €15,000"]} />
+
+The cost side, also an assumption: 900 letters at roughly €1 each for printing and postage is about €900. The model usage for drafting them is a few euros. The real cost is the owner's time, an hour to choose segments and perhaps half a day to read drafts. If someone builds the export, templates and review routine for you, my rough estimate for a small winery is a few days of one-off work.
+
+The calculation can be wrong in both directions. Eight in a hundred is a guess, and a good first round will tell you the real number. If you have mailed lapsed customers before, your own response rate beats any benchmark.
+
+## Rules that apply to a wine mailing
+
+<Callout title="Wine may not be advertised as healthy" tone="warning">
+EU law bars health claims for drinks above 1.2% alcohol by volume (Article 4(3) of the Health Claims Regulation), and in 2012 the [Court of Justice ruled](https://lexetius.com/2012,3767) that calling a wine "bekömmlich", roughly "easy on the stomach", is a health claim. Germany's [Wettbewerbszentrale](https://www.wettbewerbszentrale.de/health-claims-verordnung-beschwerden-ueber-die-verwendung-von-gesundheitsbezogenen-angaben-fuer-lebensmittel-nehmen-zu/), a competition watchdog, went after a wine dealer whose newsletter called a red wine the healthiest in the world, and the dealer signed a cease-and-desist declaration. Put words like these on a list the drafting prompt must never write, and read every letter anyway.
+</Callout>
+
+- **Email to existing customers.** In Germany, [section 7(3) UWG](https://www.gesetze-im-internet.de/uwg_2004/__7.html) allows it without separate consent only if all four conditions hold: you got the address in connection with a sale, you use it for your own similar goods, the customer hasn't objected, and they were told clearly, when you collected the address and in every mailing, that they can object at any time. In the UK, the [ICO's guidance on the soft opt-in](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/) sets a similar test. If you can't show all of it, ask for consent.
+- **Letters by post.** The email rule doesn't cover them, but the GDPR does. [Recital 47](https://gdpr-info.eu/recitals/no-47/) says direct marketing may count as a legitimate interest. Sorting customers by what they bought is still profiling for direct marketing, and under [Article 21](https://gdpr-info.eu/art-21-gdpr/) people can object to it at any time and must be told so at the latest at the first contact.
+- **Age.** Under [section 9 of the German Youth Protection Act](https://www.gesetze-im-internet.de/juschg/__9.html), wine and sparkling wine may not be given to under-16s, and spirits not to under-18s. Teenagers from 14 may be served wine only when a parent or guardian is with them, which matters for tastings too. For mail order, the [Händlerbund's 2017 summary of the youth authorities' position](https://www.haendlerbund.de/de/news/aktuelles/rechtliches/2430-jugendschutz-versandhandel-umsetzungstipps) is that sellers must ensure parcels don't reach minors, which means an age check at delivery. A tick box saying "I am over 18" doesn't do it. An assistant must never complete an order outside your shop's age check.
+- **The AI provider is a processor.** Names, addresses and order histories are personal data. You need a data processing agreement (AVV) under Article 28 GDPR, and you should send only the fields the task needs.
+- **Talking to a bot.** [Article 50 of the EU AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has applied since 2 August 2026: if customers chat with an AI system, they must be told, unless it's obvious.
+- **Shipping to the US.** [Sovos notes](https://sovos.com/shipcompliant/resources/dtc-wine-shipping-rules-by-state/) that most states allow direct wine shipping, but each destination state has its own rules on licences, products and volume. Check before promising delivery.
+
+This is a summary, not legal advice. If a rule affects your mailing, ask your lawyer or data protection officer.
+
+## When you don't need AI
+
+If your software can filter on "last order before" and you have 300 names, a spreadsheet and one evening do the job. The 30 best customers deserve a phone call or a handwritten card, not a generated letter. Customers who aren't online respond to a printed Rundbrief with a reply card, and a model can still draft that.
+
+For order questions, a clear shipping table and FAQ page on the shop removes half the emails before anyone has to answer them. Retention logic is the same wherever repeat customers matter. [Independent gyms](/posts/ai-for-gyms-member-retention) spot fading members by missing visits. A winery spots them by a missing order, which happens once a year instead of three times a week, so the signal is slower and the window to act is wider.
+
+## Questions winemakers ask
+
+### Can I email my old customers without a newsletter signup?
+
+Only under the conditions above (section 7(3) UWG in Germany, the soft opt-in in the UK). It covers customers who bought from you, for similar goods, with a clear way to object. It doesn't cover people who only visited an event or sent a question. For them, use post or ask for consent.
+
+### Can a general chatbot write my new-vintage newsletter?
+
+It can write a draft. Don't paste a customer list into a consumer chat account without a processing agreement. Give it your own tasting notes rather than letting it invent descriptions, and read the result for health claims and wrong prices.
+
+### Should I put an AI chatbot on my website to take orders?
+
+Start with drafted email replies. A chatbot has to say that it is one, can't take an order that skips your age check, and needs live stock and price data. That's a bigger project than a letter round.
+
+### How big does the list have to be?
+
+There is no threshold. A few hundred names with order history is enough to try one round. Below that, do it by hand and save the money.
+
+## Where I'd start
+
+Start with the customers who stopped, not the ones who keep buying. Pull everyone who hasn't ordered for 18 months, write one honest letter that names what they used to buy, make one offer, and count orders six weeks later. If that pays for itself, add the new-vintage letters. The assistant for order questions can wait.
+
+If your customer list is sitting in an old program, [tell me which one and roughly how many names it holds](/contact?intent=improve), and I'll suggest the smallest mailing worth testing. Farm shops face a similar timing problem with [harvest and stock](/posts/ai-for-farm-shops-inventory), and breweries split every batch between taproom and distributors, as in [planning packaged beer](/posts/ai-for-microbreweries-sales-forecast).

@@ -1,0 +1,160 @@
+---
+id: "ki-sanitaetshaus-rezeptpruefung"
+translationOf: "ai-for-medical-supply-stores-prescriptions"
+title: "Sanitätshaus: Rezeptfehler finden, bevor die Kasse absetzt"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Gesundheit", "Sanitätshäuser", "Rezeptprüfung", "KI für kleine Unternehmen"]
+description: "Fehlende Diagnose, abgelaufenes Datum, Mischverordnung: Wie ein Sanitätshaus Verordnungen schon am Tresen prüft, mit KI als Helfer, und Retax vermeidet."
+excerpt: "Fehlende Diagnose, abgelaufenes Datum, Mischverordnung: Wie ein Sanitätshaus Verordnungen schon am Tresen prüft, mit KI als Helfer, und Retax vermeidet."
+---
+
+Donnerstag, 16:40 Uhr, ein Sanitätshaus mit vier Leuten. Eine Kundin legt eine Verordnung für einen Rollator auf den Tresen. Muster 16, unterschrieben, Praxisstempel drauf. Ausgestellt wurde sie vor fünf Wochen, und eine Diagnose steht nicht darauf.
+
+Die Mitarbeiterin ist allein im Laden, die Kundin kommt ohne Rollator kaum noch aus dem Haus. Also wird versorgt, und die Abrechnung geht raus. Wochen später kommt die Absetzung: Verordnung abgelaufen, Diagnose fehlt, die Kasse zahlt nicht. Das Sanitätshaus hat geliefert und bleibt auf den Kosten sitzen. Bei der Praxis nachzufragen bringt jetzt wenig, denn die Patientin ist längst nicht mehr im Sprechzimmer.
+
+Der Fehler war um 16:40 Uhr sichtbar. Ihn dort zu klären kostet einen Anruf. Später kostet er die Rechnung. Darum geht es in diesem Beitrag: die Verordnung am Tresen prüfen, nicht erst bei der Abrechnung.
+
+## Wie groß das Problem ist
+
+<Stats title="Warum Verordnungen so fehleranfällig sind">
+  <Stat value="47.825" label="Hilfsmittel und Pflegehilfsmittel in 42 Produktgruppen listete das GKV-Verzeichnis beim zuletzt gemeldeten Stand" source="Deutsches Ärzteblatt, nach GKV-Spitzenverband" href="https://www.aerzteblatt.de/news/aktualisiertes-hilfsmittelverzeichnis-enthalt-47825-hilfsmittel-in-42-produktgruppen-7305ed0d-d466-4f73-b2cc-3ee0b532b0fb" />
+  <Stat value="3.722" label="neue Produkte kamen zwischen März 2025 und Februar 2026 ins Verzeichnis, 1.596 Einträge wurden überarbeitet" source="GKV-Spitzenverband, 9. Fortschreibungsbericht" href="https://www.gkv-spitzenverband.de/media/dokumente/krankenversicherung_1/hilfsmittel/fortschreibungsberichte/2026_9._Fortschreibungsbericht-Hilfsmittelverzeichnis_GKV-Spitzenverband_bf.pdf" />
+  <Stat value="28 Tage" label="gilt eine Hilfsmittelverordnung in der Regel, gerechnet in Kalendertagen" source="Kassenärztliche Vereinigung Bayerns" href="https://www.kvb.de/fileadmin/kvb/Mitglieder/Verordnungen/VO-aktuell/2023-DS/KVB-VA-230821-SOP-Gueltigkeit-von-Verordnungen.pdf" />
+</Stats>
+
+Eine belastbare Zahl dazu, wie viele Verordnungen von Sanitätshäusern retaxiert werden, habe ich nicht gefunden. Bevor Sie irgendetwas einführen, lohnt sich deshalb Ihre eigene Zählung: Fragen Sie Ihre Abrechnungsstelle, wie viele Absetzungen Sie im letzten Quartal hatten und mit welcher Begründung.
+
+Die Zahlen oben zeigen, warum das Prüfen schwerer ist, als es klingt. Das Verzeichnis ist riesig und ändert sich laufend. Und die 28 Tage laufen ab dem Ausstellungsdatum, nicht ab dem Tag, an dem die Verordnung bei Ihnen ankommt. Bei einer Verordnung im Rahmen des Entlassmanagements gilt sogar nur eine [Frist von sieben Kalendertagen nach der Entlassung](https://www.kvb.de/fileadmin/kvb/Mitglieder/Verordnungen/VO-aktuell/2024-DS/KVB-VA-240221-SOP-Entlassmanagement-Hilfsmittel.pdf).
+
+## Was auf eine Hilfsmittelverordnung gehört
+
+Hilfsmittel werden auf dem Muster 16 verordnet. Nach der [Hilfsmittel-Richtlinie des G-BA](https://www.gkv-spitzenverband.de/media/dokumente/krankenversicherung_1/hilfsmittel/himi_empfehlungen__verlautbarungen/2025-05-16_Hilfsmittel-Richtlinie.pdf) gehören darauf mindestens das Verordnungsdatum, die Diagnose, die Bezeichnung des Hilfsmittels nach dem Hilfsmittelverzeichnis und die Anzahl, bei Bedarf ergänzt um Hinweise zu Zweckbestimmung, Herstellung, Material und Maßen.
+
+Dazu kommen die Fallen, die in der Praxis Absetzungen auslösen. Die Fachpresse nennt unter anderem [Mischverordnungen](https://www.apotheke-adhoc.de/rubriken/detail/apo-tipp/fokus-formfehler-sechs-retax-fallen-bei-der-himi-verordnung/): Ein Hilfsmittel darf nicht zusammen mit einem Arzneimittel auf einem Rezept stehen. Außerdem muss der Empfang des Hilfsmittels auf der Rückseite mit Datum und Unterschrift bestätigt sein. Zu den üblichen Retax-Gründen zählen laut [einer Übersicht für Apotheken](https://www.draco.de/retaxationen-in-der-apotheke/) außerdem fehlende Patientenangaben, fehlende Unterschrift oder Praxisangaben und eine überschrittene Gültigkeit. Nicht jeder Formfehler führt zur Absetzung, und was bei Hilfsmitteln im Einzelnen gilt, steht in Ihren Verträgen mit den Kassen.
+
+Je nach Vertrag und Hilfsmittel braucht die Versorgung vorab eine Genehmigung der Kasse, und dann geht ein Kostenvoranschlag raus. Nach [§ 13 Abs. 3a SGB V](https://www.gesetze-im-internet.de/sgb_5/__13.html) muss die Kasse über einen Antrag innerhalb von drei Wochen entscheiden, bei einem Gutachten des Medizinischen Dienstes innerhalb von fünf. Für einige Hilfsmittel zum Behinderungsausgleich gilt stattdessen eine [andere Fristenregelung nach § 18 SGB IX](https://www.reha-recht.de/infothek/beitrag/artikel/bsg-entscheidet-ueber-anwendungsbereich-der-genehmigungsfiktion-bei-hilfsmitteln/). Welche bei Ihnen greift, sagt Ihnen Ihr Verband oder Ihre Rechtsberatung.
+
+Aus der Richtlinie, den Fallen und den Fristen wird eine Liste, die sich am Tresen prüfen lässt:
+
+<Checklist title="Prüfliste am Tresen für jede Verordnung" items={[
+  "Versichertendaten sind lesbar und passen zur Kundenakte",
+  "Ausstellungsdatum liegt höchstens 28 Kalendertage zurück (sieben bei Entlassmanagement)",
+  "Diagnose ist angegeben",
+  "Hilfsmittel ist nach dem Hilfsmittelverzeichnis bezeichnet, Anzahl und gegebenenfalls Versorgungszeitraum stehen drauf",
+  "Keine Mischverordnung: Hilfsmittel und Arzneimittel stehen nicht auf demselben Rezept",
+  "Unterschrift und Praxisangaben sind vorhanden",
+  "Bei genehmigungspflichtiger Versorgung: Kostenvoranschlag ist rechtzeitig bei der Kasse",
+  "Bei Abgabe: Empfangsbestätigung auf der Rückseite mit Datum und Unterschrift"
+]} />
+
+Das meiste davon braucht keine KI. Ob ein Datum älter als 28 Tage ist, rechnet eine Regel. Was eine Regel nicht kann: einen schiefen Scan lesen, eine Handschrift entziffern oder beurteilen, ob „Bandage links“ als Bezeichnung reicht.
+
+## Was Regeln erledigen und wo Urteil gefragt ist
+
+| Lücke auf der Verordnung | Erkennt | Wer klärt es |
+| --- | --- | --- |
+| Ausstellungsdatum älter als 28 Tage | Regel | Team, das bei der Praxis eine neue Verordnung anfordert |
+| Diagnose oder Unterschrift fehlt | Regel | Die Praxis. Das Haus ergänzt nichts auf eigene Faust |
+| Bezeichnung zu ungenau, etwa „Bandage“ ohne Produktart | KI markiert und entwirft die Rückfrage | Praxis, mit Fachkraft im Haus als Gegenprüfung |
+| Mischverordnung | Regel | Die Praxis stellt getrennte Verordnungen aus |
+| Handschrift oder Scan kaum lesbar | KI liest und markiert unsichere Stellen | Mitarbeiter prüft am Original |
+| Empfangsbestätigung fehlt bei der Abgabe | Regel, als Pflichtschritt vor der Abrechnung | Mitarbeiter am Tresen oder bei der Auslieferung |
+
+Die Zeilen mit „Regel“ sind gewöhnliche Software, und die sollten Sie zuerst bauen, weil sie billig, vorhersagbar und gegenüber der Kasse erklärbar sind. Die KI übernimmt das Lesen, die Einschätzung unklarer Freitexte und das Formulieren der Rückfrage. Dort ist eine müde Mitarbeiterin um 16:40 Uhr am wenigsten verlässlich, und ein Modell ist morgens um acht wie abends zum Ladenschluss gleich aufmerksam.
+
+Eine Besonderheit gibt es bei den Bezeichnungen. Bei fast 48.000 Einträgen und Tausenden Änderungen im Jahr darf das Modell Positionsnummern nie aus dem Gedächtnis nennen. Der Abgleich läuft gegen das [aktuelle Verzeichnis des GKV-Spitzenverbandes](https://hilfsmittel.gkv-spitzenverband.de/) oder gegen den Datenbestand Ihrer Branchensoftware. Das Modell schlägt Kandidaten vor, die Fachkraft entscheidet.
+
+## Vom Tresen bis zur Abrechnung
+
+<Flow title="Eine Verordnung, geprüft vor der Abgabe" caption="Das Werkzeug liest, prüft und entwirft. Ein Mensch schickt die Rückfrage, und ein Mensch entscheidet, ob abgerechnet wird.">
+<Step title="Verordnung kommt an" who="Tresen, Fax oder Portal" time="Minuten">Scans, Fotos und Faxe landen in einem gemeinsamen Eingang, egal woher sie kommen.</Step>
+<Step title="In Felder lesen" who="KI" tone="ai" time="Sekunden">Versicherter, Datum, Diagnose, Hilfsmittel, Anzahl und Unterschrift werden in ein Formular übernommen. Unklares wird markiert, nicht geraten.</Step>
+<Step title="Prüfliste anwenden" who="Regeln und KI" tone="ai" time="Sekunden">Ihre Regeln prüfen jedes Feld. Das Modell beurteilt unscharfe Bezeichnungen und vergleicht sie mit dem Verzeichnis.</Step>
+<Step title="Rückfrage prüfen und senden" who="Mitarbeiter im Haus" tone="human" time="am selben Tag">Eine Mitarbeiterin liest den Entwurf, ändert ihn und schickt ihn über den üblichen Weg an die Praxis.</Step>
+<Step title="Praxis antwortet" who="Praxis">Die korrigierte Verordnung oder die Ergänzung kommt zurück und wird derselben Akte zugeordnet.</Step>
+<Step title="Abgeben und abrechnen oder zurückhalten" who="Abrechnung" tone="human">Eine Person sieht sich die Akte als Ganzes an und entscheidet: versorgen und abrechnen oder anhalten.</Step>
+</Flow>
+
+Drei Entscheidungen erledigen den größten Teil der Arbeit.
+
+**Am selben Tag, nicht in derselben Woche.** Der Wert liegt in der Geschwindigkeit. Eine Rückfrage innerhalb der Stunde wird beantwortet, solange der Besuch noch frisch ist. Und die 28 Tage laufen mit.
+
+**Die Prüfliste gehört Ihnen.** Ihre Abrechnungsverantwortliche schreibt sie, pro Kasse und Hilfsmittelart, und ändert sie, wenn sich Verträge ändern. Das Modell wendet sie an. Es erfindet keine Anforderungen.
+
+**Unsicher heißt markiert.** Wenn das Werkzeug eine Ziffer bei der Anzahl nicht lesen kann, sagt es das. Eine sicher klingende falsche Lesung ist schlimmer als keine.
+
+## Wie die Rückfrage an die Praxis aussieht
+
+Die Qualität der Rückfrage entscheidet, ob Praxen sie als Hilfe oder als Last erleben. Eine gute ist kurz, konkret und in einer Minute aus der Akte zu beantworten.
+
+> Verordnung vom 2. September für Frau B. (Geburtsdatum liegt vor), Rollator. Auf dem Rezept fehlt die Diagnose. Könnten Sie diese ergänzen oder eine neue Verordnung ausstellen? Die 28 Tage laufen am Donnerstag ab. Wir können sofort versorgen, sobald uns die Ergänzung vorliegt.
+
+Vergleichen Sie das mit dem üblichen „Bitte rufen Sie uns wegen einer Verordnung zurück“. Die Praxis kann die Rückfrage ohne Telefonat beantworten, und nach ein paar Monaten wissen die Praxen, was Sie brauchen. Die Zahl der Rückfragen sinkt von allein.
+
+Über allem steht eine Regel. **Die KI vervollständigt nie eine Verordnung.** Sie trägt keine Diagnose nach, weil die letzte Verordnung eine hatte, sie rät kein Datum, und niemand im Haus ergänzt etwas von Hand. Die Verordnung ist das Dokument der Ärztin. Mein Grundsatz: Ergänzungen kommen von der Praxis. Wo Verträge nach Rücksprache kleine Korrekturen zulassen, bleibt die Rückfrage trotzdem der Weg, und die Korrektur macht ein Mensch.
+
+## Was Einrichtung und Betrieb kosten
+
+Ich würde mit vier Teilen rechnen: Verordnungen an einer Stelle sammeln, ein Schritt zum Lesen und Prüfen, eine kleine Ansicht zur Freigabe für Ihr Team und eine Anbindung an Ihre Software. Branchensoftware für Sanitätshäuser kommt zum Beispiel von [optica (Omnia)](https://www.optica.de/software/optica-omnia), NOVENTI (SaniVision) oder SaniUp, abgerechnet wird oft über Abrechnungszentren wie Optadata oder DMRZ. Was Ihr System exportieren kann, entscheidet, wie einfach der Einstieg wird.
+
+Als grober Planungsrahmen, und das ist meine Annahme, kein Angebot: eine einmalige Einrichtung im niedrigen bis mittleren vierstelligen Eurobereich, wenn die Verordnungen als Dateien ankommen, mehr, wenn eine Schnittstelle nötig ist, dazu eine monatliche Gebühr im zweistelligen bis niedrigen dreistelligen Bereich für Lesen und Entwürfe. Verglichen wird mit Ihren eigenen, zu spät entdeckten Lücken.
+
+<Calc title="Überschlag: Arbeitszeit, die an zu spät entdeckten Lücken hängt" caption="Alles Annahmen, keine Messwerte. Zählen Sie zwei Wochen lang Ihre Rückstellungen und Nacharbeiten und ersetzen Sie jede Zahl. Abgesetzte oder zurückgezahlte Rechnungen kommen dazu und sind nicht enthalten." rows={[
+  ["Neue Verordnungen pro Woche", "60"],
+  ["Davon mit einer Lücke", "× 15 %"],
+  ["Wochen pro Monat", "× 4,3"],
+  ["Spät entdeckte Lücken pro Monat", "≈ 39"],
+  ["Minuten pro Lücke (Telefonieren, Nacharbeit, erneutes Prüfen)", "× 40"],
+  ["Stunden pro Monat", "≈ 26"],
+  ["Kosten pro Arbeitsstunde, voll gerechnet", "× 30 €"]
+]} result={["Verlorene Arbeitszeit pro Monat", "≈ 780 €"]} />
+
+Auf Basis dieser Annahmen ist die Arbeitszeit allein überschaubar, etwa eine Teilzeitschicht im Monat. Das Geld liegt in den Rechnungen, die abgesetzt werden, weil eine Lücke durchgerutscht ist. Wie viele das bei Ihnen sind, zeigen nur Ihre eigenen Abrechnungsunterlagen, und davon hängt ab, ob sich das Werkzeug trägt.
+
+## Eine Notiz zur E-Verordnung
+
+Stand meiner Recherche im September 2026: Hilfsmittel werden weiter [auf Papier](https://www.absv.de/aktuelles/meldungen/meldung/verschreibung-von-hilfsmitteln-weiterhin-in-papierform) auf dem Muster 16 verordnet. Nach den Quellen, die ich gefunden habe, ist die E-Verordnung für Hilfsmittel für den 1. Juli 2027 vorgesehen, und die Anbindung der Hilfsmittelerbringer an die Telematikinfrastruktur gilt nach [optica](https://www.optica.de/wissenswert/detail/verschiebung-der-ti-pflicht) ab dem 1. Oktober 2027, nachdem zunächst der 1. Januar 2026 galt. Die Termine haben sich also schon einmal verschoben. Prüfen Sie den aktuellen Stand bei Ihrem Verband.
+
+Ich würde erwarten, dass ein strukturiertes Rezept sich leichter lesen lässt als ein Scan. Die Lücken, um die es hier geht, verschwinden damit aber nicht von allein, denn die Praxis kann auch im elektronischen Formular Angaben auslassen. Die Prüfung am Eingang bleibt sinnvoll, sie liest dann nur weniger.
+
+## Datenschutz: Gesundheitsdaten brauchen einen Vertrag
+
+Eine Verordnung enthält Diagnose und Hilfsmittel, also [Gesundheitsdaten nach Art. 9 DSGVO](https://dsgvo-gesetz.de/art-9-dsgvo/), die besonders geschützt sind. Ein KI-Dienst, der Verordnungen in Ihrem Auftrag liest, braucht einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO. Die [Orientierungshilfe der Datenschutzkonferenz zu KI](https://www.datenschutzkonferenz-online.de/media/oh/20240506_DSK_Orientierungshilfe_KI_und_Datenschutz.pdf) ist ein guter Ausgangspunkt für die Fragen, die Sie dem Anbieter stellen sollten.
+
+In der Praxis heißt das: ein Anbieter mit Servern in der EU, ein AVV, keine Nutzung Ihrer Daten zum Training und nur die Felder, die die Prüfung braucht. Eine Regel, die nur testet, ob eine Diagnose vorhanden ist, braucht den Diagnosetext nicht. Ein privates Chat-Konto ist der falsche Ort für Verordnungen mit Namen darauf. Fragen Sie Ihre Datenschutzbeauftragte, bevor der erste Test läuft, nicht danach.
+
+## Wann Sie keine KI brauchen
+
+Vieles davon lässt sich ohne Modell lösen.
+
+- **Ein kleines Haus mit wenigen Verordnungen.** Unter etwa zwanzig pro Woche reicht womöglich die Prüfliste von oben, ausgedruckt und bei jeder Verordnung benutzt.
+- **Eine Praxis verursacht die meisten Lücken.** Schauen Sie sich Ihre letzten zwanzig Rückstellungen an. Kommt die Hälfte aus einer Praxis oder von einem Entlassmanagement, löst ein Gespräch mit der Praxismanagerin die Ursache.
+- **Pflichtfelder in Ihrer Branchensoftware.** Prüfen Sie, ob Ihr System das Speichern einer Verordnung ohne Datum, Diagnose oder Anzahl verweigern kann. Wenn ja, schalten Sie das zuerst ein.
+- **Medizinische Beurteilung.** Welches Hilfsmittel passt, entscheiden Ärztin und Fachkraft im Haus. Ein Modell, das das errät, ist ein Risiko und keine Zeitersparnis.
+
+KI lohnt sich, wenn Verordnungen als schiefe Scans und Freitext von vielen Praxen kommen und in einer Menge, die Ihr Team nicht jedes Mal genau lesen kann. Ein verwandtes Muster zeigt der Beitrag über [Dentallabore, die unvollständige Aufträge am Eingang abfangen](/de/posts/ki-dentallabor-auftragseingang): Dort fehlen Zahnfarbe und Präparationsgrenze statt Diagnose und Unterschrift.
+
+## Fragen, die Inhaber mir stellen
+
+### Kann die KI fehlende Angaben auf dem Rezept ergänzen?
+
+Nein, und sie sollte es nicht versuchen. Diagnose, Menge oder Unterschrift müssen von der Praxis kommen. Das Werkzeug findet die Lücke und entwirft die Bitte. Ein Mensch schickt sie ab, und die korrigierte Verordnung kommt aus der Praxis zurück.
+
+### Darf ich Rezepte mit Patientendaten in ein KI-Tool geben?
+
+Nur mit dem richtigen Aufbau: AVV, ein Anbieter, der nicht auf Ihren Daten trainiert, und Zugriff nur für das Team, das Verordnungen bearbeitet. Ohne das nicht. Das Gleiche gilt, wenn Gesundheitsdaten in ein Cloud-Werkzeug laufen, das Sie nur testen wollen.
+
+### Liest die KI auch Handschrift und schlechte Scans?
+
+Auf sauberen Scans ordentlich, auf schlechten Faxen schlechter. Darum markiert der Aufbau unsichere Felder für einen Menschen, statt zu raten. Testen Sie es an einem Monat Ihrer eigenen Verordnungen, bevor Sie sich darauf verlassen, und zählen Sie, wie oft jemand korrigieren muss.
+
+### Kann die KI auch die Fristen der Kasse überwachen?
+
+Als Erinnerung ja: Ein Datum plus drei Wochen ist eine Regel, kein Modell. Was die Fristen rechtlich bedeuten, ist Sache Ihres Verbands oder Ihrer Rechtsberatung. Das Bundessozialgericht hat 2020 entschieden, dass die [fingierte Genehmigung nach § 13 Abs. 3a SGB V](https://www.reha-recht.de/infothek/beitrag/artikel/bsg-mit-neuer-rechtsauffassung-zur-genehmigungsfiktion-nach-13-abs-3a-sgb-v) keinen eigenen Anspruch auf die Sachleistung begründet, sondern nur einen Anspruch auf Kostenerstattung. Ich würde mich also nicht darauf verlassen, dass Schweigen der Kasse die Versorgung bezahlt.
+
+## Wo ich anfangen würde
+
+Nehmen Sie Ihre letzten zwanzig Absetzungen oder zurückgehaltenen Verordnungen und schreiben Sie auf, was auf der Verordnung nicht stimmte. Machen Sie aus den drei häufigsten Gründen Regeln, lassen Sie sie einen Monat lang über jede eingehende Verordnung laufen, und holen Sie erst dann ein Modell für das Lesen und die Rückfragen dazu. Lassen Sie einen Menschen am Absenden der Rückfrage und an der Freigabe der Abrechnung.
+
+Wenn Ihre Rechnungen aus Gründen abgesetzt werden, die man am Tresen hätte sehen können, [schreiben Sie mir, welche Branchensoftware Sie nutzen und was Ihre letzten Absetzungen sagten](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Prüfung vor, die sich zu bauen lohnt. Einer Praxis hinterherzutelefonieren ist dieselbe Arbeit wie [Mandanten an fehlende Belege zu erinnern](/de/posts/ki-steuerkanzlei-belege-anfordern), und mit Gesundheitsdaten gehen auch [Apotheken bei Lieferengpässen](/de/posts/ki-apotheke-lieferengpaesse) so sorgfältig um.

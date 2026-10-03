@@ -1,0 +1,152 @@
+---
+id: "ki-moebelhaus-liefertermine"
+translationOf: "ai-for-furniture-stores-delivery-scheduling"
+title: "Möbelhandel: „Wo bleibt mein Sofa?“ beantworten, bevor gefragt wird"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Handel & Großhandel", "Möbelhäuser", "Liefertermine", "KI für kleine Unternehmen"]
+description: "Möbel brauchen Wochen bis zur Lieferung, und Kunden rufen an. Wie KI Lieferantenbestätigungen liest, Terminänderungen meldet und Sie zuerst informieren lässt."
+excerpt: "Möbel brauchen Wochen bis zur Lieferung, und Kunden rufen an. Wie KI Lieferantenbestätigungen liest, Terminänderungen meldet und Sie zuerst informieren lässt."
+---
+
+Stellen Sie sich ein Möbelhaus mit sechs Leuten auf der Fläche und zwei Auslieferungsteams vor. Im März bestellt ein Ehepaar ein Ecksofa und ein Sideboard. Die Verkäuferin schreibt „Lieferung in KW 20“ in den Kaufvertrag. Jetzt ist die zweite Maiwoche, und mitten in einer Küchenberatung klingelt das Telefon.
+
+Sie bittet den Anrufer zu warten, öffnet den Auftrag und findet nichts Neues. Was sie nicht sieht: Im Postfach des Einkaufs liegt seit Wochen eine PDF, in der der Hersteller das Sofa für KW 23 bestätigt hat. Das Ehepaar hat niemand informiert, weil niemand die PDF mit dem Auftrag zusammengebracht hat. Die beiden warten auf einen Anruf, von dem im Haus keiner wusste, dass er fällig war.
+
+Niemand hat gelogen. Ein Termin hat sich in einem Dokument geändert, das nie bei der Person ankam, die es gebraucht hätte. Das ist die enge Aufgabe, die ich KI im Möbelhaus geben würde: lesen, was Lieferanten schicken, es mit dem vergleichen, was dem Kunden zugesagt wurde, und dafür sorgen, dass der Kunde es als Erster erfährt. Jeden Termin, der sich ändert, entscheidet weiterhin ein Mensch.
+
+## Die Zahlen hinter dem Warten
+
+<Stats title="Warum Möbel ein Geschäft mit Wartezeit sind">
+  <Stat value="25,4 Mrd. €" label="Umsatz im deutschen Möbelhandel 2025 (ohne Elektrogeräte), nach 25,7 Mrd. € im Vorjahr" source="IFH Köln, via MÖBELMARKT" href="https://www.moebelmarkt.de/beitrag/deutscher-m%C3%B6belhandel-2025-verzeichnet-leichten-umsatzr%C3%BCckgang" />
+  <Stat value="6 bis 8 Wochen" label="übliche Lieferzeit einer individuell gefertigten Küche, in der Sommerpause der Hersteller auch 10 bis 12 Wochen" source="kueche.de, ein Küchenplanungsportal" href="https://kueche.de/kuechenwissen/kuechenkauf/lieferzeit-kueche" />
+  <Stat value="30 Tage" label="späteste Übergabe nach Verbrauchsgüterkaufrecht, wenn weder ein Termin vereinbart noch den Umständen zu entnehmen ist (§ 475 BGB)" source="Gesetze im Internet" href="https://www.gesetze-im-internet.de/bgb/__475.html" />
+</Stats>
+
+Wer Möbel verkauft, verkauft heute und liefert Wochen später. Dazwischen liegen der Produktionsplan des Herstellers, die Spedition, Ihr Lager und Ihr Montageteam. Jedes davon kann den Termin verschieben.
+
+Für Kunden ist die Wartezeit lang genug, um Stress zu machen. Die Verbraucherzentrale Hamburg beschreibt Lieferzeiten bei Möbeln und Küchen als oft mehrere Monate lang und [rät deshalb davon ab, Anzahlungen zu leisten](https://www.vzhh.de/themen/einkauf-reise-freizeit/einkauf-online-shopping/aerger-beim-kauf-von-moebeln-kuechen-das-koennen-sie-tun): Eine Anzahlung ist ein zinsloses Darlehen an den Händler, und sie ist weg, wenn er insolvent wird.
+
+## Woher die Statusanfragen kommen
+
+Gehen Sie einen Auftrag durch und zählen Sie die Anlässe zum Anrufen:
+
+- „Bleibt es bei KW 20?“ (die häufigste Frage, und die, die Sie beantworten können, bevor sie gestellt wird)
+- „Können wir die Lieferung um eine Woche schieben? Die alte Wohnung ist erst zum Ersten leer.“
+- „Welcher Tag genau? Ich muss mir freinehmen.“
+- „Kommt der Monteur mit, oder bauen wir selbst auf?“
+- „Ein Karton fehlt“ oder „das Bein ist zerkratzt“ (am Tag danach)
+
+Die Antworten gibt es, aber an fünf Stellen: im Vertrag (der Termin, den Sie versprochen haben), in der Auftragsbestätigung des Lieferanten (der Termin, den er Ihnen zugesagt hat), im Lieferantenportal, in einem Feld Ihrer Warenwirtschaft und im Lager. Niemand sieht sie nebeneinander. Also sucht ein Verkäufer sechs Minuten lang, was eine dieser Stellen sagt, und ruft dann zurück.
+
+<Calc title="Was Statusanfragen an Arbeitszeit kosten" caption="Annahmen für ein Haus mit zwei Auslieferungsteams, keine Messwerte. Zählen Sie zwei Wochen lang Ihre eigenen Anrufe, Mails und Besuche und ersetzen Sie die Zahlen." rows={[
+  ["Lieferungen pro Woche", "40"],
+  ["Statusanfragen pro Auftrag (Anrufe, Mails, Besuche)", "× 2,5"],
+  ["Minuten pro Anfrage (Auftrag finden, beim Lieferanten klären, zurückrufen)", "× 6"],
+  ["Stunden Personalzeit pro Woche", "= 10"],
+  ["Arbeitswochen pro Jahr", "× 46"],
+  ["Vollkosten pro Personalstunde", "× 30 €"]
+]} result={["Personalzeit für Statusfragen pro Jahr", "≈ 13.800 €"]} />
+
+Diese Zahl ist die kleinere. Jedes Klingeln unterbricht außerdem eine Beratung mit jemandem, der gleich mehrere tausend Euro für eine Küche ausgeben will. Und ein Team, das vor einem Haus steht, in dem niemand öffnet, verliert einen halben Tag. Rechnen Sie mit 300 € für zwei Personen und den Lkw und einer gescheiterten Lieferung pro Woche: Das sind noch einmal rund 14.000 € im Jahr.
+
+## Die Auftragsbestätigung lesen
+
+Die Auftragsbestätigung des Lieferanten, kurz AB, ist das Dokument, auf das es am meisten ankommt und das die wenigste Aufmerksamkeit bekommt. Sie nennt, was der Hersteller tatsächlich baut, in welchem Stoff und welcher Größe, und in welcher Kalenderwoche es versandt wird. Sie kommt als PDF, als E-Mail, als Portal-Download oder bei größeren Lieferanten als EDI-Datei. Jeder Lieferant formatiert sie anders.
+
+Daraus ergeben sich zwei Aufgaben:
+
+1. **Termin vergleichen.** Die bestätigte Woche gegen die Woche, die dem Kunden genannt wurde.
+2. **Auftrag vergleichen.** Stoff, Farbe, Breite, Stückzahl gegen das, was verkauft wurde.
+
+Die zweite Aufgabe wird gern unterschätzt. Ein falsches Maß der Tischplatte, das bei der AB auffällt, kostet eine E-Mail. Fällt es auf dem Lkw auf, kostet es eine Retoure, eine zweite Produktion und einen verärgerten Kunden. Der Dokumentenmanagement-Anbieter [PROXESS](https://www.proxess.de/dokumentenmanagement-im-moebel-und-kuechenhandel-ganz-ohne-schubladendenken-oder-inselloesungen/), der Möbelhäuser und Küchenstudios beliefert, sagt auf seiner Website dasselbe: Schon kleine Fehler bei Maßen oder Bestellnummern können ein ganzes Projekt gefährden.
+
+Eine PDF in zehn verschiedenen Layouts zu lesen und dem richtigen Auftrag zuzuordnen, ist unordentliche Dokumentenarbeit, die ein Sprachmodell gut erledigt, ähnlich wie die [Auftragserfassung im Großhandel](/de/posts/ki-grosshandel-auftragserfassung). So würde ich den Ablauf bauen.
+
+<Flow title="Von der Lieferanten-PDF zum Kunden, der schon Bescheid weiß" caption="Die KI liest, ordnet zu und entwirft. Ein Mensch entscheidet, sobald sich ein Termin verschiebt oder ein Artikel abweicht.">
+<Step title="AB des Lieferanten kommt an" who="Lieferant" time="an jedem Tag">Eine PDF im Einkaufspostfach, eine E-Mail, ein Portal-Download oder eine EDI-Datei mit der bestätigten Lieferwoche.</Step>
+<Step title="Lesen und zuordnen" who="KI" tone="ai" time="Sekunden">Liest Bestellnummer, Artikel, Maße, Bezüge und bestätigte Woche aus und ordnet sie dem Kundenauftrag zu. Was sich nicht sicher zuordnen lässt, geht an einen Menschen.</Step>
+<Step title="Mit der Zusage vergleichen" who="KI" tone="ai">Prüft die bestätigte Woche gegen den Termin, den der Kunde genannt bekam, und die Artikel gegen den Auftrag: falscher Stoff, falsche Breite, fehlendes Teil.</Step>
+<Step title="Entscheiden" who="Verkauf oder Einkauf" tone="human" time="am selben Tag">Im Plan: weiter. Termin rutscht oder Artikel weicht ab: Ein Mensch entscheidet, ob er den Auftrag beim Lieferanten korrigiert, den Kunden anruft oder eine Alternative anbietet.</Step>
+<Step title="Kunden informieren" who="Mitarbeiter" tone="human">Der Assistent entwirft die Nachricht mit neuer Woche, Grund (falls bekannt) und nächstem Schritt. Mitarbeiter prüfen und senden. Einfache Meldungen wie „wie zugesagt bestätigt“ gehen aus einer festen Vorlage raus.</Step>
+<Step title="Ware da, Termine vorschlagen" who="KI" tone="ai">Nach dem Wareneingang schlägt sie zwei oder drei Lieferfenster vor, aus Teamkalendern, Gewicht der Teile, Montagezeit und Hinweisen zum Zugang wie Etage, Aufzug und Parkplatz.</Step>
+<Step title="Disponent bestätigt" who="Disponent" tone="human">Der Disponent wählt den Termin. Der Kunde bekommt ein Zeitfenster und einen Link zum Umbuchen, am Vortag eine Erinnerung.</Step>
+</Flow>
+
+Drei Regeln halten das Ganze ehrlich. **Der Assistent erfindet nie einen Termin.** Er gibt nur eine Woche weiter, die auf einem Lieferantendokument steht, oder einen Termin, den der Disponent gesetzt hat. **Er verspricht nie mehr, als das Dokument sagt**, aus „Der Hersteller hat KW 23 bestätigt“ wird also kein „Ihr Sofa kommt am Dienstag“. Und **er bietet nie Zugeständnisse an**, etwa einen Nachlass oder ein Leihsofa. Das entscheiden Mitarbeiter.
+
+## Ein Auftrag, acht Wochen, sechs Nachrichten
+
+So erlebt der Kunde einen Auftrag, wenn das System funktioniert. Die Zeiten sind ein Beispiel, kein Richtwert.
+
+<Timeline title="Das Leben eines Sofa-Auftrags">
+<Phase when="Tag 0" title="Verkauf">Der Vertrag nennt eine Lieferwoche, nicht „ca. acht Wochen“. Der Kunde bekommt eine Bestätigung, die sie wiederholt.</Phase>
+<Phase when="Woche 1" title="Lieferant bestätigt">Die AB kommt an und wird mit der Zusage verglichen. Passt sie, geht „vom Hersteller bestätigt“ raus. Weicht sie ab, entscheiden Mitarbeiter, bevor jemand informiert wird. Noch keine AB? Eine Erinnerung an den Lieferanten.</Phase>
+<Phase when="Woche 2 bis 5" title="Produktion">Das Schweigen ist das Risiko. Eine kurze Nachricht zur Halbzeit („weiter bestätigt für KW 20, von Ihnen ist nichts nötig“) stimmt, solange sich nichts geändert hat.</Phase>
+<Phase when="Woche 6" title="Wareneingang">Die Ware kommt ins Lager und wird gegen den Auftrag geprüft. Schäden oder fehlende Teile gehen jetzt an den Lieferanten, nicht erst vor der Haustür des Kunden.</Phase>
+<Phase when="Woche 7" title="Termin gebucht">Der Kunde wählt ein Lieferfenster, oder der Disponent ruft die an, die lieber telefonieren.</Phase>
+<Phase when="Woche 8" title="Lieferung">Am Vortag eine Erinnerung mit dem Zeitfenster. Am Tag danach eine kurze Frage, ob alles vollständig und unbeschädigt angekommen ist.</Phase>
+</Timeline>
+
+## Der versprochene Termin ist eine Rechtsfrage
+
+Liefertermine sind mehr als Höflichkeit. Die Verbraucherzentrale [rät Kunden](https://www.verbraucherzentrale.de/wissen/vertraege-reklamation/kundenrechte/moebelkauf-das-koennen-sie-tun-wenn-sich-die-lieferung-verzoegert-5427), ein genaues Lieferdatum in den Vertrag schreiben zu lassen, zum Beispiel eine Kalenderwoche. Nach ihrer Darstellung gerät ein Händler, der einen fest vereinbarten Termin verpasst, ohne Mahnung in Verzug. War nur ein ungefährer Zeitraum vereinbart, muss der Kunde erst mahnen, dann eine angemessene Nachfrist setzen und kann nur zurücktreten, wenn auch die verstreicht. Ist gar nichts vereinbart, verlangt § 475 BGB (oben verlinkt) die Übergabe unverzüglich, spätestens 30 Tage nach Vertragsschluss.
+
+Daraus folgt dreierlei:
+
+- Der Termin in Ihrem Vertrag und der Termin in der Bestätigung des Lieferanten sind zwei verschiedene Dinge. In der Lücke dazwischen beginnt der Ärger.
+- Eine Nachricht, die einen Termin verschiebt, hat Folgen. Deshalb gibt ein Mensch sie frei.
+- Der Assistent schreibt nie „verzögert wegen X“, wenn das nicht im Lieferantendokument steht.
+
+Ich bin kein Jurist, und die Einzelheiten hängen von Ihrem Vertragstext und Ihren AGB ab. Lassen Sie Ihre Lieferklauseln einmal prüfen, bevor Sie etwas darum herum automatisieren. Die Fristen oben sind deutsches Recht; in Österreich und der Schweiz gelten eigene Regeln.
+
+## Erst die günstigeren Lösungen
+
+Bevor Sie über KI nachdenken, schauen Sie, was Sie schon haben.
+
+| Situation | Einfachste Lösung | KI nötig? |
+| --- | --- | --- |
+| Lieferanten bieten EDI oder einen Portal-Feed | Bestätigungen direkt in die Warenwirtschaft importieren | Nein |
+| Ihre Warenwirtschaft hat AB-Kontrolle und Terminüberwachung | Einschalten und Statusmeldungen aus Vorlagen ergänzen | Wahrscheinlich nicht |
+| Unter etwa 30 offenen Aufträgen | Eine Person, eine wöchentliche Durchsicht der Bestätigungen | Nein |
+| Bestätigungen kommen als PDF und Mail in vielen Layouts | Mit KI lesen und zuordnen, ein Mensch prüft die Ausnahmen | Ja |
+| Kunden wollen ihren Termin selbst wählen oder verschieben | Buchungslink mit Zeitfenstern | Nein, ein Terminwerkzeug |
+| Tourenplanung für die Teams | Tourenplanung in Ihrer Software | Nein, ein Sprachmodell ist das falsche Werkzeug |
+
+Branchensoftware für den Möbelhandel kann oft mehr, als man denkt. WinMAX, eine Warenwirtschaft für den Möbel- und Küchenhandel, [nennt](https://www.clasen-online.de/) unter ihren Funktionen Auftragsbestätigungskontrolle, Terminüberwachung und Tourenplanung. PROXESS nennt als angebundene Branchensoftware unter anderem SHD und Möbelpilot und schreibt, dass eine integrierte KI Auftragsbestätigungen prüft und der Bestellung in der Warenwirtschaft zuordnet. Das ist eine Herstellerangabe, aber die Lehre bleibt: Fragen Sie zuerst Ihren Softwareanbieter, was er schon kann, bevor Sie etwas Neues bauen.
+
+## Was das kostet
+
+Meine Schätzungen, keine Angebote. Die KI-Verarbeitung ist der kleine Posten: Einige hundert Lieferanten-PDFs im Monat zu lesen, sollte einstellige bis niedrige zweistellige Euro-Beträge an Modellkosten verursachen. Eine erste Version, die ein gemeinsames Postfach liest, die Layouts Ihrer zwei oder drei größten Lieferanten versteht und in eine Tabelle schreibt, ist in Tagen gebaut, dazu kommen einige Wochen Test mit echten Dokumenten. Die Anbindung an Ihre Warenwirtschaft hängt von der Schnittstelle des Herstellers ab: Manche bieten einen Import, andere nur einen Export.
+
+Der laufende Aufwand ist menschlich: Jemand prüft die Ausnahmen. Zehn Minuten am Tag sind ein guter Tausch gegen zehn Stunden Statusanrufe pro Woche. Zwei Stunden am Tag bedeuten, dass die Lieferantenlayouts zu chaotisch sind, und dann liegt die Lösung beim Lieferanten.
+
+## Datenschutz
+
+Lieferantenbestätigungen enthalten meist Geschäftsdaten, aber in der Kommissionszeile steht häufig der Name des Kunden, und Lieferdaten enthalten Adresse, Etage, Telefonnummer und manchmal Hinweise wie „Schlüssel beim Nachbarn“ oder „erst ab 18 Uhr zu Hause“. Das sind personenbezogene Daten.
+
+Schicken Sie sie an einen KI-Dienst, ist dieser Auftragsverarbeiter. Nach der DSGVO brauchen Sie dafür einen Vertrag nach [Artikel 28](https://gdpr-info.eu/art-28-gdpr/) (AVV), Klarheit darüber, wo die Daten verarbeitet werden, und die Zusicherung, dass sie nicht zum Training von Modellen verwendet werden. Kunden über den Stand ihres eigenen Auftrags zu informieren, gehört zur Vertragserfüllung, [Artikel 6 Absatz 1 Buchstabe b](https://gdpr-info.eu/art-6-gdpr/). Geben Sie jedem Schritt nur das, was er braucht: Zum Lesen einer Bestätigung braucht das Modell keine Telefonnummer.
+
+Halten Sie Statusnachrichten frei von Werbung. In Deutschland knüpft [§ 7 UWG](https://www.gesetze-im-internet.de/uwg_2004/__7.html) Werbung per E-Mail an die Einwilligung des Empfängers (mit engen Ausnahmen), und eine Liefermeldung, die gleich den passenden Couchtisch bewirbt, ist ein Risiko.
+
+## Fragen aus dem Möbelhandel
+
+### Kann KI Kunden sagen, wann ihre Möbel kommen?
+
+Nur, indem sie einen Termin weitergibt, den ein Lieferantendokument oder Ihr Disponent gesetzt hat. Den Termin kennt sie nicht, und sie soll ihn nicht raten. Ihr Wert liegt darin, dass sie die Bestätigung am Tag des Eingangs liest und den Auftrag markiert, nicht darin, etwas vorherzusagen.
+
+### Was tun, wenn der Lieferant den Termin immer wieder verschiebt?
+
+Dann ist das nützlichste Ergebnis das Muster, nicht die einzelne Nachricht. Zählen Sie, wie oft die bestätigte Woche jedes Lieferanten rutscht und um wie viel. Diese Liste ist die bessere Grundlage für ein Gespräch mit dem Lieferanten oder für die Entscheidung, welche Serie Sie weiter verkaufen, als jeder Beschwerdeanruf.
+
+### Brauche ich KI, wenn meine Software Auftragsbestätigungen schon prüft?
+
+Wahrscheinlich nicht. Kommen die Bestätigungen als Daten an und Ihr System vergleicht Termine und versendet Nachrichten, nutzen Sie das. KI lohnt sich, wenn der Eingang ein Stapel PDFs und Mails in verschiedenen Layouts ist, die Ihre Mitarbeiter abtippen oder mit dem Auge prüfen.
+
+## Wo ich anfangen würde
+
+Erst zählen. Legen Sie zwei Wochen lang eine Strichliste neben die Telefone: jeder Anruf, jede Mail und jeder Besuch zum Stand eines Auftrags und wie lange er dauerte. Nehmen Sie dann den Lieferanten mit den meisten Aufträgen, lassen Sie ein Modell seine letzten 20 Bestätigungen lesen und vergleichen Sie das Ergebnis mit dem, was Ihre Mitarbeiter gefunden hätten. Stimmt es überein, schalten Sie Entwürfe ein, die ein Mensch jeweils freigibt.
+
+Meine Faustregel: Ein Kunde sollte nie nach einem Termin fragen müssen, den Sie längst kennen, und nie einen genannt bekommen, den Sie nicht kennen.
+
+Wenn Sie das an Ihren eigenen Aufträgen ausprobieren möchten, [schreiben Sie mir, mit welcher Software und welchen Lieferanten Sie arbeiten](/de/kontakt?intent=improve), und ich schlage die kleinste Variante vor, die einen Test wert ist. Küchenstudios kennen das Problem mit mehr Einsatz: Im [Planungsgespräch](/de/posts/ki-kuechenstudio-planungsgespraech) beginnt der Liefertermin, und in den [Fragen vor dem Kauf](/de/posts/ki-onlineshop-kundenservice), die per Chat und Mail eintreffen, steckt der nächste Auftrag.

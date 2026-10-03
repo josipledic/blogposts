@@ -1,0 +1,117 @@
+---
+id: "ai-for-hearing-aid-acousticians-fitting-notes"
+title: "Hearing Aid Fittings: Turn Session Notes Into Clean Documentation"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Healthcare", "Hearing care", "Fitting documentation", "AI for small business"]
+description: "A fitting runs over several visits and each one needs a record. How a spoken note after each session becomes structured documentation, with health data kept safe."
+excerpt: "A fitting runs over several visits and each one needs a record. How a spoken note after each session becomes structured documentation, with health data kept safe."
+---
+
+Picture a hearing aid acoustician on a Thursday. The last customer of the day has just left after the fourth visit of a fitting. She said the TV was better, the restaurant was still a wall of noise, and the left device whistled when she put on her glasses. The acoustician adjusted the feedback manager, changed the program for noisy places, and agreed to meet again in two weeks.
+
+It's 5:40 pm. The shop is closing, the next customer is tomorrow at nine, and the notes for this visit currently live in the acoustician's head and on a scribbled card. By the time they reach the customer file, half the details will be gone. By the final session, the record of why one device was chosen over another will be a memory, not a document.
+
+Fitting documentation is exactly the kind of work where a spoken note and a language model can help. Not with the hearing, the settings or the clinical choices. Only with turning what the acoustician says into a clean record, while the session is still fresh.
+
+## Why the paperwork is unusually heavy here
+
+<Stats title="The setting: a large, growing, and partly under-served market">
+  <Stat value="1.5 billion" label="people worldwide live with some degree of hearing loss, and about 430 million need rehabilitation for disabling loss" source="World Health Organization" href="https://www.who.int/news-room/fact-sheets/detail/deafness-and-hearing-loss" />
+  <Stat value="≈ 41%" label="of people with self-reported hearing difficulty in Germany owned hearing aids in 2022, with 13% of adults reporting difficulty" source="EuroTrak Germany 2022, Seminars in Hearing" href="https://www.thieme-connect.com/products/ejournals/html/10.1055/s-0042-1758361" />
+</Stats>
+
+The third number shows why documentation matters to the business. When a public insurer pays a fixed sum that covers devices and services, the record of what you did for that sum has to hold up, both for the insurer and for the customer who later asks why their second device was not chosen. Festbeträge get revised from time to time, so check the current list before you quote a figure to a customer.
+
+The process itself is long. In Germany, a fitting starts with an ENT doctor's prescription. The acoustician then runs several trial and measurement steps, the customer wears devices in daily life, and the fitting ends with a final conversation and a check by the ENT doctor, as the [German association of the hard of hearing (DSB)](https://schwerhoerigen-netz.de/rund-ums-hoeren/hoerhilfen-wie-bekomme-ich-sie/hoergeraeteversorgung/was-sagt-der-dsb-e-v/) describes it. The rules for this process call for a comparison fitting (Vergleichsanpassung) of several devices, commonly cited as at least three, with at least one offered without any additional payment by the customer, as consumer guides such as [Stiftung Warentest's](https://www.test.de/Hoergeraeteakustiker-Fuenf-grosse-Ketten-im-Vergleich-1390011-1390124/) describe it. The exact rules come from the insurers' contracts, so confirm them with your association.
+
+If you work outside Germany, the shape is similar even where the rules differ: a trial period, comparison of options, return rights, and in some systems an insurer or a national health service that wants evidence. Check what your payer or regulator expects before you design anything.
+
+## What has to be written down, visit by visit
+
+Here is how I'd structure the record. The left side is what the acoustician says out loud after each visit. The right side is where the hard data stays.
+
+| Visit | What the note should capture | What stays in the fitting software |
+| --- | --- | --- |
+| 1. Consultation and hearing test | Situations the customer finds hardest (TV, restaurants, phone, meetings), expectations, budget boundaries, anything unusual about daily life | Audiogram, speech test results, the prescription details |
+| 2. First fitting | Which devices were fitted, the customer's first impressions in their own words, any discomfort or whistling | Initial gain settings, programs, measurement values |
+| 3. Comparison trial | Which devices were tried, in which situations, what the customer liked and disliked about each, and what they would pay for | Settings per device, log data such as wearing time if available |
+| 4. Fine-tuning | What the customer reported since last time, what was changed and why, open complaints | The changed parameters, before and after |
+| 5. Final session | Customer's decision and reasons, any additional payment explained, follow-up plan | Final settings, verification measurements |
+
+The split matters. The words are what the model handles. The numbers come from the fitting software or your measurement equipment and are attached to the record as they are. I would never let a model type, round or paraphrase a measurement value.
+
+## The blueprint
+
+Here is the flow I'd build.
+
+<Flow title="From a spoken note to a record you can defend" caption="The acoustician speaks for two minutes. The assistant structures. The acoustician reads, corrects and signs off before anything is stored.">
+<Step title="Session ends" who="Acoustician" tone="human" time="17:40">Before the customer file closes, she dictates two minutes into a phone: customer number, what was reported, what she changed, what's next. The customer isn't recorded.</Step>
+<Step title="Transcribe" who="AI" tone="ai" time="under 1 min">Speech to text, tuned for the vocabulary: program names, device models, terms like feedback, occlusion, real-ear measurement.</Step>
+<Step title="Structure into fields" who="AI" tone="ai" time="seconds">Complaints, situations, devices, changes made, customer feedback, open points, next steps. Anything not said stays empty and is marked as missing, not guessed.</Step>
+<Step title="Review and sign off" who="Acoustician" tone="human" time="1 to 2 min">She reads the draft, fixes wording, fills the gaps and approves. Nothing is saved until she does.</Step>
+<Step title="File it" who="System">The record goes into the customer file. The audiogram and settings stay in the fitting software, linked by customer number.</Step>
+<Step title="Trial summary" who="AI" tone="ai" time="end of trial">From the approved records, a draft summary of the comparison: devices tried, the customer's own words per device, results attached from the software. The acoustician completes it.</Step>
+</Flow>
+
+A few design choices make the difference.
+
+**Dictate, don't record the conversation.** Recording a conversation with the customer needs consent, and in Germany recording without it is a criminal offence under section 201 of the criminal code. If the acoustician dictates her own summary after the customer has left, this problem doesn't arise, and the record is usually cleaner anyway because she has already sorted what mattered.
+
+**Empty means empty.** The structuring step must leave a field blank when nothing was said. A model that politely fills in "customer satisfied" because it sounded likely has just created a false record.
+
+**The trial summary is built from approved records.** It never re-reads raw audio. That keeps one source of truth.
+
+**Next-visit brief.** The same records let you generate a one-page prep for the next appointment: what was changed last time, what was still open, what the customer said mattered. That alone is worth something on a busy day.
+
+## What the assistant must never do
+
+<Callout title="Health data, and what the model never touches" tone="warning">
+Hearing data is health data. Under Article 9 of the GDPR, health data gets special protection, so you need a data processing agreement (AVV in Germany) with any provider that touches the notes, hosting in the EU, and a contract that rules out training on your data. Dictate with the customer number rather than the name where you can. Tell customers in your privacy notice that notes are drafted with software and checked by you. Whether professional secrecy rules such as section 203 of the German criminal code apply to your business is a question for your association or a lawyer. If you are in the US and a HIPAA covered entity, you would need a business associate agreement with the vendor. The model never chooses a device, sets gain, reads an audiogram for clinical conclusions, or writes a value into the fitting software.
+</Callout>
+
+That last sentence deserves a longer explanation. Manufacturers' fitting software already has its own automation for first fits. That is their product, tested for that job. A general language model is the wrong tool for it, and a wrong number in a hearing aid is a customer problem, not a documentation problem.
+
+## What it costs to set up
+
+Everything below is a rough estimate from me, not a quote, and your situation will differ.
+
+For a single shop, the lightest version needs a phone, a transcription and summarisation tool with an EU data processing agreement, and a template of the fields above. Plan on tooling in the range of tens of euros per user per month, and an afternoon or two to write the template with the acoustician who will use it. If you want the records to flow into your customer software automatically, expect custom work or a vendor's integration, and ask whether your software has an import option before paying for anything.
+
+The time argument is the real one. If a good written note takes ten minutes and a dictated one takes two, and an acoustician does five fittings a day, that's about 40 minutes a day. Whether that goes into more appointments or into leaving at a decent hour is your decision. I'd test the claim with a week of stopwatch timing before believing either number.
+
+## When you don't need AI
+
+A small shop with one acoustician and a few fittings a week can get most of the benefit from a fixed template in the customer software and the discipline to fill it in before the customer leaves the building. Dictation built into a phone, with a person tidying the text, is also fine. AI earns its cost when several people fit, when notes differ a lot in style, or when the comparison summary at the end of a trial is currently the job that never gets done.
+
+## A three-week pilot
+
+**Week 1.** Write the field list with your acoustician. Collect three anonymised example records that you consider good.
+
+**Week 2.** Run five real fittings in parallel: the acoustician writes as usual and also dictates. Compare the two records for gaps and errors.
+
+**Week 3.** Use dictation only, with review. Count corrections per record. If the assistant invents anything, stop and fix the prompt before going on.
+
+## Questions acousticians ask
+
+### Can AI write my hearing aid fitting documentation?
+
+It can turn your spoken notes into a structured draft, and that's the safe use. It shouldn't write measurement values or clinical conclusions. You read and approve every record.
+
+### Is it allowed to put hearing data into an AI tool?
+
+It's allowed if you meet the same rules as with any other software that handles health data: a lawful basis, an AVV with the provider, EU hosting where the GDPR applies, strict access control, and transparency towards customers. Get your data protection officer or a specialist lawyer to sign off on the exact setup.
+
+### What does the insurer need to see from a comparison fitting?
+
+The precise requirements depend on the contract with the insurer, so ask the payer or your association for the current documentation template. What I can say is that a clear record of which devices were compared, what the customer reported, and why the final choice was made is the core of any version.
+
+### Will customers mind?
+
+Most people care that the acoustician listens and that their data is safe. If you tell them you dictate notes after the visit and read them before saving, it's usually a non-issue. Be honest if they ask.
+
+## Where I'd start
+
+Fix the template before any software. Decide what a fitting record must contain, who dictates, and who signs. Then let the model do the typing and the tidying, and leave the hearing, the numbers and the final word to the acoustician.
+
+If you'd like to try this in your shop, [tell me which software holds your customer files today](/contact?intent=improve), and I'll suggest a small first step. The same pattern of speaking instead of typing shows up in [construction daily reports](/posts/ai-for-construction-daily-reports), and on the customer side [opticians](/posts/ai-for-opticians-contact-lens-reorders) face the same challenge of keeping customers after the first fitting, while [specialist practices](/posts/ai-for-medical-practices-referrals) handle the paperwork of referrals that often start a hearing aid fitting.

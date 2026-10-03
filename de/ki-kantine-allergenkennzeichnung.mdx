@@ -1,0 +1,163 @@
+---
+id: "ki-kantine-allergenkennzeichnung"
+translationOf: "ai-for-canteens-allergen-labelling"
+title: "Kantine: Allergenkennzeichnung aus Rezepturen statt aus dem Gedächtnis"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Lebensmittel & Gastronomie", "Kantinen", "Allergenkennzeichnung", "KI für kleine Unternehmen"]
+description: "Allergenlisten aus dem Gedächtnis veralten, sobald ein Lieferant ein Produkt tauscht. Wie Kantinen sie aus Daten bauen: KI liest Datenblätter, ein Mensch prüft."
+excerpt: "Allergenlisten aus dem Gedächtnis veralten, sobald ein Lieferant ein Produkt tauscht. Wie Kantinen sie aus Daten bauen: KI liest Datenblätter, ein Mensch prüft."
+---
+
+Stellen Sie sich eine Betriebskantine vor, die täglich 280 Mittagessen ausgibt. Am Dienstag gibt es Hähnchen in Sahnesoße mit Reis. Alle in der Küche wissen, was drin ist: Hähnchen, Sahne, ein bisschen Mehl. Auf dem laminierten Blatt am Ausgabetresen stehen Milch und Gluten, und das steht dort seit zwei Jahren.
+
+Dann ist die gewohnte Soßenbasis beim Großhändler nicht lieferbar, und er schickt eine andere Marke. Sie macht dasselbe. Sie enthält aber auch Sellerie. Niemand ändert das Blatt, weil niemand den Lieferschein mit dem laminierten Zettel verbunden hat. Um 12:15 Uhr fragt ein Gast mit Selleriallergie, ob die Soße für ihn geeignet ist, und die Ausgabekraft, die keinen Grund hat, dem Blatt zu misstrauen, sagt ja.
+
+Niemand in dieser Geschichte war nachlässig. Die Information steckte in den Köpfen und auf einem Blatt, nicht in den Daten, aus denen das Gericht gemacht wird. Das lässt sich beheben, und es ist eine lohnende Aufgabe für KI in der Kantine, solange sie eine enge Aufgabe bekommt und ein Mensch das letzte Wort behält.
+
+## Was das Recht von einer Küche verlangt, die lose Ware abgibt
+
+Kantinenessen gilt als nicht vorverpacktes („lose“) Lebensmittel: vor Ort gekocht, angerichtet oder portioniert. Die Regeln unterscheiden sich von Land zu Land, haben aber denselben Kern. Das hier ist ein allgemeiner Überblick, Stand September 2026, keine Rechtsberatung. Die letzte Auskunft gibt Ihre Lebensmittelüberwachung.
+
+| Wo | Was für lose Ware gilt | Wie die Information erfolgen kann |
+| --- | --- | --- |
+| EU | Die [Lebensmittelinformationsverordnung (1169/2011)](https://eur-lex.europa.eu/eli/reg/2011/1169/oj/eng) nennt in Anhang II 14 Allergene. Bei Lebensmitteln ohne Vorverpackung, auch bei Speisen aus Kantinen und anderer Gemeinschaftsverpflegung, müssen die Angaben dazu verfügbar sein (Artikel 44) | Die Mitgliedstaaten regeln die Art und Weise |
+| Deutschland | [§ 4 LMIDV](https://www.gesetze-im-internet.de/lmidv/__4.html): Die Angaben müssen vor Kaufabschluss und vor der Übergabe des Lebensmittels bekannt sein | Schriftlich (Speisekarte, Schild, Aushang, elektronisch) oder mündlich durch ausreichend unterrichtetes Personal, wenn eine schriftliche oder elektronische Aufzeichnung vorliegt, leicht zugänglich ist und ein gut sichtbarer Hinweis darauf verweist |
+| Großbritannien | Die [Food Standards Agency](https://www.gov.uk/government/publications/allergen-guidance-for-food-businesses/allergen-guidance-for-food-businesses) verlangt Angaben zu jedem Gericht, das eines der 14 Allergene enthält. Seit Oktober 2021 brauchen auch für den Direktverkauf vorverpackte Lebensmittel eine vollständige Zutatenliste mit hervorgehobenen Allergenen („Natasha's Law“) | Schriftlich oder mündlich mit gut sichtbarem schriftlichem Hinweis |
+| USA | Sesam ist seit dem 1. Januar 2023 das neunte Hauptallergen ([FDA](https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies)). Die bundesweiten Kennzeichnungsregeln betreffen verpackte Lebensmittel | Für zubereitete Speisen gelten Landes- und Kommunalrecht, und die Übernahme des FDA Food Code ist uneinheitlich |
+
+In Deutschland gilt die Pflicht für unverpackte Lebensmittel seit dem 13. Dezember 2014. Wer in Österreich oder der Schweiz arbeitet, prüft die nationalen Regeln, denn sie weichen im Detail ab.
+
+Zwei Dinge sind hier wichtig. Erstens liegt die Pflicht in der EU und in Großbritannien beim Lebensmittelunternehmer, nicht bei der Software oder dem Modell. Zweitens muss die Information an dem Tag stimmen, an dem der Gast fragt. Eine Liste, die im März richtig war, ist im Oktober kein Nachweis mehr. Die britische Leitlinie rät, allergene Zutaten in Produktspezifikationen und Rezepten festzuhalten und dabei die Folgen von Rezepturänderungen zu bedenken.
+
+## Warum „das weiß doch jeder“ nicht trägt
+
+Wer verlässt sich überhaupt auf die Liste? Weniger Menschen, als Umfragen nahelegen, und mehr, als eine Küche sich zu erraten erlauben kann. In Umfragen, die der [Allergieinformationsdienst](https://www.allergieinformationsdienst.de/krankheitsbilder/nahrungsmittelallergie/verbreitung) anführt, sagen rund 30 % der Menschen, sie hätten eine Nahrungsmittelallergie. Als Berliner Forschende 2004 Labor- und Provokationstests ergänzten, lag die Rate echter Nahrungsmittelallergien bei Erwachsenen bei 3,7 % und bei Kindern bei 4,2 %. Eine [Metaanalyse europäischer Studien von 2023](https://pubmed.ncbi.nlm.nih.gov/36271775/) kommt auf 13,1 % selbstberichtete Nahrungsmittelallergie zu einem beliebigen Zeitpunkt, aber nur auf 0,8 % mit bestätigtem Provokationstest.
+
+Nehmen Sie 300 Gäste. Bei diesen bestätigten Raten (meine Rechnung, keine Messung) sind das etwa 2 bis 12 Menschen, für die Ihr Allergenblatt ein medizinisches Dokument ist. Andere verlassen sich darauf, weil sie glauben, zu reagieren. Keiner von ihnen prüft Ihre Lieferscheine, also müssen Sie es tun.
+
+Das Problem ist, wo sich Allergene verstecken. Station Ernährung, ein Wissensportal für die Gemeinschaftsverpflegung, [nennt](https://www.station-ernaehrung.de/fachinformationen/fuer-die-gemeinschaftsverpflegung/allergenkennzeichnung) Sellerie in Suppen, Eintöpfen, Soßen, Dressings, Marinaden und Gewürzmischungen und weist darauf hin, dass Sellerie auch gekocht oder pulverisiert noch ein starker Allergieauslöser ist. Dazu kommen Ausnahmen: Glukosesirup und Maltodextrine auf Weizenbasis sind von der Kennzeichnung ausgenommen, und Sulfite zählen erst ab 10 mg pro kg oder Liter.
+
+Das Gedächtnis kommt mit „Hähnchen in Sahnesoße“ zurecht. Mit einer Brühbasis, einer Gewürzmischung, einem Dressing und einer Marinade nicht, jeweils von einem anderen Lieferanten und hin und wieder umgestellt.
+
+## Der Bauplan: Zutaten, Rezepturen, Speisepläne
+
+In der Geschichte oben ist die Liste ein Blatt, das jemand von Hand ändert, wenn er daran denkt. Jede Änderung hängt davon ab, dass jemand die Umstellung bemerkt, und der Preis eines Versäumnisses ist ein Gast mit einer allergischen Reaktion. Die Lösung ist unspektakulär, und das ist der Punkt: drei Ebenen, und die Allergeninformation wird einmal eingetragen, ganz unten.
+
+**Zutaten.** Jedes Produkt, das Sie einkaufen, mit Lieferant und Artikelnummer, den Allergenen laut aktueller Spezifikation, Version und Datum des Datenblatts und der Person, die geprüft hat. Allergene werden nie auf Rezepturebene von Hand eingetragen.
+
+**Rezepturen.** Eine Liste von Zutaten mit Mengen. Die Allergene eines Gerichts werden nach einer einfachen Regel aus den Zutaten berechnet: alles, was irgendeine Zutat enthält. Keine KI in diesem Schritt, kein Ermessen, kein Abtippen.
+
+**Speisepläne.** Ein Speiseplan ist eine Liste von Rezepturen nach Datum. Aushang am Tresen, Allergenmatrix, Intranetseite und gedruckter Wochenplan werden daraus erzeugt. Niemand bearbeitet sie von Hand.
+
+So könnte ein Zutatendatensatz aussehen (erfundenes Beispiel):
+
+```text
+Artikel:      Soßenbasis Hähnchen, 1-kg-Eimer (Lieferant A, Art.-Nr. 48213)
+Spezifikation: Version 3, eingegangen am 4. März
+Allergene:    Milch, glutenhaltiges Getreide (Weizen), Sellerie
+Lieferant nennt „kann enthalten“: Ei
+Status:       GEPRÜFT von M. Keller, 5. März
+Zitierte Zeile: „Enthält: Weizenmehl, Milchpulver, Selleriesaft“
+```
+
+Das Statusfeld ist das wichtigste. Eine Zutat gilt erst als geprüft, wenn ein Mensch die Allergene mit dem Dokument des Lieferanten verglichen hat. Alles andere ist ungeprüft, und jedes Gericht mit einer ungeprüften Zutat erscheint im Speiseplan als ungeprüft. Es erscheint nie als allergenfrei.
+
+## Wo KI liest und wo nicht
+
+250 Artikel aus PDFs abzutippen ist der Punkt, an dem Küchen aufgeben, und der, an dem KI wirklich hilft, denn die Aufgabe ist Lesen.
+
+- **Datenblätter lesen.** Das Modell nimmt ein PDF, eine E-Mail oder einen Scan und schlägt die Allergenfelder vor, jeweils mit der Zeile, aus der sie stammen.
+- **Versionen vergleichen.** Kommt eine neue Version eines Datenblatts, listet das Modell auf, was sich geändert hat, etwa „Selleriesaft neu“. Ein Mensch liest zwei Zeilen Unterschied in Sekunden. Zwölf Seiten bei jeder Lieferung neu zu lesen, ist nicht realistisch.
+
+<Callout title="KI schlägt vor, ein Mensch prüft, die Daten entscheiden" tone="warning">
+Das Modell füllt nie eine Lücke. Wenn ein Datenblatt ein Allergen nicht erwähnt, lautet die Antwort „nicht angegeben“, nicht „frei von“. Gibt es kein Datenblatt, bleibt die Zutat ungeprüft. Das Modell schließt auch nie aus dem, was ein Gericht üblicherweise enthält, auf ein Allergen, denn genau das ist der Gedächtnisfehler, den dieses System abschaffen soll. Jedes vorgeschlagene Allergen muss die Textstelle zitieren, aus der es stammt, damit die prüfende Person eine Zeile liest statt das ganze Dokument.
+</Callout>
+
+Es gibt Gründe für diese Vorsicht. In einer [Studie in Nutrients von 2025](https://doi.org/10.3390/nu17091492) zerlegten drei Sprachmodelle zusammengesetzte Zutaten aus 15 Speiseplänen in ihre Grundzutaten, und Ernährungsfachleute prüften die Ergebnisse. Die beiden besten Modelle erreichten F1-Werte von 0,894 und 0,842, wobei 1 perfekt wäre. Die Aufgabe ähnelt dem Lesen von Datenblättern, ist aber nicht dasselbe, und neuere Modelle schneiden anders ab. Man kann jedoch nicht vorher wissen, bei welchem Datenblatt sich das Modell geirrt hat. Für einen Entwurf ist das in Ordnung, als Sicherheitsnachweis nicht, deshalb wird jedes Datenblatt geprüft.
+
+## Vom Datenblatt zum Aushang am Tresen
+
+<Flow title="Wie ein neues Produkt vom PDF des Lieferanten zum Tresen kommt" caption="Das Modell liest und entwirft. Die Küchenleitung entscheidet. Die Regeln rechnen.">
+<Step title="Neues oder geändertes Produkt" who="Küche" time="bei Lieferung">Ein neuer Artikel kommt, oder der Lieferschein zeigt eine andere Marke oder Artikelnummer als bestellt. Das Datenblatt wird angefordert, bevor das Produkt in ein Gericht geht.</Step>
+<Step title="Datenblatt lesen" who="KI" tone="ai" time="unter einer Minute">Das Modell zieht Allergene, Spurenhinweise und Version heraus und zitiert zu jedem die Zeile. Was fehlt, wird als nicht angegeben markiert.</Step>
+<Step title="Mit dem Dokument abgleichen" who="Küchenleitung oder Qualitätsverantwortliche" tone="human" time="5 bis 10 Min.">Ein Mensch vergleicht den Vorschlag mit dem Datenblatt, korrigiert ihn und markiert den Artikel mit Name und Datum als geprüft.</Step>
+<Step title="Neu berechnen und entscheiden" who="System, dann Küchenleitung" tone="human">Jede Rezeptur mit dem Artikel wird nach Regel neu berechnet. Markierte Gerichte brauchen eine Entscheidung: Rezeptur, Produkt oder Aushang ändern. Bis dahin gelten sie als ungeprüft.</Step>
+<Step title="Ausgaben erzeugen" who="KI und System" tone="ai">Tresenblatt, Allergenmatrix und Wochenplan werden aus den Datensätzen neu gebaut. Das Modell darf Formulierungen glätten, aber die Allergene kommen direkt aus den Daten.</Step>
+<Step title="Mit dem Nachweis in der Hand ausgeben" who="Ausgabepersonal" tone="human">Das Personal antwortet vom Blatt oder vom Bildschirm, nie aus dem Gedächtnis, und gibt Fragen zu schweren Allergien an die Küchenleitung weiter.</Step>
+</Flow>
+
+## Ersatzlieferungen: die Änderung, die die Liste kippt
+
+Der riskante Moment ist selten eine Rezeptur, die niemand geprüft hat. Es ist eine, die einmal geprüft und dann verändert wurde. In einer Kantine hören diese Änderungen nie auf: die Ersatzlieferung, weil etwas ausverkauft war, die günstigere Marke, der Koch, der einen Löffel Pesto in die Soße gibt, weil sie fad ist.
+
+<Checklist title="Auslöser, die ein Gericht zurück auf ungeprüft setzen" items={[
+  "Der Lieferschein zeigt eine andere Marke oder Artikelnummer als bestellt",
+  "Der Lieferant schickt eine neue Version des Datenblatts",
+  "Eine Rezeptur wird geändert, auch nur um einen Löffel",
+  "Ein neues Gericht oder eine saisonale Aktion kommt auf den Plan",
+  "Das Etikett einer Packung im Lager passt nicht mehr zum Datensatz",
+  "Ein Gast oder eine Kollegin meldet eine Reaktion oder einen Zweifel"
+]} />
+
+Bitten Sie Ihre Lieferanten, Sie zu informieren, wenn sich der Allergenstatus eines Produkts ändert. Das Landwirtschaftsministerium von Minnesota [rät Herstellern](https://www.mda.state.mn.us/food-feed/managing-food-allergen-risks-guide-manufacturers), das zu verlangen und Etiketten eingehender Zutaten zu prüfen, weil ein Lieferant das falsche Produkt geschickt haben kann. Eine Kantine kann dasselbe von ihrem Großhändler erbitten.
+
+## Kreuzkontakt und „kann Spuren enthalten“
+
+Eine Rezepturdatenbank weiß, was in ein Gericht kommt. Sie sieht nicht die Kelle, die von der Fischsuppe in die Gemüsesuppe wanderte, oder die Fritteuse, die sich Schnitzel und Falafel teilen.
+
+Hinweise wie „kann Spuren von … enthalten“ sind freiwillig. Die [Verbraucherzentrale Bayern](https://www.verbraucherzentrale.bayern/faq/haetten-sies-gewusst/was-bedeutet-die-angabe-kann-spuren-von-enthalten-76216) weist darauf hin, dass Hersteller teils pauschal warnen, um sich vor Haftungsansprüchen zu schützen, und dass der Hinweis für Betroffene deshalb wenig hilft. Erfassen Sie den Hinweis des Lieferanten als Datum. Behandeln Sie Kreuzkontakt in Ihrer eigenen Küche als eigenes Verfahren: getrennte Utensilien, Regeln für die Fritteuse, Reihenfolge beim Kochen und eine klare Ansage, was das Personal zusagen darf. „Frei von“ darf weder eine Datenbank noch ein Modell für Sie drucken.
+
+## Was es kostet
+
+Die Zahlen unterscheiden sich von Küche zu Küche, die Form nicht: ein Block Prüfarbeit am Anfang, danach ein Rinnsal.
+
+<Calc title="Überschlag: Allergendaten aufbauen und pflegen" caption="Annahmen, keine Messwerte. Zählen Sie einige Wochen Ihre eigenen Artikel und Ersatzlieferungen, dann haben Sie echte Zahlen." rows={[
+  ["Artikel im Einsatz", "250"],
+  ["Minuten, um einen vorgeschlagenen Datensatz mit dem Datenblatt abzugleichen", "× 6"],
+  ["Einmaliger Prüfaufwand", "≈ 25 Stunden"],
+  ["Änderungen und Ersatzlieferungen pro Monat", "12"],
+  ["Minuten pro Änderung, inklusive betroffener Rezepturen", "× 10"]
+]} result={["Laufender Prüfaufwand", "≈ 2 Stunden im Monat"]} />
+
+Ohne KI muss man jeden Datensatz aus dem PDF abtippen, was ich auf etwa das Doppelte schätze, dazu kommen Tippfehler.
+
+Rezept- und Speiseplansoftware mit Allergenfeldern gibt es schon, und das würde ich eher kaufen als bauen: in Deutschland etwa Rezeptrechner und SANALOGIC, international Apicbase und Nutritics. Einige können Produktdatenblätter oder Artikeldaten von Lieferanten direkt einlesen. Wenn Ihre das kann, nutzen Sie das, und heben Sie die KI für Datenblätter auf, die als sperrige PDFs kommen. Ich habe diese Werkzeuge nicht getestet, lassen Sie sich also eine Testphase mit Ihren eigenen Daten geben.
+
+## Datenschutz und Haftung
+
+Zutaten- und Rezepturebene enthalten keine personenbezogenen Daten: Produkte, Lieferanten, Allergene. Ein Modell, das ein Datenblatt liest, berührt das Datenschutzrecht für sich genommen nicht, also ist das ein einfacher Einstieg in KI.
+
+Das ändert sich, sobald Gäste oder Beschäftigte im System stehen. Eine Vorbestell-App, die „Mia, Erdnussallergie“ speichert, verarbeitet Gesundheitsdaten. [Artikel 9 DSGVO](https://dsgvo-gesetz.de/art-9-dsgvo/) untersagt das, solange keine Ausnahme greift, etwa die ausdrückliche Einwilligung. Erheben Sie das Nötigste, halten Sie die Daten möglichst vom Modell fern, und wenn ein Anbieter sie doch verarbeitet, schließen Sie einen Auftragsverarbeitungsvertrag (AVV) ab und klären Sie, wo der Anbieter die Daten verarbeitet.
+
+Die Haftung bleibt bei der Küche. Ein Chatbot, der „Ist die Lasagne glutenfrei?“ von sich aus beantwortet, ist ein Risiko. Wenn Sie einen wollen, lassen Sie ihn den geprüften Datensatz zitieren und Fragen zu schweren Allergien an einen Menschen geben.
+
+## Wann eine Tabelle reicht
+
+Eine Küche mit 15 Gerichten, zwei Lieferanten und einem stabilen Plan braucht keine KI. Eine Tabelle mit Artikelblatt, Rezepturblatt und einer Formel, die Allergene zusammenführt, erledigt das, dazu die Gewohnheit, jede Lieferung zu prüfen. KI lohnt sich bei einigen hundert Artikeln, häufigen Ersatzlieferungen oder mehreren Standorten mit einer gemeinsamen Datenbank.
+
+## Fragen von Kantinenleitungen
+
+### Kann ich ChatGPT einfach fragen, welche Allergene in meinem Rezept stecken?
+
+Fragen können Sie, die Antwort veröffentlichen sollten Sie nicht. Ein allgemeines Modell antwortet nach dem, was solche Gerichte üblicherweise enthalten, nicht nach den Produkten in Ihrem Lager. Geben Sie ihm Ihre Datenblätter, lassen Sie es zitieren, und lassen Sie einen Menschen prüfen.
+
+### Reicht es, wenn das Personal Auskunft gibt, statt eine Liste auszuhängen?
+
+In Deutschland ist die mündliche Information zulässig, wenn das Personal ausreichend unterrichtet ist, eine schriftliche oder elektronische Aufzeichnung vorliegt und leicht zugänglich ist und ein gut sichtbarer Hinweis darauf verweist. In Großbritannien genügt die mündliche Auskunft mit schriftlichem Hinweis. In jedem Fall brauchen Sie die Aufzeichnung dahinter, also bauen Sie zuerst die.
+
+### Gelten überall dieselben Allergene?
+
+Nein. In der EU und in Großbritannien sind es 14, in den USA neun. Sellerie, Senf, Lupine und Weichtiere stehen auf der EU-Liste, aber nicht auf der US-Liste. Prüfen Sie bei einem importierten Produkt also, ob das Etikett nach EU-Regeln erstellt ist, bevor Sie es in Ihre Daten übernehmen.
+
+### Woher weiß ich, dass die Daten noch stimmen?
+
+Nutzen Sie die Auslöser oben und dazu eine Stichprobe: Vergleichen Sie einmal im Monat bei fünf Artikeln das Etikett der Packung im Lager mit dem Datensatz. Das ist mein Vorschlag, keine gesetzliche Vorgabe.
+
+## Wo ich anfangen würde
+
+Fangen Sie mit der Zutatenebene an und mit nichts sonst. Sammeln Sie die Datenblätter der dreißig Produkte, die Sie am häufigsten einsetzen, lassen Sie das Modell die Allergenfelder mit zitierten Zeilen entwerfen, prüfen Sie jeden Eintrag selbst, und lassen Sie alles andere als ungeprüft markiert. Bauen Sie dann Ihre ersten zehn Rezepturen darauf auf, und erzeugen Sie erst danach Tresenblätter.
+
+Die Faustregel: KI darf lesen, ein Mensch prüft, und die Daten entscheiden. Steht es nicht im Datensatz, lautet die Antwort am Tresen „Ich frage nach“, nie „nein“.
+
+Wenn Sie eine Kantine oder eine Catering-Küche führen, [schreiben Sie mir, wie Ihre Allergeninformationen heute geführt werden](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Test wert ist. Kleine Lebensmittelhersteller kämpfen mit denselben Datenblättern für ihre [Audit-Unterlagen](/de/posts/ki-lebensmittelhersteller-haccp-dokumentation), und Kunden, die vor einer Veranstaltung nach Allergien fragen, sind ein anderes Problem, das [Catering-Anfragen](/de/posts/ki-catering-anfragen) behandelt.

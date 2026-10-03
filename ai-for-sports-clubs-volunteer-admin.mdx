@@ -1,0 +1,153 @@
+---
+id: "ai-for-sports-clubs-volunteer-admin"
+title: "Sports Club Admin, Ranked: What Volunteers Should Stop Doing by Hand"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Education & community", "Sports clubs", "Volunteer admin", "AI for small business"]
+description: "Seven jobs that eat a club secretary's week, ranked by what to hand off first: a plain app, an AI draft, or nobody. With the German club rules for 2026."
+excerpt: "Seven jobs that eat a club secretary's week, ranked by what to hand off first: a plain app, an AI draft, or nobody. With the German club rules for 2026."
+---
+
+Picture the secretary of a sports club with 300 members, about the average size in Germany. It's Sunday, nine in the evening, and she's at the kitchen table. Three new membership forms are waiting to be typed in: one photographed at an angle, one missing a parent's signature. Two direct debits bounced. A coach wants to know whether his expense allowance is still under the tax-free limit. The general meeting is in three weeks and the invitation has to go out in time. And in the team chat, 41 unread messages are all about one question: is Tuesday's training on, now that the hall is closed?
+
+None of this is hard. All of it is repetitive, and a few items have real consequences if they go wrong.
+
+I play semi-pro American football on the offensive line, so I know club life from the player's side, where admin shows up as a message you hope is correct. From the secretary's side it's a second job nobody applied for. This post ranks the usual admin jobs of a sports club by what I'd take off volunteers first, and what should take them over: a plain app, an AI draft, or nobody at all.
+
+## Why admin has become the bottleneck
+
+<Stats title="Clubs are growing, the people running them are not">
+  <Stat value="29.3 million" label="memberships (not people) in about 86,000 German sports clubs on 1 January 2025, a record" source="DOSB, Bestandserhebung 2025" href="https://cdn.dosb.de/user_upload/www.dosb.de/uber_uns/Bestandserhebung/Bestandserhebung_2025.pdf" />
+  <Stat value="More than 1 in 6" label="clubs say they are threatened in their existence because they can't find and keep volunteer officials; almost 60% name it their biggest worry" source="Sportentwicklungsbericht 2023 to 2025 (German Sport University Cologne), via DOSB" href="https://www.dosb.de/aktuelles/news/detail/wie-steht-es-um-das-ehrenamt-im-sport" />
+  <Stat value="One third" label="of the unpaid time that UK clubs and other providers receive goes into administration, another third into coaching (survey of 450 organisations, 2022)" source="Sport and Recreation Alliance, Sheffield Hallam University" href="https://sportandrecreation.org.uk/files/the-cost-of-living-crisis-the-impact-on-grassroots-community-sport-and-recreation---full-report-130924153553.pdf" />
+</Stats>
+
+The numbers I could verify best come from Germany, so I use it as the worked example throughout. The average club there has [about 300 memberships](https://www.dosb.de/aktuelles/news/detail/faq-die-zahlen-der-bestandserhebung), and the DOSB, the umbrella body, says in the same breath that too few volunteers and heavy bureaucracy are holding clubs back.
+
+The German Foundation for Engagement and Volunteering (DSEE) [surveyed 901 volunteer leaders](https://www.deutsche-stiftung-engagement-und-ehrenamt.de/pressemeldungen/dsee_umfrage_buerokratiebelastung_im_ehrenamt/) in late 2024: more than 77% rated the bureaucratic burden on their club as high or very high. Its board puts the load of an average-sized club at about 6.5 hours a week, roughly 42 days a year. That's the foundation's own estimate, and it covers tax, data protection and permits, not just member admin.
+
+## How I ranked the jobs
+
+Two questions decide where a job belongs. How repetitive and rule-based is it? And what does a mistake cost?
+
+<Matrix title="Which club jobs to hand off, and to what" caption="A repetitive job where a mistake is cheap and visible is the place to start. Where a mistake is expensive, AI drafts and a person decides." xLabel="Cost of a mistake" yLabel="How repetitive and rule-based the job is" quadrants={[
+  { title: "Hand off first", text: "Schedule changes, membership applications, the same member questions. Lots of volume, mistakes are small and easy to spot.", highlight: true },
+  { title: "AI drafts, a person signs", text: "Fee reminders, meeting minutes, coach payments. Repetitive, but money or legal weight sits behind them." },
+  { title: "Use it when it comes up", text: "Grant applications and the occasional newsletter. Not daily, and a draft can be corrected." },
+  { title: "Keep with people", text: "Safeguarding concerns, fee waivers, expulsions, conflicts between members. No tool decides these." }
+]} />
+
+The ranking follows that grid, with a twist: number one isn't an AI job at all.
+
+<Bars title="Where a 300-member club's admin hours might go" unit=" h" caption="Illustrative split of the 6.5-hour week above, my assumption, to show the shape. Your club's split will differ. Count your own for two weeks before deciding anything." data={[
+  { label: "1. Training changes, team chat", value: 1.5, highlight: true },
+  { label: "2. Membership applications", value: 1, highlight: true },
+  { label: "3. Repeated member questions", value: 1, highlight: true },
+  { label: "4. Fee reminders", value: 0.75 },
+  { label: "5. Invitations and minutes", value: 0.75 },
+  { label: "6. Grant applications", value: 0.5 },
+  { label: "7. Coach and volunteer paperwork", value: 1 }
+]} />
+
+## 1. Training changes and the team chat
+
+**Best fit: a plain team app. AI is a side dish.** The hall is closed, the coach posts it in the group chat, nine parents answer with a thumbs-up and three ask the same question again. The fix isn't clever: one shared calendar for every team, a push notification when something changes, and a yes/no button so the coach knows who's coming. Team apps such as Spond or TeamSnap do exactly this, and so do the apps built into club software. Pick one and make it the only place where changes are announced.
+
+AI helps at the edges: it can turn a coach's voice note ("hall's shut Tuesday, school gym at six, indoor shoes") into a clear message, and write a Friday digest for each team.
+
+There's a data protection side too. German data protection authorities have flagged WhatsApp for years because the app reads users' address books. North Rhine-Westphalia's authority said so in its 2017 annual report and called the legal position uncertain, as [quoted by a state sports federation service](https://www.vibss.de/vereinsmanagement/marketing/social-media/whatsapp/whatsapp-rechtslage-mit-einfuehrung-der-eu-dsgvo). Some club boards now ask their coaches to move official information elsewhere. Moving the chat is a bigger project than any AI feature. Do it first anyway.
+
+## 2. Membership applications
+
+**Best fit: an online form, plus an AI check for the messy ones.** A paper form gets retyped into the member database, usually by the person who then discovers that the IBAN is missing a digit or the parent never signed. Club software such as easyVerein, campai or WISO MeinVerein (German examples) manages members, direct debits and bookkeeping, and several packages offer an online application form that feeds the member database, so nobody retypes anything. Required fields stop most gaps before they reach you.
+
+AI earns its place with the paper and photographed forms that keep arriving anyway. It can read the photo, list what's missing (signature, guardian consent for a minor, direct debit mandate) and draft the reply asking for it. The board still admits the member the way your club rules say. And the application is the moment to give the privacy information that [Article 13 of the GDPR](https://www.baden-wuerttemberg.datenschutz.de/praxisratgeber-datenschutz-im-verein/) requires when a club collects personal data.
+
+## 3. The same member questions
+
+**Best fit: an AI assistant that answers only from your own documents.** "Is training on during the holidays?" "What does a family membership cost?" "How do I cancel, and by when?" "Can my daughter try a session?" The answers sit in the timetable, the fee schedule and the club constitution, but someone has to look them up every time.
+
+An assistant limited to those documents can answer on the website, by email or in the app at any hour, and hand everything else to a named person: injuries, complaints, fee waivers. My rules for it: it quotes the club's text rather than interpreting it, it never invents a price or a deadline, and it says it's an assistant. Since 2 August 2026, [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) expects people to be told when they deal with an AI system, unless that's obvious.
+
+## 4. Fee reminders and bounced debits
+
+**Best fit: software collects, AI words the awkward message.** The direct debit run, the dunning logic and the bookkeeping belong in club software. I wouldn't let a language model near amounts, due dates or bank details. Those are calculations with legal consequences, and a plain tool does them without being creative.
+
+What's left is communication. A bounced debit needs a note that doesn't read like a debt collector. A member who changed banks wants to know how to update the details. A parent asks why the fee went up. AI drafts these from the facts in the software, and a person sends the first batch. Hardship cases, discounts and exceptions are board decisions, never the model's.
+
+## 5. Invitations and minutes
+
+**Best fit: AI drafts, the board owns every word.** The invitation to the general meeting has to meet the form and deadline in your constitution. A model can draft it from last year's, and the secretary checks it against the rules. The minutes are the bigger win: notes or a recording go in, a draft comes out with agenda items, decisions and who does what by when, in minutes rather than an evening.
+
+Two cautions. Resolutions and election results have to be recorded exactly, so someone who was in the room reads every line before it's signed. And recording needs everyone's consent. In Germany, [recording non-public speech without authorisation can be a crime](https://www.gesetze-im-internet.de/stgb/__201.html) under § 201 of the criminal code. Ask in the invitation, or take notes instead.
+
+## 6. Grant applications
+
+**Best fit: AI for finding and assembling, people for deciding.** Municipalities, state sports federations and foundations all run programmes, each with its own form, deadline and attachments. A model can read a call, pull out eligibility, deadline and required documents, compare it with a short profile of your club, and assemble the standard sections from text you've already written. Whether to apply, and what to promise, is the board's call. I've described the full process in [grant research for small nonprofits](/posts/ai-for-nonprofits-grant-research), and most of it applies to clubs unchanged.
+
+## 7. Coach and volunteer paperwork
+
+**Best fit: a tracker with reminders, and very little AI.** This job has the most rules per hour. Since 1 January 2026, German clubs can pay coaches up to €3,300 a year tax-free under the Übungsleiterpauschale, and other volunteers up to €960 under the Ehrenamtspauschale, up from €3,000 and €840. [The DOSB lists the changes](https://www.dosb.de/aktuelles/news/detail/diese-verbesserungen-fuer-sportvereine-und-ehrenamtliche-sollen-2026-kommen), including a tax-free threshold for revenue from a club's commercial activities that rose from €45,000 to €50,000. Someone has to know what each person has been paid this year, and that sum should come from software or your tax adviser, not from a model's guess.
+
+Then come first-aid certificates, coaching licences and, for people working with children, the extended police certificate. A shared spreadsheet or the qualification list in your club software, with a reminder 60 days before each expiry, does most of the work. It's the problem [football agents have with contract dates](/posts/ai-for-football-agencies-contract-deadlines): many dates, each costly when it slips.
+
+The certificate itself should stay out of your systems and out of every AI tool. A [state sports federation's guidance](https://www.lsb-sachsen-anhalt.de/fileadmin/user_upload/Inhalte/Landessportjugend_Dateien/Merkblatt_Umgang_mit_dem_eFz_Vereine.pdf) says a club records only that it has seen the certificate and when, hands it back, and recommends asking again after five years. The certificate shouldn't be older than three months when it's shown.
+
+## What goes wrong with member data
+
+<Callout title="Members' data is more sensitive than it looks" tone="warning">
+A club holds more sensitive data than most small businesses: children's names and birthdays, photos, injury notes, health details for rehab groups. The legal details below are German, and other countries differ, but the habits travel. Keep personal data out of free consumer chatbots, sign a data processing agreement with every tool that sees member data, and use the least data a task needs. A draft rarely needs a name.
+</Callout>
+
+Germany's data protection authorities have published [guidance on AI and data protection](https://www.datenschutzkonferenz-online.de/media/oh/20240506_DSK_Orientierungshilfe_KI_und_Datenschutz.pdf). It says a cloud AI service often acts as a processor, which means a contract under Article 28 of the GDPR. It also separates closed systems from open ones, where what you type may be used to answer other people. Health data needs extra care under Article 9 of the GDPR, and I'd treat anything about children the same way.
+
+A club doesn't need a data protection officer until [at least 20 people are constantly involved in automated processing](https://www.baden-wuerttemberg.datenschutz.de/praxisratgeber-datenschutz-im-verein/) of personal data, or it does special kinds of processing. Below that, the officer isn't required, but the rest of the rules still apply.
+
+## What it's worth
+
+<Calc title="Napkin math: a third off the admin week" caption="Assumptions, not measurements. The 6.5 hours is the DSEE's estimate for all bureaucracy, so only part of it is member admin. Cost side, also an assumption: €20 to €60 a month for an AI assistant on top of club software you may already pay for, so €240 to €720 a year. 118 hours is about three 40-hour weeks." rows={[
+  ["Admin and bureaucracy hours per week at an average club (DSEE figure)", "6.5"],
+  ["Share a plain app plus AI drafts could take over (my assumption)", "× 35%"],
+  ["Weeks per year", "× 52"]
+]} result={["Volunteer hours back per year", "≈ 118"]} />
+
+The saving never shows up on a bank statement. It shows up as a secretary who stays another season.
+
+## Before you switch anything on
+
+<Checklist title="What needs to exist first" items={[
+  "One place for schedule changes, and everyone knows which one it is",
+  "Your constitution, fee schedule and timetable as clean text the assistant can quote",
+  "A data processing agreement with every tool that sees member data",
+  "A named person who receives everything the assistant can't answer",
+  "Someone who sends the first fifty messages by hand and reads every draft",
+  "A rule that amounts, deadlines and board decisions are never generated"
+]} />
+
+## When you don't need AI
+
+A club with 80 members and a treasurer who enjoys the job doesn't need a language model. A free team app and a good online form cover most of it. AI starts paying off when messages arrive faster than anyone can answer them.
+
+## Questions from club boards
+
+### Can I put our member list into ChatGPT to write reminders?
+
+I wouldn't, at least not in a free consumer account. A member list is personal data and often includes children. Use a business offering with a data processing agreement, send only what the task needs ("member 1, bounced debit, new bank details needed"), and keep the real list in your club software.
+
+### Can AI write the minutes of our general meeting?
+
+It can write a draft, and that draft saves an evening. The secretary still reads it against what happened in the room, and the chair still signs it. Get everyone's consent before recording, or work from notes.
+
+### Our WhatsApp groups work fine. Why change?
+
+Because they work for the coach and not for the club. Changes get buried, parents who weren't added miss them, and the legal footing is shaky. Keep WhatsApp for chatter if you like, but put official announcements and personal data somewhere else.
+
+### Is this worth it for a club with 80 members?
+
+Probably only the plain parts: one team app, one online form, one shared list of expiry dates. Add an assistant once the same questions arrive daily.
+
+## My rule of thumb
+
+Fix what's plain first: one app, one form, one list of dates. Then let AI answer what your own documents already answer, and draft what a person signs. If a job involves an amount, a child's record or a decision, a person does it.
+
+If your secretary's Sunday evenings look like the one above, [tell me which club software you use](/contact?intent=improve), and I'll suggest the smallest change worth trying. Music schools juggle the same mix of rescheduling, fees and parents' questions, which I covered in [music school administration](/posts/ai-for-music-schools-administration).

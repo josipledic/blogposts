@@ -1,0 +1,156 @@
+---
+id: "ai-for-coach-operators-group-quotes"
+title: "Coach Hire Quotes That Respect Driver Hours From the Start"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Transport & logistics", "Coach operators", "Group quotes", "AI for small business"]
+description: "A group quote built on one driver can be illegal before it is sent. How AI reads the request, checks driving-time rules, and drafts options for the dispatcher."
+excerpt: "A group quote built on one driver can be illegal before it is sent. How AI reads the request, checks driving-time rules, and drafts options for the dispatcher."
+---
+
+Picture a coach company with nine vehicles and a small office. On a Tuesday evening an email arrives from a supporters' club: 52 people, an away match on Saturday 14 November, leave at 06:30, back whenever the fans are done, "please send a price". The owner knows the road, estimates the kilometres, adds a margin, and sends a quote for one coach and one driver before dinner.
+
+On Wednesday morning the dispatcher plots the route. The stadium is 430 km away. That is about eleven and a half hours of driving, there and back, and one driver may drive at most 9 hours a day, or 10 hours on two days a week. The quote was wrong before it was sent. The company can ask for a quarter more, eat the cost of a second driver, or lose the job to the operator that got the sums right the first time.
+
+The person quoting has a good feel for kilometres and a poor view of driver hours. The rules live in the dispatcher's head, while quotes get written in the evening from experience. I'd build a quote assistant that reads the request and checks the itinerary against the driving-time rules before a price exists. The dispatcher then gets a draft that already says "this needs two drivers, and here is why".
+
+## Why driver hours, not buses, set the price
+
+Most coach companies don't run out of vehicles. They run out of drivers who can legally take the trip.
+
+<Stats title="Drivers are the scarce part">
+  <Stat value="58,010" label="drivers working for the 2,958 member companies of Germany's bus association, alongside 42,383 buses" source="bdo (Bundesverband Deutscher Omnibusunternehmen)" href="https://www.bdo.org/" />
+  <Stat value="25,000" label="bus drivers missing nationwide in local transport and charter work, according to bdo and VDV in September 2025" source="Omnibusrevue" href="https://www.omnibusrevue.de/nachrichten/management/fahrermangel-bdo-und-vdv-wenden-sich-an-bundesverkehrsministerium-3715607" />
+  <Stat value="105,000" label="unfilled bus and coach driver positions in Europe in 2023, about 10% of the profession" source="IRU, 2023 driver shortage report" href="https://www.iru.org/news-resources/newsroom/europes-bus-and-coach-driver-shortage-widens-54-grim-outlook-2028" />
+</Stats>
+
+The bdo figures work out to roughly 1.4 drivers per bus across all kinds of operation. That is an association-wide average, not a statement about your fleet, but it shows why a second driver isn't free slack. It is a scarce person who would otherwise be on another job.
+
+Customers also compare. In Saxony-Anhalt, for example, teachers must collect at least two offers for a school trip, according to [a school-travel guide](https://www.herole.de/blog/klassenfahrtregelung-sachsen-anhalt/). The operator who replies first with a complete, correct quote has an edge over one who corrects a cheap wrong number the next day.
+
+## What the rules actually decide
+
+The limits below come from EU Regulation 561/2006 as the [European Commission summarises it](https://transport.ec.europa.eu/transport-modes/road/social-provisions/driving-time-and-rest-periods_en), plus the changes for occasional passenger services in [Regulation 2024/1258](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1258), in force since 22 May 2024. I'm describing them to plan quotes, not giving legal advice. Your tachograph and your national authority have the last word.
+
+| Rule | Limit | What it does to a quote |
+| --- | --- | --- |
+| Daily driving | 9 hours, 10 hours on two days a week | A round trip beyond roughly 675 km of driving (750 km on a 10-hour day) needs a second driver or an overnight stay |
+| Break | 45 minutes after 4.5 hours of driving. On occasional passenger services it can be two breaks of at least 15 minutes each, adding up to 45 | Breaks must be placed in the itinerary. Even a 4 h 40 min day needs one |
+| Daily rest | 11 hours, reducible to 9 hours up to three times a week | A 01:00 return means a late start next day, so that driver can't take a morning booking |
+| Weekly driving | 56 hours a week, 90 hours in any two weeks | A driver who already did 50 hours isn't available for Saturday |
+| Multi-day exceptions | One group, one occasional service: weekly rest can wait up to 12 consecutive 24-hour periods, now on domestic trips too. On trips of six or more days, daily rest may start one hour later if driving that day is at most 7 hours | Helps tours, not day trips |
+
+Two points matter more than the table. The 2024 flexibility mostly helps multi-day tours, so a day trip gets the 9-hour limit and a more flexible break, nothing else. And the limits attach to the driver, not the trip: the same run is fine for a driver with a quiet week and impossible for one who has already used both 10-hour days.
+
+Working-time law is a separate layer on top. The 2024 regulation says expressly that its daily rest exception leaves the maximum working time under applicable law untouched. In Great Britain, national coach journeys follow the [assimilated version of the same regulation](https://www.gov.uk/guidance/drivers-hours-passenger-vehicles/introduction) or the GB domestic rules, so swap the rule table for your jurisdiction. The method stays the same.
+
+Converted into distance, at an assumed 75 km/h average including traffic (calibrate that against your own tachograph data), the rules sort requests quickly:
+
+| Request | Driving that day | One driver? | What the quote should say |
+| --- | --- | --- | --- |
+| Day trip, 300 km each way | about 8 h | Yes, with little slack for delays | One driver, with a note about the limit |
+| Away match, 430 km each way | about 11 h 30 min | No | Two drivers, or an overnight stay |
+| Six-day tour, 350 km a day | about 4 h 40 min a day | Day by day yes. Check weekly driving and the 12-day exception | Price per day, plan the rest days |
+
+## From email to a checked quote
+
+The assistant never sends anything. It prepares a draft, and the dispatcher decides.
+
+<Flow title="From a one-line request to a quote that has been checked" caption="The AI reads and writes. Routing and the rules check are plain calculations. The dispatcher confirms drivers, price and wording.">
+<Step title="Request arrives" who="Customer" time="any time">An email, a web form or a phone note.</Step>
+<Step title="Extract the trip" who="AI" tone="ai" time="seconds">Turns the text into fields: date, pickup, stops, times, seats, wheelchair spaces, luggage. Lists what's missing and drafts one question, not five.</Step>
+<Step title="Route and time" who="Routing tool" time="seconds">Distance, driving time per leg and tolls, calculated with a coach profile rather than a car one.</Step>
+<Step title="Check the rules" who="System" time="seconds">Plain code or your dispatch software compares daily driving, break points and rest with the limits. Result: one driver, second driver, overnight, or depends on the driver's week.</Step>
+<Step title="Draft the options" who="AI" tone="ai" time="1 min">Writes two options from your own rate card, with a plain explanation of why.</Step>
+<Step title="Dispatcher decides" who="Dispatcher" tone="human" time="5 to 10 min">Checks who and what is really free, adjusts the price, and sends the quote under their own name.</Step>
+<Step title="After acceptance" who="AI" tone="ai">Pre-fills the driver brief and the itinerary sheet from the same record, for the dispatcher to check.</Step>
+</Flow>
+
+Three design decisions do most of the work.
+
+**The AI reads and writes, it doesn't do the sums.** A language model is good at turning "leave at seven, home by midnight, we'll stop for lunch somewhere" into fields, and at explaining the result. It's a poor place to decide whether 11 h 28 min exceeds 10 hours. Let ordinary code do that, or the check your software already has. Deltaplan, for example, describes its dispatch module as planning trips while [checking driving times](https://www.deltaplan.de/).
+
+**Options, not a single price.** When one driver won't do, the customer still wants to go. "Two drivers, same day" next to "overnight, back on Sunday" turns a rejection into a choice.
+
+**The dispatcher sees the reasoning.** A draft that says only "two drivers" invites a shrug. One that shows the numbers can be checked in a minute.
+
+## What lands on the dispatcher's screen
+
+```text
+REQUEST 2419, supporters' club, away match, Sat 14 Nov
+56 seats needed (52 passengers, 4 volunteers). No wheelchairs. Luggage: flags, drums.
+Leg 1: depart 06:30, arrive stadium 13:00. 430 km, est. 5 h 45 min driving.
+Leg 2: depart 18:00, arrive about 00:30. 430 km, est. 5 h 45 min driving.
+RULES CHECK
+- Driving that day: about 11 h 30 min. Over the 10 h maximum: second driver needed.
+- Breaks: 45 min per leg, suggested at the service area around km 300.
+- Day length about 18 h: neither driver should have an early start on Sunday.
+- Working time (separate law): flagged for the dispatcher to confirm.
+OPTIONS DRAFTED
+A) Two drivers, same day: about 2,360 EUR. B) Overnight stay: customer to confirm.
+OPEN: unclear whether the drums go in the luggage bay. One question drafted.
+```
+
+The customer-facing draft, which the dispatcher edits: "We can do this on the day with two drivers for 2,360 euros including tolls. One driver isn't possible, because driving there and back takes more than the legal 10 hours. If the club prefers an overnight stay, we can quote that too."
+
+## What the second driver does to the price
+
+<Calc title="Napkin math: the same away match, priced twice" caption="Assumptions, not market rates. Use your own rate card. A quote built on one driver and corrected later costs about 520 euros, or roughly 10 euros per passenger for 52 people." rows={[
+  ["Distance: 2 × 430 km at 1.20 euros per km", "1,032 euros"],
+  ["Driver 1: 18 paid hours at 25 euros", "+ 450 euros"],
+  ["Driver 2: 18 paid hours at 25 euros", "+ 450 euros"],
+  ["Tolls, parking, driver meals", "+ 120 euros"],
+  ["Subtotal", "= 2,052 euros"],
+  ["Margin of 15%", "× 1.15"]
+]} result={["Quote with two drivers", "≈ 2,360 euros"]} />
+
+Without the second driver the same arithmetic gives about 1,840 euros. That 520-euro gap is what a wrong quote costs, whether it is absorbed, renegotiated or lost with the customer.
+
+## When a simpler fix beats AI
+
+- **A request form with required fields.** Date, times, stops, seats, return time. Most "missing information" mails disappear when the form won't submit without them.
+- **A rate sheet with a threshold.** At five requests a week, a spreadsheet with kilometre bands and a line saying "over 300 km each way: two drivers or overnight" does the job.
+- **Your dispatch software's own check.** If it tests driving times already, keep it, and add AI only for reading messy requests and drafting replies. BusPro.net's [Mietbus module](https://www.kuschick.de/produkte/buspro-net-mietbus/), for example, covers offer to invoice.
+- **The dispatcher's judgment.** Who is really free, who dislikes night returns: that lives in people's heads and your roster. No model should guess it.
+
+AI pays when requests arrive in every shape and at all hours, and the person who can check the rules is also driving or on the phone with a school.
+
+<Callout title="The hotel trap: a quote can turn into a package holiday" tone="warning">
+If a customer wants coach plus hotel and you sell both in one deal, you may no longer be a transport provider but a package organiser. Under the EU Package Travel Directive, two different travel services for the same trip, such as transport and lodging, make a package, with duties like insolvency protection. Germany's § 651a BGB also exempts a trip under 24 hours with no overnight stay if it costs no more than 500 euros. An assistant that cheerfully writes "hotel included" can create that situation. Keep drafts to transport, and have the dispatcher check every quote for anything beyond the bus.
+</Callout>
+
+The [European Consumer Centres Network](https://www.eccnet.eu/consumer-rights/what-are-my-consumer-rights/travel-and-passenger-rights/package-travel-and-linked-0) lists the same test, and [§ 651a BGB](https://www.gesetze-im-internet.de/bgb/__651a.html) is the German text. Selling packages is a business decision, not a prompt setting.
+
+## Data, drivers and paperwork
+
+At quote stage you need group size, ages and special needs, not names. Keep passenger lists out of the assistant until the booking is confirmed, sign a data processing agreement under Article 28 GDPR with your AI provider, and prefer EU hosting. Driver data are employee data: let the rules check work from a roster you control ("driver A has 14 hours of driving left this week"), not from tachograph downloads pasted into a chatbot.
+
+If customers chat with an assistant on your website, [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) has applied since 2 August 2026: people must be told it's an AI. A draft-only setup is simpler, because the customer deals with a person.
+
+Then the paper trail. Since 22 May 2024, a driver who relies on the new occasional-service exceptions, the split break included, must carry a completed itinerary sheet plus copies for the previous 56 days, domestic trips too. This is in flux: the Commission must assess options for a digital version by 31 December 2026, and the copy requirement ends once tachographs can record the type of service. I read the regulation text in September 2026 and did not check whether that tachograph specification is in force yet, so confirm with your association.
+
+## What it costs
+
+Model fees are small: reading a request and drafting two options costs a few cents. The real cost is setup: connecting the assistant to your rate card, a routing tool and driver availability, then testing it on old trips. I'd budget a few weeks of part-time work, more if your dispatch software has no export or API. That's a rough estimate, not a quote.
+
+Against it, a hypothetical. Assumptions: 40 requests a month, 20 minutes of office time saved on each, 40 euros an hour in loaded cost. That's about 530 euros a month, before counting the quotes you stop losing.
+
+## Questions coach operators ask
+
+### How many hours can a coach driver drive in the EU?
+
+Nine hours a day, extendable to ten hours twice a week, with a 45-minute break after 4.5 hours of driving. Weekly driving is capped at 56 hours and 90 hours over two weeks. Occasional passenger services have some extra flexibility on breaks and multi-day trips since May 2024.
+
+### Can AI check whether a coach trip is legal?
+
+It can prepare the check, but I wouldn't let it be the check. The model extracts the itinerary, a routing tool calculates times, and fixed rules compare them with the limits. The dispatcher confirms with the actual driver's week in front of them.
+
+### Does the 12-day rule apply to my school trip?
+
+Only for a single occasional service with one group, with the rest conditions before and after met and the itinerary sheet on board. A day trip or a weekend away doesn't use it. Since May 2024 it also covers domestic trips.
+
+## Where I'd start
+
+Price the driver's day first and the kilometres second. A quote that has passed the hours check can go out with confidence, and one that hasn't is a guess.
+
+To test it, take your last thirty quotes, run each through the rules by hand or in a spreadsheet, and count how many needed a second driver or a different plan. If the answer is zero, you may not need AI for this. If it's four or five, [tell me how requests reach you today](/contact?intent=improve), and I'll suggest the smallest version worth testing. The same half-complete requests land at [event venues](/posts/ai-for-event-venues-inquiries), [travel agencies](/posts/ai-for-travel-agencies-itineraries) turn the same trips into plans, and [freight forwarders](/posts/ai-for-freight-forwarders-quote-requests) chase the missing dimensions behind one-line quote requests.

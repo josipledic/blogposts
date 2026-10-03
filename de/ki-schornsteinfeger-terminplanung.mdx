@@ -1,0 +1,161 @@
+---
+id: "ki-schornsteinfeger-terminplanung"
+translationOf: "ai-for-chimney-sweeps-scheduling"
+title: "Schornsteinfeger: Termine planen, wenn keiner auf den Brief reagiert"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Handwerk & Bau", "Schornsteinfeger", "Terminplanung", "KI für kleine Unternehmen"]
+description: "Hunderte Termine, viele Bewohner nicht da, Antworten auf vier Kanälen. Wie KI einem Schornsteinfeger beim Umterminieren hilft, ohne Kontrolle abzugeben."
+excerpt: "Hunderte Termine, viele Bewohner nicht da, Antworten auf vier Kanälen. Wie KI einem Schornsteinfeger beim Umterminieren hilft, ohne Kontrolle abzugeben."
+---
+
+Stellen Sie sich einen Bezirksschornsteinfeger an einem Montagmorgen vor. Letzte Woche sind vierzig Ankündigungen rausgegangen, jede mit einem Terminvorschlag für eine Kehrung, eine Überprüfung oder eine Messung. Um acht Uhr liegen im Büro elf Antworten: drei E-Mails, vier WhatsApp-Nachrichten, zwei Anrufbeantworter-Nachrichten und zwei Zettel, die wieder an die Haustür geklebt wurden. Einer schreibt „Bin bis 18 Uhr auf der Arbeit, fragen Sie die Nachbarin“. Einer schreibt „Wir haben das Haus im März verkauft“. Einer schreibt nur „Nein“.
+
+Im Büro arbeitet niemand schlecht. Das Problem ist strukturell: Der Termin ist Pflicht, die Bewohner haben ihn nicht ausgesucht, und die Ankündigung ist das erste, was sie davon hören. Jeder Termin, der nicht passt, kostet eine zweite Anfahrt, einen Anruf oder beides.
+
+Ich schaue hier zuerst auf die Zahlen: wie groß das Problem ist, welchen Teil KI übernehmen kann und welcher Teil bei einem Menschen mit Schornsteinfeger-Qualifikation bleiben muss.
+
+## Wie groß ein Kehrbezirk wirklich ist
+
+<Stats title="Der Umfang des Schornsteinfegerhandwerks in Deutschland">
+  <Stat value="7.700" label="Kehrbezirke in Deutschland, betreut von rund 7.500 Betrieben mit etwa 21.000 Beschäftigten" source="Bundesverband des Schornsteinfegerhandwerks, Zahlen und Fakten 2022" href="https://www.schornsteinfeger.de/aktuelle-pressemeldungen/zahlen-und-fakten-das-schornsteinfegerhandwerk-im-jahr-2022" />
+  <Stat value="32 Mio." label="Feuerungsanlagen, an denen Messungen oder Überprüfungen nach 1. BImSchV und KÜO stattfinden, darunter rund 11,7 Mio. Einzelraumfeuerungsanlagen" source="Bundesverband des Schornsteinfegerhandwerks, Erhebungen 2025" href="https://www.schornsteinfeger.de/sites/default/files/downloads/Erhebungen_2025.pdf" />
+  <Stat value="≈ 3.900" label="Haushalte pro Bezirk: meine eigene Rechnung aus den 30 Millionen Haushalten des Handwerks geteilt durch 7.700 Bezirke" source="Bundesverband des Schornsteinfegerhandwerks, Zahlen und Fakten 2022" href="https://www.schornsteinfeger.de/aktuelle-pressemeldungen/zahlen-und-fakten-das-schornsteinfegerhandwerk-im-jahr-2022" />
+</Stats>
+
+Rund 3.900 Haushalte pro Bezirk sind ein Durchschnitt, und Stadt- und Landbezirke unterscheiden sich stark. Die Zahl erklärt aber die Arbeitslast. Die Feuerstättenschau muss nach [§ 14 des Schornsteinfeger-Handwerksgesetzes](https://www.gesetze-im-internet.de/schfhwg/__14.html) zweimal innerhalb von sieben Jahren stattfinden, mit mindestens drei Jahren Abstand. Dazu kommen die Kehr- und Überprüfungsintervalle der KÜO und die Emissionsmessungen. Auch ein Bruchteil dieser Haushalte bedeutet für einen Betrieb sehr viele Ankündigungen, die geplant werden wollen.
+
+Auch die Ankündigung ist geregelt. Nach [§ 3 KÜO](https://www.gesetze-im-internet.de/k_o/BJNR129200009.html) muss der bevollmächtigte Bezirksschornsteinfeger die Feuerstättenschau spätestens fünf Werktage vorher ankündigen, wenn der Eigentümer nicht darauf verzichtet. Der Brief geht raus, und dann trifft der Kalender der Bewohner auf die Tour des Schornsteinfegers.
+
+## Was ein geplatzter Termin kostet
+
+Das Problem ist nicht der durchschnittliche Termin, sondern der Rest. So würde ich erwarten, dass 100 angekündigte Termine in einem Bezirk ohne Werkzeuge für Antworten ausgehen. Als Veranschaulichung, nicht als Messung:
+
+<Bars title="Wo 100 angekündigte Termine landen" unit=" von 100" caption="Veranschaulichende Annahme für einen Bezirk, in dem Bewohner nur per Telefon oder Brief antworten können. Ihr eigenes Terminprotokoll liefert die echte Verteilung, und die sollten Sie sich ansehen, bevor Sie etwas kaufen." data={[
+  { label: "Passt wie angekündigt", value: 55 },
+  { label: "Nach Rückmeldung verschoben", value: 25, highlight: true },
+  { label: "Niemand da, zweite Anfahrt", value: 12, highlight: true },
+  { label: "Klärung nötig (Eigentümer oder Mieter, Schlüssel, Streit)", value: 8, highlight: true }
+]} />
+
+Die 45, die mehr als einen Kontakt brauchen, fressen die Stunden. Bei einem verschobenen Termin muss jemand die Antwort lesen, einen freien Platz neben anderen Terminen finden, zurückschreiben und bestätigen. Bei einem verpassten Termin gab es eine Fahrt ohne Ergebnis.
+
+<Calc title="Überschlag: Was 45 von 100 pro Monat kosten" caption="Annahmen, keine Messwerte. Ersetzen Sie jede Zeile durch Zahlen aus Ihrem eigenen Terminprotokoll." rows={[
+  ["Angekündigte Termine pro Monat", "300"],
+  ["Anteil mit mehr als einem Kontakt", "× 45 %"],
+  ["Büro-Minuten pro Fall (lesen, umplanen, bestätigen)", "× 12 Min."],
+  ["Büroaufwand fürs Umplanen", "≈ 27 Stunden"],
+  ["Vergebliche Anfahrten (12 % von 300 = 36)", "× 25 Min."],
+  ["Fahr- und Wartezeit ohne Ergebnis", "≈ 15 Stunden"]
+]} result={["Zeit für zweite Kontakte pro Monat", "≈ 42 Stunden"]} />
+
+Bei angenommenen 40 € pro Stunde sind das rund 1.700 € im Monat, und es ist Zeit, die nicht in abrechenbare Arbeit fließt. Der Büroanteil, 27 der 42 Stunden, lässt sich mit KI verkleinern. Die vergeblichen Fahrten sind ein Problem von Tourenplanung und Erinnerung, dazu gleich mehr.
+
+## Welche Antworten einem Muster folgen
+
+Wer einen Monat Rückmeldungen liest, findet meistens eine Handvoll Typen:
+
+| Was die Bewohner schreiben | Typ | Was der Assistent entwirft | Wer entscheidet |
+| --- | --- | --- | --- |
+| „Dienstag geht nicht, wie wäre Donnerstagnachmittag?“ | Terminverschiebung | Zwei Alternativtermine in derselben Straße oder Tour, mit Bestätigung per SMS | Automatisch innerhalb der Regeln, der Schornsteinfeger sieht den Tagesplan |
+| „Ich bin nicht da, meine Nachbarin hat einen Schlüssel“ | Zutrittsregelung | Eine Bestätigung, die nach Name und Wohnung der Nachbarin fragt | Automatisch |
+| „Wir haben das Haus verkauft“ oder „Mieter ist ausgezogen“ | Wechsel bei Eigentümer oder Kontakt | Eine Rückfrage nach den neuen Kontaktdaten und ein Hinweis ins Büro | Das Büro pflegt die Daten |
+| „Warum muss ich das bezahlen?“ | Frage zu Kosten oder Pflicht | Ein Entwurf, der auf Ankündigung und Kostengrundlage verweist | Der Schornsteinfeger prüft vor dem Senden |
+| „Das hat schon ein anderer Schornsteinfeger gemacht“ | Freier Wettbewerb | Die Bitte um einen Nachweis und ein Hinweis | Das Büro gleicht mit den Unterlagen ab |
+| Wütend, drohend oder mit juristischem Ton | Streit | Nichts. Der Assistent stoppt und schlägt Alarm | Der Schornsteinfeger |
+
+Jede Zeile ist eine Frage des Urteils, nicht der Sprache. „Wie wäre Donnerstagnachmittag?“ in gutem Deutsch, in gebrochenem Englisch, als Sprachnachricht per WhatsApp oder als fotografierter Zettel zu verstehen, können Sprachmodelle gut. Was passiert, wenn jemand den Zutritt verweigert, ist ein rechtlicher Schritt und bleibt beim Schornsteinfeger und bei der Behörde.
+
+## Der Ablauf von der Ankündigung bis zum Besuch
+
+<Flow title="Von der Ankündigung zum bestätigten Termin" caption="Der Assistent liest, schlägt vor und entwirft. Der Schornsteinfeger besitzt die Tour und jede Antwort, die Kosten, Pflichten oder Konflikte berührt.">
+<Step title="Ankündigung geht raus" who="Schornsteinfeger-Software" time="mind. 5 Werktage vorher">Brief, E-Mail oder Aushang mit Terminvorschlag und einem Weg zu antworten: Link, QR-Code, Telefonnummer.</Step>
+<Step title="Antworten kommen auf allen Kanälen" who="Bewohner" time="Tag 1 bis 5">E-Mail, WhatsApp, Anrufbeantworter, Webformular, Zettel an der Tür.</Step>
+<Step title="Lesen und einordnen" who="KI" tone="ai" time="Sekunden">Jede Antwort wird einem Typ aus der Tabelle und dem passenden Termin samt Adresse zugeordnet.</Step>
+<Step title="Neuen Termin vorschlagen" who="KI" tone="ai" time="Sekunden">Der Assistent schaut in den Tourenplan und bietet zwei oder drei Termine neben bestehenden Einsätzen an, nicht irgendwo im Kalender.</Step>
+<Step title="Bestätigen oder eskalieren" who="Schornsteinfeger oder Büro" tone="human" time="einmal am Tag">Einfache Terminverschiebungen werden automatisch bestätigt. Alles zu Kosten, Pflichten oder Konflikten wartet in einer kurzen Warteschlange auf einen Menschen.</Step>
+<Step title="Erinnerung mit Zutrittsfrage" who="KI" tone="ai" time="2 Tage vorher">Eine kurze Nachricht: Uhrzeit, wer uns hereinlässt, wen wir anrufen können.</Step>
+<Step title="Besuch oder saubere Eskalation" who="Schornsteinfeger" tone="human">Wenn die Bewohner weiter nicht erreichbar sind, sind die rechtlichen Schritte eine menschliche Entscheidung.</Step>
+</Flow>
+
+Die Entscheidungspunkte sind der Schritt „Bestätigen“ und der letzte. Der Assistent erfindet keine rechtlichen Folgen und droht nie mit einem Bußgeld. Alles, was nach Streit klingt, geht direkt an den Schornsteinfeger.
+
+## Touren sind kein KI-Problem
+
+Straßen zu sinnvollen Tagen zu bündeln ist ein Routingproblem. Ein Sprachmodell ist dafür das falsche Werkzeug, und Sie brauchen keines. Nutzen Sie einen richtigen Tourenplaner oder die Kartenfunktion Ihrer Schornsteinfeger-Software, und lassen Sie den Assistenten mit dem Ergebnis arbeiten: „Biete Termine im Birkenweg am Donnerstag an, weil wir sowieso dort sind.“
+
+Diese Arbeitsteilung ist wichtig, denn genau hier laufen KI-Projekte im Handwerk schief. Das Modell berechnet nicht die Tour. Es liest die unordentliche menschliche Antwort und bringt sie in eine Struktur, die das Planungswerkzeug versteht. Wie das bei einem mobilen Dienstleister im Detail aussieht, beschreibe ich im Beitrag über [Einsatzplanung in der Schädlingsbekämpfung](/de/posts/ki-schaedlingsbekaempfung-einsatzplanung).
+
+## Was Sie vor jeder KI reparieren sollten
+
+Einige der besten Verbesserungen brauchen kein Modell.
+
+**Geben Sie den Bewohnern einen Weg zu antworten, der kein Anruf ist.** Ein Buchungslink oder QR-Code in der Ankündigung lässt die meisten selbst einen Termin wählen. Software für Schornsteinfeger wie Kehrtour bietet digitale Terminankündigungen mit Online-Buchung, und laut dem eigenen Blog des Anbieters folgt auf eine ungeöffnete E-Mail automatisch ein Brief. Das ist eine Herstellerbeschreibung, aber der Mechanismus leuchtet ein.
+
+**Planen Sie mit langsamerer Post.** Seit Januar 2025 haben die Briefdienste in Deutschland drei Werktage Zeit, um 95 % der Briefe zuzustellen, vorher waren es zwei, so derselbe Anbieter im [Blogbeitrag zum neuen Postgesetz](https://www.kehrtour.de/blog/neues-postgesetz-das-aendert-sich-f%C3%BCr-schornsteinfeger/). Bei fünf Werktagen Ankündigungsfrist wird das eng.
+
+**Führen Sie eine einfache Liste mit dauerhaft schwierigen Adressen.** Vermieter, Ferienhäuser und Gewerbeobjekte, die nie antworten, sind mit einem festen Anruf und einer Schlüsselregelung besser bedient.
+
+Wenn Buchungslinks zum Beispiel zwei Drittel Ihrer Termine abdecken, braucht der Assistent nur noch die Antworten, die nicht in einen Link passen. Das ist ein kleineres und günstigeres Projekt.
+
+## Außerhalb Deutschlands: dasselbe Problem ohne Brief
+
+In den USA und in Großbritannien werden Schornsteine auf Kundenwunsch gefegt, nicht nach Bezirk zugeteilt. Die Form des Terminproblems bleibt gleich. Das Chimney Safety Institute of America sagt, in Anlehnung an NFPA 211, dass [Schornsteine, Kamine und Abgasleitungen mindestens einmal im Jahr geprüft werden sollten](https://www.csia.org/homeowner-resources). In Großbritannien rät [HETAS zum Fegen mindestens zweimal im Jahr bei Holz oder bituminöser Kohle und mindestens einmal im Jahr bei rauchlosen Brennstoffen](https://www.hetas.co.uk/consumer/advice-hub/advice-articles/when-should-i-get-my-chimney-swept/), am besten kurz vor der Heizsaison.
+
+Die Nachfrage ballt sich also im Herbst, alle wollen dieselben drei Wochen, und dieselben wenigen Fragen kommen per SMS und E-Mail. Der Nutzen liegt in einem Assistenten, der schnell antwortet, Termine entlang einer Tour vorschlägt und vor der Saison an die jährliche Prüfung erinnert. Für die Erinnerung spricht auch die Sicherheit: Die US-Brandschutzorganisation NFPA zählt für 2019 bis 2023 im Schnitt [38.881 Wohnungsbrände pro Jahr durch Heizgeräte](https://www.nfpa.org/education-and-research/research/nfpa-research/fire-statistical-reports/heating-equipment), und etwa drei von zehn betrafen einen Kamin oder Schornstein.
+
+## Datenschutz und rechtliche Grenzen
+
+In den Unterlagen eines Schornsteinfegers stehen Namen, Adressen, Telefonnummern und Angaben zu Heizungsanlagen, manchmal auch dazu, wer wann zu Hause ist. Ein paar Regeln, die ich anwenden würde:
+
+- **Die amtlichen Unterlagen bleiben in ihrem System.** Kehrbuch und Feuerstättenbescheid bleiben in der Software des Betriebs, in der sie geführt werden. Der Assistent arbeitet mit Terminen und Antworten, nicht mit dem rechtlichen Nachweis.
+- **Ein Auftragsverarbeitungsvertrag ist nötig.** Nach Art. 28 DSGVO muss jeder KI-Anbieter, der Daten von Bewohnern sieht, einen unterschreiben. Bevorzugen Sie Hosting in der EU, und prüfen Sie, dass der Anbieter nicht mit Ihren Nachrichten trainiert.
+- **Gesprächsaufzeichnung braucht Einwilligung.** Ein Gespräch ohne Einwilligung aufzuzeichnen ist nach § 201 StGB strafbar. Transkribieren Sie nur, womit der Anrufer einverstanden ist.
+- **Sagen Sie, dass es ein Assistent ist.** Die [KI-Verordnung, Artikel 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act), verlangt, dass Menschen erfahren, wenn sie mit einer KI sprechen.
+- **Nicht jede Arbeit ist im Wettbewerb.** Seit Januar 2013 können Eigentümer für viele Arbeiten einen eingetragenen Schornsteinfeger frei wählen, aber Feuerstättenschau, Feuerstättenbescheid und Bauabnahme neuer Anlagen bleiben beim bevollmächtigten Bezirksschornsteinfeger, [wie Haufe erklärt](https://www.haufe.de/immobilien/wirtschaft-politik/eigentuemer-koennen-schornsteinfeger-ab-2013-frei-waehlen_84342_158260.html). Für beide Arten gelten andere Regeln, deshalb sollten Ihre Vorlagen sie trennen.
+
+## Was es kostet
+
+Das sind meine groben Schätzungen, keine Angebote, und sie hängen von Ihrer Software ab.
+
+| Posten | Grobe Spanne | Hinweis |
+| --- | --- | --- |
+| Einrichtung: Nachrichtensortierung auf Ihrer bestehenden E-Mail und WhatsApp Business | 2 bis 4 Tage Arbeit | Mehr, wenn der Assistent in Ihre Schornsteinfeger-Software schreiben soll |
+| Laufend: KI-Nutzung und Nachrichtenversand | Etwa 50 bis 200 € im Monat | Wächst mit dem Nachrichtenvolumen |
+| Ihre Zeit: Antwortregeln und Vorlagen schreiben | 1 bis 2 Tage | Der Teil, den viele überspringen |
+| Prüfzeit danach | 10 bis 15 Minuten am Tag | Die Warteschlange mit den Eskalationen |
+
+Wenn die Rechnung oben Ihrer Realität nahekommt, bezahlt sich die gesparte Bürozeit in den ersten ein, zwei Monaten. Wenn Ihr Protokoll zeigt, dass 90 von 100 Terminen problemlos laufen, bauen Sie nichts.
+
+## Vier Wochen bis zur ersten Version
+
+<Timeline title="Ein vorsichtiger Start in einem Bezirk">
+<Phase when="Woche 1" title="Das eigene Protokoll lesen">Einen Monat Antworten ziehen und die Typen zählen. Notieren, über welchen Kanal jede kam und welche in einer zweiten Anfahrt endeten.</Phase>
+<Phase when="Woche 2" title="Buchungslink einführen">Einen Buchungslink oder QR-Code in die Ankündigung setzen. Messen, wie viele Bewohner ihn nutzen.</Phase>
+<Phase when="Woche 3" title="Antworten im Schattenbetrieb entwerfen">Der Assistent entwirft zu jeder eingehenden Nachricht eine Antwort, ein Mensch sendet oder ändert sie. Die Entwürfe mit dem vergleichen, was Sie selbst geschrieben hätten.</Phase>
+<Phase when="Woche 4" title="Nur die Routinetypen automatisieren">Terminverschiebungen und Zutrittsregelungen gehen nach einer Stichprobe raus. Antworten zu Kosten, Pflichten und Streit bleiben manuell.</Phase>
+</Timeline>
+
+## Fragen, die Schornsteinfeger stellen
+
+### Kann KI Schornsteinfeger-Termine allein planen?
+
+Sie kann Termine vorschlagen und Bestätigungen entwerfen, aber ich würde sie nichts bestätigen lassen, was Kosten, Pflichten oder Streit berührt. Einfache Terminverschiebungen innerhalb Ihres Tourenplans sind nach einigen Wochen mit Stichproben ein guter Kandidat für Automatisierung.
+
+### Was ist die Feuerstättenschau und wie oft ist sie vorgeschrieben?
+
+Sie ist die Überprüfung aller Feuerstätten eines Gebäudes durch den bevollmächtigten Bezirksschornsteinfeger. Sie muss nach § 14 SchfHwG zweimal innerhalb von sieben Jahren stattfinden, mit mindestens drei Jahren Abstand. Der anschließende Feuerstättenbescheid legt die Termine für die nächsten Arbeiten fest.
+
+### Akzeptieren Bewohner Antworten von einem Assistenten?
+
+Die meisten wollen einen Termin, der passt, und zwar schnell. Eine kurze Antwort mit zwei Vorschlägen, klar als automatisch gekennzeichnet, kommt meist besser an als ein Rückruf nach drei Tagen. Bleiben Sie sachlich und nennen Sie immer eine Telefonnummer.
+
+### Brauche ich das, wenn ich schon eine Terminsoftware nutze?
+
+Vielleicht nicht. Wenn Ihre Software schon Ankündigungen verschickt, Online-Buchungen annimmt und erinnert, bleiben für KI die Freitext-Antworten. Messen Sie, wie viele das sind, bevor Sie entscheiden.
+
+## Meine Faustregel
+
+Reparieren Sie zuerst den Kanal: ein Buchungslink in jeder Ankündigung. Nutzen Sie KI dann für die Antworten, die in keinen Link passen, lassen Sie sie Termine neben bestehenden Einsätzen vorschlagen, und lassen Sie jede Antwort zu Kosten, Pflichten oder Konflikten bei einem Menschen.
+
+Wenn Sie das in einem Bezirk testen möchten, [schreiben Sie mir, wie Ankündigungen und Antworten heute laufen](/de/kontakt?intent=improve), und ich schlage die kleinste Variante vor, die einen Versuch wert ist. Ein verwandtes Problem ist, Kunden überhaupt zum Buchen zu bewegen, darüber habe ich bei [Wartungsverträgen im SHK-Betrieb](/de/posts/ki-shk-wartungsvertraege) geschrieben.

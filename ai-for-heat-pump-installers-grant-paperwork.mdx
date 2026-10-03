@@ -1,0 +1,131 @@
+---
+id: "ai-for-heat-pump-installers-grant-paperwork"
+title: "Heat Pump Grants: The Paperwork That Stalls Installs"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Trades & construction", "Heat pump installers", "Grant paperwork", "AI for small business"]
+description: "Heat pump customers lean on the installer's office to get a grant. A per-customer document checklist, drafted explanations and chasing keep installs moving."
+excerpt: "Heat pump customers lean on the installer's office to get a grant. A per-customer document checklist, drafted explanations and chasing keep installs moving."
+---
+
+Picture the office of a five-person heating company on a Tuesday in autumn. The phone rings. A homeowner signed an offer for an air-to-water heat pump two weeks ago, and now asks: "Do I apply for the grant before or after the contract? And where do I upload the invoice?" A few minutes later an email arrives from another customer with a photo of a tax notice, a blurred scan of a land registry extract, and the question whether that is enough.
+
+Nobody at the company is paid to explain subsidy rules. The person who answers is usually the same one who books the site visits and orders the parts. Multiply that by forty customers in the pipeline, and the office is running a help desk for a federal grant scheme, in between everything else.
+
+I'd use AI in exactly this place. Not to decide who qualifies, and never to calculate the heat load, but to keep each customer's paperwork moving without a person writing the same explanation for the thirtieth time.
+
+## Why the office becomes the help desk
+
+I'll use Germany as the worked example, because that is where I can point to a concrete scheme: the federal funding for efficient buildings (BEG), administered for homeowners through the [KfW programme 458](https://www.kfw.de/inlandsfoerderung/Privatpersonen/Bestehende-Immobilie/F%C3%B6rderprodukte/Heizungsf%C3%B6rderung-f%C3%BCr-Privatpersonen-Wohngeb%C3%A4ude-(458)/). The pattern is not German. Any scheme where the customer applies and the installer supplies the evidence creates the same office workload.
+
+<Stats title="The rules moved in July 2026">
+  <Stat value="30%" label="basic grant for installing an eligible climate-friendly heating system, unchanged by the reform, regardless of income and bonuses" source="Haufe, on the BEG reform" href="https://www.haufe.de/immobilien/wirtschaft-politik/klimaschutz-oelheizung-austauschen-was-wird-gefoerdert_84342_507378.html" />
+  <Stat value="21 July 2026" label="date the reformed BEG took effect, with changes to the bonuses on top of the basic grant" source="ADAC, on the heating grants" href="https://www.adac.de/rund-ums-haus/energie/spartipps/foerderung-heizung/" />
+  <Stat value="29 July 2026" label="date the Building Modernisation Act replaced the old Building Energy Act, dropping the 65% renewable requirement for new heating" source="ADAC, on the heating law" href="https://www.adac.de/rund-ums-haus/energie/versorgung/heizungsgesetz/" />
+</Stats>
+
+These are the facts as I found them in September 2026, and they are a good illustration of the problem. The basic grant stayed where it was, the bonuses moved, and the legal obligation that pushed many homeowners towards heat pumps changed within days of the grant reform. A customer who read an article in spring may now hold outdated expectations, and the installer's office is the first to hear about it.
+
+I am deliberately not listing the exact bonus percentages or cost ceilings here. The figures I saw in different summaries did not agree with each other, and they will change again. The only source that counts is the KfW page on the day you quote it. That point shapes the whole design, and I come back to it below.
+
+## The customer's path, and where it stalls
+
+<Timeline title="A grant-funded heat pump install, from enquiry to payout">
+<Phase when="Enquiry and site visit" title="Collect the building facts">Year of construction, heated area, current heating, radiators or underfloor, existing insulation. Most of this data is needed twice: for the offer and for the heat load.</Phase>
+<Phase when="Offer and contract" title="The contract comes first, with a condition">As I understand the KfW terms, a signed supply and installation contract comes before the application, and it should make its coming into force depend on the grant approval. I could not re-check the exact wording, so confirm it on the KfW page before anyone signs.</Phase>
+<Phase when="Application" title="The customer applies, not you">The application is made by the homeowner in their own KfW account. The installer supplies details about the planned system and the company. Income documents for any income-based bonus belong to the customer's application.</Phase>
+<Phase when="Approval" title="Wait for the commitment">The safe path is to start work only after the approval has arrived. Check the current KfW terms on what may begin before that.</Phase>
+<Phase when="Installation" title="Install and document as you go">Photos, serial numbers, commissioning report, and the records of the technical checks the scheme requires.</Phase>
+<Phase when="Proof and payout" title="Confirm and submit">The installer confirms the work, the customer submits the proof, and the grant is paid. Each missing document here is a delay in money the customer is waiting for.</Phase>
+</Timeline>
+
+The stalls cluster in three places. First, the order of events: customers who start work, or sign a contract without the condition, before they understand the sequence. Second, missing or unreadable documents, which come back in drips over weeks. Third, the wait at the end, when the install is finished and the customer is chasing a payout that depends on documents the installer has not yet sent.
+
+## Build blueprint: one file per customer
+
+This is what I'd build for a small heating company. It sits on top of your existing customer and project software. German trade software such as HERO, Plancraft or Das Programm already holds the customer, the offer and the project. The assistant reads from it and writes back to it.
+
+<Flow title="From signed offer to completed file" caption="The assistant drafts, tracks and reminds. People decide what is sent, run the heat load software and sign off the installation.">
+<Step title="Open the customer file" who="AI" tone="ai" time="minutes">From the offer and the site visit notes, it builds a document checklist for this customer, based on the current official KfW documents that you have supplied.</Step>
+<Step title="Explain the sequence" who="AI" tone="ai">It drafts a short email in plain language: what comes first, what the contract needs to say, what the customer does and what you do.</Step>
+<Step title="Office reviews the draft" who="Office" tone="human" time="2 min">A person reads and sends it, and corrects anything that does not fit this customer's case.</Step>
+<Step title="Chase missing items" who="AI" tone="ai" time="weekly">It compares the file with the checklist and drafts a polite reminder listing exactly what is missing and why it is needed.</Step>
+<Step title="Prepare the heat load input sheet" who="AI" tone="ai">It collects the building data already in the file into a clean sheet with gaps marked. Where data is missing, it asks rather than guesses.</Step>
+<Step title="Calculate heat load" who="Technician" tone="human">The technician runs the calculation in proper planning software and is responsible for the result.</Step>
+<Step title="Close the file" who="Installer" tone="human">After installation, the assistant lists what the proof still needs. The installer checks it and signs off.</Step>
+</Flow>
+
+The step I care most about is the first one. The assistant must work from the current official text, which you paste or upload, and never from what the model remembers about heat pump grants. Training data is a year or more old, and as July 2026 showed, the rules can change while a customer is mid-project. When KfW updates its documents, you update the source text, and every checklist after that uses the new version.
+
+## The checklist
+
+The exact list depends on the scheme, the customer's situation and the current rules. This is the shape of a per-customer checklist, which the assistant should generate from the official documents and adjust for the case.
+
+<Checklist title="Per-customer document checklist (confirm each item against the current KfW documents)" items={[
+  "Proof that the applicant owns the building, or is otherwise entitled to apply for it",
+  "Signed supply and installation contract, including the clause that makes it depend on the grant approval",
+  "Offer with the planned heat pump type, refrigerant and heat source, in a form that matches the application",
+  "Whether the customer wants to claim income-based or speed-based bonuses, and who holds the evidence",
+  "Building data for the heat load: year of construction, areas, windows, insulation, existing radiators",
+  "Hydraulic balancing planned and assigned to a named person, if the scheme requires it",
+  "Photos of the old system, the new unit and the commissioning, with serial numbers",
+  "Confirmation of the completed work, signed by the installer",
+  "Customer's confirmation of the dates, so that nothing starts before the approval arrives"
+]} />
+
+The phrase "confirm against the current documents" is not hedging. It is the function. A checklist the assistant has generated from last year's rules is worse than no checklist.
+
+## What AI must not do here
+
+**It does not calculate the heat load.** The heat load is calculated according to DIN EN 12831, in software built for it, by someone who takes responsibility for the result. It determines the heat pump's size, the flow temperature and whether the radiators are good enough. A language model that "estimates" any of it is a liability. What it can do is gather the inputs, which saves the technician a morning.
+
+**It does not decide eligibility.** It can list the conditions and show where a customer's answers might not fit. Whether a customer qualifies is for KfW to decide, and the assistant's answer is never a promise. If a customer asks "will I get 70%?", the answer is what the official documents say, plus "KfW decides".
+
+**It does not give tax or legal advice.** Questions about financing, inheritance or rental situations belong with an adviser.
+
+## Data protection: income and ownership
+
+Grant files hold personal and sometimes sensitive data: tax notices, ownership records, household details. I'd apply one principle, data minimisation under Article 5 of the GDPR. The customer's own application needs the income documents, your office usually does not. If the customer uploads income documents directly to KfW, they never need to pass through your inbox or your AI tool.
+
+For everything else, use a provider with an EU hosting option and a data processing agreement under Article 28, keep the customer file in your own system, and delete copies of documents you no longer need once the grant is paid.
+
+## What it is worth
+
+<Calc title="Napkin math: office time on grant paperwork" caption="Assumptions, not measurements. Count the hours your office really spends on a handful of recent customers before you believe any of these numbers." rows={[
+  ["Heat pump installs per year", "60"],
+  ["Office hours per install on explaining, chasing and sorting documents", "× 6"],
+  ["Office hours per year", "= 360"],
+  ["Share a checklist, drafts and reminders could take over", "× one third"],
+  ["Hours saved per year", "= 120"],
+  ["Loaded cost per office hour", "× €35"]
+]} result={["Office time freed each year", "≈ €4,200"]} />
+
+The money is small next to the value of an install that does not slip by a month. A customer waiting for documentation is a customer who has stopped recommending you. The cost of the tooling is modest, usually a few days of setup plus per-use fees. Prices vary, so ask for a quote.
+
+## A simpler fix, if you have one
+
+If you install twenty heat pumps a year, a two-page PDF with the sequence, a fixed email template and a shared checklist in your project software solve most of this for free. Start there. AI becomes worth it when volume grows, when several people answer customers, or when rules change often enough that a static PDF is out of date in a quarter. Right now, in Germany, that last point applies.
+
+## Questions heat pump installers ask
+
+### Can AI fill in the KfW application for the customer?
+
+I wouldn't. The application is the customer's declaration, in their account, about their home and their income. The assistant can prepare a checklist and a summary of the facts the customer needs to have at hand. Entering and submitting it should be the customer, with you answering questions.
+
+### Does the contract really need a condition clause?
+
+As I understand the KfW terms, a contract signed before the application has to depend on the approval, but I could not re-check the exact wording for this article. That is why I'd have your trade association or lawyer supply the clause, and compare it with the KfW page whenever the rules change. I'm not giving legal advice here, and neither should the assistant.
+
+### Is an AI chatbot on my website a good idea?
+
+Only with the same discipline: answers come from the current official texts, it refers uncertain cases to a person, and it never promises amounts. A simple FAQ page that you update carefully often does more than a chatbot.
+
+### What if the rules change mid-project?
+
+That is the strongest argument for keeping the source text separate from the model. Update the source, rerun the checklists of open customers, and have the office check the files that changed.
+
+## Where I'd start
+
+Pick your five most recent customers and write down every question they asked and every document you had to chase. That list is your checklist, your email drafts and your reminder rules. Put the current KfW text next to it, and build from there. The assistant drafts and reminds, the technician calculates, and the customer applies.
+
+If the grant paperwork is eating your office, [tell me how a typical customer file looks today](/contact?intent=improve), and I'll suggest the smallest version worth building. The same pattern of screening before the site visit applies to [solar installers sorting their leads](/posts/ai-for-solar-installers-lead-screening), heating companies can keep customers through [maintenance agreements](/posts/ai-for-hvac-maintenance-reminders), and [electricians turn inspection notes](/posts/ai-for-electricians-inspection-reports) into clean reports.

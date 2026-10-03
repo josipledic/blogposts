@@ -1,0 +1,160 @@
+---
+id: "ai-for-canteens-allergen-labelling"
+title: "Allergen Labelling in Canteens: Build It From Recipes, Not Memory"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Food & drink", "Canteens", "Allergen labelling", "AI for small business"]
+description: "Allergen lists typed from memory go stale. Build them from a recipe database, let AI read supplier spec sheets, and let a person sign off every change."
+excerpt: "Allergen lists typed from memory go stale. Build them from a recipe database, let AI read supplier spec sheets, and let a person sign off every change."
+---
+
+Picture a works canteen that serves 280 lunches a day. Tuesday's special is chicken in cream sauce with rice. Everyone in the kitchen knows what's in it: chicken, cream, a little flour. The laminated sheet at the counter says milk and gluten, and it has said so for two years.
+
+Then the wholesaler runs out of the usual sauce base and delivers another brand. It does the same job. It also contains celery. Nobody updates the sheet, because nobody connected a delivery note to a laminated page. At 12:15 a guest asks whether the sauce is safe for a celery allergy, and the person serving, with no reason to doubt the sheet, says yes.
+
+Nobody in that story was careless. The information lived in people's heads and on a sheet, not in the data the dish is made from. That is fixable, and it's a worthwhile job for AI in a canteen, as long as the AI gets a narrow task and a person keeps the final say.
+
+## What the rules ask of a kitchen that serves loose food
+
+Canteen meals count as non-prepacked ("loose") food: cooked, plated or portioned on site. The rules differ by country but share a core. This is a general overview as of September 2026, not legal advice; your local food authority has the last word.
+
+| Where | What applies to loose food | How the information can be given |
+| --- | --- | --- |
+| EU | The [Food Information Regulation (1169/2011)](https://eur-lex.europa.eu/eli/reg/2011/1169/oj/eng) lists 14 allergens in Annex II. For food sold without prepackaging, including meals from canteens and other mass caterers, information on them must be available (Article 44) | Member states decide the method |
+| Germany | [§ 4 LMIDV](https://www.gesetze-im-internet.de/lmidv/__4.html): the information must be available before purchase and before the food is handed over | In writing (menu, sign, notice, electronic), or orally by informed staff if a written or electronic record exists, is easy to reach, and a visible notice says so |
+| UK | The [Food Standards Agency](https://www.gov.uk/government/publications/allergen-guidance-for-food-businesses/allergen-guidance-for-food-businesses) requires information for every item containing any of the 14 allergens. Since October 2021, food prepacked for direct sale also needs a full ingredient list with allergens emphasised ("Natasha's Law") | In writing, or verbally with a clearly visible written notice |
+| US | Sesame became the ninth major allergen on 1 January 2023 ([FDA](https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies)). Federal labelling rules cover packaged food | For prepared food, state and local food codes apply, and adoption of the FDA Food Code varies |
+
+Two things matter here. First, in the EU and the UK the duty sits with the food business, not with the software or the model. Second, the information has to be right on the day the guest asks. A list that was correct in March isn't a compliance document in October. The UK guidance says to record allergen ingredients on product specification sheets and in recipes, and to "consider the impact when recipes change".
+
+## Why memory and "everyone knows" fail
+
+Who actually relies on the list? Fewer people than surveys suggest, and more than a kitchen can afford to guess about. In surveys cited by Germany's [Allergieinformationsdienst](https://www.allergieinformationsdienst.de/krankheitsbilder/nahrungsmittelallergie/verbreitung), about 30% of people say they have a food allergy. When Berlin researchers added lab and challenge tests in 2004, true food allergy showed up in 3.7% of adults and 4.2% of children. A [2023 meta-analysis of European studies](https://pubmed.ncbi.nlm.nih.gov/36271775/) found 13.1% self-reported at any one time, but 0.8% confirmed by food challenge.
+
+Take 300 guests. At those confirmed rates (my arithmetic, not a measurement), that is roughly 2 to 12 people for whom your allergen sheet is a medical document. Others rely on it because they believe they react. None of them will check your delivery notes, so you have to.
+
+The trouble is where allergens hide. Station Ernährung, a knowledge portal for catering, [lists](https://www.station-ernaehrung.de/fachinformationen/fuer-die-gemeinschaftsverpflegung/allergenkennzeichnung) celery in soups, stews, sauces, dressings, marinades and spice mixes, and notes that celery still triggers reactions when cooked or powdered. The rules also have exceptions: wheat-based glucose syrups and maltodextrins are excluded from the declaration, and sulphites only count above 10 mg per kg or litre.
+
+Memory copes with "chicken in cream sauce". It doesn't cope with a stock base, a spice blend, a dressing and a marinade, each from a different supplier, each reformulated now and then.
+
+## The blueprint: ingredients, recipes, menus
+
+In the story above, the list is a sheet that someone edits by hand when they remember. Every edit depends on a person noticing a change, and the price of a miss is a guest having a reaction. The fix is boring, and that's the point: three layers, with the allergen information entered once, at the bottom.
+
+**Ingredients.** Every product you buy, by supplier and article number, with the allergens stated on the current spec sheet, the sheet's version and date, and the person who verified it. Allergens are never typed in at recipe level.
+
+**Recipes.** A list of ingredients with amounts. A dish's allergens are computed from its ingredients by a plain rule: everything any ingredient contains. No AI in this step, no judgement, no typing.
+
+**Menus.** A menu is a list of recipes by date. The counter sheet, the allergen matrix, the intranet page and the printed week plan are all generated from it. Nobody edits them by hand.
+
+An ingredient record might look like this (invented example):
+
+```text
+Article:     Chicken sauce base, 1 kg tub (supplier A, art. no. 48213)
+Spec sheet:  version 3, received 4 March
+Allergens:   milk, cereals containing gluten (wheat), celery
+Supplier says "may contain": egg
+Status:      VERIFIED by M. Keller, 5 March
+Quoted line: "Contains: wheat flour, milk powder, celery extract"
+```
+
+The status field matters most. An ingredient is verified only when a person has compared the allergens with the supplier's document. Anything else is unverified, and every dish containing an unverified ingredient shows as unverified on the menu. It never shows as allergen-free.
+
+## Where AI reads, and where it must not
+
+Typing 250 articles in from PDFs is where kitchens give up, and where AI is genuinely useful, because the task is reading.
+
+- **Reading spec sheets.** The model takes a PDF, email or scan and proposes the allergen fields, quoting the line each one came from.
+- **Comparing versions.** When a new version of a sheet arrives, it lists what changed, such as "celery extract added". A person reads a two-line difference in seconds; re-reading twelve pages at every delivery isn't realistic.
+
+<Callout title="AI proposes, a person verifies, the data decides" tone="warning">
+The model never fills a gap. If a spec sheet doesn't mention an allergen, the answer is "not stated", not "free of". If there's no sheet, the ingredient stays unverified. It never infers an allergen from what a dish usually contains, because that is exactly the memory error this system exists to remove. Every proposed allergen must quote the passage it came from, so the reviewer checks one line instead of the whole document.
+</Callout>
+
+There's evidence for caution. In a [2025 study in Nutrients](https://doi.org/10.3390/nu17091492), three language models broke compound ingredients from 15 meal plans down into basic ingredients, and nutritionists reviewed the results. The two best scored F1 values of 0.894 and 0.842, where 1 is perfect. The task is related to reading spec sheets, not identical, and newer models will score differently. But you can't tell in advance which sheet the model got wrong. That is fine for a draft and unacceptable as a safety record, so every sheet gets checked.
+
+## From spec sheet to counter sign
+
+<Flow title="How one new product travels from supplier PDF to the counter" caption="The model reads and drafts. The cook decides. The rules compute.">
+<Step title="New or changed product" who="Kitchen" time="on delivery">A new article arrives, or the delivery note shows a different brand or article number than ordered. The spec sheet is requested before the product goes into any dish.</Step>
+<Step title="Read the spec sheet" who="AI" tone="ai" time="under a minute">The model extracts allergens, may-contain statements and the sheet version, quoting the line for each. Anything missing is marked as not stated.</Step>
+<Step title="Check against the document" who="Head cook or quality lead" tone="human" time="5 to 10 min">A person compares the proposal with the sheet, corrects it, and marks the article verified with name and date.</Step>
+<Step title="Recompute and decide" who="System, then head cook" tone="human">Every recipe using the article is recalculated by rule. Flagged dishes get a decision: change the recipe, the product or the sign. Until then they show as unverified.</Step>
+<Step title="Generate the outputs" who="AI and system" tone="ai">Counter sheet, allergen matrix and week plan are rebuilt from the records. The model may tidy wording, but allergens come straight from the data.</Step>
+<Step title="Serve with the record to hand" who="Counter staff" tone="human">Staff answer from the sheet or the screen, never from memory, and pass severe allergy questions to the head cook.</Step>
+</Flow>
+
+## Substitutions: the change that breaks the list
+
+The risky moment is rarely a recipe nobody checked. It's a recipe that was checked once and then changed. In a canteen those changes never stop: the out-of-stock substitution, the cheaper brand, the cook who adds a spoonful of pesto because the sauce is bland.
+
+<Checklist title="Triggers that put a dish back to unverified" items={[
+  "The delivery note shows a different brand or article number than ordered",
+  "The supplier sends a new spec sheet version",
+  "A recipe is edited, even by a spoonful",
+  "A new dish or seasonal special enters the menu",
+  "The label on a pack in the store room no longer matches the database record",
+  "A guest or colleague reports a reaction or a doubt"
+]} />
+
+Ask your suppliers to tell you when the allergen status of a product changes. Minnesota's agriculture department [advises manufacturers](https://www.mda.state.mn.us/food-feed/managing-food-allergen-risks-guide-manufacturers) to require this and to check labels on incoming ingredients, since a supplier may have sent the wrong product. A canteen can ask its wholesaler for the same.
+
+## Cross-contact and "may contain"
+
+A recipe database knows what goes into a dish. It can't see the ladle that went from the fish soup to the vegetable soup, or the fryer shared by schnitzel and falafel.
+
+"May contain traces" statements are voluntary. The [Verbraucherzentrale Bayern](https://www.verbraucherzentrale.bayern/faq/haetten-sies-gewusst/was-bedeutet-die-angabe-kann-spuren-von-enthalten-76216) notes that suppliers sometimes over-declare to protect themselves from liability, which makes the statements of little use to people with allergies. Record the supplier's line as data. Handle cross-contact in your own kitchen as a separate procedure: dedicated utensils, fryer rules, cooking order, and a clear policy on what staff may promise. A database or a model must never print "free from" for you.
+
+## What it costs
+
+The numbers vary by kitchen. The shape doesn't: one block of checking up front, then a trickle.
+
+<Calc title="Napkin math: setting up and keeping the allergen data" caption="Assumptions, not measurements. Count your own articles and your own substitutions for a few weeks to get real figures." rows={[
+  ["Articles in use", "250"],
+  ["Minutes to check one proposed record against its spec sheet", "× 6"],
+  ["One-off checking time", "≈ 25 hours"],
+  ["Spec sheet changes and substitutions per month", "12"],
+  ["Minutes per change, including affected recipes", "× 10"]
+]} result={["Ongoing review time", "≈ 2 hours a month"]} />
+
+Without AI, set-up means typing each record from the PDF, which I'd guess takes about twice as long and adds typing errors.
+
+Recipe and menu software with allergen fields already exists, and it's the part I'd buy rather than build: Apicbase and Nutritics internationally, Rezeptrechner and SANALOGIC in Germany. Some can import supplier product sheets or article data directly. If yours can, use that, and keep the AI for the sheets that arrive as awkward PDFs. I haven't tested these tools, so ask for a trial with your own data.
+
+## Data protection and who is liable
+
+The ingredient and recipe layers contain no personal data: products, suppliers, allergens. A model reading a spec sheet doesn't touch data protection law by itself, so this is an easy AI use to start with.
+
+That changes once guests or staff are in the system. A pre-order app that stores "Mia, peanut allergy" holds health data. [Article 9 GDPR](https://gdpr-info.eu/art-9-gdpr/) prohibits processing it unless an exception applies, such as explicit consent. Collect the minimum, keep it away from the model where you can, and if a provider does process it, sign a data processing agreement and check where it runs.
+
+Liability stays with the kitchen. A chatbot that answers "is the lasagne gluten-free?" on its own is a risk. If you want one, let it quote the approved record and hand severe allergy questions to a person.
+
+## When a spreadsheet is enough
+
+A kitchen with 15 dishes, two suppliers and a stable menu doesn't need AI. A spreadsheet with an article sheet, a recipe sheet and a formula that merges allergens does the job, plus the habit of checking every delivery. AI pays off with a few hundred articles, frequent substitutions, or several sites sharing one database.
+
+## Questions canteen managers ask
+
+### Can I just ask ChatGPT which allergens are in my recipe?
+
+Ask if you like, but don't publish the answer. A general model answers from what such dishes typically contain, not from the products in your store room. Give it your spec sheets, have it quote, and have a person verify.
+
+### Is "ask our staff" enough instead of a printed list?
+
+In Germany, oral information is allowed if staff are properly informed, a written or electronic record exists and is easy to reach, and a visible notice says so. The UK allows verbal information with a written notice. Either way you need the record behind it, so build that first.
+
+### Do the same allergens apply everywhere?
+
+No. The EU and UK lists have 14, the US list has nine. Celery, mustard, lupin and molluscs are on the EU list but not the US one, so check whether an imported product's label follows EU rules before you copy it into your records.
+
+### How do I know the data is still right?
+
+Use the triggers above, plus a spot check: once a month, pick five articles and compare the pack label in the store room with the database. That's my suggestion, not a legal requirement.
+
+## Where I'd start
+
+Start with the ingredient layer and nothing else. Collect the spec sheets for the thirty products you use most, let the model draft the allergen fields with quoted lines, verify each one yourself, and leave everything else marked unverified. Then build your first ten recipes on top, and only then generate counter sheets.
+
+The rule of thumb: AI may read, a person verifies, and the data decides. If it isn't in the record, the answer at the counter is "I'll check", never "no".
+
+If you run a canteen or catering kitchen, [tell me how your allergen information is kept today](/contact?intent=improve), and I'll suggest the smallest version worth testing. Small food producers wrestle with the same spec sheets for their [audit records](/posts/ai-for-food-producers-compliance), and clients who ask about allergies before an event are a different problem, covered in [catering inquiries](/posts/ai-for-catering-inquiries).

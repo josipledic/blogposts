@@ -1,0 +1,150 @@
+---
+id: "ai-for-physiotherapy-no-shows"
+title: "Physiotherapy No-Shows: Fill the Gap Before the Slot Goes Empty"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Healthcare", "Physiotherapy practices", "Missed appointments", "AI for small business"]
+description: "One missed physio slot is lost income and a broken treatment series. Reminders, a smart waitlist and prescription deadline tracking, with a person deciding."
+excerpt: "One missed physio slot is lost income and a broken treatment series. Reminders, a smart waitlist and prescription deadline tracking, with a person deciding."
+---
+
+Take a practice with three therapists, each seeing eight patients a day. That's 24 slots a day and 120 a week. If 10% of them end in a no-show or a last-minute cancellation, twelve slots a week are empty. Nobody is paid for those hours, but the wages, rent and equipment are paid anyway.
+
+Meanwhile a patient with a knee problem has been told the next free appointment is in three weeks. Two kilometres away, a slot that was cancelled this morning will stay empty until five o'clock, because nobody has time to call through a waitlist between treatments.
+
+This is the odd thing about physiotherapy no-shows: the practice loses an hour, and another person who needs that hour goes without. I'd use AI here for one narrow job, which is closing that gap fast. The deciding, the treating and the charging stay with people.
+
+## How big the problem is
+
+<Stats title="Missed appointments in physiotherapy, in numbers">
+  <Stat value="10.4%" label="mean no-show rate reported by 634 US outpatient physical therapists in a national survey (7.8% in private clinics, 14.5% in hospital-campus clinics)" source="Bokinskie et al., UNLV" href="https://oasis.library.unlv.edu/thesesdissertations/2323/" />
+  <Stat value="20.6%" label="no-show and cancellation rate in one Canadian outpatient clinic's 2017 records, highest among patients aged 12 to 30" source="International Journal of Physiotherapy" href="https://ijphy.com/index.php/journal/article/view/904" />
+  <Stat value="73%" label="of 444,995 US patients missed at least one appointment during a musculoskeletal care episode" source="Bhavsar et al., PLOS ONE 2021" href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0251336" />
+  <Stat value="280 days" label="average time to fill a vacant physiotherapist position in Germany in 2024, up from 253 days in 2023" source="IFK, citing Bundesagentur für Arbeit" href="https://www.ifk.de/artikel/fachkraeftemangel-der-physiotherapie-spitzt-sich-weiter-zu-politik-muss-endlich-handeln" />
+</Stats>
+
+Read the first three together. The spread between 10% and 20% is large because the studies count different things: no-shows only, or no-shows plus late cancellations; private practice or hospital; one clinic or a survey of hundreds. The 73% figure is the one that matters for series treatment. Across a course of visits, nearly everyone misses something.
+
+That's why I'd start with your own number. Export one quarter of appointments from your practice software and count no-shows, cancellations under 24 hours, and cancellations that were refilled. Until you have those three numbers, any vendor's claim about "saving 30% of no-shows" is noise.
+
+The fourth number explains why the gap hurts more in physio than in most businesses. A therapist you lose can't be replaced for most of a year, so the capacity you have is the capacity you've got. Every empty slot is a scarce hour thrown away.
+
+## Why one gap becomes a chain
+
+In Germany, a physiotherapy prescription (Heilmittelverordnung) often covers a series of six to ten treatments, and the rules around it make a missed session more than a single lost hour. Under the [Heilmittel-Richtlinie of the G-BA](https://www.g-ba.de/themen/veranlasste-leistungen/heilmittel/verordnung-heilmittel-vertragsaerzte/), treatment has to start within 28 calendar days of the prescription, or within 14 days if the doctor marked it as urgent. Otherwise the prescription loses its validity and the patient has to go back to the doctor.
+
+Gaps inside the series count too. If treatment is interrupted for more than 14 calendar days without a documented reason, the prescription also loses its validity. The reasons that are allowed are holiday, illness, or a therapeutically indicated pause, and the therapist notes them on the prescription.
+
+So one missed appointment can push the next one past the limit. A patient who cancels the Thursday slot and can only come in two and a half weeks later has just put the whole prescription at risk. If you work in another country, the same shape usually appears as session limits or authorisation windows set by the insurer, so look up yours.
+
+One note for accuracy: since November 2024 there is also a [Blankoverordnung for physiotherapy](https://www.gkv-spitzenverband.de/gkv_spitzenverband/presse/pressemitteilungen_und_statements/pressemitteilung_1884544.jsp), starting with shoulder diagnoses, where the practice decides frequency and duration. That's a separate track. This post is about the standard prescription, which is still the bulk of the work.
+
+## The napkin math
+
+<Calc title="What a 10% no-show rate costs a three-therapist practice" caption="Assumptions, not measurements: 10% echoes the US survey above, and €35 is a placeholder for your average revenue per session. Replace both with your own export." rows={[
+  ["Slots per week (3 therapists x 8 a day x 5 days)", "120"],
+  ["Share lost to no-shows and late cancellations", "× 10%"],
+  ["Empty slots per week", "= 12"],
+  ["Working weeks per year", "× 46"],
+  ["Empty slots per year", "= 552"],
+  ["Average revenue per session", "× €35"]
+]} result={["Revenue left on the table per year", "≈ €19,300"]} />
+
+Now the part that matters for AI: if better reminders prevent a fifth of those no-shows and a waitlist refills half of the rest, the practice wins back 60% of the gap, around €11,600 a year in this example. That's real, but it's not a reason to spend a lot. A system that costs a few hundred euros a month in tooling, plus your time, needs to clear that bar on your own numbers.
+
+## Start with what needs no AI
+
+Most of the gain comes from plain tools, and I'd put them in first.
+
+**Reminders.** The top reason patients give for no-shows is that they forgot, in both the US survey and the Canadian clinic study. A [Cochrane review](https://www.cochrane.org/evidence/CD007458_mobile-phone-messaging-reminders-attendance-healthcare-appointments) of text message reminders found moderate-quality evidence that they improve attendance compared with no reminders (risk ratio 1.14), and that they work about as well as phone calls. The US survey also found that a multi-method reminder system plus a 24-hour cancellation notice was associated with lower no-show rates than phone reminders alone.
+
+**Booking the series up front.** Before the patient leaves the first session, book all remaining sessions, even if some will move. A patient with a calendar full of appointments misses fewer than one with "we'll see next week".
+
+**A cancellation rule that's agreed in writing.** More on this below.
+
+**A waitlist in your practice software.** Physio software such as THEORG, and tools like likami or cituro, offer online booking and waitlists, and a [comparison of physio scheduling tools](https://physiosoftware-vergleich.de/terminplan/) describes THEORG's scheduler as including deadline and frequency checks. If yours does this, use it before adding anything new.
+
+The honest answer for many small practices is that these four steps are enough. AI enters where software rules stop working.
+
+## Where AI actually earns its place
+
+Three jobs are awkward for fixed rules and easy for a language model.
+
+**Reading messy replies.** Patients answer reminders in free text: "can't make Thursday, could I do Friday afternoon or next week?" A model reads this, extracts the intent, finds a fitting alternative that respects the series rules, and proposes it. A fixed "reply 1 to confirm, 2 to cancel" system can't.
+
+**Matching a freed slot to the right person.** A cancelled 10:30 slot with therapist Anna can be offered to a patient who needs manual therapy, has a valid prescription, is flexible on mornings and has been waiting longest. That's five constraints. The model works through the list and proposes the top three candidates instead of a person scrolling.
+
+**Drafting the messages.** Short, friendly offers and confirmations in the practice's own voice, in the patient's language.
+
+<Flow title="From a cancellation to a filled slot" caption="The software holds the calendar and the prescriptions. The AI proposes and drafts. A person sets the rules and handles every exception.">
+<Step title="Patient cancels" who="Patient" time="Thursday 08:15">By message, phone or online. The slot is freed in the calendar automatically.</Step>
+<Step title="Check the series" who="AI" tone="ai" time="seconds">Would cancelling break the prescription: start window, 14-day gap, remaining sessions? If so, it proposes the closest safe alternative date.</Step>
+<Step title="Find candidates" who="AI" tone="ai" time="seconds">From the waitlist: right therapist or skill, valid prescription, fitting times, waiting longest. Top three, with a reason each.</Step>
+<Step title="Approve the offer" who="Front desk" tone="human" time="1 minute">One tap to approve, or skip a candidate. Anyone with clinical urgency, for example after surgery, goes first by the practice's own rule.</Step>
+<Step title="Offer goes out" who="AI" tone="ai" time="minutes">A short message to the first candidate, valid for 30 minutes, then to the next. First yes wins.</Step>
+<Step title="Confirm and log" who="System">The calendar updates, the other candidates hear "thanks, not this time", and the filled slot is logged for your monthly numbers.</Step>
+</Flow>
+
+The human decision point is the approval. I'd keep it in for the first months, and then only for exceptions. The rules for who goes first are clinical and organisational choices that belong to the practice owner, not a model.
+
+## Prescription deadlines: a clock that's easy to forget
+
+Every prescription has a start deadline and a gap limit, and most practices track these by eye on the paper or in a column of the software. It works until a busy week.
+
+A model can read the prescription data once it is in your system and raise two kinds of flag: "this patient hasn't been booked yet and the start window closes in five days", and "the next session is 16 days after the last, which needs a documented reason or an earlier slot". It doesn't decide anything medical. It tells the front desk what to look at. Whether a pause is therapeutically indicated is the therapist's call.
+
+One hard limit: the model reads the prescription as data. It must never write or change the prescription, choose a treatment type or suggest a frequency that differs from what the doctor ordered.
+
+## Charging for missed appointments
+
+Many practices want a cancellation fee. It can be done, with conditions. In a [ruling of 12 May 2022 (III ZR 78/21)](https://www.rws-verlag.de/news/wirtschaftsrecht-aktuell/bgh-urteil-vom-12-mai-2022-iii-zr-7821-71812/) about an occupational therapy practice, the German Federal Court of Justice held that a claim for payment under section 615 of the civil code can exist even for statutory insured patients, if the practice runs on fixed appointments reserved for one patient, and the patient didn't cancel in time. Savings the practice makes, for example from refilling the slot, have to be deducted.
+
+In practice this means: agree the cancellation period and the fee in writing at the first visit, keep the wording reasonable (a blanket "100 euros for any no-show" invites trouble), and treat each case individually. That last point matters for automation. A model can flag "patient missed without cancelling, second time" and draft a polite message. It should never issue an invoice on its own. A person decides whether to charge, knowing the patient had a bereavement or a bus strike.
+
+## Data protection without the drama
+
+An appointment time in a physiotherapy practice reveals health information. A few rules keep this simple:
+
+- Messages say "your appointment on Thursday at 10:30", not what for.
+- Only use channels the patient agreed to at intake, and record that agreement.
+- If an AI provider processes patient data, you need a data processing agreement (AVV in Germany), hosting in the EU, and a contract that says your data isn't used to train their models. Health data falls under Article 9 of the GDPR.
+- Keep prescription images and diagnoses inside your practice software. The assistant should see only what it needs: name, therapist, times, prescription dates and session counts.
+
+Whether you can use a consumer messenger for reminders is contested in Germany. A practice app or plain SMS with agreed wording is the safer choice.
+
+## A short checklist before you start
+
+<Checklist title="Before you switch anything on" items={[
+  "Count no-shows, late cancellations and refilled slots for one full quarter",
+  "Turn on reminders and the waitlist in your current software first",
+  "Book the whole series at the first visit, every time",
+  "Write a cancellation rule and get it signed at intake",
+  "Decide who goes first when a slot opens, and write that down",
+  "Sign an AVV with any AI provider and check where data is hosted",
+  "Set up a weekly list of prescriptions near their start or gap deadline",
+  "Review the first month of offers with the whole team"
+]} />
+
+## Questions practice owners ask
+
+### How do I reduce no-shows in my physiotherapy practice?
+
+Begin with the boring steps: reminders by SMS or email a day before, booking the whole series at once, and a written cancellation rule. The evidence for reminders is solid. AI helps after that, with messy replies and with refilling freed slots quickly.
+
+### Can I charge statutory insured patients for missed appointments?
+
+It is possible in Germany if you work by appointment, agreed the cancellation period and fee beforehand, and the patient cancelled too late. You have to deduct what you save or earn by refilling the slot. Have a lawyer or your professional association check your wording. I'm not a lawyer, and courts look at the details.
+
+### Is an AI waitlist worth it for a small practice?
+
+Only if you have a real waitlist and several cancellations a week. With two therapists and five no-shows a month, a phone call or a message by the front desk does the job. Do the napkin math above with your own numbers first.
+
+### What if the AI offers a slot to the wrong patient?
+
+That's the reason for the approval step. The model proposes candidates with its reasoning, and the front desk confirms. Over time you'll see which rules it gets right and can approve in bulk.
+
+## Where I'd start
+
+Count your gaps, turn on the reminders you already own, and write down who gets the next free slot. Put AI in after that, as the thing that reads replies and proposes candidates, while a person keeps the final say. If you're not sure what your numbers look like yet, that is the first step, and it needs no AI at all.
+
+If you'd like help with that count or with a small pilot, [tell me what practice software you use and how many therapists you have](/contact?intent=improve), and I'll suggest the smallest version worth testing. Other businesses fight the same battle for their calendar: [dental practices](/posts/ai-for-dentists) lose new patients to voicemail, [hair salons](/posts/ai-for-hair-salons-scheduling) fill last-minute gaps, and [gyms](/posts/ai-for-gyms-member-retention) spot members who are fading before they cancel.

@@ -1,0 +1,166 @@
+---
+id: "ki-innenarchitektur-ausstattungsliste"
+translationOf: "ai-for-interior-designers-procurement-tracking"
+title: "Innenarchitektur: 200 Positionen bestellen, ohne eine zu verlieren"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Kanzleien & Dienstleister", "Innenarchitektur", "Ausstattungsliste", "KI für kleine Unternehmen"]
+description: "Hotelzimmer-Refresh oder Wohnhaus: 200 Positionen, ein Einzugstermin. Wie KI Lieferantenmails liest, die Ausstattungsliste pflegt und Terminrisiken meldet."
+excerpt: "Hotelzimmer-Refresh oder Wohnhaus: 200 Positionen, ein Einzugstermin. Wie KI Lieferantenmails liest, die Ausstattungsliste pflegt und Terminrisiken meldet."
+---
+
+Stellen Sie sich ein Büro mit drei Personen vor, das zwölf Zimmer eines Boutiquehotels neu ausstattet. Die Ausstattungsliste hat 212 Positionen von 17 Lieferanten: Kopfteile, Nachttischleuchten, Vorhänge, Schreibtische, Stühle, Teppiche, Spiegel. Das Hotel schließt in KW 31 für zwei Wochen, und die Monteure sind gebucht.
+
+In KW 18 schreibt eine Polsterei, dass sich der Stoff für die Kopfteile um drei Wochen verzögert. Die Mail landet in einem Postfach mit 140 ungelesenen Nachrichten. In der Liste steht „bestellt, bestätigt“, weil das im Vormonat stimmte. Niemand bringt die Mail mit der Zeile zusammen, bis in KW 28 die Hoteldirektorin fast nebenbei fragt, ob die Kopfteile rechtzeitig kommen.
+
+Niemand hat hier im üblichen Sinn einen Fehler gemacht. Ein Termin hat sich in einer Nachricht geändert, die das Dokument, dem alle vertrauen, nie erreicht hat. Genau diese enge Aufgabe würde ich KI im Planungsbüro geben: lesen, was Lieferanten schicken, die passende Zeile in der Liste aktualisieren und sich melden, wenn ein Termin nicht mehr zur Einbauwoche passt. Was dann geschieht, entscheidet weiter die Innenarchitektin, und jede Ersatzlösung gibt der Bauherr frei.
+
+## Warum eine Liste mit 200 Positionen hinterherhinkt
+
+<Stats title="Kleine Büros, lange Wartezeiten">
+  <Stat value="6.079" label="Innenarchitektinnen und Innenarchitekten sind in den Länderarchitektenkammern eingetragen, davon 2.211 freischaffend (Stand 1.1.2026)" source="Bundesarchitektenkammer, Bundeskammerstatistik" href="https://bak.de/wp-content/uploads/2026/05/Bundeskammerstatistik-zum-01.01.2026-gesamt-2.pdf" />
+  <Stat value="12 bis 20 Wochen" label="Produktionszeit, die nach Angaben des Anbieters Sonderanfertigungen bei Polstermöbeln und Korpusmöbeln regelmäßig brauchen, vor der Seefracht" source="ProcureWave, Anbieter von FF&E-Beschaffungssoftware" href="https://procurewave.com/ffe-procurement-guide" />
+  <Stat value="20 bis 28 Wochen" label="von der Bestellung bis zur Lieferung bei in Asien gefertigten Korpusmöbeln nach Maß, gegenüber 8 bis 12 Wochen bei Fertigung im Inland" source="Liberty Way Renovation Company, US-Hotelsanierer" href="https://lwrenovate.com/post/28/" />
+</Stats>
+
+Ein Büro mit drei Personen, oder mit einer, hat keine Einkaufsabteilung. Es hat eine Tabelle, ein gemeinsames Postfach und jemanden, der sich erinnert. Die Wartezeiten sind lang, und die Uhr beginnt oft später zu laufen, als man denkt: Nach Angaben von ProcureWave startet die Produktionszeit erst nach der Freigabe des letzten Musters. Beides sind Quellen von Anbieterseite, keine Umfrage, englischsprachig und auf den Hotelmarkt bezogen, also Größenordnungen. Trotzdem kann eine einzige späte Bemusterung im zweiten Monat zur verpassten Eröffnung im neunten werden.
+
+Wer in Deutschland Innenräume plant, kennt die Aufgabe aus der HOAI. In [Anlage 10](https://www.gesetze-im-internet.de/hoai_2013/anlage_10.html) gehören zu den Grundleistungen der Leistungsphase 7 das Einholen von Angeboten und der Preisspiegel, zur Leistungsphase 8 das Aufstellen und Überwachen eines Terminplans, die Kostenkontrolle und die Organisation der Abnahme. Im Alltag entscheidet sich das an der Ausstattungsliste.
+
+Die Wahrheit über eine Position liegt an mehreren Orten gleichzeitig:
+
+- **Die Auftragsbestätigung**, ein PDF oder eine Mail, die sagt, was der Lieferant bauen will und in welcher Woche.
+- **Die Versandmeldung** mit Spediteur, Kartonanzahl und voraussichtlicher Ankunft.
+- **Eine Nachricht vom Außendienst**, mal per Mail, mal per WhatsApp, mal am Telefon.
+- **Das Lieferantenportal**, falls es eines gibt.
+- **Der Wareneingangsbericht** vom Lager oder Spediteur.
+- **Die Ausstattungsliste selbst**, das Dokument, das alle lesen und das nur so aktuell ist wie die letzte Person, die etwas eingetippt hat.
+
+Die Liste hält fest, was jemand eingetragen hat. Die Nachrichten der Lieferanten sind das, was sich geändert hat. Zwischen beidem entstehen die Überraschungen.
+
+## Was der Assistent liest und was er schreibt
+
+Jede Zeile der Liste besteht aus wenigen festen Feldern: Position, Lieferant, Menge, Oberfläche, Bestellnummer, bestätigte Lieferwoche, Bedarfswoche vor Ort, Status und wer was freigegeben hat. Eingehende Nachrichten verändern diese Felder. Vier Arten decken das meiste ab.
+
+| Nachricht | Was die KI herausliest | Was sie aktualisiert | Was ein Mensch entscheidet |
+| --- | --- | --- | --- |
+| Auftragsbestätigung (PDF oder Mail) | Bestellnummer, Positionen, Oberfläche, Maße, Menge, Preis, bestätigte Lieferwoche | Status „bestätigt“ und die Lieferwoche | Jede Abweichung vom freigegebenen Muster oder Entwurf: Oberfläche, Maß, Menge, Preis |
+| Versandmeldung oder Tracking-Mail | Spediteur, Kartonanzahl, voraussichtliche Ankunft | Status „unterwegs“ und das Ankunftsdatum | Nur, ob die Ankunft nach der Bedarfswoche liegt |
+| Verzögerung oder Änderung („Stoff verzögert sich um drei Wochen“) | Neuer Termin, genannter Grund, Alternativen des Lieferanten | Lieferwoche und ein Risikovermerk | Abwarten, beschleunigen, ersetzen oder den Einbau verschieben, und was der Bauherr erfährt |
+| Wareneingangsbericht oder Lieferfotos | Gezählte Kartons, Schäden, fehlende Teile | Status „eingegangen“, „unvollständig“ oder „beschädigt“ | Reklamation, Nachbestellung oder Annahme mit Reparatur |
+
+Ein PDF in siebzehn verschiedenen Layouts zu lesen und der richtigen Zeile zuzuordnen, ist dieselbe Arbeit, die ein [Möbelhaus](/de/posts/ki-moebelhaus-liefertermine) mit den Bestätigungen seiner Lieferanten hat, nur von der anderen Seite des Ladentischs. Sprachmodelle lesen solche unordentlichen Dokumente gut.
+
+Die Prüfung, die sich bezahlt macht, ist einfache Arithmetik: bestätigte Lieferwoche plus Transport plus ein Puffer für Wareneingang und Kontrolle, verglichen mit der Woche, in der die Position vor Ort sein muss. Liegt die Summe danach, wird die Zeile rot. Bleibt weniger als eine Woche Luft, gelb. Das Modell liest die Mails. Der Terminvergleich selbst sollte gewöhnlicher Code sein, denn genau dieser Teil darf nie kreativ werden.
+
+## Von der Lieferantenmail zum markierten Risiko
+
+<Flow title="Eine Nachricht, eine Zeile, eine Entscheidung" caption="Die KI liest, ordnet zu und vergleicht. Ein Mensch entscheidet, sobald sich Termin, Oberfläche oder Preis ändern, und der Bauherr gibt jede Ersatzlösung frei.">
+<Step title="Lieferantennachricht trifft ein" who="Lieferant" time="jederzeit">Bestätigung, Versandmeldung oder Verzögerungsmail, an ein eigenes Bestellpostfach gesendet oder dorthin weitergeleitet.</Step>
+<Step title="Lesen und zuordnen" who="KI" tone="ai" time="Sekunden">Liest Bestellnummer, Positionen, Oberfläche, Menge, Preis und Termine und ordnet sie den Zeilen zu. Was sich nicht sicher zuordnen lässt, geht an einen Menschen.</Step>
+<Step title="Mit Entwurf und Einbauwoche vergleichen" who="KI" tone="ai">Prüft Oberfläche, Maß, Menge und Preis gegen den freigegebenen Entwurf, und bestätigte Lieferwoche plus Transport und Puffer gegen die Bedarfswoche.</Step>
+<Step title="Liste aktualisieren" who="KI" tone="ai">Schreibt Status und Termine in die Zeile, mit altem Wert, neuem Wert und Link zur Quellnachricht. Nichts wird stillschweigend überschrieben.</Step>
+<Step title="Entscheiden" who="Büro" tone="human" time="am selben Tag">Im Plan: weiter. Abweichung oder Risikovermerk: akzeptieren, beim Lieferanten nachfassen, neu bestellen oder einen Ersatz suchen.</Step>
+<Step title="Freigabe durch den Bauherrn" who="Büro und Bauherr" tone="human">Der Assistent entwirft eine Mail mit der Verzögerung und den Folgen jeder Option für den Termin. Das Büro ergänzt und sendet. Das Ja des Bauherrn kommt in die Zeile.</Step>
+<Step title="Risikoliste am Montag" who="KI" tone="ai" time="wöchentlich">Nicht versandte Zeilen mit naher Bedarfswoche, nach Lieferanten gruppiert, für die Wochenbesprechung.</Step>
+</Flow>
+
+Drei Regeln halten das ehrlich. **Der Assistent überschreibt nie stillschweigend**: Jede Änderung zeigt, was ersetzt wurde und woher der neue Wert stammt. **Er erfindet nie einen Termin**: Nennt eine Nachricht keinen, steht in der Zeile „kein Termin genannt“, und eine Nachfrage wird entworfen. Und **er schreibt nie an den Bauherrn**. Alles, was ihn erreicht, hat das Büro gelesen.
+
+## Wenn das Sofa zu spät kommt: Diese Entscheidung bleibt bei Ihnen
+
+Eine markierte Zeile lässt vier Optionen: abwarten, beschleunigen, ersetzen oder den Einbau verschieben. Der Assistent kann die Optionen aufbereiten und zeigen, was jede mit dem Terminplan macht. Entscheiden kann er nicht, denn jede berührt Entwurf oder Vertrag.
+
+Der Ersatz ist die heikle Option. Ein anderer Stoff oder Stuhl verändert Optik, Maße, oft die Lieferzeit, und im Objekt auch den Brandschutz. Laut einem [Fachbeitrag eines Objektmöbelherstellers von 2012](https://www.baulinks.de/webplugin/2012/0823.php4) gibt es für Objektmöbel keine eigene Brandschutznorm, doch Bauaufsichtsbehörden und Versicherer verlangen zunehmend für Fluchtwege und Bereiche mit viel Publikumsverkehr schwer entflammbare Materialien. Ein Katalogersatz kann also unbemerkt in die falsche Kategorie rutschen. Was für Ihr Objekt gilt, klärt der Brandschutzbeauftragte oder die Bauaufsicht. Prüfen Sie den Brandschutznachweis des Ersatzes, bevor der Bauherr zustimmt.
+
+<Split title="Die Grenze" leftTitle="Der Assistent" rightTitle="Der Assistent nie" left={[
+  "Liest Bestätigungen, Versandmeldungen und Verzögerungsmails und ordnet sie Zeilen zu",
+  "Schreibt Status und Termine in die Liste, mit Link zur Quellnachricht",
+  "Markiert Abweichungen vom freigegebenen Entwurf und Termine, die nicht mehr zur Einbauwoche passen",
+  "Entwirft Nachfragen an Lieferanten und Optionsmails an den Bauherrn",
+  "Stellt die Risikoliste für die Woche zusammen"
+]} right={[
+  "Akzeptiert einen Ersatz oder eine geänderte Oberfläche",
+  "Verspricht dem Bauherrn einen Termin",
+  "Sendet etwas an Lieferant oder Bauherr, ohne dass ein Mensch es gelesen hat",
+  "Ändert Mengen, Preise oder den freigegebenen Entwurf",
+  "Löst Bestellungen aus oder ändert sie"
+]} />
+
+Halten Sie die Freigabe des Bauherrn mit Datum in der Zeile fest. Wenn jemand in KW 31 sagt, er habe diesem Stoff nie zugestimmt, wollen Sie aus der Akte antworten. Küchenstudios führen dieselbe Schleife im Kleinen, ausgehend von einem [Planungsgespräch](/de/posts/ki-kuechenstudio-planungsgespraech), das festhält, was vereinbart wurde.
+
+## Wareneingang: Hier entscheiden sich Reklamationen
+
+Alles Bisherige ist umsonst, wenn eine Lieferung leichtfertig quittiert wird. Gegenüber dem Frachtführer gilt nach [§ 438 HGB](https://www.gesetze-im-internet.de/hgb/__438.html): Ist ein Schaden äußerlich erkennbar und wird er nicht spätestens bei der Ablieferung angezeigt, wird vermutet, dass das Gut unbeschädigt abgeliefert wurde. Bei äußerlich nicht erkennbaren Schäden gilt dieselbe Vermutung, wenn sie nicht innerhalb von sieben Tagen nach Ablieferung angezeigt werden, und zwar in Textform. Zwischen Kaufleuten kommt die Rügepflicht nach [§ 377 HGB](https://www.gesetze-im-internet.de/hgb/__377.html) hinzu: Ist der Kauf für beide Seiten ein Handelsgeschäft, muss der Käufer die Ware, soweit tunlich, unverzüglich untersuchen und Mängel unverzüglich anzeigen. Ob das auf Ihre Konstellation passt, hängt davon ab, wer bestellt. Lassen Sie das einmal rechtlich prüfen.
+
+<Checklist title="An der Rampe oder an der Haustür" items={[
+  "Kartons vor der Unterschrift gegen Lieferschein und Bestellung zählen",
+  "Bei Anwesenheit des Fahrers auspacken und prüfen, sonst die Annahme mit dem Vermerk 'unter Vorbehalt der Prüfung' quittieren",
+  "Schäden konkret auf dem Lieferschein beschreiben ('linke Armlehne Sofa 3 eingerissen'), nicht nur 'beschädigt'",
+  "Etiketten, Paletten und Schäden fotografieren und die Verpackung aufbewahren",
+  "Oberfläche und Charge mit dem freigegebenen Muster vergleichen",
+  "Bei Polstermöbeln im Objekt Etikett und Brandschutznachweis prüfen",
+  "Pro Position noch am selben Tag erfassen: komplett, unvollständig oder beschädigt",
+  "Nicht erkennbare Schäden spätestens am siebten Tag nach Ablieferung in Textform anzeigen"
+]} />
+
+Der Assistent kann Eingangsnotizen und Fotos an die Zeile hängen und die Schadensanzeige entwerfen. An der Rampe stehen muss trotzdem jemand.
+
+## Günstigere Lösungen zuerst
+
+Wo ich von KI abraten würde:
+
+- **Unter etwa 40 Positionen oder bei einem Lieferanten pro Projekt.** Eine Tabelle und 20 Minuten Durchsicht jeden Freitag genügen.
+- **Lieferanten mit Portal oder Tracking-Link.** Nutzen Sie deren Sendungsverfolgung.
+- **AVA-Software.** Programme wie ORCA AVA, Sidoun oder Blauplan sind für Ausschreibung, Vergabe und Abrechnung gebaut und tauschen Leistungsverzeichnisse im GAEB-Format aus. Führen Sie darin schon Aufträge und Termine, fragen Sie zuerst, was sie mit eingehenden Bestätigungen kann.
+- **FF&E-Software.** Studio Designer, Programa und Fohlio zielen auf Ausstattungslisten und Bestellungen, Fohlio vor allem auf große Gewerbe- und Hotelprojekte. Die Tools sind überwiegend englischsprachig: Prüfen Sie Serverstandort und Auftragsverarbeitung.
+- **Der Terminvergleich.** Eine Tabellenformel erledigt das. Dafür braucht es kein Modell.
+- **Nachfassen.** Eine wiederkehrende Erinnerung pro Lieferant („Donnerstag: Lieferwoche bestätigen lassen“) bringt mehr, als man erwartet.
+
+KI lohnt sich, wenn Bestätigungen und Versandmeldungen als PDF und Mail in einem Dutzend Layouts eintreffen, Ihr Team sie abtippt und sich Projekte überlappen, sodass niemand das ganze Bild im Kopf hat. ProcureWave sagt, eine Tabelle komme bei wenigen Zimmern zurecht, bei einigen hundert Positionen und Dutzenden Lieferanten aber nicht mehr, weil niemand die gebundenen Kosten gegen das Budget in Echtzeit sehe. Das ist die Sicht eines Anbieters. Meine Vermutung: Die Schwelle liegt jenseits von hundert Positionen pro Projekt. Zählen Sie Ihre verlorenen Stunden, dann wissen Sie es.
+
+## Was das Nachhalten kostet und was ein Verpasser kostet
+
+**Annahmen, keine Messwerte.** 200 Positionen, etwa fünf Lieferantennachrichten pro Position im Lauf ihres Lebens (Bestätigung, Versandmeldung, eine Rückfrage, eine Änderung, Lieferung) und zwei Minuten pro Nachricht, um sie zu lesen, die Zeile zu finden und das Update einzutippen. Das sind 1.000 Nachrichten und rund 33 Stunden Lesen und Tippen pro Projekt, bevor irgendjemand nachfasst.
+
+Nehmen Sie nun die zwölf Zimmer vom Anfang, die zwei Wochen länger geschlossen bleiben, bei einem durchschnittlichen Zimmerpreis von 110 € pro Nacht. 12 Zimmer × 14 Nächte × 110 € sind rund 18.500 € Zimmerumsatz, den das Hotel nicht erzielt. Das ist Umsatz, nicht Gewinn, und wer ihn trägt, hängt von den Verträgen ab. Es ist trotzdem die Zahl, die die Frage der Direktorin in KW 28 teuer macht.
+
+Der Assistent selbst kostet wenig. Die Modellkosten für rund 1.000 Nachrichten dürften pro Projekt bei wenigen Euro liegen, meine Schätzung, kein Angebot. Der Aufwand steckt im Aufbau: Eine erste Version, die ein eigenes Postfach liest, die Layouts Ihrer drei größten Lieferanten beherrscht und in Ihre Tabelle oder Ihr Tool schreibt, ist in einigen Tagen gebaut, dazu kommen zwei bis drei Wochen Parallelbetrieb mit dem manuellen Vorgehen an einem laufenden Projekt.
+
+Die laufenden Kosten sind ein Mensch: zehn bis fünfzehn Minuten am Tag für Ausnahmen. Braucht es zwei Stunden, sind die Eingaben zu unordentlich, und der Hebel liegt bei Lieferanten oder Liste, nicht bei einem besseren Modell.
+
+## Kundendaten, Einkaufskonditionen und Verschwiegenheit
+
+Lieferantennachrichten enthalten personenbezogene Daten: den Namen des Bauherrn in der Kommissionszeile, die Lieferadresse, das Stockwerk, manchmal Hinweise wie „Schlüssel beim Nachbarn“. In einem Privathaus kommen Alarm- oder Türcodes dazu. Das alles fällt unter die DSGVO.
+
+Ein KI-Dienst, der sie erhält, ist Auftragsverarbeiter. Sie brauchen einen Vertrag nach [Artikel 28 DSGVO](https://gdpr-info.eu/art-28-gdpr/) (AVV), Klarheit darüber, wo die Daten verarbeitet werden, und die Zusicherung, dass sie nicht zum Training von Modellen verwendet werden. Ein Projekt im Zeitplan zu halten gehört zur Vertragserfüllung, [Artikel 6 Absatz 1 Buchstabe b](https://gdpr-info.eu/art-6-gdpr/).
+
+Drei Gewohnheiten zählen mehr als der Gesetzestext:
+
+- **Richten Sie den Assistenten nicht auf Ihr gesamtes Postfach.** Eine eigene Bestelladresse oder eine Weiterleitungsregel für Lieferantenmails sorgt dafür, dass er Lieferantennachrichten sieht und sonst nichts.
+- **Halten Sie Tür- und Alarmcodes aus der Liste heraus.** Das Modell braucht sie nicht, um eine Bestätigung zu lesen.
+- **Prüfen Sie Ihre Verträge, bevor Projektdaten irgendwohin gehen.** Einkaufspreise und Händlerkonditionen sind geschäftlich sensibel, und Hotelgruppen wie private Bauherren haben oft Vertraulichkeitsklauseln.
+
+Eine Frage ist keine Modellfrage: Auf wessen Namen läuft die Bestellung, auf Ihren oder den des Bauherrn? Davon hängt ab, wer das Zahlungsrisiko trägt, wie es mit der Gewährleistung steht und je nach Konstellation auch die steuerliche Behandlung. Klären Sie das mit Steuerberatung und Vertrag, bevor Sie irgendetwas darum herum automatisieren.
+
+## Fragen aus dem Planungsbüro
+
+### Wie behalten Innenarchitekten den Überblick über ihre Bestellungen?
+
+Üblich ist eine Ausstattungsliste: eine Tabelle oder ein Spezialwerkzeug mit einem Status für jede Position. Der Unterschied liegt darin, ob irgendetwas die eingehende Post liest. In den meisten Büros tut das ein Mensch, zwischen allem anderen.
+
+### Kann KI Auftragsbestätigungen von Lieferanten lesen?
+
+Ja, und hier würde ich anfangen. Nehmen Sie die letzten 20 Bestätigungen Ihres größten Lieferanten, lassen Sie ein Modell die Felder auslesen und vergleichen Sie mit dem, was Sie selbst eingetragen hätten. Passen die meisten, prüft ein Mensch nur noch die Ausnahmen.
+
+### Kann der Assistent bei Lieferanten nachfassen?
+
+Er kann die Mail entwerfen: Position, Bestellnummer, den genannten Termin und den benötigten. Ein Mensch sendet sie, zumindest bis Sie den Entwürfen vertrauen. Er verhandelt nicht.
+
+## Womit ich anfangen würde
+
+Wählen Sie ein laufendes Projekt und Ihre drei langsamsten Lieferanten. Leiten Sie deren Nachrichten an ein eigenes Postfach weiter. Lassen Sie sich jeden Montag die Zeilen auflisten, bei denen bestätigter Termin plus Transport nicht mehr zur Bedarfswoche passt, und vergleichen Sie das mit dem, was Sie selbst bemerkt hätten. Stimmt die Liste in den meisten Wochen, nehmen Sie die Zeilenupdates dazu. Jede Nachricht an den Bauherrn bleibt Handarbeit.
+
+Meine Faustregel: Die Liste sollte mindestens so aktuell sein wie Ihr Postfach, und nichts sollte einen Bauherrn erreichen, das Sie nicht gelesen haben.
+
+Wenn Sie das an Ihrem nächsten Projekt ausprobieren möchten, [schreiben Sie mir, wie Ihre Ausstattungsliste aufgebaut ist und welche drei Lieferanten am langsamsten sind](/de/kontakt?intent=improve), und ich schlage die kleinste Variante vor, die einen Versuch wert ist. Die Liste einer Hochzeitsplanerin hat dieselbe Form: [eine Quelle der Wahrheit für zwölf Dienstleister](/de/posts/ki-hochzeitsplaner-dienstleisterkoordination).

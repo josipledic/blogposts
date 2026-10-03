@@ -1,0 +1,186 @@
+---
+id: "ai-for-freight-forwarders-quote-requests"
+title: "Freight Quote Requests: Stop Asking for the Dimensions Three Times"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Transport & logistics", "Freight forwarders", "Quote requests", "AI for small business"]
+description: "Spot freight requests arrive as one-liners. How AI finds the missing weight, dimensions and Incoterms and asks the customer once, while you set the price."
+excerpt: "Spot freight requests arrive as one-liners. How AI finds the missing weight, dimensions and Incoterms and asks the customer once, while you set the price."
+---
+
+Picture a small forwarder with fourteen people. On Tuesday at 08:52 an email arrives: "Can you quote 8 pallets Hamburg to Lyon, pickup Thursday? Thx." There's a packing list attached as a spreadsheet, with net weights per carton and no pallet sizes.
+
+The dispatcher reads it twice. She doesn't know the pallet height, whether the pallets stack, who handles export clearance, or whether anything in those cartons counts as dangerous goods. She writes back with two questions. The customer answers one of them at 11:20. She asks the next two. The last answer arrives after lunch, and the quote goes out at 15:30. By then the customer had accepted someone else's price at noon.
+
+Nobody did anything wrong here. The slow part was the waiting between reasonable questions. This is where I'd point AI in a forwarding office: not at setting prices, but at making sure every question gets asked once, completely, in the first reply.
+
+## Where the hours go on a spot request
+
+Take the process apart and the time isn't in the pricing.
+
+1. **Reading.** The details sit in the email body, a PDF packing list, an Excel sheet, sometimes a forwarded thread from the customer's supplier.
+2. **Spotting what's missing.** An experienced dispatcher knows to ask about stackability. A new colleague asks for the weight and nothing else.
+3. **Writing back.** Two or three questions at a time, because nobody wants to send a wall of text to a customer who wrote one line.
+4. **Waiting.** The slowest step, and the one nobody controls.
+5. **Re-keying.** Someone types the answers into the transport management system (TMS) or a rate sheet.
+6. **Pricing and sending.** The part that takes judgment.
+
+Steps 1, 2, 3 and 5 are reading, checking, writing and typing. That's the work AI does well, and it comes before anything that needs an experienced person.
+
+Does speed really matter? Vendors of quoting software publish tidy tables of win rate by response time. [GoFreight](https://gofreight.com/blog/education/quote-faster-win-more-speed-to-lead), which sells forwarding software, is one of them, and it says shippers typically ask several forwarders at once. I couldn't find a method behind those tables, so I won't repeat the numbers. The independent evidence is older and general: a [study of 2,241 companies in Harvard Business Review](https://www.researchgate.net/publication/298137032_The_short_life_of_online_sales_leads) found that firms contacting a web enquiry within an hour were nearly seven times as likely to qualify the lead as those who waited one hour longer. It wasn't about freight, but anyone who has lost a spot quote at noon will recognise the direction.
+
+I also couldn't find a trustworthy public figure for how many freight requests arrive incomplete. So count your own, as the checklist below suggests.
+
+## What a quote needs, and what usually arrives
+
+Every forwarder has this list in their head. Writing it down is the first useful step, with or without AI.
+
+| Field | What often arrives | Why it changes the quote |
+| --- | --- | --- |
+| Pickup and delivery | A city or country: "Hamburg to Lyon" | The postcode sets the tariff zone and the route. A private address, a remote site or a port terminal changes the vehicle and the time |
+| Goods and packing | "8 pallets", or just a carton count | Pallet type (Euro 120 x 80 cm or industrial), height, loose pieces, and whether the pallets get exchanged |
+| Weight | Net weight, or an estimate | Gross weight including packaging is what goes on the transport document |
+| Stackability | Nothing | Decides how much floor space the load takes, see the chart below |
+| Incoterm | Nothing, or the wrong one | Defines who books the pickup, who pays which leg, and who clears export |
+| Dangerous goods | Silence, or "just chemicals" | UN number, class, packing group and quantity change the vehicle, the driver and the price, or make the job impossible |
+| Time windows and access | "ASAP" | Appointment slots, tail lift, ramp or forklift at either end, waiting time |
+| Value | Nothing | Carrier liability is tied to weight, not value, so goods value matters if the customer wants cargo insurance |
+
+The [Incoterms 2020 rules from the ICC](https://www.iccwbo.nl/incoterms) are eleven three-letter terms, such as EXW, FCA and DAP, that split costs, risk and tasks between seller and buyer. They were still the current edition when I checked in September 2026. A customer who writes "ex works" may not mean it, and a forwarder who prices the pickup without asking finds out at the loading dock.
+
+### Same 8 pallets, double the space
+
+Stackability deserves its own picture, because it's the field customers least expect to matter.
+
+<Bars title="Floor space taken by 8 identical Euro pallets" unit=" ldm" caption="Illustrative arithmetic, not a tariff. It uses the common convention of 0.4 loading metres (ldm) per Euro pallet, length times width divided by 2.4 m, and counts a stacked pair as one floor position. Carriers apply their own rules and minimum weights." source="Loading metre convention, Wikipedia (German)" href="https://de.wikipedia.org/wiki/Lademeter" data={[
+  { label: "All stackable 2 high", value: 1.6, display: "1.6 ldm" },
+  { label: "4 stackable, 4 not", value: 2.4, display: "2.4 ldm" },
+  { label: "None stackable", value: 3.2, display: "3.2 ldm", highlight: true }
+]} />
+
+A full 13.6 m trailer offers about 33 Euro pallet places, so 3.2 loading metres is a real slice of a truck. If nobody asks, the quote either guesses low and loses money, or guesses high and loses the job.
+
+## Why completeness is more than politeness
+
+Missing data isn't only slow. The law mostly puts it on the sender. Under German commercial law, the [freight bill under section 408 of the HGB](https://www.gesetze-im-internet.de/hgb/__408.html) lists the number, marks and numbers of the packages and the gross weight. For dangerous goods, [section 410 HGB](https://dejure.org/gesetze/HGB/410.html) requires the sender to tell the carrier the exact nature of the danger in text form, in good time. For international road freight, the [CMR convention](https://unece.org/DAM/trans/conventn/cmr_e.pdf) asks for similar particulars in Article 6 and makes the sender responsible for inaccuracies in Article 7. The German forwarders' standard terms, [ADSp 2017](https://www.dslv.org/fileadmin/Redaktion/PDFs/07_Publikationen/ADSp/DSLV-ADSp-2017.pdf), also oblige the customer to supply the required information, including the dangerous goods classification. They only apply if agreed, so check your own contracts.
+
+On the road, the [ADR agreement](https://unece.org/sites/default/files/2025-01/2412006_E_ECE_TRANS_352_Vol.I_WEB_0.pdf) puts classification of dangerous goods with the consignor. Its 2025 edition has applied since 1 January 2025.
+
+The law tells you who to ask, and to ask in writing. It doesn't help once the truck is at the ramp and the load doesn't fit.
+
+## One email instead of three
+
+Here is the flow I'd build for incoming spot requests. It runs on the shared quotes mailbox.
+
+<Flow title="From a vague email to a priced quote" caption="The assistant reads, checks and drafts. The dispatcher decides what to send and what to charge.">
+<Step title="Request arrives" who="Quotes mailbox" time="08:52">Email body, attachments and forwarded threads are collected as one request.</Step>
+<Step title="Extract what is there" who="AI" tone="ai" time="seconds">Route, pieces, weights, dates and any dangerous goods hints go into a fixed list. Each value carries the sentence or cell it came from.</Step>
+<Step title="Check against your required list" who="AI" tone="ai" time="seconds">The list depends on the shipment type: full load, part load, cross-border, dangerous goods. Every missing field is marked, and values that look wrong are flagged, such as a net weight where gross is needed.</Step>
+<Step title="One clarifying email" who="Dispatcher" tone="human" time="2 min">The assistant drafts a single reply with every open question numbered. The dispatcher reads it, edits if needed and sends.</Step>
+<Step title="Answers merged" who="AI" tone="ai" time="when the customer replies">The reply updates the same record. If anything is still open, the follow-up asks only for that.</Step>
+<Step title="Price and quote" who="Dispatcher" tone="human" time="minutes">The record goes into the TMS or pricing sheet pre-filled. The dispatcher checks rates and capacity and sets the price. The assistant drafts the cover email.</Step>
+</Flow>
+
+What the dispatcher sees at step 3, in ten seconds, might look like this:
+
+```text
+REQUEST 0412, Tue 08:52, Hartmann Fittings GmbH
+Route: Hamburg 22525 to Lyon 69007, pickup Thursday
+Goods: 8 pallets, fittings in cartons
+Weight: 2,960 kg (packing list, net, gross not confirmed)
+MISSING: pallet size and height, stackable yes or no, Incoterm,
+         time windows at both ends, tail lift at delivery,
+         dangerous goods yes or no, goods value
+Draft reply: 7 questions in one email, waiting for your OK
+```
+
+And the draft itself is short, in the dispatcher's own tone:
+
+> Thanks for the request. To quote Thursday's pickup I need seven details, and I'd rather ask once than three times: (1) pallet type and height, (2) whether the pallets can be stacked, (3) the Incoterm, (4) time windows at both ends, (5) ramp or tail lift at delivery, (6) whether any goods count as dangerous goods under ADR, and (7) the goods value, if you want cargo insurance.
+
+Three choices do most of the work.
+
+**The assistant reports what's missing, not what it guesses.** A missing stackability field stays missing, never "probably yes". Anything inferred is labelled as inferred.
+
+**The quote states its assumptions.** If the customer can't say whether the pallets stack, the quote says "priced as non-stackable, 120 x 80 cm, 3,100 kg gross; recalculated if the goods differ". The assistant drafts that line. It protects you and shows the customer what to correct.
+
+**The dispatcher sends everything at first.** After a few hundred drafts with only small edits, you can let the simplest cases through. I'd start with review.
+
+## Where I'd keep AI out
+
+<Split title="The line" leftTitle="The assistant does" rightTitle="The assistant never does" left={[
+  "Reads emails and attachments and lists what is there",
+  "Marks missing and doubtful fields against your list",
+  "Drafts one clarifying email and the cover note for the quote",
+  "Pre-fills the quote record in your TMS or rate sheet",
+  "Shows the last similar quotes on the lane for reference"
+]} right={[
+  "Sets or negotiates the price",
+  "Classifies dangerous goods or decides an ADR exemption",
+  "Decides customs tariff codes",
+  "Promises pickup dates or capacity",
+  "Sends anything to a customer without review in the first months"
+]} />
+
+Pricing depends on lane, capacity, the customer's history and what the truck does on the way back. That belongs to a person. Dangerous goods are the sharpest line. The assistant can notice that the cartons contain paint, batteries or aerosols and ask the ADR question. It can read the transport section of a safety data sheet and copy the UN number into the draft. But the consignor classifies, and a person at the forwarder checks the result against the data sheet before anything is quoted.
+
+A simpler fix sometimes wins. If most requests come from ten regular customers, a quote form with required fields, a dropdown for Incoterms and a yes-or-no for dangerous goods beats any AI, and so does a standing sheet per customer with pallet sizes and addresses filled in. AI earns its place with the one-line requests from customers who will never use your form, and with attachments nobody wants to retype.
+
+## What it costs and what it saves
+
+Model fees are small: a request is a few hundred words, which costs cents. The real cost is the work around it: connecting the mailbox, writing your required-field list per shipment type, building a review screen, and writing the record into your TMS. For a first version that stops at "drafts the clarifying email and shows the record", I'd expect a few weeks of part-time work and a monthly bill in the tens of euros. Treat that as rough, and ask for a fixed quote before you commit.
+
+<Calc title="Napkin math: the cost of asking three times" caption="Assumptions, not measurements. Count your own requests and times for a week and replace every line." rows={[
+  ["Quote requests per week", "60"],
+  ["Share arriving with something missing", "× 50%"],
+  ["Extra handling per incomplete request", "× 25 min"],
+  ["Extra handling time per week", "≈ 12.5 h"],
+  ["Loaded cost per office hour", "× €45"],
+  ["Weeks per month", "× 4.3"]
+]} result={["Cost of the back-and-forth per month", "≈ €2,400"]} />
+
+If the assistant halves that handling time, it recovers around €1,200 a month. That's modest, and I'd keep it modest. The bigger effect, if there is one, is the quote that goes out at 10:00 instead of 15:30, and you'll only see that if you track time to quote and acceptance rate.
+
+## Data protection
+
+Quote emails contain personal data: names, phone numbers and email addresses of the people at pickup and delivery. In the EU, the GDPR applies as soon as such messages go to an AI service. You need a data processing agreement with the provider, a clear answer on where the data is stored, and a setting that stops it being used to train models. The German data protection authorities' [guidance on AI and data protection](https://www.datenschutzkonferenz-online.de/orientierungshilfen.html) from May 2024 covers choosing and using these tools.
+
+Commercial confidentiality is the second point. Packing lists and invoices carry prices and supplier names, and some shipper contracts restrict where that may be processed. Read the contracts of your biggest customers first.
+
+## Test it on last month's requests first
+
+<Checklist title="A one-week test before you build anything" items={[
+  "Pull the last 50 quote requests, from the mailbox, not from memory",
+  "Mark which required fields were missing in each and count the round trips",
+  "Measure the time from request to quote sent, and from first reply to quote",
+  "Write the required list per shipment type: full load, part load, cross-border, dangerous goods",
+  "Run the 50 requests through the extraction and compare every field with a person's reading",
+  "Decide who reviews and sends the clarifying emails, and who prices",
+  "Check your data processing agreement and the confidentiality terms of your largest customers"
+]} />
+
+The comparison step shows whether it works for your customers, who write in their own way. Look at the errors, not the average: a wrong weight stated confidently is worse than a field left blank.
+
+## Questions forwarders ask
+
+### Can AI read packing lists and PDFs, not just emails?
+
+Usually. Text-based PDFs and spreadsheets work well. Scans and photos are less reliable, handwriting even less. In every case the assistant should report what it couldn't read, not guess.
+
+### Can the assistant quote the price?
+
+I wouldn't let it. It can show the last quotes on the same lane, but the price depends on capacity, margin and the customer, and a wrong price costs more than a slow one.
+
+### What about customers who never answer the questions?
+
+Then the quote states its assumptions, and you decide whether to send it. The assistant can remind the customer once after a few hours, and you keep a clear record of what was asked and when.
+
+### Does it work with my TMS?
+
+If your TMS has an API or accepts an import file, yes. If not, the assistant can still produce a structured summary to paste, which already saves the reading and checking. Start there and add the connection later.
+
+## The rule for the quotes mailbox
+
+Ask once, ask completely, and price it yourself. Every question you can predict belongs in the first reply, and the price belongs to a person.
+
+If you want to try this on your own quotes mailbox, [tell me what your TMS is and what a typical request looks like](/contact?intent=improve), and I'll suggest the smallest version worth testing. The same pattern shows up elsewhere: [manufacturers turning an RFQ into a quote](/posts/ai-for-manufacturing-quotations) chase the same missing specifications, [translation agencies](/posts/ai-for-translation-agencies-project-intake) chase word counts and source files, and [couriers](/posts/ai-for-courier-services-failed-deliveries) pay for incomplete addresses with a second drive.

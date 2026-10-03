@@ -1,0 +1,151 @@
+---
+id: "ki-physiotherapie-terminausfaelle"
+translationOf: "ai-for-physiotherapy-no-shows"
+title: "Physiotherapie: Terminausfälle auffangen, bevor die Lücke entsteht"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Gesundheit", "Physiotherapie-Praxen", "Terminausfälle", "KI für kleine Unternehmen"]
+description: "Ein ausgefallener Termin kostet Umsatz und zerreißt die Behandlungsserie. Erinnerungen, Warteliste und Fristenkontrolle, mit einem Menschen, der entscheidet."
+excerpt: "Ein ausgefallener Termin kostet Umsatz und zerreißt die Behandlungsserie. Erinnerungen, Warteliste und Fristenkontrolle, mit einem Menschen, der entscheidet."
+---
+
+Nehmen wir eine Praxis mit drei Therapeutinnen und Therapeuten, die jeweils acht Patienten am Tag behandeln. Das sind 24 Termine am Tag und 120 in der Woche. Enden davon 10 % mit einem Nichterscheinen oder einer Absage in letzter Minute, stehen jede Woche zwölf Termine leer. Niemand bezahlt diese Stunden, aber Gehälter, Miete und Geräte laufen weiter.
+
+Gleichzeitig hört eine Patientin mit Kniebeschwerden, der nächste freie Termin sei in drei Wochen. Zwei Kilometer entfernt bleibt ein heute Morgen abgesagter Termin bis 17 Uhr leer, weil zwischen zwei Behandlungen niemand Zeit hat, eine Warteliste durchzutelefonieren.
+
+Das ist das Eigenartige an Terminausfällen in der Physiotherapie: Die Praxis verliert eine Stunde, und ein anderer Mensch, der genau diese Stunde braucht, geht leer aus. Ich würde KI hier für eine enge Aufgabe einsetzen: diese Lücke schnell zu schließen. Entscheiden, behandeln und berechnen bleibt bei Menschen.
+
+## Wie groß das Problem ist
+
+<Stats title="Terminausfälle in der Physiotherapie in Zahlen">
+  <Stat value="10,4 %" label="durchschnittliche Ausfallquote laut einer US-Umfrage unter 634 ambulanten Physiotherapeuten (7,8 % in Privatpraxen, 14,5 % in Kliniken)" source="Bokinskie et al., UNLV" href="https://oasis.library.unlv.edu/thesesdissertations/2323/" />
+  <Stat value="20,6 %" label="Quote aus Nichterscheinen und Absagen in den Daten einer kanadischen Praxis 2017, am höchsten bei 12- bis 30-Jährigen" source="International Journal of Physiotherapy" href="https://ijphy.com/index.php/journal/article/view/904" />
+  <Stat value="73 %" label="von 444.995 US-Patienten verpassten in einer Behandlungsepisode bei Muskel-Skelett-Beschwerden mindestens einen Termin" source="Bhavsar et al., PLOS ONE 2021" href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0251336" />
+  <Stat value="280 Tage" label="dauerte 2024 im Schnitt die Besetzung einer offenen Stelle für Physiotherapeuten in Deutschland, 2023 waren es 253 Tage" source="IFK, nach Daten der Bundesagentur für Arbeit" href="https://www.ifk.de/artikel/fachkraeftemangel-der-physiotherapie-spitzt-sich-weiter-zu-politik-muss-endlich-handeln" />
+</Stats>
+
+Die ersten drei Zahlen gehören zusammen gelesen. Die Spanne zwischen 10 % und 20 % ist groß, weil die Studien Verschiedenes zählen: nur Nichterscheinen oder auch kurzfristige Absagen, Privatpraxis oder Klinik, eine einzelne Praxis oder Hunderte per Umfrage. Die 73 % sind für Serienbehandlungen die wichtigste Zahl. Über eine Reihe von Terminen hinweg verpasst fast jeder irgendwann etwas.
+
+Deshalb würde ich mit der eigenen Zahl beginnen. Exportieren Sie ein Quartal Termine aus Ihrer Praxissoftware und zählen Sie drei Dinge: Nichterscheinen, Absagen unter 24 Stunden und Absagen, deren Termin neu besetzt wurde. Solange Sie diese drei Zahlen nicht haben, sind Versprechen wie „30 % weniger Ausfälle“ von Anbietern nur Rauschen.
+
+Die vierte Zahl erklärt, warum die Lücke in der Physiotherapie mehr wehtut als in den meisten Betrieben. Eine Therapeutin, die geht, ist fast ein Jahr lang nicht zu ersetzen, die Kapazität ist also die Kapazität, die Sie haben. Jeder leere Termin ist eine knappe Stunde, die verschenkt wird.
+
+## Warum aus einer Lücke eine Kette wird
+
+Ein Heilmittelrezept umfasst in der Physiotherapie oft eine Serie von sechs bis zehn Behandlungen, und die Regeln dazu machen aus einem Ausfall mehr als eine verlorene Stunde. Nach der [Heilmittel-Richtlinie des G-BA](https://www.g-ba.de/themen/veranlasste-leistungen/heilmittel/verordnung-heilmittel-vertragsaerzte/) muss die Behandlung innerhalb von 28 Kalendertagen nach der Verordnung beginnen, bei „dringlichem Behandlungsbedarf“ innerhalb von 14 Tagen. Sonst verliert die Verordnung ihre Gültigkeit, und die Patientin muss wieder zur Ärztin.
+
+Auch Lücken innerhalb der Serie zählen. Wird die Behandlung länger als 14 Kalendertage ohne angemessene Begründung unterbrochen, verliert die Verordnung ebenfalls ihre Gültigkeit. Zulässige Gründe sind Urlaub, Krankheit oder eine therapeutisch begründete Pause, die die Therapeutin auf der Verordnung vermerkt.
+
+Ein ausgefallener Termin kann damit den nächsten über die Grenze schieben. Wer den Donnerstagstermin absagt und erst zweieinhalb Wochen später wiederkommen kann, hat gerade die ganze Verordnung in Gefahr gebracht.
+
+Der Vollständigkeit halber: Seit November 2024 gibt es in der Physiotherapie auch die [Blankoverordnung](https://www.gkv-spitzenverband.de/gkv_spitzenverband/presse/pressemitteilungen_und_statements/pressemitteilung_1884544.jsp), zunächst für Schulterdiagnosen. Dabei legt die Praxis Frequenz und Dauer selbst fest. Das ist ein eigener Weg. Dieser Beitrag beschreibt die normale Verordnung, die weiterhin den Großteil der Arbeit ausmacht.
+
+## Der Überschlag
+
+<Calc title="Was 10 % Ausfälle eine Praxis mit drei Therapeuten kosten" caption="Annahmen, keine Messwerte: 10 % orientieren sich an der US-Umfrage oben, 35 € sind ein Platzhalter für Ihren durchschnittlichen Umsatz pro Behandlung. Ersetzen Sie beides durch Werte aus Ihrem Export." rows={[
+  ["Termine pro Woche (3 Therapeuten x 8 pro Tag x 5 Tage)", "120"],
+  ["Anteil Nichterscheinen und kurzfristige Absagen", "× 10 %"],
+  ["Leere Termine pro Woche", "= 12"],
+  ["Arbeitswochen pro Jahr", "× 46"],
+  ["Leere Termine pro Jahr", "= 552"],
+  ["Durchschnittlicher Umsatz pro Behandlung", "× 35 €"]
+]} result={["Entgangener Umsatz pro Jahr", "≈ 19.300 €"]} />
+
+Jetzt der Teil, der für KI zählt: Verhindern bessere Erinnerungen ein Fünftel der Ausfälle und besetzt eine Warteliste die Hälfte des Rests neu, holt die Praxis 60 % der Lücke zurück, in diesem Beispiel rund 11.600 € im Jahr. Das ist echtes Geld, aber kein Grund für hohe Ausgaben. Ein System, das ein paar hundert Euro im Monat an Werkzeugen plus Ihre Zeit kostet, muss diese Hürde mit Ihren eigenen Zahlen nehmen.
+
+## Erst das, was keine KI braucht
+
+Den größten Teil des Gewinns bringen einfache Werkzeuge, und die würde ich zuerst einführen.
+
+**Erinnerungen.** Der häufigste Grund für Ausfälle ist, dass Patienten den Termin vergessen, sowohl in der US-Umfrage als auch in der kanadischen Praxisstudie. Ein [Cochrane-Review](https://www.cochrane.org/evidence/CD007458_mobile-phone-messaging-reminders-attendance-healthcare-appointments) zu SMS-Erinnerungen fand Evidenz mittlerer Qualität, dass sie die Teilnahme gegenüber keiner Erinnerung verbessern (Risk Ratio 1,14) und ungefähr so gut wirken wie Anrufe. Die US-Umfrage zeigte zudem: Erinnerungen über mehrere Kanäle plus eine Absagefrist von 24 Stunden gingen mit weniger Ausfällen einher als Anrufe allein.
+
+**Die Serie gleich komplett buchen.** Bevor die Patientin die erste Behandlung verlässt, werden alle weiteren Termine gebucht, auch wenn einige sich verschieben. Wer einen vollen Kalender hat, fehlt seltener als jemand mit „wir schauen nächste Woche“.
+
+**Eine Absageregel, die schriftlich vereinbart ist.** Dazu unten mehr.
+
+**Eine Warteliste in der Praxissoftware.** Physiotherapie-Software wie THEORG und Tools wie likami oder cituro bieten Online-Terminbuchung und Wartelisten, und ein [Vergleich von Terminplanern für Physiotherapeuten](https://physiosoftware-vergleich.de/terminplan/) beschreibt den Terminplan von THEORG mit Fristen- und Frequenzprüfung. Wenn Ihre Software das kann, nutzen Sie es, bevor Sie etwas Neues dazukaufen.
+
+Die ehrliche Antwort lautet für viele kleine Praxen: Diese vier Schritte reichen. KI kommt dort ins Spiel, wo feste Regeln der Software aufhören.
+
+## Wo KI wirklich etwas beiträgt
+
+Drei Aufgaben sind für starre Regeln unbequem und für ein Sprachmodell einfach.
+
+**Unordentliche Antworten lesen.** Patienten antworten auf Erinnerungen in freiem Text: „Donnerstag klappt nicht, geht auch Freitagnachmittag oder nächste Woche?“ Ein Modell erkennt die Absicht, sucht eine passende Alternative, die die Regeln der Serie einhält, und schlägt sie vor. Ein festes „Antworten Sie mit 1 zum Bestätigen, mit 2 zum Absagen“ kann das nicht.
+
+**Einen freien Termin der richtigen Person zuordnen.** Ein abgesagter Termin um 10:30 Uhr bei Therapeutin Anna kann einem Patienten angeboten werden, der Manuelle Therapie braucht, ein gültiges Rezept hat, vormittags flexibel ist und am längsten wartet. Das sind fünf Bedingungen. Das Modell geht die Liste durch und schlägt die drei besten Kandidaten vor, statt dass jemand scrollt.
+
+**Die Nachrichten formulieren.** Kurze, freundliche Angebote und Bestätigungen im Ton der Praxis.
+
+<Flow title="Von der Absage zum besetzten Termin" caption="Die Software führt Kalender und Verordnungen. Die KI schlägt vor und formuliert. Ein Mensch legt die Regeln fest und entscheidet jeden Sonderfall.">
+<Step title="Patient sagt ab" who="Patient" time="Donnerstag 08:15">Per Nachricht, Telefon oder online. Der Termin wird im Kalender automatisch frei.</Step>
+<Step title="Serie prüfen" who="KI" tone="ai" time="Sekunden">Würde die Absage die Verordnung gefährden: Beginnfrist, 14-Tage-Lücke, verbleibende Behandlungen? Wenn ja, schlägt sie den nächsten sicheren Ersatztermin vor.</Step>
+<Step title="Kandidaten finden" who="KI" tone="ai" time="Sekunden">Aus der Warteliste: passende Therapeutin oder Qualifikation, gültiges Rezept, passende Zeiten, am längsten wartend. Die besten drei mit je einer Begründung.</Step>
+<Step title="Angebot freigeben" who="Empfang" tone="human" time="1 Minute">Ein Klick zur Freigabe oder ein Kandidat wird übersprungen. Wer klinisch dringlich ist, etwa nach einer Operation, kommt nach der Regel der Praxis zuerst.</Step>
+<Step title="Angebot geht raus" who="KI" tone="ai" time="Minuten">Eine kurze Nachricht an den ersten Kandidaten, 30 Minuten gültig, dann an den nächsten. Wer zuerst zusagt, bekommt den Termin.</Step>
+<Step title="Bestätigen und festhalten" who="System">Der Kalender wird aktualisiert, die anderen Kandidaten erhalten ein „Danke, diesmal nicht“, und der besetzte Termin landet in Ihrer Monatsauswertung.</Step>
+</Flow>
+
+Der menschliche Entscheidungspunkt ist die Freigabe. Ich würde sie in den ersten Monaten für jedes Angebot beibehalten und danach nur noch für Ausnahmen. Die Regeln, wer zuerst drankommt, sind fachliche und organisatorische Entscheidungen der Praxisinhaberin, nicht eines Modells.
+
+## Rezeptfristen: eine Uhr, die man leicht vergisst
+
+Jede Verordnung hat eine Beginnfrist und eine Lückengrenze, und die meisten Praxen behalten sie im Blick, indem sie aufs Papier oder in eine Spalte der Software schauen. Das klappt, bis eine stressige Woche kommt.
+
+Ein Modell kann die Verordnungsdaten lesen, sobald sie in Ihrem System stehen, und zwei Arten von Hinweisen geben: „Dieser Patient ist noch nicht eingeplant, und die Beginnfrist endet in fünf Tagen“ und „Der nächste Termin liegt 16 Tage nach dem letzten, dafür braucht es eine dokumentierte Begründung oder einen früheren Termin“. Es entscheidet nichts Medizinisches. Es sagt dem Empfang, wohin er schauen soll. Ob eine Pause therapeutisch begründet ist, entscheidet die Therapeutin.
+
+Eine harte Grenze: Das Modell liest die Verordnung als Daten. Es darf sie nie schreiben oder ändern, keine Behandlungsart wählen und keine Frequenz vorschlagen, die von der ärztlichen Verordnung abweicht.
+
+## Ausfallhonorar bei verpassten Terminen
+
+Viele Praxen wünschen sich ein Ausfallhonorar. Das geht, unter Bedingungen. In einem [Urteil vom 12. Mai 2022 (III ZR 78/21)](https://www.rws-verlag.de/news/wirtschaftsrecht-aktuell/bgh-urteil-vom-12-mai-2022-iii-zr-7821-71812/) zu einer Ergotherapiepraxis entschied der Bundesgerichtshof, dass ein Vergütungsanspruch nach § 615 BGB auch bei gesetzlich Versicherten bestehen kann, wenn die Praxis als Bestellpraxis arbeitet, also Termine exklusiv für einzelne Patienten vergibt, und der Patient nicht rechtzeitig abgesagt hat. Was die Praxis dadurch spart, etwa durch eine Neubesetzung des Termins, muss angerechnet werden.
+
+Praktisch heißt das: Vereinbaren Sie Absagefrist und Honorar beim ersten Termin schriftlich, formulieren Sie maßvoll (ein pauschales „100 Euro bei jedem Nichterscheinen“ lädt zu Streit ein) und betrachten Sie jeden Fall einzeln. Der letzte Punkt ist für die Automatisierung wichtig. Ein Modell kann markieren: „Patient ohne Absage nicht erschienen, zum zweiten Mal“, und eine höfliche Nachricht entwerfen. Eine Rechnung stellt es nie von selbst. Ein Mensch entscheidet, ob berechnet wird, und weiß dabei, dass der Patient einen Trauerfall hatte oder der Bus nicht fuhr.
+
+## Datenschutz ohne Drama
+
+Ein Termin in einer Physiotherapiepraxis verrät Gesundheitsinformationen. Ein paar Regeln halten das einfach:
+
+- Nachrichten nennen „Ihren Termin am Donnerstag um 10:30 Uhr“, nicht, wofür er ist.
+- Nutzen Sie nur Kanäle, denen die Patientin bei der Aufnahme zugestimmt hat, und halten Sie diese Zustimmung fest.
+- Verarbeitet ein KI-Anbieter Patientendaten, brauchen Sie einen Auftragsverarbeitungsvertrag (AVV), Hosting in der EU und einen Vertrag, der ausschließt, dass Ihre Daten zum Training der Modelle dienen. Gesundheitsdaten fallen unter Artikel 9 DSGVO.
+- Rezeptbilder und Diagnosen bleiben in Ihrer Praxissoftware. Der Assistent sieht nur, was er braucht: Name, Therapeutin, Termine, Verordnungsdaten und Zahl der Behandlungen.
+
+Ob Erinnerungen über einen Messenger für Privatnutzer zulässig sind, ist in Deutschland umstritten. Eine Praxis-App oder eine einfache SMS mit abgestimmtem Wortlaut ist die sicherere Wahl.
+
+## Eine kurze Checkliste vor dem Start
+
+<Checklist title="Bevor Sie etwas einschalten" items={[
+  "Ausfälle, kurzfristige Absagen und neu besetzte Termine für ein ganzes Quartal zählen",
+  "Erinnerungen und Warteliste in Ihrer bisherigen Software zuerst aktivieren",
+  "Die ganze Serie beim ersten Termin buchen, jedes Mal",
+  "Eine Absageregel formulieren und bei der Aufnahme unterschreiben lassen",
+  "Festlegen, wer bei einem freien Termin zuerst drankommt, und das aufschreiben",
+  "AVV mit jedem KI-Anbieter abschließen und prüfen, wo die Daten liegen",
+  "Wöchentliche Liste der Verordnungen kurz vor Beginn- oder Lückenfrist einrichten",
+  "Den ersten Monat der Angebote mit dem ganzen Team auswerten"
+]} />
+
+## Fragen, die Praxisinhaber stellen
+
+### Wie senke ich Terminausfälle in meiner Physiotherapiepraxis?
+
+Beginnen Sie mit den unspektakulären Schritten: Erinnerung per SMS oder E-Mail am Vortag, die ganze Serie auf einmal buchen und eine schriftliche Absageregel. Die Belege für Erinnerungen sind solide. KI hilft danach bei unordentlichen Antworten und dabei, frei gewordene Termine schnell neu zu besetzen.
+
+### Darf ich gesetzlich Versicherten ein Ausfallhonorar berechnen?
+
+In Deutschland ist das möglich, wenn Sie nach Terminvergabe arbeiten, Absagefrist und Honorar vorher vereinbart haben und der Patient zu spät abgesagt hat. Was Sie durch eine Neubesetzung sparen oder verdienen, müssen Sie abziehen. Lassen Sie Ihre Formulierung von einer Anwältin oder Ihrem Berufsverband prüfen. Ich bin kein Jurist, und Gerichte schauen auf die Details.
+
+### Lohnt sich eine KI-Warteliste für eine kleine Praxis?
+
+Nur, wenn Sie eine echte Warteliste haben und mehrere Absagen pro Woche. Bei zwei Therapeuten und fünf Ausfällen im Monat erledigt ein Anruf oder eine Nachricht vom Empfang die Aufgabe. Machen Sie zuerst den Überschlag oben mit Ihren eigenen Zahlen.
+
+### Was, wenn die KI den Termin dem falschen Patienten anbietet?
+
+Dafür gibt es die Freigabe. Das Modell schlägt Kandidaten mit Begründung vor, und der Empfang bestätigt. Mit der Zeit sehen Sie, welche Regeln es richtig anwendet, und können sammelweise freigeben.
+
+## Wo ich anfangen würde
+
+Zählen Sie Ihre Lücken, schalten Sie die Erinnerungen ein, die Sie schon besitzen, und schreiben Sie auf, wer den nächsten freien Termin bekommt. KI kommt danach dazu, als Werkzeug, das Antworten liest und Kandidaten vorschlägt, während ein Mensch das letzte Wort behält. Wenn Sie noch nicht wissen, wie Ihre Zahlen aussehen, ist das der erste Schritt, und er braucht keine KI.
+
+Wenn Sie Hilfe bei dieser Zählung oder bei einem kleinen Pilotprojekt möchten, [schreiben Sie mir, welche Praxissoftware Sie nutzen und wie viele Therapeuten Sie haben](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Test wert ist. Andere Betriebe kämpfen um ihren Kalender: [Zahnarztpraxen](/de/posts/ki-telefonassistent-zahnarztpraxis) verlieren Neupatienten an die Mailbox, [Friseursalons](/de/posts/ki-friseursalon-terminplanung) füllen kurzfristige Lücken, und [Fitnessstudios](/de/posts/ki-fitnessstudio-kuendigungen-vermeiden) erkennen Mitglieder, die nachlassen, bevor sie kündigen.

@@ -1,0 +1,171 @@
+---
+id: "ki-lohnbuero-monatliche-aenderungen"
+translationOf: "ai-for-payroll-bureaus-monthly-changes"
+title: "Lohnbüro: Aus wirren Änderungsmeldungen saubere Abrechnungsdaten"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Kanzleien & Dienstleister", "Lohnbüros", "Monatliche Änderungsmeldungen", "KI für kleine Unternehmen"]
+description: "Mandanten schicken Änderungen per Mail, WhatsApp und Foto. Wie KI daraus eine geprüfte Änderungsliste macht, während die Abrechnung im Lohnprogramm bleibt."
+excerpt: "Mandanten schicken Änderungen per Mail, WhatsApp und Foto. Wie KI daraus eine geprüfte Änderungsliste macht, während die Abrechnung im Lohnprogramm bleibt."
+---
+
+Stellen Sie sich den 26. eines Monats in einem Lohnbüro mit vierzig kleinen Mandanten vor. Um 6:40 Uhr schickt die Inhaberin eines Cafés per WhatsApp, zwischen dem Foto eines handgeschriebenen Dienstplans und einer Frage zur Frist am Freitag:
+
+> Hallo! Lena war Mo bis Mi krank. Sophie hat am 15. angefangen, 20 Std. Tom war am 12. zuletzt da. Ali kriegt 150 extra für den Wochenmarkt. Stunden im Foto, danke!!
+
+Das sind fünf Lohnereignisse in 31 Wörtern: eine Krankmeldung, ein Neueintritt, ein Austritt, eine Einmalzahlung und ein Monat Arbeitsstunden. Keines davon ist vollständig. Welcher Montag? Sophie hat keinen Nachnamen, kein Geburtsdatum, keine Steuer-ID, und sie hat vor elf Tagen angefangen, in einem Café. Ist Alis Zahlung brutto oder netto, einmalig oder dauerhaft? Und eine Zahl auf dem Stundenzettel kann eine 6 oder eine 0 sein.
+
+Mal vierzig Mandanten. Ihre Sachbearbeiter können Lohn abrechnen, das ist nicht das Problem. Das Problem sind die ersten Stunden jedes Monats, in denen aus solchen Nachrichten etwas wird, das ein Lohnprogramm annimmt, und dann das Warten auf die Antworten des Mandanten.
+
+Eine wirre Nachricht lesen und aufschreiben, was fehlt, können Sprachmodelle gut. Einen Lohn berechnen können sie nicht verlässlich, und das müssen sie auch nicht. In diesem Beitrag geht es darum, KI für die erste Aufgabe einzusetzen und von der zweiten fernzuhalten.
+
+## Die Regeln ändern sich, die Nachrichten nicht
+
+Lohnrecht bewegt sich jedes Jahr, und Mandanten erwähnen es nie. Drei Zahlen, an denen Ihre Prüfungen hängen:
+
+<Stats title="Zahlen, die jedes Jahr springen">
+  <Stat value="13,90 €" label="gesetzlicher Mindestlohn je Stunde seit 1. Januar 2026; ab 1. Januar 2027 sind es 14,60 €" source="Bundesregierung" href="https://www.bundesregierung.de/breg-de/aktuelles/mindestlohn-steigt-2391010" />
+  <Stat value="603 €" label="Verdienstgrenze im Minijob pro Monat seit 1. Januar 2026, gekoppelt an den Mindestlohn" source="Minijob-Zentrale" href="https://magazin.minijob-zentrale.de/minijob-verdienstgrenze/" />
+  <Stat value="1.206 €" label="Höchstverdienst in einem Monat, in dem die Grenze unvorhersehbar überschritten wird, in bis zu zwei Kalendermonaten innerhalb von zwölf Monaten" source="Minijob-Zentrale" href="https://magazin.minijob-zentrale.de/minijob-verdienstgrenze/" />
+</Stats>
+
+Die Grenze zieht automatisch mit: Sie ist der Mindestlohn mal 130, geteilt durch drei und auf volle Euro aufgerundet, so steht es in [§ 8 SGB IV](https://www.gesetze-im-internet.de/sgb_4/__8.html). Für 2027 ergibt das bei 14,60 € rechnerisch 633 €. Ein Minijobber zum Mindestlohn kann damit in beiden Jahren rund 43 Stunden im Monat arbeiten.
+
+Nehmen Sie Alis „150 extra“. Die Nachricht sieht 2027 genauso aus wie heute. Geändert hat sich die Prüfung dahinter. Ist Ali Minijobber, und liegt er mit den 150 € über der Grenze? Wenn ja, ist das ein unvorhersehbares Überschreiten, etwa eine Krankheitsvertretung, oder planbare Mehrarbeit? Laut Minijob-Zentrale ist eine Vertretung bei Krankheit unvorhersehbar, saisonale Mehrarbeit dagegen vorhersehbar. Diese Einordnung trifft eine Fachkraft, nicht die Wirtin und nicht das Modell.
+
+Der Mandant weiß das nicht und muss es auch nicht wissen. Das Lohnbüro weiß es, und deshalb muss aus „Lena war krank“ eine Abwesenheit mit Art und Tagen werden, auf die sich Regeln anwenden lassen.
+
+## Was heute mit der Nachricht passiert
+
+In den meisten Büros läuft es so: Eine Sachbearbeiterin liest die Nachricht, klärt, welche Mitarbeiter gemeint sind, öffnet das Lohnprogramm, erfasst, was klar ist, und fragt zum Rest nach. Die Antwort kommt ein, zwei Tage später, über einen anderen Kanal und oft nur zur Hälfte. Jede Runde beginnt mit erneutem Lesen.
+
+Die Fristen warten nicht auf diese Schleife:
+
+- **Lohnsteuer-Anmeldung:** spätestens am zehnten Tag nach Ablauf des Anmeldungszeitraums, grundsätzlich ist das der Kalendermonat ([§ 41a EStG](https://www.gesetze-im-internet.de/estg/__41a.html)).
+- **Sozialversicherungsbeiträge:** fällig am drittletzten Bankarbeitstag des Monats. Der Beitragsnachweis muss der Krankenkasse zwei Bankarbeitstage früher vorliegen ([Barmer](https://www.barmer.de/firmenkunden/sozialversicherung/beitraege/faelligkeit-der-beitraege-1003282)).
+- **Anmeldung neuer Beschäftigter:** mit der ersten folgenden Abrechnung, spätestens innerhalb von sechs Wochen nach Beginn ([§ 6 DEÜV](https://lxgesetze.de/de%C3%BCv/6)).
+- **Sofortmeldung:** in elf Branchen, darunter das Gaststättengewerbe, spätestens bei Beschäftigungsaufnahme ([§ 28a Abs. 4 SGB IV](https://www.gesetze-im-internet.de/sgb_4/__28a.html)). Vorsätzliche oder leichtfertige Verstöße gegen Meldepflichten können nach [§ 111 SGB IV](https://www.gesetze-im-internet.de/sgb_4/__111.html) mit einem Bußgeld von bis zu 25.000 € geahndet werden.
+
+Sophie hat in einem Café vor elf Tagen angefangen. Wenn sie neu eingestellt wurde, ist die Frage nach der Sofortmeldung keine Formalie mehr. Genau so etwas muss am 26. um 6:41 Uhr auffallen und nicht zwei Tage später.
+
+Der größte Zeitfresser ist nicht das Tippen, sondern die Schleife aus Lesen, Deuten, Nachfragen, Warten und erneutem Lesen. Sie ist das Muster, das auch beim [Belegeanfordern in der Steuerkanzlei](/de/posts/ki-steuerkanzlei-belege-anfordern) so viel Zeit kostet, und dasselbe Prinzip hilft: vorher wissen, was Sie erwarten, und einmal nach allem Fehlenden fragen.
+
+## Eine Änderungsliste pro Mandant
+
+Das Ziel ist eine Änderungsliste: pro Mandant und Monat eine strukturierte Liste mit einer Zeile je Ereignis. Keine Zusammenfassung, sondern etwas, womit sich das Lohnprogramm füttern lässt. So sieht die Café-Nachricht als Liste aus.
+
+| Was der Mandant schrieb | Was in die Liste kommt | Was markiert wird |
+| --- | --- | --- |
+| „Lena war Mo bis Mi krank“ | Abwesenheit: Lena, Krankheit, drei Arbeitstage, Tage aus dem Nachrichtendatum abgeleitet | Genaue Tage, ob sie an allen drei Tagen eingeplant war, Krankheit oder Urlaub |
+| „Sophie hat am 15. angefangen, 20 Std.“ | Neueintritt: Sophie, Beginn am 15., 20 Wochenstunden | Nachname, Geburtsdatum, Anschrift, Steuer-ID, Versicherungsnummer, Krankenkasse, Haupt- oder Nebenjob, Stundenlohn. Sofortmeldung fällig? Der Beginn liegt schon zurück |
+| „Tom war am 12. zuletzt da“ | Austritt: Tom, letzter Tag am 12. | Resturlaub, Stunden bis zum Austritt, Abmeldung |
+| „Ali kriegt 150 extra“ | Einmalzahlung: Ali, 150 €, Art unklar | Brutto oder netto, einmalig oder dauerhaft, Anlass. Ist Ali Minijobber: Verdienstgrenze von 603 € prüfen |
+| Foto vom Stundenzettel | Stunden je Mitarbeiter und Tag, aus dem Bild gelesen, mit Link aufs Original | Unleserliche Einträge, Summen, die nicht zum Vertrag passen, Stundenlohn unter dem Mindestlohn |
+
+Zur Krankmeldung: Die Arbeitnehmerin muss ihre Arbeitsunfähigkeit dem Arbeitgeber [unverzüglich mitteilen](https://www.gesetze-im-internet.de/entgfg/__5.html), und die Arbeitsunfähigkeitsdaten ruft der Arbeitgeber seit 2023 [elektronisch bei der Krankenkasse ab](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/arbeitsrecht/elektronische-arbeitsunfaehigkeitsbescheinigung-5653598). Dem Lohnbüro reicht der Satz „war krank“ trotzdem nicht: Es braucht die Tage.
+
+Zwei Regeln für die Liste. Jede Zeile verweist auf die Originalnachricht oder das Bild, damit die Sachbearbeiterin die Quelle mit einem Klick prüfen kann. Und „unbekannt“ ist ein zulässiger Wert. Wenn die Nachricht nicht sagt, ob die 150 brutto oder netto sind, steht das so in der Liste. „Wahrscheinlich brutto“ gibt es nicht.
+
+## Von der Nachricht zur Abrechnungseingabe
+
+So würde ich den monatlichen Ablauf bauen.
+
+<Flow title="Eine Änderungsmeldung vom Eingang bis ins Lohnprogramm" caption="Die KI liest und fragt nach. Die Fachkraft entscheidet. Das Lohnprogramm rechnet.">
+<Step title="Nachricht kommt an" who="Mandant" time="jederzeit">Eine Mail, eine WhatsApp, ein Foto oder ein Formular landet im Änderungsposteingang des Mandanten. Das Original wird unverändert gespeichert.</Step>
+<Step title="Auslesen" who="KI" tone="ai" time="Sekunden">Macht aus der Nachricht Listenzeilen: Mitarbeiter, Ereignis, Daten, Beträge, jeweils mit Link zur Quelle.</Step>
+<Step title="Prüfen und markieren" who="KI" tone="ai" time="Sekunden">Gleicht jede Zeile mit den Stammdaten des Mandanten und einfachen Regeln ab: unbekannter Name, fehlende Angaben, Stunden, die nicht zum Vertrag passen, ein Neueintritt mit zurückliegendem Beginn.</Step>
+<Step title="Einmal nachfragen" who="Fachkraft" tone="human" time="am selben Tag">Die KI entwirft eine Nachricht mit allen offenen Punkten, etwa Sophies Nachname und Personalangaben oder ob Alis 150 brutto sind. Die Fachkraft ändert sie ab und schickt sie.</Step>
+<Step title="Freigeben und erfassen" who="Fachkraft" tone="human">Prüft die Liste, markierte Zeilen zuerst, und erfasst die Änderungen im Lohnprogramm oder importiert sie.</Step>
+<Step title="Abrechnen" who="Lohnprogramm">Lohnsteuer, Sozialversicherung, Entgeltfortzahlung und Meldungen rechnet und erzeugt das Lohnprogramm, nicht das Modell.</Step>
+<Step title="Plausibilität prüfen und freigeben" who="Fachkraft" tone="human" time="vor Fristende">Vergleicht die Abrechnung mit dem Vormonat: neue Namen, Nullbeträge, große Sprünge. Gibt frei, danach gehen Lohnsteuer-Anmeldung und Beitragsnachweis raus.</Step>
+</Flow>
+
+Die Schritte 2 und 3 sind der Platz, an dem KI sich lohnt. Handschrift lesen, „Mo bis Mi“ auflösen, „Sophie“ einem neuen statt einem bestehenden Mitarbeiter zuordnen und merken, dass ein Feld leer ist: Das sind Sprachaufgaben.
+
+Die menschliche Entscheidung fällt in Schritt 5. Nichts erreicht das Lohnprogramm, bevor eine Fachkraft die Zeile gesehen hat. Ich würde noch weitergehen: markierte Zeilen zuerst anzeigen, mit Begründung, und saubere Zeilen danach. Der Prüfaufwand gehört dorthin, wo das Risiko liegt.
+
+## Wo KI das falsche Werkzeug ist
+
+Drei Dinge würde ich dem Modell nicht in die Hand geben.
+
+**Die Berechnung.** Lohnsteuer, Beitragsgruppen, Sozialversicherung, Entgeltfortzahlung und die Meldungen gehören ins Lohnprogramm, das der Hersteller für jede Rechtsänderung aktualisiert. Lassen Sie kein Modell einen Nettobetrag erzeugen, auch nicht als Plausibilitätsprüfung. Dafür reicht eine Regel: Weicht der Auszahlungsbetrag ohne markierten Grund um mehr als, sagen wir, 20 % vom Vormonat ab, schaut jemand hin. Das ist Code, keine KI.
+
+**Regeln, die sich aufschreiben lassen.** Mindestlohnprüfung, Minijob-Grenze, Stunden über Vertrag, Neueintritt mit zurückliegendem Beginn: Das sind einfache Vergleiche. Schreiben Sie sie als Code. Sie sind exakt, sie driften nicht, und sie kosten nichts. Das Modell liest die Nachricht, Code prüft die Zahlen. Wenn 2027 der Mindestlohn auf 14,60 € steigt, ändern Sie eine Zahl in einer Tabelle, nicht einen Prompt.
+
+**Mandanten, die ein Formular nutzen.** Die billigste Lösung ist ein monatliches Änderungsformular mit Pflichtfeldern (Mitarbeiter, Ereignis, Datum, brutto oder netto), einem Meldeschluss und einer Erinnerung. Kommen die Stunden aus einem Dienstplanprogramm, bitten Sie um den Export statt um ein Foto; wie [Dienstpläne im Café](/de/posts/ki-cafe-dienstplan) entstehen, ist die andere Seite dieser Daten. Bieten Sie zuerst das Formular an. KI fängt die Mandanten auf, die es nicht nutzen, und die wird es immer geben. Bei einem Dutzend Mandanten reichen Formular und eine gute Vorlage vielleicht schon.
+
+## Wann ein Neueintritt vollständig ist
+
+Für die Lohnsteuer braucht der Arbeitgeber von neuen Beschäftigten laut [Steuerverwaltung](https://www.steuern.sachsen.de/elstam-fur-arbeitnehmer-3992.html) nur noch Geburtsdatum und Steuer-Identifikationsnummer und die Auskunft, ob es das Haupt- oder ein Nebenarbeitsverhältnis ist. Damit ruft er die Lohnsteuerabzugsmerkmale ab. Für die Sozialversicherungsmeldung kommt die Versicherungsnummer dazu, und wenn sie nicht bekannt ist, die Angaben zu Geburtsort, Geburtsdatum und Anschrift, aus denen eine vergeben wird ([§ 28a SGB IV](https://www.gesetze-im-internet.de/sgb_4/__28a.html)).
+
+<Checklist title="Ein Neueintritt ist vollständig, wenn die Liste enthält" items={[
+  "Vor- und Nachname",
+  "Geburtsdatum, Geburtsort und Anschrift",
+  "Steuerliche Identifikationsnummer",
+  "Versicherungsnummer, falls bekannt",
+  "Haupt- oder Nebenarbeitsverhältnis, Minijob oder nicht",
+  "Krankenkasse",
+  "Beschäftigungsbeginn, Wochenstunden und Entgelt",
+  "Bei Sofortmeldepflicht: Meldung vor Arbeitsbeginn raus",
+  "Bankverbindung, über einen sicheren Upload und nicht per WhatsApp"
+]} />
+
+Diese Liste ist zugleich das, wogegen das Modell jede Neueintritts-Nachricht prüft. Eine Lücke fällt auf, wenn die Nachricht ankommt, nicht am letzten Tag vor Fristende.
+
+## Was der Betrieb kostet
+
+Die Zahlen hängen ganz von Ihren Mandanten ab, deshalb hier die Rechnung mit Platzhaltern.
+
+<Calc title="Überschlag: ein Monat Änderungsmeldungen bei 40 Mandanten" caption="Annahmen, keine Messwerte. Zählen Sie einen echten Monat Nachrichten in Ihrem Büro und ersetzen Sie jede Zahl." rows={[
+  ["Mandanten", "40"],
+  ["Änderungsmitteilungen pro Mandant und Monat", "× 10"],
+  ["Mitteilungen pro Monat", "= 400"],
+  ["Minuten pro Mitteilung heute: lesen, deuten, erfassen, nachfragen", "× 8"],
+  ["Stunden pro Monat heute", "≈ 53"],
+  ["Minuten pro Mitteilung, um eine vorbereitete Liste zu prüfen", "× 3"],
+  ["Stunden pro Monat mit Änderungsliste", "≈ 20"]
+]} result={["Fachkraft-Stunden, die pro Monat frei werden", "≈ 33"]} />
+
+Bei angenommenen 45 € Vollkosten pro Stunde sind das gut 1.500 € im Monat. Ich würde es aber als Kapazität zählen, nicht als Geld. Damit nimmt ein Büro die nächsten zehn Mandanten an, ohne einzustellen.
+
+Der Aufbau, als grobe Schätzung und nicht als Angebot: ein paar Tage für Posteingang und Änderungsliste, dazu einige Wochen Test mit echten alten Nachrichten, in denen eine Fachkraft die ersten Listen korrigiert. Die laufenden Kosten sind überschaubar. Die Modellnutzung für 400 Nachrichten fällt neben der Arbeitszeit kaum ins Gewicht. Zu Buche schlagen der sichere Posteingang, die Protokollierung und jemand, der sich kümmert, wenn ein Mandant anders schreibt als bisher.
+
+## Lohndaten brauchen einen strengeren Posteingang
+
+Gehalt, Bankverbindung, Steuer-ID, Versicherungsnummer, Krankheit: Das sind mit die sensibelsten Daten, die ein kleiner Mandant hat. Krankheitstage sind Gesundheitsdaten, und die gehören nach [Art. 9 DSGVO](https://dsgvo-gesetz.de/art-9-dsgvo/) zu den besonders geschützten Kategorien. Auch religiöse Überzeugungen stehen dort, und das Kirchensteuermerkmal, das zu den Lohnsteuerabzugsmerkmalen gehört, verrät etwas über die Religionszugehörigkeit. Drei praktische Regeln.
+
+**Vertrag zuerst.** Ein KI-Anbieter, der diese Daten für Sie verarbeitet, ist Auftragsverarbeiter. [Art. 28 DSGVO](https://dsgvo-gesetz.de/art-28-dsgvo/) verlangt dafür einen Vertrag, der unter anderem Gegenstand, Dauer, Art und Zweck der Verarbeitung festlegt. Schließen Sie den Auftragsverarbeitungsvertrag, bevor die erste echte Nachricht durchläuft. Klären Sie, wo die Daten verarbeitet werden, ob Eingaben gespeichert oder zum Training genutzt werden und wie gelöscht wird.
+
+**Berufsgeheimnis beachten.** Arbeitet Ihr Lohnbüro als Steuerberatungskanzlei, fallen Sie unter [§ 203 StGB](https://www.gesetze-im-internet.de/stgb/__203.html). Fremde Geheimnisse dürfen Sie Dienstleistern, die an Ihrer Tätigkeit mitwirken, nur offenbaren, soweit das für deren Tätigkeit erforderlich ist. Und Sie müssen dafür sorgen, dass diese zur Geheimhaltung verpflichtet sind. Versäumen Sie das und die mitwirkende Person offenbart ein Geheimnis unbefugt, kann das für Sie selbst strafbar sein. Ohne diese Verpflichtung geht ein KI-Dienstleister nicht in den Ablauf.
+
+**Maskieren, bevor Sie senden.** Das Modell braucht keine Steuer-ID, um zu merken, dass eine fehlt. Maskieren Sie Steuer-IDs, Versicherungsnummern und IBAN mit einem einfachen Mustervergleich, bevor der Text das Modell erreicht. Die Liste verweist auf das unmaskierte Original in Ihrem eigenen System. Und nehmen Sie Ausweisfotos und Bankdaten aus WhatsApp heraus: Dort ist „Lena war Montag krank“ in Ordnung, alles andere gehört in einen sicheren Upload, den Sie kontrollieren und aus dem Sie löschen können.
+
+## Werkzeuge, die passen
+
+Lohnprogramme wie DATEV, Lexware oder Agenda halten die Mitarbeiter, rechnen ab und erzeugen die Meldungen. Allein die beiden DATEV-Programme LODAS und Lohn und Gehalt rechnen nach [Angaben von DATEV](https://www.datev.de/web/de/steuerberatung/loesungen/komplett-digital-im-lohn/loehne-und-gehaelter-komfortabel-abrechnen), die die Programme verkauft, jeden Monat rund 14,5 Millionen Arbeitnehmer in Deutschland ab. Das Lohnprogramm bleibt das führende System. Die KI-Schicht sitzt davor: Sie liest Nachrichten, bereitet die Liste vor und entwirft die Rückfragen, danach erfasst oder importiert ein Mensch die Änderungen. Ob Ihr Programm eine Importdatei oder Schnittstelle für Bewegungsdaten bietet, entscheidet, wie viel Tipparbeit bleibt. Prüfen Sie das zuerst.
+
+## Fragen, die Lohnbüros mir stellen
+
+### Kann KI die Lohnabrechnung machen?
+
+Nein, und ich würde es auch nicht wollen. Die Berechnung folgt Regeln und Arithmetik, und Ihr Lohnprogramm erledigt sie zuverlässig. KI hilft davor, wenn aus chaotischen Mandantennachrichten saubere Eingaben werden, und danach, wenn sie Auffälligkeiten in der fertigen Abrechnung zeigt.
+
+### Wie erkenne ich, ob die Auswertung zuverlässig genug ist?
+
+Testen Sie an Ihren eigenen Daten. Nehmen Sie drei Monate alter Nachrichten von ein paar Mandanten, lassen Sie sie durchlaufen und vergleichen Sie die Listen mit dem, was Ihre Fachkräfte tatsächlich erfasst haben. Zählen Sie zweierlei: Angaben, die das Modell übersehen hat, und Angaben, die es erfunden hat. Erfundene Werte sind die gefährlichen, deshalb ist ein Modell, das Lücken lässt und markiert, besser als eines, das sie füllt. Nach dem Start prüfen Sie jeden Monat Stichproben.
+
+### Was, wenn die Nachricht den Stammdaten widerspricht?
+
+Das ist ein Hinweis, keine Entscheidung. Kommt „Tom, 30 Stunden“ und in den Stammdaten stehen 20, zeigt die Liste beides, und die Fachkraft fragt beim Mandanten nach. Das Modell überschreibt nie Stammdaten, nur weil eine Nachricht es sagt.
+
+### Müssen meine Mandanten anders melden?
+
+Zum Start nicht. Genau dafür liest die KI Mails und Fotos. Ein Formular mit Pflichtfeldern schlägt aber jede Auslesung, bieten Sie es also an, setzen Sie einen Meldeschluss und lassen Sie die KI die Nachrichten auffangen, die trotzdem kommen.
+
+## Mein Einstieg
+
+Nehmen Sie die Nachrichten des letzten Monats von fünf Mandanten und bauen Sie die Änderungslisten einmal von Hand. Sie sehen, welche Angaben immer fehlen und welche Rückfragen Ihre Fachkräfte ständig stellen. Dann lassen Sie dieselben Nachrichten von einer KI auslesen und vergleichen. Markiert sie, was Ihre Fachkraft ohnehin gefragt hätte, und erfindet sie nichts, sind Sie bereit für einen Piloten, in dem die Fachkraft jede Liste weiter freigibt.
+
+Die Faustregel: Das Modell liest und fragt nach, die Fachkraft entscheidet, das Lohnprogramm rechnet. Halten Sie diese drei Aufgaben getrennt, dann werden die ersten Stunden des Monats kürzer, und keine Abrechnung hängt an einer Vermutung.
+
+Wenn der Monatsanfang bei Ihnen im Entziffern von Nachrichten verschwindet, [schreiben Sie mir, welches Lohnprogramm Sie nutzen und wie Ihre Mandanten Änderungen schicken](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Test wert ist. Dasselbe Prinzip, erst lesen und dann einmal nachfragen, hilft auch, wenn Mandanten Monat für Monat [dieselben zehn Fragen](/de/posts/ki-buchhaltungsbuero-mandantenfragen) stellen.

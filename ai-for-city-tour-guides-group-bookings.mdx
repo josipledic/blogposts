@@ -1,0 +1,170 @@
+---
+id: "ai-for-city-tour-guides-group-bookings"
+title: "Group Tour Bookings: From Vague Request to Confirmed Guide"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Hospitality & events", "Tour guides", "Group bookings", "AI for small business"]
+description: "‘23 people, sometime in May, something about the old town’ is not a booking yet. How guides and small tour operators get from that email to a confirmed tour."
+excerpt: "‘23 people, sometime in May, something about the old town’ is not a booking yet. How guides and small tour operators get from that email to a confirmed tour."
+---
+
+Picture an email that arrives at 21:40 on a Tuesday:
+
+> Hello, we're 23 people from the company and want to do an outing sometime in May. English or German, we're a mixed group. Something about the old town, maybe? A few of us don't walk so well. What would it cost?
+
+It's a good request: a real group, a budget, a company that pays by invoice. It also contains almost nothing a guide can act on. No date, no language, no theme, and no idea what "don't walk so well" means for a route with cobbled steps in the middle.
+
+The organiser has probably sent the same email to two or three other guides. The guide who replies first with something concrete, rather than a list of questions, is in a much better position. This post is about how a freelance guide or a small operator can send that reply.
+
+## Plenty of guides, so the first reply counts
+
+Germany's accommodation businesses counted a record [497.5 million overnight stays in 2025](https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/02/PD26_046_45412.html), according to preliminary Destatis figures. That covers all establishments with ten or more beds, not only cities, so read it as a sign of overall demand. The guides' association BVGD says it [represents about 8,000 guides in more than 270 towns and regions](https://www.bvgd.org/ueber-uns/verband). My example is a German city, but the mechanics are the same anywhere. With that much choice, the first useful reply matters more than the website.
+
+## Teardown: one email, six replies, six days
+
+Here is how a request like this typically unfolds today. It's an illustrative thread, not a measurement.
+
+- **Day 1.** Reply 1: four questions on dates, language, theme and special needs.
+- **Day 2.** The organiser answers two: "any weekday in the second half of May, English". The guide checks the calendar and who guides in English.
+- **Day 3.** Reply 2: a proposal with three dates, and the accessibility question asked again.
+- **Day 4.** The organiser needs a later start because of a dinner reservation. Reply 3: revised times.
+- **Day 5.** A date is agreed. Reply 4: confirmation, plus a request for invoice details.
+- **Day 6.** Reply 5 chases the invoice details. Reply 6 describes the meeting point in a paragraph. Nothing goes out the day before unless the guide remembers.
+
+Six days and six emails, and none of it needed skill. It's retrieval, calendar arithmetic and politeness, which is where AI is useful. The skilled parts stay with the guide: knowing the old town, choosing the route, reading a group on the day.
+
+## What the request leaves out
+
+Almost every group request has the same gaps. Write them down once and you have the specification for the whole workflow, with or without AI.
+
+| The request says | What the guide needs | The question that settles it |
+| --- | --- | --- |
+| "23 people" | A number the price and your voice can work with, plus ages | "Is 23 final? Any children or seniors?" |
+| "Sometime in May" | A shortlist of dates and a start window | "Please give me three possible dates and your earliest and latest start." |
+| "English or German" | One tour language, or an agreed split | "Which language should lead? A bilingual tour is possible but takes longer." |
+| "Something about the old town" | Theme, length, walking distance | "History, architecture, food or courtyards? 90 minutes or two hours?" |
+| "A few don't walk so well" | Steps, surface, slope, seating, pace | "How many people need step-free access or seating breaks?" |
+| "What would it cost?" | Group price, invoice details, deposit | "Who is invoiced? Company name, address, VAT ID, order number." |
+| Not mentioned | Meeting point, a phone number for the day, the weather rule | You supply these in the confirmation. |
+
+The last row matters more than it looks. A meeting point described as "in front of the cathedral" is a good way to end up with half the group waiting at a different door.
+
+## The same request, with an assistant in the middle
+
+<Flow title="From a vague email to a confirmed tour" caption="The assistant extracts, asks, checks and drafts. The guide approves every proposal and makes the weather call.">
+<Step title="Request arrives" who="Email or web form" time="Day 0">Whatever the channel, it lands in one place.</Step>
+<Step title="Extract and find the gaps" who="AI" tone="ai" time="1 minute">Pulls out group size, date window, language, theme, access needs and contact, and lists exactly what is missing.</Step>
+<Step title="One reply with all open questions" who="AI drafts, guide sends" tone="human" time="same evening">One short message instead of a drip of single questions.</Step>
+<Step title="Check availability" who="System">A script reads free/busy times for the guides who speak the language and offer the theme.</Step>
+<Step title="Propose three options" who="AI drafts, guide approves" tone="human" time="within hours">Three concrete slots with price and meeting point, each held softly for 48 hours.</Step>
+<Step title="Confirmation pack" who="AI" tone="ai">Date and time, meeting and end point with map pin and photo, access notes, phone number, weather rule.</Step>
+<Step title="Reminder and weather call" who="Guide decides" tone="human" time="day before">The assistant sends the reminder and shows the forecast. The guide makes the go or no-go call.</Step>
+</Flow>
+
+Two decision points are deliberately human. The guide approves every proposal, because a wrong price or a double-booked Thursday costs a customer. And the guide decides on weather, because a model can read a forecast but can't judge a walk for 23 seniors on wet cobblestones.
+
+One technical choice does most of the work: **let code do the calendar, let the model do the words.** The model turns "second half of May, weekdays" into a start date, an end date and a set of weekdays. A short script checks free/busy times and public holidays and returns candidates. The model writes the message around them. Language models are unreliable at calendar arithmetic, and a double booking is the one error that really loses you the customer.
+
+## Three options, not a question
+
+"Which date suits you?" hands the work back to the organiser. Three concrete options let them answer in one line. A drafted proposal might read:
+
+> Hello Ms Keller, thank you for your request. For 23 people, in English with some German explanations and a relaxed pace, here are three options for a 90-minute old town walk: **Tue 12 May, 16:00** with Anna; **Thu 14 May, 17:00** with Anna; **Tue 19 May, 15:30** with Tom. Group price: €X. We hold all three until Thursday 18:00. Could you confirm the invoice details, and how many people need step-free access or seating breaks?
+
+The guide reads it, changes what needs changing and sends it. One message holds the options, the price and the open questions, which can take the thread from six emails to about three.
+
+If the group also needs a coach, the quote has its own rules, covered in [group quotes for coach operators](/posts/ai-for-coach-operators-group-quotes). If dinner is part of the plan, [venue inquiries](/posts/ai-for-event-venues-inquiries) work much the same way.
+
+## Accessibility is the question people skip
+
+Organisers rarely volunteer it. In Germany, [7.8 million people had a severe disability at the end of 2025](https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/07/PD26_246_227.html), 9.4% of the population, according to Destatis. About a third are 75 or older, over 90% of severe disabilities are caused by illness, 27% affect internal organs and 10% limit the use of arms or legs. Many limitations can't be seen at the meeting point, and a group of 23 colleagues or a seniors' club may well include someone who needs seating breaks or avoids stairs.
+
+So the intake asks every time, with a number rather than names: "How many people need step-free access, seating breaks or a shorter route?" A note that names a person and their condition is health data. A count isn't, and you get what you need to choose the route.
+
+Behind the question you need your own facts, once per route: where the steps are, what the surface is like, where the benches and the nearest accessible toilet are. The assistant can then match the answer to a route.
+
+## Rain, wind and the reminder
+
+Weather is where group tours go wrong after booking. Decide the rules once, in writing, before the season.
+
+<Checklist title="A bad-weather policy to write down once" items={[
+  "What cancels a tour: an official severe-weather warning, lightning, storm gusts, ice on cobblestones. Your list, not the model's.",
+  "What does not: rain, cold, heat. Say plainly that the tour runs in rain.",
+  "Who decides and when: the guide, at a fixed time such as two hours before the start.",
+  "What the group gets if you cancel: a new date within a stated period, or a full refund.",
+  "What happens if the group cancels because of rain: your terms, written into the confirmation.",
+  "A wet-weather alternative: an indoor stop with checked opening hours and room for the group.",
+  "Two message templates, go and cancelled, each with meeting point and phone number."
+]} />
+
+The assistant sends the confirmation details three days ahead and a short note the day before. Forecasts are easy to get: the German weather service DWD has provided its data [largely free of charge through an open data server](https://www.dwd.de/DE/leistungen/opendata/opendata.html) since 2017. The assistant only shows the forecast. The go or no-go call comes from the guide, following the written policy.
+
+## What the assistant must not do
+
+<Split title="The line" leftTitle="The assistant does" rightTitle="The assistant never does" left={[
+  "Extracts group size, dates, language, theme and access needs from a free-form message",
+  "Drafts one reply asking for what is still missing",
+  "Reads free/busy times and proposes up to three slots",
+  "Drafts the confirmation and sends reminders",
+  "Shows the forecast to the guide"
+]} right={[
+  "Confirms a date or price that no guide has approved",
+  "Promises a route is step-free unless you recorded it as checked",
+  "Cancels a tour for weather on its own",
+  "Invents a theme or route you don't offer",
+  "Passes a guest's health details to anyone but the guide"
+]} />
+
+## Contracts, package trips and data
+
+This is German law as I read it in September 2026, not legal advice. Have your association or a lawyer check your terms.
+
+**Withdrawal.** Consumers who book a guided tour at a distance normally have no 14-day right of withdrawal, because [§ 312g Abs. 2 Nr. 9 BGB](https://www.gesetze-im-internet.de/bgb/__312g.html) excludes leisure services with a specific date or period. That works only if the contract names the date and time, another reason the confirmation must. Company bookings are business to business anyway.
+
+**Package trips.** A guided tour alone is a single service. Bundle it with a coach or an overnight stay into one offer and you may be selling a package trip. [§ 651a BGB](https://www.gesetze-im-internet.de/bgb/__651a.html) defines it as at least two different kinds of travel services for the same trip, and a guided tour counts as an "other tourist service". Organisers then need an insolvency guarantee, the [Sicherungsschein under § 651r BGB](https://www.gesetze-im-internet.de/bgb/__651r.html). Day trips under 24 hours, without an overnight stay and up to €500, are excepted. Check before you build combinations.
+
+**Data.** Group requests hold names, contact details and sometimes health information, which [Article 9 GDPR](https://gdpr-info.eu/art-9-gdpr/) restricts, hence counts instead of names. If an AI provider processes requests, you need a [data processing agreement under Article 28](https://gdpr-info.eu/art-28-gdpr/), ideally with EU hosting. Delete requests that didn't become bookings after a few months.
+
+**Telling people it's AI.** If a chat window on your site talks to visitors, or replies go out without you reading them, say so up front. According to the European Commission, [Article 50 of the AI Act applies from 2 August 2026](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act). As I read it, drafts you read and send yourself are your own messages.
+
+## When a simpler fix does the job
+
+If you get a handful of group requests a month through one channel, you don't need AI. A request form with required fields (date window, group size, language, access count, invoice details) removes most of the first three emails. A booking page with your free slots removes most of the rest. Add a saved reply for the confirmation and the weather rule, and you're done.
+
+AI pays off when requests arrive as free-form emails in two languages, when several guides share a calendar and the question is who is free and speaks the language, and when every inquiry should get an answer the same evening. That's a small operator or a guides' association with a central office, more than a single guide.
+
+## What it costs, and what it saves
+
+Model fees are small: reading a request and drafting a reply costs a few cents. The real cost is setup: a form, an inbox connection, free/busy access to the calendars, your price list and templates. I'd budget one to three weeks of part-time work, more if guides use different calendar systems. That's a rough estimate, not a quote.
+
+<Calc title="Napkin math: what a slow first reply costs in a season" caption="Assumptions, not measurements. Track your requests and how many went elsewhere for two months to get real figures." rows={[
+  ["Group requests per month, April to October", "12"],
+  ["Share that book another guide before you reply properly", "× 25%"],
+  ["Months in season", "× 7"],
+  ["Groups lost per season", "≈ 21"],
+  ["Average group tour fee", "× €240"]
+]} result={["Fees going elsewhere per season", "≈ €5,000"]} />
+
+The usual comparison is a booking platform. Vendors that sell booking software to tour operators, such as [Xola](https://www.xola.com/articles/an-overview-to-getyourguide-for-tours-and-attractions/) and [Samba](https://www.sambahq.com/ota-supplier-guide/ota-commission-rates), put GetYourGuide's and Viator's commission at roughly 20 to 30%. These are vendor claims, not price lists: the actual rate depends on country and negotiation. On an assumed €240 tour, 25% is €60. Platforms are good at finding strangers. Groups that write to you directly already know what they want, so don't pay a commission to catch them.
+
+Booking software such as [Regiondo](https://pro.regiondo.com/), [Bókun](https://www.bokun.io/) or [FareHarbor](https://fareharbor.com/) already handles availability and online booking. The assistant handles what happens before a booking exists.
+
+## Questions guides ask
+
+### Can an AI assistant read my calendar?
+
+Only what you share. Share free/busy times, not event titles or attendees, and let a script do the matching. A guide's private appointments don't belong in a model's context.
+
+### Should I still list on GetYourGuide or Viator?
+
+For public tours aimed at strangers, platforms bring visibility you may not get otherwise. For groups who write to you directly, they add little. Compare what a booking costs through each channel, including your time.
+
+### What if the group doesn't answer any of the questions?
+
+Propose anyway, on stated defaults: 90 minutes, English, a flat route with seating stops, and say so. A wrong guess corrected in one line beats a blank reply.
+
+## Where I'd start
+
+Never answer a vague request with a list of questions alone. Answer with three concrete options and the two things you still need. Start by writing down your standard questions, your accessibility notes per route and your bad-weather rule. Put them in a form, then connect an assistant to the form and your free/busy times.
+
+If group requests are eating your evenings, [tell me how they reach you today](/contact?intent=improve) and I'll suggest the smallest setup that makes the first reply a good one. For the trip-planning side of the same business, see [AI for travel agents](/posts/ai-for-travel-agencies-itineraries).

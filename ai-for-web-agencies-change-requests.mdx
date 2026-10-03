@@ -1,0 +1,168 @@
+---
+id: "ai-for-web-agencies-change-requests"
+title: "Web Agency Change Requests: Price Them Before They Eat the Retainer"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Professional services", "Web agencies", "Change requests", "AI for small business"]
+description: "Small website changes get done as favours and never invoiced. How AI sorts bugs from changes and new features, estimates from past tickets and drafts the quote."
+excerpt: "Small website changes get done as favours and never invoiced. How AI sorts bugs from changes and new features, estimates from past tickets and drafts the quote."
+---
+
+Picture a ten-person web agency with 25 client sites on monthly care plans. On Tuesday morning, four messages arrive.
+
+The contact form on one site has stopped sending emails since Friday. A second client wants the header phone number to be a tap-to-call button on mobile. A third writes: "We'd love a members area. How hard can it be?" And a fourth reports that the new banner isn't showing on the Italian page, because nobody ever sent the Italian text.
+
+All four get the same answer within the hour: "Sure, we'll take a look!" But they are four different things. The first is a defect, the second is a ten-minute change, the third is a project, and the fourth isn't the agency's problem at all. The reply was identical. The cost, and who should pay it, was not.
+
+This post is about the arithmetic behind that "sure". What a small favour costs, how to tell the four kinds of request apart, and where AI helps: sorting, estimating from your own history, and drafting the reply. A project manager still approves every price.
+
+## The numbers around the problem
+
+<Stats title="Why small changes are hard to see">
+  <Stat value="52%" label="of projects completed in the previous 12 months had scope creep or uncontrolled changes, up from 43% five years earlier (all industries, not only web)" source="PMI, Pulse of the Profession 2018" href="https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/pulse-of-the-profession-2018.pdf" />
+  <Stat value="66.4%" label="average billable utilization at professional services firms in 2025, the lowest in the survey's history and well below the 75% it treats as optimal" source="SPI Research 2026 benchmark, via Deltek, which sells software to services firms" href="https://www.deltek.com/resources/articles/professional-services-benchmarks/" />
+</Stats>
+
+Neither number is about web agencies specifically: PMI surveys project professionals across industries, SPI covers professional services firms of every kind. They do describe a squeeze every agency knows. About a third of staff time never gets billed (some of it legitimately, like sales and training), and about half of projects drift past their scope. Unpriced small changes live in that gap.
+
+## What a "quick" change really costs
+
+Take the tap-to-call button. The edit itself is ten minutes. Eight years of building production software has taught me that the smallest tickets are rarely the smallest costs, because everything around the edit is invisible.
+
+<Bars title="Where 40 minutes go on a ten-minute change" unit=" min" caption="Illustrative assumptions for a small change on a CMS-based site, not measurements. The edit is a quarter of the work." data={[
+  { label: "Read and understand the request", value: 5 },
+  { label: "Clarify: one question, one answer", value: 5 },
+  { label: "The edit itself", value: 10, highlight: true },
+  { label: "Test on staging: two browsers and a phone", value: 10 },
+  { label: "Deploy and check the live page", value: 5 },
+  { label: "Reply, update the ticket, log the time", value: 5 }
+]} />
+
+The agency remembers ten minutes. The calendar remembers forty, plus the time it takes the developer to get back into what they were doing before. No timesheet records that last part. Now multiply.
+
+<Calc title="Napkin math: one agency, one month" caption="Assumptions, not measurements. Your ticket history and timesheets give the real numbers. Over a year this is about €20,000, or more than two working days of one person every month." rows={[
+  ["Small requests per month across all clients", "60"],
+  ["Handled as a quick favour: no ticket, no time log, no price", "× 40%"],
+  ["Real time per favour (the 40-minute anatomy, rounded)", "× 45 min"],
+  ["Billing rate", "× €95 per hour"]
+]} result={["Work given away each month (18 hours)", "≈ €1,700"]} />
+
+Some of this is the right thing to do: a small goodwill change for a good client is cheap relationship management. The problem isn't generosity, it's invisible generosity. If nobody logs it, nobody can decide whether it's worth it. And the 40% is the number to measure first. If you don't know it for your agency, step one isn't AI, it's a month of honest logging. Cabinet makers know the pattern as "can we just..." messages that [turn into unpaid work](/posts/ai-for-cabinet-makers-change-orders). The material differs, the leak is the same.
+
+## Four kinds of request, four different answers
+
+| Kind | Example | Who pays | The right first reply |
+| --- | --- | --- | --- |
+| Defect | The contact form stopped sending emails | The agency, if the flaw is in what it delivered | Acknowledge, reproduce, fix, say what caused it |
+| Change | Make the header phone number tap-to-call | The client, at a price they see first | Scope, price or hours, request for approval |
+| New feature | A members area | The client, after a proper quote | A short discovery call, then a written proposal |
+| Grey zone | Banner missing because the text never arrived; a host update broke the theme | Depends on the cause and on your contract | Say what's needed from the client, or check hosting and third parties |
+
+The table is easy. What's hard is that requests don't announce their row. "The page looks wrong on my phone" might be a defect (a broken layout shipped), a change (the client dislikes the design they signed off) or content (their uploaded image is 8 MB). Telling these apart needs the original spec, the accepted designs and the ticket history. That's a reading task, and a language model reads tirelessly.
+
+## Where the legal line sits
+
+The legal frame depends on where you work, and your contract usually matters more than statute. Here is the German example, the one I can source. In a 2010 ruling (III ZR 79/09), the [Federal Court of Justice treated an internet system contract](https://medien-internet-und-recht.de/volltext.php?mir_dok_id=2149), including the build of an individual website, as a Werkvertrag (a contract for a result, §§ 631 ff. BGB). The agency owes a working outcome, not just hours. Three consequences for change requests:
+
+- **A defect means the work lacks the agreed quality.** [§ 633 BGB](https://www.gesetze-im-internet.de/bgb/__633.html) says the work is free of defects if it has the agreed characteristics. A feature that was in the spec and doesn't work is yours to fix. A new wish is not a defect, however small.
+- **Acceptance draws the line in time.** Under [§ 640 BGB](https://www.gesetze-im-internet.de/bgb/__640.html), a client who accepts work with a known defect keeps most defect rights only if they reserve them at acceptance, and an agency can set a deadline after which work counts as accepted unless the client names at least one defect. A written acceptance with a list of known issues turns "defect or change?" from an argument into a date.
+- **Price before work.** [§ 632 BGB](https://www.gesetze-im-internet.de/bgb/__632.html) deems payment agreed where the work can only be expected against payment, but nobody wants to litigate that over a button. Name the price first.
+
+A [law firm's guide to web design contracts](https://kanzlei-herfurtner.de/webdesigner-vertraege/) adds two points. Defect claims on a website regularly expire two years after acceptance, so a "bug" reported three years after launch is normally no longer a warranty matter. And hour packages or ongoing care without a measurable end result may fall under service-contract law instead, so your retainer covers whatever your contract says it covers.
+
+This isn't legal advice, and other countries differ. The part that travels: "defect" and "change" only mean something if the spec and the acceptance are on record.
+
+## How AI fits into the intake
+
+Small managed IT providers sort ticket queues the same way, and the [first things worth automating there](/posts/ai-for-it-service-desks) look similar. For a web agency, I'd build this flow.
+
+<Flow title="From a one-line request to a priced reply" caption="The assistant reads, sorts and drafts. The project manager decides every category and every price. Nothing reaches the client unreviewed.">
+<Step title="Request arrives" who="Client" time="any time">Email, support form, chat or a shared Slack channel. Everything lands in the ticket tool, favours asked for in a call included.</Step>
+<Step title="Sort and check the record" who="AI" tone="ai" time="seconds">Defect, change, new feature or grey zone, with the deciding sentence quoted. It finds the spec section, accepted design or care-plan clause that applies and lists what's missing: URL, screenshot, device.</Step>
+<Step title="Estimate from history" who="AI" tone="ai">Finds the five most similar closed tickets, shows their actual hours and proposes a range.</Step>
+<Step title="Draft the reply" who="AI" tone="ai">Scope in one sentence, price or hours, what happens on a yes, and any question for the client.</Step>
+<Step title="Review and send" who="Project manager" tone="human" time="same day">Confirms the category, adjusts the price, decides on goodwill, sends. Disputed defects go to the account lead.</Step>
+<Step title="Approve, build, log" who="Client, then developer" tone="human">The client replies yes. Time is booked against the ticket, and the actual hours feed the history.</Step>
+</Flow>
+
+What the project manager sees for the tap-to-call request might look like this:
+
+```text
+TICKET 2291, Lindner Optik, 09:12
+Category: CHANGE (confidence: high)
+Request: header phone number should be tap-to-call on mobile.
+Not in the signed spec: spec v3, section 4.2 lists the header as logo and menu only.
+Similar tickets: 5, actual hours 0.5, 0.5, 0.75, 1.0, 0.5 (median 0.5).
+Proposed: 0.75 h, €71, includes staging test and deploy.
+Draft reply: ready for review.
+```
+
+And the reply, once the manager has checked it:
+
+> Hi Sandra, yes, we can make the header number tap-to-call on mobile. That's a change to the signed-off design rather than a fix, so I'd like to give you the price first: about 45 minutes, €71 plus VAT, live within two working days of your OK. Just reply "yes" and we'll book it. If you have other small changes on your list, we can bundle them into one price.
+
+Compare that with "Sure, we'll take a look!" The client gets a price and a next step. The agency gets a paper trail.
+
+<Split title="Who does what" leftTitle="The assistant" rightTitle="Only a person" left={[
+  "Sorts every request and quotes its evidence",
+  "Finds the spec section or earlier ticket that applies",
+  "Shows similar past tickets with actual hours",
+  "Drafts the reply with scope, price and questions",
+  "Flags deadlines, legal terms and angry tone"
+]} right={[
+  "Decides whether something is a defect, above all when disputed",
+  "Sets the final price and any goodwill discount",
+  "Sends anything that touches money or blame",
+  "Handles escalations and anything legal",
+  "Says no, kindly, when the answer is no"
+]} />
+
+## How good can AI estimates be?
+
+Two 2026 preprints on estimating story points, the effort units software teams use, are worth knowing mainly for how modest they are. In [one](https://arxiv.org/abs/2603.06276), four language models run on 16 projects from public Jira trackers predicted story points with no training data and beat supervised deep-learning models trained on 80% of the project's data. In [another](https://arxiv.org/abs/2604.03443), an approach that retrieves similar past tasks and asks a model to estimate from them beat the baselines on several occasions, but the differences weren't statistically significant.
+
+Both use public issue-tracker data, not agency change requests, and both are preprints. My reading: a model grounded in similar tickets is a reasonable second opinion, not an oracle. So test it on yourself. Take six months of closed tickets, hide the actual hours, let the system estimate, and compare. If it lands within about 30% on most small tickets, it can propose ranges. If not, your tickets are too varied or your time logs too thin to learn from, which is worth knowing too.
+
+## When you don't need AI
+
+Many agency changes are standard: a text edit, an image swap, a landing page from a template, an extra form field. Price them in a menu ("small change: €X per started half hour") and add one rule: no ticket, no work. A form on your support page and a spreadsheet get you most of the benefit.
+
+AI pays when requests arrive through five channels and three people price them three ways. It won't fix a vague contract, and it can't price a members area from a one-line email. That takes a conversation.
+
+## What it costs
+
+These are my assumptions, not quotes. If your tickets already live in a tool with an API, such as Jira, Linear, Asana or Teamwork, I'd budget three to five days to connect it, write the category rules from your contracts and test against your history. Model use is a few thousand tokens per ticket, typically cents (check current prices). The real running cost is the project manager's review, two to three minutes per ticket.
+
+Payback, using the napkin math above: if half of the 24 favours become priced requests that clients accept, that's 12 requests at 45 minutes, nine hours, about €850 a month. A four-day build is roughly €3,000 of internal time at the same rate, so it pays back in under four months, provided clients say yes. Test that part first.
+
+## Data protection: tickets hold more than you think
+
+Tickets carry names and emails of the client's staff, screenshots of admin panels with customer orders, form submissions, and sometimes a password pasted in a hurry. Three rules:
+
+- **Know your role.** If your agency works on a client's systems that hold personal data, you're often processing on their behalf. [Article 28 GDPR](https://gdpr-info.eu/art-28-gdpr/) then requires a data processing agreement, and you may not bring in another processor, an AI provider included, without the client's prior written authorisation, specific or general. Add the provider to your sub-processor list and tell your clients.
+- **Use the right account.** A consumer chat window isn't a processing setup. Use a provider under a signed processing agreement, with EU processing where possible and no training on your data.
+- **Redact first.** Strip credentials, customer data in screenshots and unreleased client content before anything reaches a model.
+
+## Questions agency owners ask
+
+### Is it OK to do small changes for free?
+
+Yes, on purpose. Give each client a goodwill allowance, log every small change at zero price with a "goodwill" tag, and tell the client what they got. Free work is fine. Invisible work isn't.
+
+### Can AI decide whether something is a defect under warranty?
+
+It can gather the evidence: the spec section, the accepted design, the date of acceptance, earlier tickets on the same page. The decision, especially a contested one, belongs to a person who can be held to it.
+
+### Is it safe to paste client tickets into ChatGPT?
+
+Not into a consumer account, and not unredacted. Use an API or business plan under a signed processing agreement, remove credentials and personal data first, and make sure your client contracts allow the sub-processor.
+
+### How do I get clients to accept paying for small changes?
+
+Show the price before the work, not after. The objection is usually to surprises, not to prices. A prepaid pack of change hours or a clear menu turns "can you just..." into a number instead of an awkward conversation.
+
+## Where I'd start
+
+Nothing starts without a ticket. Nothing gets a ticket without one of four categories. Nothing in the change category starts before the client has seen a price. Before any AI, log every request for a month, favours included, with real minutes. If a large share turns out to be invisible, that number is your business case. Then let a model do the sorting and drafting, and keep the person who owns the client relationship on the send button.
+
+If you want to find out what your small requests really cost, [tell me which ticket tool you use and how your care plans are written](/contact?intent=improve), and I'll suggest the smallest setup worth testing. Agencies that live on retainers have a sibling problem in [monthly client reporting](/posts/ai-for-marketing-agencies-reporting), where the hours go into explaining numbers instead of changing pages.

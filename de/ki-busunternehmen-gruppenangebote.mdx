@@ -1,0 +1,157 @@
+---
+id: "ki-busunternehmen-gruppenangebote"
+translationOf: "ai-for-coach-operators-group-quotes"
+title: "Busunternehmen: Gruppenangebote, die Lenkzeiten von Anfang an einrechnen"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Transport & Logistik", "Busunternehmen", "Gruppenangebote", "KI für kleine Unternehmen"]
+description: "Ein Gruppenangebot mit einem Fahrer kann unzulässig sein, bevor es raus ist. Wie KI die Anfrage liest, Lenkzeiten prüft und der Disposition Optionen entwirft."
+excerpt: "Ein Gruppenangebot mit einem Fahrer kann unzulässig sein, bevor es raus ist. Wie KI die Anfrage liest, Lenkzeiten prüft und der Disposition Optionen entwirft."
+---
+
+Stellen Sie sich ein Busunternehmen mit neun Fahrzeugen und einem kleinen Büro vor. Dienstagabend kommt eine E-Mail vom Fanclub: 52 Personen, Auswärtsspiel am Samstag, 14. November, Abfahrt 06:30 Uhr, zurück, wann die Fans fertig sind, „bitte um ein Angebot“. Der Chef kennt die Strecke, schätzt die Kilometer, schlägt seine Marge drauf und schickt noch vor dem Abendessen ein Angebot für einen Bus mit einem Fahrer.
+
+Am Mittwochmorgen legt der Disponent die Route an. Das Stadion liegt 430 km entfernt. Das sind hin und zurück gut elfeinhalb Stunden Lenkzeit, und ein Fahrer darf täglich höchstens 9 Stunden lenken, an zwei Tagen pro Woche 10. Das Angebot war falsch, bevor es raus ging. Das Unternehmen kann ein Viertel nachfordern, den zweiten Fahrer aus eigener Tasche zahlen oder den Auftrag an den Mitbewerber verlieren, der gleich beim ersten Mal richtig gerechnet hat.
+
+Wer die Angebote schreibt, hat ein gutes Gefühl für Kilometer und einen schlechten Blick auf Lenkzeiten. Die Regeln stecken im Kopf des Disponenten, während Angebote abends aus der Erfahrung entstehen. Ich würde einen Angebotsassistenten bauen, der die Anfrage liest und die Fahrt gegen die Lenkzeitregeln prüft, bevor überhaupt ein Preis existiert. Die Disposition bekommt dann einen Entwurf, der schon sagt: „Das braucht zwei Fahrer, und hier ist der Grund.“
+
+## Warum Fahrerstunden den Preis bestimmen, nicht die Busse
+
+Den meisten Busunternehmen gehen nicht die Fahrzeuge aus. Ihnen gehen die Fahrer aus, die die Fahrt legal übernehmen können.
+
+<Stats title="Fahrer sind der knappe Teil">
+  <Stat value="58.010" label="Fahrerinnen und Fahrer in den 2.958 Mitgliedsunternehmen des bdo, dazu 42.383 Omnibusse" source="bdo (Bundesverband Deutscher Omnibusunternehmen)" href="https://www.bdo.org/" />
+  <Stat value="25.000" label="fehlende Busfahrerinnen und -fahrer bundesweit im ÖPNV und Gelegenheitsverkehr, laut bdo und VDV im September 2025" source="Omnibusrevue" href="https://www.omnibusrevue.de/nachrichten/management/fahrermangel-bdo-und-vdv-wenden-sich-an-bundesverkehrsministerium-3715607" />
+  <Stat value="105.000" label="unbesetzte Stellen für Bus- und Reisebusfahrer in Europa 2023, rund 10 % des Berufsstands" source="IRU, Driver Shortage Report 2023" href="https://www.iru.org/news-resources/newsroom/europes-bus-and-coach-driver-shortage-widens-54-grim-outlook-2028" />
+</Stats>
+
+Die bdo-Zahlen ergeben rechnerisch rund 1,4 Fahrer pro Bus, über alle Verkehrsarten hinweg. Das ist ein Durchschnitt des ganzen Verbands und sagt nichts über Ihren Fuhrpark, zeigt aber, warum ein zweiter Fahrer kein freier Puffer ist. Er ist ein knapper Mensch, der sonst auf einer anderen Tour säße.
+
+Dazu kommt der Vergleich. In Sachsen-Anhalt müssen Lehrkräfte für Klassenfahrten laut [einem Ratgeber zu Schulfahrten](https://www.herole.de/blog/klassenfahrtregelung-sachsen-anhalt/) zum Vergleich mindestens zwei Angebote einholen. Wer als Erster mit einem vollständigen, richtigen Angebot antwortet, hat Vorsprung gegenüber dem, der am nächsten Tag eine zu günstige Zahl korrigieren muss.
+
+## Was die Regeln tatsächlich entscheiden
+
+Die Grenzen unten stammen aus der EU-Verordnung 561/2006, wie die [EU-Kommission sie zusammenfasst](https://transport.ec.europa.eu/transport-modes/road/social-provisions/driving-time-and-rest-periods_en), und aus den Änderungen für den Gelegenheitsverkehr in der [Verordnung 2024/1258](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX%3A32024R1258), die seit dem 22. Mai 2024 gelten. Die [WKO Österreich](https://www.wko.at/oe/transport-verkehr/autobus/flexiblere-lenk-und-ruhezeiten-ab-22.5.2024) erklärt sie für den Reiseverkehr anschaulich. Ich beschreibe das hier, um Angebote zu planen, nicht als Rechtsberatung. Das letzte Wort haben Ihr Fahrtenschreiber und die zuständige Behörde.
+
+| Regel | Grenze | Was sie für das Angebot bedeutet |
+| --- | --- | --- |
+| Tägliche Lenkzeit | 9 Stunden, an zwei Tagen pro Woche 10 Stunden | Eine Rundfahrt mit mehr als etwa 675 km Fahrstrecke (750 km an einem 10-Stunden-Tag) braucht einen zweiten Fahrer oder eine Übernachtung |
+| Pause | 45 Minuten spätestens nach 4,5 Stunden Lenkzeit. Im Gelegenheitsverkehr in zwei Pausen von je mindestens 15 Minuten teilbar, zusammen 45 | Pausen gehören in den Fahrplan. Schon ein Tag mit 4 h 40 min Lenkzeit braucht eine |
+| Tägliche Ruhezeit | 11 Stunden, bis zu dreimal pro Woche auf 9 Stunden verkürzbar | Rückkehr um 01:00 Uhr heißt späterer Start am Folgetag, der Fahrer fällt für Frühtouren aus |
+| Wöchentliche Lenkzeit | 56 Stunden pro Woche, 90 Stunden in zwei Wochen | Wer schon 50 Stunden hat, steht am Samstag nicht zur Verfügung |
+| Mehrtägige Ausnahmen | Eine Gruppe, ein Gelegenheitsdienst: wöchentliche Ruhezeit bis zu zwölf 24-Stunden-Zeiträume verschiebbar, seit Mai 2024 auch im Inland. Ab sechs 24-Stunden-Zeiträumen darf die tägliche Ruhezeit eine Stunde später beginnen, wenn an dem Tag höchstens 7 Stunden gelenkt wurde | Hilft bei Rundreisen, nicht bei Tagesfahrten |
+
+Zwei Punkte zählen mehr als die Tabelle. Die Erleichterungen von 2024 helfen vor allem bei mehrtägigen Reisen: Eine Tagesfahrt behält die 9-Stunden-Grenze und bekommt nur eine flexiblere Pause. Und die Grenzen hängen am Fahrer, nicht an der Fahrt: Derselbe Einsatz ist für einen Fahrer mit ruhiger Woche machbar und für einen, der beide 10-Stunden-Tage schon verbraucht hat, unmöglich.
+
+Das Arbeitszeitrecht kommt als eigene Ebene hinzu. Die Verordnung von 2024 sagt ausdrücklich, dass ihre Ausnahme bei der täglichen Ruhezeit die Höchstarbeitszeit nach geltendem Recht unberührt lässt. Die Planung muss also beides prüfen.
+
+In Entfernungen übersetzt, bei angenommenen 75 km/h im Schnitt inklusive Verkehr (gleichen Sie das mit Ihren eigenen Fahrtenschreiberdaten ab), sortieren die Regeln Anfragen schnell:
+
+| Anfrage | Lenkzeit an dem Tag | Ein Fahrer? | Was ins Angebot gehört |
+| --- | --- | --- | --- |
+| Tagesfahrt, 300 km je Strecke | etwa 8 h | Ja, mit wenig Luft für Staus | Ein Fahrer, mit Hinweis auf die Grenze |
+| Auswärtsspiel, 430 km je Strecke | etwa 11 h 30 min | Nein | Zwei Fahrer oder Übernachtung |
+| Sechstagesfahrt, 350 km pro Tag | etwa 4 h 40 min pro Tag | Tageweise ja. Wochenlenkzeit und 12-Tage-Regelung prüfen | Preis pro Tag, Ruhetage einplanen |
+
+## Von der E-Mail zum geprüften Angebot
+
+Der Assistent verschickt nichts. Er bereitet einen Entwurf vor, und die Disposition entscheidet.
+
+<Flow title="Von der Einzeiler-Anfrage zum geprüften Angebot" caption="Die KI liest und schreibt. Routenberechnung und Regelprüfung sind gewöhnliche Rechnungen. Die Disposition bestätigt Fahrer, Preis und Formulierung.">
+<Step title="Anfrage kommt an" who="Kunde" time="jederzeit">Eine E-Mail, ein Webformular oder eine Telefonnotiz.</Step>
+<Step title="Fahrt auslesen" who="KI" tone="ai" time="Sekunden">Macht aus dem Text Felder: Datum, Zustieg, Stopps, Zeiten, Sitzplätze, Rollstuhlplätze, Gepäck. Listet, was fehlt, und entwirft eine Rückfrage, nicht fünf.</Step>
+<Step title="Route und Zeit" who="Routenplaner" time="Sekunden">Strecke, Fahrzeit je Etappe und Maut, berechnet mit Busprofil statt Pkw-Profil.</Step>
+<Step title="Regeln prüfen" who="System" time="Sekunden">Gewöhnlicher Code oder Ihre Dispositionssoftware vergleicht Tageslenkzeit, Pausenpunkte und Ruhezeit mit den Grenzen. Ergebnis: ein Fahrer, zweiter Fahrer, Übernachtung oder abhängig von der Woche des Fahrers.</Step>
+<Step title="Optionen entwerfen" who="KI" tone="ai" time="1 Min.">Schreibt zwei Varianten aus Ihrer eigenen Preisliste, mit einer klaren Begründung.</Step>
+<Step title="Disposition entscheidet" who="Disponent" tone="human" time="5 bis 10 Min.">Prüft, wer und was wirklich frei ist, passt den Preis an und schickt das Angebot unter eigenem Namen raus.</Step>
+<Step title="Nach der Zusage" who="KI" tone="ai">Füllt Fahrerinformation und Fahrtenblatt aus demselben Datensatz vor, zur Kontrolle durch die Disposition.</Step>
+</Flow>
+
+Drei Entscheidungen erledigen den größten Teil der Arbeit.
+
+**Die KI liest und schreibt, sie rechnet nicht.** Ein Sprachmodell ist gut darin, aus „Abfahrt um sieben, zurück um Mitternacht, zum Mittagessen halten wir irgendwo“ Felder zu machen und das Ergebnis zu erklären. Ob 11 h 28 min mehr als 10 Stunden sind, entscheidet es besser nicht. Das übernimmt gewöhnlicher Code oder die Prüfung, die Ihre Software schon hat. Deltaplan beschreibt seine Disposition zum Beispiel so, dass sie Fahrten plant und dabei [die Lenkzeiten prüft](https://www.deltaplan.de/).
+
+**Optionen statt eines Preises.** Wenn ein Fahrer nicht reicht, will der Kunde trotzdem fahren. „Zwei Fahrer, am selben Tag“ neben „Übernachtung, Rückkehr am Sonntag“ macht aus einer Absage eine Auswahl.
+
+**Die Disposition sieht die Begründung.** Ein Entwurf, der nur „zwei Fahrer“ sagt, provoziert Schulterzucken. Einer, der die Zahlen zeigt, ist in einer Minute geprüft.
+
+## Was auf dem Bildschirm der Disposition ankommt
+
+```text
+ANFRAGE 2419, Fanclub, Auswärtsspiel, Sa 14.11.
+56 Sitzplätze nötig (52 Fahrgäste, 4 Ehrenamtliche). Keine Rollstühle. Gepäck: Fahnen, Trommeln.
+Etappe 1: Abfahrt 06:30, Ankunft Stadion 13:00. 430 km, ca. 5 h 45 min Lenkzeit.
+Etappe 2: Abfahrt 18:00, Ankunft ca. 00:30. 430 km, ca. 5 h 45 min Lenkzeit.
+REGELPRÜFUNG
+- Lenkzeit an dem Tag: ca. 11 h 30 min. Über der Höchstgrenze von 10 h: zweiter Fahrer nötig.
+- Pausen: 45 min je Etappe, Vorschlag: Rastanlage bei etwa km 300.
+- Tageslänge ca. 18 h: kein früher Start am Sonntag für beide Fahrer.
+- Arbeitszeit (eigenes Recht): zur Bestätigung an die Disposition markiert.
+OPTIONEN ENTWORFEN
+A) Zwei Fahrer, am selben Tag: ca. 2.360 €. B) Übernachtung: mit Kunde klären.
+OFFEN: Unklar, ob die Trommeln in den Kofferraum kommen. Eine Rückfrage entworfen.
+```
+
+Der Entwurf für den Kunden, den die Disposition überarbeitet: „Wir können das am selben Tag mit zwei Fahrern für 2.360 € inklusive Maut übernehmen. Mit einem Fahrer geht es nicht, weil Hin- und Rückfahrt zusammen mehr als die erlaubten 10 Stunden Lenkzeit brauchen. Wenn der Fanclub lieber übernachten möchte, erstellen wir gern auch dafür ein Angebot.“
+
+## Was der zweite Fahrer am Preis ändert
+
+<Calc title="Überschlag: dasselbe Auswärtsspiel, zweimal gerechnet" caption="Annahmen, keine Marktpreise. Nehmen Sie Ihre eigene Preisliste. Ein Angebot mit einem Fahrer, das später korrigiert werden muss, kostet rund 520 €, bei 52 Fahrgästen etwa 10 € pro Person." rows={[
+  ["Strecke: 2 × 430 km zu 1,20 € je km", "1.032 €"],
+  ["Fahrer 1: 18 bezahlte Stunden zu 25 €", "+ 450 €"],
+  ["Fahrer 2: 18 bezahlte Stunden zu 25 €", "+ 450 €"],
+  ["Maut, Parken, Fahrerverpflegung", "+ 120 €"],
+  ["Zwischensumme", "= 2.052 €"],
+  ["Marge von 15 %", "× 1,15"]
+]} result={["Angebot mit zwei Fahrern", "≈ 2.360 €"]} />
+
+Ohne den zweiten Fahrer ergibt dieselbe Rechnung etwa 1.840 €. Die 520 € Differenz kostet ein falsches Angebot, egal ob man sie schluckt, nachverhandelt oder den Kunden verliert.
+
+## Wann eine einfachere Lösung besser ist als KI
+
+- **Ein Anfrageformular mit Pflichtfeldern.** Datum, Zeiten, Stopps, Sitzplätze, Rückfahrzeit. Die meisten Rückfragen verschwinden, wenn das Formular ohne diese Angaben nicht abgeschickt wird.
+- **Eine Preisliste mit Schwellenwert.** Bei fünf Anfragen pro Woche genügt eine Tabelle mit Kilometerstufen und der Zeile „über 300 km je Strecke: zwei Fahrer oder Übernachtung“.
+- **Die Prüfung Ihrer Dispositionssoftware.** Wenn sie Lenkzeiten schon testet, behalten Sie sie und setzen KI nur zum Lesen unordentlicher Anfragen und für Antwortentwürfe ein. Das Mietbus-Modul von [BusPro.net](https://www.kuschick.de/produkte/buspro-net-mietbus/) deckt zum Beispiel Angebot bis Rechnung ab.
+- **Das Urteil der Disposition.** Wer wirklich frei ist, wer ungern nachts zurückfährt: Das steckt in den Köpfen und im Dienstplan. Ein Modell sollte das nicht raten.
+
+KI lohnt sich, wenn Anfragen in jeder Form und zu jeder Uhrzeit kommen und die Person, die die Regeln prüfen kann, gerade fährt oder mit einer Schule telefoniert.
+
+<Callout title="Die Hotel-Falle: Aus einem Angebot kann eine Pauschalreise werden" tone="warning">
+Wenn Kunden Bus plus Hotel wünschen und Sie beides in einem Vertrag verkaufen, sind Sie womöglich kein reiner Beförderer mehr, sondern Reiseveranstalter. Nach § 651a BGB ist eine Pauschalreise eine Gesamtheit von mindestens zwei verschiedenen Arten von Reiseleistungen für den Zweck derselben Reise, etwa Beförderung und Beherbergung. Dann gelten Pflichten wie die Insolvenzsicherung. Tagesreisen unter 24 Stunden ohne Übernachtung sind ausgenommen, wenn der Reisepreis 500 € nicht übersteigt. Ein Assistent, der munter „Hotel inklusive“ in den Entwurf schreibt, kann genau diese Lage schaffen. Beschränken Sie Entwürfe auf die Beförderung, und lassen Sie die Disposition jedes Angebot auf Leistungen jenseits des Busses prüfen.
+</Callout>
+
+Den Wortlaut finden Sie in [§ 651a BGB](https://www.gesetze-im-internet.de/bgb/__651a.html). Pauschalreisen zu verkaufen ist eine unternehmerische Entscheidung, keine Prompt-Einstellung.
+
+## Daten, Fahrer und Papierkram
+
+Beim Angebot brauchen Sie Gruppengröße, Alter und besondere Bedürfnisse, keine Namen. Halten Sie Teilnehmerlisten aus dem Assistenten heraus, bis die Buchung steht, schließen Sie mit Ihrem KI-Anbieter einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO und achten Sie auf Hosting in der EU. Fahrerdaten sind Beschäftigtendaten: Lassen Sie die Regelprüfung mit einem Dienstplan arbeiten, den Sie kontrollieren („Fahrer A hat diese Woche noch 14 Stunden Lenkzeit“), und nicht mit Fahrtenschreiber-Downloads, die in einen Chatbot kopiert werden.
+
+Wenn Kunden auf Ihrer Website mit einem Chat-Assistenten sprechen, gilt seit dem 2. August 2026 [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act): Die Menschen müssen erfahren, dass sie mit einer KI sprechen. Ein reiner Entwurfsbetrieb ist einfacher, denn der Kunde hat es mit einem Menschen zu tun.
+
+Dann der Papierkram. Seit dem 22. Mai 2024 muss ein Fahrer, der die neuen Ausnahmen für den Gelegenheitsverkehr nutzt (die geteilte Pause eingeschlossen), ein ausgefülltes Fahrtenblatt mitführen, dazu Kopien für die vorangegangenen 56 Tage, auch im Inland. Das ist im Fluss: Die Kommission muss bis zum 31. Dezember 2026 die Optionen für ein digitales Fahrtenblatt bewerten, und die Pflicht zu den Kopien endet, sobald Fahrtenschreiber die Art des Verkehrsdienstes erfassen können. Ich habe den Verordnungstext im September 2026 gelesen und nicht geprüft, ob diese Spezifikation für Fahrtenschreiber schon gilt. Fragen Sie deshalb Ihren Verband.
+
+## Was es kostet
+
+Die Modellkosten sind klein: Eine Anfrage lesen und zwei Varianten entwerfen kostet wenige Cent. Der eigentliche Aufwand ist die Einrichtung: den Assistenten an Preisliste, Routenplaner und Fahrerverfügbarkeit anbinden und an alten Fahrten testen. Ich würde für eine erste Version einige Wochen Teilzeitarbeit veranschlagen, mehr, wenn Ihre Dispositionssoftware keinen Export oder keine Schnittstelle hat. Das ist eine grobe Schätzung, kein Angebot.
+
+Dagegen steht der Nutzen, hier als Rechnung mit Annahmen: 40 Anfragen pro Monat, 20 Minuten Büroarbeit pro Anfrage gespart, 40 € Vollkosten pro Stunde. Das sind etwa 530 € im Monat, bevor Sie die Angebote zählen, die Sie nicht mehr verlieren.
+
+## Fragen, die Busunternehmer stellen
+
+### Wie viele Stunden darf ein Busfahrer in der EU am Tag fahren?
+
+Neun Stunden täglich, zweimal pro Woche zehn, mit 45 Minuten Pause nach spätestens 4,5 Stunden Lenkzeit. Pro Woche sind 56 Stunden erlaubt und 90 Stunden in zwei Wochen. Für den Gelegenheitsverkehr gibt es seit Mai 2024 etwas mehr Spielraum bei Pausen und mehrtägigen Reisen.
+
+### Kann KI prüfen, ob eine Busfahrt zulässig ist?
+
+Sie kann die Prüfung vorbereiten, aber sie sollte nicht die Prüfung sein. Das Modell liest die Fahrt aus, ein Routenplaner berechnet die Zeiten, und feste Regeln vergleichen sie mit den Grenzen. Die Disposition bestätigt mit der tatsächlichen Woche des Fahrers vor Augen.
+
+### Gilt die 12-Tage-Regelung für unsere Klassenfahrt?
+
+Nur bei einem einzelnen Gelegenheitsdienst mit einer Gruppe, wenn die Bedingungen zur Ruhezeit davor und danach erfüllt sind und das Fahrtenblatt an Bord ist. Eine Tagesfahrt oder ein Wochenende nutzt sie nicht. Seit Mai 2024 gilt sie auch im Inland.
+
+## Wo ich anfangen würde
+
+Rechnen Sie zuerst den Tag des Fahrers, dann die Kilometer. Ein Angebot, das die Lenkzeitprüfung bestanden hat, kann mit gutem Gewissen raus. Eines, das sie nicht bestanden hat, ist geraten.
+
+Zum Testen nehmen Sie Ihre letzten dreißig Angebote, prüfen jedes von Hand oder in einer Tabelle gegen die Regeln und zählen, wie viele einen zweiten Fahrer oder einen anderen Plan gebraucht hätten. Ist die Zahl null, brauchen Sie dafür vielleicht keine KI. Sind es vier oder fünf, [schreiben Sie mir, wie Anfragen heute bei Ihnen ankommen](/de/kontakt?intent=improve), und ich schlage die kleinste Variante vor, die einen Test wert ist. Dieselben halbfertigen Anfragen landen bei [Eventlocations](/de/posts/ki-eventlocation-anfragen), [Reisebüros](/de/posts/ki-reisebuero-reisevorschlaege) machen aus denselben Fahrten Reisepläne, und [Speditionen](/de/posts/ki-spedition-frachtanfragen) jagen den fehlenden Maßen hinter Einzeiler-Anfragen hinterher.

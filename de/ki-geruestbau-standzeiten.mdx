@@ -1,0 +1,154 @@
+---
+id: "ki-geruestbau-standzeiten"
+translationOf: "ai-for-scaffolding-companies-rental-tracking"
+title: "Gerüstbau: Standzeiten abrechnen, statt sie zu verschenken"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Handwerk & Bau", "Gerüstbau", "Standzeiten", "KI für kleine Unternehmen"]
+description: "Das Angebot nennt eine Standzeit, danach gilt der Wochenpreis. Bei 40 Baustellen fällt die Überziehung nicht auf. Was eine Tabelle löst und wo KI hilft."
+excerpt: "Das Angebot nennt eine Standzeit, danach gilt der Wochenpreis. Bei 40 Baustellen fällt die Überziehung nicht auf. Was eine Tabelle löst und wo KI hilft."
+---
+
+Vierzig laufende Baustellen. Bei einem Viertel ist die im Angebot genannte Standzeit schon überschritten. Bei sechs davon hat niemand eine Verlängerung mitgeteilt oder die Mehrwochen in Rechnung gestellt. Bei 100 € pro Woche sind das 600 € pro Woche oder rund 31.000 € im Jahr, die Gerüste umsonst stehen.
+
+Das sind meine Annahmen, keine Umfrageergebnisse. Eine verlässliche veröffentlichte Zahl dazu, wie oft das passiert, ist mir nicht bekannt, und der Zahl eines Anbieters würde ich auch nicht trauen. Der Mechanismus ist aber leicht wiederzuerkennen. Das Angebot nennt vier Wochen, danach Wochenmiete. Der Maler wird nicht fertig. Der Bauherr sagt am Telefon, er brauche das Gerüst „noch ein bisschen“. Niemand schreibt es auf, und niemand merkt, wann die fünfte Woche beginnt.
+
+Die Lösung hat zwei Teile, und nur einer davon hat mit KI zu tun. Ich beginne mit dem, der es nicht hat.
+
+## Die drei Daten hinter jedem Gerüstangebot
+
+Fast jedes Gerüstangebot hängt an drei Daten: dem Tag der Übergabe, dem Tag, an dem die enthaltene Standzeit endet, und dem Tag, an dem der Auftraggeber das Gerüst zum Abbau freigibt. Alles zwischen dem zweiten und dem dritten Datum ist berechenbar, sofern das Angebot es vorsieht.
+
+<Stats title="Standzeit nach DIN 18451">
+  <Stat value="4 Wochen" label="pauschale Grundstandzeit, die die ATV DIN 18451 (VOB/C) bis 2023 vorsah" source="Bundesinnung für das Gerüstbauer-Handwerk" href="https://www.geruestbauhandwerk.de/aktuelles/ueberarbeitete-atv-din-18451-in-kraft-getreten/" />
+  <Stat value="5. Okt. 2023" label="Inkrafttreten der überarbeiteten Norm: Die Nutzungsüberlassung wird seitdem von Anfang an vereinbart und neben dem Auf-, Um- und Abbau abgerechnet" source="Bundesinnung für das Gerüstbauer-Handwerk" href="https://www.geruestbauhandwerk.de/aktuelles/ueberarbeitete-atv-din-18451-in-kraft-getreten/" />
+</Stats>
+
+Manche Angebote bündeln trotzdem weiter eine Standzeit; ein Gerüstbauer widmet der Frage [„Was kostet ein Gerüst nach 4 Wochen?“](https://www.rolle-gerueste.de/geruestkosten/was-kostet-ein-geruest-nach-4-wochen) sogar einen eigenen Ratgeberartikel. Entscheidend ist deshalb nicht, was die Norm einmal vorsah, sondern was in Ihrem Angebot und Ihren Vertragsbedingungen steht. Und jemand im Betrieb muss wissen, wann der kostenlose Teil endet.
+
+## Wo die Daten tatsächlich liegen
+
+Fragen Sie, wo jedes dieser Daten heute festgehalten wird, und Sie bekommen meist fünf verschiedene Antworten.
+
+| Datum | Wo es heute steht | Wer es kennt |
+| --- | --- | --- |
+| Übergabe | Übergabeprotokoll, Foto von der Gerüstkennzeichnung | Montagetrupp |
+| Enthaltene Standzeit und Wochenpreis | Angebots-PDF | Büro |
+| „Können wir es noch zwei Wochen stehen lassen?“ | Anruf oder WhatsApp | Wer gerade drangegangen ist |
+| Auftraggeber meldet Abbau | E-Mail, SMS oder Anruf beim Bauleiter | Oft eine einzige Person |
+| Abbau erledigt | Stundenzettel der Kolonne | Disposition |
+
+An keinem dieser Orte ist etwas falsch. Das Problem ist, dass niemand alle fünf für vierzig Baustellen gleichzeitig sieht. Das Büro kennt das Angebot, der Bauleiter den Anruf, und die Rechnung wird aus dem Angebot geschrieben. Sie stimmt also mit dem Angebot überein, auch wenn die Baustelle längst weitergezogen ist. Ein Teilabbau macht es schlimmer: Kommt die Ostseite weg und die Westseite bleibt stehen, ändert sich die abrechenbare Fläche mitten in der Standzeit.
+
+Die Gewerke auf der anderen Seite des Gerüsts haben dieselbe Lücke. [Malerbetriebe sammeln Fotos und Abnahmen](/de/posts/ki-malerbetrieb-abnahme-fotodokumentation), die zeigen, wann die Arbeit fertig war, und nichts davon landet in den Unterlagen des Gerüstbauers.
+
+Auch die Freigabe zum Abbau ist so ein Datum. Viele Betriebe führen dafür ein eigenes Formular, die Freimeldung, [wie dieses Beispiel](https://www.sanow-jena.de/geruestfreimeldung.html). Der Vorteil liegt auf der Hand: Das Ende der Standzeit steht dann schriftlich da, mit Datum.
+
+## Was eine Tabelle schon löst
+
+Vor jeder KI: eine Zeile pro laufender Baustelle, mit Spalten für Übergabedatum, enthaltene Wochen, Wochenpreis und einer Formel für „in welcher Woche sind wir“. Diese Liste fängt die meisten Überziehungen ab, bei denen die Daten bekannt sind. Das ist reine Datumsrechnung, dafür braucht es kein Sprachmodell.
+
+Wenn Sie bereits eine Gerüstbau-Software nutzen, prüfen Sie zuerst diese. Nach eigenen Angaben der Anbieter bietet [HERO](https://hero-software.de/anwendungen/geruestbau-software) eine Branchenlösung für den Gerüstbau, [OPTIMUS](https://www.rpssoftware.de/handwerk/geruestbau-software/) rechnet Verlängerungszeiten automatisch, [Meisterwerk](https://blog.meisterwerk.app/gewerke/geruestbau) wirbt mit Standzeit-Abrechnung und Vorhaltegebühren, und [ARGONAUT OS](https://www.argonaut-os.com/branchen/geruestbau) verwaltet Angebote, Material, Standzeiten und Rechnungen in einem System. Das sind Herstellerbeschreibungen, keine geprüften Aussagen, aber die Kategorie gibt es eindeutig.
+
+Allen gemeinsam ist eine Schwäche: Sie zählen ab den Daten, die jemand eingetippt hat. Kommt die am Telefon vereinbarte Verlängerung nie im Datensatz an, zählt die Software sehr genau das Falsche.
+
+Es gibt außerdem eine günstigere Lösung, die ganz ohne Software auskommt. Zu Beginn der letzten enthaltenen Woche geht eine kurze Nachricht raus: „Die im Angebot enthaltene Standzeit endet am 14. Oktober. Danach berechnen wir 100 € pro Woche. Melden Sie sich, wenn das Gerüst länger stehen soll oder wir es abbauen sollen.“ Aus dem Kalender terminiert. Der Kunde hat das Enddatum jetzt schriftlich, und mancher meldet den Abbau noch am selben Tag.
+
+## Wo KI sich lohnt: die Nachrichten, die niemand ablegt
+
+Die Daten, die nie im Datensatz ankommen, stecken in freiem Text: Kunden-E-Mails, WhatsApp-Chats, Sprachnachrichten der Bauleiter, Notizen auf dem Übergabeprotokoll. Das zu lesen können Sprachmodelle recht gut, und es ist derselbe Rohstoff wie bei [Sprachnachrichten, die zum Bautagebuch werden](/de/posts/ki-bautagebuch-sprachnachricht).
+
+Drei kleine Aufgaben:
+
+**Das Datum herausziehen.** „Der Maler braucht bis Monatsende“ wird zu einem Eintrag: Baustelle, voraussichtliches Ende, wer es gesagt hat, wann. „Kann Freitag runter“ wird zum Freigabedatum.
+
+**Der richtigen Baustelle zuordnen.** Kunden schreiben „das Haus in der Lindenstraße“, nicht „Auftrag 2291“. Das Modell schlägt die Zuordnung vor und zeigt die Nachricht dazu, sodass ein Mensch sie auf einen Blick bestätigen kann.
+
+**Den Widerspruch erkennen.** Eine Freigabe am Dienstag, gefolgt von „doch noch eine Woche, bitte“ am Donnerstag, überliest ein Mensch schnell, ein sorgfältiger Leser markiert sie.
+
+Einmal pro Woche entsteht aus Tabelle und herausgezogenen Daten eine Liste fürs Büro. Etwa so (Namen und Zahlen sind erfunden):
+
+```text
+MONTAGSCHECK STANDZEITEN: 40 laufende Baustellen
+
+STANDZEIT ÜBERSCHRITTEN, KEINE MITTEILUNG (6)
+Lindenstraße 12 (Bau Hartmann): 8 Wochen enthalten, jetzt Woche 11.
+  E-Mail 3.9.: „Maler braucht bis Monatsende“.
+  Keine Verlängerung vermerkt. Vorschlag: Mitteilung für 3 Wochen à 100 €.
+
+FREIGABE ERHALTEN, NOCH NICHT ABGEBAUT (2)
+Mühlweg 4: Freigabe per E-Mail am Di 22.9. Kolonne nicht disponiert.
+  Prüfen Sie Ihre Bedingungen und wer auf wen wartet.
+
+ENDET INNERHALB VON 7 TAGEN (5)
+Parkstraße 31 und 4 weitere: Erinnerung entworfen, nicht gesendet.
+```
+
+Unter dem ersten Punkt liegt eine vorformulierte Mitteilung in Ihren eigenen Worten. Hier sitzt die Entscheidung: Die Bürokraft braucht zehn Minuten für sechs Baustellen und entscheidet bei jeder einzeln. Mitteilung wie vorgeschlagen senden. Verzichten, weil die eigene Kolonne zu spät kam oder der Kunde eine Kulanzwoche wert ist. Oder erst anrufen. Das Modell sendet nichts und entscheidet nie über einen Verzicht. Einen guten Kunden zu viel zu berechnen kostet mehr als eine Wochenmiete, und die Vorgeschichte kennen nur Sie.
+
+## Der Überschlag
+
+Hier die Rechnung mit Platzhaltern, die ich in einem ersten Gespräch nutzen würde. Ersetzen Sie jede Zahl durch Ihre eigene.
+
+<Calc title="Überschlag: Wochen, die umsonst stehen" caption="Annahmen, keine Messwerte. Zählen Sie Ihre laufenden Baustellen und die Rechnungen des letzten Quartals für echte Zahlen. Der Verlust bleibt konstant, solange die Verhältnisse es tun." rows={[
+  ["Laufende Baustellen zu jedem Zeitpunkt", "40"],
+  ["Davon über der enthaltenen Standzeit", "× 25 %"],
+  ["Davon ohne Mitteilung oder Rechnung", "× 60 %"],
+  ["Wochenpreis nach der enthaltenen Standzeit", "× 100 €"],
+  ["Wochen pro Jahr", "× 52"]
+]} result={["Verschenkte Standzeit pro Jahr", "≈ 31.000 €"]} />
+
+Sechs Baustellen zu 100 € sind 600 € pro Woche, und ein Jahr hat 52 davon. Ist Ihr echter Anteil nur ein Zehntel meiner Annahme, lohnt sich die Zahl trotzdem für einen Montagmorgen. Ist er doppelt so hoch, wollen Sie es lieber früher wissen.
+
+## Prüfungen sind eine zweite Uhr
+
+Dasselbe Problem gibt es bei den Prüfungen, nur mit härteren Folgen. Nach TRBS 2121 Teil 1 muss eine befähigte Person das Gerüst nach dem Aufbau und vor der Übergabe an den Nutzer prüfen, und die [DGUV Information 201-011](https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/DGUV-Informationen/201_011/201_011.pdf) empfiehlt, die Übergabe gemeinsam mit dem Nutzer vorzunehmen und zum Beispiel in einem Protokoll festzuhalten. Für jede Baustelle gehört also ein Papierweg dazu.
+
+Eine Fälligkeitsliste ist Kalenderarbeit. KI hat hier nur eine schmale Aufgabe: prüfen, ob jedes im Postfach eingehende Prüfprotokoll zu einer laufenden Baustelle passt, Datum, Kennzeichnung und Unterschrift enthält, und die Baustellen markieren, bei denen das letzte Protokoll fehlt oder alt ist.
+
+<Callout title="Ein Modell kann einem Nachweis hinterherlaufen, aber keine Prüfung durchführen" tone="warning">
+Die Prüfung macht eine befähigte Person am Gerüst. Lassen Sie kein Werkzeug Prüffelder vorausfüllen oder für jemanden unterschreiben, und akzeptieren Sie kein erzeugtes Protokoll als Ersatz dafür, dass jemand das Gerüst abgegangen ist. Ein ordentlicher Nachweis für eine Prüfung, die niemand gemacht hat, ist schlimmer als eine Lücke, weil er wie Schutz aussieht.
+</Callout>
+
+## Datenschutz
+
+Kunden-E-Mails und Baustellenchats enthalten Namen, Telefonnummern, Adressen und manchmal Fotos von Wohnhäusern. Liest ein gehosteter KI-Dienst sie, ist er in der Regel Ihr Auftragsverarbeiter, und [Art. 28 DSGVO](https://gdpr-text.com/read/article-28/) verlangt einen schriftlichen Vertrag, der unter anderem regelt, dass nur nach Ihren dokumentierten Weisungen verarbeitet wird, das Personal zur Vertraulichkeit verpflichtet ist und die Daten am Ende gelöscht oder zurückgegeben werden. Das ist der Auftragsverarbeitungsvertrag (AVV).
+
+Die Datenschutzkonferenz hat dazu eine [Orientierungshilfe zu KI und Datenschutz](https://www.ldi.nrw.de/dsk-orientierungshilfe-ki-fuer-unternehmen-und-behoerden) veröffentlicht, die als Checkliste für Auswahl, Einführung und Nutzung gedacht ist. Ich würde vor dem Anschluss eines Postfachs vier Dinge klären: wo die Daten verarbeitet werden, ob Ihre Eingaben zum Training von Modellen genutzt werden, wie die Löschung funktioniert und ob der AVV unterschrieben ist. Und eine Gewohnheit ist wichtiger als jedes Werkzeug: Kundendaten gehören in Firmenkonten und nicht nur in den privaten WhatsApp-Chat des Bauleiters. Was sein Handy nie verlässt, kann kein System lesen. Informieren Sie außerdem Ihr Team, was ausgewertet wird und warum.
+
+## Was es kostet, und ein Start in vier Wochen
+
+Grobe Werte, als meine Schätzungen gekennzeichnet: Ein paar hundert kurze Nachrichten pro Woche zu lesen kostet bei aktuellen Preisen ein paar Euro im Monat an Modellgebühren, prüfen Sie also die aktuellen Preise. Die eigentlichen Kosten sind Einrichtungszeit, ein paar Tage für Tabelle, Postfachanbindung und Tests, dazu 10 bis 15 Minuten jeden Montag. Hat Ihre Gerüstbau-Software einen Export oder eine Schnittstelle, nutzen Sie sie. Wenn nicht, ist eine gemeinsame Tabelle ein völlig brauchbares Verzeichnis.
+
+<Timeline title="Vier Wochen bis zur ersten Montagsliste">
+<Phase when="Woche 1" title="Verzeichnis aufbauen">Eine Zeile pro laufender Baustelle: Übergabedatum, enthaltene Wochen, Wochenpreis, Ansprechpartner, Freigabe erhalten (ja oder nein). Eine Tabelle genügt. Die Nachricht zu Beginn der letzten enthaltenen Woche kommt in die Routine.</Phase>
+<Phase when="Woche 2" title="Rückblick">Die E-Mails und Chatnotizen der letzten drei Monate durch die Auswertung laufen lassen und mit dem vergleichen, was Sie berechnet haben. Das liefert Ihre echte Zahl für die Rechenbox.</Phase>
+<Phase when="Woche 3 bis 4" title="Montagsliste mit menschlicher Prüfung">Die Liste geht jeden Montag ans Büro. Eine Person prüft jede Zuordnung und sendet oder verwirft jede Mitteilung.</Phase>
+<Phase when="Ende Woche 4" title="Entscheiden">Zählen: Wochen, die Sie berechnet haben und sonst verpasst hätten, Mitteilungen, die ein Kunde bestritten hat, und Nachrichten, die der falschen Baustelle zugeordnet wurden.</Phase>
+</Timeline>
+
+Beim letzten Punkt wäre ich streng. Eine Mitteilung an den falschen Kunden kostet mehr Goodwill, als die zurückgeholte Woche einbringt. Verbessern Sie also erst die Zuordnung, bevor Sie ausweiten.
+
+## Fragen aus dem Gerüstbau
+
+### Wie behält man Standzeiten über Dutzende Baustellen im Blick?
+
+Mit einem Verzeichnis, das pro Baustelle eine Zeile hat: Übergabedatum, enthaltene Wochen, Wochenpreis, voraussichtliches Ende, Freigabe erhalten. Jeden Montag durchsehen. Gerüstbau-Software erledigt das mit weniger Tipparbeit. KI lohnt sich erst, wenn Sie wissen, dass die fehlenden Daten in E-Mails und Chats stecken.
+
+### Kann ich vergessene Mehrwochen noch nachberechnen?
+
+Oft ja, wenn Ihr Angebot oder Ihre Bedingungen den Wochenpreis nennen und Sie die Daten belegen können. Ob eine späte Rechnung bezahlt wird, ist ebenso eine Frage der Kundenbeziehung wie eine rechtliche, und bei größeren Summen ist ein kurzes Gespräch mit einer Rechtsanwältin oder einem Rechtsanwalt besser als Raten. Je älter der Anspruch, desto schwerer der Nachweis, ein Grund mehr, wöchentlich nachzusehen.
+
+### Was, wenn der Kunde sagt, die Überziehung sei nicht seine Schuld?
+
+Manchmal hat er recht. Hat der Kunde das Gerüst am Dienstag freigegeben und Ihre Kolonne kam erst am Mittwoch der Folgewoche, ist die Mehrwoche zumindest strittig. Legen Sie Freigabe, Abbaudatum und den Grund jeder Verzögerung nebeneinander. Das kann das Modell zusammenstellen. Ob Sie berechnen, teilen oder verzichten, entscheiden Sie.
+
+### Darf ich Kunden-E-Mails in ein KI-Werkzeug geben?
+
+Das kann gehen, mit einem AVV nach Art. 28 DSGVO, einem bekannten Verarbeitungsort und einer klaren Löschregel. Nutzen Sie Firmenpostfächer statt privater Chats, und sagen Sie dem Team, was gelesen wird und warum.
+
+## Wo ich anfangen würde
+
+Jedes laufende Gerüst hat drei Daten: Übergabe, Ende der enthaltenen Standzeit, Freigabe erhalten. Kann das Büro am Montagmorgen nicht für jede Baustelle alle drei nennen, verschenken Sie Wochen. Beginnen Sie mit der Tabelle und der Nachricht zu Beginn der letzten enthaltenen Woche, und nehmen Sie KI dazu, wenn Sie die fehlenden Daten in Nachrichten finden.
+
+Wenn Sie sehen möchten, was Ihre eigene Baustellenliste und Ihr Postfach hergeben, [schreiben Sie mir, wie Sie Baustellen heute verfolgen](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Versuch wert ist. Dasselbe Muster zeigt sich überall, wo Nachfrage stoßweise kommt: Nach einem Hagelsturm nehmen [Dachdecker](/de/posts/ki-dachdecker-unwetter-anfragen) neue Baustellen schneller an, als sie jemand aufschreiben kann, und viele davon brauchen ein Gerüst.

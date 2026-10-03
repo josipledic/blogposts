@@ -1,0 +1,173 @@
+---
+id: "ki-buchhandlung-kundenbestellungen"
+translationOf: "ai-for-bookshops-customer-orders"
+title: "Buchhandlung: Bestellservice, der Amazon Paroli bietet"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Handel & Großhandel", "Buchhandlungen", "Kundenbestellungen", "KI für kleine Unternehmen"]
+description: "Ein blaues Buch mit Leuchtturm, aus dem Radio: Wie KI vage Kundenwünsche in Bestellungen verwandelt, die über Nacht ankommen. Die Buchhändlerin entscheidet."
+excerpt: "Ein blaues Buch mit Leuchtturm, aus dem Radio: Wie KI vage Kundenwünsche in Bestellungen verwandelt, die über Nacht ankommen. Die Buchhändlerin entscheidet."
+---
+
+Eine Kundin kommt an einem Samstagvormittag in die Buchhandlung. „Es war ein blaues Buch“, sagt sie. „Irgendwas mit einem Leuchtturm. Die Autorin war letzte Woche im Radio.“ Die einzige Buchhändlerin im Laden hat eine Schlange an der Kasse und ein Telefon, das nicht aufhört zu klingeln. Sie schreibt „blaues Buch, Leuchtturm, Radio?“ auf einen Zettel, notiert die Handynummer und legt ihn in die Bestellkiste.
+
+Der Zettel liegt bis Montag. Am Montagnachmittag hat jemand das Buch gefunden, eine Handynummer angerufen, bei der die Mailbox ranging, und die Bestellung zwei Tage später aufgegeben, als es möglich gewesen wäre. Die Kundin hat die Beschreibung längst in eine Suchmaschine getippt und das Buch bei einem Anbieter bestellt, der Lieferung am nächsten Tag versprach.
+
+Dabei hätte der Laden das Buch am Samstag in wenigen Minuten bestellen und zu Wochenbeginn auf dem Tresen haben können. Am Barsortiment liegt es nicht, am Preis auch nicht. Es liegt an den ersten fünf Minuten einer vagen Anfrage und an der letzten Nachricht, die der Kundin sagt, dass das Buch da ist. Dafür würde ich KI einsetzen.
+
+## Die Lieferkette steht längst
+
+<Stats title="Der Sortimentsbuchhandel ist noch immer der größte Vertriebsweg">
+  <Stat value="40,8 %" label="Marktanteil des Sortimentsbuchhandels (ohne E-Commerce) am Branchenumsatz 2025, das sind 3,93 Mrd. € und 3,7 % weniger als im Vorjahr" source="Börsenverein, via Börsenblatt" href="https://www.boersenblatt.net/news/buchhandel-news/buchmarkt-2025-die-offiziellen-zahlen-430629" />
+  <Stat value="≈ 2.980" label="Bucheinzelhändler gab es 2023 in Deutschland, 24 % weniger als fünf Jahre zuvor" source="Statistisches Bundesamt" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/Zahl-der-Woche/2025/PD25_42_p002.html" />
+  <Stat value="über 95 %" label="der im Buchhandel täglich verkauften Titel kann Libri nach eigener Angabe liefern, über Nacht und bundesweit (Herstellerangabe)" source="Libri" href="https://www.libri.de/en/for-traders/wholesale-trade/" />
+</Stats>
+
+Die Lieferseite ist genau für diese Aufgabe gebaut: Die Kundin fragt, der Laden bestellt vor dem täglichen Bestellschluss, am nächsten Morgen ist das Buch da. Die Barsortimente Libri, KNV Zeitfracht und Umbreit halten eigene Lager und beliefern den Handel [meist innerhalb von 24 Stunden](https://de.wikipedia.org/wiki/Barsortiment). Kolibri360, die Marke von KNV Zeitfracht, wirbt für seinen Bücherwagendienst damit, dass Bestellungen [vor 9 Uhr morgens ankommen, sechs Tage die Woche](https://kolibri360.de/en/buchhandel/service/buecherwagendienst/). Das ist eine Herstellerangabe, aber sie beschreibt, wie der Handel arbeitet.
+
+Beim Preis gibt es nichts zu gewinnen und nichts zu verlieren. Nach § 3 des [Buchpreisbindungsgesetzes](https://www.gesetze-im-internet.de/buchprg/__3.html) muss jeder, der gewerbs- oder geschäftsmäßig Bücher an Letztabnehmer verkauft, den festgesetzten Preis einhalten. Die Kundin zahlt also denselben Preis [in der kleinen Buchhandlung und im Internet](https://www.boersenverein.de/beratung-service/recht/buchpreisbindung/), wie der Börsenverein erklärt. Und vom Onlineumsatz der Branche, der 2025 bei 26,1 % lag, kommt laut Börsenblatt etwa die Hälfte aus den Shops stationärer Buchhandlungen.
+
+Was bleibt, ist der Service rund um die Bestellung: wie schnell der Laden versteht, was die Kundin sucht, und ob er Bescheid sagt, wenn das Buch da ist.
+
+## Wo Kundenbestellungen versickern
+
+Überlegen Sie, was mit einer Kundenbestellung in einem Laden passiert, in dem viel los ist und Personal fehlt. Ich sehe vier Stellen.
+
+| Schritt | Was schiefgeht | Was es kostet |
+| --- | --- | --- |
+| Vage Anfrage am Tresen | Auf einen Zettel geschrieben und zwischen anderen Aufgaben gesucht | Ein Tag Verzögerung, und manche Anfragen werden nie geklärt |
+| Bestellung aufgeben | Sie verpasst den Bestellschluss des Barsortiments um eine Stunde | Das Buch kommt einen Tag später, als es möglich gewesen wäre |
+| Rücksprache mit der Kundin | Mailbox, verpasster Anruf, zweiter Versuch | Arbeitszeit, und eine Kundin, die aufgibt |
+| Das Buch ist da | Es steht im Regal, und niemand ruft an | Liegengebliebene Ware und eine verärgerte Kundin |
+
+Nichts davon ist ein Problem des Barsortiments. Es sind Übergaben im Laden selbst, und deshalb eignen sie sich für Software. Es heißt auch, dass eine clevere Katalogsuche allein sie nicht löst.
+
+## Vom vagen Wunsch zum bereitgelegten Exemplar
+
+So würde ich den Ablauf bauen. Der Assistent nimmt Wünsche dort an, wo sie ankommen: als Sprachnachricht, über ein Formular, einen Chat auf der Website oder als Notiz, die jemand an der Kasse eintippt.
+
+<Flow title="Vom vagen Wunsch zum bereitgelegten Buch" caption="Der Assistent findet Kandidaten und bereitet die Bestellung vor. Die Buchhändlerin entscheidet, wenn der Treffer nicht sicher ist.">
+<Step title="Wunsch kommt an" who="Kundin" time="Samstag, 10:42">Eine Sprachnachricht, ein Formular oder eine Notiz vom Tresen, in den eigenen Worten der Kundin.</Step>
+<Step title="Eingrenzen" who="KI" tone="ai" time="1 bis 2 Min.">Zwei, drei Fragen: Thema, Cover, wo sie davon gehört hat, Roman oder Sachbuch, gebunden oder Taschenbuch, ungefährer Zeitpunkt.</Step>
+<Step title="Im Katalog suchen" who="KI" tone="ai" time="Sekunden">Bis zu drei Kandidaten mit Cover, Autorin, Preis und Lieferbarkeit, alles aus dem Katalog und nichts aus dem Gedächtnis.</Step>
+<Step title="Treffer prüfen" who="Buchhändlerin" tone="human" time="unter 1 Min.">Ein sicherer Treffer: mit einem Tipp freigeben. Mehrere plausible oder keiner: Die Buchhändlerin ruft an oder schlägt Alternativen vor.</Step>
+<Step title="Kundin bestätigt" who="Kundin" time="Minuten">Eine Antwort auf die SMS oder ein Ja am Telefon, nachdem sie Cover und Titel gesehen hat.</Step>
+<Step title="Bestellung aufgeben" who="System" time="vor Bestellschluss">Die Bestellung geht mit Namen und Nummer ins Warenwirtschaftssystem. Der Assistent meldet, was kurz vor dem Bestellschluss steht.</Step>
+<Step title="Bescheid sagen" who="KI" tone="ai" time="am nächsten Morgen">Sobald das Buch eingebucht ist, eine kurze Nachricht: Es liegt bereit, hier sind die Öffnungszeiten, so lange halten wir es zurück.</Step>
+</Flow>
+
+Ein paar Entscheidungen erledigen den größten Teil der Arbeit.
+
+**Er sucht im Katalog, nie im Gedächtnis.** Sprachmodelle erzeugen überzeugende Buchtitel, die es nicht gibt. Der Assistent muss das Buch im Katalog nachschlagen, den Ihr Barsortiment oder Ihr Warenwirtschaftssystem bereitstellt, nur zeigen, was er dort gefunden hat, und die Lieferbarkeit nennen, die der Katalog angibt. Die gemeinsame Referenz ist das VLB, das laut [MVB](https://mvb-online.de/marken-und-produkte/vlb) rund 2,9 Millionen Produkte von mehr als 22.000 Verlagen verzeichnet. Fragen Sie Ihren Softwareanbieter, welche Schnittstelle für eine Suche von außen existiert, denn von ihr hängt die Qualität dieses Schritts ab. Kolibri360 bietet etwa mit pcbis ein Informations- und Bestellsystem und mit fitbis ein Warenwirtschaftssystem für den Buchhandel an; auch andere Anbieter haben solche Lösungen.
+
+**Die Sicherheit entscheidet, wer handelt.** Ein einzelner sicherer Treffer geht als Freigabe mit einem Tipp an die Buchhändlerin. Zwei, drei plausible Treffer oder keiner brauchen das Urteil eines Menschen und oft einen kurzen Anruf. Das ist die menschliche Entscheidung, und hier kommt das Wissen des Ladens ins Spiel.
+
+**Der Bestellschluss gehört zur Logik.** Jedes Barsortiment hat einen täglichen Bestellschluss, und Ihrer steht im Vertrag oder im Portal. Der Assistent sollte ihn kennen und freigegebene Wünsche nach vorn ziehen, wenn er näher rückt.
+
+## Was die Buchhändlerin sieht
+
+Hier ein erfundenes Beispiel, wie die Anfrage auf dem Bildschirm der Buchhändlerin ankommt. Titel und Preise sind ausgedacht.
+
+```text
+ANFRAGE, Sa 10:42, Sprachnachricht (transkribiert)
+„Blaues Cover, irgendwas mit einem Leuchtturm, die Autorin war letzte
+Woche im Radio. Ein Roman, glaube ich.“
+Kundin: Maria, Handynummer hinterlegt, SMS erlaubt: ja
+
+Kandidat 1 (sicher): Die Lampe von Skerry Point, gebunden, 22,00 €, beim Barsortiment lieferbar
+Kandidat 2 (möglich): Salz und Signal, Taschenbuch, 12,00 €, lieferbar
+Nicht in den Daten: welche Radiosendung, welche Woche.
+Bestellschluss heute: 16:00. Nächster Schritt: Kandidat 1 freigeben oder Maria anrufen.
+```
+
+Die Buchhändlerin hat vielleicht dieselbe Sendung gehört. Sie weiß, was diese Woche auf der Shortlist stand und nach welchem Buch am Donnerstag drei Kunden gefragt haben. Der Assistent weiß das nicht, also gibt er die Frage weiter und lässt das Urteil dort, wo es hingehört.
+
+## Wo der Assistent aufhört
+
+<Split title="Die Grenze" leftTitle="Der Assistent" rightTitle="Der Assistent nie" left={[
+  "Sagt gleich im ersten Satz, dass er ein automatischer Assistent ist",
+  "Stellt zwei, drei Fragen, um ein halb erinnertes Buch einzugrenzen",
+  "Sucht im Katalog und zeigt nur Titel, die er wirklich gefunden hat",
+  "Bereitet die Bestellung vor und meldet den Bestellschluss",
+  "Sagt der Kundin Bescheid, wenn das Buch da ist, und sonst nichts"
+]} right={[
+  "Nennt einen Titel, den er im Katalog nicht gefunden hat",
+  "Verspricht einen Liefertag, den das Barsortiment nicht bestätigt hat",
+  "Gewährt Rabatte oder nennt einen anderen Preis als den gebundenen Ladenpreis",
+  "Empfiehlt Bücher oder redet einer Kundin ihre Wahl aus",
+  "Packt Werbung in die Abholbenachrichtigung"
+]} />
+
+Beim Preis ist die Grenze eindeutig. Der Börsenverein hat das VLB zur [Referenzdatenbank für den gebundenen Ladenpreis](https://www.boersenverein.de/beratung-service/recht/buchpreisbindung/) ausgebaut, und der Assistent nennt nur diesen Preis.
+
+Die Empfehlung ist der Grund, warum Menschen in eine Buchhandlung gehen und nicht auf eine Website. Ich würde sie nicht automatisieren. Der Assistent übernimmt den trockenen Teil der Arbeit, damit die Buchhändlerin mehr Zeit für den Teil hat, für den die Kundschaft kommt.
+
+## Wann ein Formular und eine SMS reichen
+
+Nicht jeder Laden braucht dafür KI. Wenn die meisten Kundenbestellungen mit Titel oder ISBN ankommen, behebt ein Webformular mit diesen Feldern plus eine SMS beim Wareneingang die teuerste Lücke: das Buch im Regal, von dem niemand erzählt hat. Viele Warenwirtschaftssysteme und Barsortiments-Tools können so etwas schon, schauen Sie also zuerst, was Ihres kann, bevor Sie etwas kaufen. Dasselbe Prinzip funktioniert an der [Metzgertheke bei Feiertagsbestellungen](/de/posts/ki-metzgerei-vorbestellungen): eine klare Bestellung, ein Abholfenster, eine Nachricht, wenn alles bereitliegt.
+
+KI lohnt sich bei den vagen Anfragen: Sprachnachrichten und Mitteilungen, die ankommen, wenn der Laden voll oder geschlossen ist, von Menschen ohne Titel. Bekommen Sie zwei davon pro Woche, reicht ein Mensch mit Katalog. Bekommen Sie zwanzig, und die Hälfte am Samstag, fängt es an, sich zu rechnen. Für Onlinefragen zu Lieferbarkeit und Versand ähnelt die Logik dem [Kundenservice vor dem Kauf im Onlineshop](/de/posts/ki-onlineshop-kundenservice).
+
+## Was es kostet, grob gerechnet
+
+<Calc title="Überschlag: Ein Laden mit 60 Kundenbestellungen pro Woche" caption="Annahmen, keine Messwerte. Ihr eigenes Bestellbuch liefert die echten Zahlen. Umsatz ist kein Gewinn, deshalb zählt der zurückgewonnene Umsatz mit 30 % Rohertrag." rows={[
+  ["Kundenbestellungen pro Woche", "60"],
+  ["Davon beginnen als vage Anfrage", "× 25 %"],
+  ["Vage Anfragen pro Monat (4,3 Wochen)", "≈ 65"],
+  ["Gesparte Arbeitszeit pro Anfrage: Suche, Rückrufe, Nacherfassung", "× 8 Min. ≈ 8,6 Stunden"],
+  ["Personalkosten pro Stunde", "× 20 € ≈ 170 €"],
+  ["Vage Anfragen, aus denen heute keine Bestellung wird", "20 % ≈ 13 pro Monat"],
+  ["Durchschnittlicher Buchpreis, Rohertrag 30 %", "× 18 € × 30 % ≈ 70 €"]
+]} result={["Wert pro Monat", "≈ 240 €"]} />
+
+Dem steht die andere Seite gegenüber. Als Platzhalter nehme ich 100 bis 250 € im Monat für Assistent, Telefonnummer und Nachrichtengebühren an, dazu einige Stunden für Einrichtung und Test. Holen Sie echte Angebote ein, denn die Preise gehen weit auseinander.
+
+Mit diesen Annahmen fällt das Bild bescheiden aus: grob kostendeckend bis leicht positiv, wenn man nur rechnet. Die 30 % Rohertrag sind eine Annahme; die Spanne in Ihrem Laden liegt vermutlich anders, setzen Sie Ihren eigenen Wert ein. Was die Rechnung auslässt, ist die Kundin, die wiederkommt, weil es einmal geklappt hat, und die Zeit, die Ihr Team an der Kasse statt mit Zetteln verbringt. Deshalb würde ich klein anfangen.
+
+## Kundendaten und Regeln, die Sie prüfen sollten
+
+Eine Bestellung enthält einen Namen, eine Telefonnummer und einen Titel. Was jemand bestellt, kann viel über ihn verraten: ein Buch zu einer Diagnose, zu Schulden, zur Scheidung. Speichern Sie die Daten nur so lange, wie die Bestellung sie braucht, beschränken Sie den Zugriff und halten Sie sie aus Werbeverteilern heraus. Für die Bestellung selbst genügt Art. 6 Abs. 1 lit. b DSGVO als Grundlage. Mit dem Anbieter, der den Assistenten betreibt, brauchen Sie einen Auftragsverarbeitungsvertrag nach Art. 28 DSGVO, und Sie sollten wissen, wo er die Daten verarbeitet.
+
+**Abholbenachrichtigungen.** Das Oberlandesgericht Hamburg hat im März 2026 entschieden (Beschluss vom 19.3.2026, 15 W 32/25), dass schon ein Newsletter-Hinweis in einer Bestellbestätigung ohne Einwilligung [unzulässige Werbung](https://shopbetreiber-blog.de/olg-hamburg-werbung-in-der-bestellbestaetigung-ohne-einwilligung-unzulaessig) ist. Ohne ausdrückliche Einwilligung, oder die Voraussetzungen des § 7 Abs. 3 UWG, darf eine solche Nachricht also keine Werbung enthalten. Halten Sie die Nachricht deshalb schlicht: „Ihr Buch ist da. Wir haben bis 18 Uhr geöffnet.“ Der Hinweis auf die Lesung nächste Woche gehört in den Newsletter, für den jemand eingewilligt hat.
+
+**Sagen, dass es eine KI ist.** Nach Artikel 50 der KI-Verordnung müssen Menschen seit dem 2. August 2026 erfahren, dass sie mit einem KI-System sprechen, wie die [FAQ der EU-Kommission](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) erklärt. Sagen Sie es im ersten Satz.
+
+**Fernabsatz und Widerruf.** Ein Fernabsatzvertrag liegt nach § 312c BGB vor, wenn Verhandlung und Vertragsschluss ausschließlich über Fernkommunikationsmittel laufen. Nimmt der Laden das Angebot der Kundin per Telefon oder Chat verbindlich an, bevor sie das Geschäft betritt, [greift das gesetzliche Widerrufsrecht](https://www.heise.de/hintergrund/Verwirrung-um-Widerrufsrecht-fuer-Bestell-und-hol-ab-Geschaefte-5994592.html), auch wenn sie das Buch im Laden abholt. Bestätigt sie die Bestellung am Tresen, ist es etwas anderes. Es kommt auf den Einzelfall an. Entscheiden Sie bewusst, was Sie tun, formulieren Sie die Bestätigung entsprechend und lassen Sie sich im Zweifel vom Börsenverein oder einem Anwalt beraten.
+
+## Ein Pilot in zwei Wochen
+
+<Checklist title="Bevor Sie ihn einschalten" items={[
+  "Bestellschluss und Liefertage Ihrer Barsortimente, aufgeschrieben und dem Assistenten mitgegeben",
+  "Welche Katalogsuche Ihr Warenwirtschaftssystem oder Barsortiment anbietet, und ob der Assistent sie nutzen kann",
+  "Ein Regal für Kundenbestellungen, beschriftet mit Namen und Bestellnummer, und eine Regel, wie lange Sie zurückhalten",
+  "Der erste Satz, der sagt, dass der Assistent automatisch arbeitet",
+  "Die Erlaubnis zur SMS, abgefragt, wenn Sie die Handynummer aufnehmen",
+  "Eine schlichte Abholbenachrichtigung ohne Werbung",
+  "Die Bestellzettel des letzten Monats als Testmenge: Wie viele hätte der Assistent richtig zugeordnet?"
+]} />
+
+Ich würde den Assistenten zuerst auf die Zettel des letzten Monats loslassen und drei Dinge zählen: richtige Treffer, knappe Fehlgriffe und falsche Titel. Danach geht er live, und im ersten Monat gibt die Buchhändlerin jeden Titel frei. Ein falsch bestelltes Buch ist ein Grund, die Regeln zu verschärfen, und keine Zahl, die man wegmittelt.
+
+## Was Buchhändlerinnen mich fragen
+
+### Kann KI ein Buch anhand einer vagen Beschreibung finden?
+
+Oft, wenn sie in einem echten Katalog sucht und die Kundin ein paar Details weiß: das Thema, wo sie davon gehört hat, ungefähr wann. Die Farbe des Covers ist ein schwacher Hinweis, und die Erinnerung an einen Titel stimmt oft nicht. Nehmen Sie einen Treffer als Vorschlag, den die Buchhändlerin bestätigt, nie als Antwort.
+
+### Ziehen Kunden einen Bot der Buchhändlerin vor?
+
+Die meisten müssen sich nicht entscheiden. Der Assistent antwortet, wenn niemand kann, abends oder an der vollen Samstagskasse, und ein Mensch übernimmt, sobald die Kundin es möchte. Ziel ist, dass keine Anfrage auf einem Zettel wartet.
+
+### Hilft das gegen Amazon, wenn die Preise ohnehin gebunden sind?
+
+Gerade dann. Weil der Preis überall gleich ist, entscheiden Tempo und Bequemlichkeit: eine klare Antwort in Minuten und das Buch am nächsten Morgen. Und Online ist kein Gegensatz zum Laden: Vom Onlineanteil von 26,1 % im Jahr 2025 läuft laut Börsenblatt etwa die Hälfte über die Shops stationärer Buchhandlungen.
+
+### Was, wenn das falsche Buch bestellt wird?
+
+Deshalb sieht die Kundin Cover und Titel, bevor etwas bestellt wird. Legen Sie vorher fest, wie Sie mit nicht abgeholten Bestellungen umgehen: wie lange Sie zurückhalten und ob Sie bei teuren oder ungewöhnlichen Titeln eine Anzahlung verlangen.
+
+## Wo ich anfangen würde
+
+Fangen Sie am Ende des Ablaufs an, nicht beim klugen Teil. Machen Sie zuerst die Abholbenachrichtigung automatisch, das braucht keine KI. Danach kommt der Assistent für vage Anfragen am Abend und an vollen Samstagen, wobei die Buchhändlerin jeden Titel freigibt. Der Assistent findet, die Buchhändlerin entscheidet, und die Kundin erfährt immer, wenn das Buch da ist.
+
+Wenn Sie das in Ihrer Buchhandlung ausprobieren möchten, [schreiben Sie mir, welches Warenwirtschaftssystem und welches Barsortiment Sie nutzen](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Test wert ist. Ein anderer Tresenbetrieb mit demselben Problem ist [die Metzgerei bei Feiertagsbestellungen](/de/posts/ki-metzgerei-vorbestellungen), und Onlineshops kennen dieselben Fragen vor dem Kauf aus dem [Kundenservice](/de/posts/ki-onlineshop-kundenservice).

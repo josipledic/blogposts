@@ -1,0 +1,182 @@
+---
+id: "ai-for-food-trucks-event-bookings"
+title: "Food Truck Bookings: Which Events Are Actually Worth It?"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Food & drink", "Food trucks", "Event bookings", "AI for small business"]
+description: "Wedding, market, festival or company lunch? How food truck owners work out break-even per event and let AI read inquiries, check numbers and draft replies."
+excerpt: "Wedding, market, festival or company lunch? How food truck owners work out break-even per event and let AI read inquiries, check numbers and draft replies."
+---
+
+Tuesday morning, four inquiries. A couple wants the truck for their wedding on a Saturday in June: 80 guests, an evening buffet. A street food festival offers a pitch on the same Saturday, 15% of sales, "about 8,000 visitors expected". A software company asks for a Friday summer-party lunch for "around 120 people, budget flexible". And the weekly market slot you've had for two years is still there, as it is every Thursday.
+
+The truck can only be in one place on Saturday. A common way to decide is to answer the message that sounds nicest, or the one that makes you feel guilty. That is how a truck ends up at a rained-out festival on a day that doesn't even cover the staff.
+
+The four offers don't pay in the same way, so gut feeling is a poor judge. Turn each one into a break-even number and a worst case before you reply. That's where I think AI earns its place: reading the messy request, filling in your numbers and putting a clear yes, no or "tell me more" in front of you. Not choosing for you.
+
+## Four kinds of bookings, four ways to get paid
+
+| Booking | How you get paid | Who carries the risk | What to ask first |
+| --- | --- | --- | --- |
+| Private catering (wedding, birthday) | Price per person or a minimum turnover, usually with a deposit | The client, if there is a minimum; you, if there isn't | Guest count by when? Minimum? Deposit? |
+| Company lunch or party | Fixed fee or minimum, often against a purchase order | Mostly the company; you, if payment terms are long | Budget per head, who pays, how guests order |
+| Weekly market or lunch spot | You sell and pay a pitch fee | You, but small and measurable after a few weeks | Fee, days, footfall in recent weeks |
+| Festival or public event | You sell, the organizer takes a flat fee, a share of sales, or both | You: weather, crowd size and competing trucks | Fee model, guarantee, last year's real attendance |
+
+Minimums are common in private catering because a truck costs almost the same to run for 25 guests as for 100. The food truck caterer [holytruck.de](https://holytruck.de/blog/was-kostet-ein-foodtruck/) lists the fixed parts: prep and shopping, team planning, cleaning, vehicle, set-up and standing time.
+
+For public events, a yardstick helps. The [Washington State Food Truck Association](https://wafoodtrucks.org/event-information), a US trade body of truck owners, advises hosts to charge a flat fee or a percentage of gross sales, never both. A percentage should ideally be 10% or lower and never above 15%, and an event taking more than 10% should offer a minimum sales guarantee. That's one association's position, not a rule, and I couldn't find an equivalent guideline for Germany or the UK. Treat it as an opening position.
+
+Read the cancellation clause too. The [published terms of one German street food festival organizer](https://street-food-festival.de/agb) charge a flat stand rent, not a share, but the pattern is worth knowing: 10% of the rent if you cancel up to six weeks ahead, the full rent from six weeks to 21 days ahead, and later a penalty of double the stand fee. A festival "yes" can be expensive to undo, and the better offer for that Saturday tends to arrive after you've said it.
+
+## What the few available numbers say
+
+Hard numbers on which bookings pay best are scarce. The most useful I found is a spring 2026 survey of 142 food truck operators in Germany, run by a food truck owner who also sells consulting and reported by the trade site [Tageskarte](https://www.tageskarte.io/gastronomie/detail/food-truck-studie-zeigt-grosse-unterschiede-bei-gewinnen-und-geschaeftsmodellen.html). It is self-reported and not representative, so read it as a hint.
+
+<Bars title="Where German food truck operators earn most of their revenue" unit="%" caption="Share of 142 surveyed operators naming each as their main revenue source. Voluntary self-reports, spring 2026, run by a food truck consultant." source="Tageskarte on the Food Truck Branchenumfrage 2026" href="https://www.tageskarte.io/gastronomie/detail/food-truck-studie-zeigt-grosse-unterschiede-bei-gewinnen-und-geschaeftsmodellen.html" data={[
+  { label: "Festivals and pay-as-you-go events", value: 31, display: "31%" },
+  { label: "Company catering", value: 26, display: "26%", highlight: true },
+  { label: "Lunch service", value: 26, display: "26%" },
+  { label: "Private catering", value: 17, display: "17%", highlight: true }
+]} />
+
+More telling than the split: 58% of operators make less than 40,000 euros profit a year, and catering was the only model where higher profit classes showed up regularly. Festivals and pay-as-you-go events clustered in the lower classes, lunch service in the middle. That is one analyst's reading of a small sample, not a law, but it fits the maths below.
+
+## Where each booking sits
+
+Two questions sort most inquiries: what can the day earn, and how sure is the revenue?
+
+<Matrix title="Which bookings to chase, test or refuse" caption="Revenue certainty decides how much homework an event needs. Earning potential decides whether it's worth the homework." xLabel="How sure the revenue is" yLabel="What the day can earn" quadrants={[
+  { title: "Wide spread, no safety net: test with conditions", text: "Large festivals on a fee or share, no guarantee. The upside is real, so is the rained-out day. Ask for last year's real numbers first.", highlight: true },
+  { title: "High upside, protected: the core of the calendar", text: "Weddings, company events and private parties with a minimum turnover, a deposit and a fixed guest count.", highlight: true },
+  { title: "Low upside, no safety net: refuse", text: "Unknown events, a pitch fee, vague attendance claims, no guarantee. 'Great exposure' is not a revenue line." },
+  { title: "Low upside, steady: fill the gaps", text: "Weekly markets and lunch spots. Not exciting, but measurable, and they pay for the quiet weekdays." }
+]} />
+
+I'd steer the diary toward the top right, which is also where the survey puts the profit. A polite no saves the most at the bottom left. The top left deserves a calculation every time.
+
+## Break-even for a Saturday
+
+Take the festival from the opening. These are my assumptions for a mid-sized truck, not market data.
+
+<Calc title="Napkin math: break-even for one festival day" caption="Assumptions, not measurements. Your own pay and prep days are not in here, so everything above break-even is your wage plus profit." rows={[
+  ["Staff for the day (3 people, 9 hours, about 22 € an hour)", "≈ 600 €"],
+  ["Power, waste, fuel, card fees (treated as fixed)", "220 €"],
+  ["Fixed costs for the day", "820 €"],
+  ["Food and packaging", "32% of sales"],
+  ["Organizer's revenue share", "15% of sales"],
+  ["Left from each euro of sales", "53 cents"]
+]} result={["Break-even sales (820 ÷ 0.53)", "≈ 1,550 €"]} />
+
+Now the wedding from the same inbox: 80 guests at an assumed 24 € per head, two people on the truck for about six hours (264 €) plus roughly 150 € for fuel, power and disposables.
+
+| Scenario | Net sales | Organizer's 15% | Food at 32% | Staff and other costs | Left for you |
+| --- | --- | --- | --- | --- | --- |
+| Festival, rained out | 900 € | 135 € | 288 € | 820 € | -343 € |
+| Festival, expected | 3,200 € | 480 € | 1,024 € | 820 € | 876 € |
+| Festival, strong day | 4,800 € | 720 € | 1,536 € | 820 € | 1,724 € |
+| Wedding, 80 guests | 1,920 € | none | 614 € | 414 € | 892 € |
+
+Weight the three festival days 25%, 50% and 25% (a guess) and the festival averages about 780 €. The wedding makes about 890 € and doesn't depend on the weather. Close on paper, but different bets: a calculated risk with upside against a protected job with a ceiling. That's the case for asking the organizer for a guarantee, a lower share or a flat fee. At a 10% share and the same expected sales, the expected day gains 160 €.
+
+## How an inquiry becomes a decision
+
+<Flow title="From a messy inquiry to a yes, a counteroffer or a no" caption="The assistant reads, checks and calculates from your numbers. You decide. Nothing is accepted and no date is held without your approval.">
+<Step title="Inquiry arrives" who="Organizer or client" time="any time">Website form, email, DM or a booking platform. Often missing half the facts.</Step>
+<Step title="Extract the facts" who="AI" tone="ai" time="seconds">Date, hours, location, event type, guests or expected attendance, fee model, power and water. Marks what is missing.</Step>
+<Step title="Check calendar and rules" who="AI" tone="ai">Is the truck free, including set-up? Does the event break a standing rule, such as no fee plus share?</Step>
+<Step title="Run the numbers" who="Spreadsheet" time="seconds">The assistant fills your break-even sheet with the inquiry's numbers. The arithmetic stays in the sheet, not in the model's head.</Step>
+<Step title="Decide" who="Owner" tone="human" time="2 min">Read the one-screen summary. Say yes, send a counteroffer, ask for the missing facts, or decline.</Step>
+<Step title="Reply and follow up" who="AI" tone="ai">Drafts the chosen reply in your tone. You send it. A deposit or signed contract turns the calendar hold into a booking.</Step>
+</Flow>
+
+I'd draw two hard lines. The assistant never accepts a booking or confirms a date, and it never does the maths itself. A model is good at reading "about 120 people, budget flexible" and a festival PDF. It shouldn't multiply 0.53 into a break-even figure. Keep the formula in a spreadsheet and let the model fill the cells.
+
+## What lands on your phone
+
+The summary I'd aim for, with made-up details:
+
+```text
+FESTIVAL INQUIRY, Saturday and Sunday in June
+Fee: 15% of net sales, no flat fee. Guarantee: none stated.
+Attendance: "about 8,000" (organizer's figure, no past count).
+Power: 16 A offered. Water, cancellation terms: not stated.
+Officially designated event (festgesetzt): not stated.
+Calendar: Saturday already holds a wedding, deposit paid.
+Break-even: about 1,550 € a day. Last comparable event: 2,900 €.
+Suggested: decline Saturday, ask about Sunday plus last year's
+attendance, guarantee, cancellation terms. Draft attached.
+```
+
+It shows what's missing, what the calendar says and what the day must earn. The decision stays yours, in two minutes instead of an evening with a three-page PDF.
+
+## What to ask before you say yes
+
+Most missing information is predictable, so ask for it up front.
+
+<Checklist title="Ten questions for every event" items={[
+  "Exact times, including set-up and teardown, and where the truck stands",
+  "Fee model: flat, share of sales (gross or net of VAT?) or both, and whether there is a guarantee",
+  "Last year's actual attendance, not the projection, and how many trucks were booked",
+  "Other trucks with a similar menu, and whether you get exclusivity",
+  "Power and water: what is provided, what you bring, what it costs",
+  "Is the event officially designated as a market or fair? Ask in writing",
+  "Who sells alcohol, and who holds the permit?",
+  "Cancellation and weather clauses, and what is refunded if the event is called off",
+  "Payment terms and deposit for private and company jobs",
+  "Guest dietary needs, with a deadline for the final list"
+]} />
+
+A form with these as required fields and a one-page rate card remove most of the back-and-forth and cost nothing.
+
+## Paperwork that changes the maths
+
+This is not legal advice, and the rules move. Here is what I could verify in September 2026, for Germany and the US.
+
+**Germany, trading licence.** According to the [IHK Schwarzwald-Baar-Heuberg](https://www.ihk.de/sbh/branchen/tourismus-gastronomie/hotellerie-gastronomie/gruendung-eines-foodtrucks-oder-imbisswagens-7012610), a classic food truck in practice registers as travelling trade and needs a Reisegewerbekarte, which costs 150 to 500 euros depending on the municipality and is valid across Germany. It isn't needed at an officially designated event such as a market or fair, but check beforehand that the event really is designated. That's the "festgesetzt" question in the checklist. The IHK separates travelling from standing trade by initiative: in a standing trade the customer approaches the business, even if only by phone. Whether your pre-booked weddings count as one or the other is a question for your Gewerbeamt.
+
+**Germany, alcohol and seating.** Hospitality law is state law. According to the [IHK Niederbayern](https://www.ihk-niederbayern.de/beratung-und-service/fuer-ihre-branche/tourismus/voraussetzungen-gastgewerbe-reisebranche/verkaufsstaende-speisewagen-und-foodtrucks/), a Bavarian truck offering on-the-spot consumption, for example with standing tables, needs a Gaststättenerlaubnis, and so does serving alcohol. In Baden-Württemberg the permit was replaced by a notification on 1 January 2026, and a temporary operation for a special occasion must be notified two weeks ahead, says the [Landkreis Rastatt](https://www.landkreis-rastatt.de/neues_landesgaststaettenrecht_bw). Ask the Gewerbeamt where each event takes place.
+
+**Germany, food rules.** The IHK Niederbayern page also lists an instruction under the Infection Protection Act from the local health office. For allergens, [Lebensmittelklarheit](https://www.lebensmittelklarheit.de/informationen/allergenkennzeichnung-bei-lebensmitteln-diese-angaben-sind-pflicht) explains that the 14 main allergens must also be disclosed for unpackaged food, orally if a sign says where to ask and written documentation is available. My post on [allergen labelling for canteens](/posts/ai-for-canteens-allergen-labelling) covers the kitchen side.
+
+**United States.** The FDA says food trucks are regulated by [state and local government](https://www.fda.gov/food/food-industry/how-start-food-business). Check each event's location, not just your home base.
+
+## Data protection
+
+Inquiries hold names, phone numbers, addresses and sometimes dietary notes. Allergies and halal or kosher requests can reveal health or religious belief, which the GDPR treats as [special-category data](https://gdpr-info.eu/art-9-gdpr/). Collect only what the kitchen needs, keep guest lists out of public chatbots, delete them after the event, and sign a data processing agreement with your AI provider if you serve EU customers.
+
+If the assistant only drafts replies that you send, customers notice nothing. If a chatbot answers them directly on your website or messenger, [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) requires telling them it's an AI, and has applied since 2 August 2026.
+
+## What it costs
+
+My rough assumptions, not a quote: a booking form and a break-even sheet cost nothing to 15 € a month. An assistant that reads inquiries and drafts replies adds about 20 to 40 € a month at 30 to 60 inquiries. Setup is a day or two: your rules, a rate card and reply templates, tested on last season's inquiries. One avoided loss like the rained-out festival above (minus 343 €) roughly covers a year of tool costs.
+
+## When you don't need AI
+
+With five inquiries a month, a spreadsheet, a form and a rate card do the job. So does a reputation check: before signing up for a festival, message two trucks that did it last year. No model knows whether the 8,000 visitors showed up.
+
+AI starts to pay when inquiries pile up in peak season, arrive on four channels or come as long PDFs. For private jobs, [replying within the hour](/posts/ai-for-catering-inquiries) is its own topic, and [how venues handle inquiries](/posts/ai-for-event-venues-inquiries) shows the organizer's side of the table.
+
+## Questions food truck owners ask
+
+### Are festivals worth it for a small food truck?
+
+Sometimes. Work out break-even sales first and compare it with what a comparable day earned. In the German survey above, festival-focused trucks sat mostly in the lower profit classes. If the organizer takes a share, push for a lower percentage, a flat fee or a guarantee.
+
+### How much should I charge for a private event?
+
+Start from your costs: food, staff, travel, set-up and the prep day. Then set a minimum turnover that works even with fewer guests than hoped, plus a deposit and a deadline for the final guest count.
+
+### Do I need a Reisegewerbekarte for a food truck in Germany?
+
+Often yes: the IHK says registering travelling trade is the rule for a classic food truck. Officially designated events such as markets and fairs are the exception, and pre-booked private jobs may be treated differently, so ask your Gewerbeamt.
+
+### Can AI decide which events I should accept?
+
+It can prepare the decision: extract the facts, flag gaps and fill your sheet. It can't know the organizer's reputation. The yes or no is yours.
+
+## Where I'd start
+
+Know your break-even before you reply to anything. Take an event only if a bad day costs less than a good day earns, and ask for a guarantee whenever the organizer takes a share. Build the form and the spreadsheet first. Add the assistant when the inbox outgrows them.
+
+If you're juggling weddings, markets and festivals from one inbox, [tell me how inquiries reach you today](/contact?intent=improve), and I'll suggest the smallest setup worth testing.

@@ -1,0 +1,168 @@
+---
+id: "ki-ingenieurbuero-planlaufliste"
+translationOf: "ai-for-engineering-firms-document-control"
+title: "Ingenieurbüro: Planstände und Revisionen im Griff"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Kanzleien & Dienstleister", "Ingenieurbüros", "Planlaufliste", "KI für kleine Unternehmen"]
+description: "Gebaut wird nach dem falschen Planstand, weil niemand die Änderung bemerkte. Wie Ingenieurbüros mit KI Indizes vergleichen und die Planlaufliste pflegen."
+excerpt: "Gebaut wird nach dem falschen Planstand, weil niemand die Änderung bemerkte. Wie Ingenieurbüros mit KI Indizes vergleichen und die Planlaufliste pflegen."
+---
+
+Die Mail kommt am Dienstag um 16:50 Uhr. „Pläne aktualisiert, neuer Stand im Anhang.“ Vierzehn PDFs vom Architekten, Index D. Im Revisionsfeld des Grundrisses EG steht „D: angepasst gemäß Besprechung vom 5. März“. Drei der Änderungen sind mit Revisionswolken markiert. Eine vierte nicht.
+
+Stellen Sie sich ein Tragwerksplanungsbüro mit vier Leuten und einem Dutzend laufender Projekte vor. Niemand hat eine Stunde Zeit, Index C und Index D auf vierzehn Blättern übereinanderzulegen. Also überfliegt der Statiker die Wolken und macht weiter. Die vierte Änderung, ein um 30 cm nach Osten versetzter Aufzugsschacht, bleibt im Hintergrundplan des Architekten verborgen. Drei Wochen später gehen die Schalpläne mit der alten Schachtlage raus. Sechs Wochen danach fällt auf der Baustelle auf, dass der Schacht nicht zur Deckenaussparung passt.
+
+Niemand war hier nachlässig. Die eine Information, auf die es ankam, „der Schacht ist gewandert“, stand nirgends, wo der Statiker sie gesehen hätte.
+
+In der Softwareentwicklung hängt an jeder Änderung ein Diff und eine kurze Nachricht, was sich warum geändert hat. Planstände haben meist beides nicht. Genau dort würde ich in einem Ingenieurbüro KI einsetzen, mit einem Vergleichswerkzeug darunter und einem Menschen, der entscheidet, was jede Änderung bedeutet.
+
+## Zwei Richtungen, ein Fehler
+
+Probleme mit Planständen laufen in beide Richtungen. Eingehend planen Sie auf dem Hintergrund eines anderen und merken nicht, dass er sich geändert hat. Ausgehend baut jemand nach einem Index Ihres Plans, den Sie längst ersetzt haben. Beides endet gleich: Niemand kann schnell und sicher sagen, welcher Stand für wen gilt.
+
+In der Ausführungsplanung häufen sich die Indizes, weil noch alle ändern. In der HOAI ist sie zugleich der größte Posten der Tragwerksplanung: [§ 51 bewertet die Leistungsphase 5 mit 40 Prozent](https://www.gesetze-im-internet.de/hoai_2013/__51.html) des Honorars, in einigen Sonderfällen mit weniger.
+
+Was Fehler kosten, lässt sich schwer beziffern, und mangelnde Plankontrolle ist nur eine Ursache unter vielen. Die britische Get It Right Initiative, ein Zusammenschluss aus Bauherren, Planern und Bauunternehmen, nennt als Ergebnis internationaler Studien [rund 5 % des Projektwerts für die direkten Kosten vermeidbarer Fehler](https://getitright.uk.com/). Nach eigener Forschung liegt der wahre Wert mit indirekten Kosten und latenten Mängeln eher bei 21 %. Die Zahlen gelten für alle Arten von Fehlern, nicht nur für Indexfehler. Ein guter Grund, die Planstandkontrolle nicht dem Gedächtnis zu überlassen, sind sie trotzdem.
+
+Kleine Büros trifft das am stärksten, weil es keine Dokumentenkontrolle gibt. In der Mitgliederbefragung 2025 zur wirtschaftlichen Situation der Architektur- und Ingenieurbüros (IW Consult im Auftrag von AHO, BAK, VBI und BIngK, 1.583 Ingenieurbüros nahmen teil) lag [der Median der Ingenieurbüros bei 6,0 Vollzeitäquivalenten, und 46,8 % hatten höchstens fünf](https://www.vbi.de/wp-content/uploads/2026/02/250714_Mitgliederbefragung_2025_extern.pdf). Die Teilnahme war freiwillig, die kleinsten Büros sind vermutlich unterrepräsentiert. In einem Büro dieser Größe ist „Dokumentenkontrolle“, wer die Mail öffnet.
+
+Der übliche Ablauf: Pläne kommen per Mail oder Download-Link, jedes Mal anders formuliert. Vergleichen heißt, zwischen zwei PDFs hin- und herzuschalten oder den Wolken zu vertrauen. Die Planlaufliste ist eine Excel-Tabelle, die am Ende der Woche gepflegt wird, wenn Zeit bleibt. Und niemand hält fest, wer den neuen Index bestätigt hat, also ist die Antwort auf „Hat die Baufirma den schon?“ eine Vermutung.
+
+## Erst die Planlaufliste, dann die KI
+
+Bevor ein Modell irgendetwas anfasst, brauchen Sie eine Liste, die sagt, was gilt. In Deutschland ist das die Planlaufliste, ein Verzeichnis der Planunterlagen eines Projekts. Eine Zeile pro Plan, mit genug Spalten für eine einzige Frage: Wonach darf die Baustelle heute bauen?
+
+| Spalte | Beispiel | Wer pflegt sie |
+| --- | --- | --- |
+| Plannummer | S-201 | Statiker |
+| Plantitel | Decke über EG, Schalplan | Statiker |
+| Index | C (ersetzt A und B) | Statiker |
+| Status | Zur Prüfung, oder zur Ausführung freigegeben | Statiker |
+| Ausgabedatum und Verteiler | 14.04.: Architekt, Baufirma, Prüfingenieur | Planlaufliste |
+| Änderungsvermerk | Deckenaussparung am Aufzugsschacht 30 cm nach Osten versetzt, folgt Architektenindex D | KI entwirft, Statiker gibt frei |
+| Grundlage | Architektenplan Index D vom 12.03. | KI liest aus, Statiker bestätigt |
+| Prüfstand | Vom Prüfingenieur geprüft, 02.04. | Statiker |
+| Bestätigt | Baufirma, 16.04. | Antwortmail oder Anruf |
+
+Die Spalte „Grundlage“ fehlt in den meisten Büros. Sie verknüpft Ihren Index mit dem Hintergrund, auf dem Sie geplant haben. Wenn der Architekt Index D herausgibt, sehen Sie sofort, welche Ihrer Pläne auf C beruhen.
+
+Das erinnert an ISO 19650, und das ist kein Zufall: Die Normenreihe gibt jeder Datei eine Revision und einen Status. Im britischen National Annex laufen die Revisionen als P01, P02 für vorläufige Stände und C01 für vertragliche. Statuscodes sagen dem Empfänger, wofür eine Datei verwendet werden darf, etwa [S3 („suitable for review and comment“) oder S4 („suitable for stage approval“)](https://www.ukbimframework.org/wp-content/uploads/2021/02/Guidance-Part-C_Facilitating-the-common-data-environment-workflow-and-technical-solutions_Edition-1.pdf). Die Leitlinie stammt von 2020, der Annex wurde 2021 überarbeitet; prüfen Sie die aktuelle Fassung, bevor Sie Codes übernehmen. Ein kleines Büro braucht die Norm nicht komplett, aber zwei Ideen lohnen sich: einen Index, der nur steigt, und einen Status, der sagt, was der Empfänger mit der Datei tun darf.
+
+Davon ist noch nichts KI. Eine Planlaufliste und die Regel, dass kein Plan das Büro ohne Zeile verlässt, verhindern mehr Fehler als jedes Modell. Die KI hält die Liste wahr, wenn Sie beschäftigt sind.
+
+## Drei Aufgaben, die sich lohnen
+
+**Lesen, was ankommt.** Mail und Anhänge enthalten die Daten für die Planlaufliste: Nummern, Titel, Indizes, Datum, Freigabestempel. Ein Modell kann Mailtext und Plankopf lesen, jedes Blatt der Planlaufliste zuordnen und die Fälle melden, auf die es ankommt: ein neues Blatt, ein neuerer Index, derselbe Index unter anderem Dateinamen, ein älterer Index als der, den Sie haben, ein Blatt, das Ihre Liste noch nie gesehen hat.
+
+**Beschreiben, was sich geändert hat.** Die schwierige Aufgabe, dazu gleich mehr.
+
+**Ausgehende Pläne begleiten und nachfassen.** Ein Plananschreiben sollte jedes Blatt mit Index und Status auflisten, sagen, was es ersetzt, und in zwei, drei Zeilen nennen, was sich geändert hat. Das entwirft ein Modell aus Planlaufliste und Änderungsvermerken. Einige Tage später listet es die Empfänger auf, die noch nicht bestätigt haben, damit jemand anruft, statt es auf der Baustelle zu erfahren.
+
+## Änderungen beschreiben: erst finden, dann erklären
+
+Modelle lesen Text auf Plänen gut. Geometrie und Symbole sind eine andere Sache. Im [AECV-Bench](https://arxiv.org/abs/2601.04819), einem wissenschaftlichen Vergleichstest multimodaler Modelle an Architektur- und Ingenieurzeichnungen, erreichten textbezogene Fragen bis zu 0,95 Genauigkeit, während das zuverlässige Zählen von Türen und Fenstern in Grundrissen oft nur bei 0,40 bis 0,55 lag. Die Autoren folgern, dass heutige Systeme als Dokumentenassistenten taugen und werkzeuggestützte Abläufe mit einem Menschen in der Schleife brauchen.
+
+So würde ich es auch bauen. Ein Vergleichswerkzeug findet die Unterschiede, denn dieser Teil ist deterministisch. [Bluebeam Revu](https://support.bluebeam.com/revu/features/compare-documents-vs-overlay-pages.html) bietet zwei Wege: „Compare Documents“ hebt die Unterschiede zwischen zwei PDFs mit Wolken hervor, „Overlay Pages“ legt den Inhalt von zwei oder mehr Dateien übereinander und zeigt geänderte Inhalte in einer eigenen Farbe. Liefert der Architekt Modelle statt PDFs, vergleicht Ihre BIM-Software modellbasiert noch genauer.
+
+Das Modell bekommt dann, was das Werkzeug gefunden hat, Vorher-nachher-Ausschnitte jeder geänderten Stelle, das Revisionsfeld, die Wolken-Beschriftungen und den Vermerk des Architekten. Seine Aufgabe: jede Änderung in einfachen Worten beschreiben und das Ergebnis mit dem abgleichen, was der Architekt behauptet:
+
+```text
+Architektenplansatz, Index D gegen C (14 Blätter, eingegangen am 12.03.)
+Revisionsvermerk: „angepasst gemäß Besprechung vom 5. März“
+
+VOM ARCHITEKTEN MARKIERT, IM VERGLEICH BESTÄTIGT
+- A-102 Grundriss EG: Tür D14 jetzt auf der anderen Seite angeschlagen.
+  Statisch ohne Wirkung.
+- A-103 Grundriss 1. OG: neue Öffnung bei Achse 4/B, etwa 1,0 x 1,4 m.
+  Betrifft die Decke. Mit dem Architekten klären.
+- A-210 Schnitt B-B: Bezeichnung Decke jetzt 30 cm, vorher 25 cm.
+
+GEÄNDERT, NICHT MARKIERT
+- A-102 Grundriss EG: Aufzugsschacht rund 30 cm nach Osten versetzt
+  (Achse C nach D). Betrifft Deckenaussparung und Schachtwände.
+  Beim Architekten bestätigen lassen.
+
+MARKIERT, KEINE ÄNDERUNG GEFUNDEN
+- A-301 Ansicht: Wolke um das Attikadetail, nichts weicht von C ab. Nachfragen.
+
+UNVERÄNDERT: 10 Blätter
+```
+
+Die beiden unteren Gruppen sind der eigentliche Gewinn. „Geändert, nicht markiert“ ist die vierte Änderung aus dem Eingangsbeispiel. „Markiert, keine Änderung gefunden“ fängt eine übrig gebliebene Wolke ab oder ein Versprechen, das der Plan nicht hält. Beides geht als konkrete Frage zurück an den Architekten und gibt Ihnen einen höflichen Anlass, bessere Änderungsvermerke einzufordern.
+
+<Callout title="Drei Dinge, die der Assistent nie tut" tone="warning">
+Er entscheidet nie, dass eine Änderung harmlos ist, gibt nie einen Plan frei und setzt nie einen älteren Index auf „ersetzt“. Jedes davon ist eine Unterschrift, und die bleibt bei einem Ingenieur. Wo Vergleichswerkzeug und Modell sich widersprechen, schaut ein Mensch auf das Blatt.
+</Callout>
+
+## Der Ablauf
+
+<Flow title="Vom neuen Plansatz zum bestätigten Index" caption="Software findet die Unterschiede, das Modell erklärt sie, der Ingenieur entscheidet, was sie bedeuten. Schritt 5 ist der Kern.">
+<Step title="Planeingang" who="Architekt oder Bauherr" time="jederzeit">Eine Mail oder ein Download-Link mit einem neuen Plansatz. Noch wird nichts geöffnet.</Step>
+<Step title="Eingangsprüfung" who="KI" tone="ai" time="Minuten">Liest Plankopf und Mailtext, ordnet jedes Blatt der Planlaufliste zu und meldet neue, neuere, ältere, doppelte und unbekannte Blätter.</Step>
+<Step title="Vergleich" who="Vergleichswerkzeug" time="Minuten">Jedes geänderte Blatt wird mit dem Index verglichen, den Sie haben. Heraus kommt eine Liste geänderter Stellen.</Step>
+<Step title="Änderungsübersicht" who="KI" tone="ai" time="Minuten">Beschreibt jede Stelle, gleicht sie mit Wolken und Vermerk des Architekten ab und sortiert in markiert und bestätigt, geändert aber nicht markiert, und markiert aber nicht gefunden.</Step>
+<Step title="Auswirkung beurteilen" who="Statiker" tone="human" time="die eigentliche Arbeit">Öffnet nur die markierten Stellen. Jede wird eingestuft: betrifft meine Planung, betrifft ein anderes Gewerk, ohne Wirkung oder beim Architekten nachfragen. Die Spalte „Grundlage“ wird aktualisiert.</Step>
+<Step title="Freigeben und verteilen" who="Statiker, mit KI-Entwurf" tone="human">Der Statiker setzt den Status und gibt den Index aus. Das Modell entwirft das Plananschreiben mit ersetzten Indizes und Änderungsvermerken. Der Statiker liest es und versendet es.</Step>
+<Step title="Bestätigungen nachfassen" who="KI" tone="ai" time="nach 3 Werktagen">Listet Empfänger auf, die den neuen Index noch nicht bestätigt haben. Ein Mensch ruft an.</Step>
+</Flow>
+
+## Was es kostet
+
+Der Aufbau besteht vor allem aus der Planlaufliste und der Regel „keine Zeile, keine Ausgabe“: ein bis zwei Tage, ganz ohne KI. Eingangsprüfung und Änderungsübersicht an Ihren eigenen alten Plansätzen zuverlässig hinzubekommen, kostet einige Tage mehr. Der laufende Betrieb ist günstig: Ein Plansatz sind einige Dutzend Seitenbilder und etwas Text. Bei heutigen API-Preisen rechne ich mit Cent bis niedrigen einstelligen Euro-Beträgen pro Satz, bei dem Volumen unten also mit einigen zehn Euro im Monat. Das ist meine Schätzung, sie hängt von Anbieter und Blattgröße ab.
+
+<Calc title="Überschlag: eingesparte Zeit pro Woche" caption="Annahmen, keine Messwerte. Zählen Sie zwei Wochen lang Ihre eingehenden Plansätze, bevor Sie dem hier etwas glauben." rows={[
+  ["Eingehende Plansätze pro Woche", "8"],
+  ["Eingesparte Minuten pro Satz (45 auf 20, Prüfung eingerechnet)", "× 25"],
+  ["Ausgehende Planausgaben pro Woche", "10"],
+  ["Eingesparte Minuten pro Ausgabe (20 auf 8)", "× 12"],
+  ["Eingesparte Minuten pro Woche", "= 320"],
+  ["Arbeitswochen pro Jahr", "× 46"]
+]} result={["Eingesparte Stunden pro Jahr", "≈ 245"]} />
+
+Bei angenommenen internen Kosten von 60 € pro Stunde sind das rund 14.700 € Arbeitszeit im Jahr. Das eigentliche Argument ist es nicht. Eine einzige falsch liegende Deckenaussparung kostet mehr.
+
+## Wann Planlaufliste und Regel genügen
+
+- **Zwei, drei laufende Projekte, ein sorgfältiger Architekt.** Sind die Vermerke gut und lassen sich Blätter in zehn Minuten von Hand vergleichen, sparen Sie sich die KI. Planlaufliste und Regel erledigen die Arbeit.
+- **Ihre Auftraggeber nutzen schon einen Projektraum.** Werkzeuge wie Dalux, Trimble Connect, Autodesk Docs oder PLANFRED führen eine Planliste und verteilen Dateien. Nutzen Sie die, und ergänzen Sie nur die Änderungsübersicht.
+- **Berechnungen und Nachweise.** Keine Aufgabe für ein Sprachmodell. Die Übersicht zeigt, wo Sie hinschauen müssen, nie, dass das Tragwerk noch passt.
+
+## Vertraulichkeit, Datenschutz und Verantwortung
+
+Mails zum Planversand und Projektkontaktlisten enthalten personenbezogene Daten. Verarbeitet ein KI-Anbieter sie in Ihrem Auftrag, ist er Auftragsverarbeiter, und Sie brauchen einen Vertrag nach [Art. 28 DSGVO](https://dsgvo-gesetz.de/art-28-dsgvo/) (AVV). Wählen Sie einen Anbieter, der nicht mit Ihren Daten trainiert und dessen Verarbeitungsort Sie kennen.
+
+Pläne sind meist keine personenbezogenen Daten, aber oft vertraulich: Wissen des Bauherrn, sicherheitsrelevante Gebäude. Prüfen Sie Verschwiegenheitsvereinbarungen und Planerverträge auf Regeln zu Drittwerkzeugen, bevor Sie etwas hochladen, und beginnen Sie im Zweifel mit Plankopf und Vermerken statt mit ganzen Blättern.
+
+Die Verantwortung bleibt, wo sie war. Zur bautechnischen Prüfung gehört [die Prüfung der Ausführungspläne, zum Beispiel Schal- und Bewehrungspläne](https://www.kempenkrause.de/bautechnische-pruefung/). Der Prüfingenieur prüft sie, und erst nach der Korrektur eventueller Fehler wird der Plan [gestempelt und freigegeben](https://www.staatsanzeiger.de/beruf-und-karriere/pruefingenieure-verantwortlich-fuer-die-sicherheit-der-gebaeude/). Ändert sich ein geprüfter Plan, deckt der alte Prüfvermerk den neuen Stand nicht automatisch ab. Klären Sie mit Ihrem Prüfingenieur, wie er Änderungen behandelt haben möchte. Den Status „geprüft“ setzt in der Planlaufliste nie die KI. Außerdem müssen nach der Musterbauordnung [Baugenehmigung, Bauvorlagen und bautechnische Nachweise von Baubeginn an auf der Baustelle vorliegen](https://www.vpb.de/fileadmin/user_upload/2_Unser_Wissen/2.13_Angebote_Dritter/musterbauordnung.pdf) (§ 72 der Fassung von 2002; die Landesbauordnungen nummerieren abweichend). Der Änderungsvermerk eines Modells ist eine Arbeitsnotiz, kein Arbeitsergebnis. Was das Büro verlässt, verantwortet der Ingenieur.
+
+## Ein Pilot an einem Projekt
+
+<Timeline title="Fünf Wochen, ein laufendes Projekt">
+<Phase when="Woche 1" title="Planlaufliste und Regel">Planlaufliste für ein laufendes Projekt aufbauen, inklusive Spalte „Grundlage“. Vereinbaren, dass nichts ohne Zeile das Büro verlässt.</Phase>
+<Phase when="Woche 2" title="Nachspielen">Die letzten drei Plansätze des Architekten nehmen. Sie wissen schon, was sich wirklich geändert hat. Eingangsprüfung und Änderungsübersicht laufen lassen und festhalten, was das Modell erkannt und übersehen hat.</Phase>
+<Phase when="Woche 3 bis 4" title="Parallelbetrieb">Bei den nächsten echten Plansätzen wie gewohnt vergleichen und den Assistenten parallel laufen lassen. Jeden Unterschied protokollieren.</Phase>
+<Phase when="Woche 5" title="Entscheiden">Gefundene Änderungen je Methode, Fehlalarme und Minuten zählen. Eine statisch relevante Änderung, die der Assistent übersehen hat, führt zurück zu Woche 2.</Phase>
+</Timeline>
+
+Solange der Assistent nicht alles gefunden hat, was der Statiker fand, bleibt der Handvergleich auf jedem tragenden Blatt.
+
+## Fragen, die Büroinhaber vor dem Start stellen
+
+### Kann KI zwei Planstände allein vergleichen?
+
+Nicht zuverlässig, wenn sie nur zwei Bilder ansieht. Ein Vergleichswerkzeug findet die Änderungen, das Modell beschreibt sie, und ein Ingenieur entscheidet.
+
+### Darf ich Pläne unserer Bauherren in ein KI-Werkzeug hochladen?
+
+Das hängt von Ihrer Verschwiegenheitsvereinbarung, dem Planervertrag und den Bedingungen des Anbieters ab. Schließen Sie einen AVV, klären Sie, ob mit Ihren Daten trainiert wird, und beginnen Sie mit Text, bevor Sie ganze Blätter hochladen.
+
+### Was tun, wenn der Architekt keine brauchbaren Änderungsvermerke liefert?
+
+Dann zählt der Vergleich umso mehr. Die Liste „geändert, nicht markiert“ ist eine fertige Rückfrage und ein gutes Argument, beim nächsten Mal Wolken und Vermerke vertraglich einzufordern.
+
+## Wo ich anfangen würde
+
+Planen Sie nie auf einem Index, den Sie nicht verglichen haben, und geben Sie nie einen aus, ohne zu sagen, was sich geändert hat. Software findet die Unterschiede, das Modell beschreibt sie, und ein Ingenieur entscheidet, was sie bedeuten. Zuerst kommt die Planlaufliste. Die KI kommt danach.
+
+Wenn Pläne schneller eintreffen, als sie jemand vergleichen kann, [schreiben Sie mir, wie Indizes heute durch Ihr Büro laufen](/de/kontakt?intent=improve), und ich schlage Ihnen die kleinste Variante vor, die einen Test wert ist. Die Dokumentation hat noch andere Hälften: [Architekten führen ein Entscheidungsprotokoll](/de/posts/ki-architekturbuero-besprechungsprotokoll) für das, was in Besprechungen beschlossen wurde, das [Bautagebuch](/de/posts/ki-bautagebuch-sprachnachricht) zeigt, nach welchem Stand tatsächlich gebaut wird, und [Vermessungsbüros](/de/posts/ki-vermessungsbuero-anfragen) liefern die Vermessungsgrundlage, auf der Ihre Pläne aufsetzen.

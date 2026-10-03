@@ -1,0 +1,170 @@
+---
+id: "ki-abschleppdienst-einsatzannahme"
+translationOf: "ai-for-towing-companies-dispatch"
+title: "Abschleppdienst: Standort und Fahrzeug beim ersten Anruf richtig erfassen"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Transport & Logistik", "Abschleppdienste", "Einsatzannahme", "KI für kleine Unternehmen"]
+description: "Wer auf dem Standstreifen steht, kann oft nicht sagen, wo. Wie ein KI-Telefonassistent Standort, Antriebsart und Sicherheitslage klärt, bevor der Wagen losfährt."
+excerpt: "Wer auf dem Standstreifen steht, kann oft nicht sagen, wo. Wie ein KI-Telefonassistent Standort, Antriebsart und Sicherheitslage klärt, bevor der Wagen losfährt."
+---
+
+Der Anruf kommt um 18:10 Uhr, es regnet. „Mein Auto ist gerade ausgegangen. Ich stehe auf der Autobahn. Irgendwo vorhin war ein Schild mit einer Stadt drauf, glaube ich.“ Im Hintergrund hört man Lkw vorbeirauschen.
+
+Der Disponent hat etwa neunzig Sekunden, um herauszufinden, wo die Anruferin steht, was für ein Fahrzeug es ist, ob jemand in Gefahr ist und welchen Wagen er losschickt. Die Anruferin kann die erste Frage nicht beantworten, weiß bei der zweiten nur „grauer Kleinwagen, ich glaube elektrisch?“ und ist für die dritte nicht in der Verfassung.
+
+Der ganze Tag eines Abschleppdienstes hängt an diesem einen Gespräch. Stimmt der Standort nicht, sucht der Fahrer vierzig Minuten nach dem Auto. Stimmt das Fahrzeug nicht, rückt ein Wagen mit Schleppgeschirr an, und der Einsatz beginnt von vorn, weil ein Elektroauto mit Allradantrieb nur auf die Plattform darf. In diesem Beitrag geht es darum, den ersten Anruf richtig hinzubekommen, und darum, welche Rolle KI dabei spielen kann.
+
+## Warum der erste Anruf über den Einsatz entscheidet
+
+<Stats title="Wie groß die Pannenhilfe ist">
+  <Stat value="3,69 Mio." label="Einsätze hatte die Straßenwacht des ADAC 2025 in Deutschland, statistisch etwa alle neun Sekunden einer" source="ADAC" href="https://presse.adac.de/meldungen/adac-ev/clubleistungen/pannenzahlen-steigen-weiter.html" />
+  <Stat value="45,4 %" label="dieser ADAC-Einsätze gingen 2025 auf eine leere oder defekte 12-Volt-Batterie zurück, unabhängig von der Antriebsart" source="ADAC Pannenstatistik 2026" href="https://presse.adac.de/meldungen/adac-ev/technik/adac-pannenstatistik-2026.html" />
+  <Stat value="123" label="Pannenhelfer in den USA wurden zwischen 2015 und 2021 am Straßenrand von Fahrzeugen erfasst und getötet, in der nationalen Unfallstatistik tauchen nur etwa 34 auf" source="AAA Foundation for Traffic Safety" href="https://aaafoundation.org/research/roadside-assistance-providers-fatally-struck-by-vehicles-at-the-roadside-incidence-and-characteristics/" />
+</Stats>
+
+Die meisten Pannen sind klein: Die Batterie ist die häufigste Ursache. Aber sie passieren oft an gefährlichen Orten, für die Fahrerin ebenso wie für den Abschlepper, der ankommt. Die US-Zahl zeigt, wie gefährlich der Straßenrand für Pannenhelfer ist, auch wenn sie sich nicht auf Deutschland übertragen lässt. Die Angaben in den ersten neunzig Sekunden entscheiden, wie schnell der richtige Wagen unterwegs ist und wie lange der Kunde an einem gefährlichen Ort wartet.
+
+## Was bei einer normalen Annahme schiefgeht
+
+**„Wo sind Sie?“ bekommt eine Vermutung.** Menschen auf der Autobahn kennen Ausfahrt, Richtung oder Kilometer nicht. Manche nennen die letzte Stadt, die sie gesehen haben, und die kann 30 Kilometer zurückliegen. Manche nennen eine Straße, die es an zwei Orten gibt.
+
+**Das Fahrzeug wird über die Farbe beschrieben.** Der Disponent braucht die Antriebsart, nicht den Lack. Automatik oder Schaltung? Front-, Heck- oder Allradantrieb? Elektro, Hybrid oder Benziner? Ist das Auto tiefergelegt, oder ein Kastenwagen, der nicht auf die normale Plattform passt?
+
+**Die Sicherheit kommt zuletzt.** Die Anruferin steht auf der Fahrbahnseite neben dem Auto, und niemand hat gefragt. Disponenten kennen die Regeln, aber wenn zwei Telefone klingeln, fällt genau das zuerst hinten runter.
+
+**Wer zahlt, ist unklar.** Privatkunde, Automobilclub, Schutzbrief einer Versicherung? Davon hängen Preis, Papierkram und manchmal ab, für wen Sie überhaupt fahren dürfen.
+
+Nichts davon ist ein Wissensproblem. Das Problem ist, alles zu fragen, jedes Mal, nachts um zwei, in derselben Reihenfolge und nebenbei noch zu disponieren.
+
+## Eine Annahme, die die richtigen Angaben erfasst
+
+Ziel ist kein geistreiches Gespräch. Ziel ist ein Formular, das zufällig per Sprache ausgefüllt wird. Das sind die Angaben, die ich bei jedem Einsatz haben wollte, und warum.
+
+| Was erfasst wird | Wie man es bekommt | Warum es wichtig ist |
+| --- | --- | --- |
+| Anrufer ist in Sicherheit | Erste Frage, vor allem anderen | Weg vom Verkehr, hinter der Leitplanke, Warnblinker an. Ist jemand verletzt, wird aus dem Anruf ein Notruf |
+| Genauer Standort | SMS-Link, der die Handyposition teilt, dazu mündlich Straße, Richtung und nächste Markierung | Eine Beschreibung per Stimme ist geraten. Eine geteilte Position ist ein Punkt auf der Karte |
+| Marke, Modell, Kennzeichen | Mündlich, dann per SMS bestätigt | Damit kann die Disposition Maße, Bodenfreiheit und Abschlepp-Vorgaben nachschlagen |
+| Antriebsart | Direkte Frage: Elektro, Hybrid oder Benziner, Automatik oder Schaltung, Allrad oder nicht | Entscheidet über Plattform oder Schleppgeschirr und darüber, ob die Räder überhaupt rollen dürfen |
+| Was ist passiert | Eine offene Frage, dann zwei Nachfragen | Batterie leer, Reifenpanne, Unfall, Graben, Tiefgarage: jede Lage braucht anderes Gerät |
+| Personen und Tiere | Direkte Frage | Bestimmt, wie viele im Abschleppwagen mitfahren können und ob das Auto stehen bleiben soll |
+| Ziel | Wunschwerkstatt oder Wohnort | Legt Strecke und Preis fest |
+| Wer zahlt | Privat, Automobilclub, Versicherung mit Schutzbrief, Firmenkonto | Bestimmt den Weg des Auftrags und die Unterlagen |
+| Rückrufnummer | Ziffer für Ziffer wiederholen | Das einzige Feld, das sich später nicht mehr rekonstruieren lässt |
+
+Bei der Zeile zum Standort verdient KI das meiste Geld. Viele Abschleppsysteme machen schon, was ich hier bauen würde: Der Kunde bekommt eine SMS mit einem Link, tippt darauf, und sein Handy teilt die Position. [Towbook](https://towbook.com/features), eine US-Software für Abschleppdienste, beschreibt das als Textnachricht, die den Kunden um seine GPS-Koordinaten bittet. Stimmt er zu, erscheinen sie auf dem Dispositionsbildschirm. Ein Telefonassistent kann dasselbe selbst, mitten im Gespräch, während er noch nach dem Fahrzeug fragt.
+
+Für die mündliche Absicherung hilft es, die Orientierung auf der Autobahn zu kennen. Der ADAC erklärt in seinem Ratgeber zur [Standortbestimmung bei Unfall oder Panne](https://www.adac.de/rund-ums-fahrzeug/unfall-schaden-panne/unfall/standortbestimmung-unfall/), wie man seine Position auf der Autobahn herausfindet. Der Assistent kann die Fahrerin nach der nächsten Markierung oder Notrufsäule und der Fahrtrichtung fragen. Das grenzt die Suche deutlich ein, auch wenn der GPS-Link scheitert.
+
+## Sicherheit zuerst, jedes Mal
+
+Die erste Aufgabe des Assistenten sind keine Daten, sondern ein kurzer Text. Eine gestrandete Fahrerin sollte hören, was der ADAC auf der Autobahn empfiehlt: [Warnblinker an, Warnweste noch im Auto anlegen, auf der Beifahrerseite aussteigen und hinter der Leitplanke warten](https://www.adac.de/rund-ums-fahrzeug/unfall-schaden-panne/panne/autopanne-tipps/). Das Warndreieck gehört auf der Autobahn [mindestens 150 Meter hinter das Fahrzeug](https://www.adac.de/rund-ums-fahrzeug/unfall-schaden-panne/panne/warndreieck-aufstellen/), aber nur, wenn der Weg dorthin sicher ist.
+
+Die Reihenfolge darf sich nie ändern: Sicherheit, dann Standort, dann Fahrzeug. Und wenn jemand verletzt ist, hört der Assistent auf, Daten zu sammeln, verweist die Anruferin an den Notruf 112 und alarmiert gleichzeitig den Disponenten.
+
+In der EU müssen neue Fahrzeugmodelle, die nach dem 31. März 2018 typgenehmigt wurden, mit [eCall](https://europa.eu/youreurope/citizens/travel/security-and-emergencies/emergency-assistance-vehicles-ecall/index_en.htm) ausgestattet sein, das nach einem schweren Unfall automatisch einen Notruf an die 112 absetzt. Wer nach einem Unfall in einem neueren Auto sitzt, hat vielleicht schon den Rettungsdienst unterwegs. Der Assistent kann fragen, ob der Notruf schon abgesetzt wurde.
+
+## Der Ablauf von Anfang bis Ende
+
+<Flow title="Vom Anruf in Panik zum einsatzfertigen Auftrag" caption="Der Assistent erfasst und bestätigt. Der Disponent wählt den Wagen, nennt den Preis und trägt jede Entscheidung.">
+<Step title="Anruf kommt an" who="Telefonanlage" time="0:00">Überlauf- und Nachtanrufe gehen an den Assistenten. Tagsüber springt er auch ein, wenn alle Leitungen belegt sind.</Step>
+<Step title="Offenlegen und Sicherheit prüfen" who="KI" tone="ai" time="0:10">Er sagt, dass er der automatische Assistent des Betriebs ist, fragt, ob jemand verletzt ist, und gibt die Sicherheitshinweise.</Step>
+<Step title="Standort-Link senden" who="KI" tone="ai" time="0:30">Eine SMS mit Ein-Tipp-Link geht an das Handy der Anruferin. Der Assistent spricht weiter, während der Link lädt, und fragt zur Sicherheit nach Straße, Richtung und nächster Markierung.</Step>
+<Step title="Fahrzeug und Antriebsart" who="KI" tone="ai" time="1 bis 2 Min.">Marke, Modell, Elektro oder nicht, Automatik oder Schaltung, Allrad, was passiert ist, wie viele Personen, wohin.</Step>
+<Step title="Zusammenfassung an die Disposition" who="System" time="2 Min.">Der Disponent sieht einen Punkt auf der Karte, vier Zeilen Zusammenfassung und eine Markierung für Besonderheiten: Elektro oder Allrad, geringe Bodenfreiheit, Verletzte.</Step>
+<Step title="Disponent entscheidet" who="Disponent" tone="human" time="1 Min.">Wählt Wagen und Fahrer, bestätigt den Preis und ruft zurück, wenn etwas nicht stimmt.</Step>
+<Step title="Kunde bleibt informiert" who="KI" tone="ai">Bestätigungs-SMS mit Namen des Fahrers und geschätzter Ankunftszeit, die der Disponent festgelegt hat, und eine Nachricht, wenn sie sich ändert.</Step>
+</Flow>
+
+Die Entscheidungen, auf die es am meisten ankommt:
+
+**Der Assistent verspricht weder Ankunftszeit noch Preis.** Er darf sagen: „Der Disponent bestätigt Ihnen Preis und Ankunftszeit in ein paar Minuten per SMS.“ Das sind Entscheidungen des Disponenten, weil nur er weiß, wo die Wagen gerade sind.
+
+**Alles Ungewöhnliche geht an einen Menschen.** Ein Fahrzeug, das sich nicht bestimmen lässt, eine Anruferin, die keinen Standort teilen kann, eine aufgebrachte Anruferin: Der Assistent übergibt, statt weiterzumachen.
+
+## Warum die Antriebsart Geld kostet
+
+Die meisten Abschleppwagen mit Schleppgeschirr können einen Benzin-Kleinwagen ziehen. Für jedes Auto auf der Straße gilt das längst nicht mehr.
+
+Der ADAC schreibt in seinem Ratgeber zum [Abschleppen von Elektroautos](https://www.adac.de/rund-ums-fahrzeug/unfall-schaden-panne/unfall/elektroauto-abschleppen/), dass es keine einheitliche Regel gibt. Die meisten Hersteller untersagen das Abschleppen auf den eigenen Rädern, weil ein Elektromotor beim Drehen der Räder unkontrolliert Strom erzeugen kann. Manche erlauben es unter Bedingungen, maßgeblich ist die Betriebsanleitung. Grundvoraussetzung ist, dass sich der Wählhebel in Neutralstellung bringen lässt. Das geht oft nicht, wenn das 12-Volt-Bordnetz stromlos ist, und eine leere Bordbatterie ist bei vielen Elektroautos genau der Grund fürs Liegenbleiben. Nach den allgemeinen Abschlepp-Hinweisen des ADAC dürfen Automatikfahrzeuge in Neutralstellung nur wenige Kilometer geschleppt werden, sonst kann Hitze das Getriebe beschädigen. Bei Allradfahrzeugen braucht es häufig die Plattform oder eine angehobene Achse.
+
+Für den Disponenten ergibt das eine Faustregel: Lautet die Antwort auf „Elektro, Hybrid, Automatik oder Allrad?“ bei einem dieser Punkte Ja, schicken Sie eine Plattform, außer Sie wissen es besser. Der Assistent kann die Frage jedes Mal stellen, markieren und nie raten. Das allein verhindert einen der teuersten Fehler im Gewerbe: den falschen Wagen zu schicken.
+
+## Was der Assistent nicht tut
+
+Der Assistent nennt nie einen Preis, verspricht keine Ankunftszeit, entscheidet nicht, welcher Wagen fährt, und gibt keine Reparaturtipps. Ist jemand verletzt, verweist er an den Notruf, statt in der Leitung zu bleiben, und widerspricht eine Anruferin der Aufzeichnung, übergibt er an einen Menschen.
+
+## Wann das nicht die Antwort ist
+
+**Aufträge von Automobilclubs und Assistance-Plattformen.** Kommt ein großer Teil Ihrer Arbeit über einen Automobilclub oder das Assistance-Netz einer Versicherung, laufen diese Aufträge über deren eigene Dispositionssysteme, mit Standort, Fahrzeug und Kostenträger schon dran. Der ADAC arbeitet in Deutschland mit einem [Netz aus Mobilitätspartnern](https://www.adac.de/services/pannenhilfe/gelbe-engel/mobilitaetspartner/) aus Abschlepp- und Bergungsunternehmen. Für diese Aufträge tut der Assistent nichts. Er hilft bei den Direktkunden, den Leuten, die Sie auf der Karte gefunden haben.
+
+**Sehr wenige Anrufe.** Wenn Sie nachts fünf Anrufe haben, erledigt eine Rufumleitung auf den diensthabenden Mitarbeiter plus eine schriftliche Checkliste neben dem Telefon dasselbe kostenlos.
+
+**Unfälle mit Verletzten.** Darum kümmern sich Rettungsdienst und Polizei. Die Aufgabe Ihres Assistenten ist, die Anruferin dorthin zu verweisen, nicht, sie einzustufen.
+
+Machen diese Fälle den Großteil Ihres Volumens aus, ist der Nutzen des Projekts klein. Leben Sie von Direktkunden, vor allem nachts und am Wochenende, wenn das Telefon am schwersten zu besetzen ist, spricht mehr dafür.
+
+## Was ein schlechter erster Anruf kostet
+
+Die Zahlen sind von Betrieb zu Betrieb verschieden. Deshalb hier die Rechnung mit Platzhaltern. Ersetzen Sie sie durch Werte aus Ihrem Einsatzprotokoll.
+
+<Calc title="Überschlag: Fehlfahrten durch schlechte Annahmedaten" caption="Annahmen, keine Messwerte. Ihr Einsatzprotokoll zeigt, bei wie vielen Aufträgen ein zweiter Wagen oder eine lange Suche nötig war." rows={[
+  ["Direktkunden-Aufträge pro Woche", "40"],
+  ["Davon mit falschem Standort, falschem Wagentyp oder fehlenden Angaben", "× 8 %"],
+  ["Wochen pro Monat", "× 4,3"],
+  ["Fehlfahrten pro Monat", "≈ 14"],
+  ["Kosten einer Fehlfahrt (Fahrer, Fahrzeug, Kraftstoff, verlorener Slot)", "× 120 €"]
+]} result={["Kosten schlechter Annahmedaten pro Monat", "≈ 1.650 €"]} />
+
+Dem stehen die Kosten eines KI-Telefonassistenten gegenüber: typischerweise eine monatliche Plattformgebühr plus ein Minutenpreis, und beim Einrichten vor allem Ihre Regeln und die Anbindung an die Disposition. Liegt die Zahl der Fehlfahrten in Ihrem eigenen Protokoll deutlich unter den Kosten des Assistenten, kaufen Sie ihn nicht.
+
+## Woran er sich anbindet
+
+Die meisten Abschleppdienste haben bereits eine Dispositionssoftware. In Deutschland gibt es etwa [ET360](https://et360.de/), [CATAMA](https://www.catama-software.de/branchen/abschleppdienst/) und die [BMS Abschleppsoftware](https://www.bms-abschleppsoftware.de/produkte/modul-auftragsdispo-fuer-schleppdienst/), die Disposition, Fahrer-App und Abrechnung abdecken. Der Assistent sitzt vor dieser Software und ersetzt sie nicht. Am besten schreibt er den Auftrag direkt in Ihr Dispositionsprogramm. Mindestens braucht es eine E-Mail oder Nachricht in dem Format, das Ihr Disponent ohnehin liest.
+
+Ein Standort-Link ist ein personenbezogenes Datum, eine Gesprächsaufzeichnung auch. Sagen Sie den Anrufern, dass ein automatischer Assistent das Gespräch führt: Seit dem 2. August 2026 verlangt [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act), dass Menschen erfahren, wenn sie mit einem KI-System interagieren. Sagen Sie, wofür der Link gedacht ist, nutzen Sie ihn nur für diesen Einsatz und löschen Sie ihn, wenn der Auftrag und die Zeit für mögliche Rückfragen zur Rechnung vorbei sind. Schließen Sie mit dem Anbieter einen Auftragsverarbeitungsvertrag (AVV) nach DSGVO ab. Ein Gespräch ohne Einwilligung aufzuzeichnen ist in Deutschland nach § 201 StGB strafbar, die Begrüßung muss das also mit abdecken.
+
+## Ein Pilot, bei dem niemand strandet
+
+<Timeline title="In vier Wochen zu einer verlässlichen Annahme">
+<Phase when="Woche 1" title="Text und Regeln schreiben">Sicherheitshinweise, Fragen, Regeln zur Antriebsart und die Auslöser für die Übergabe festlegen. Einen Monat Aufträge ziehen und markieren, welche bei der Annahme schiefgingen.</Phase>
+<Phase when="Woche 2" title="Mit aufgezeichneten Anrufen testen">Eine Stichprobe früherer Anrufe durch den Assistenten laufen lassen und seine Zusammenfassungen mit den Notizen des Disponenten vergleichen.</Phase>
+<Phase when="Woche 3 bis 4" title="Live, nur bei Überlauf">Der Assistent nimmt nur Anrufe an, die sonst niemand annehmen kann. Der Disponent prüft jede Zusammenfassung am nächsten Morgen.</Phase>
+<Phase when="Ende Woche 4" title="Entscheiden">Zählen, bei wie vielen Aufträgen Standort und Fahrzeugdaten stimmten, bei wie vielen korrigiert werden musste und bei welchem Anruf die Sicherheitshinweise hätten kommen müssen und nicht kamen.</Phase>
+</Timeline>
+
+Nur bei Überlauf zu starten ist richtig. Ein Anruf, den niemand annimmt, ist ohnehin verloren. Der Assistent kann das also nur verbessern, und Ihr bester Disponent bleibt für alles andere zuständig.
+
+## Bevor Sie ihn einschalten
+
+<Checklist title="Checkliste vor dem Start" items={[
+  "Sicherheitshinweise abgestimmt und an die örtlichen Regeln angepasst",
+  "Anruferin verletzt: Weiterleitung an den Notruf funktioniert, getestet",
+  "Standort-Link auf iPhone und Android getestet, mit und ohne mobile Daten",
+  "Frage zur Antriebsart bei jedem Einsatz gestellt, nie übersprungen",
+  "Format der Zusammenfassung mit den Disponenten abgestimmt, die sie lesen",
+  "Aufträge von Automobilclubs und Versicherungen aus dem Ablauf ausgenommen",
+  "Begrüßung nennt die KI und die Aufzeichnung",
+  "AVV unterschrieben, Löschfrist festgelegt"
+]} />
+
+## Fragen, die Abschleppunternehmer stellen
+
+### Kann ein KI-Telefonassistent den Standort des Anrufers finden?
+
+Nicht allein über die Stimme. Es funktioniert mit einem Link per SMS, den die Anruferin antippt und der die Handyposition an Ihr System übermittelt, dazu mündliche Angaben wie Straße, Richtung und nächste Markierung als Absicherung. Voraussetzung ist ein Handy mit Datenverbindung und die Zustimmung der Anruferin.
+
+### Vertrauen Gestrandete einer automatischen Stimme?
+
+Manche nicht, und sie sollten jederzeit einen Menschen verlangen können. Die meisten wollen zwei Dinge: wissen, dass jemand kommt, und nur die Fragen gestellt bekommen, die wichtig sind. Ein kurzer, ruhiger Assistent, der das sagt, leistet das besser als ein Besetztzeichen.
+
+### Und Elektroautos und Allradfahrzeuge?
+
+Das ist der Hauptgrund, die Fragen zur Antriebsart bei jedem Anruf zu stellen. Nach Angaben des ADAC sollten die meisten Elektroautos nicht auf den eigenen Rädern geschleppt werden. Standard sollte deshalb die Plattform sein, außer der Disponent weiß, dass die Betriebsanleitung etwas anderes sagt.
+
+## Wo ich anfangen würde
+
+Fangen Sie mit den Fragen an, nicht mit der Technik. Schreiben Sie die sechs Dinge auf, die Ihr Disponent sich von jedem Anrufer wünscht, stellen Sie die Sicherheitshinweise an den Anfang und machen Sie die Antriebsart zur Pflichtfrage. Setzen Sie einen Telefonassistenten dann nur für die Anrufe ein, die niemand annehmen kann.
+
+Wenn Sie sehen möchten, wie Ihre Überlaufanrufe aussehen, [schreiben Sie mir, wie Ihre Disposition heute läuft](/de/kontakt?intent=improve), und ich schlage die kleinste Variante vor, die einen Test wert ist. Zum Weiterlesen: [Nachtanrufe im Sanitär-Notdienst](/de/posts/ki-sanitaer-notdienst-anrufe) haben dasselbe Einstufungsproblem mit anderen Einsätzen, die [Auftragsannahme in der Kfz-Werkstatt](/de/posts/ki-kfz-werkstatt-auftragsannahme) betrifft das andere Ende derselben Panne, und der [Reifenservice beim Saisonwechsel](/de/posts/ki-reifenservice-saisonwechsel) zeigt, wie ein anderes Fahrzeuggeschäft mit Spitzenzeiten umgeht.

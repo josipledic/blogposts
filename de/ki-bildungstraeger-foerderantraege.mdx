@@ -1,0 +1,152 @@
+---
+id: "ki-bildungstraeger-foerderantraege"
+translationOf: "ai-for-training-providers-funding-paperwork"
+title: "Bildungsträger: Bildungsgutschein und Förderunterlagen ohne Rückstau"
+authorName: "Josip Ledić"
+date: "2026-10-03"
+tags: ["Bildung & Soziales", "Bildungsträger", "Förderanträge", "KI für kleine Unternehmen"]
+description: "Geförderte Kurse bringen Anwesenheitslisten, Fehlzeitenmeldungen und Fristen mit. Wo KI Vollständigkeit prüft und Berichte entwirft, und wer unterschreibt."
+excerpt: "Geförderte Kurse bringen Anwesenheitslisten, Fehlzeitenmeldungen und Fristen mit. Wo KI Vollständigkeit prüft und Berichte entwirft, und wer unterschreibt."
+---
+
+Stellen Sie sich einen Bildungsträger vor, bei dem gleichzeitig sechs geförderte Kurse laufen: 84 Teilnehmende, fast alle mit dem Geld eines anderen. Es ist der zweite Montag im Monat. Auf dem Schreibtisch der Verwaltung liegen die Anwesenheitslisten vom Vormonat, drei Krankmeldungen in drei verschiedenen Formen, ein Bildungsgutschein, dessen Angaben nicht zum Kursbeginn passen, und ein Bericht, der am Freitag fällig ist.
+
+Nichts davon ist schwierig. Alles davon muss exakt sein. Eine fehlende Unterschrift oder ein falsches Datum löst selten eine Beschwerde aus. Es hält eine Zahlung auf, und im schlimmsten Fall zahlt der Träger Geld zurück, das längst für Dozenten und Miete ausgegeben ist.
+
+So sieht öffentlich geförderte Weiterbildung in der Praxis aus. Der Kurs ist das Produkt, aber ohne saubere Unterlagen kommt das Geld nicht. Um diesen zweiten Teil geht es hier: was ein Sprachmodell prüfen oder entwerfen kann und welche Entscheidungen bei Menschen bleiben.
+
+## Geförderte Weiterbildung läuft über Nachweise
+
+Teilnehmende kommen häufig mit einem Bildungsgutschein der Agentur für Arbeit. [Seit dem 1. Januar 2025](https://www.arbeitsagentur.de/karriere-und-weiterbildung/bildungsgutschein) entscheidet die Agentur auch für Kundinnen und Kunden der Jobcenter über diese Förderung und finanziert sie. Der Träger braucht dafür eine AZAV-Zulassung, und der Kurs ebenfalls. Auch Beschäftigte werden gefördert, nach § 82 SGB III. Und wer Meister-, Fachwirt- oder Erzieherkurse anbietet, hat es zusätzlich mit dem Aufstiegs-BAföG zu tun: 2025 erhielten [186.100 Personen Leistungen nach dem AFBG](https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/06/PD26_224_214.html). Jeder Geldgeber hat seine eigenen Formulare. Das Muster ist überall gleich: Gezahlt wird gegen Nachweise.
+
+<Stats title="Der Umfang des Förderpapiers in Deutschland">
+  <Stat value="320.000" label="Eintritte in geförderte berufliche Weiterbildung im Jahr 2024, davon rund 230.000 im Rechtskreis SGB III und 90.000 im Rechtskreis SGB II" source="Antwort der Bundesregierung, Bundestagsdrucksache 21/2498" href="https://dserver.bundestag.de/btd/21/024/2102498.pdf" />
+  <Stat value="210.338" label="zugelassene Weiterbildungsmaßnahmen und Maßnahmebausteine (§ 81 SGB III), gültig Ende 2025; 65.779 davon wurden 2025 neu zugelassen, und 5.630 Träger haben eine Zulassung für diesen Fachbereich" source="DAkkS, Datenabfrage nach § 181 Abs. 9 SGB III, Mai 2026" href="https://www.dakks.de/files/Dokumentensuche/Dateien/2026_Datenabfrage_181_Abs9_ERfassung_Auswertung.pdf" />
+  <Stat value="3 Monate" label="höchstens gilt ein Bildungsgutschein, mit dem Arbeitsuchende zu einem zugelassenen Träger gehen" source="Bundesagentur für Arbeit, Fachliche Weisungen zur beruflichen Weiterbildung (gültig ab 1. Januar 2026)" href="https://www.arbeitsagentur.de/datei/dok_ba031590.pdf" />
+</Stats>
+
+Hinter diesen Zahlen steckt für jede teilnehmende Person eine kleine Akte: Gutschein, Starttermin, Anwesenheit, Fehlzeiten, Ergebnis. Multipliziert mit dem Kursangebot ergibt das den Rückstau. Weiterbildung Hamburg e. V., ein Verband von Bildungsträgern, schrieb im Juli 2026, dass [zu viele Ressourcen in Dokumentation und Nachweisführung](https://www.weiterbildung-hamburg.net/2026/07/08/fuer-eine-zukunftsfaehige-azav-mehr-qualitaet-statt-buerokratie-strukturen-fuer-innovationen-schaffen/) fließen statt in die Qualität der Kurse. Das ist die Position eines Verbands und keine neutrale Messung, aber wer einen geförderten Kurs betreut hat, erkennt sich darin wieder.
+
+## Ein geförderter Kurs, Schritt für Schritt zerlegt
+
+So läuft der Papierweg einer teilnehmenden Person heute in einem typischen kleinen Träger, und hier hakt es. Die Details stammen aus den Fachlichen Weisungen der Bundesagentur für Arbeit, Stand 1. Januar 2026.
+
+| Schritt | So läuft es heute | Wo es hakt |
+| --- | --- | --- |
+| Gutschein kommt an | Die Person bringt den Gutschein mit. Der Träger füllt seine Ausfertigung aus, und sie muss vor Maßnahmebeginn vorgelegt werden | Der Gutschein ist abgelaufen (höchstens drei Monate) oder nennt ein anderes Bildungsziel. Das fällt erst in Woche drei auf |
+| Anmeldung | Daten werden aus Gutschein, Ausweis und E-Mails in ein oder zwei Systeme getippt | Tippfehler, ein Name, der anders geschrieben ist als in den Daten der Agentur |
+| Tägliche Anwesenheit | Papierliste zum Unterschreiben oder Protokoll der Lernplattform | Fehlende Unterschriften, vergessene Verspätungen, ein Blatt, das nie im Büro ankam |
+| Fehlzeiten | Anrufe, Nachrichten und Krankmeldungen | Teilnehmende müssen Träger und Agentur informieren, der Träger erfährt oft nur die halbe Geschichte |
+| Sonderfälle | Nichtantritt, unentschuldigtes Fehlen, Abbruch oder nicht bestandene Prüfung brauchen jeweils eine gesonderte Meldung an die Agentur | Die Meldung wird Wochen später aus dem Gedächtnis geschrieben |
+| Monatsabschluss | Anwesenheitssummen, Rechnung, Bericht an die Agentur | Summen weichen zwischen Listen und Rechnung ab |
+| Verlängerung | Maßnahmezulassungen sind befristet: [in der Regel drei Jahre, höchstens fünf](https://www.gesetze-im-internet.de/azav/__5.html) | Nachweise werden in letzter Minute vor dem Audit zusammengesucht |
+
+Zwei Regeln zeigen, warum der genaue Tag zählt. Ist Direktzahlung an den Träger vereinbart, entfällt bei einem Eintritt von einem Monat oder mehr nach Beginn je vollem Monat Verspätung eine Monatsrate. Und nach einem Abbruch werden zwei weitere Monatsbeträge gezahlt, mit dem letzten Anwesenheitstag als Bezugsdatum. Genau diese Tage stehen auf Ihren Anwesenheitslisten.
+
+Die Weisungen regeln auch, wer was entscheidet. Der Träger muss Teilnehmende melden, die die Maßnahme nicht antreten, ohne Entschuldigung fernbleiben, vorzeitig beenden oder die Prüfung nicht bestehen. Die Entscheidung, dass eine Maßnahme als abgebrochen gilt und ab welchem Tag, trifft die zuständige Vermittlungs- oder Beratungsfachkraft der Agentur. Der Träger meldet Tatsachen. Er urteilt nicht darüber.
+
+Auch bei Krankmeldungen steckt eine Falle. Gesetzlich Versicherte müssen Träger und Agentur unverzüglich über die Arbeitsunfähigkeit informieren, und seit 2024 ruft die Agentur die elektronische Bescheinigung selbst ab. Wer Grundsicherung nach dem SGB II bezieht, privat versichert ist oder eine Kind-krank-Bescheinigung vorlegt, schickt weiterhin Papier an die Agentur oder das Jobcenter. Welcher Weg gilt, hängt vom Status der einzelnen Person ab, und im Büro weiß man das nur, wenn jemand fragt.
+
+Das Muster ist international. In England werden Träger, die über ausgeschriebene Aufträge im Adult Skills Fund arbeiten, [monatlich im Nachhinein nach der tatsächlich erbrachten Leistung aus ihren ILR-Meldungen bezahlt](https://www.gov.uk/government/publications/post-16-revenue-funding-payments-and-allocations/payments-and-allocations-for-post-16-settings-for-academic-year-2026-to-2027), dem Individualised Learner Record. In den USA müssen Bundesstaaten bei den Zulassungskriterien für WIOA-Weiterbildungsanbieter berücksichtigen, [ob Anbieter die Daten für die Leistungsberichte rechtzeitig und korrekt geliefert haben](https://www.law.cornell.edu/cfr/text/20/680.460). Andere Formulare, dieselbe Abhängigkeit: Datenqualität wird zu Fördergeld.
+
+## Was ein Sprachmodell hier leisten kann
+
+Ein Sprachmodell ist bei drei Aufgaben gut: unordentliche Dokumente lesen, sie mit einer Checkliste abgleichen und Routinetexte entwerfen. Als Nachweis taugt es nicht, und für Ermessensentscheidungen, die sich der Geldgeber vorbehält, auch nicht. So würde ich die Arbeit aufteilen.
+
+<Flow title="Vom Dokumentenstapel zum unterschriebenen Monatsbericht" caption="Das Modell liest, vergleicht und entwirft. Die Kursleitung entscheidet, was gemeldet wird, und die Agentur entscheidet, was als Abbruch gilt.">
+<Step title="Dokumente kommen an" who="Teilnehmende und Büro" time="den ganzen Monat">Gutschein-Scans, Krankmeldungen per E-Mail, fotografierte Anwesenheitslisten und Nachrichten landen in einem gemeinsamen Postfach oder Ordner.</Step>
+<Step title="Lesen und auslesen" who="KI" tone="ai" time="Minuten">Der Assistent übernimmt Namen, Daten und Fehlzeiträume in eine Tabelle und verknüpft jeden Eintrag mit dem Quelldokument.</Step>
+<Step title="Gegen die Regeln prüfen" who="KI" tone="ai" time="Minuten">Er markiert einen Gutschein, der vor Kursbeginn abläuft, einen Namen, der zwischen Dokumenten abweicht, eine Krankmeldung ohne passende Lücke in der Anwesenheit und Listen mit fehlenden Unterschriften.</Step>
+<Step title="Markierungen durchgehen" who="Kursleitung" tone="human" time="30 Min.">Die Kursleitung entscheidet, welche Fehlzeiten entschuldigt sind, wo ein Anruf bei der teilnehmenden Person nötig ist und welche Fälle der Agentur gemeldet werden müssen.</Step>
+<Step title="Nachrichten entwerfen" who="KI" tone="ai">Erinnerungen an Teilnehmende (‚bitte melden Sie sich auch bei Ihrer Agentur‘) und ein Entwurf jeder Sondermeldung, mit Fakten und Daten schon eingetragen.</Step>
+<Step title="Prüfen und absenden" who="Koordination" tone="human" time="monatlich">Die Koordination gleicht den Entwurf mit den Anwesenheitslisten ab und übermittelt ihn im System des Geldgebers. Der Assistent sendet nie etwas ab.</Step>
+</Flow>
+
+Die wichtigste Entscheidung ist die letzte. Der Assistent entwirft, die Koordination reicht ein. Fragt ein Prüfer, wer diese Meldung bestätigt hat, lautet die Antwort: eine namentlich bekannte Person, die die Quelldokumente gesehen hat.
+
+### Aufgabe eins: Vollständigkeitsprüfung bei der Anmeldung
+
+Hier fängt man Probleme am günstigsten ab: Die Person ist noch erreichbar, und der Kurs hat noch nicht begonnen. Die Checkliste passt zum Bildungsgutschein der Agentur. Ergänzen Sie Punkte Ihres eigenen Geldgebers.
+
+<Checklist title="Bevor eine Anmeldung bestätigt wird" items={[
+  "Gutschein oder Förderzusage liegt vor, der Name stimmt mit Ausweis und Stammdaten überein",
+  "Gutschein ist am Kursbeginn noch gültig (höchstens drei Monate)",
+  "Kurstitel und Bildungsziel auf dem Gutschein passen zum gebuchten Kurs",
+  "Ausfertigung für den Bildungsträger ist ausgefüllt und vor Beginn vorgelegt",
+  "Starttermin, Stundenplan und Voll- oder Teilzeit sind erfasst",
+  "Die Person weiß, wem sie eine Krankheit melden muss, und dass auch die Agentur informiert werden muss",
+  "Datenschutzhinweis ausgehändigt, Kontaktdaten geprüft",
+  "Sonderfälle markiert: Grundsicherung (SGB II), private Krankenversicherung, Kinderbetreuung, Fahrkosten"
+]} />
+
+Eine Steuerkanzlei, die Mandanten an Belege erinnern muss, kennt [genau diese Form des Problems](/de/posts/ki-steuerkanzlei-belege-anfordern): Pflichtangaben, eingehende Dokumente und ein Mensch, dem auffallen muss, was fehlt. Das Modell übernimmt das Auffallen. Die Person übernimmt das Nachfragen.
+
+### Aufgabe zwei: Anwesenheits- und Fehlzeitenübersichten
+
+Einmal im Monat macht das Modell aus Anwesenheitslisten, Plattformprotokollen und Krankmeldungen eine Tabelle pro Kurs: Anwesenheitstage, Fehlzeiten mit dem dokumentierten Grund und ungeklärte Lücken. Es entscheidet nicht, ob eine Fehlzeit entschuldigt ist. Es listet auf, was die Dokumente sagen und was fehlt.
+
+Das Rechnen gehört nicht ins Modell. Monatsraten, Kürzungen bei verspätetem Eintritt und Zahlungen nach Abbruch sind feste Regeln, und eine Tabellenkalkulation oder ein paar Zeilen gewöhnlicher Code rechnen sie jedes Mal gleich. Das Modell liest und markiert. Die Formel zählt.
+
+### Aufgabe drei: Fragen der Teilnehmenden beantworten
+
+In jeder Gruppe kommen dieselben Fragen. Wem melde ich mich krank? Wo gebe ich den Fahrkostenantrag ab? Ein einfacher Assistent, der nur aus Ihrem eigenen Infoblatt antwortet, kann das meiste übernehmen. Er muss sagen, wenn er etwas nicht weiß, und alles zu Anspruch, Geld oder einem möglichen Abbruch an einen Menschen weitergeben. Er verspricht nie ein Ergebnis, das die Agentur bestimmt.
+
+Der Assistent muss sich als KI zu erkennen geben. [Artikel 50 der KI-Verordnung](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) gilt seit dem 2. August 2026, und ein Chatbot muss das klarmachen, außer es ist offensichtlich. Wenn Sie auch Sprachkurse anbieten, ist die [Einstufung vor der Anmeldung](/de/posts/ki-sprachschule-einstufungstest) ein weiterer Ort, an dem ein Modell helfen kann.
+
+## Was das kostet
+
+Die Zahlen hängen davon ab, wie viel Verwaltung Sie haben und wie sauber Ihre Unterlagen sind. Hier eine Beispielrechnung, in der jede Zahl eine Annahme ist.
+
+<Calc title="Überschlag: monatlicher Verwaltungsaufwand bei sechs geförderten Kursen" caption="Annahmen, keine Messwerte. Messen Sie zuerst Ihren eigenen Monat. Die Ersparnis hängt davon ab, wie viele Unterlagen als Scan, E-Mail und Foto statt als strukturierte Daten ankommen." rows={[
+  ["Teilnehmende in allen Kursen", "84"],
+  ["Verwaltungszeit pro Person und Monat (Anwesenheit, Fehlzeiten, Berichte)", "× 45 Min."],
+  ["Verwaltungsstunden pro Monat", "= 63 Std."],
+  ["Anteil, der durch Prüfungen und Entwürfe wegfällt (Annahme)", "× 40 %"],
+  ["Gesparte Stunden pro Monat", "≈ 25 Std."],
+  ["Vollkosten pro Verwaltungsstunde", "× 35 €"],
+  ["Kosten für Werkzeug und Nutzung pro Monat (Annahme)", "− 150 €"]
+]} result={["Ersparnis netto pro Monat", "≈ 730 €"]} />
+
+Die Einrichtung dauert einige Wochen in Teilzeit: die Regeln Ihres Geldgebers als Prüfungen aufschreiben, Postfach oder Ordner anbinden und einen Kurs parallel mitlaufen lassen, bevor sich jemand darauf verlässt. Der größere Gewinn sind oft nicht die Stunden. Es ist ein abgelaufener Gutschein in Woche eins statt in Woche drei.
+
+## Wann KI das falsche Werkzeug ist
+
+**Sie haben schon Software, die das kann.** Für die Teilnehmerverwaltung und die Berichte an die Agentur gibt es spezialisierte Systeme wie AZAV-Pilot, AZAVO, Matiamu oder Kursdatis. Schalten Sie zuerst ein, was Sie bezahlen, bevor Sie etwas Neues dazunehmen.
+
+**Das Problem ist die Papierliste.** Wenn die Anwesenheit auf Papier steht, dem jemand hinterherlaufen muss, hilft ein Tablet oder ein QR-Code am Eingang mehr als jedes Modell, das Fotos zerknitterter Blätter liest.
+
+**Sie wollen Menschen bewerten.** Ein Modell, das Teilnehmende nach Abbruchrisiko sortiert, ist nur einen kleinen Schritt von einem entfernt, das mitentscheidet, wer einen Platz oder Unterstützung bekommt. Die KI-Verordnung stuft in Anhang III Systeme als hochriskant ein, die über den Zugang zur beruflichen Bildung entscheiden oder Lernergebnisse bewerten. Der Digital Omnibus hat diese Pflichten auf den 2. Dezember 2027 verschoben, [nach den Quellen, die ich im September 2026 geprüft habe](https://www.aiactblog.nl/en/posts/article-50-transparency-obligations-practical-2026), und solche Termine bewegen sich weiter. Zusammenfassungen von Dokumenten sind eine Sache. Teilnehmende zu bewerten ist eine andere, und ich würde darauf verzichten.
+
+## Datenschutz
+
+Teilnehmerakten enthalten mehr als Namen: Beschäftigungsstatus, Leistungsbezug und Krankmeldungen. [Gesundheitsdaten gehören nach Artikel 9 DSGVO zu den besonderen Kategorien](https://gdpr-info.eu/art-9-gdpr/). Praktisch heißt das:
+
+- Kopieren Sie Krankmeldungen oder Gutschein-Scans nicht in einen Verbraucher-Chatbot. Nutzen Sie einen Dienst, mit dem Sie einen [Auftragsverarbeitungsvertrag nach Artikel 28](https://gdpr-info.eu/art-28-gdpr/) haben, am besten mit Hosting in der EU und ohne Training mit Ihren Daten.
+- Daten, die Sie von der Agentur für Arbeit erhalten, sind Sozialdaten. [§ 78 SGB X](https://www.gesetze-im-internet.de/sgb_10/__78.html) erlaubt dem Empfänger die Verarbeitung nur für den Zweck, zu dem sie übermittelt wurden, und verlangt dieselbe Geheimhaltung wie bei der Agentur selbst.
+- Fragen Sie Ihren Geldgeber und Ihre fachkundige Stelle, wie lange Sie welche Unterlagen aufbewahren müssen. Eine Aufbewahrungsfrist würde ich nicht aus einem Blogbeitrag ableiten, und schon gar nicht aus der Antwort eines Modells.
+
+Fördermittel überhaupt zu finden ist ein [anderes Problem als darüber zu berichten](/de/posts/ki-verein-foerdermittel-finden).
+
+## Fragen von Bildungsträgern
+
+### Kann KI Berichte an die Agentur für Arbeit einreichen?
+
+Ich würde es nicht zulassen. Geldgeber erwarten, dass eine namentlich bekannte Person hinter dem Bericht steht. Lassen Sie den Assistenten entwerfen und prüfen, und lassen Sie Ihre Koordination den Bericht gegen die Quelldokumente prüfen und selbst absenden.
+
+### Gilt eine KI-Zusammenfassung als Anwesenheitsnachweis?
+
+Behandeln Sie sie als Arbeitsunterlage, nicht als Nachweis. Maßgeblich bleibt die unterschriebene Liste oder das Systemprotokoll. Bevor Sie einen Nachweis ersetzen, den Ihr Geldgeber oder Ihre fachkundige Stelle verlangt hat, fragen Sie dort schriftlich nach.
+
+### Muss ich Teilnehmende über einen KI-Chatbot informieren?
+
+Ja, wenn Sie in der EU einen Chatbot einsetzen, außer es ist offensichtlich. Die Kennzeichnungspflicht nach Artikel 50 der KI-Verordnung gilt seit dem 2. August 2026. Ein Satz in der ersten Nachricht genügt.
+
+### Lohnt sich das bei einem Träger mit ein oder zwei Kursen?
+
+Meist nicht als Eigenbau. Bei wenigen Teilnehmenden reichen eine gute Checkliste, ein gemeinsames Postfach und eine Erinnerung zum Monatsende. Mit mehreren Kursen, mehreren Geldgebern oder unordentlichen Eingängen wird der Fall stärker.
+
+## Wo ich anfangen würde
+
+Nehmen Sie einen Kurs und einen Monat. Schreiben Sie die fünf Fehler auf, die Sie letztes Jahr am meisten gekostet haben, machen Sie daraus Prüfungen und lassen Sie diese über die Unterlagen des Vormonats laufen. Findet das Modell Probleme, die Ihr Team schon kannte, haben Sie etwas gelernt. Findet es welche, die Sie nicht kannten, haben Sie Ihr Argument. In beiden Fällen gilt: Das Modell findet die Lücken, ein Mensch entscheidet, und das unterschriebene Original bleibt der Nachweis.
+
+Wenn Ihr Monatsabschluss so aussieht wie der am Anfang, [schreiben Sie mir, welchen Geldgebern Sie berichten und wo Ihre Teilnehmerdaten heute liegen](/de/kontakt?intent=improve), und ich schlage Ihnen das kleinste Stück vor, das sich zu testen lohnt.
