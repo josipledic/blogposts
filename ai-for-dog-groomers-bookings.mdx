@@ -1,0 +1,162 @@
+---
+id: "ai-for-dog-groomers-bookings"
+title: "Dog Grooming Bookings: Coat, Size and Temperament Set the Slot"
+authorName: "Josip Ledić"
+date: "2026-09-30"
+tags: ["Personal services", "Dog groomers", "Appointment booking", "AI for small business"]
+description: "A matted doodle and a short-coated terrier don't fit the same slot. How an AI booking assistant asks about coat, history and temperament before it books."
+excerpt: "A matted doodle and a short-coated terrier don't fit the same slot. How an AI booking assistant asks about coat, history and temperament before it books."
+---
+
+Picture a one-person dog salon on a Tuesday morning. The groomer has a wet doodle on the table and a dryer running when her phone buzzes: "Hi, can Bella come Saturday? She's a cockapoo, a bit fluffy." The booking tool offers the only thing it knows, a 60-minute slot for a medium dog. She taps accept, because her hands are wet.
+
+On Saturday Bella arrives with a coat that hasn't been cut in five months and mats behind both ears and under both front legs. The groom takes three hours instead of one. The 11:00 terrier waits in the car, the 12:30 customer is sent away, and the groomer must make a call nobody prepared the owner for: a long brush-out that hurts the dog, or a short clip-off the owner didn't expect.
+
+Nobody in this story did anything wrong. The calendar sold time by dog size, and size was never what decided the time. Coat, coat condition, history and temperament did. That's where I'd use an AI assistant in a grooming salon: not to groom, not to decide, but to ask the questions the booking form doesn't, so the slot fits the dog before it's booked.
+
+## Why size is the wrong question
+
+Most booking tools sell time by service and size: small, medium or large, bath or full groom. That works for a short-coated dog that needs a wash and a nail trim. It falls apart on coats.
+
+Breed doesn't rescue it. German pet industry bodies ZZF and IVH put mixed breeds at 43% of the country's 10 million dogs, and "cockapoo" in a message describes a family of coats, not one. The UK charity PDSA's [grooming advice](https://www.pdsa.org.uk/pet-help-and-advice/looking-after-your-pet/all-pets/grooming-pets) notes that poodle crosses shed less but tangle more easily, especially when wet, and need brushing a few times a week. Short-haired breeds such as Labradors may need brushing only weekly and don't usually need regular haircuts. Two dogs of the same weight can need very different amounts of time on the table.
+
+<Stats title="The market behind the appointment book">
+  <Stat value="71 million" label="US households owned a dog in 2025, up 4% on the year" source="APPA, 2026 Dog Report" href="https://americanpetproducts.org/news/americas-dog-owners-are-becoming-smarter-spenders" />
+  <Stat value="43%" label="of Germany's 10 million dogs are mixed breeds, so a breed dropdown tells you little" source="ZZF and IVH, Heimtiere in Deutschland 2025" href="https://www.zzf.de/marktdaten/heimtiere-in-deutschland" />
+  <Stat value="51%" label="of US dog owners groom their dog at home, while spending on salon and mobile grooming fell in 2025" source="APPA, 2026 Dog Report" href="https://americanpetproducts.org/news/americas-dog-owners-are-becoming-smarter-spenders" />
+</Stats>
+
+The last number matters for a small salon. When owners are deciding whether professional grooming is worth paying for, a three-hour wait or a surprise shave-down is the kind of experience I'd expect to send someone back to the clippers at home.
+
+## What really sets the length of a groom
+
+Here are the factors and what each should change. The assistant collects the answers in plain language. Your rules decide what they mean.
+
+| What decides the time | What the assistant asks | What it changes |
+| --- | --- | --- |
+| Size | Weight in kilos, or the nearest size band | Base time and price band |
+| Coat type | Curly, double, wire, silky or short? A photo of the dog standing | Service type, brushing and drying time |
+| Coat condition | When was the last groom? How often is the dog brushed? Any knots? A photo of behind the ears and the armpits | Extra time for dematting, or a clip-off conversation before the day |
+| Temperament | How does the dog react to new places, noise, the dryer, being handled on the table? Any history of snapping? | Calmer slot, planned breaks, or a short meet-and-assess visit first |
+| Health and age | Joints, breathing, skin problems, medication, allergies | Shorter sessions, the groomer's call, vet advice where needed |
+| Vaccination and parasites | Vaccination status, recent spot-on flea or tick treatment | Your house rules, applied before the day rather than at the door |
+
+The minutes are yours to define. I'd build a small rules table from your last hundred appointments: a base time per size band and coat type, plus add-ons for visible matting or a nervous first-timer. Treat any figures from blog posts, including mine, as placeholders.
+
+The UK's Canine and Feline Sector Group, a coalition of welfare, veterinary, industry and enforcement organisations, publishes [best-practice guidelines for groomers](https://www.cfsg.org.uk/wp-content/uploads/2025/06/CFSG-Pet-Grooming-Best-Practice-Guidance-2025.pdf) that ask for almost exactly this. At booking, ask about health issues, how the pet reacts to new places and people, vaccination status and parasite treatment. Hold a full consultation before each session. Get written consent, with additional permission for a full clip-off due to matting. And keep the grooming duration realistic for the dog. These are guidelines, not law, but they make a good checklist anywhere.
+
+## Matting is a welfare question, not just a scheduling one
+
+A matted coat isn't just an annoyance that eats time. ASPCA veterinarian Dr. Julie Horton [explains](https://www.aspca.org/news/haircut-could-save-life-preventing-your-pets-coat-matting) that even very mild mats can cause skin irritation and progress to infected lesions, and severe mats can cut off the blood supply to a limb. The ASPCA's advice is never to cut mats out with scissors, and it notes that a severely matted pet may need sedation and full-body clipping.
+
+That is why the choice between a careful brush-out and a clip-off belongs to the groomer, with the owner's agreement, not to software. What the assistant can do is make sure the conversation happens early. It asks for a photo of the worst spots, explains your matting policy in plain words (extra time, a possible fee, a possible shave-down) and records that the owner has read it. The CFSG guidelines expect groomers to have such a coat removal policy. An owner who hears about it by text on Tuesday is far calmer than one who hears about it at the table on Saturday.
+
+## From "a bit fluffy" to a slot that fits
+
+<Flow title="How a booking request becomes the right appointment" caption="The assistant asks and proposes. The groomer confirms anything unusual before the owner sees a final time.">
+<Step title="Message arrives" who="Owner" time="any time">By text, web form or voicemail transcript, often while the groomer has a dog on the table.</Step>
+<Step title="Greet and identify" who="AI" tone="ai" time="seconds">The assistant says it's the salon's automated assistant and finds the dog's card, or starts a new one.</Step>
+<Step title="Ask the intake questions" who="AI" tone="ai" time="2 to 3 min">Weight, coat type, last groom, home brushing, behaviour, health, vaccination. A photo request for new dogs or long gaps.</Step>
+<Step title="Propose a slot" who="AI" tone="ai">Time comes from your rules table and the dog's own history. Straightforward dogs get a slot offered right away.</Step>
+<Step title="Review the flagged ones" who="Groomer" tone="human" time="between dogs">Visible matting, a nervous first-timer, a senior dog or a health note go to the groomer, who adjusts time and price or asks for a meet-and-assess visit.</Step>
+<Step title="Confirm with expectations" who="AI" tone="ai">Confirmation with date, time, matting policy, vaccination proof if required, and a link to accept the policy.</Step>
+<Step title="Record what happened" who="Groomer" tone="human" time="after the groom">One tap: actual minutes, coat condition, behaviour. The next booking starts from real data.</Step>
+</Flow>
+
+The last step is the one people skip, and it makes everything else improve. Without actual times, your rules table stays a guess. With them, a model can spot patterns, such as curly coats five months after the last groom taking far longer than the base time.
+
+## What lands on the groomer's phone
+
+Flagged bookings should arrive as a card the groomer can read in ten seconds between dogs. Something like this:
+
+```text
+NEW DOG, CHECK BEFORE CONFIRMING
+Bella, cockapoo, about 11 kg, curly coat.
+Last groom: around 5 months ago (owner's estimate). Brushed "sometimes".
+Photo: knots behind both ears and under the front legs, visible.
+Behaviour: nervous with dryers, never been on a grooming table.
+Health: none reported. Vaccinations: owner will bring the certificate.
+Proposed: Saturday 09:00, 150 min, first of the day.
+Needs from you: confirm time and price, send matting consent.
+```
+
+Compare that with "she's a bit fluffy". The card says a standard slot would have been wrong, why, and what to decide. It also puts a nervous dog first in the day, where a long groom can't push everyone else back.
+
+## Reminders that match the coat
+
+A dog's next appointment depends on its coat, not on one interval for everyone. A curly-coated dog might be due every six weeks, a short-coated one every ten to twelve. Those are examples. You set the real intervals.
+
+With the interval in the dog's card, the assistant can send the reminder at the right moment, offering the first free slots that fit this dog's usual length, instead of a generic "time for your groom" to everyone. The best reminder is still made at the table: "See you in six weeks?" Interval reminders work the same way in [HVAC maintenance agreements](/posts/ai-for-hvac-maintenance-reminders), and a cancelled Saturday slot can be refilled as described in [this post on hair salons](/posts/ai-for-hair-salons-scheduling), with one extra check: does the waiting dog fit the gap?
+
+## What a wrong slot costs
+
+<Calc title="Napkin math: table time that was never priced" caption="Assumptions, not measurements. Replace them with a count from your own last month of appointments." rows={[
+  ["Grooms per week", "25"],
+  ["Share booked with a slot that was too short", "× 20%"],
+  ["Average overrun on those grooms", "× 60 min"],
+  ["Unpaid table time per week", "= 5 hours"],
+  ["Value of one table hour", "× €55"],
+  ["Weeks per month", "× 4.3"]
+]} result={["Table time given away each month", "≈ €1,180"]} />
+
+That leaves out customers who waited or were sent away. It also leaves out the dog, which is the main reason to care: a rushed groom is a stressful one.
+
+## What it takes to set up and run
+
+The setup is mostly your knowledge, not technology. As a planning assumption, not a quote: a day or two to write the rules table and intake questions, connect the calendar and message channel, and test on last month's booking requests. After that comes a monthly cost on top of your booking software. Compare any quote with the table hour above. If the monthly cost were €60 (a placeholder, not a quote), the assistant would pay for itself by saving about one table hour a month, a fraction of the five hours a week in the calculation.
+
+Many tools built for groomers already offer pet profiles, notes and automatic reminders, for example MoeGo, Gingr, PetExec and Pawfinity (US-based), or Butlerapp, Bookily and Petleo in German. The assistant can sit in front of whichever one you use, read the dog's history and write the booking back. With none, a shared calendar and a spreadsheet of dogs is enough to start.
+
+## When a simpler fix does the job
+
+Much of this needs no AI at all.
+
+- **A required field.** Make "coat condition" a required choice in your booking tool, with a plain option like "knots or mats", and attach a time supplement to it.
+- **A meet-and-assess visit.** For new dogs, a short consultation before the first groom removes most of the guessing. The CFSG guidelines also suggest introductory sessions for puppies.
+- **A written cancellation and no-show policy.** The CFSG guidelines recommend one, and a deposit for long slots protects them cheaply.
+- **A phone call for the odd ones.** If one request in ten is complicated, ringing those owners is quicker than a flow.
+
+A solo groomer with fifteen regulars who book by text probably doesn't need an assistant. It starts to pay when requests arrive while your hands are busy, new dogs are a real share of the book, or several groomers share one calendar and each estimates differently.
+
+## What the assistant should never decide
+
+- **The state of the coat, and clip-off or brush-out.** A photo can suggest matting. It can't show how close to the skin the mats go. The groomer decides, by hand, with the owner's consent.
+- **Anything medical.** A lump, a sore patch, a limp or heavy panting goes to the groomer and, if needed, a vet. The assistant never advises on skin, medication or pain. [Vet clinics](/posts/ai-for-veterinary-clinics-follow-up) have their own follow-up routines for that.
+- **Whether a dog gets groomed at all.** The CFSG guidelines say groomers aren't obliged to groom an animal that puts them, their staff or other animals at risk. Behaviour notes inform that call. They don't make it.
+
+<Checklist title="At drop-off: two minutes that save the afternoon" items={[
+  "Does the dog in front of you match the intake card (coat, behaviour, health notes)?",
+  "Look at the coat together with the owner, including behind the ears, armpits and tail",
+  "If matting is worse than the photo showed, agree clip-off or brush-out now and record the consent",
+  "Check vaccination and parasite status against your house rules",
+  "Ask whether anything has changed since booking: a new medication, a skin problem, a bad experience",
+  "Agree the pick-up time and make sure the owner can be reached until then"
+]} />
+
+## Data protection and the rules that apply
+
+Owner names, phone numbers and addresses are personal data. If a third party runs the assistant, GDPR requires a contract governing the processing ([Article 28](https://gdpr-info.eu/art-28-gdpr/)), usually called a data processing agreement. Owners can also ask what you hold on them ([Article 15](https://gdpr-info.eu/art-15-gdpr/)), and a dog card linked to an owner counts. Write notes you'd be comfortable showing: "nervous with dryers", not "difficult owner".
+
+An assistant that talks to customers has to say so. The European Commission's FAQ on [Article 50 of the AI Act](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) says the transparency obligations apply from 2 August 2026. A first line such as "This is the automated assistant of Paws & Co." covers it.
+
+Licensing differs by country, so check yours. In England a grooming business doesn't need a licence, and the Animal Welfare Act 2006 duty of care applies either way, as [one council's guidance](https://www.gravesham.gov.uk/animals/dog-cat-grooming-businesses) puts it. Commercial [dog boarding and day care](https://www.gov.uk/government/publications/animal-activities-licensing-guidance-for-local-authorities/dog-day-care-licensing-statutory-guidance-for-local-authorities) do need one. Germany draws a similar line: according to the business guide [selbststaendig.de](https://www.selbststaendig.de/geschaeftsideen/hundesalon), a pure grooming salon generally needs no permit under [§ 11 of the Animal Welfare Act](https://www.gesetze-im-internet.de/tierschg/__11.html), but selling animals, boarding or training dogs does, and local interpretation varies. If you offer more than grooming, ask your veterinary office.
+
+## Questions groomers ask before trying this
+
+### Can AI tell from a photo how badly matted a dog is?
+
+It can flag likely matting and ask for a better photo. It can't judge how tight the mats sit against the skin, and neither can anyone looking at a phone picture. Treat the photo as a reason to allow more time and start the clip-off conversation early, not as a verdict.
+
+### Will owners mind answering all these questions?
+
+I'd expect most to answer if you tell them why: "so we book enough time and your dog isn't rushed". Keep the first round to a handful of questions and skip anything already in the dog's record.
+
+### What if a dog snaps or bites?
+
+It's recorded as a behaviour note and flagged to the groomer, who decides whether and how to groom. The assistant never promises that a dog will be accepted. Tell owners up front that the final call is made at the salon.
+
+## Where I'd start
+
+Make the slot follow the coat, not the weight. Ask three questions on every booking, when the dog was last groomed, how the coat feels at home and how the dog behaves on a table, and record the actual minutes after every groom. Add the assistant once those habits show you where your slots go wrong.
+
+If your Saturdays keep running over, [tell me which booking tool you use and how you set slot lengths today](/contact?intent=improve), and I'll suggest the smallest change worth testing.
