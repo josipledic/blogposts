@@ -1,0 +1,106 @@
+---
+id: "ai-for-physical-therapy-clinics-authorizations"
+title: "Check Coverage Before the First Visit: AI for Physical Therapy Clinics"
+authorName: "Josip Ledić"
+date: "2026-10-20"
+tags: ["Healthcare", "Physical therapy clinics", "Prior authorization", "AI for small business"]
+description: "PT clinics see one in eight claims denied. How AI can read each referral and insurance card at intake, track authorized visits and flag gaps before they turn into unpaid care."
+excerpt: "PT clinics see one in eight claims denied. How AI can read each referral and insurance card at intake, track authorized visits and flag gaps before they turn into unpaid care."
+---
+
+A physical therapy clinic can treat a patient well for six visits and still not get paid for them. The cause is rarely the care. It's the paperwork around it: an authorization that covered eight visits when the patient came for ten, a payer that said no authorization was needed and later denied the claim for lack of one, or a Medicare patient who passed the yearly threshold without anyone adding the right modifier. AI can check each new patient's referral, insurance card and payer rules at intake, then track every authorized visit, so the front desk sees the gap while it can still be fixed.
+
+Three numbers from the American Physical Therapy Association's 2025 survey of its members show why this is worth doing.
+
+<Stats title="What payer paperwork costs a PT clinic">
+  <Stat value="12.9%" label="of filed claims are denied, and 72.4% of those denials are appealed" source="APTA Administrative Burden Survey 2025 (856 respondents)" href="https://www.apta.org/siteassets/pdfs/advocacy/apta-impact-administrative-burden-pt-services-infographic-2025.pdf" />
+  <Stat value="2 in 5" label="respondents say claims are later denied for missing prior authorization more than 25% of the time, even after the payer said none was needed" source="APTA 2025" href="https://www.apta.org/siteassets/pdfs/advocacy/apta-impact-administrative-burden-pt-services-infographic-2025.pdf" />
+  <Stat value="83%" label="agree that authorization delays have caused patients to stop treatment altogether" source="APTA, November 2025" href="https://apta.org/article/2025/11/12/survey-findings-drive-new-apta-advocacy-resources-on-administrative-burden" />
+</Stats>
+
+These are self-reported figures from a professional association that lobbies on this issue, so treat them as a picture of the problem rather than a precise measurement. But they match what any clinic owner will tell you: the denials come from the paperwork, not the treatment.
+
+## Where the money leaks
+
+Most of the loss happens in a few predictable places.
+
+| Where it breaks | What it looks like | When it's usually caught |
+| --- | --- | --- |
+| Eligibility | Plan changed in January, card on file is last year's | When the claim comes back |
+| Prior authorization | Approved for 8 visits, patient is on visit 10 | At billing, or never |
+| "Not required" that was wrong | The phone rep said no authorization was needed; the claim is denied for lack of one | Weeks after treatment |
+| Medicare threshold | Patient passes $2,480 for the year and claims go out without the KX modifier | When the claim is denied |
+| Plan of care and referral | Signature missing, dates don't cover the visit, wrong referring provider | At audit or denial |
+
+Each row is a rule someone knows. The trouble is that nobody can hold all of them in their head for every patient at 7:45 on a Monday, with the waiting room full and the phone ringing.
+
+The Medicare row is the cleanest example. CMS sets a yearly threshold per patient, [$2,480 for physical therapy and speech-language pathology combined in 2026](https://www.cms.gov/files/document/r13437cp.pdf). Above that, claims must carry the KX modifier to confirm the care is medically necessary and documented, and CMS states plainly that claims above the threshold without it are denied. The rule is simple. Tracking it per patient, across visits and across other providers the patient may have seen this year, is not.
+
+## What AI can check at intake
+
+The work splits into reading and checking, and they're best done by different tools.
+
+**Reading.** A vision model reads the referral, the insurance card (both sides), the authorization letter or portal screenshot, and the prior plan of care if there is one. It pulls out payer, member ID, plan type, authorized visit count and date range, referring provider, diagnosis codes and signatures. When a field is unreadable, it says so instead of guessing.
+
+**Checking.** The rules themselves should be code, not a language model. Is the visit inside the authorization dates? How many authorized visits remain? Is this patient close to the Medicare threshold? Does this payer require a new authorization after a set number of visits? These questions have exact answers, and a rule set gives the same answer every time.
+
+<Flow title="From new referral to a covered first visit" caption="The model reads, the rules check, and the front desk decides. The goal is a first visit with no open coverage questions, or a clear list of what to chase before it.">
+<Step title="Referral and card arrive" who="Patient" time="before the first visit">By email, fax, portal or a photo from the patient's phone. The earlier, the better.</Step>
+<Step title="Read the documents" who="AI" tone="ai" time="seconds">Pulls payer, plan, authorization details, referring provider and diagnosis codes. Flags anything unreadable or missing.</Step>
+<Step title="Apply payer rules" who="System" tone="ai" time="seconds">Checks dates, visit counts, the Medicare threshold and each payer's authorization rules. Calculates what's left.</Step>
+<Step title="Status to the front desk" who="AI" tone="ai">Green, yellow or red per patient, with the exact gap and a draft request to the payer or referring office.</Step>
+<Step title="Fix, then schedule" who="Front desk" tone="human" time="2 min">Sends the request, books visits inside the authorized window, or talks to the patient about cost before treatment starts.</Step>
+</Flow>
+
+The same check runs before every visit, not just the first. A dashboard that says "Maria Lopez: 2 authorized visits left, re-authorization takes this payer about a week" gives the front desk time to ask now, instead of discovering on visit 11 that visits 9 and 10 weren't covered.
+
+## Keep a record of every "not required"
+
+The second number above is the one I'd act on first. If two in five clinicians see "no authorization needed" turn into a denial more than a quarter of the time, the clinic needs proof of what it was told.
+
+Every eligibility or authorization check should leave a record: date, time, payer, the representative's name or portal reference, and the answer. An AI assistant can draft that record from a call transcript or a portal screenshot and attach it to the patient's file. When the denial comes, the appeal starts with evidence rather than memory. In APTA's survey, nearly 60% of respondents said a single appeal takes more than 30 minutes of staff time to prepare. A complete record makes that half hour shorter and the appeal more likely to succeed.
+
+## Where it goes wrong
+
+I'd be careful about three things.
+
+**Treating a payer's rules as fixed.** Authorization requirements differ by payer, plan and state, and they change. A rule set without an owner goes stale within a year. Every rule should have a source and a date, and someone should review the list each quarter.
+
+**Letting the model decide coverage.** The model reads and drafts. It should never tell a patient that a visit is covered. That answer comes from the payer and is relayed by a person who can explain the uncertainty.
+
+**Health data.** Referrals and plans of care are protected health information under HIPAA. Any service that reads them needs a business associate agreement, a clear answer on where data is processed, and a commitment not to train on it. If a vendor can't give you those in writing, pick another.
+
+## Tools that fit
+
+Before building anything, look at what your EMR and billing tools already do. Most PT practice platforms have authorization tracking and visit counters, and many billing services run eligibility checks. If yours does, the gap may be smaller than you think: getting documents in earlier, keeping a record of every call, and putting the remaining visit count in front of the person who books the next appointment.
+
+A custom layer earns its place where those tools stop: reading documents that arrive in messy formats before a patient record even exists, applying the payer rules your billing team keeps in a spreadsheet, and drafting the requests and records nobody has time to write. It can sit beside your EMR, read new referrals and write back a status and a draft.
+
+<Checklist title="How to start" items={[
+  "Sort the last 12 months of denials by reason and payer. Which three cost the most?",
+  "Check what your EMR already tracks: authorized visits, dates, Medicare totals",
+  "Ask for referral and insurance documents before the first visit, by photo or email",
+  "Log every eligibility and authorization answer with date, payer and reference",
+  "Start with your two largest payers, not all of them",
+  "Measure for a month: denials, appeals, and visits delivered without coverage"
+]} />
+
+## Questions clinic owners ask
+
+### Can AI submit prior authorization requests for us?
+
+Some payer portals allow automated submission, and some vendors offer it. I'd start with drafting: the model fills in the request from the documents it has already read, and a person checks and submits it. Automate submission later, payer by payer, once the drafts are reliably right.
+
+### Is this worth it for a two-therapist clinic?
+
+It depends on your denial rate and payer mix. A cash-pay clinic with few insurance patients won't need it. A clinic where most patients are on commercial plans that require authorization, and where one in eight claims comes back denied, loses enough per month that a narrow intake check usually pays for itself.
+
+### What about patients who come in through direct access?
+
+Every state allows some form of direct access, but many payers still want a referral or a plan of care signed by a physician before they pay. The check is the same: read what the patient brings, apply that payer's rules, and flag what's missing before the visit, not after.
+
+## A rule for every front desk
+
+Check coverage before the visit, not when you bill. AI reads the paperwork, rules find the gap, and the front desk fixes it while it's still a phone call.
+
+If denials or authorization gaps are eating into your clinic's revenue, [tell me which EMR and billing setup you use](/contact?intent=improve) and which denial reasons come up most. I'll suggest whether an intake check, better tracking in your current tools, or something simpler is the right place to start. Specialist practices have a similar intake problem with incoming referrals, which I cover in [AI for medical practice referrals](/posts/ai-for-medical-practices-referrals), and home care agencies face the same timing pressure in [AI for home care scheduling](/posts/ai-for-home-care-scheduling).
