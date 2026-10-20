@@ -1,0 +1,117 @@
+---
+id: "ki-physiotherapie-verordnung-pruefen"
+translationOf: "ai-for-physical-therapy-clinics-authorizations"
+title: "Physiotherapie: Verordnungen mit KI prüfen, bevor die Kasse absetzt"
+authorName: "Josip Ledić"
+date: "2026-10-20"
+tags: ["Gesundheit", "Physiotherapiepraxen", "Verordnungsprüfung", "KI für kleine Unternehmen"]
+description: "Fehlende Unterschrift, falsche Diagnosegruppe, abgelaufene 28-Tage-Frist: Wie KI jede Heilmittelverordnung beim Eingang prüft, damit die Praxis nicht umsonst behandelt."
+excerpt: "Fehlende Unterschrift, falsche Diagnosegruppe, abgelaufene 28-Tage-Frist: Wie KI jede Heilmittelverordnung beim Eingang prüft, damit die Praxis nicht umsonst behandelt."
+---
+
+Eine Physiotherapiepraxis kann sechs Behandlungen sauber durchführen und am Ende trotzdem kein Geld dafür bekommen. Der Grund ist fast nie die Therapie, sondern das Formular: eine fehlende Arztunterschrift, eine Diagnosegruppe, die nicht zum Heilmittel passt, oder eine Verordnung, deren Frist schon abgelaufen war, als der Patient zum ersten Mal kam. Eine KI kann jede Verordnung prüfen, sobald sie an der Anmeldung eingescannt wird, und die Fehler melden, solange sie sich noch mit einem Anruf in der Arztpraxis klären lassen.
+
+Drei Zahlen zeigen, warum sich das lohnt.
+
+<Stats title="Warum die Verordnung so viel Gewicht hat">
+  <Stat value="13,3 Mrd." label="Euro gaben die gesetzlichen Krankenkassen 2024 für Heilmittel aus, knapp 70 % davon für Physiotherapie" source="WIdO Heilmittel-Report 2026" href="https://www.wido.de/fileadmin/Dateien/Bilder/Publikationen_Produkte/Buchreihen/Heilmittelreport/wido_hei_pm_hmr2026_06_2026.pdf" />
+  <Stat value="28 Tage" label="bleiben für den Behandlungsbeginn, bei dringlichem Bedarf 14. Danach ist die Verordnung ungültig." source="§ 15 Heilmittel-Richtlinie" href="https://www.haufe.de/id/norm/heilmittel-richtlinie-heilm-rl-15-beginn-der-heilmittelbehandlung-HI1334703_p15.html" />
+  <Stat value="280 Tage" label="dauerte es 2024 im Schnitt, eine Physiotherapeutenstelle nachzubesetzen (2023: 253 Tage)" source="IFK zur Engpassanalyse der Bundesagentur für Arbeit" href="https://ifk.de/print/pdf/node/17156" />
+</Stats>
+
+Die erste Zahl zeigt, wie viel Geld an diesen Formularen hängt. Die zweite zeigt, wie kurz die Fristen sind. Die dritte zeigt, warum niemand zusätzliche Leute einstellen kann, um jedes Formular doppelt zu prüfen: Es gibt sie kaum.
+
+## Die Prüfpflicht liegt bei der Praxis
+
+Viele denken, die Arztpraxis sei für eine korrekte Verordnung verantwortlich. Das stimmt, aber das Risiko trägt die Therapiepraxis. Die Kassenärztliche Vereinigung Bayerns fasst es in ihrer [Verordnungsinfo vom Januar 2025](https://kvb.de/fileadmin/kvb/Mitglieder/Verordnungen/VO-aktuell/2025-DS/KVB-VA-250109-HMP-Pruefpflicht-Therapeuten.pdf) so zusammen: Notwendige Korrekturen müssen spätestens mit der Abrechnung erfolgen, „da sonst die Abrechnung von der Krankenkasse abgesetzt werden kann“.
+
+Anlage 3 der Heilmittel-Richtlinie sortiert die möglichen Fehler in drei Gruppen. Diese Einteilung ist der Kern jeder automatischen Prüfung, weil sie bestimmt, was als Nächstes passiert:
+
+| Was falsch ist (Beispiele) | Was die Korrektur braucht | Aufwand für die Praxis |
+| --- | --- | --- |
+| Personalienfeld, Diagnosegruppe, behandlungsrelevante Diagnose, Hausbesuch auf „ja“ geändert, Dringlichkeit, fehlende Anzahl der Einheiten, Heilmittel fehlt oder passt nicht zur Diagnosegruppe | Neue Unterschrift der Ärztin oder des Arztes mit Datum | Hoch: Das Blatt muss zurück in die Arztpraxis |
+| Therapiebericht, Therapiefrequenz, ergänzende Angaben zum Heilmittel, Leitsymptomatik, Wechsel von Einzel- auf Gruppentherapie | Absprache mit der Arztpraxis, keine neue Unterschrift | Mittel: ein Anruf und eine Notiz auf der Verordnung |
+| Heilmittelbereich, Anzahl über der zulässigen Höchstmenge, Wechsel von Gruppen- auf Einzeltherapie | Information an die Arztpraxis | Gering: eine kurze Nachricht |
+
+Wer diese Tabelle im Kopf hat, prüft eine Verordnung in zwei Minuten. Wer neu an der Anmeldung ist oder am Montagmorgen zwölf Patienten gleichzeitig vor sich hat, übersieht etwas. Ein Fehler aus der ersten Zeile, der erst beim Abrechnen auffällt, ist der teuerste: Dann ist schon behandelt, und die Arztpraxis muss ein Blatt nachträglich unterschreiben, das längst im Abrechnungsstapel liegt.
+
+## Warum Fehler erst bei der Abrechnung auffallen
+
+Der typische Ablauf ist nicht falsch, er prüft nur zum falschen Zeitpunkt. Der Patient bringt die Verordnung zur ersten Behandlung mit. Die Anmeldung legt einen Termin an und ein Blatt in den Ordner. Die genaue Prüfung macht oft erst die Person, die am Monatsende die Abrechnung vorbereitet, oder das Abrechnungszentrum, das die Fehler zurückmeldet.
+
+Bis dahin sind drei oder vier Behandlungen gelaufen. Die Arztpraxis ist schwer zu erreichen, der Patient hat vielleicht schon die nächste Verordnung, und die Frist für den Behandlungsbeginn kann sich niemand mehr zurückholen. Sie hängt am ersten Termin. Kam der Patient erst nach 30 Tagen, weil vorher nichts frei war, ist die Verordnung ungültig, egal wie gut die Therapie war.
+
+## Was eine KI an der Anmeldung prüft
+
+Die Prüfung lässt sich gut automatisieren, weil die Verordnung ein einheitliches Formular ist (Muster 13) und die Regeln öffentlich sind. Die Arbeit teilt sich in zwei Schritte.
+
+**Lesen.** Ein Bildmodell liest den Scan oder das Handyfoto: Personalien, Diagnosegruppe, ICD-10-Code, Leitsymptomatik, Heilmittel, Anzahl, Frequenz, Dringlichkeit, Hausbesuch, Therapiebericht, Datum und ob eine Unterschrift und ein Stempel vorhanden sind. Bei unleserlichen Feldern meldet es Unsicherheit, statt zu raten.
+
+**Prüfen.** Die eigentliche Prüfung sollte nicht das Sprachmodell machen, sondern feste Regeln: Passt das Heilmittel laut Heilmittelkatalog zur Diagnosegruppe? Liegt die Anzahl innerhalb der Höchstmenge? Welcher Tag ist der letzte mögliche Behandlungsbeginn? Diese Fragen haben eindeutige Antworten. Ein Regelwerk gibt sie jedes Mal gleich, ein Sprachmodell nicht.
+
+<Flow title="Von der Verordnung zum geprüften ersten Termin" caption="Das Modell liest, die Regeln prüfen, und die Anmeldung entscheidet. Am Ende steht ein Termin innerhalb der Frist oder eine Klärung, die vor der ersten Behandlung beginnt.">
+<Step title="Verordnung kommt an" who="Patient" time="Anruf, E-Mail oder Tresen">Foto per E-Mail, Scan an der Anmeldung oder Papier beim Erstgespräch. Je früher, desto besser.</Step>
+<Step title="Felder lesen" who="KI" tone="ai" time="Sekunden">Liest alle Felder von Muster 13 und markiert, was unleserlich ist oder fehlt.</Step>
+<Step title="Regeln anwenden" who="System" tone="ai" time="Sekunden">Prüft Diagnosegruppe gegen Heilmittel, Höchstmenge, Frequenz und berechnet den spätesten Behandlungsbeginn.</Step>
+<Step title="Ergebnis an die Anmeldung" who="KI" tone="ai">Grün, gelb oder rot, mit der Korrekturart aus Anlage 3 und einem Entwurf für die Nachricht an die Arztpraxis.</Step>
+<Step title="Termin und Klärung" who="Anmeldung" tone="human" time="2 Minuten">Vergibt einen Termin vor Fristende, schickt die Korrekturanfrage ab oder bittet den Patienten, mit der Verordnung zurück in die Arztpraxis zu gehen.</Step>
+</Flow>
+
+Der wichtigste Teil ist die Frist. Wenn die Praxis das Verordnungsdatum kennt, bevor sie den ersten Termin vergibt, kann sie diesen Patienten vorziehen oder ehrlich sagen, dass sie es nicht schafft. Das ist besser, als nach vier Wochen festzustellen, dass die Verordnung schon ungültig war.
+
+## Die Nachricht an die Arztpraxis
+
+Die meisten Rückfragen an Arztpraxen scheitern an der Unklarheit, nicht an fehlendem Willen. Vergleichen Sie:
+
+> **Unklar:** Guten Tag, die Verordnung für Frau Schneider ist fehlerhaft. Bitte korrigieren.
+
+> **Konkret:** Guten Tag, auf der Verordnung vom 6. Oktober für Frau Schneider (geb. 12.03.1961) fehlt die Diagnosegruppe. Der ICD-10-Code M54.5 und Krankengymnastik sind eingetragen. Bitte ergänzen Sie die Diagnosegruppe, vermutlich WS. Die Ergänzung braucht laut Heilmittel-Richtlinie Ihre Unterschrift mit Datum. Die Patientin kommt am Donnerstag mit dem Original vorbei.
+
+Die zweite Nachricht beantwortet eine Arzthelferin in einer Minute, weil darin steht, was falsch ist, warum es falsch ist und welche Form die Korrektur braucht. Ein Modell, das die Verordnung schon gelesen und geprüft hat, schreibt so eine Nachricht in Sekunden. Die Anmeldung liest sie und schickt sie ab.
+
+## Wo es schiefgeht
+
+Bei drei Dingen wäre ich vorsichtig.
+
+**Lesefehler bei Handschrift.** Viele Verordnungen sind gedruckt, aber Korrekturen, Stempel und Unterschriften sind handschriftlich. Ein Modell kann einen schief gescannten Stempel übersehen oder eine Zahl falsch lesen. Deshalb sollte es bei Unsicherheit gelb melden statt grün, und die Anmeldung schaut sich jede gelbe Verordnung an.
+
+**Veraltete Regeln.** Heilmittelkatalog, Richtlinie und Verträge ändern sich. Die Blankoverordnung zum Beispiel gibt es erst seit 2024, und sie folgt anderen Regeln. Laut [WIdO](https://www.wido.de/fileadmin/Dateien/Bilder/Publikationen_Produkte/Buchreihen/Heilmittelreport/wido_hei_pm_hmr2026_06_2026.pdf) waren 2025 nur 2,4 Prozent der Physiotherapie-Verordnungen Blankoverordnungen, bei Schulterbeschwerden im vierten Quartal aber schon fast jede zweite. Das Regelwerk braucht also jemanden, der es pflegt, und jede Regel braucht eine Quelle.
+
+**Gesundheitsdaten.** Eine Verordnung enthält Diagnosen und gehört damit zu den besonders geschützten Daten nach Art. 9 DSGVO. Ein Dienst, der sie liest, braucht einen Auftragsverarbeitungsvertrag, eine Verarbeitung in der EU und die Zusage, dass er nicht mit Ihren Daten trainiert. Wenn ein Anbieter dazu keine klare Antwort hat, ist er der falsche.
+
+## Was es schon gibt und was fehlt
+
+Gängige Praxissoftware prüft Verordnungen beim Erfassen schon teilweise, und Abrechnungszentren melden Fehler zurück, oft aber erst nach der Behandlung. Bevor Sie etwas Neues bauen lassen, lohnt sich ein Blick in die Prüffunktionen Ihrer Software und eine Auswertung, welche Absetzungen in den letzten zwölf Monaten tatsächlich kamen.
+
+Die Lücke liegt meist am Anfang: beim Foto, das ein Patient per E-Mail schickt, bevor er überhaupt einen Termin hat, und bei der Frage, bis wann der erste Termin spätestens sein muss. Eine Prüfung, die dort ansetzt und das Ergebnis in die bestehende Software zurückschreibt, ersetzt nichts. Sie zieht die Prüfung nur nach vorn.
+
+Die elektronische Heilmittelverordnung wird viele Lesefehler beseitigen, aber nicht so bald. Die Pflicht zum Anschluss an die Telematikinfrastruktur wurde für Heilmittelerbringer auf den [1. Oktober 2027 verschoben](https://www.verbandsbuero.de/ti-anbindung-fristverlaengerung-bis-oktober-2027/), und für die eVO selbst gibt es noch keinen festen Termin. Bis dahin kommt Papier an den Tresen. Und auch eine elektronische Verordnung kann eine Diagnosegruppe haben, die nicht zum Heilmittel passt.
+
+<Checklist title="So fangen Sie an" items={[
+  "Absetzungen der letzten 12 Monate nach Grund sortieren: Welche drei Fehler kosten am meisten?",
+  "Prüfen, was Ihre Praxissoftware heute schon beim Erfassen meldet",
+  "Verordnungen vor dem ersten Termin anfordern, per Foto oder E-Mail",
+  "Für jede Verordnung den spätesten Behandlungsbeginn sichtbar machen",
+  "Mit den drei teuersten Fehlern anfangen, nicht mit allen Feldern",
+  "Vier Wochen messen: Absetzungen, Rückfragen an Arztpraxen, ungültige Verordnungen"
+]} />
+
+## Fragen, die Praxisinhaber stellen
+
+### Darf eine KI entscheiden, ob eine Verordnung gültig ist?
+
+Ich würde es nicht so bauen. Die KI liest und schlägt vor, die Regeln prüfen, und die Entscheidung trifft die Anmeldung oder die Praxisleitung. Die Verantwortung für die Abrechnung bleibt ohnehin bei der Praxis.
+
+### Lohnt sich das für eine kleine Praxis mit drei Therapeuten?
+
+Das hängt davon ab, wie viele Absetzungen Sie heute haben. Wenn es zwei im Jahr sind, reicht eine gute Checkliste an der Anmeldung. Wenn jede Woche eine Verordnung zurück in die Arztpraxis muss, rechnet sich eine automatische Prüfung schnell, weil jede abgesetzte Serie mehrere Behandlungen kostet.
+
+### Was ist mit Privatpatienten?
+
+Für Privatrezepte gelten die GKV-Regeln aus der Heilmittel-Richtlinie nicht in gleicher Form. Das Lesen funktioniert genauso, die Prüfregeln sind andere. Ich würde mit den GKV-Verordnungen anfangen, weil dort die Regeln am klarsten sind und die Absetzungen am meisten kosten.
+
+## Die Regel für jede Anmeldung
+
+Prüfen Sie die Verordnung, bevor Sie den ersten Termin vergeben, nicht wenn Sie abrechnen. Die KI liest das Formular, die Regeln finden den Fehler, und die Anmeldung klärt ihn, solange es noch ein Anruf ist.
+
+Wenn Absetzungen oder Rückfragen in Ihrer Praxis regelmäßig vorkommen, [schreiben Sie mir, welche Praxissoftware Sie nutzen](/de/kontakt?intent=improve) und welche Fehler am häufigsten auftreten. Ich sage Ihnen, ob eine Prüfung beim Eingang, eine bessere Checkliste oder die Funktionen Ihrer Software der richtige Anfang sind. Ein ähnliches Problem mit unordentlichen Dokumenten habe ich für [Überweisungen in der Facharztpraxis](/de/posts/ki-facharztpraxis-ueberweisungen) beschrieben, und die Terminplanung unter Zeitdruck für [ambulante Pflegedienste](/de/posts/ki-ambulanter-pflegedienst-tourenplanung).
