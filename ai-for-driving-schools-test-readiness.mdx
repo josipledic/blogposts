@@ -1,0 +1,105 @@
+---
+id: "ai-for-driving-schools-test-readiness"
+title: "Ready Before the Test Date: AI for Driving Schools"
+authorName: "Josip Ledić"
+date: "2026-10-21"
+tags: ["Education & community", "Driving schools", "Test readiness", "AI for small business"]
+description: "Half of all UK car driving tests are retakes, and each fail can mean months of waiting. How AI can turn lesson notes and mock tests into a readiness view, so pupils sit the test when they can pass it."
+excerpt: "Half of all UK car driving tests are retakes, and each fail can mean months of waiting. How AI can turn lesson notes and mock tests into a readiness view, so pupils sit the test when they can pass it."
+---
+
+A driving school's most expensive moment is a pupil sitting a test they weren't ready for. The pupil pays again, waits months for another slot, and books more lessons in the meantime, while the instructor loses the car for the test and a share of the next pupil's trust. AI can help by turning what instructors already write down after every lesson, plus mock test results, into a simple readiness view per pupil: which faults keep coming back, which skills haven't been practised, and whether the booked date still makes sense.
+
+The figures from the Driver and Vehicle Standards Agency (DVSA) show how big the gap is in Great Britain.
+
+<Stats title="Car driving tests in Great Britain, April 2025 to March 2026">
+  <Stat value="50.0%" label="pass rate across 1,998,621 practical car tests" source="DVSA, table DRT121A" href="https://www.gov.uk/government/statistical-data-sets/driving-test-and-theory-test-data-cars" />
+  <Stat value="51%" label="of those tests were a second or later attempt (1,014,206 of 1,998,621)" source="DVSA, table DRT121D" href="https://www.gov.uk/government/statistical-data-sets/driving-test-and-theory-test-data-cars" />
+  <Stat value="29%" label="of tests in September 2026 were taken more than 21 weeks after booking" source="DVSA, table DRT121G" href="https://www.gov.uk/government/statistical-data-sets/driving-test-and-theory-test-data-cars" />
+</Stats>
+
+The pass rate on a first attempt (50.5%) is barely different from the overall rate, and from the third attempt on it falls: 43.8% for pupils on their sixth try or later. Retakes are not mostly people who were unlucky once. More of them were third or later attempts (518,464) than second attempts (495,742).
+
+## Why the booked date drives everything
+
+DVSA [releases new appointments 24 weeks ahead](https://www.gov.uk/guidance/driving-test-appointments-release-dates-and-finding-earlier-tests), and half of all learners who took a test in August 2026 had waited no more than 11.1 weeks since booking. So most pupils book a test long before anyone knows whether they will be ready for it. The date then becomes the plan: lessons get crammed into the last few weeks, and a pupil who isn't ready goes anyway, because moving the test means another long wait.
+
+A failed test at £62 on a weekday ([GOV.UK](https://www.gov.uk/driving-test-cost)) isn't the expensive part. The expensive part is everything around it: the lessons booked to fill the wait, the hire of the instructor's car on test day, and the pupil who gives up or switches school.
+
+<Bars title="Pass rate by attempt, cars, Great Britain, 2025 to 2026" unit="%" caption="From the third attempt on, each later attempt passes less often. The sixth and later attempts pass well below one in two." source="DVSA, table DRT121D" href="https://www.gov.uk/government/statistical-data-sets/driving-test-and-theory-test-data-cars" data={[
+  { label: "1st attempt (984,415 tests)", value: 50.5 },
+  { label: "2nd attempt (495,742)", value: 50.8 },
+  { label: "3rd attempt (245,449)", value: 49.8 },
+  { label: "4th attempt (124,606)", value: 48.8 },
+  { label: "5th attempt (65,070)", value: 47.7 },
+  { label: "6th or later (83,339)", value: 43.8, highlight: true }
+]} />
+
+## What an instructor already knows, and loses
+
+Every instructor has a view of each pupil's readiness. It's in their head, in a notebook, in a few lines in the booking app, or in a voice note recorded in the car between lessons. The trouble is that it's rarely in one place, it's rarely compared with the test date, and it disappears when a pupil switches instructor or the school grows past three cars.
+
+DVSA publishes the faults that fail tests most often. In 2025 to 2026 the top three were [observation at junctions, use of mirrors when changing direction, and turning right at junctions](https://www.gov.uk/government/statistical-data-sets/driving-test-and-theory-test-data-cars) (table DRT121F). An instructor's notes are full of exactly these, written in their own words: "missed the car from the left at the T-junction again", "forgot the mirror before moving out round the parked van".
+
+## Where AI fits
+
+The work splits into three jobs.
+
+**Structuring the notes.** After each lesson, the instructor types a few lines or records a short voice note. A language model turns it into structured entries against the DVSA marking categories: skill, what happened, how serious, and whether it was prompted. It doesn't grade the pupil. It files what the instructor said in the same terms the examiner will use.
+
+**Building the readiness view.** Code, not the model, then counts. How many lessons in a row has this pupil driven without a serious fault at junctions? Which test-route features (roundabouts, dual carriageways, independent driving with a sat nav) haven't been practised in the last month? How did the last mock test go? The answer is a short list per pupil, with a traffic light per skill.
+
+**Drafting the conversation.** Two to three weeks before the booked date, the system drafts a note for the instructor: "Three serious junction faults in the last four lessons, no mock test yet, roundabouts not driven since August. Suggest a mock test this week and a frank talk about the date." The instructor decides. The model never tells a pupil they're ready or not.
+
+<Flow title="From lesson to a test date that makes sense" caption="The instructor judges, the notes are kept in one place, and the booked date is checked against them while there's still time to act.">
+<Step title="Lesson ends" who="Instructor" tone="human" time="1 min">Speaks or types a few lines: what went well, what didn't, what to practise next.</Step>
+<Step title="Structure the notes" who="AI" tone="ai" time="seconds">Files each point under the DVSA category, marks driving faults versus serious ones, and keeps the instructor's wording.</Step>
+<Step title="Count and compare" who="System" tone="ai">Tracks each skill across lessons and mock tests, and flags skills not yet practised on test-like roads.</Step>
+<Step title="Check against the test date" who="System" tone="ai" time="3 weeks before">Compares the readiness view with the booked date and drafts a note for the instructor if they don't match.</Step>
+<Step title="Decide with the pupil" who="Instructor" tone="human">Books a mock test, adjusts the lesson plan, or suggests moving the date, and explains why.</Step>
+</Flow>
+
+## The same notes fill the diary
+
+Once notes are structured, they also make scheduling easier. A pupil whose last three lessons all flagged roundabouts can be offered a lesson at the time and place with the right roads, rather than the next free slot. A pupil who is clearly ready but has a test 14 weeks away can be told so, and can choose to keep checking for an earlier appointment, which DVSA says can come up at any time when someone else cancels or moves a test. The school sees its whole pupil list by readiness and by test date, which is the view it needs when an instructor is off sick for two weeks.
+
+## Where it goes wrong
+
+**Turning notes into a score.** A single "readiness score" invites pupils, parents and instructors to argue about the number. Show the evidence instead: skills, recent faults, mock test results. The instructor's judgement is the decision.
+
+**Recording without consent.** Some systems record audio or video during lessons. If you do, the pupil needs to know, agree, and be able to see what's kept. A short note after the lesson, written or spoken by the instructor, gives most of the value with much less risk. Under UK GDPR, notes about an identifiable pupil are personal data, so decide how long you keep them and who can read them.
+
+**Booking tests for pupils automatically.** DVSA asks people [not to search the booking service repeatedly](https://www.gov.uk/guidance/driving-test-appointments-release-dates-and-finding-earlier-tests) and can block those who do. Leave booking and moving tests to people, using the official service.
+
+## Tools that fit
+
+Most driving school apps already handle the diary, payments and a basic progress record. Check what yours does first: some already have a skills checklist the instructor can tick. A custom layer earns its place when notes are scattered across apps, voice memos and paper, when a school has several instructors who each track progress differently, or when nobody compares progress with the booked test date until the last week.
+
+<Checklist title="How to start" items={[
+  "Count last year's first-time passes and fails per instructor, from your own records",
+  "Agree one set of skill categories, ideally the DVSA marking sheet",
+  "Have each instructor leave a one-minute note after every lesson for a month",
+  "Run a mock test three weeks before every booked date",
+  "Review every pupil whose test is within four weeks, once a week",
+  "Compare first-attempt pass rates after three months"
+]} />
+
+## Questions driving school owners ask
+
+### Can AI tell when a pupil is ready for the test?
+
+Not on its own. It can show the pattern in your instructors' notes and mock tests more clearly than a notebook can, and it can warn when a booked date and the evidence don't match. The judgement stays with the instructor who has sat next to the pupil.
+
+### Is this worth it for a single-instructor school?
+
+Probably not as a separate system. A sole instructor already knows every pupil. The useful part for them is cheap: dictating a structured note after each lesson and getting a reminder three weeks before each test. It pays off more as soon as two or more instructors share pupils.
+
+### What about the theory test?
+
+The theory test pass rate is lower still, at 44.8% across 2,924,430 car theory tests in 2025 to 2026 ([DVSA, table DRT111A](https://www.gov.uk/government/statistical-data-sets/driving-test-and-theory-test-data-cars)). Theory apps already track practice scores. If pupils share those scores with the school, the same readiness view can include them, so nobody is sent to the practical stage with the theory still to pass.
+
+## A rule for every driving school
+
+Decide readiness from the evidence, not from the date. Keep one short note per lesson, let AI file it, and check every booked test against those notes while there's still time to change the plan.
+
+If your instructors track progress in five different ways, [tell me which booking app you use](/contact?intent=improve) and how notes are kept today. I'll suggest whether structured notes, a readiness check, or a better use of your current app is the right place to start. Language schools face a similar question about readiness in [course placement](/posts/ai-for-language-schools-placement), and music schools juggle lesson diaries in [school administration](/posts/ai-for-music-schools-administration).
