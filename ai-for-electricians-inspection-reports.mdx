@@ -1,0 +1,121 @@
+---
+id: "ai-for-electricians-inspection-reports"
+title: "From EICR to Remedial Quote: AI for Electrical Contractors"
+authorName: "Josip Ledić"
+date: "2026-10-22"
+tags: ["Trades & construction", "Electricians", "Inspection reports", "AI for small business"]
+description: "Every rented home in England now needs an electrical inspection at least every five years, and C1 or C2 findings must be fixed within 28 days. How AI can turn an inspector's observations into a clear remedial quote and a re-inspection diary, while the coding stays with the electrician."
+excerpt: "Every rented home in England now needs an electrical inspection at least every five years, and C1 or C2 findings must be fixed within 28 days. How AI can turn an inspector's observations into a clear remedial quote and a re-inspection diary, while the coding stays with the electrician."
+---
+
+For an electrical contractor, the inspection itself is rarely the slow part. The slow part comes after: writing up observations so a landlord understands them, pricing the remedial work, chasing approval before the 28-day deadline, and remembering to offer the next inspection five years later. AI can help with exactly that stretch. It can turn the inspector's coded observations and site notes into a plain-language summary and a draft remedial quote, track every deadline the regulations set, and keep a diary of when each property is due again. The classification codes, the test results and the signature stay with the qualified electrician.
+
+The market for this work just grew. Since 1 November 2025 the rules that already applied to private landlords in England also cover social housing.
+
+<Stats title="Rented homes in England that need periodic electrical inspections">
+  <Stat value="4.7 million" label="privately rented households, 19% of all households, in 2024-25" source="English Housing Survey 2024-25" href="https://assets.publishing.service.gov.uk/media/6930595d4bedc0e762303ffa/2024-25_EHS_Headline_Report.pdf" />
+  <Stat value="4.0 million" label="households renting from housing associations (2.5m) or councils (1.5m)" source="English Housing Survey 2024-25" href="https://assets.publishing.service.gov.uk/media/6930595d4bedc0e762303ffa/2024-25_EHS_Headline_Report.pdf" />
+  <Stat value="1 Nov 2026" label="deadline for social landlords to have existing tenancies inspected and tested" source="MHCLG guidance" href="https://www.gov.uk/government/publications/electrical-safety-standards-in-the-private-and-social-rented-sectors-guidance/electrical-safety-standards-in-the-private-and-social-rented-sectors-guidance" />
+</Stats>
+
+Spread evenly over a five-year cycle, 8.7 million rented households would mean roughly 1.7 million inspections a year, before counting reports that set a shorter interval. That's my own arithmetic from the survey figures, not an official count, but it shows why the paperwork after each visit matters.
+
+## What the regulations require after the visit
+
+The [Electrical Safety Standards in the Private Rented Sector (England) Regulations 2020](https://www.legislation.gov.uk/uksi/2020/312/regulation/3/made) set the clock. Installations must be inspected and tested at intervals of no more than five years, or sooner if the last report says so. The landlord must give each tenant a copy of the report within 28 days, and the local council within 7 days if it asks. Where the report requires remedial or further investigative work, that work must be done within 28 days of the inspection, or sooner if the report says so, and the landlord needs written confirmation from a qualified person that it's done.
+
+The [government guidance](https://www.gov.uk/government/publications/electrical-safety-standards-in-the-private-and-social-rented-sectors-guidance/electrical-safety-standards-in-the-private-and-social-rented-sectors-guidance) explains the codes inspectors use. C1 means danger present. C2 means potentially dangerous. Either one makes the report unsatisfactory and requires remedial work. C3 is an improvement recommendation and doesn't by itself make the report unsatisfactory. FI means further investigation is needed without delay. Councils can fine a landlord who breaches these duties up to £40,000.
+
+<Timeline title="One inspection, five deadlines" caption="Every date counts from the day of the inspection, except the council request. The electrician's speed on the quote decides how much of the 28 days is left for the actual work.">
+<Phase when="Day 0" title="Inspection and test">The electrician inspects, tests and codes each observation. Any C1 hazard may be made safe before leaving.</Phase>
+<Phase when="Days 1 to 3" title="Report and quote">The report goes to the landlord or agent, ideally with a priced quote for every C1, C2 and FI item.</Phase>
+<Phase when="Within 7 days of a request" title="Council copy">If the local council asks in writing, the landlord must send the report within 7 days.</Phase>
+<Phase when="By day 28" title="Tenant copy and remedial work">Each tenant must have the report, and required remedial or investigative work must be done, unless the report sets a shorter period.</Phase>
+<Phase when="Year 5 at the latest" title="Next inspection">The next inspection is due on the date in the report, five years at most.</Phase>
+</Timeline>
+
+## Where the time goes
+
+Ask any contractor who does a lot of landlord work. The test equipment and certification software handle the schedule of test results well. What eats the evenings is everything around it:
+
+- **Explaining the observations.** "C2: absence of RCD protection for socket outlets" means something to an electrician. A landlord with three flats wants to know what it is, why it matters, and what it costs.
+- **Pricing the remedial work.** Every observation needs a line on a quote, with parts, labour and access, and the landlord often wants options.
+- **Chasing approval.** Letting agents forward the report, landlords take a week to reply, and the 28-day window shrinks. The contractor ends up with a rushed job or a lost one.
+- **Remembering the next visit.** A five-year re-inspection is the easiest repeat work there is, if anyone remembers to offer it.
+
+## Where AI fits
+
+**Turning observations into plain language.** A language model reads the coded observations and the electrician's site notes and drafts a short summary for the landlord: what was found, what each code means under the regulations, which items must be fixed within 28 days and which are recommendations. It doesn't change codes or add findings. If a note is unclear, it asks the electrician rather than guessing.
+
+**Drafting the remedial quote.** Each C1, C2 and FI item becomes a quote line, priced from the contractor's own price list and typical labour times. The model suggests, the electrician checks and edits. Where a consumer unit replacement makes three smaller items unnecessary, the draft shows both options so the landlord can choose.
+
+**Tracking the deadlines.** Plain code, not the model, counts the days. It knows the inspection date, warns when a quote is unanswered after five days, flags C1 and C2 jobs that aren't booked by day 14, and prepares the written confirmation once the work is done.
+
+**Keeping the re-inspection diary.** Every report states when the next inspection is due. The system stores that date per property and drafts an offer to the landlord a few months ahead.
+
+<Flow title="From inspection to completed remedial work" caption="The electrician codes, prices and signs. AI drafts the explanation and the quote, and code keeps the dates.">
+<Step title="Inspect and code" who="Electrician" tone="human" time="on site">Tests the installation, records results and codes each observation C1, C2, C3 or FI.</Step>
+<Step title="Explain and price" who="AI" tone="ai" time="minutes">Drafts a plain-language summary and a remedial quote from the observations, notes and price list.</Step>
+<Step title="Check and send" who="Electrician" tone="human" time="10 min">Reviews the wording and prices, adjusts options, and sends report and quote together.</Step>
+<Step title="Watch the clock" who="System" tone="ai" time="days 5 to 28">Reminds the landlord about an open quote and flags unbooked C1, C2 and FI work well before day 28.</Step>
+<Step title="Confirm and diarise" who="System" tone="ai" time="after the work">Prepares the written confirmation and stores the next inspection date for a timely offer.</Step>
+</Flow>
+
+## The numbers for one contractor
+
+<Calc title="Napkin math: office time on landlord reports" caption="Assumptions, not measurements. Time a month of your own reports before you decide anything." rows={[
+  ["Landlord inspections per month", "40"],
+  ["Share with C1, C2 or FI items needing a quote", "× 50%"],
+  ["Quotes to write per month", "20"],
+  ["Minutes per summary and quote today", "× 45"],
+  ["Hours per month today", "15"],
+  ["Minutes per quote checking an AI draft", "× 15"],
+  ["Hours per month with drafts", "5"]
+]} result={["Hours freed per month", "about 10"]} />
+
+Ten hours a month is useful, but the bigger effect is speed. A quote that arrives with the report, on the day of the inspection, gets approved while the landlord still remembers the visit, and the work lands in your diary instead of going to whoever replied first.
+
+## Where it goes wrong
+
+<Callout title="The codes are the electrician's" tone="warning">
+A model should never assign, upgrade or downgrade a classification code, or write an observation the electrician didn't make. The report is a legal record signed by a qualified person. AI drafts the explanation and the quote around it, nothing more.
+</Callout>
+
+**Scaring landlords into work they don't need.** A summary that presents C3 recommendations as urgent destroys trust. Keep required and recommended work visibly apart, as the regulations do.
+
+**Missing the shorter deadline.** The 28 days are a maximum. If the inspector writes a shorter period on the report, the deadline tracker must use it.
+
+**Sending tenant data where it shouldn't go.** Reports contain addresses and sometimes tenant names. Use a provider with a proper data processing agreement, and keep reports in your own system rather than in a chat tool.
+
+## Tools that fit
+
+Most contractors already use certification software for the report itself, and many of those products are adding AI features for filling in schedules. Check what yours does first. A custom layer is worth it when reports and quotes live in different systems, when letting agents send dozens of properties at once, or when nobody owns the follow-up between report and remedial job.
+
+<Checklist title="How to start" items={[
+  "Pull last quarter's landlord reports and count how many had C1, C2 or FI items",
+  "Check how many of those turned into remedial work you did, and how fast",
+  "Write a standard price for your ten most common remedial items",
+  "Draft plain-language explanations for your twenty most common observations",
+  "Track quote age from the inspection date, not from when you sent it",
+  "Store every next-inspection date in one place, per property"
+]} />
+
+## Questions electrical contractors ask
+
+### Can AI write the EICR?
+
+It can help fill in parts of it, like reading a photographed circuit chart, but the inspection, the test results, the codes and the signature are the electrician's. The safer and more valuable use is everything that happens after the report: explanation, quote, follow-up and the next visit.
+
+### Do social landlords need different handling?
+
+The same inspection rules now apply, with a transition for existing tenancies that must be inspected before 1 November 2026. Social landlords usually tender this work in large batches, so the useful part is a clear, consistent remedial schedule across hundreds of properties, rather than one-off quotes.
+
+### What about Scotland and Wales?
+
+They have their own rules and timelines. This article covers England. Check the rules for each nation before you reuse the deadline tracking.
+
+## A rule for every electrical contractor
+
+Send the quote with the report. Let AI draft the explanation and the price lines from your observations, keep the codes and the signature yourself, and let a simple tracker watch the 28 days.
+
+If your reports and quotes still live in two different places, [tell me which certification software you use](/contact?intent=improve) and roughly how many landlord inspections you do a month. I'll suggest whether drafted quotes, deadline tracking or a re-inspection diary is the right first step. Letting agents see the same jobs from the other side in [maintenance requests for property managers](/posts/ai-for-property-managers-maintenance), and HVAC contractors face the same renewal question in [maintenance reminders](/posts/ai-for-hvac-maintenance-reminders).
