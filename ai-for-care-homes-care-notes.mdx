@@ -1,0 +1,109 @@
+---
+id: "ai-for-care-homes-care-notes"
+title: "AI Care Notes for Care Homes: Better Shift Handovers Despite High Turnover"
+authorName: "Josip Ledić"
+date: "2026-10-23"
+tags: ["Healthcare", "Care homes", "Care notes and handover", "AI for small business"]
+description: "England's care homes with nursing lost 27.8% of their staff in a year, so every week someone new takes a handover. How AI can turn spoken care notes into draft record entries and a handover that shows what changed, while carers and nurses check and sign every entry."
+excerpt: "England's care homes with nursing lost 27.8% of their staff in a year, so every week someone new takes a handover. How AI can turn spoken care notes into draft record entries and a handover that shows what changed, while carers and nurses check and sign every entry."
+---
+
+AI can help a care home with the two jobs that eat the end of every shift: writing up care notes and handing over to the next team. A carer speaks a short note after each visit to a resident ("Mrs. Patel drank about 150 ml at lunch, refused the second half of her meal, says her left heel is sore"), and the system turns it into a draft entry in the right section of the digital care record. At handover it lists what changed since the last shift, per resident, instead of a recital of everyone. The carer checks and confirms each entry, the nurse or senior decides what the changes mean, and nothing reaches the record without a person signing it.
+
+The reason this matters now is less about vacancies than about turnover. The data from Skills for Care, published on 14 October 2026, shows a sector that has filled most of its posts but keeps losing the people in them.
+
+<Stats title="Care homes in England, 2025/26">
+  <Stat value="14,436" label="CQC-regulated care homes: 4,223 with nursing and 10,213 without" source="Skills for Care, March 2026" href="https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/workforceintelligence/resources/Reports/National/Summary-of-care-homes-with-nursing-2026.pdf" />
+  <Stat value="27.8%" label="staff turnover in care homes with nursing, about 73,000 leavers in 12 months" source="Skills for Care" href="https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/workforceintelligence/resources/Reports/National/Summary-of-care-homes-with-nursing-2026.pdf" />
+  <Stat value="3.9%" label="vacancy rate in care homes with nursing, down from 8.7% in 2021/22" source="Skills for Care" href="https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/workforceintelligence/resources/Reports/National/Summary-of-care-homes-with-nursing-2026.pdf" />
+</Stats>
+
+Homes without nursing are a little calmer, with 21.4% turnover and about 62,000 leavers among 320,000 filled posts, according to the [Skills for Care summary for care homes without nursing](https://www.skillsforcare.org.uk/Adult-Social-Care-Workforce-Data/workforceintelligence/resources/Reports/National/Summary-of-care-home-services-without-nursing-2026.pdf). Registered nurses in homes with nursing turn over even faster, at 32.3%. Add the two home types together and roughly 135,000 people left a care home job in a year. That's my arithmetic from the two summaries, and many of them moved to another care job rather than leaving the sector. But for the home they left, the effect is the same: what they knew about each resident has to be in the notes, or it goes with them.
+
+## What the record has to be
+
+[Regulation 17 of the Health and Social Care Act 2008 (Regulated Activities) Regulations 2014](https://www.legislation.gov.uk/uksi/2014/2936/regulation/17) requires providers to "maintain securely an accurate, complete and contemporaneous record in respect of each service user", including the care provided and the decisions taken. Contemporaneous is the hard word. Notes written from memory at the end of a twelve-hour shift are neither complete nor contemporaneous, and every inspector knows the pattern of identical entries at 19:45.
+
+Most homes already have the system that could fix this. The [2025 adult social care provider technology survey](https://www.gov.uk/government/statistics/technology-use-in-adult-social-care-2025-survey-results/findings-from-the-2025-adult-social-care-provider-technology-survey) reports that adoption of digital social care records among registered providers rose from 41% in December 2021 to 80% in July 2025. The software is there. What's still slow is getting what a carer saw into it, in the right place, while it's fresh.
+
+## Where the time goes
+
+- **Writing up at the end.** Carers are with residents, not at a screen. Notes pile up until the shift ends, then get typed in a rush.
+- **Finding the right field.** Fluids go on the fluid chart, a sore heel belongs in skin integrity, a refused meal in nutrition, a call from the daughter in contacts. A new starter doesn't know where each one lives.
+- **Handover by recital.** The outgoing senior reads through every resident, including the twenty for whom nothing changed, and the two things that matter get the same airtime as the rest.
+- **Spotting the trend.** Low fluids at lunch is a note. Low fluids at every meal for three days is a pattern, and it's the one nobody adds up across shifts.
+
+## Where AI fits
+
+**Speech to a draft entry.** The carer speaks into a phone or tablet right after the visit. A speech model transcribes, and a language model splits the note into structured entries: 150 ml fluids at lunch, meal half eaten, pain reported at left heel. Each entry is proposed for its section in the care record. The carer sees the draft, corrects it, and confirms. The record stores what the carer confirmed, under their name, at that time.
+
+**Changes first at handover.** Before handover the system builds a short list per resident of what's different from the care plan or the previous shift: a new pain report, a fall, a refused medication, a family request, an appointment tomorrow. Residents with nothing new are listed as such. The incoming team spends its fifteen minutes on the exceptions.
+
+**Patterns across shifts.** Plain rules, not the model, add up the numbers: fluids below the resident's target for a set number of shifts, repeated reports of pain at the same site, weight change against the last weigh-in. When a threshold set by the nurse is crossed, the system flags it to the nurse. It doesn't diagnose and it doesn't change the care plan.
+
+**A first week that works.** Because each entry lands in the right place, a new starter's notes look like everyone else's from day one, and the handover tells them which residents need their attention before they know the names.
+
+<Flow title="From a spoken note to a signed record" caption="Carers and nurses observe, confirm and decide. AI drafts entries and the handover list; plain rules watch the thresholds.">
+<Step title="Observe and speak" who="Carer" tone="human" time="right after care">Speaks a short note about what they saw, did and were told.</Step>
+<Step title="Draft entries" who="AI" tone="ai" time="seconds">Transcribes the note and proposes structured entries for the right sections of the care record.</Step>
+<Step title="Check and confirm" who="Carer" tone="human" time="under a minute">Corrects anything wrong and confirms. Only confirmed entries reach the record.</Step>
+<Step title="Flag thresholds" who="System" tone="ai" time="continuous">Adds up fluids, pain reports and weights across shifts and flags what crosses the nurse's thresholds.</Step>
+<Step title="Hand over" who="Senior or nurse" tone="human" time="15 min">Takes the changes-first list, decides what each change means, and briefs the next team.</Step>
+</Flow>
+
+## The numbers for one home
+
+<Calc title="Napkin math: end-of-shift writing in a 50-bed home" caption="Assumptions, not measurements. Time your own shifts for a week before you decide anything." rows={[
+  ["Care staff writing notes per day, across shifts", "14"],
+  ["Minutes per person writing up at the end of a shift", "× 30"],
+  ["Hours per day today", "7"],
+  ["Minutes per person checking drafted entries through the shift", "× 10"],
+  ["Hours per day with drafts", "about 2.3"]
+]} result={["Hours back on the floor per day", "about 4.7"]} />
+
+Even if you only save half of that, the gain isn't really the hours. It's notes written while the carer still remembers, entries in the right place, and a handover where the one resident who fell at 3am is the first thing the day team hears about.
+
+## Where it goes wrong
+
+<Callout title="The record belongs to the person who gave the care" tone="warning">
+A model should never write an entry nobody confirmed, fill in care that wasn't observed, or soften a fall or an injury into routine language. The carer confirms each entry and the nurse owns clinical judgement. AI drafts and sorts, nothing more.
+</Callout>
+
+**Mishearing a number.** "15" and "50" ml sound alike in a noisy corridor. Show numbers prominently in the draft so the carer checks them, and keep the audio until the entry is confirmed, then delete it according to your retention policy.
+
+**Sending health data where it shouldn't go.** Care notes are special category health data. Use a provider with a proper data processing agreement, UK or EU hosting where your policy requires it, and no training on your data. Check this with your data protection lead and record it in your DSPT evidence before a pilot.
+
+**Alert fatigue.** A threshold that fires for every resident every day gets ignored by Thursday. Let the nurse set thresholds per resident, start with two or three, and review them after a month.
+
+## Tools that fit
+
+Start with your digital care record. Several suppliers now offer voice entry or AI summaries, and dedicated voice documentation tools already exist for long-term care. If yours does what you need, use it. A custom layer is worth it when the voice tool and the care record don't talk to each other, when handover still happens on paper beside a digital system, or when you want threshold rules your supplier doesn't offer.
+
+<Checklist title="How to start" items={[
+  "Time end-of-shift writing for one week on one unit",
+  "List the ten note types carers write most, and where each one belongs in the record",
+  "Ask your care record supplier what voice entry, summaries and data hosting they offer",
+  "Pick two thresholds with your nurses, such as fluids and repeated pain reports",
+  "Pilot on one unit and one shift pattern, with the carers who volunteer first",
+  "Compare handover length and late entries before and after"
+]} />
+
+## Questions care home managers ask
+
+### Will CQC accept notes dictated by voice?
+
+The regulation asks for accurate, complete and contemporaneous records, not for a particular way of typing them. A note spoken at the bedside and confirmed by the carer is usually closer to that than one written at the end of the shift. What matters is that the confirmed entry, its author and its time are in the record, and that you can show how drafts are checked.
+
+### Does this replace the handover meeting?
+
+No. It changes what the meeting is about. The list of changes is prepared, so the time goes to the residents who need a decision, and the incoming team can ask questions instead of copying notes.
+
+### What about residents' privacy when staff speak notes aloud?
+
+Speak notes after leaving the room or away from other residents, as you would on the phone. Some homes use a short code word per room instead of names in corridors. The record itself carries the resident's identity, so the spoken note doesn't need to.
+
+## A rule for every care home
+
+Write the note where the care happens, and hand over what changed. Let AI turn what your carers say into draft entries and a changes-first list, keep every confirmation with the carer and every judgement with the nurse, and let plain rules watch the numbers across shifts.
+
+If your carers still write up at the end of the shift, [tell me which care record system you use](/contact?intent=improve) and roughly how many residents you have. I'll suggest whether voice entry, a changes-first handover or threshold alerts is the right first step. Home care agencies face the other side of this in [caregiver scheduling](/posts/ai-for-home-care-scheduling), and builders turn voice notes into records the same way in [construction daily reports](/posts/ai-for-construction-daily-reports).
