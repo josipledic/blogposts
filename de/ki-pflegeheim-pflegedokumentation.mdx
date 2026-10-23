@@ -1,0 +1,110 @@
+---
+id: "ki-pflegeheim-pflegedokumentation"
+translationOf: "ai-for-care-homes-care-notes"
+title: "KI-Pflegedokumentation im Pflegeheim: weniger Schreibarbeit, klarere Übergabe"
+authorName: "Josip Ledić"
+date: "2026-10-23"
+tags: ["Gesundheit", "Pflegeheime", "Pflegedokumentation", "KI für kleine Unternehmen"]
+description: "In deutschen Pflegeheimen arbeiten gut sieben von zehn Beschäftigten nicht in Vollzeit, und seit 2026 soll die Pflegedokumentation gesetzlich auf das notwendige Maß begrenzt sein. Wie KI gesprochene Beobachtungen in Entwürfe für den Pflegebericht übersetzt und für die Übergabe die Abweichungen zusammenstellt, während Pflegekräfte jeden Eintrag prüfen und freigeben."
+excerpt: "In deutschen Pflegeheimen arbeiten gut sieben von zehn Beschäftigten nicht in Vollzeit, und seit 2026 soll die Pflegedokumentation gesetzlich auf das notwendige Maß begrenzt sein. Wie KI gesprochene Beobachtungen in Entwürfe für den Pflegebericht übersetzt und für die Übergabe die Abweichungen zusammenstellt, während Pflegekräfte jeden Eintrag prüfen und freigeben."
+---
+
+KI kann einem Pflegeheim bei den zwei Aufgaben helfen, die das Ende fast jeder Schicht füllen: der Pflegedokumentation und der Übergabe an das nächste Team. Eine Pflegekraft spricht nach der Versorgung eine kurze Notiz ein, etwa: „Frau Becker hat mittags etwa 150 Milliliter getrunken, die Hälfte des Essens abgelehnt, klagt über Schmerzen an der linken Ferse.“ Die Software macht daraus einen Entwurf für den passenden Bereich der Dokumentation. Für die Übergabe stellt sie pro Bewohnerin und Bewohner zusammen, was vom Maßnahmenplan abweicht. Die Pflegekraft prüft und bestätigt jeden Eintrag, die Pflegefachkraft bewertet die Abweichungen, und ohne Freigabe durch einen Menschen gelangt nichts in die Dokumentation.
+
+Das ist kein Werkzeug, um Personal zu ersetzen. Es soll dafür sorgen, dass das, was Pflegekräfte sehen, vollständig und zeitnah in der Dokumentation steht, auch wenn viele von ihnen nur wenige Schichten pro Woche im Haus sind.
+
+<Stats title="Pflegeheime in Deutschland, Stand 15.12.2023">
+  <Stat value="16.505" label="Pflegeheime, davon 11.250 mit vollstationärer Dauerpflege" source="Statistisches Bundesamt" href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Gesundheit/Pflege/Tabellen/pflegeeinrichtungen-deutschland.html" />
+  <Stat value="817.711" label="Beschäftigte in Pflegeheimen, davon 240.963 in Vollzeit" source="Statistisches Bundesamt" href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Gesundheit/Pflege/Tabellen/personal-pflegeeinrichtungen.html" />
+  <Stat value="800.000" label="Pflegebedürftige, die im Dezember 2023 vollstationär im Heim versorgt wurden" source="Destatis, Pressemitteilung 478/2024" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2024/12/PD24_478_224.html" />
+</Stats>
+
+Aus den Zahlen der Pflegestatistik ergibt sich: Nur rund 29 Prozent der Beschäftigten in Pflegeheimen arbeiten in Vollzeit, im Schnitt sind es knapp 50 Beschäftigte pro Haus. Das ist meine eigene Rechnung, und zu den Beschäftigten zählen auch Hauswirtschaft und Verwaltung. Für die Dokumentation heißt das trotzdem: Viele Menschen, die oft nur an einzelnen Tagen im Haus sind, müssen ihr Wissen über die Bewohner so festhalten, dass die nächste Schicht damit arbeiten kann.
+
+## Was die Dokumentation leisten soll
+
+Die meisten Häuser dokumentieren bereits nach dem Strukturmodell mit der Strukturierten Informationssammlung (SIS). Laut der Pflegebevollmächtigten der Bundesregierung, Katrin Staffler, nutzen [80 Prozent der Einrichtungen das Strukturmodell](https://www.ein-step.de/). Sein Kern passt gut zu dem, was KI leisten kann: Was im Maßnahmenplan steht und wie geplant erbracht wird, muss nicht in jeder Schicht erneut abgehakt werden. Im Pflegebericht stehen vor allem die Abweichungen.
+
+Der Gesetzgeber geht in dieselbe Richtung. Mit dem Gesetz zur Befugniserweiterung und Entbürokratisierung in der Pflege, das am 1. Januar 2026 in Kraft getreten ist, wird nach Angaben des Bundesgesundheitsministeriums [„der Umfang der Pflegedokumentation gesetzlich auf das notwendige Maß begrenzt“](https://www.bundesgesundheitsministerium.de/presse/pressemitteilungen/befugniserweiterungsgesetz-bundestag-06-11-25). Weniger Dokumentation bedeutet aber nicht, dass Abweichungen weniger wichtig werden. Im Gegenteil: Wenn nur noch das Ungewöhnliche festgehalten wird, muss genau das zuverlässig im Bericht ankommen.
+
+## Wo die Zeit verloren geht
+
+- **Nachträgliches Schreiben.** Pflegekräfte sind bei den Bewohnern, nicht am Rechner. Notizen sammeln sich bis zum Schichtende und werden dann unter Zeitdruck eingetragen.
+- **Das richtige Feld finden.** Trinkmenge, Hautzustand, Ernährung, Gespräch mit Angehörigen: Jede Beobachtung hat ihren Platz. Wer neu im Haus ist oder selten Dienst hat, sucht.
+- **Übergabe der Reihe nach.** Bei der Übergabe wird jedes Zimmer besprochen, auch dort, wo nichts Neues passiert ist, und die zwei wirklich wichtigen Punkte gehen zwischen den anderen unter.
+- **Entwicklungen über mehrere Schichten.** Wenig getrunken am Mittag ist eine Beobachtung. Drei Tage lang zu jeder Mahlzeit zu wenig ist ein Muster, und das fällt oft erst spät auf.
+
+## Wo KI sinnvoll hilft
+
+**Von der gesprochenen Notiz zum Entwurf.** Die Pflegekraft spricht direkt nach der Versorgung in ein Smartphone oder Tablet. Ein Spracherkennungsmodell schreibt mit, ein Sprachmodell gliedert die Notiz in einzelne Einträge und ordnet sie dem passenden Bereich zu: Trinkmenge, Ernährung, Schmerzen, Kontakt mit Angehörigen. Die Pflegekraft sieht den Entwurf, korrigiert ihn bei Bedarf und bestätigt. In der Dokumentation steht, was sie bestätigt hat, mit ihrem Namen und der Uhrzeit.
+
+**Abweichungen zuerst bei der Übergabe.** Vor der Übergabe erstellt das System pro Bewohnerin und Bewohner eine kurze Liste dessen, was vom Maßnahmenplan oder von der letzten Schicht abweicht: neue Schmerzen, ein Sturz, eine abgelehnte Medikation, ein Wunsch der Angehörigen, ein Arzttermin am nächsten Tag. Wo nichts Neues ist, steht das so da. Das übernehmende Team kann sich auf die Ausnahmen konzentrieren.
+
+**Entwicklungen über mehrere Schichten.** Einfache Regeln, nicht das Sprachmodell, zählen die Werte zusammen: Trinkmenge über mehrere Schichten unter dem individuellen Ziel, wiederholte Schmerzangaben an derselben Stelle, Gewichtsveränderung seit der letzten Messung. Wird ein Schwellenwert erreicht, den die Pflegefachkraft festgelegt hat, erhält sie einen Hinweis. Das System stellt keine Diagnose und ändert keinen Maßnahmenplan.
+
+**Ein besserer Einstieg für neue Kolleginnen und Kollegen.** Weil jeder Eintrag an der richtigen Stelle landet, sieht die Dokumentation von Aushilfen und neuen Mitarbeitenden vom ersten Tag an aus wie die aller anderen.
+
+<Flow title="Von der gesprochenen Beobachtung zum freigegebenen Eintrag" caption="Pflegekräfte beobachten, prüfen und entscheiden. KI entwirft Einträge und die Übergabeliste, einfache Regeln achten auf Schwellenwerte.">
+<Step title="Beobachten und einsprechen" who="Pflegekraft" tone="human" time="direkt nach der Versorgung">Spricht kurz ein, was sie gesehen, getan und erfahren hat.</Step>
+<Step title="Einträge entwerfen" who="KI" tone="ai" time="Sekunden">Schreibt die Notiz mit und schlägt Einträge für die passenden Bereiche der Dokumentation vor.</Step>
+<Step title="Prüfen und bestätigen" who="Pflegekraft" tone="human" time="unter einer Minute">Korrigiert, was nicht stimmt, und bestätigt. Nur bestätigte Einträge gelangen in die Dokumentation.</Step>
+<Step title="Schwellenwerte beobachten" who="System" tone="ai" time="laufend">Zählt Trinkmengen, Schmerzangaben und Gewichte über mehrere Schichten zusammen und meldet Überschreitungen.</Step>
+<Step title="Übergeben" who="Pflegefachkraft" tone="human" time="15 Min.">Bespricht die Abweichungen, bewertet sie fachlich und informiert das nächste Team.</Step>
+</Flow>
+
+## Eine Überschlagsrechnung für ein Haus
+
+<Calc title="Überschlag: Schreibzeit am Schichtende in einem Haus mit 50 Plätzen" caption="Annahmen, keine Messwerte. Messen Sie eine Woche lang in einem Wohnbereich, bevor Sie entscheiden." rows={[
+  ["Pflegekräfte, die pro Tag über alle Schichten dokumentieren", "14"],
+  ["Minuten Nachdokumentation pro Person am Schichtende", "× 30"],
+  ["Stunden pro Tag heute", "7"],
+  ["Minuten pro Person für das Prüfen der Entwürfe während der Schicht", "× 10"],
+  ["Stunden pro Tag mit Entwürfen", "etwa 2,3"]
+]} result={["Gewonnene Stunden pro Tag", "etwa 4,7"]} />
+
+Selbst wenn in der Praxis nur die Hälfte davon übrig bleibt: Der eigentliche Gewinn sind Einträge, die geschrieben werden, solange die Beobachtung frisch ist, und eine Übergabe, in der der Sturz um drei Uhr nachts als Erstes besprochen wird.
+
+## Worauf Sie achten sollten
+
+<Callout title="Die Dokumentation gehört der Person, die gepflegt hat" tone="warning">
+Ein Sprachmodell darf keinen Eintrag schreiben, den niemand bestätigt hat, keine Maßnahme dokumentieren, die nicht beobachtet wurde, und keinen Sturz oder keine Verletzung verharmlosen. Die Pflegekraft bestätigt jeden Eintrag, die fachliche Bewertung bleibt bei der Pflegefachkraft. KI entwirft und sortiert, mehr nicht.
+</Callout>
+
+**Verhörte Zahlen.** „15“ und „50“ Milliliter klingen im Flur ähnlich. Zahlen sollten im Entwurf deutlich hervorgehoben sein, damit die Pflegekraft sie prüft. Die Audioaufnahme wird bis zur Bestätigung gebraucht und danach nach Ihrer Löschregel entfernt.
+
+**Gesundheitsdaten an der falschen Stelle.** Pflegedokumentation enthält Gesundheitsdaten, also besondere Kategorien personenbezogener Daten nach Art. 9 DSGVO. Nutzen Sie nur Anbieter mit Auftragsverarbeitungsvertrag, Hosting in der EU und ohne Training auf Ihren Daten. Beziehen Sie Ihre Datenschutzbeauftragte oder Ihren Datenschutzbeauftragten von Anfang an ein, und informieren Sie die Mitarbeitervertretung, bevor ein Pilot startet.
+
+**Zu viele Hinweise.** Ein Schwellenwert, der jeden Tag bei allen Bewohnern anschlägt, wird nach einer Woche ignoriert. Die Pflegefachkraft legt die Werte pro Person fest. Beginnen Sie mit zwei oder drei und prüfen Sie sie nach einem Monat.
+
+## Welche Werkzeuge passen
+
+Fangen Sie bei Ihrer Pflegesoftware an. Mehrere Anbieter bieten inzwischen Spracheingabe oder Zusammenfassungen an, und es gibt eigene Sprachassistenten für die Langzeitpflege. Der Anbieter voize etwa gibt an, [über 180.000 Pflegekräfte zu entlasten](https://brandenburg.de/media_fast/365/260603%20PM%20Voize%20Teltow.pdf), so zitiert in einer Pressemitteilung der Brandenburger Staatskanzlei. Das ist eine Angabe des Anbieters, keine unabhängige Auswertung. Wenn ein fertiges Werkzeug zu Ihrer Software passt, nutzen Sie es. Eine eigene Lösung lohnt sich dann, wenn Spracheingabe und Pflegesoftware nicht miteinander verbunden sind, wenn die Übergabe neben der digitalen Dokumentation noch auf Papier läuft oder wenn Sie Schwellenwerte brauchen, die Ihre Software nicht abbildet.
+
+<Checklist title="So fangen Sie an" items={[
+  "Eine Woche lang die Nachdokumentation am Schichtende in einem Wohnbereich messen",
+  "Die zehn häufigsten Arten von Einträgen und ihren Platz in der Dokumentation auflisten",
+  "Beim Anbieter der Pflegesoftware nach Spracheingabe, Zusammenfassungen und Hosting fragen",
+  "Mit den Pflegefachkräften zwei Schwellenwerte festlegen, etwa Trinkmenge und wiederkehrende Schmerzen",
+  "Datenschutz und Mitarbeitervertretung vor dem Start einbeziehen",
+  "In einem Wohnbereich mit freiwilligen Pflegekräften beginnen und Übergabedauer sowie Nachträge vorher und nachher vergleichen"
+]} />
+
+## Häufige Fragen von Einrichtungsleitungen
+
+### Ist eine per Sprache erstellte Dokumentation zulässig?
+
+Entscheidend ist, dass die Dokumentation vollständig, nachvollziehbar und zeitnah ist und dass erkennbar bleibt, wer welchen Eintrag verantwortet. Eine Notiz, die direkt nach der Versorgung gesprochen und von der Pflegekraft bestätigt wird, erfüllt das meist besser als ein Eintrag aus dem Gedächtnis am Schichtende. Klären Sie mit Ihrem Softwareanbieter, wie bestätigte Einträge, Autor und Zeitpunkt gespeichert werden.
+
+### Ersetzt das die Übergabe?
+
+Nein. Es verändert, worüber in der Übergabe gesprochen wird. Die Liste der Abweichungen liegt vorbereitet vor, und die Zeit gehört den Bewohnerinnen und Bewohnern, bei denen etwas zu entscheiden ist.
+
+### Wie bleibt die Privatsphäre der Bewohner gewahrt, wenn Pflegekräfte laut einsprechen?
+
+Notizen werden außerhalb des Zimmers und nicht vor anderen Bewohnern eingesprochen, so wie man es bei einem Telefonat auch tun würde. Die Software ordnet den Eintrag über das ausgewählte Zimmer zu, der Name muss im Flur nicht fallen.
+
+## Ein Grundsatz für jedes Pflegeheim
+
+Dokumentieren Sie dort, wo gepflegt wird, und übergeben Sie, was sich verändert hat. Lassen Sie KI aus dem Gesprochenen Entwürfe und eine Liste der Abweichungen machen, behalten Sie jede Bestätigung bei der Pflegekraft und jede fachliche Bewertung bei der Pflegefachkraft, und lassen Sie einfache Regeln auf die Werte über mehrere Schichten achten. Fangen Sie klein an, in einem Wohnbereich, mit klaren Datenschutzregeln.
+
+Wenn in Ihrem Haus noch am Schichtende nachdokumentiert wird, [schreiben Sie mir, mit welcher Pflegesoftware Sie arbeiten](/de/kontakt?intent=improve) und wie viele Plätze Sie haben. Ich schlage Ihnen einen ersten, überschaubaren Schritt vor: Spracheingabe, eine Übergabeliste oder Hinweise bei Schwellenwerten. Wie ambulante Dienste ihre Touren planen, beschreibe ich bei der [Tourenplanung im Pflegedienst](/de/posts/ki-ambulanter-pflegedienst-tourenplanung), und wie Sprachnotizen auf der Baustelle zum Bericht werden, beim [Bautagebuch per Sprachnachricht](/de/posts/ki-bautagebuch-sprachnachricht).
