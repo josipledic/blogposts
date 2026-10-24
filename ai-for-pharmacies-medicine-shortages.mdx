@@ -1,0 +1,109 @@
+---
+id: "ai-for-pharmacies-medicine-shortages"
+title: "AI for Pharmacies: Managing Medicine Shortages and Owings Without the Phone Marathon"
+authorName: "Josip Ledić"
+date: "2026-10-24"
+tags: ["Healthcare", "Pharmacies", "Medicine shortages and owings", "AI for small business"]
+description: "86% of community pharmacies in England spend longer getting medicines than a year ago, and 83% can't answer patients' calls as promptly. How AI can keep one case file per unavailable item, draft the prescriber query and tell the patient when it's ready, while the pharmacist decides every switch."
+excerpt: "86% of community pharmacies in England spend longer getting medicines than a year ago, and 83% can't answer patients' calls as promptly. How AI can keep one case file per unavailable item, draft the prescriber query and tell the patient when it's ready, while the pharmacist decides every switch."
+---
+
+AI can help a community pharmacy with the admin that every medicine shortage creates, not with the shortage itself. When an item can't be supplied, the system opens one case file for it: which wholesalers were checked and when, whether a serious shortage protocol applies, what the pharmacist wants to ask the prescriber, and which patients are owed the item. It drafts the message to the surgery, drafts the text to the patient when the stock arrives, and answers "is my prescription ready?" from the owings list. The pharmacist decides every switch, and nothing goes to a prescriber or a patient without a person sending it.
+
+The workload is no longer occasional. The [Community Pharmacy England Pharmacy Pressures Survey 2026](https://cpe.org.uk/wp-content/uploads/2026/07/Briefing-Note-2026-Pharmacy-Pressures-Survey-Results.pdf), with owners of 2,936 pharmacies responding between February and April 2026, describes shortages as routine.
+
+<Stats title="Community pharmacies in England, 2026">
+  <Stat value="85.7%" label="spend longer procuring medicines than a year ago; 30% say longer than ever" source="CPE Pharmacy Pressures Survey 2026" href="https://cpe.org.uk/wp-content/uploads/2026/07/Briefing-Note-2026-Pharmacy-Pressures-Survey-Results.pdf" />
+  <Stat value="88.9%" label="have been unable to source some medicines for patients" source="CPE Pharmacy Pressures Survey 2026" href="https://cpe.org.uk/wp-content/uploads/2026/07/Briefing-Note-2026-Pharmacy-Pressures-Survey-Results.pdf" />
+  <Stat value="83.4%" label="can't answer patients' calls and emails as promptly as usual" source="CPE Pharmacy Pressures Survey 2026" href="https://cpe.org.uk/wp-content/uploads/2026/07/Briefing-Note-2026-Pharmacy-Pressures-Survey-Results.pdf" />
+</Stats>
+
+The same survey says most pharmacies spend about 5 to 8 extra hours a week on procurement, some more than 20, and 75% are losing money. Meanwhile the work keeps growing. The [NHSBSA General Pharmaceutical Services statistics for 2024/25](https://www.nhsbsa.nhs.uk/statistical-collections/general-pharmaceutical-services-england/general-pharmaceutical-services-england-201516-202425) count 10,407 community pharmacies open in England on 31 March 2025, dispensing 1.16 billion items in the year, 4% more than the year before. Fewer pharmacies, more items, more of them hard to get. Across Europe it's the same picture: the [PGEU shortages survey summarised by ABDA](https://www.abda.de/fileadmin/user_upload/assets/ZDF/ZDF-2026/ZDF_2026_59_60_Lieferengpaesse_in_Europa.pdf) puts the average at 12 hours a week per pharmacy in 2025, and more than 20 in Germany.
+
+## What one unavailable item costs
+
+A single out-of-stock line on a prescription sets off a chain that nobody sees as one job:
+
+- **Checking.** The wholesaler order fails, so someone checks the second wholesaler, a short-line supplier, sometimes a neighbouring branch. Each check is a screen, a call or an email, and the result lives in someone's head.
+- **Deciding.** Is there an active [serious shortage protocol](https://www.nhsbsa.nhs.uk/pharmacies-gp-practices-and-appliance-contractors/serious-shortage-protocols-ssps) for it? Under an SSP the pharmacist can supply the alternative it specifies, using professional judgement and with the patient's agreement. Without one, a different strength, form or product needs the prescriber.
+- **Asking.** The surgery gets a message or a call. It's often unclear what exactly was asked, which alternative was suggested, and whether anyone has replied.
+- **Owing.** The patient gets an owing slip and goes home. The owing goes into a book or a spreadsheet.
+- **Answering.** The patient calls on Tuesday, and again on Thursday. Each time someone has to stop, find the owing and check whether stock arrived.
+- **Closing.** When the stock comes in, someone has to remember the owing and tell the patient.
+
+None of these steps is hard. The cost is that they're spread across people, days and channels, and each one is a small interruption during dispensing.
+
+## Where AI fits
+
+**One case file per unavailable item.** When a line can't be filled, the dispenser logs it in one place, by voice or with two clicks. The case file collects everything that follows: wholesaler checks with times, the SSP status from the NHSBSA list, the prescriber query and its reply, the patients waiting. Plain rules do most of this, not a language model. The value is that the file exists and everyone sees the same one.
+
+**A drafted prescriber query.** The pharmacist picks the alternatives they'd accept, and the model drafts a short, structured message for the surgery: patient, item prescribed, why it's unavailable, the alternatives with strength and quantity, and what the pharmacy needs back. The pharmacist reads and sends it through the usual channel. When a reply comes in, it's attached to the case file instead of sitting in an inbox.
+
+**Owings that close themselves.** When the delivery is booked in, the system matches it against open owings and drafts a message to each patient: "Your amlodipine 5 mg is ready to collect at the counter." A team member checks the list and sends. Owings older than a set number of days are flagged so nobody waits silently.
+
+**Status questions without the search.** When a patient calls, writes or uses your website chat to ask whether their medicine is in, the assistant looks up the owing and gives the status in plain words: in stock, expected Thursday, waiting for the surgery. Anything clinical, such as "can I take something else in the meantime?", goes to the pharmacist.
+
+<Flow title="From an out-of-stock line to a closed owing" caption="The pharmacist decides every switch and every message. AI keeps the case file, drafts the queries and messages, and answers status questions.">
+<Step title="Log the gap" who="Dispenser" tone="human" time="seconds">Marks the line as unavailable and notes which wholesalers were checked.</Step>
+<Step title="Check the options" who="System" tone="ai" time="seconds">Adds SSP status and earlier answers for the same item to the case file.</Step>
+<Step title="Decide" who="Pharmacist" tone="human" time="1 to 2 min">Chooses to supply under an SSP, ask the prescriber, or owe the item, and picks acceptable alternatives.</Step>
+<Step title="Draft the query" who="AI" tone="ai" time="seconds">Writes a structured message to the surgery with the alternatives. The pharmacist sends it.</Step>
+<Step title="Close the owing" who="AI and team" tone="ai" time="on delivery">Matches stock to open owings and drafts the patient message. A team member checks and sends.</Step>
+</Flow>
+
+## The numbers for one pharmacy
+
+<Calc title="Napkin math: shortage admin in a busy community pharmacy" caption="Assumptions, not measurements. Count your own unavailable lines and calls for two weeks first." rows={[
+  ["Unavailable lines per week", "40"],
+  ["Minutes per line today: checks, query, owing, follow-up calls", "× 12"],
+  ["Hours per week today", "8"],
+  ["Minutes per line with a case file and drafts", "× 6"],
+  ["Hours per week with drafts", "4"]
+]} result={["Hours back per week", "about 4"]} />
+
+Eight hours a week sits inside the 5 to 8 extra hours most CPE respondents report, so this is a normal week, not a bad one. The bigger gain is calmer than the hours suggest: fewer interruptions at the dispensing bench, a surgery that gets one clear question instead of three calls, and patients who hear from you before they ring.
+
+## Where it goes wrong
+
+<Callout title="The clinical decision stays with the pharmacist" tone="warning">
+A model should never pick a therapeutic alternative, decide whether an SSP is appropriate for a patient, or send anything to a prescriber or patient on its own. It keeps the file, drafts the words and answers status questions. The professional judgement is the pharmacist's, and so is every switch.
+</Callout>
+
+**Stale stock information.** A status answer is only as good as the last booking-in. If deliveries are booked in late in the day, the assistant should say "expected" rather than "ready" until a person confirms.
+
+**Patient data in the wrong place.** Owings and prescriber queries contain health data. Keep them in your PMR or a system with a proper data processing agreement, UK hosting where your policy needs it, and no training on your data. Messages to patients should name the medicine only where the patient has agreed to that channel.
+
+**An SSP list that changes.** SSPs have start and end dates and get amended. Pull the status from the NHSBSA list each day rather than relying on what the system learned last month, and show the end date in the case file.
+
+## Tools that fit
+
+Start with your patient medication record system and your wholesalers' ordering portals. Some PMR systems already track owings and send collection texts. If yours does, use it, and add only what's missing. A custom layer pays off when owings live in a book, when prescriber queries are scattered across NHSmail, phone calls and sticky notes, or when status calls take a team member off the bench several times an hour.
+
+<Checklist title="How to start" items={[
+  "Count unavailable lines, owings and status calls for two weeks",
+  "List the ten items you chase most and what you usually ask the prescriber for each",
+  "Write one template for a prescriber query and agree it with your two busiest surgeries",
+  "Move owings from the book into one shared list with dates",
+  "Pilot drafted patient messages on owings only, sent by a team member",
+  "Compare status calls and owing age before and after"
+]} />
+
+## Questions pharmacy owners ask
+
+### Can AI find stock across wholesalers for me?
+
+It can collect the answers in one place if your wholesalers offer online availability or ordering portals, and it can remind you to check the second one. It can't conjure stock, and it shouldn't place orders on its own. The win is that the checks are recorded once, not repeated by the next person who picks up the same prescription.
+
+### Will GPs accept a drafted query?
+
+They accept clear ones. A message that states the patient, the item, why it's unavailable and two concrete alternatives with strength and quantity is easier to answer than a call to reception. Agree the format with your local surgeries once, and keep it the same.
+
+### Is this worth it for an independent with one pharmacist?
+
+The smaller the team, the more each interruption costs, because the pharmacist is the one interrupted. Start with the owings list and drafted collection texts. That needs no integration with the surgery and shows within two weeks whether status calls go down.
+
+## A rule for every pharmacy
+
+Give every unavailable item one case file, ask the prescriber once and clearly, and tell the patient before they have to ring. Let AI keep the file and draft the messages, and keep every clinical choice with the pharmacist.
+
+If your team spends its mornings chasing shortages, [tell me which PMR system you use](/contact?intent=improve) and roughly how many owings you carry in a week. I'll suggest whether an owings list, drafted prescriber queries or status answers is the right first step. Doctors' practices face the other end of this in [specialist referrals](/posts/ai-for-medical-practices-referrals), and wholesalers deal with the same order data in [order entry](/posts/ai-for-wholesale-order-entry).
