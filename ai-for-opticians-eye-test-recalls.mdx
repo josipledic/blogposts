@@ -1,0 +1,113 @@
+---
+id: "ai-for-opticians-eye-test-recalls"
+title: "AI for Opticians: Eye Test Recalls That Patients Actually Answer"
+authorName: "Josip Ledić"
+date: "2026-10-25"
+tags: ["Healthcare", "Opticians", "Eye test recalls", "AI for small business"]
+description: "Opticians in England carried out 12.9 million NHS sight tests in 2022-23, and each one ends with a recall date someone has to act on. How AI can keep the recall list clean, write each reminder for the interval and reason the optometrist set, and sort the replies, without ever deciding when someone is due."
+excerpt: "Opticians in England carried out 12.9 million NHS sight tests in 2022-23, and each one ends with a recall date someone has to act on. How AI can keep the recall list clean, write each reminder for the interval and reason the optometrist set, and sort the replies, without ever deciding when someone is due."
+---
+
+AI can make an optician's recall work the way it's meant to: each patient is reminded when the optometrist said they should come back, for the reason they gave, through a channel the patient agreed to. The due list itself comes from plain rules on the recall date in your practice system. The model's job is the part that eats staff time: writing a reminder that fits the patient (a child in myopia management, an adult with diabetes, a contact lens wearer due for aftercare), reading the replies, and sorting "book me in", "I've moved" and "I had my test elsewhere" so the list stays true. The optometrist sets every interval, and nothing clinical is sent without a person reading it.
+
+Recall is not a side job. It decides how many of last year's patients walk back in.
+
+<Stats title="Sight testing in England and Wales">
+  <Stat value="12.94m" label="NHS sight tests in England in 2022-23, by 5,622 GOS contractors" source="Harper et al., Ophthalmic and Physiological Optics, using NHS England data" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11629842/" />
+  <Stat value="865,000+" label="NHS-paid sight tests in Wales in 2024-25, a record and 2.9% more than the year before" source="Welsh Government eye care statistics 2024-25" href="https://www.gov.wales/eye-care-statistics-april-2024-march-2025-html" />
+  <Stat value="about 1/4" label="sight-testing rate in England's most deprived areas compared with the most affluent" source="Harper et al., 2022-23 data" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11629842/" />
+</Stats>
+
+The [Welsh statistics](https://www.gov.wales/eye-care-statistics-april-2024-march-2025-html) repeat the standard advice that most people should have a sight test at least once every two years. In practice, the patients who stick to that are the ones who get reminded well. The [deprivation study](https://pmc.ncbi.nlm.nih.gov/articles/PMC11629842/) found contractors in the most affluent areas averaged about 2,200 NHS sight tests a year, against about 1,100 in the most deprived. Some of that gap is need and access. Some of it is who answers a letter.
+
+## The interval is a clinical decision
+
+The [College of Optometrists' guidance on the routine eye examination](https://www.college-optometrists.org/clinical-guidance/guidance/knowledge,-skills-and-performance/the-routine-eye-examination) says patients should be examined "at the most appropriate intervals, depending on their clinical needs." It lists minimum intervals, such as one year for under-16s without a binocular vision anomaly or refractive error and two years for adults of 16 and over, and adds that these "should not be taken as applying automatically to all patients in a category." It also allows recalling a patient earlier where the clinical picture justifies it.
+
+That rules out the easy automation: a blanket "everyone gets a reminder after 24 months" job. Good recall software reads the interval and the reason the optometrist recorded at the last test, and only the optometrist changes them.
+
+## Where recall breaks today
+
+In most independent practices recall is a monthly batch job that nobody owns:
+
+- **One letter for everyone.** The same "your eye test is due" text goes to a seven-year-old in myopia control, a 75-year-old with early cataract and a contact lens wearer. Each of them needs a different reason to book.
+- **Dead contacts.** Emails bounce, mobile numbers change, people move. The bounce lands in a shared inbox and the patient stays on the list forever.
+- **Replies nobody processes.** "I had it done at the supermarket" or "please call me after the 15th" arrives as a text and gets lost. Next month the same patient gets the same message.
+- **No second step.** A patient who ignores one reminder gets nothing else, or gets the same message again on the same channel.
+- **The sensitive replies.** "My mother died in March" is the reply every practice dreads sending a reminder after. It has to stop every message to that patient, at once.
+
+## Where AI fits
+
+**A due list built from your own data.** Each month, or each week, the system pulls patients whose recall date is coming up, with the reason and the interval the optometrist recorded. This is plain logic, not a language model, and it should match your practice system exactly.
+
+**A reminder written for the reason.** The model drafts a short message per patient from the recorded reason: "It's been a year since Mia's myopia management check, and Dr Shah would like to see her again this month." For a contact lens aftercare it mentions the lenses; for a diabetic patient outside the screening programme it says why the yearly check matters. A team member reviews the batch before it goes. After a few weeks of reviewing, most practices only spot-check routine adult reminders and keep reviewing the clinical ones.
+
+**Replies sorted into the right pile.** Every reply is read and tagged: wants to book, asked for a call, tested elsewhere, moved away, opted out, bereavement, or "unclear, a person should read this." Booking requests come with suggested slots. Opt-outs and bereavements stop all messages immediately and go to a person to confirm.
+
+**A sensible second step.** If there's no answer after two weeks, one follow-up on a different channel the patient has agreed to. Then the system stops and flags the patient for a call or for the next cycle. No endless reminders.
+
+<Flow title="One recall cycle" caption="The optometrist sets the interval and reason. AI drafts the reminders and sorts the replies; people send, book and handle anything sensitive.">
+<Step title="Set the recall" who="Optometrist" tone="human" time="at the test">Records the interval and the reason in the practice system, as today.</Step>
+<Step title="Build the due list" who="System" tone="ai" time="automatic">Pulls patients due in the coming weeks, removes bounced contacts and opt-outs.</Step>
+<Step title="Draft reminders" who="AI" tone="ai" time="minutes">Writes one short message per patient from the recorded reason, in their agreed channel.</Step>
+<Step title="Review and send" who="Front desk" tone="human" time="10 to 20 min">Reads the batch, fixes anything odd, sends.</Step>
+<Step title="Sort replies" who="AI and team" tone="ai" time="daily">Tags each reply, suggests slots for bookings, stops messages on opt-outs and bereavements for a person to confirm.</Step>
+</Flow>
+
+## The numbers for one practice
+
+<Calc title="Napkin math: recall admin in an independent practice" caption="Assumptions, not measurements. Count your due patients, replies and time spent for one month first." rows={[
+  ["Active patients", "4,000"],
+  ["Due each month on a two-year average", "about 170"],
+  ["Staff minutes per due patient today: letters, calls, replies, list clean-up", "× 5"],
+  ["Hours per month today", "about 14"],
+  ["Minutes per due patient with drafted reminders and sorted replies", "× 2"],
+  ["Hours per month with AI", "about 6"]
+]} result={["Hours back per month", "about 8"]} />
+
+The hours matter less than the bookings. If a cleaner list and a reminder that names the reason bring even a handful more patients back each month, that's worth more than the time saved. Measure it: recall bookings as a share of patients due, before and after, over three months.
+
+## Where it goes wrong
+
+<Callout title="Never let software change a recall date" tone="warning">
+The model drafts messages and sorts replies. It doesn't shorten an interval to fill the diary, invent a clinical reason, or tell a patient they're fine to wait. If a reply mentions symptoms, such as flashes, floaters, sudden blur or pain, it goes straight to a person the same day, with no automated answer.
+</Callout>
+
+**Marketing rules.** A pure clinical reminder is one thing. A reminder that also pushes a frame sale is marketing. The [ICO's guidance on electronic mail marketing](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/) only allows the "soft opt-in" for existing customers who were given a simple way to opt out when you collected their details and in every message since. Keep the two kinds of message apart, and record which channel each patient agreed to.
+
+**Health data.** Recall reasons are health data. Use a system with a proper data processing agreement, UK or EU hosting if your policy needs it, and no training on your patients' records. The message itself should say as little as needed: "your check with us is due" rather than the diagnosis.
+
+**A list that drifts from the practice system.** If the AI layer keeps its own copy of patients, it will go stale. Read from the practice system each time and write outcomes (booked, moved, opted out) back to it.
+
+## Tools that fit
+
+Start with what your practice management system already does. Most have a recall module that can send letters, emails or texts on the recorded date. If yours produces the due list and sends reliably, keep it and add only the missing parts: reminders written for the reason, and a reply inbox that sorts itself. A custom layer pays off when replies arrive by text, email and phone and nobody owns them, when bounced contacts never get cleaned, or when you run several branches on one patient list.
+
+<Checklist title="How to start" items={[
+  "Export last quarter's due patients and count how many booked within six weeks",
+  "Check how many due patients have no working email or mobile number",
+  "List the five or six recall reasons your optometrists record most often",
+  "Write one reminder per reason and have an optometrist approve the wording",
+  "Pilot drafted reminders and sorted replies for one month, with every batch reviewed",
+  "Compare bookings per due patient and staff time with the previous quarter"
+]} />
+
+## Questions practice owners ask
+
+### Will patients mind a message that sounds personal?
+
+They mind messages that sound personal and get things wrong. Keep reminders short, name the reason in plain words, and sign with the practice's name. A reminder that says "Dr Shah asked to see you again a year after your last check" is accurate and personal without pretending to be a handwritten note.
+
+### Can AI decide who should be recalled early?
+
+No. It can surface patients whose recorded reason suggests a shorter interval, so the optometrist can look at them. Changing the interval stays with the optometrist.
+
+### Is this worth it for a single-practice independent?
+
+A single practice usually has one person doing recall in between everything else. The easiest first step is the reply inbox: sorting replies and cleaning dead contacts needs no new reminders and shows within a month how much of the list was stale.
+
+## A rule for every practice
+
+Remind each patient when and why the optometrist said, through a channel they chose, and act on every reply. Let AI write the reminders and sort the replies, and keep every clinical decision with the optometrist.
+
+If your recall list is long and your bookings from it are flat, [tell me which practice system you use](/contact?intent=improve) and roughly how many patients fall due each month. I'll suggest whether reminders written by reason, a sorted reply inbox or contact clean-up is the right first step. Dental practices deal with a similar mix of calls and reminders in [missed calls at the front desk](/posts/ai-for-dentists), and vets run the same follow-up idea after surgery in [post-operative follow-up](/posts/ai-for-veterinary-clinics-follow-up).
