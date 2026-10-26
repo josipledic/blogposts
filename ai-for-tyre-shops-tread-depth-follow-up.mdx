@@ -1,0 +1,114 @@
+---
+id: "ai-for-tyre-shops-tread-depth-follow-up"
+title: "AI for Tyre Shops: Turning Tread Readings Into Booked Fittings"
+authorName: "Josip Ledić"
+date: "2026-10-26"
+tags: ["Field services", "Tyre shops", "Tread depth follow-up", "AI for small business"]
+description: "Tyre defects showed up in 6.23% of the 33.3 million car and van MOT tests in Great Britain in 2025-26, and they made up 60.6% of all dangerous defects found. How tyre shops and garages can use AI to turn the tread readings they already take into specific follow-ups, booked fittings and tyres ordered before the car arrives."
+excerpt: "Tyre defects showed up in 6.23% of the 33.3 million car and van MOT tests in Great Britain in 2025-26, and they made up 60.6% of all dangerous defects found. How tyre shops and garages can use AI to turn the tread readings they already take into specific follow-ups, booked fittings and tyres ordered before the car arrives."
+---
+
+AI can help a tyre shop or garage act on the tread readings it already takes. Every service, MOT and puncture repair produces a depth per tyre, and most of those numbers sit in a job card nobody looks at again. The useful setup is simple: plain rules in your system pick out the customers whose tyres are getting close to your threshold, and a language model writes each of them a short message with their own readings, a fitting slot and a quote your team has checked. Replies get sorted, tyres get ordered before the car arrives, and nobody gets a vague "time for new tyres?" mailshot.
+
+The need is easy to see in the government's own MOT figures.
+
+<Stats title="Tyres in the MOT, Great Britain, 2025 to 2026">
+  <Stat value="33.3m" label="MOT tests on cars, vans and passenger vehicles up to 12 seats (classes 3 and 4)" source="DVSA, MOT testing data for Great Britain" href="https://www.gov.uk/government/statistical-data-sets/mot-testing-data-for-great-britain" />
+  <Stat value="6.23%" label="of those tests found a tyre defect at the first test, about 2.1 million tests" source="DVSA, class 3 and 4 initial failures by defect category" href="https://www.gov.uk/government/statistical-data-sets/mot-testing-data-for-great-britain" />
+  <Stat value="60.6%" label="of all dangerous defects found on cars and vans were tyre defects" source="DVSA, class 3 and 4 initial failures by defect category" href="https://www.gov.uk/government/statistical-data-sets/mot-testing-data-for-great-britain" />
+</Stats>
+
+The tyre share has barely moved in years. In the [DVSA tables](https://www.gov.uk/government/statistical-data-sets/mot-testing-data-for-great-britain), tyres show up in between 6.2% and 6.9% of car and van tests every year since 2019-20, and they have made up close to 60% of dangerous defects in every one of those years. Most of these tyres did not wear out overnight. Somebody measured them at an earlier visit.
+
+## What the law and the MOT already give you
+
+The [Highway Code](https://www.gov.uk/guidance/the-highway-code/annex-6-vehicle-maintenance-safety-and-security) says cars, light vans and light trailers must have at least 1.6 mm of tread "across the central three-quarters of the breadth of the tread and around the entire circumference." The MOT checks exactly that. When a tyre passes but is getting close, the tester can list it as an advisory. [GOV.UK describes advisories](https://www.gov.uk/getting-an-mot/mot-test-results) as problems "to monitor or fix in the future."
+
+"Monitor" is the weak spot. The driver gets a printout, puts it in the glovebox, and the next person to look at that tyre is often the tester a year later. Your shop has the reading, the customer's contact details and the tyres in stock. What's missing is someone who turns that reading into a message at the right time.
+
+## Where follow-up breaks today
+
+- **Readings stay on the job card.** The technician writes "NSR 2.4 mm, OSR 2.6 mm" and the customer drives off. Unless the front desk sells the tyres there and then, nothing happens next.
+- **One message for everyone.** If there is a reminder at all, it's a general "winter is coming, check your tyres" email. It says nothing the customer couldn't read anywhere.
+- **No stock ready.** When the customer does call, the size isn't in stock, the fitting moves to next week, and some customers go elsewhere.
+- **Replies nobody owns.** "How much for two?", "I sold the car" and "can you do Saturday?" arrive by text, email and phone. Half of them get answered.
+- **Fleet and business customers.** A van owner with six vehicles needs one summary across all of them, not six separate reminders.
+
+## Where AI fits
+
+**A due list from your own readings.** Every week the system lists customers whose last recorded depth is under the threshold you set, plus tyres flagged as advisories or close to the age you use as your cut-off. This part is plain logic on your data, not a language model. It should match your shop system exactly, and you decide the thresholds.
+
+**A message with their numbers in it.** For each customer the model drafts a short message from the job card: "When we serviced your Golf in July, the rear tyres measured 2.4 and 2.6 mm. The legal minimum is 1.6 mm. We have your size in stock and can fit two tomorrow afternoon for £X." The price comes from your system, never from the model. A team member reads each batch before it goes out, at least until you trust it.
+
+**Replies sorted and answered.** Each reply is tagged: wants to book, wants a quote for another brand, has done it elsewhere, sold the car, opted out, or "a person should read this". Booking requests come with real free slots from your calendar. "Done elsewhere" and "sold the car" close the record so the customer doesn't get chased again.
+
+**Tyres ordered before the car arrives.** When a fitting is booked, the size, load index and speed rating go on the order list, so the tyres are on the shelf when the car comes in.
+
+**One summary for fleets.** Business customers get one message per period listing every vehicle, its readings and what you recommend, with one quote to approve.
+
+<Flow title="From a tread reading to a fitted tyre" caption="Technicians measure and decide. Rules pick who's due. AI writes the messages and sorts the replies; people check prices and do the work.">
+<Step title="Measure" who="Technician" tone="human" time="at every visit">Records depth per tyre, the DOT date and any damage, as part of the job.</Step>
+<Step title="Build the due list" who="System" tone="ai" time="weekly">Picks customers under your threshold or with an advisory, removes opt-outs and sold cars.</Step>
+<Step title="Draft messages" who="AI" tone="ai" time="minutes">Writes one message per customer with their readings, a slot and the checked price.</Step>
+<Step title="Review and send" who="Front desk" tone="human" time="10 to 15 min">Reads the batch, corrects anything odd, sends.</Step>
+<Step title="Sort replies and order" who="AI and team" tone="ai" time="daily">Tags replies, offers real slots, puts booked sizes on the order list.</Step>
+</Flow>
+
+## The numbers for one shop
+
+<Calc title="Napkin math: tread follow-up in a two-bay tyre and service shop" caption="Assumptions, not measurements. Count your own readings, follow-ups and bookings for one month first." rows={[
+  ["Cars through the shop per month", "400"],
+  ["Share with at least one tyre under your threshold but not replaced on the day", "× 15%"],
+  ["Customers to follow up each month", "60"],
+  ["Staff minutes per follow-up today: look up, call or write, chase, quote", "× 8"],
+  ["Hours per month today", "8"],
+  ["Minutes per follow-up with drafted messages and sorted replies", "× 3"],
+  ["Hours per month with AI", "3"]
+]} result={["Hours back per month", "about 5"]} />
+
+The hours are the smaller win. The bigger one is how many of those 60 customers come back to you rather than to the fast-fit centre down the road. Measure it: tyre bookings as a share of customers followed up, before and after, over three months.
+
+## Where it goes wrong
+
+<Callout title="The model never judges a tyre" tone="warning">
+The technician decides whether a tyre is fine, worn or dangerous. The model only repeats the readings and the recommendation that were recorded. It never tells a customer a tyre is "fine for another few months", and any reply that mentions a puncture, a bulge, vibration or a warning light goes to a person the same day.
+</Callout>
+
+**Marketing rules.** A message about a reading you took on their car is close to a service message, but a tyre offer is still marketing. The [ICO's guidance on electronic mail marketing](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/) allows the "soft opt-in" only for your own customers who were given a simple way to opt out when you collected their details and in every message after. Record which channel each customer agreed to.
+
+**Stale readings.** A reading from eleven months ago on a car doing 20,000 miles a year says little. Show the date of the reading in the message and in the due list, and put very old readings in a "check at next visit" list instead.
+
+**Prices from the model.** Prices, stock and slots come from your systems. If the model writes a number that isn't in the data it was given, the message should not go out.
+
+## Tools that fit
+
+Start with your garage or tyre shop software. Many can record tread depth per position and send service reminders. If yours already does both well, the missing pieces are usually the message written from the readings and a reply inbox that sorts itself. A custom layer pays off when readings are stored as free text, when replies come in on three channels, or when you run several sites or fleet accounts.
+
+<Checklist title="How to start" items={[
+  "Check whether tread depth is stored per tyre as a number or only as free text",
+  "Export last quarter's job cards and count readings under your threshold that were not replaced on the day",
+  "Set your threshold and age cut-off with your senior technician",
+  "Write one approved message per case: rear pair worn, front pair worn, advisory, tyre age",
+  "Pilot drafted messages and sorted replies for one month, reviewing every batch",
+  "Compare tyre bookings per follow-up and staff time with the previous quarter"
+]} />
+
+## Questions shop owners ask
+
+### Won't customers feel pressured?
+
+Less than with a generic offer. A message that says "we measured 2.4 mm on your rear tyres in July" is information they can check. Offer one slot and one price, and make it easy to say no.
+
+### Can AI read tread depth from a photo?
+
+There are camera-based tools that measure tread, and they can speed up the measuring. That's a separate decision. The follow-up described here works with whatever readings your technicians already take.
+
+### Is this worth it for a single-site independent?
+
+Usually yes, because one person does the follow-ups in between everything else. The easiest first step is a weekly due list from your existing readings, written by hand at first. Add drafted messages once you see how many customers it finds.
+
+## A rule for every shop
+
+Every tread reading should end in a decision: fitted today, followed up with the customer's own numbers, or checked at the next visit. Let AI write the follow-ups and sort the replies, and keep every judgement about a tyre with the technician.
+
+If your job cards are full of readings and your tyre bookings don't show it, [tell me which shop system you use](/contact?intent=improve) and roughly how many cars you see a month. I'll suggest whether a due list, drafted follow-ups or a sorted reply inbox is the right first step. Garages have a related problem when the car comes in, covered in [better service intake](/posts/ai-for-auto-repair-diagnostics-intake), and bike shops plan around a seasonal rush in [spring service planning](/posts/ai-for-bike-shops-seasonal-service).
