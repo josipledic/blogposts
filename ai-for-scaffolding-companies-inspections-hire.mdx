@@ -1,0 +1,118 @@
+---
+id: "ai-for-scaffolding-companies-inspections-hire"
+title: "AI for Scaffolding Companies: Weekly Inspections and Hire Extensions From One Register"
+authorName: "Josip Ledić"
+date: "2026-10-27"
+tags: ["Trades & construction", "Scaffolding contractors", "Inspections and hire", "AI for small business"]
+description: "A construction scaffold in Great Britain can't be used unless it was inspected within the previous 7 days, and every inspection needs a written report within 24 hours. How scaffolding contractors can use AI to keep one register of every standing scaffold, so inspections are never missed and every extra week of hire gets invoiced."
+excerpt: "A construction scaffold in Great Britain can't be used unless it was inspected within the previous 7 days, and every inspection needs a written report within 24 hours. How scaffolding contractors can use AI to keep one register of every standing scaffold, so inspections are never missed and every extra week of hire gets invoiced."
+---
+
+AI can help a scaffolding contractor keep track of every scaffold that is standing right now: when it was last inspected, who it was handed over to, and how many weeks of hire it has run past the quote. In most firms those three facts live in three places, the inspection app, the job file and the invoicing system, and they drift apart. The useful setup is one register of live scaffolds, kept up to date by plain rules, with a language model that turns inspectors' notes and photos into the written report, drafts the hire extension letter and sorts the client's replies. People still inspect, decide and sign.
+
+The legal clock is short, and the stakes are high.
+
+<Stats title="Scaffolding and work at height, Great Britain">
+  <Stat value="7 days" label="maximum time since the last inspection before a construction working platform with a 2 m or greater fall can be used" source="Work at Height Regulations 2005, regulation 12(4)" href="https://www.legislation.gov.uk/uksi/2005/735/regulation/12/made" />
+  <Stat value="31 of 126" label="workers killed at work in 2025/26 died in falls from a height, more than any other cause" source="HSE, work-related fatal injuries in Great Britain" href="https://www.hse.gov.uk/statistics/fatals-overview.htm" />
+  <Stat value="82" label="reportable accidents among 20,168 operatives at 332 NASC contractor members in 2025, and no operative deaths" source="NASC Safety Report 2026" href="https://nasc.org.uk/information/safety-reports" />
+</Stats>
+
+The NASC figures show what careful firms already achieve: an accident incident rate of 4.07 per 1,000 operatives, with slips and trips the most common cause of injury. The [HSE figures](https://www.hse.gov.uk/statistics/fatals-overview.htm) show why nobody in the trade treats inspections as paperwork, even when the office does.
+
+## What the regulations ask for
+
+[Regulation 12 of the Work at Height Regulations 2005](https://www.legislation.gov.uk/uksi/2005/735/regulation/12/made) sets three things that matter for the office:
+
+- **The 7-day rule.** A working platform used for construction work, where someone could fall 2 metres or more, must not be used unless it was inspected in that position within the previous 7 days. It also has to be inspected after assembly and after "exceptional circumstances", such as a storm.
+- **A report, fast.** The inspector has to write the report before the end of the working period and give it, or a copy, to the person the inspection was done for within 24 hours.
+- **What goes in it.** [Schedule 7](https://www.legislation.gov.uk/uksi/2005/735/schedule/7/made) lists eight particulars: who it was for, the location, a description of the scaffold, the date and time, anything that could be a risk, what was done about it, what still needs doing, and the inspector's name and position.
+
+The report has to stay on site until the construction work is finished and then at an office for 3 months. None of this is hard. It is just relentless when you have forty scaffolds up across a town and three inspectors.
+
+## Where it breaks today
+
+- **Nobody owns the list of what's standing.** The yard knows what went out, the inspectors know what they visited, accounts knows what was quoted. A scaffold that was meant to come down in May and is still up in August shows up in nobody's list.
+- **Inspection notes typed twice.** The inspector writes "lift 3 board missing, toe board loose bay 6, fixed on site" in a notebook or app, and someone in the office turns it into a proper report in the evening.
+- **Storm checks by memory.** After high winds, every scaffold needs an inspection before use. Working out which ones, and telling every client, is done by phone.
+- **Hire extensions nobody invoices.** The quote covered eight weeks. Week nine to fourteen get billed late, argued about, or not at all, because nobody wrote to the client when the period ran out.
+- **Client replies scattered.** "Can you strike on Friday?", "we need an extra lift" and "who signed this off?" come in by email, text and site visit, to whoever happened to be there.
+
+## Where AI fits
+
+**One register of live scaffolds.** Every job gets one record: address, description, handover date, quoted hire period, last inspection and next due date. Plain rules keep it current from the handover form, the inspection app and the strike notice. This part is ordinary logic, not a language model, and it has to be exactly right.
+
+**A due list every morning.** The register lists every scaffold due for inspection in the next two days, grouped by area, so inspectors plan a round instead of a scramble. After a weather warning, it lists every scaffold standing in that area and marks them all as "inspect before use".
+
+**Reports written from the inspector's notes.** The inspector records what they saw as a voice note or a few lines plus photos. The model fills in the Schedule 7 report: the eight particulars, the defects found, what was fixed and what still needs doing. The inspector reads it, corrects it and signs it on the phone before leaving site, and the client gets it the same day.
+
+**Hire extension letters on time.** When a scaffold passes its quoted hire period, the system drafts a short letter to the client with the address, the dates, the agreed weekly rate from your quote and the question "strike, or keep it up?". Rates come from your quote, never from the model. Someone in the office approves each letter.
+
+**Replies sorted.** Each reply is tagged: wants a strike date, wants an alteration, questions an invoice, safety concern. A safety concern goes to a person straight away. Strike requests come with real free slots from the crew plan.
+
+<Flow title="From handover to strike, in one register" caption="Inspectors and the office decide. Rules keep the register current. AI writes reports and letters and sorts replies.">
+<Step title="Handover" who="Supervisor" tone="human" time="day 1">Hands over the scaffold, records load class, description and the quoted hire period.</Step>
+<Step title="Due list" who="System" tone="ai" time="every morning">Lists every scaffold due for inspection or standing in a storm area.</Step>
+<Step title="Inspect and report" who="Inspector and AI" tone="human" time="on site">Inspector checks and records notes and photos; the model drafts the report; the inspector signs.</Step>
+<Step title="Hire check" who="System and office" tone="ai" time="weekly">Flags scaffolds past their quoted period and drafts the extension letter for approval.</Step>
+<Step title="Strike" who="Crew" tone="human" time="as agreed">Strikes the scaffold; the register closes the job and the last invoice goes out.</Step>
+</Flow>
+
+## The numbers for one firm
+
+<Calc title="Napkin math: a scaffolding contractor with 40 live scaffolds" caption="Assumptions, not measurements. Count your own live scaffolds, report time and late or unbilled hire weeks for one quarter first." rows={[
+  ["Scaffolds standing at any time", "40"],
+  ["Inspection reports per month, one a week each", "× 4.3"],
+  ["Reports per month", "about 172"],
+  ["Office minutes per report today: retype, file, send", "× 6"],
+  ["Hours per month today", "about 17"],
+  ["Minutes per report when the inspector signs a drafted report on site", "× 1"],
+  ["Hours per month with AI", "about 3"]
+]} result={["Hours back per month", "about 14"]} />
+
+The hours are real, but the hire weeks are usually worth more. Take last quarter's jobs and count the weeks each scaffold stood past its quoted period, then count how many of those weeks were invoiced on time. If the gap is more than a handful of weeks, the register pays for itself before the reports do.
+
+## Where it goes wrong
+
+<Callout title="The model never decides that a scaffold is safe" tone="warning">
+A competent inspector inspects and signs. The model only writes up what the inspector recorded. It never marks a scaffold as fit for use, never removes a defect from a report, and any reply from a client that mentions damage, a missing tie, an alteration by another trade or someone working on a tagged-out scaffold goes to a person the same hour.
+</Callout>
+
+**Reports that read too well.** A model can make a thin note sound complete. Keep the inspector's original note and photos attached to every report, and set the rule that a report with no photo, no defect list and no inspector signature cannot be sent.
+
+**Wrong scaffold, right words.** If two jobs share a street, a report can land on the wrong record. Make the inspector pick the job from the due list or scan the tag, never type the address.
+
+**Rates and dates from the model.** The weekly rate, the quoted period and the handover date come from your quote and your handover form. If the model writes a number that isn't in the data it was given, the letter does not go out.
+
+## Tools that fit
+
+Start with what you have. Several scaffolding apps already handle digital inspections with scaff tags and photos, and some track hire periods too. If yours does both well, the missing pieces are usually the report drafted from a voice note, the extension letter and a reply inbox that sorts itself. A custom layer pays off when inspections, hire and invoicing sit in three systems that don't talk to each other, which is common in firms that grew one tool at a time.
+
+<Checklist title="How to start" items={[
+  "Make one list of every scaffold standing today, with handover date and quoted hire period",
+  "Check it against last month's inspection reports and find any scaffold that was missed or reported late",
+  "Count the hire weeks past the quoted period last quarter and how many were invoiced on time",
+  "Write one approved template for the inspection report and one for the extension letter",
+  "Pilot drafted reports with one inspector for a month, keeping the original notes and photos",
+  "Add the weekly hire check once the register matches the yard"
+]} />
+
+## Questions contractors ask
+
+### Can an inspection report be written by AI at all?
+
+The inspection can't. The report can be drafted from what the inspector recorded, as long as the inspector reads it, corrects it and signs it. Regulation 12 cares that a competent person inspected the scaffold and that the report has the right particulars and reaches the client in time.
+
+### Will clients accept a hire extension letter from a system?
+
+They accept it more easily than a surprise invoice six weeks later. A short, polite letter with the address, the dates and the agreed rate, sent the week the period runs out, starts the "strike or keep it?" conversation while everyone still remembers the quote.
+
+### Is this worth it for a small firm?
+
+Usually yes, because the person writing up reports is often also the person chasing payment. The easiest first step is the register on its own, built by hand from the yard and the job files. You'll see in a week whether the problem is inspections, hire, or both.
+
+## A rule for every scaffolding firm
+
+Every scaffold that is standing should have one record that answers three questions: when was it last inspected, who has it, and are we being paid for this week? Let AI write the reports and the letters from that record, and keep every judgement about safety with your inspectors.
+
+If your inspections, hire and invoices live in three different places, [tell me which software you use](/contact?intent=improve) and roughly how many scaffolds you have up at once. I'll suggest whether a live register, drafted reports or hire extension letters is the right first step. Builders face the same paperwork problem on their own sites in [daily reports from voice notes](/posts/ai-for-construction-daily-reports), roofers deal with the storm side in [storm damage leads](/posts/ai-for-roofers-storm-leads), and electricians turn inspections into follow-up work in [inspection reports that become quotes](/posts/ai-for-electricians-inspection-reports).
