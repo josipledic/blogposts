@@ -1,0 +1,122 @@
+---
+id: "ai-for-chimney-sweeps-annual-sweep-recalls"
+title: "AI for Chimney Sweeps: Annual Sweep Recalls and Certificates Before the Winter Rush"
+authorName: "Josip Ledić"
+date: "2026-10-28"
+tags: ["Field services", "Chimney sweeps", "Sweep recalls and certificates", "AI for small business"]
+description: "Fire and rescue services in England attended 2,019 chimney fires in 2024-25, most of them in winter, and households burning wood indoors produced 12% of the UK's PM2.5 emissions in 2024. How chimney sweeps can use AI to turn last year's job sheets into recall messages, write certificates from their own notes and spread the autumn rush over the summer."
+excerpt: "Fire and rescue services in England attended 2,019 chimney fires in 2024-25, most of them in winter, and households burning wood indoors produced 12% of the UK's PM2.5 emissions in 2024. How chimney sweeps can use AI to turn last year's job sheets into recall messages, write certificates from their own notes and spread the autumn rush over the summer."
+---
+
+AI can help a chimney sweep fill the diary before the first cold week instead of during it. Every sweep already leaves a record behind: the address, the appliance, the fuel, the date, what came out of the flue and anything that needs fixing. Plain rules turn those records into a list of who is due and when. A language model then writes each customer a short message with their own details, a few real slots and your price, sorts the replies, and drafts the sweep certificate from the notes you dictate on the job. You still sweep, inspect and decide whether an appliance is safe to use.
+
+The demand side is easy to read in the official figures.
+
+<Stats title="Chimneys and wood burning in England and the UK">
+  <Stat value="2,019" label="chimney fires attended by fire and rescue services in England, April 2024 to March 2025" source="MHCLG, detailed analysis of fires, England, 2024-25" href="https://www.gov.uk/government/statistics/detailed-analysis-of-fires-england-april-2024-to-march-2025/detailed-analysis-of-fires-and-response-times-to-fires-attended-by-fire-and-rescue-services-england-april-2024-to-march-2025" />
+  <Stat value="−61%" label="chimney fires compared with ten years earlier (5,190 in 2014-15)" source="MHCLG, detailed analysis of fires, England, 2024-25" href="https://www.gov.uk/government/statistics/detailed-analysis-of-fires-england-april-2024-to-march-2025/detailed-analysis-of-fires-and-response-times-to-fires-attended-by-fire-and-rescue-services-england-april-2024-to-march-2025" />
+  <Stat value="12%" label="of total UK PM2.5 emissions in 2024 came from households burning wood indoors" source="Defra, emissions of air pollutants in the UK" href="https://www.gov.uk/government/statistics/emissions-of-air-pollutants/emissions-of-air-pollutants-in-the-uk-particulate-matter-pm10-and-pm25" />
+</Stats>
+
+<Bars title="Chimney fires attended in England, per year" unit="" caption="Financial years, April to March. The government's analysis notes that chimney fires are more numerous in the winter months." source="MHCLG, detailed analysis of fires, England, 2024-25" href="https://www.gov.uk/government/statistics/detailed-analysis-of-fires-england-april-2024-to-march-2025/detailed-analysis-of-fires-and-response-times-to-fires-attended-by-fire-and-rescue-services-england-april-2024-to-march-2025" data={[
+  { label: "2014-15", value: 5190, display: "5,190" },
+  { label: "2019-20", value: 3144, display: "3,144" },
+  { label: "2023-24", value: 2136, display: "2,136" },
+  { label: "2024-25", value: 2019, display: "2,019", highlight: true }
+]} />
+
+Fewer chimney fires is good news, and regular sweeping is part of why. It also tells you something about the work: it is seasonal, it is preventive, and the customer only thinks about it when the evenings get cold. That is when every sweep in the area gets the same phone call on the same weekend.
+
+## How often customers should book
+
+There is no single interval. [Hertfordshire Fire and Rescue Service](https://www.hertfordshire.gov.uk/services/fire-and-rescue/home-fire-safety/chimney-fire-safety.aspx), passing on the HETAS recommendation, says to sweep "at least twice a year when burning wood or bituminous house coal" and "at least once a year when burning smokeless fuels." The same page tells people to call a professional if they see soot falling back, tar, or smoke coming back into the room.
+
+So the right recall date depends on the fuel, how much the appliance is used and what you found last time. You know all three. Your customer usually doesn't, and a generic "time for your annual sweep" postcard doesn't tell them.
+
+## Where it breaks today
+
+- **The diary jams in October.** Customers who used the stove all winter book when it gets cold again. Summer, when a sweep is easiest to fit in, stays quiet.
+- **The record stays in the van.** Fuel, appliance, condition of the liner and the amount of soot are on a paper sheet or in the notes app. Nothing reads them again until next year.
+- **Certificates take evenings.** Customers want a certificate for their landlord, their insurer or their own records. Writing them up after a full day is the job that slips.
+- **Replies come from everywhere.** "Can you do a Saturday?", "how much for two flues?", "we've had the stove taken out" and "we moved" arrive by text, email, voicemail and Facebook.
+- **Follow-up work is forgotten.** A cracked pot, a missing cowl or a bird guard you recommended gets mentioned once and then lost.
+
+## Where AI fits
+
+**A due list from your own records.** Each week the system lists customers whose next sweep falls in the coming weeks, based on the last visit and the interval you set per fuel: twice a year for wood and house coal, once for smokeless fuel, or whatever you recommend after looking at the flue. This is plain logic on your data, not a language model, and you can check every line.
+
+**A message with their details in it.** For each customer the model drafts a short message from last year's record: "We swept your wood burner on 14 March. Because you burn logs, I'd book the next sweep before the heating season. I have Tuesday or Thursday morning next week, £X as last time." The price and the slots come from your price list and your calendar, never from the model.
+
+**Spreading the season.** Customers who burn all winter get offered summer and early autumn slots first. Once those are booked, the late October weekend has room for the people who really did forget.
+
+**Replies sorted and answered.** Each reply is tagged: wants to book, wants a price for more flues, appliance removed, moved house, opted out, or "a person should read this". Anything that mentions smoke in the room, a smell of fumes, a recent chimney fire or a CO alarm goes straight to you, not into a queue.
+
+**Certificates from your notes.** You dictate a voice note on the job: appliance, fuel, method, what came out, condition, recommendations. The model fills in your certificate template from it, you check the draft on your phone, and the customer gets it before you leave the street. Recommended repairs go on a follow-up list with a quote attached.
+
+<Flow title="From last year's sweep to this year's booking" caption="You sweep, inspect and decide. Rules pick who's due. AI writes the messages and the certificate drafts; you approve both.">
+<Step title="Sweep and note" who="Sweep" tone="human" time="on the job">Records appliance, fuel, findings and recommendations by voice note or form.</Step>
+<Step title="Draft the certificate" who="AI" tone="ai" time="seconds">Fills your template from the notes; you check and send it on site.</Step>
+<Step title="Build the due list" who="System" tone="ai" time="weekly">Picks customers due in the coming weeks by fuel and last visit, removes opt-outs and removed appliances.</Step>
+<Step title="Draft recall messages" who="AI" tone="ai" time="minutes">Writes one message per customer with their appliance, last date, real slots and your price.</Step>
+<Step title="Review, send and sort replies" who="You or the office" tone="human" time="10 to 15 min">Read the batch, send, and handle the replies the system flags for a person.</Step>
+</Flow>
+
+## The numbers for one sweep
+
+<Calc title="Napkin math: recalls and certificates for a one-person chimney sweep" caption="Assumptions, not measurements. Count your own sweeps, recall calls and certificate time for one month first." rows={[
+  ["Sweeps per year", "900"],
+  ["Customers to recall per month on average", "75"],
+  ["Minutes per recall today: look up, call or text, chase, book", "× 6"],
+  ["Certificates per month", "75"],
+  ["Minutes per certificate written up in the evening", "× 8"],
+  ["Hours per month today", "about 17"],
+  ["Minutes per recall and per certificate with drafts", "× 2 each"],
+  ["Hours per month with AI", "about 5"]
+]} result={["Hours back per month", "about 12"]} />
+
+The hours matter, but the bigger effect is the shape of the year. Every sweep you move from October to June is a slot free for a paying customer when demand peaks. Measure it: the share of your sweeps booked before September, before and after.
+
+## Where it goes wrong
+
+<Callout title="The model never judges a chimney" tone="warning">
+Whether a flue is safe to use is your call, made on site. The model only repeats what you recorded. It never tells a customer that a stove is "fine to keep using", and it never writes a certificate you haven't read. Any reply about smoke, fumes, a CO alarm or a chimney fire goes to a person the same day, with the advice to stop using the appliance until it has been checked.
+</Callout>
+
+**Marketing rules.** A reminder about a service you carried out is close to a service message, but a booking offer is still marketing. The [ICO's guidance on electronic mail marketing](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/) allows the "soft opt-in" only for your own customers who were given a simple way to opt out when you collected their details and in every message after. Record which channel each customer agreed to.
+
+**Certificates are your signature.** A certificate says what you did and found. The draft must only contain what is in your notes. If the model adds a finding, a measurement or a standard you didn't mention, the draft goes back.
+
+**Old records.** A customer you swept three years ago may have replaced the stove or moved. Show the date of the last visit in every message and let the reply update the record.
+
+## Tools that fit
+
+Start with whatever you use now. Several booking and certificate apps for sweeps already send reminders and email certificates. If yours does both well, the missing pieces are usually the recall interval set per fuel, the message written from your own notes and a reply inbox that sorts itself. A custom layer pays off when your records are on paper or in free text, when replies come in on three channels, or when you run more than one van.
+
+<Checklist title="How to start" items={[
+  "Check whether fuel, appliance and last sweep date are stored as fields or only as free text",
+  "Export last year's jobs and count how many were booked in October and November",
+  "Set your recall interval per fuel and per finding",
+  "Write one approved message per case: wood burner, open fire, smokeless fuel, follow-up repair",
+  "Turn your certificate into a template the model fills from a voice note, and check every draft",
+  "Pilot for two months and compare summer bookings and evening paperwork with last year"
+]} />
+
+## Questions sweeps ask
+
+### Won't customers find reminders pushy?
+
+Less than with a generic flyer. A message that names their stove, the date you were there and the fuel they burn is useful. Offer two or three slots and make it easy to say no.
+
+### Can AI tell from a photo whether a flue needs work?
+
+Not in a way you should rely on. Camera inspections are a separate tool for you to use and interpret. The workflow here only uses what you recorded.
+
+### Is this worth it for a one-person business?
+
+Usually yes, because the one person is also the office. Start with a due list from last year's jobs, sent by hand. Add drafted messages and certificate drafts once you see how many customers it finds.
+
+## A rule for every sweep
+
+Every sweep should end with a certificate in the customer's inbox and a next date in your system. Let AI write the certificate drafts, the recall messages and the reply sorting, and keep every judgement about a chimney with you.
+
+If your diary jams every October and your summers are quiet, [tell me how you record jobs today](/contact?intent=improve) and roughly how many sweeps you do a year. I'll suggest whether a due list, drafted recalls or certificate drafts are the right first step. Heating engineers face the same yearly cycle in [maintenance reminders](/posts/ai-for-hvac-maintenance-reminders), electricians write a report after every inspection in [landlord inspection reports](/posts/ai-for-electricians-inspection-reports), and roofers get the same rush after every storm in [storm leads](/posts/ai-for-roofers-storm-leads).
