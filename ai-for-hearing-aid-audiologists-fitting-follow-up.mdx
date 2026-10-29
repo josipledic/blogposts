@@ -1,0 +1,119 @@
+---
+id: "ai-for-hearing-aid-audiologists-fitting-follow-up"
+title: "AI for Hearing Aid Audiologists: Follow-Up in the First Weeks After a Fitting"
+authorName: "Josip Ledić"
+date: "2026-10-29"
+tags: ["Healthcare", "Hearing care", "Fitting follow-up", "AI for small business"]
+description: "In the UK, 8% of hearing aid owners don't wear their aids at all and 18% wear them an hour a day or less. NICE says to offer a follow-up 6 to 12 weeks after fitting. How independent audiologists and hearing aid dispensers can use AI to check in during the first weeks, sort replies, prepare the follow-up and write the care plan update."
+excerpt: "In the UK, 8% of hearing aid owners don't wear their aids at all and 18% wear them an hour a day or less. NICE says to offer a follow-up 6 to 12 weeks after fitting. How independent audiologists and hearing aid dispensers can use AI to check in during the first weeks, sort replies, prepare the follow-up and write the care plan update."
+---
+
+AI can help a hearing care practice catch the patient who has stopped wearing new hearing aids in week two, not at the follow-up in week ten. The first weeks after a fitting decide whether the aids get worn. A language model can send short check-ins written from the patient's own goals, sort the replies into "fine", "needs a tip you have already written", "needs an appointment" and "needs a clinician today", and turn your notes into a draft of the care plan update. The fitting, the fine-tuning and every clinical judgement stay with the audiologist or dispenser.
+
+The figures show where the effort pays off.
+
+<Stats title="Hearing aids in the UK">
+  <Stat value="52.8%" label="of people with self-declared hearing loss own hearing aids (2018: 47.6%)" source="Anovum, EuroTrak UK 2022, n=703 owners" href="https://hearingyou.org/wp-content/uploads/2026/08/EuroTrak-UK_2022_Report.pdf" />
+  <Stat value="18%" label="of hearing aid owners wear them an hour a day or less, including 8% who don't wear them at all" source="Anovum, EuroTrak UK 2022" href="https://hearingyou.org/wp-content/uploads/2026/08/EuroTrak-UK_2022_Report.pdf" />
+  <Stat value="3,925" label="hearing aid dispensers on the HCPC register, March 2023" source="HCPC diversity data, hearing aid dispensers" href="https://www.hcpc-uk.org/resources/data/2023/diversity-data-hearing-aid-dispensers-2023/" />
+</Stats>
+
+The same survey found that the average owner wears their aids 8.1 hours a day, that 75% are satisfied with them, and that "the more hours worn per day, the higher the satisfaction". Read the other way round: the patient who wears them for an hour is the one who ends up unhappy, returns them, or tells friends hearing aids don't work.
+
+<Bars title="Hearing aid owners who wear them an hour a day or less" unit="%" caption="Share of hearing aid owners, cumulative from 0 hours. The two surveys are from different years and use the same questionnaire design." source="Anovum, EuroTrak UK 2022 and EuroTrak Germany 2025" href="https://hearingyou.org/wp-content/uploads/2026/08/EuroTrak_GERMANY_2025-2.pdf" data={[
+  { label: "UK 2022", value: 18, display: "18%", highlight: true },
+  { label: "Germany 2025", value: 11, display: "11%" }
+]} />
+
+## What the guideline asks for
+
+[NICE guideline NG98](https://www.nice.org.uk/guidance/ng98/chapter/Recommendations) is written for NHS services, and many private practices follow it too. Recommendation 1.7.1 says to "offer adults with hearing aids a face-to-face follow-up audiology appointment 6 to 12 weeks after the hearing aids are fitted", with the option of phone or electronic contact. At that appointment (1.7.2) you check comfort, sound quality and volume, fine-tune if needed, look at cleaning, battery life and phone use, review the hours shown by data logging, go through the goals in the personalised care plan, update it and "provide them with a copy". Recommendation 1.7.6 adds a recall system for regular reassessment.
+
+That is a lot to fit into one appointment, and it is six to twelve weeks away. Most of the problems that make people give up show up in the first few days: whistling, a dome that hurts, their own voice sounding odd, a phone that won't pair, a restaurant that is suddenly louder than before.
+
+## Where it breaks today
+
+- **Silence looks like success.** The patient who doesn't call is either doing fine or has put the aids in a drawer. You find out which at the follow-up, if they turn up.
+- **Problems arrive as calls.** "It whistles", "the left one is dead", "can I wear them in the shower?" come in by phone while you are in the booth with someone else.
+- **The follow-up starts from scratch.** The goals from the assessment, the calls since the fitting and the data log sit in three places. You rebuild the picture in the first ten minutes of the appointment.
+- **The care plan copy is evening work.** Writing up what changed and what the patient should try next is the step that slips.
+- **Reassessment recalls are generic.** "It's time for your annual check" says nothing about the person's own goals or their aids.
+
+## Where AI fits
+
+**Check-ins written from their goals.** At the fitting you record two or three goals in the patient's words: "hear my grandchildren at Sunday lunch", "follow meetings at work", "stop turning the TV up". On day 3, day 10 and day 21 the system sends a short message that uses them: "How did Sunday lunch go with the new aids? Many people find the first restaurant visit tiring. If yours whistled or felt too loud, reply and tell me which." You approve the templates once. The schedule is plain logic; the model only fills in the details.
+
+**Replies sorted, red flags first.** Each reply is tagged: going well, a handling question you already have an approved answer for (cleaning, changing a wax guard, charging, pairing), needs a fine-tuning appointment, wants to return the aids, or needs a clinician today. Anything that mentions sudden hearing loss, pain, discharge, bleeding, dizziness or new tinnitus is never answered by the model. It goes straight to a person, because NG98 recommendation 1.1.2 says hearing loss that came on suddenly within the past 30 days should be referred immediately, to be seen within 24 hours.
+
+**A one-page brief for the follow-up.** Before the appointment the model summarises the goals, every message since the fitting and what the patient said about each goal. You add the data-log hours from the fitting software. You walk in knowing that the patient wears the aids four hours a day, takes them out in the car and still struggles with phone calls.
+
+**The care plan update from your notes.** After the appointment you dictate what you changed and what you agreed. The model drafts the updated plan in plain language for the patient to keep, the copy NICE asks you to provide. You read and correct it before it goes out.
+
+**Recalls that mention something real.** When the reassessment or the end of the aids' typical life comes up, the message names the aids, the date of the last visit and the goal the patient cared about. EuroTrak UK 2022 puts the median age of hearing aids at replacement at four years.
+
+<Flow title="From fitting to the follow-up appointment" caption="The audiologist fits, fine-tunes and decides. AI writes check-ins, sorts replies and drafts the brief and the care plan; a person approves each.">
+<Step title="Fitting and goals" who="Audiologist" tone="human" time="at the fitting">Fits the aids, records two or three goals in the patient's words and the channel they agreed to.</Step>
+<Step title="Check-ins on day 3, 10 and 21" who="AI" tone="ai" time="automatic">Sends short messages from approved templates, filled with the patient's own goals.</Step>
+<Step title="Sort the replies" who="AI" tone="ai" time="seconds">Tags each reply; red-flag symptoms and return requests go to a person the same day.</Step>
+<Step title="Brief for the follow-up" who="AI" tone="ai" time="the day before">Summarises goals and messages on one page; you add the data-log hours.</Step>
+<Step title="Follow-up and care plan" who="Audiologist" tone="human" time="6 to 12 weeks">Fine-tunes, agrees next steps, checks the drafted care plan update and sends it.</Step>
+</Flow>
+
+## The numbers for one practice
+
+<Calc title="Napkin math: follow-up admin for an independent practice" caption="Assumptions, not measurements. Count your own fittings, calls and write-up time for one month first." rows={[
+  ["New fittings per month", "25"],
+  ["Check-in calls per fitting today, 5 minutes each", "× 3"],
+  ["Minutes to prepare each follow-up from notes and call logs", "× 10"],
+  ["Minutes to write each care plan update", "× 10"],
+  ["Hours per month today", "about 14"],
+  ["Minutes with drafts: per check-in, per brief, per care plan", "1, 3, 3"],
+  ["Hours per month with AI", "about 4"]
+]} result={["Hours back per month", "about 10"]} />
+
+The hours are the small part. The real number to watch is how many new patients wear their aids most of the day at the follow-up, and how many ask to return them during the trial period. Count both for three months before and after.
+
+## Where it goes wrong
+
+<Callout title="The model never fine-tunes or diagnoses" tone="warning">
+Changing gain, deciding whether a symptom needs a doctor and choosing a device are clinical decisions. The model only repeats tips you wrote and approved, and it never tells someone that pain, dizziness or a sudden drop in hearing is "normal while getting used to the aids". Those replies go to a person the same day.
+</Callout>
+
+**Health data.** Hearing test results and symptoms are health data, a special category under UK GDPR. The [ICO's guidance on special category data](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/) explains the extra conditions. Decide which data the system sees (goals, messages, appointment dates are usually enough), where it runs and who can read it before you start.
+
+**Service messages vs marketing.** A check-in about aids the patient already bought is aftercare. An offer to upgrade is marketing, and the [ICO's guidance on electronic mail marketing](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/) applies: soft opt-in only for your own customers, with an easy opt-out in every message. Keep the two apart.
+
+**Too many messages.** Three check-ins in three weeks is plenty. Stop as soon as the patient says all is well, and let them choose text, email or a phone call.
+
+## Tools that fit
+
+Start with what your practice management system and the manufacturers' apps already do. Some send appointment reminders, some apps let patients rate their experience or request remote fine-tuning. If yours covers that well, the missing pieces are usually the check-in written from the patient's goals, the sorted inbox and the brief before the follow-up. A custom layer makes sense when goals and notes are free text, when patients write in on several channels, or when you work across several clinics or home visits.
+
+<Checklist title="How to start" items={[
+  "Pick one place where you record two or three goals per patient in their own words",
+  "Write and approve the check-in templates and the handling tips the system may send",
+  "Agree the red-flag list with your clinicians: sudden loss, pain, discharge, dizziness, new tinnitus",
+  "Decide which data the system may see and where it runs",
+  "Pilot with new fittings for three months",
+  "Compare wear time at follow-up, return requests and evening write-up time with the three months before"
+]} />
+
+## Questions audiologists ask
+
+### Won't older patients ignore text messages?
+
+Some will, so let them choose. A short call from the receptionist with the same three questions works too. The value is that someone asks in week one, and that the answer ends up in the brief.
+
+### Can the system read the data log itself?
+
+That depends on your fitting software and the manufacturer. Many practices read wear hours at the appointment. If yours can export them, the brief can include them automatically; if not, add them by hand.
+
+### Is this worth it for a single-room practice?
+
+Usually yes, because the person fitting is also the one answering the phone. Start with the check-in templates sent by hand from a list. Add sorting and briefs once you see how many problems the check-ins catch early.
+
+## A rule for the first weeks
+
+Every new patient should hear from you before they decide hearing aids aren't for them. Let AI send the check-ins, sort the replies and draft the paperwork, and keep the fitting and every clinical call with the audiologist.
+
+If your follow-ups keep turning up patients who stopped wearing their aids weeks ago, [tell me which practice system you use](/contact?intent=improve) and roughly how many fittings you do a month. I'll suggest whether goal-based check-ins, a sorted inbox or follow-up briefs are the right first step. Opticians run a similar recall rhythm in [eye test recalls](/posts/ai-for-opticians-eye-test-recalls), vets check in after surgery in [post-operative follow-up](/posts/ai-for-veterinary-clinics-follow-up), and physical therapy clinics deal with their own paperwork in [authorization checks](/posts/ai-for-physical-therapy-clinics-authorizations).
