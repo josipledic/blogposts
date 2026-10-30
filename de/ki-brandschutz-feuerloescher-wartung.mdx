@@ -1,0 +1,125 @@
+---
+id: "ki-brandschutz-feuerloescher-wartung"
+translationOf: "ai-for-fire-extinguisher-servicing-annual-visits"
+title: "KI für Brandschutz-Fachbetriebe: Feuerlöscher-Wartung, Prüfprotokolle und Austauschangebote"
+authorName: "Josip Ledić"
+date: "2026-10-30"
+tags: ["Dienstleistungen vor Ort", "Brandschutz-Fachbetriebe", "Wartungstermine und Prüfprotokolle", "KI für kleine Unternehmen"]
+description: "Nach ASR A2.2 sind Feuerlöscher alle zwei Jahre durch einen Fachkundigen zu warten, und das Unternehmensregister zählt für 2024 rund 3,5 Millionen rechtliche Einheiten mit über 40 Millionen abhängig Beschäftigten. Wie Brandschutz-Fachbetriebe mit KI fällige Wartungen aus dem Gerätebestand planen, Prüfprotokolle aus Technikernotizen entwerfen und aus jedem Mangel ein Angebot machen."
+excerpt: "Nach ASR A2.2 sind Feuerlöscher alle zwei Jahre durch einen Fachkundigen zu warten, und das Unternehmensregister zählt für 2024 rund 3,5 Millionen rechtliche Einheiten mit über 40 Millionen abhängig Beschäftigten. Wie Brandschutz-Fachbetriebe mit KI fällige Wartungen aus dem Gerätebestand planen, Prüfprotokolle aus Technikernotizen entwerfen und aus jedem Mangel ein Angebot machen."
+---
+
+KI kann einem Brandschutz-Fachbetrieb helfen, jeden Kunden zuverlässig im Wartungsrhythmus zu halten, ohne dass jemand im Büro Listen durchblättert. Die Daten dafür entstehen ohnehin: Zu jedem Objekt gibt es einen Gerätebestand mit Typ, Größe, Standort und Datum der letzten Wartung, und jeder Einsatz ergänzt, was in Ordnung war, was ausgetauscht wurde und was noch fehlt. Feste Regeln machen daraus die Liste der fälligen Objekte. Ein Sprachmodell entwirft die Terminanfrage für jeden Kunden, das Prüfprotokoll aus den Notizen des Technikers und ein Angebot für jedes ausgesonderte oder fehlende Gerät. Ob ein Feuerlöscher funktionsfähig ist, entscheidet weiterhin der Sachkundige vor Ort.
+
+Der Bedarf steht in den Technischen Regeln für Arbeitsstätten.
+
+<Stats title="Feuerlöscher-Wartung und die Zahl der Arbeitgeber in Deutschland">
+  <Stat value="alle 2 Jahre" label="sind Feuerlöscher durch einen Fachkundigen zu warten, kürzere Herstellerfristen gehen vor" source="ASR A2.2 Maßnahmen gegen Brände, Punkt 7.4.2" href="https://www.baua.de/DE/Angebote/Regelwerk/ASR/pdf/ASR-A2-2.pdf?__blob=publicationFile" />
+  <Stat value="3,54 Mio." label="rechtliche Einheiten mit Umsatzsteuervoranmeldungen oder Beschäftigten, Berichtsjahr 2024" source="Destatis, Statistisches Unternehmensregister" href="https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Unternehmen/Unternehmensregister/Tabellen/unternehmen-beschaeftigtengroessenklassen-wz08.html" />
+  <Stat value="40,1 Mio." label="abhängig Beschäftigte in diesen Einheiten, im Jahresdurchschnitt 2024" source="Destatis, Statistisches Unternehmensregister" href="https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Unternehmen/Unternehmensregister/Tabellen/unternehmen-beschaeftigtengroessenklassen-wz08.html" />
+</Stats>
+
+<Bars title="Rechtliche Einheiten nach Zahl der abhängig Beschäftigten, 2024" unit="" caption="Wirtschaftsabschnitte B bis N und P bis S. Nicht jede Einheit ist eine eigene Arbeitsstätte, und größere Unternehmen haben oft mehrere Standorte." source="Destatis, Statistisches Unternehmensregister, Stand 1. Dezember 2025" href="https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Unternehmen/Unternehmensregister/Tabellen/unternehmen-beschaeftigtengroessenklassen-wz08.html" data={[
+  { label: "0 bis unter 10", value: 3011214, display: "3.011.214", highlight: true },
+  { label: "10 bis unter 50", value: 429318, display: "429.318" },
+  { label: "50 bis unter 250", value: 84701, display: "84.701" },
+  { label: "250 und mehr", value: 18632, display: "18.632" }
+]} />
+
+Der größte Teil sind kleine Betriebe mit weniger als zehn Beschäftigten. Genau dort denkt niemand von selbst an den Wartungstermin, und genau dort ist eine kurze, persönliche Erinnerung am meisten wert.
+
+## Was der Arbeitgeber tun muss
+
+Die [ASR A2.2 „Maßnahmen gegen Brände“](https://www.baua.de/DE/Angebote/Regelwerk/ASR/pdf/ASR-A2-2.pdf?__blob=publicationFile) verlangt in Punkt 7.4.1, Brandmelde- und Feuerlöscheinrichtungen in regelmäßigen Abständen instand zu halten und auf ihre Funktionsfähigkeit prüfen zu lassen. „Die Ergebnisse sind zu dokumentieren.“ Ohne Mängel wird das am Gerät kenntlich gemacht, etwa mit einem Instandhaltungsnachweis. Werden Mängel festgestellt, hat der Arbeitgeber „unverzüglich zu veranlassen, dass die Feuerlöscheinrichtung instandgesetzt oder ausgetauscht wird.“
+
+Für Feuerlöscher legt Punkt 7.4.2 die Wartung „alle zwei Jahre durch einen Fachkundigen“ fest und nennt als Fachkundige insbesondere Sachkundige nach DIN 14406-4. Die wiederkehrenden Prüfungen nach der Betriebssicherheitsverordnung bleiben davon unberührt. Bei starker Beanspruchung können kürzere Abstände nötig sein.
+
+Dazu kommt ein zweiter Rhythmus. Nach Punkt 7.3 sind in der Regel 5 % der Beschäftigten als Brandschutzhelfer auszubilden, und die ASR nennt für die Wiederholung der Unterweisung mit Übung 2 bis 5 Jahre als bewährten Abstand. Wer neben der Wartung auch Schulungen anbietet, hat also zwei Fristen pro Kunde.
+
+## Wo es heute hakt
+
+- **Die Fälligkeitsliste steckt im Kopf.** Der Gerätebestand liegt in einer Wartungssoftware, in Excel oder im Prüfbuch, und die Tourenplanung für den nächsten Monat entsteht durch Blättern.
+- **Ein Termin kostet drei Telefonate.** Kleine Kunden müssen Datum, Schlüssel und Ansprechpartner klären und sagen, ob sich etwas geändert hat: eine neue Küche, ein Serverraum, ein zusätzliches Stockwerk.
+- **Protokolle entstehen abends.** Der Techniker notiert vor Ort je Gerät in Ordnung, instand gesetzt, ausgetauscht oder ausgesondert. Danach muss jemand daraus ein Protokoll machen, das der Kunde einer Behörde oder dem Versicherer zeigen kann.
+- **Mängel werden nicht zu Angeboten.** Ein ausgesondertes Gerät, eine fehlende Löschdecke oder der falsche Löscher neben der Fritteuse wird notiert, aber nur ersetzt, wenn das Fahrzeug passendes Material dabeihat.
+- **Kunden verschwinden aus dem Rhythmus.** Wer vor zwei Jahren „diesmal nicht“ gesagt hat, fällt aus der Tour, und keiner merkt es.
+
+## Wo KI hilft
+
+**Fälligkeiten aus dem Gerätebestand.** Jede Woche listet das System die Objekte, deren Wartung in den nächsten Wochen fällig wird, nach Ihrem Rhythmus und den Herstellerfristen, und getrennt davon die Kunden, deren Brandschutzhelfer-Unterweisung ansteht. Das ist feste Logik auf Ihren Daten, kein Sprachmodell, und jede Zeile ist nachvollziehbar.
+
+**Eine Terminanfrage mit den Daten des Kunden.** Für jedes Objekt entwirft das Modell eine kurze Nachricht aus dem Bestand: „Wir haben am 3. November 2024 Ihre 9 Feuerlöscher und 2 Löschdecken in der Hauptstraße 14 gewartet. Die nächste Wartung ist fällig. Ich kann am Dienstag, 3. November, oder am Donnerstag, 5. November, vormittags kommen, zum vereinbarten Preis. Hat sich vor Ort etwas geändert, etwa eine neue Küche oder zusätzliche Räume?“ Preise und Termine kommen aus Ihrer Preisliste und Ihrem Kalender, nie vom Modell.
+
+**Antworten vorsortiert.** Jede Antwort bekommt eine Kategorie: bestätigt, anderer Termin, Änderung vor Ort, umgezogen, Betrieb geschlossen, Preisfrage oder „bitte persönlich lesen“. Antworten, die einen Brand, einen benutzten Löscher oder ein Schreiben von Behörde oder Versicherer erwähnen, gehen noch am selben Tag an einen Menschen.
+
+**Prüfprotokolle aus den Notizen.** Der Techniker erfasst jedes Gerät per Sprachnotiz oder Formular: Standort, Typ, Größe, Ergebnis, Maßnahme. Das Modell füllt daraus Ihre Protokollvorlage, listet Ausgetauschtes und offene Punkte auf, und der Techniker prüft den Entwurf, bevor er an den Kunden geht.
+
+**Angebote aus Mängeln.** Alles, was als ausgesondert, fehlend oder ungeeignet markiert ist, wird zu einem Angebotsentwurf mit Ihren Preisen und der Begründung aus der Notiz. Das Büro gibt es frei und verschickt es am selben Tag, solange der Termin dem Kunden noch präsent ist.
+
+<Flow title="Vom letzten Wartungstermin zum nächsten Protokoll" caption="Sachkundige warten und entscheiden. Regeln bestimmen, was fällig ist. KI entwirft Nachrichten, Protokolle und Angebote, Menschen geben alle drei frei.">
+<Step title="Fälligkeiten bestimmen" who="System" tone="ai" time="wöchentlich">Wählt fällige Objekte aus dem Gerätebestand, lässt geschlossene und gekündigte Kunden weg.</Step>
+<Step title="Terminanfragen entwerfen" who="KI" tone="ai" time="Minuten">Eine Nachricht je Objekt mit Geräten, letztem Datum, freien Terminen und einer Frage nach Änderungen.</Step>
+<Step title="Prüfen und senden" who="Büro" tone="human" time="15 Min.">Liest den Stapel, verschickt ihn und bearbeitet die markierten Antworten.</Step>
+<Step title="Warten und notieren" who="Sachkundiger" tone="human" time="vor Ort">Erfasst Ergebnis und Maßnahme je Gerät per Sprachnotiz oder Formular.</Step>
+<Step title="Protokoll und Angebot entwerfen" who="KI" tone="ai" time="Sekunden">Füllt die Protokollvorlage und macht aus Mängeln einen Angebotsentwurf, Techniker und Büro geben frei.</Step>
+</Flow>
+
+## Eine Rechnung für einen kleinen Fachbetrieb
+
+<Calc title="Überschlag: Termine, Protokolle und Angebote für einen Betrieb mit zwei Technikern" caption="Annahmen, keine Messwerte. Zählen Sie zuerst einen Monat lang Ihre eigenen Objekte, Telefonate und Protokollzeiten." rows={[
+  ["Objekte mit Wartungsvertrag", "1.200"],
+  ["Davon fällig pro Monat bei zweijährigem Rhythmus", "50"],
+  ["Minuten je Termin heute: nachsehen, anrufen, nachfassen, bestätigen", "× 8"],
+  ["Prüfprotokolle pro Monat", "50"],
+  ["Minuten je Protokoll, nachträglich geschrieben", "× 6"],
+  ["Stunden pro Monat heute", "rund 12"],
+  ["Minuten je Termin und Protokoll mit Entwürfen", "je × 2"],
+  ["Stunden pro Monat mit KI", "rund 3"]
+]} result={["Stunden pro Monat zurück", "rund 8"]} />
+
+Die Stunden sind der leicht messbare Teil. Mehr wert ist meist der Umsatz, der heute verloren geht: Mängel, aus denen nie ein Angebot wird, und Kunden, die aus dem Rhythmus fallen. Zählen Sie beides ein Quartal lang vor dem Start und danach.
+
+## Wo es schiefgeht
+
+<Callout title="Das Modell beurteilt keinen Feuerlöscher" tone="warning">
+Ob ein Gerät funktionsfähig ist, instand gesetzt oder ausgesondert wird, entscheidet der Sachkundige vor Ort nach DIN 14406-4 und den Herstellerangaben. Das Modell schreibt nur auf, was der Techniker erfasst hat. Es ergänzt kein Ergebnis, kein Datum und keine Norm, die nicht in den Notizen steht, und kein Protokoll geht ungelesen hinaus.
+</Callout>
+
+**Protokolle sind Nachweise.** Der Kunde braucht die Dokumentation nach ASR A2.2 und legt sie im Zweifel der Aufsichtsbehörde, der Berufsgenossenschaft oder dem Versicherer vor. Sie muss genau sagen, was an welchem Gerät gemacht wurde. Bewahren Sie die Originalnotizen zu jedem Protokoll auf.
+
+**Änderungen vor Ort gehören zur Fachplanung.** Eine neue Küche oder ein zusätzlicher Raum kann eine andere Ausstattung erfordern. Die Terminanfrage darf danach fragen, die Antwort geht aber an einen Menschen, und jede Empfehlung zur Ausstattung kommt von Ihnen, nicht vom Modell.
+
+**Werbung und Datenschutz.** Eine Erinnerung an die vereinbarte Wartung ist Vertragskommunikation. Angebote an ehemalige Kunden oder neue Interessenten sind Werbung, und für Werbung per E-Mail gilt [§ 7 UWG](https://www.gesetze-im-internet.de/uwg_2004/__7.html). Halten Sie fest, wer welchem Kanal zugestimmt hat, und bieten Sie in jeder Nachricht eine Abmeldung an.
+
+## Welche Werkzeuge passen
+
+Fangen Sie mit dem an, was Sie haben. Viele Wartungsprogramme für den Brandschutz führen bereits einen Gerätebestand je Objekt und erzeugen Protokolle. Wenn Ihres beides gut kann, fehlen meist nur die Nachricht aus dem Bestand, der Posteingang, der sich selbst sortiert, und das Angebot aus den Mängeln. Eine eigene Lösung lohnt sich, wenn Ihr Bestand im Prüfbuch oder in mehreren Excel-Dateien steckt, wenn Antworten per Telefon, E-Mail und Fax kommen oder wenn Sie neben Feuerlöschern auch Brandmeldeanlagen, Rauchabzüge und Schulungen in eigenen Rhythmen betreuen.
+
+<Checklist title="So fangen Sie an" items={[
+  "Prüfen, ob Typ, Standort und letztes Wartungsdatum je Gerät als Feld gespeichert sind oder nur als Freitext",
+  "Die Termine der letzten zwei Jahre exportieren und zählen, wie viele Objekte nicht wieder gewartet wurden",
+  "Mängel der letzten drei Monate zählen und wie viele davon zu einem bezahlten Angebot wurden",
+  "Je Fall eine freigegebene Nachricht schreiben: fällige Wartung, überfälliges Objekt, Änderung vor Ort, Angebot nachfassen",
+  "Die Protokollvorlage so aufbauen, dass das Modell sie aus Technikernotizen füllt, und jeden Entwurf prüfen",
+  "Zwei Monate testen und wieder gewartete Objekte, verschickte Angebote und Büroarbeit am Abend vergleichen"
+]} />
+
+## Fragen aus Brandschutz-Fachbetrieben
+
+### Stören automatisch erstellte Terminanfragen die Kunden?
+
+Nicht, wenn die Nachricht von ihrem Objekt handelt. Adresse, Zahl der Geräte und Datum der letzten Wartung machen sie nützlich. Bieten Sie zwei oder drei echte Termine an und lassen Sie eine kurze Antwort genügen.
+
+### Kann KI Etiketten oder Fotos von Feuerlöschern auslesen?
+
+Sie kann helfen, ein Foto des Instandhaltungsnachweises in das Formular zu übertragen. Das ist Tipphilfe, keine Prüfung. Der Sachkundige sieht sich das Gerät trotzdem an.
+
+### Lohnt sich das mit nur einem Techniker?
+
+Meistens ja, weil der Techniker dann auch das Büro ist. Beginnen Sie mit der Fälligkeitsliste und Nachrichten, die Sie selbst verschicken. Protokoll- und Angebotsentwürfe kommen dazu, wenn Sie sehen, wie viele Objekte und Mängel die Liste findet.
+
+## Eine Regel für jeden Termin
+
+Jeder Wartungstermin sollte mit einem Protokoll beim Kunden, einem Angebot für jeden Mangel und dem nächsten Datum in Ihrem System enden. Lassen Sie KI die Nachrichten, Protokolle und Angebote entwerfen, und behalten Sie jede Entscheidung über die Geräte bei Ihren Sachkundigen.
+
+Wenn Ihre Wartungsplanung davon abhängt, dass jemand Listen durchblättert, [schreiben Sie mir, wie Sie Ihren Gerätebestand heute führen](/de/kontakt?intent=improve) und wie viele Objekte Sie ungefähr betreuen. Ich schlage Ihnen vor, ob eine Fälligkeitsliste, Protokollentwürfe oder Angebote aus Mängeln der richtige erste Schritt sind. Elektrobetriebe kennen denselben Rhythmus aus der [DGUV-V3-Prüfung](/de/posts/ki-elektrobetrieb-dguv-v3-pruefung), SHK-Betriebe aus ihren [Wartungsverträgen](/de/posts/ki-shk-wartungsvertraege), und Errichter von Sicherheitstechnik machen aus jeder [Begehung ein Angebot](/de/posts/ki-sicherheitstechnik-begehung-angebot).
