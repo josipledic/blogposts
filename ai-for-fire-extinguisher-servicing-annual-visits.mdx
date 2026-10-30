@@ -1,0 +1,122 @@
+---
+id: "ai-for-fire-extinguisher-servicing-annual-visits"
+title: "AI for Fire Extinguisher Servicing Companies: Annual Visits, Service Reports and Replacement Quotes"
+authorName: "Josip Ledić"
+date: "2026-10-30"
+tags: ["Field services", "Fire safety servicing", "Service visits and reports", "AI for small business"]
+description: "Fire and rescue services in England recorded 9,727 breaches of the maintenance duty in the Fire Safety Order during 2025-26 audits, up 12% in a year. How fire extinguisher servicing companies can use AI to build the annual visit list from their asset records, write service reports from engineer notes and turn every failed unit into a quote the same day."
+excerpt: "Fire and rescue services in England recorded 9,727 breaches of the maintenance duty in the Fire Safety Order during 2025-26 audits, up 12% in a year. How fire extinguisher servicing companies can use AI to build the annual visit list from their asset records, write service reports from engineer notes and turn every failed unit into a quote the same day."
+---
+
+AI can help a fire extinguisher servicing company keep every customer on an annual cycle without an office full of spreadsheets. The work already produces the data: each site has a list of units with type, size, location and the date of the last service, and each visit adds notes on what passed, what failed and what was replaced. Plain rules turn that asset register into a list of who is due next month. A language model then writes the booking message for each site, drafts the service report from the engineer's notes and turns every condemned or missing unit into a quote. The engineer still services the equipment and decides what passes.
+
+The demand is written into the law, and the enforcement figures show how often it slips.
+
+<Stats title="Fire safety audits in England, April 2025 to March 2026">
+  <Stat value="50,195" label="fire safety audits carried out by fire and rescue authorities" source="MHCLG, fire prevention and protection statistics, England, 2025-26" href="https://www.gov.uk/government/statistics/fire-prevention-and-protection-england-year-ending-march-2026/fire-prevention-and-protection-statistics-england-april-2025-to-march-2026" />
+  <Stat value="60%" label="of audits had a satisfactory outcome (29,909), so about 20,300 did not" source="MHCLG, fire prevention and protection statistics, England, 2025-26" href="https://www.gov.uk/government/statistics/fire-prevention-and-protection-england-year-ending-march-2026/fire-prevention-and-protection-statistics-england-april-2025-to-march-2026" />
+  <Stat value="9,727" label="breaches of Article 17 (maintenance), up 12% from 8,668 the year before" source="MHCLG, fire prevention and protection statistics, England, 2025-26" href="https://www.gov.uk/government/statistics/fire-prevention-and-protection-england-year-ending-march-2026/fire-prevention-and-protection-statistics-england-april-2025-to-march-2026" />
+</Stats>
+
+<Bars title="Most frequently breached articles of the Fire Safety Order in audits, England 2025-26" unit="" caption="Breaches recorded during fire safety audits. One audit can record breaches of several articles." source="MHCLG, fire prevention and protection statistics, England, 2025-26" href="https://www.gov.uk/government/statistics/fire-prevention-and-protection-england-year-ending-march-2026/fire-prevention-and-protection-statistics-england-april-2025-to-march-2026" data={[
+  { label: "Art. 14 emergency routes and exits", value: 11286, display: "11,286" },
+  { label: "Art. 17 maintenance", value: 9727, display: "9,727", highlight: true },
+  { label: "Art. 9 risk assessment", value: 9271, display: "9,271" },
+  { label: "Art. 13 fire fighting and detection", value: 7262, display: "7,262" }
+]} />
+
+Maintenance and fire-fighting equipment are two of the four most common problems inspectors find. Formal notices rose to 3,355, up 11% on the year before. For a servicing company that is a plain message: the customers you already have are under more scrutiny, and the ones who let their annual visit lapse are the ones most likely to get a letter.
+
+## What the customer has to do
+
+[Article 17 of the Regulatory Reform (Fire Safety) Order 2005](https://www.legislation.gov.uk/uksi/2005/1541/article/17) requires the responsible person to keep fire safety equipment "subject to a suitable system of maintenance" and "in efficient working order and in good repair." The government's [fire safety risk assessment guide for offices and shops](https://assets.publishing.service.gov.uk/media/5a815c78ed915d74e33fdc7e/9449_Offices_and_Shops_v2.pdf) spells out what that means for extinguishers: a brief check, monthly in normal conditions, and "maintenance by a competent person should be carried out annually." It points to BS 5306-3 for how that maintenance is done.
+
+So every business with an extinguisher on the wall needs a visit every year. The customer rarely remembers when that is. You have the date, and that is the whole opportunity.
+
+## Where it breaks today
+
+- **The due list lives in someone's head.** The asset register is in a servicing app, a spreadsheet or a paper book, and the office builds next month's route by scrolling through it.
+- **Booking takes three calls.** Small sites need to agree a date, find out who holds the keys and confirm whether anything changed since last year: a new floor, a new kitchen, a moved office.
+- **Reports are typed up at night.** Engineers record pass, fail, discharge or replacement per unit on site. Someone then turns that into a report the customer can show an inspector.
+- **Failed units never become quotes.** A condemned extinguisher, a missing blanket or a wrong type next to the fryer gets noted, replaced on the spot if the van has one, and otherwise forgotten.
+- **Lapsed customers stay lapsed.** A site that said "not this month" last year drops off the route, and nobody notices until they ring after an audit.
+
+## Where AI fits
+
+**A due list from your asset register.** Each week the system lists sites whose annual visit falls in the coming weeks, plus units that are due for a longer service or replacement by your own rules and the manufacturer's dates. This is plain logic on your data, not a language model, and every line can be checked.
+
+**A booking message with their site in it.** For each site the model drafts a short message from the register: "We serviced your 9 extinguishers and 2 fire blankets at 14 High Street on 4 November last year. Your annual service is due. I can do Tuesday 3 November or Thursday 5 November in the morning, £X as quoted. Has anything changed on site, such as a new kitchen or extra rooms?" The price and slots come from your price list and calendar, never from the model.
+
+**Replies sorted.** Each reply is tagged: confirmed, wants another date, site changed, moved premises, closed, asking for a price, or "a person should read this". A reply that mentions a recent fire, a used extinguisher or an inspector's letter goes to a person the same day.
+
+**Reports from engineer notes.** The engineer records each unit by voice or in a form: location, type, size, result, action. The model fills in your report template from it, lists what was replaced and what still needs attention, and the engineer checks the draft before it goes to the customer.
+
+**Quotes from failed units.** Anything marked failed, missing or unsuitable becomes a draft quote with your prices and the reason from the engineer's note. The office approves and sends it that day, while the visit is still fresh in the customer's mind.
+
+<Flow title="From last year's visit to this year's report" caption="Engineers service and decide. Rules pick who is due. AI writes messages, report drafts and quote drafts; people approve all three.">
+<Step title="Build the due list" who="System" tone="ai" time="weekly">Picks sites due in the coming weeks from the asset register, removes closed and lapsed sites.</Step>
+<Step title="Draft booking messages" who="AI" tone="ai" time="minutes">One message per site with units, last date, real slots, price and a question about site changes.</Step>
+<Step title="Review and send" who="Office" tone="human" time="15 min">Reads the batch, sends, and handles replies the system flags for a person.</Step>
+<Step title="Service and note" who="Engineer" tone="human" time="on site">Records each unit's result and action by voice note or form.</Step>
+<Step title="Draft report and quote" who="AI" tone="ai" time="seconds">Fills the report template and turns failed or missing units into a draft quote; engineer and office approve.</Step>
+</Flow>
+
+## The numbers for a small servicing firm
+
+<Calc title="Napkin math: bookings, reports and quotes for a two-engineer firm" caption="Assumptions, not measurements. Count your own sites, booking calls and report time for one month first." rows={[
+  ["Customer sites on annual contracts", "1,200"],
+  ["Sites to book per month on average", "100"],
+  ["Minutes per booking today: look up, call, chase, confirm", "× 8"],
+  ["Service reports per month", "100"],
+  ["Minutes per report typed up after the visit", "× 6"],
+  ["Hours per month today", "about 23"],
+  ["Minutes per booking and per report with drafts", "× 2 each"],
+  ["Hours per month with AI", "about 7"]
+]} result={["Hours back per month", "about 16"]} />
+
+The hours are the easy part to measure. The bigger effect is revenue that currently leaks: failed units that never get quoted and sites that drop off the route. Count both for one quarter before you start and again after.
+
+## Where it goes wrong
+
+<Callout title="The model never passes a unit" tone="warning">
+Whether an extinguisher passes, needs a discharge test or is condemned is the engineer's judgement on site, following the standard and the manufacturer's instructions. The model only writes up what the engineer recorded. It never adds a result, a date or a standard that is not in the notes, and no report goes out unread.
+</Callout>
+
+**Reports are evidence.** A customer may hand your report to a fire safety inspector. It has to say exactly what was done to which unit. Keep the engineer's original notes attached to every report.
+
+**Site changes matter.** A new kitchen, a server room or an extra floor can change which extinguishers a site needs. The booking message should ask, but the answer goes to a person, and any change to the equipment list is your recommendation, not the model's.
+
+**Marketing rules.** A service reminder to a business customer under contract is a service message. Offers to former customers or new prospects are marketing, so check the [ICO's guidance on electronic mail marketing](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/) for which rules apply to the people you write to, and keep an opt-out in every message.
+
+## Tools that fit
+
+Start with what you use now. Several fire servicing apps already keep an asset register per site and produce reports. If yours does both well, the missing pieces are usually the message written from the register, the reply inbox that sorts itself and the quote drafted from failed units. A custom layer pays off when your register is on paper or spread across spreadsheets, when replies come in by phone, email and text, or when you also service alarms and emergency lighting on different cycles.
+
+<Checklist title="How to start" items={[
+  "Check whether each unit's type, location and last service date are stored as fields or only as free text",
+  "Export last year's visits and count how many sites were not rebooked",
+  "Count failed or missing units from the last three months and how many became a paid quote",
+  "Write one approved message per case: annual visit, overdue site, site change, quote follow-up",
+  "Turn your report into a template the model fills from engineer notes, and check every draft",
+  "Pilot for two months and compare rebooked sites, quotes sent and evening paperwork"
+]} />
+
+## Questions servicing firms ask
+
+### Will customers mind automated booking messages?
+
+Not if the message is about their site. Naming the address, the number of units and last year's date makes it useful. Offer two or three real slots and let them reply in a sentence.
+
+### Can AI read the labels or photos of extinguishers?
+
+It can help read a photo of a service label into the form, but treat that as typing help, not inspection. The engineer still checks the unit.
+
+### Is this worth it with only one engineer?
+
+Usually, because the engineer is also the office. Start with the due list and messages sent by hand. Add report and quote drafts once you see how many sites and failed units it catches.
+
+## A rule for every visit
+
+Every visit should end with a report in the customer's inbox, a quote for anything that failed and a next date in your system. Let AI draft the messages, reports and quotes, and keep every judgement about the equipment with your engineers.
+
+If your rebooking depends on someone scrolling through a spreadsheet, [tell me how you keep your asset register today](/contact?intent=improve) and roughly how many sites you service. I'll suggest whether a due list, drafted reports or failed-unit quotes are the right first step. Electricians face the same cycle in [inspection reports](/posts/ai-for-electricians-inspection-reports), heating engineers in [maintenance reminders](/posts/ai-for-hvac-maintenance-reminders), and security installers turn site visits into offers in [site surveys](/posts/ai-for-security-installers-surveys).
