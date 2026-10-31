@@ -1,0 +1,126 @@
+---
+id: "ai-for-water-hygiene-companies-legionella-monitoring"
+title: "AI for Water Hygiene Companies: Legionella Monitoring Logs, Out-of-Range Outlets and Remedial Quotes"
+authorName: "Josip Ledić"
+date: "2026-10-31"
+tags: ["Field services", "Water hygiene", "Monitoring visits and reports", "AI for small business"]
+description: "England and Wales recorded 463 confirmed Legionnaires' disease cases in 2024, and 239 of them were acquired in the community. How water hygiene companies can use AI to turn monthly temperature logs into client reports, flag every out-of-range outlet against HSG274 limits and quote the remedial work the same day."
+excerpt: "England and Wales recorded 463 confirmed Legionnaires' disease cases in 2024, and 239 of them were acquired in the community. How water hygiene companies can use AI to turn monthly temperature logs into client reports, flag every out-of-range outlet against HSG274 limits and quote the remedial work the same day."
+---
+
+AI can help a water hygiene company turn hundreds of monthly temperature readings into client reports and remedial quotes without an evening of typing. The data already exists: every site has a list of sentinel outlets, calorifiers and tanks, and every visit adds a temperature for each one. Plain rules compare each reading with the limits in the client's written scheme and flag what failed. A language model then drafts the monthly report, explains each failure in plain words and turns it into a quote for the fix. Your technician still takes the readings, and your risk assessor still decides what the readings mean.
+
+The work is steady because the risk does not go away.
+
+<Stats title="Legionellosis in England and Wales, 2024">
+  <Stat value="463" label="confirmed Legionnaires' disease cases, down from 609 in 2023" source="UKHSA, Legionellosis in residents of England and Wales: 2024" href="https://www.gov.uk/government/statistics/legionellosis-in-residents-of-england-and-wales-2024/legionellosis-in-residents-of-england-and-wales-2024" />
+  <Stat value="51.6%" label="of those cases acquired in the community (239), not abroad or in hospital" source="UKHSA, Legionellosis in residents of England and Wales: 2024" href="https://www.gov.uk/government/statistics/legionellosis-in-residents-of-england-and-wales-2024/legionellosis-in-residents-of-england-and-wales-2024" />
+  <Stat value="63.9%" label="of cases were people aged 60 and over" source="UKHSA, Legionellosis in residents of England and Wales: 2024" href="https://www.gov.uk/government/statistics/legionellosis-in-residents-of-england-and-wales-2024/legionellosis-in-residents-of-england-and-wales-2024" />
+</Stats>
+
+<Bars title="Confirmed Legionnaires' disease cases, England and Wales, by year of symptom onset" unit="" caption="2023 was the highest year in the series; UKHSA notes it was in line with pre-pandemic levels." source="UKHSA, Legionellosis in residents of England and Wales: 2024, table 1" href="https://www.gov.uk/government/statistics/legionellosis-in-residents-of-england-and-wales-2024/legionellosis-in-residents-of-england-and-wales-2024" data={[
+  { label: "2020", value: 337, display: "337" },
+  { label: "2021", value: 352, display: "352" },
+  { label: "2022", value: 415, display: "415" },
+  { label: "2023", value: 609, display: "609" },
+  { label: "2024", value: 463, display: "463", highlight: true }
+]} />
+
+Community cases are the ones a building's water system can cause: offices, hotels, care homes, gyms, schools, blocks of flats. Most of the people affected are older, which is exactly who lives and stays in many of the buildings your clients run.
+
+## What the client has to do
+
+HSE is clear about who carries the duty: "As an employer, or someone in control of premises (including landlords), you are responsible for health and safety", and that duty extends to legionella under the Health and Safety at Work Act and COSHH ([HSE, what you must do](https://www.hse.gov.uk/legionnaires/what-you-must-do/index.htm)). For hot and cold water systems, HSE's [checklist of things to consider](https://www.hse.gov.uk/legionnaires/things-to-consider.htm) sets the numbers most written schemes copy:
+
+- Hot water stored at 60°C at least, and leaving the calorifier at 60°C or more.
+- Hot water at sentinel outlets at least 50°C within one minute of running.
+- Cold water below 20°C after running the sentinel taps for two minutes.
+- Sentinel outlet temperatures checked monthly and recorded.
+
+Clients with five or more employees have to record the significant findings, and HSE says monitoring records "should be retained for at least 5 years" ([HSE, monitoring and keeping records](https://www.hse.gov.uk/legionnaires/what-you-must-do/keeping-records.htm)). Domestic landlords are lighter: HSE says testing "is not usually required for domestic hot and cold water systems" ([HSE, landlords' responsibilities](https://www.hse.gov.uk/legionnaires/legionella-landlords-responsibilities.htm)). So the steady monthly work is commercial sites, and that is where most small water hygiene firms earn their contract income.
+
+## Where it breaks today
+
+- **Readings arrive in every format.** One technician fills a paper log sheet, another types into a phone, a third reads numbers into a voice note in the car park.
+- **The report is retyped.** Someone in the office copies 40 readings per site into the client's report template and works out by eye which ones failed.
+- **Failures are buried.** A hot tap at 46°C on the third floor appears as one number in a table. The client's facilities manager does not notice it, and next month it reads 44°C.
+- **Remedial work never gets quoted.** The technician writes "TMV needs service" or "dead leg in plant room" in the notes. Nobody turns it into a price, so it stays a note.
+- **Little-used outlets drift.** Flushing records for empty rooms and closed showers are the first thing to slip when a site is busy, and nobody sees the gap until the risk assessment review.
+
+## Where AI fits
+
+**Readings in one place.** The model reads the photo of a paper log, the typed form or the transcribed voice note and fills a structured table: site, outlet ID, hot or cold, temperature, time to temperature, date, technician. Anything it cannot read clearly is marked for the technician to confirm, never guessed.
+
+**Out-of-range checks by rule.** Plain logic compares every reading with the limit for that outlet in the client's written scheme, which is usually the HSE figures above. It also compares with last month and flags outlets that are drifting even if they still pass. This part is not a language model, so every flag can be traced to a number and a limit.
+
+**A report the client can act on.** The model drafts the monthly report from your template: what was checked, what passed, what failed with outlet and location, what changed since last month and which flushing records are missing. It writes the failures first, in a sentence each, so a facilities manager sees them before the table.
+
+**Quotes from failures and notes.** Each failure and each note like "TMV service due" or "cold tank lid damaged" becomes a draft line on a quote, priced from your own rate card. The office approves it and sends it with the report, while the reading is still fresh.
+
+**Escalation to a person.** A reading far outside the limits, a positive sample result from the lab, or any mention of an ill resident or guest goes straight to your competent person the same day. The model does not write advice for those cases.
+
+<Flow title="From a technician's readings to a report and a quote" caption="Technicians measure. Rules flag. AI drafts the report and quote lines. People approve both and own every judgement.">
+<Step title="Capture readings" who="Technician" tone="human" time="on site">Takes temperatures at each sentinel outlet and logs them on paper, in a form or by voice.</Step>
+<Step title="Structure and check" who="System" tone="ai" time="seconds">Turns logs into one table per site and flags readings outside the written scheme's limits or drifting since last month.</Step>
+<Step title="Draft report" who="AI" tone="ai" time="minutes">Fills your report template with failures first, changes since last month and missing flushing records.</Step>
+<Step title="Draft quote" who="AI" tone="ai" time="seconds">Turns each failure and remedial note into a priced quote line from your rate card.</Step>
+<Step title="Review and send" who="Office and assessor" tone="human" time="10 min per site">Checks the flags, edits the wording, approves the quote and sends both to the client.</Step>
+</Flow>
+
+## The numbers for a small water hygiene firm
+
+<Calc title="Napkin math: monthly reports for a three-technician firm" caption="Assumptions, not measurements. Time your own report writing for one month before you start." rows={[
+  ["Sites on monthly monitoring contracts", "120"],
+  ["Readings per site per month", "about 30"],
+  ["Minutes per report today: retype, check limits, write up", "× 25"],
+  ["Hours per month today", "about 50"],
+  ["Minutes per report with structured readings and a draft", "× 8"],
+  ["Hours per month with AI", "about 16"]
+]} result={["Hours back per month", "about 34"]} />
+
+The hours are the visible part. The larger effect is remedial work that is found but never quoted. Count last quarter's technician notes that mention a defect and check how many became a paid job.
+
+## Where it goes wrong
+
+<Callout title="The model never signs off a water system" tone="warning">
+Whether a system is under control is the judgement of your competent person, based on the risk assessment and the written scheme. The model only structures readings and drafts text. It never changes a limit, removes a flag, invents a reading or writes advice after a positive sample. No report leaves without a person reading it.
+</Callout>
+
+**Records are evidence.** If a case is ever linked to a building, the monthly records are what an inspector reads. Keep the original log sheet, photo or voice note attached to every structured reading, and keep both for at least the five years HSE expects.
+
+**Limits come from the scheme, not the model.** Healthcare sites, buildings with thermostatic mixing valves and sites with point-of-use heaters can have different limits in their written scheme. Load the limits per site from the scheme and have the assessor confirm them once.
+
+**Lab results are not readings.** Legionella sample results from a UKAS-accredited lab follow your own escalation procedure. Let the system file them against the right outlet and alert a person, but leave the interpretation and the client call to the assessor.
+
+## Tools that fit
+
+Start with what you already have. Water hygiene apps and wireless temperature sensors can already capture readings and produce logbooks. If you use one and the reports are fine, the gap is usually the remedial quote and the plain-language summary for the client. A custom layer pays off when technicians still use paper or voice notes, when every client wants their own report format, or when you also do tank cleans, TMV servicing and risk assessments on different cycles.
+
+<Checklist title="How to start" items={[
+  "Pick three sites and collect one month of logs in whatever format technicians use today",
+  "Write down each site's limits from its written scheme, outlet by outlet",
+  "Time how long each report takes now, from log to sent email",
+  "Count last quarter's defect notes and how many became a quote",
+  "Pilot structured readings and draft reports on those three sites for two months",
+  "Compare report time, missed flags and quoted remedial work before and after"
+]} />
+
+## Questions water hygiene firms ask
+
+### Can AI read handwritten temperature log sheets?
+
+Usually, if the sheet has a fixed layout and the handwriting is clear. Anything it is unsure about should be marked for the technician to confirm. Do not let it fill a gap with a plausible number.
+
+### Do we still need wireless sensors?
+
+Not for this. Sensors replace the reading, AI replaces the typing and the report writing. Some firms use both: sensors on high-risk outlets, manual readings elsewhere, and one report built from both.
+
+### Is this worth it for a one-person firm?
+
+Often, because that person also writes every report at night. Start with structured readings and the failures-first summary. Add quotes once you see how many defects you have been leaving in your notes.
+
+## A rule for every visit
+
+Every monitoring visit should end with a report in the client's inbox, every failure named in a sentence, and a quote for anything that needs fixing. Let AI do the retyping and the drafts, and keep every judgement about the water system with your technicians and your competent person.
+
+If your monthly reports still start with someone retyping log sheets, [tell me how readings reach your office today](/contact?intent=improve) and roughly how many sites you monitor. I'll suggest whether structured readings, draft reports or remedial quotes are the right first step. Heating engineers face a similar cycle in [maintenance reminders](/posts/ai-for-hvac-maintenance-reminders), property managers in [maintenance requests](/posts/ai-for-property-managers-maintenance), and care homes in [care notes](/posts/ai-for-care-homes-care-notes).
