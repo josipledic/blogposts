@@ -1,0 +1,128 @@
+---
+id: "ki-trinkwasserhygiene-legionellenpruefung"
+translationOf: "ai-for-water-hygiene-companies-legionella-monitoring"
+title: "KI für Trinkwasserhygiene und SHK-Betriebe: Legionellenprüfung, Laborbefunde und Sanierungsangebote"
+authorName: "Josip Ledić"
+date: "2026-10-31"
+tags: ["Dienstleistungen vor Ort", "Trinkwasserhygiene", "Prüffristen und Befunde", "KI für kleine Unternehmen"]
+description: "Vermietete Großanlagen müssen nach § 31 TrinkwV mindestens alle drei Jahre auf Legionellen untersucht werden, und Deutschland meldete 2024 laut ECDC 2.234 Fälle von Legionärskrankheit. Wie Trinkwasserhygiene- und SHK-Betriebe mit KI fällige Untersuchungen aus dem Objektbestand planen, Laborbefunde auswerten und nach einer Überschreitung die Pflichten des Betreibers und ein Sanierungsangebot vorbereiten."
+excerpt: "Vermietete Großanlagen müssen nach § 31 TrinkwV mindestens alle drei Jahre auf Legionellen untersucht werden, und Deutschland meldete 2024 laut ECDC 2.234 Fälle von Legionärskrankheit. Wie Trinkwasserhygiene- und SHK-Betriebe mit KI fällige Untersuchungen aus dem Objektbestand planen, Laborbefunde auswerten und nach einer Überschreitung die Pflichten des Betreibers und ein Sanierungsangebot vorbereiten."
+---
+
+KI kann einem Betrieb für Trinkwasserhygiene oder einem SHK-Betrieb helfen, die Legionellenprüfung für jedes betreute Objekt rechtzeitig anzustoßen und aus jedem Laborbefund schnell den nächsten Schritt zu machen. Die Daten dafür liegen meist schon vor: Objekte, Probennahmestellen, Datum der letzten Untersuchung und die Befunde des Labors als PDF. Feste Regeln berechnen daraus, welche Anlage wann fällig ist. Ein Sprachmodell liest die Befunde, entwirft die Terminanfrage an die Hausverwaltung und bei einer Überschreitung die Aufgabenliste für den Betreiber und ein Sanierungsangebot. Die Probennahme, die Bewertung der Anlage und die Risikoabschätzung bleiben bei Ihren Fachleuten.
+
+Der Bedarf ergibt sich aus der Verordnung und aus den Fallzahlen.
+
+<Stats title="Legionellen: Pflichten und Fallzahlen in Deutschland">
+  <Stat value="3 Jahre" label="höchstens zwischen zwei Untersuchungen einer Großanlage bei gewerblicher Abgabe, etwa durch Vermietung" source="§ 31 Abs. 2 TrinkwV" href="https://www.gesetze-im-internet.de/trinkwv_2023/__31.html" />
+  <Stat value="100 KBE" label="Legionellen je 100 ml sind der technische Maßnahmenwert, ab dem der Betreiber handeln muss" source="TrinkwV, Anlage 3 Teil II" href="https://www.gesetze-im-internet.de/trinkwv_2023/anlage_3.html" />
+  <Stat value="2.234" label="gemeldete Fälle von Legionärskrankheit in Deutschland 2024, 2,7 je 100.000 Einwohner" source="ECDC, Annual Epidemiological Report for 2024" href="https://www.ecdc.europa.eu/sites/default/files/documents/AER%20Legionnaires%202024.pdf" />
+</Stats>
+
+<Bars title="Gemeldete Fälle von Legionärskrankheit in Deutschland" unit="" caption="Die Zahl ist seit 2020 deutlich gestiegen. Nicht jeder Fall geht auf eine Trinkwasserinstallation zurück." source="ECDC, Annual Epidemiological Report for 2024, Tabelle 1" href="https://www.ecdc.europa.eu/sites/default/files/documents/AER%20Legionnaires%202024.pdf" data={[
+  { label: "2020", value: 1270, display: "1.270" },
+  { label: "2021", value: 1531, display: "1.531" },
+  { label: "2022", value: 1459, display: "1.459" },
+  { label: "2023", value: 2155, display: "2.155" },
+  { label: "2024", value: 2234, display: "2.234", highlight: true }
+]} />
+
+Dazu kommt der Bestand. Destatis zählt zum Jahresende 2024 rund [3,5 Millionen Mehrfamilienhäuser mit 23,5 Millionen Wohnungen](https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/09/PD25_336_31231.html). Wie viele davon eine Großanlage im Sinne der Verordnung haben, zählt keine amtliche Statistik. Für einen Betrieb, der Hausverwaltungen betreut, heißt das trotzdem: Die Prüfungen kommen jedes Jahr wieder, und wer die Fristen im Blick hat, hat die Aufträge.
+
+## Was der Betreiber tun muss
+
+Die Untersuchungspflicht trifft nach [§ 31 TrinkwV](https://www.gesetze-im-internet.de/trinkwv_2023/__31.html) Anlagen, in denen Trinkwasser im Rahmen einer gewerblichen oder öffentlichen Tätigkeit abgegeben wird, wenn drei Bedingungen zusammenkommen:
+
+- ein Speicher- oder zentraler Durchfluss-Trinkwassererwärmer mit mehr als 400 Litern oder mehr als 3 Litern in mindestens einer Leitung zwischen Erwärmer und Entnahmestelle, ohne Zirkulationsleitung,
+- Duschen oder andere Einrichtungen, in denen Trinkwasser vernebelt wird,
+- kein Ein- oder Zweifamilienhaus.
+
+Bei gewerblicher Abgabe, typischerweise der Vermietung, ist mindestens alle drei Jahre zu untersuchen. Bei öffentlicher Abgabe gilt mindestens einmal jährlich, sofern das Gesundheitsamt nach drei beanstandungsfreien Jahren kein längeres Intervall festlegt. Eine neu in Betrieb genommene Anlage ist erstmals nach drei bis zwölf Monaten zu untersuchen.
+
+Wird der technische Maßnahmenwert erreicht, verlangt [§ 51 TrinkwV](https://www.gesetze-im-internet.de/trinkwv_2023/__51.html) vom Betreiber unverzüglich vier Schritte: Anzeige beim Gesundheitsamt, sofern das Labor sie nicht nachweislich schon erstattet hat, Untersuchungen zur Ursache mit Ortsbesichtigung, eine schriftliche Risikoabschätzung nach der Empfehlung des Umweltbundesamts und die nötigen Maßnahmen. Die Maßnahmen sind dem Gesundheitsamt mitzuteilen und zehn Jahre lang zu dokumentieren. Das Labor selbst muss die Überschreitung nach [§ 53 TrinkwV](https://www.gesetze-im-internet.de/trinkwv_2023/__53.html) ebenfalls unverzüglich dem Gesundheitsamt anzeigen.
+
+## Wo es heute hakt
+
+- **Die Fristen stehen in einer Tabelle.** Welche Anlage wann fällig ist, steht in einer Excel-Liste oder im Kalender einer Person, und neue Objekte oder neu installierte Anlagen fehlen darin oft.
+- **Die Terminabstimmung läuft über drei Stellen.** Hausverwaltung, Hausmeister und Mieter müssen zustimmen, bevor jemand an die Entnahmestellen in den Wohnungen kommt.
+- **Befunde werden abgetippt.** Das Labor schickt ein PDF pro Objekt. Jemand überträgt die Werte je Probennahmestelle und prüft von Hand, wo 100 KBE erreicht sind.
+- **Nach einer Überschreitung fehlt der Überblick.** Wer hat das Gesundheitsamt informiert, wann ist die Ortsbesichtigung, wer schreibt die Risikoabschätzung, was wurde der Hausverwaltung mitgeteilt? Das steht verteilt in E-Mails.
+- **Sanierung wird nicht angeboten.** Der Techniker notiert „Totleitung im Keller“ oder „Zirkulation einregulieren“, aber aus der Notiz wird kein Angebot.
+
+## Wo KI hilft
+
+**Fälligkeitsliste aus dem Objektbestand.** Jede Woche listet das System Objekte, deren Untersuchung in den nächsten Monaten fällig wird, nach den Fristen aus § 31 und den Vorgaben des Gesundheitsamts, die Sie je Objekt hinterlegen. Das ist feste Logik auf Ihren Daten, kein Sprachmodell, und jede Zeile ist nachvollziehbar.
+
+**Terminanfrage mit den Daten des Objekts.** Für jede fällige Anlage entwirft das Modell eine kurze Nachricht an die Hausverwaltung: Objekt, letzte Untersuchung, Zahl der Probennahmestellen, zwei echte Termine und die Bitte um einen Aushang für die Mieter. Preise und Termine kommen aus Ihrer Preisliste und Ihrem Kalender, nie aus dem Modell.
+
+**Befunde in eine Tabelle.** Das Modell liest das Labor-PDF und überträgt die Werte je Probennahmestelle in Ihre Objektakte. Ob ein Wert den Maßnahmenwert erreicht, entscheidet danach eine feste Regel, nicht das Modell. Was es nicht eindeutig lesen kann, markiert es zur Prüfung.
+
+**Aufgabenliste nach einer Überschreitung.** Erreicht ein Wert 100 KBE je 100 ml, legt das System die Schritte aus § 51 als Aufgaben an, mit Fristen und Zuständigen, und entwirft die Nachricht an die Hausverwaltung mit Befund, Probennahmestelle und nächsten Schritten. Die Risikoabschätzung schreibt Ihr Sachverständiger.
+
+**Angebote aus Befund und Notiz.** Jede Notiz zu einem Mangel wird zu einer Angebotsposition mit Ihren Preisen. Das Büro prüft und schickt das Angebot zusammen mit dem Befund, solange das Thema beim Kunden präsent ist.
+
+<Flow title="Von der Frist bis zum Sanierungsangebot" caption="Probennehmer und Labor untersuchen. Regeln berechnen Fristen und Überschreitungen. KI entwirft Nachrichten, Aufgaben und Angebote; Menschen geben alles frei.">
+<Step title="Fällige Anlagen finden" who="System" tone="ai" time="wöchentlich">Berechnet aus Objektbestand und letzter Untersuchung, welche Anlagen in den nächsten Monaten fällig sind.</Step>
+<Step title="Termin anfragen" who="KI" tone="ai" time="Minuten">Entwirft je Objekt eine Nachricht an die Hausverwaltung mit echten Terminen und Bitte um Mieteraushang.</Step>
+<Step title="Proben nehmen" who="Probennehmer" tone="human" time="vor Ort">Nimmt die Proben an den festgelegten Stellen, das zugelassene Labor untersucht sie.</Step>
+<Step title="Befund auswerten" who="System und KI" tone="ai" time="Sekunden">Liest das Labor-PDF, prüft jeden Wert gegen 100 KBE und legt bei Überschreitung die Aufgaben nach § 51 an.</Step>
+<Step title="Prüfen und senden" who="Büro und Sachverständiger" tone="human" time="15 Min. je Objekt">Prüft Werte und Entwürfe, gibt Nachricht und Angebot frei und übernimmt die Risikoabschätzung.</Step>
+</Flow>
+
+## Die Rechnung für einen kleinen Betrieb
+
+<Calc title="Überschlag: Fristen, Befunde und Angebote für einen Betrieb mit drei Technikern" caption="Annahmen, keine Messwerte. Zählen Sie zuerst einen Monat lang Ihre eigenen Objekte und Zeiten." rows={[
+  ["Betreute Objekte mit Untersuchungspflicht", "600"],
+  ["Untersuchungen pro Monat im Schnitt, bei drei Jahren Intervall", "etwa 17"],
+  ["Minuten je Objekt heute: Frist prüfen, Termin abstimmen, Befund übertragen, Bericht", "× 60"],
+  ["Stunden pro Monat heute", "etwa 17"],
+  ["Minuten je Objekt mit Fälligkeitsliste und Entwürfen", "× 20"],
+  ["Stunden pro Monat mit KI", "etwa 6"]
+]} result={["Gewonnene Stunden pro Monat", "etwa 11"]} />
+
+Die Stunden sind der sichtbare Teil. Mehr Wirkung hat, was heute verloren geht: Objekte, deren Frist niemand bemerkt, und Mängel, die nie zu einem Angebot werden. Zählen Sie beides für ein Quartal, bevor Sie anfangen.
+
+## Wo es schiefgeht
+
+<Callout title="Das Modell bewertet keine Anlage" tone="warning">
+Ob eine Trinkwasserinstallation den allgemein anerkannten Regeln der Technik entspricht und welche Maßnahmen nötig sind, beurteilen Ihre Sachverständigen. Das Modell überträgt Werte und entwirft Texte. Es ändert keinen Grenzwert, verschiebt keine Frist, erfindet keinen Messwert und schreibt keine Risikoabschätzung. Kein Text verlässt den Betrieb ungelesen.
+</Callout>
+
+**Die Akte ist ein Nachweis.** Befunde, Mitteilungen und Maßnahmen sind die Unterlagen, die das Gesundheitsamt anfordern kann, und die Dokumentation der Maßnahmen muss zehn Jahre verfügbar sein. Hängen Sie das Original-PDF des Labors an jeden übertragenen Wert.
+
+**Fristen hängen am Objekt.** Pflegeeinrichtungen, Schulen oder Sportstätten können andere Intervalle haben als ein vermietetes Wohnhaus, und das Gesundheitsamt kann Fristen festlegen. Hinterlegen Sie Intervall und Grund je Objekt, und lassen Sie es einmal fachlich bestätigen.
+
+**Daten der Mieter.** Für Termine in Wohnungen brauchen Sie Namen und Telefonnummern. Holen Sie sie über die Hausverwaltung, speichern Sie nur, was für den Termin nötig ist, und klären Sie den Auftragsverarbeitungsvertrag mit jedem KI-Anbieter, bevor echte Daten fließen.
+
+## Welche Werkzeuge passen
+
+Fangen Sie mit dem an, was Sie haben. Große Messdienstleister und manche Branchenprogramme bieten Fristenverwaltung und Befundablage bereits an. Wenn Ihr Programm das gut kann, fehlt meist nur die Nachricht an die Hausverwaltung, die Aufgabenliste nach einer Überschreitung und das Angebot aus der Notiz. Eine eigene Lösung lohnt sich, wenn Fristen in Excel stehen, Befunde von mehreren Laboren in verschiedenen Formaten kommen oder Sie neben der Legionellenprüfung auch Wartungsverträge und Sanierungen abwickeln.
+
+<Checklist title="So fangen Sie an" items={[
+  "Listen Sie alle Objekte mit Untersuchungspflicht, letzter Untersuchung und Intervall auf",
+  "Prüfen Sie, wie viele Objekte im letzten Jahr ihre Frist überschritten haben",
+  "Sammeln Sie die Laborbefunde eines Quartals und zählen Sie, wie oft der Maßnahmenwert erreicht wurde",
+  "Zählen Sie, wie viele dieser Fälle zu einem Sanierungsauftrag geführt haben",
+  "Schreiben Sie je eine freigegebene Vorlage: Terminanfrage, Befund ohne Auffälligkeit, Befund mit Überschreitung",
+  "Testen Sie zwei Monate mit einem Teil der Objekte und vergleichen Sie Fristen, Bearbeitungszeit und Angebote"
+]} />
+
+## Häufige Fragen
+
+### Darf eine KI Laborbefunde auswerten?
+
+Sie kann die Werte aus dem PDF übertragen. Ob ein Wert den Maßnahmenwert erreicht, prüft eine feste Regel, und was daraus folgt, entscheidet ein Mensch. So bleibt jeder Schritt nachvollziehbar.
+
+### Ersetzt das die Gefährdungsanalyse?
+
+Nein. Die schriftliche Risikoabschätzung nach § 51 erstellt eine fachkundige Person nach der Empfehlung des Umweltbundesamts. KI kann die Unterlagen dafür zusammentragen, also Befunde, Probennahmestellen, Daten und Notizen, aber nicht die Bewertung schreiben.
+
+### Lohnt sich das für einen kleinen SHK-Betrieb?
+
+Oft schon ab ein paar Dutzend Objekten, weil die Fristen sonst niemand systematisch überwacht. Beginnen Sie mit der Fälligkeitsliste und der Befundtabelle. Angebote aus Mängeln kommen dazu, wenn Sie sehen, wie viele Hinweise bisher liegen geblieben sind.
+
+## Eine Regel für jede Untersuchung
+
+Jede Untersuchung sollte mit einem übertragenen Befund in der Objektakte, einer klaren Nachricht an die Hausverwaltung und dem nächsten Termin in Ihrem System enden. Lassen Sie KI die Listen und Entwürfe vorbereiten, und behalten Sie jede Bewertung der Anlage bei Ihren Fachleuten.
+
+Wenn Ihre Fristen in einer Tabelle stehen, die eine Person im Blick behalten muss, [schreiben Sie mir, wie Sie Objekte und Befunde heute verwalten](/de/kontakt?intent=improve) und wie viele Anlagen Sie ungefähr betreuen. Ich schlage Ihnen schrittweise vor, ob eine Fälligkeitsliste, die Befundauswertung oder Angebote aus Mängeln der richtige Anfang sind. SHK-Betriebe kennen denselben Rhythmus aus ihren [Wartungsverträgen](/de/posts/ki-shk-wartungsvertraege), Hausverwaltungen aus der Bearbeitung von [Schadensmeldungen](/de/posts/ki-hausverwaltung-schadensmeldungen), und Pflegeheime führen ihre Nachweise in der [Pflegedokumentation](/de/posts/ki-pflegeheim-pflegedokumentation).
