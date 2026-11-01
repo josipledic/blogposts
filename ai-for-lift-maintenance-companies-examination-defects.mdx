@@ -1,0 +1,132 @@
+---
+id: "ai-for-lift-maintenance-companies-examination-defects"
+title: "AI for Lift Maintenance Companies: LOLER Examination Reports, Defect Deadlines and Remedial Quotes"
+authorName: "Josip Ledić"
+date: "2026-11-01"
+tags: ["Field services", "Lift maintenance", "Inspections and remedial work", "AI for small business"]
+description: "Every passenger lift used at work needs a LOLER thorough examination at least every six months, and each report can list defects with a date by which they must be fixed. How lift maintenance companies can use AI to read examination reports from any insurer, track every defect deadline and send the remedial quote the same week."
+excerpt: "Every passenger lift used at work needs a LOLER thorough examination at least every six months, and each report can list defects with a date by which they must be fixed. How lift maintenance companies can use AI to read examination reports from any insurer, track every defect deadline and send the remedial quote the same week."
+---
+
+AI can help a lift maintenance company turn every LOLER thorough examination report into a tracked list of defects, deadlines and quotes, instead of a PDF that sits in an inbox. The reports already follow a fixed structure set by law, so a language model can read them reliably, whichever insurer or inspection body wrote them. Plain rules then sort each defect by urgency and count down to the date in the report. The model drafts the quote and the note to the building owner. Your engineers still decide what the repair is, and the competent person who examined the lift still decides whether it is safe.
+
+The cycle never stops, because the law sets it.
+
+<Stats title="The LOLER cycle for a passenger lift">
+  <Stat value="6 months" label="maximum interval between thorough examinations for lifting equipment that carries people, unless an examination scheme sets another" source="LOLER 1998, regulation 9(3)" href="https://www.legislation.gov.uk/uksi/1998/2307/regulation/9/made" />
+  <Stat value="28 days" label="when HSE says the written report should normally arrive after the examination, sooner for a serious defect" source="HSE INDG339, Thorough examination and testing of lifts" href="https://www.hse.gov.uk/pubns/indg339.pdf" />
+  <Stat value="2 years" label="minimum time the owner keeps each periodic report, or until the next one if that is later" source="LOLER 1998, regulation 11(2)" href="https://www.legislation.gov.uk/uksi/1998/2307/regulation/11/made" />
+</Stats>
+
+I could not find a national UK figure for how many lifts fail their examinations. Germany publishes one, because every lift there is checked by an accredited inspection body and the results are pooled. In 2025 those bodies examined 723,270 lifts, and 10.8 percent had significant defects that needed a re-check, plus 0.8 percent with dangerous defects that took the lift out of service at once ([TÜV Rheinland on the TÜV-Verband Anlagensicherheitsreport, 17 March 2026](https://www.tuv.com/presse/de/meldungen/anlagensicherheitsreport2025-aufzuege.html)). The rules differ, but the lifts and the parts that wear do not, so a UK maintenance firm should expect a similar share of its portfolio to come back with work on the report.
+
+<Bars title="Lifts with significant defects in Germany, 2025, by city" unit="%" caption="Share of passenger lifts with at least one significant defect in TÜV Rheinland's own examinations (about 180,000). The national average across all inspection bodies was 10.8 percent." source="TÜV Rheinland, Anlagensicherheitsreport 2025 evaluation, 17 March 2026" href="https://www.tuv.com/presse/de/meldungen/anlagensicherheitsreport2025-aufzuege.html" data={[
+  { label: "Stuttgart", value: 13.8, display: "13.8%", highlight: true },
+  { label: "Hamburg", value: 13.1, display: "13.1%" },
+  { label: "Berlin", value: 11.3, display: "11.3%" },
+  { label: "Cologne", value: 9.3, display: "9.3%" },
+  { label: "Düsseldorf", value: 9.0, display: "9.0%" },
+  { label: "Dresden", value: 9.0, display: "9.0%" },
+  { label: "Frankfurt", value: 7.9, display: "7.9%" },
+  { label: "Leipzig", value: 7.6, display: "7.6%" }
+]} />
+
+TÜV Rheinland names the usual findings: damaged suspension ropes or belts, gaps in shaft and car doors that can trap children's fingers, and fire risk from dirt in the pit. Those are maintenance jobs, which is why the report matters to you as much as to the owner.
+
+## What the report has to say
+
+Schedule 1 of LOLER fixes what every thorough examination report contains ([LOLER 1998, Schedule 1](https://www.legislation.gov.uk/uksi/1998/2307/schedule/1/made)). For defects, it splits them into two kinds:
+
+- **A defect that is a danger to persons.** The report identifies the part, describes the defect and gives the repair needed. The owner must not use the lift until it is fixed ([regulation 10(3)](https://www.legislation.gov.uk/uksi/1998/2307/regulation/10/made)).
+- **A defect that is not yet a danger but could become one.** The report gives the time by which it could become dangerous and the repair needed. The owner must not use the lift after that date unless the defect has been put right.
+
+The report also states the latest date for the next thorough examination. If the examiner sees an existing or imminent risk of serious injury, they send a copy to HSE or the local authority as well.
+
+HSE is plain about the split of roles. The owner is the dutyholder, responsible for "maintaining the lift so that it is safe to use" and "acting promptly to remedy any defects". It also says "it is not advisable for the same person who performs routine maintenance to carry out the thorough examination" ([HSE INDG339](https://www.hse.gov.uk/pubns/indg339.pdf)). So the examiner is usually an insurer's engineer or an independent inspection body, and the fix is your job.
+
+## Where it breaks today
+
+- **Reports arrive in many layouts.** Each insurer and inspection body has its own PDF. Some go to the building owner, some to the managing agent, some to you, and some to nobody in particular.
+- **Dates hide in the text.** "Within 3 months" or "by 14/02" sits in a paragraph on page three. Nobody puts it in a calendar until the owner calls.
+- **Observations and defects get mixed up.** Examiners also add recommendations that are not legal deadlines. Treating every line as urgent wastes engineer time; treating every line as advice leaves a lift running past its date.
+- **Quotes go out late.** The engineer knows the repair, the office knows the parts price, and the quote waits until both have a free hour. Some owners only approve after a second chase.
+- **Evidence is missing at the next visit.** The examiner returns six months later and asks whether the defect was fixed. The job sheet exists, but not attached to that report.
+
+## Where AI fits
+
+**Read every report into one register.** The model reads each examination report and fills a structured row per defect: site, lift ID, report date, part, description, the examiner's category, the date it must be fixed by and the repair named. It keeps the original PDF attached and marks anything it cannot read clearly for a person to check.
+
+**Sort and count down by rule.** Plain logic, not the model, sorts each row: dangerous now, dangerous by a date, or recommendation only. It counts down to every date and flags anything due within your chosen window, plus every next-examination date in the portfolio.
+
+**Draft the quote from the defect.** Each defect becomes a draft quote line from your own parts list and labour rates, with the examiner's wording quoted so the owner sees why it is needed. Defects your contract already covers become a job, not a quote.
+
+**Write to the owner in plain words.** The model drafts a short note per site: what the examiner found, what must happen by when, what is covered and what needs approval. A managing agent can forward it without rewriting it.
+
+**Close the loop with evidence.** When the job is done, the job sheet and photos are attached to the defect row, and a short completion note goes to the owner and, if they want it, to the examiner before the next visit.
+
+<Flow title="From an examination report to a closed defect" caption="Examiners judge safety. Rules track dates. AI drafts the quote and the note. Your engineers and office approve everything.">
+<Step title="Report arrives" who="Examiner" tone="human" time="within 28 days">Insurer engineer or inspection body sends the LOLER report to the owner, agent or you.</Step>
+<Step title="Read and register" who="AI" tone="ai" time="seconds">Turns each defect into a row with part, category, deadline and the original wording.</Step>
+<Step title="Sort and alert" who="System" tone="ai" time="daily">Flags dangerous defects at once and counts down to every fix-by and next-examination date.</Step>
+<Step title="Draft quote and note" who="AI" tone="ai" time="minutes">Prices each defect from your rate card and drafts a plain note to the owner.</Step>
+<Step title="Approve and fix" who="Office and engineer" tone="human" time="before the date">Check the repair, send the quote, schedule the work and attach the job sheet.</Step>
+</Flow>
+
+## The numbers for a small lift firm
+
+<Calc title="Napkin math: defect follow-up for a firm with 300 lifts" caption="Assumptions, not measurements. Count your own reports and defects for one quarter first." rows={[
+  ["Lifts under maintenance contract", "300"],
+  ["Thorough examination reports per year (two per lift)", "600"],
+  ["Reports with a significant defect, if the German rate of 10.8 percent applies", "about 65"],
+  ["Minutes per defect report today: read, log, price, write, chase", "× 60"],
+  ["Hours per year today", "about 65"],
+  ["Minutes per defect report with a register and drafts", "× 20"],
+  ["Hours per year with AI", "about 22"]
+]} result={["Hours back per year", "about 43"]} />
+
+The hours are modest. The real value is the remedial work you are already entitled to quote and the lifts that would otherwise run past a fix-by date. Pull last year's reports and count how many defects became a paid job, and how many were fixed after the date in the report.
+
+## Where it goes wrong
+
+<Callout title="The model never decides whether a lift is safe" tone="warning">
+Whether a defect is dangerous is the examiner's judgement, written in the report. Whether a repair fixes it is your engineer's. The model only reads, sorts and drafts. It never changes a category, moves a deadline, closes a defect without a job sheet or tells an owner a lift can stay in service.
+</Callout>
+
+**Danger now means a phone call.** A defect the examiner marks as an immediate danger should trigger a call to the owner and your duty engineer the same hour, not a quote email. Let the system raise the alarm and leave the conversation to a person.
+
+**Recommendations are not deadlines.** Keep the examiner's own category. If a line is advice, show it as advice and quote it as optional, so the owner can trust the rest of what you send.
+
+**The owner holds the duty.** You can track and remind, but the owner must stop using a lift after its date. Write that plainly in your note, and keep a record that you told them.
+
+## Tools that fit
+
+Lift and field service platforms already handle contracts, visits and job sheets, and some track certificate dates per asset. If yours does, the gap is usually reading examination reports from many sources into defect rows, and the quote and owner note that follow. A custom layer pays off when reports come in by email from several insurers, when managing agents want their own format, or when you also service platform lifts and hoists on 12-month cycles.
+
+<Checklist title="How to start" items={[
+  "Collect the last six months of examination reports for 20 lifts, from every source",
+  "List each defect by hand once: category, fix-by date, repair and whether it became a quote",
+  "Time how long a defect report takes now, from inbox to sent quote",
+  "Check how many fix-by dates passed before the work was done",
+  "Pilot the defect register and draft quotes on those 20 lifts for one examination cycle",
+  "Compare quote turnaround, missed dates and approved remedial work before and after"
+]} />
+
+## Questions lift companies ask
+
+### Can AI read examination reports from different insurers?
+
+Yes, if it is set up to find the Schedule 1 items rather than one layout. Every report has to carry the same information: the lift, the date, each defect, the time by which it could become dangerous, the repair and the next examination date. Anything it cannot place should be marked for a person.
+
+### Should the maintenance contractor receive the report?
+
+The law sends it to the employer who owns or controls the lift, and to anyone who hired or leased it to them. Many owners forward it to their maintenance firm, and many contracts ask them to. Agree with each client that reports come to you directly, so the register is complete.
+
+### Is this worth it for a small independent firm?
+
+Usually, because the person who reads the reports is also the one who prices the work and answers the phone. Start with the register and the countdown. Add quotes once you see how many defects each cycle brings.
+
+## A rule for every report
+
+Every examination report should end up as defect rows with dates, a quote or job for each one, and a note in the owner's inbox within a week. Let AI do the reading and the drafts, and keep every judgement about the lift with the examiner and your engineers.
+
+If examination reports still arrive as PDFs that someone has to read and retype, [tell me how reports reach your office today](/contact?intent=improve) and roughly how many lifts you maintain. I'll suggest whether a defect register, draft quotes or owner notes are the right first step. Fire safety firms run a similar annual cycle in [extinguisher servicing](/posts/ai-for-fire-extinguisher-servicing-annual-visits), water hygiene companies in [legionella monitoring](/posts/ai-for-water-hygiene-companies-legionella-monitoring), and property managers see the other side in [maintenance requests](/posts/ai-for-property-managers-maintenance).

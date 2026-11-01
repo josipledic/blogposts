@@ -1,0 +1,133 @@
+---
+id: "ki-aufzugswartung-pruefbericht-maengel"
+translationOf: "ai-for-lift-maintenance-companies-examination-defects"
+title: "KI für Aufzugsfirmen: ZÜS-Prüfberichte, Mängelfristen und Angebote zur Mängelbeseitigung"
+authorName: "Josip Ledić"
+date: "2026-11-01"
+tags: ["Dienstleistungen vor Ort", "Aufzugswartung", "Prüffristen und Mängel", "KI für kleine Unternehmen"]
+description: "Bei 10,8 Prozent der 2025 wiederkehrend geprüften Aufzüge fanden die Überwachungsstellen erhebliche Mängel, bei 0,8 Prozent gefährliche. Wie Aufzugsfirmen mit KI Prüfbescheinigungen der ZÜS auslesen, jede Frist bis zur Nachprüfung im Blick behalten und das Angebot zur Mängelbeseitigung noch in derselben Woche an den Betreiber schicken."
+excerpt: "Bei 10,8 Prozent der 2025 wiederkehrend geprüften Aufzüge fanden die Überwachungsstellen erhebliche Mängel, bei 0,8 Prozent gefährliche. Wie Aufzugsfirmen mit KI Prüfbescheinigungen der ZÜS auslesen, jede Frist bis zur Nachprüfung im Blick behalten und das Angebot zur Mängelbeseitigung noch in derselben Woche an den Betreiber schicken."
+---
+
+KI kann einer Aufzugsfirma helfen, aus jeder Prüfbescheinigung der Überwachungsstelle eine geordnete Liste mit Mängeln, Fristen und Angeboten zu machen, statt eines PDFs, das im Postfach liegen bleibt. Die Bescheinigungen haben gesetzlich festgelegte Inhalte, deshalb kann ein Sprachmodell sie zuverlässig lesen, egal ob TÜV, DEKRA oder eine andere ZÜS sie geschrieben hat. Feste Regeln ordnen jeden Mangel nach Dringlichkeit und rechnen bis zur Nachprüfung oder zur nächsten Prüfung zurück. Das Modell entwirft das Angebot und die Nachricht an den Betreiber. Welche Reparatur nötig ist, entscheiden weiter Ihre Monteure, und ob der Aufzug sicher ist, entscheidet die Überwachungsstelle.
+
+Die Arbeit ist planbar, weil der Prüfrhythmus feststeht und die Mängelquote seit Jahren hoch bleibt.
+
+<Stats title="Wiederkehrende Aufzugsprüfungen in Deutschland, 2025">
+  <Stat value="723.270" label="Aufzüge bei Haupt- und Zwischenprüfungen durch zugelassene Überwachungsstellen geprüft" source="TÜV Rheinland zum Anlagensicherheitsreport des TÜV-Verbands, 17.03.2026" href="https://www.tuv.com/presse/de/meldungen/anlagensicherheitsreport2025-aufzuege.html" />
+  <Stat value="10,8 %" label="mit erheblichen Mängeln, für die eine Nachprüfung nötig ist" source="TÜV Rheinland zum Anlagensicherheitsreport des TÜV-Verbands, 17.03.2026" href="https://www.tuv.com/presse/de/meldungen/anlagensicherheitsreport2025-aufzuege.html" />
+  <Stat value="0,8 %" label="mit gefährlichen Mängeln; der Aufzug muss umgehend außer Betrieb" source="TÜV Rheinland zum Anlagensicherheitsreport des TÜV-Verbands, 17.03.2026" href="https://www.tuv.com/presse/de/meldungen/anlagensicherheitsreport2025-aufzuege.html" />
+</Stats>
+
+Gut jeder zehnte Aufzug braucht also nach der Prüfung Arbeit, bevor die Überwachungsstelle wiederkommt. Das ist der Teil des Geschäfts, bei dem eine Aufzugsfirma am meisten verliert, wenn ein Bericht zu spät gelesen wird: das Angebot geht spät raus, der Betreiber zögert, und die Nachprüfung kommt vor der Reparatur.
+
+<Bars title="Aufzüge mit erheblichen Mängeln nach Gebäudeart und Großstadt, 2025" unit="%" caption="Anteil der Personenaufzüge mit mindestens einem erheblichen Mangel bei den rund 180.000 Prüfungen von TÜV Rheinland. Der bundesweite Durchschnitt aller Überwachungsstellen lag bei 10,8 Prozent." source="TÜV Rheinland, Auswertung zum Anlagensicherheitsreport 2025, 17.03.2026" href="https://www.tuv.com/presse/de/meldungen/anlagensicherheitsreport2025-aufzuege.html" data={[
+  { label: "Bahnhöfe", value: 14.8, display: "14,8 %", highlight: true },
+  { label: "Stuttgart", value: 13.8, display: "13,8 %" },
+  { label: "Hamburg", value: 13.1, display: "13,1 %" },
+  { label: "Berlin", value: 11.3, display: "11,3 %" },
+  { label: "Köln", value: 9.3, display: "9,3 %" },
+  { label: "Frankfurt", value: 7.9, display: "7,9 %" },
+  { label: "Leipzig", value: 7.6, display: "7,6 %" },
+  { label: "Flughäfen", value: 6.6, display: "6,6 %" }
+]} />
+
+Als typische Mängel nennt TÜV Rheinland Brüche oder Beschädigungen an den Tragmitteln, Spalten in Schacht- und Fahrkorbtüren, die vor allem Kinderhände gefährden, und Brandgefahr durch Verschmutzungen in der Schachtgrube. Das sind Wartungsaufgaben. Der Prüfbericht betrifft Sie also genauso wie den Betreiber.
+
+## Was die Verordnung vorgibt
+
+Die Betriebssicherheitsverordnung legt den Rhythmus fest ([BetrSichV, Anhang 2 Abschnitt 2](https://www.gesetze-im-internet.de/betrsichv_2015/anhang_2.html)):
+
+- **Hauptprüfung** durch eine zugelassene Überwachungsstelle. Die Frist legt der Betreiber fest, sie „darf zwei Jahre nicht überschreiten“ (Nr. 4.1).
+- **Zwischenprüfung** in der Mitte zwischen zwei Hauptprüfungen, mit Sicht- und einfachen Funktionsprüfungen der Sicherheitseinrichtungen (Nr. 4.3).
+
+In der Praxis heißt das: Jeder Aufzug wird jedes Jahr geprüft, abwechselnd Haupt- und Zwischenprüfung. Die Überwachungsstelle muss eine Prüfbescheinigung ausstellen, die unter anderem das Ergebnis und die Fristen für die nächsten Prüfungen nennt. Der Betreiber bewahrt sie während der gesamten Verwendungsdauer auf, und im Fahrkorb zeigt eine Prüfplakette Monat und Jahr der nächsten Prüfung ([§ 17 BetrSichV](https://www.gesetze-im-internet.de/betrsichv_2015/__17.html)).
+
+Die Mängel ordnen die Überwachungsstellen üblicherweise in drei Stufen. Laut TÜV Rheinland bedeutet ein erheblicher Mangel, dass eine Nachprüfung nötig ist, bei der kontrolliert wird, ob er beseitigt wurde. Bei einem gefährlichen Mangel muss der Aufzug sofort stillgelegt werden. Geringfügige Mängel sollen behoben werden, lösen aber keine Nachprüfung aus.
+
+## Wo es heute hakt
+
+- **Bescheinigungen kommen auf vielen Wegen.** Manche schickt die Überwachungsstelle an die Hausverwaltung, manche an den Eigentümer, manche an Sie. Jede ZÜS hat ihr eigenes Layout.
+- **Fristen stehen im Fließtext.** „Mangelbeseitigung bis …“ oder „Nachprüfung erforderlich“ steht auf Seite drei. In den Kalender kommt das oft erst, wenn die Verwaltung anruft.
+- **Geringfügig und erheblich verschwimmen.** Wer jede Zeile gleich dringlich behandelt, bindet Monteure. Wer jede Zeile als Hinweis liest, riskiert eine Nachprüfung ohne Reparatur.
+- **Angebote bleiben liegen.** Der Monteur kennt die Reparatur, das Büro die Teilepreise, und beide haben erst nächste Woche Zeit. Viele Verwaltungen geben erst nach einer Erinnerung frei, oft erst nach einem Beschluss der Eigentümer.
+- **Nachweise fehlen bei der Nachprüfung.** Der Arbeitsbericht existiert, ist aber nicht dem Mangel aus der Bescheinigung zugeordnet.
+
+## Wo KI hilft
+
+**Jede Bescheinigung in ein Mängelregister.** Das Modell liest jede Prüfbescheinigung und legt pro Mangel eine Zeile an: Objekt, Aufzug, Prüfart, Prüfdatum, Bauteil, Beschreibung, Einstufung der ZÜS, Frist und nächste Prüfung. Das Original-PDF bleibt angehängt. Was es nicht eindeutig lesen kann, markiert es für eine Person.
+
+**Ordnen und Fristen nach festen Regeln.** Einfache Logik, kein Sprachmodell, sortiert jede Zeile nach gefährlich, erheblich oder geringfügig und rechnet bis zur Nachprüfung oder zur nächsten Prüfung zurück. Was in Ihrem gewählten Zeitraum fällig wird, erscheint auf der Liste des Tages.
+
+**Angebote aus dem Mangel.** Jeder Mangel wird zu einer Angebotsposition aus Ihrer eigenen Preisliste, mit dem Wortlaut der Überwachungsstelle, damit der Betreiber sieht, warum die Arbeit nötig ist. Was Ihr Wartungsvertrag schon abdeckt, wird ein Auftrag, kein Angebot.
+
+**Eine klare Nachricht an die Verwaltung.** Das Modell entwirft pro Objekt eine kurze Nachricht: was geprüft wurde, welche Mängel gefunden wurden, bis wann gehandelt werden muss, was der Vertrag abdeckt und was eine Freigabe braucht. Die Hausverwaltung kann sie an die Eigentümer weitergeben, ohne sie umzuschreiben.
+
+**Nachweis für die Nachprüfung.** Nach der Reparatur werden Arbeitsbericht und Fotos dem Mangel zugeordnet. Zur Nachprüfung liegt alles beisammen.
+
+<Flow title="Von der Prüfbescheinigung zum behobenen Mangel" caption="Die Überwachungsstelle bewertet. Regeln behalten die Fristen im Blick. KI entwirft Angebot und Nachricht. Ihr Team gibt alles frei.">
+<Step title="Bescheinigung kommt" who="ZÜS" tone="human" time="nach der Prüfung">Die Überwachungsstelle schickt die Prüfbescheinigung an Betreiber, Verwaltung oder Sie.</Step>
+<Step title="Lesen und erfassen" who="KI" tone="ai" time="Sekunden">Legt pro Mangel eine Zeile mit Bauteil, Einstufung, Frist und Originalwortlaut an.</Step>
+<Step title="Ordnen und erinnern" who="System" tone="ai" time="täglich">Meldet gefährliche Mängel sofort und rechnet bis zur Nachprüfung und zur nächsten Prüfung zurück.</Step>
+<Step title="Angebot und Nachricht" who="KI" tone="ai" time="Minuten">Kalkuliert jeden Mangel aus Ihrer Preisliste und entwirft die Nachricht an die Verwaltung.</Step>
+<Step title="Freigeben und beheben" who="Büro und Monteur" tone="human" time="vor der Nachprüfung">Reparatur prüfen, Angebot senden, Termin planen, Arbeitsbericht zuordnen.</Step>
+</Flow>
+
+## Die Rechnung für eine kleine Aufzugsfirma
+
+<Calc title="Überschlag: Mängelbearbeitung bei 300 Aufzügen in der Wartung" caption="Annahmen, keine Messwerte. Zählen Sie zuerst ein Quartal lang Ihre eigenen Bescheinigungen und Mängel." rows={[
+  ["Aufzüge mit Wartungsvertrag", "300"],
+  ["Prüfungen pro Jahr (Haupt- oder Zwischenprüfung)", "300"],
+  ["Bescheinigungen mit erheblichem Mangel bei 10,8 Prozent", "etwa 32"],
+  ["Minuten je Bescheinigung heute: lesen, erfassen, kalkulieren, schreiben, nachfassen", "× 60"],
+  ["Stunden pro Jahr heute", "etwa 32"],
+  ["Minuten je Bescheinigung mit Register und Entwürfen", "× 20"],
+  ["Stunden pro Jahr mit KI", "etwa 11"]
+]} result={["Gewonnene Stunden pro Jahr", "etwa 21"]} />
+
+Die Stunden allein sind überschaubar, zumal geringfügige Mängel hier noch fehlen. Wichtiger ist, wie viele erhebliche Mängel rechtzeitig vor der Nachprüfung behoben werden und wie viele Angebote überhaupt freigegeben werden. Gehen Sie die Bescheinigungen des letzten Jahres durch und zählen Sie, aus wie vielen Mängeln ein bezahlter Auftrag wurde.
+
+## Wo es schiefgehen kann
+
+<Callout title="Das Modell entscheidet nie, ob ein Aufzug sicher ist" tone="warning">
+Wie schwer ein Mangel wiegt, entscheidet die Überwachungsstelle in ihrer Bescheinigung. Ob eine Reparatur ihn behebt, entscheidet Ihr Monteur. Das Modell liest, ordnet und entwirft. Es ändert keine Einstufung, verschiebt keine Frist, schließt keinen Mangel ohne Arbeitsbericht und sagt keinem Betreiber, ein Aufzug könne weiterlaufen.
+</Callout>
+
+**Gefährlich heißt Telefon.** Ein gefährlicher Mangel bedeutet, dass der Aufzug sofort außer Betrieb geht. Dann ruft eine Person beim Betreiber und beim Notdienst an, noch in derselben Stunde. Eine Angebotsmail reicht nicht.
+
+**Die Pflicht bleibt beim Betreiber.** Die Terminverfolgung liegt laut TÜV Rheinland in der Verantwortung der Betreiber. Sie können erinnern und Angebote vorbereiten, aber sagen Sie in Ihrer Nachricht klar, wer was bis wann tun muss, und halten Sie fest, dass Sie es mitgeteilt haben.
+
+**Datenschutz mit Augenmaß.** Prüfbescheinigungen enthalten Adressen und Namen von Ansprechpartnern, aber keine Gesundheitsdaten. Schließen Sie mit dem Anbieter des Modells einen Auftragsverarbeitungsvertrag, wählen Sie eine Verarbeitung in der EU und klären Sie das einmal mit Ihrem Datenschutzbeauftragten, bevor die ersten Bescheinigungen durchlaufen.
+
+## Welche Werkzeuge passen
+
+Wartungs- und Handwerkersoftware für Aufzugsfirmen verwaltet meist schon Verträge, Wartungstermine und Arbeitsberichte, manche auch Prüftermine je Anlage. Wenn Ihre das gut macht, fehlt oft nur der Schritt dazwischen: Bescheinigungen aus vielen Quellen in Mängelzeilen übertragen und daraus Angebot und Nachricht machen. Eine eigene Lösung lohnt sich, wenn Bescheinigungen von mehreren Überwachungsstellen per E-Mail kommen, wenn Hausverwaltungen eigene Formate wollen oder wenn Sie auch Plattformaufzüge, Treppenlifte oder Fassadenbefahranlagen betreuen.
+
+<Checklist title="So fangen Sie an" items={[
+  "Sammeln Sie die Prüfbescheinigungen der letzten zwölf Monate für 20 Aufzüge, aus allen Quellen",
+  "Erfassen Sie jeden Mangel einmal von Hand: Einstufung, Frist, Reparatur und ob ein Angebot daraus wurde",
+  "Messen Sie, wie lange es heute vom Posteingang bis zum versendeten Angebot dauert",
+  "Prüfen Sie, wie oft eine Nachprüfung vor der Reparatur kam",
+  "Testen Sie Mängelregister und Angebotsentwürfe ein Jahr lang an diesen 20 Aufzügen, schrittweise",
+  "Vergleichen Sie Bearbeitungszeit, verpasste Fristen und freigegebene Angebote vorher und nachher"
+]} />
+
+## Fragen, die Aufzugsfirmen stellen
+
+### Kann KI Prüfbescheinigungen verschiedener Überwachungsstellen lesen?
+
+Ja, wenn sie nach den Pflichtangaben sucht und nicht nach einem bestimmten Layout. § 17 BetrSichV schreibt vor, was jede Bescheinigung enthalten muss: Anlage, Prüfdatum, Prüfart, Ergebnis, die Fristen für die nächsten Prüfungen und die prüfende Stelle. Was das Modell nicht zuordnen kann, markiert es für eine Person.
+
+### Bekommt die Wartungsfirma die Bescheinigung überhaupt?
+
+Nicht automatisch. Die Bescheinigung geht an den Betreiber. Viele Hausverwaltungen leiten sie weiter, und viele Wartungsverträge sehen das vor. Vereinbaren Sie mit jedem Kunden, dass Sie eine Kopie direkt erhalten, damit Ihr Register vollständig ist.
+
+### Lohnt sich das für einen kleinen Betrieb?
+
+Oft, weil dieselbe Person die Bescheinigungen liest, die Arbeit kalkuliert und das Telefon bedient. Beginnen Sie mit dem Register und den Fristen. Angebote kommen dazu, wenn Sie sehen, wie viele Mängel jede Prüfrunde bringt.
+
+## Eine Regel für jede Prüfung
+
+Jede Prüfbescheinigung sollte innerhalb einer Woche zu Mängelzeilen mit Fristen, einem Angebot oder Auftrag für jeden Mangel und einer klaren Nachricht an die Verwaltung werden. Lassen Sie KI das Lesen und die Entwürfe übernehmen, und lassen Sie jede Bewertung des Aufzugs bei der Überwachungsstelle und Ihren Monteuren.
+
+Wenn Prüfbescheinigungen bei Ihnen noch als PDF ankommen, das jemand lesen und abtippen muss, [schreiben Sie mir, wie die Bescheinigungen heute zu Ihnen kommen](/de/kontakt?intent=improve) und wie viele Aufzüge Sie ungefähr betreuen. Ich schlage Ihnen schrittweise vor, ob ein Mängelregister, Angebotsentwürfe oder die Nachricht an die Verwaltung der richtige Anfang sind. Brandschutzbetriebe kennen denselben Rhythmus aus der [Feuerlöscher-Wartung](/de/posts/ki-brandschutz-feuerloescher-wartung), Fachbetriebe für Trinkwasserhygiene aus der [Legionellenprüfung](/de/posts/ki-trinkwasserhygiene-legionellenpruefung), und Hausverwaltungen sehen die andere Seite bei den [Schadensmeldungen](/de/posts/ki-hausverwaltung-schadensmeldungen).
