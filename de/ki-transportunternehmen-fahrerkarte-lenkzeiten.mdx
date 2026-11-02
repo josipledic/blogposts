@@ -1,0 +1,124 @@
+---
+id: "ki-transportunternehmen-fahrerkarte-lenkzeiten"
+translationOf: "ai-for-haulage-companies-tachograph-infringements"
+title: "KI für Transportunternehmen: Fahrerkarten auslesen, Lenkzeitverstöße auswerten und Fahrer belehren"
+authorName: "Josip Ledić"
+date: "2026-11-02"
+tags: ["Transport und Logistik", "Transportunternehmen", "Lenk- und Ruhezeiten", "KI für kleine Unternehmen"]
+description: "Fahrerkarten müssen spätestens alle 28 Tage, Fahrtenschreiber spätestens alle 90 Tage im Betrieb kopiert werden, und seit Juli 2026 brauchen auch Transporter im grenzüberschreitenden Verkehr einen Fahrtenschreiber. Wie kleine Transportunternehmen mit KI jede Frist im Blick behalten, Verstöße verständlich erklären und Belehrungen sauber dokumentieren."
+excerpt: "Fahrerkarten müssen spätestens alle 28 Tage, Fahrtenschreiber spätestens alle 90 Tage im Betrieb kopiert werden, und seit Juli 2026 brauchen auch Transporter im grenzüberschreitenden Verkehr einen Fahrtenschreiber. Wie kleine Transportunternehmen mit KI jede Frist im Blick behalten, Verstöße verständlich erklären und Belehrungen sauber dokumentieren."
+---
+
+KI kann einem kleinen Transportunternehmen helfen, aus den Daten des Fahrtenschreibers eine erledigte Aufgabe zu machen: jede Fahrerkarte rechtzeitig ausgelesen, jeder Verstoß mit dem Fahrer besprochen und jede Ursache in der Disposition behoben. Die Auswertungssoftware findet die Verstöße schon heute. Sie fragt aber nicht nach der Karte, die seit fünf Wochen nicht im Büro war, schreibt keine Belehrung und merkt nicht, dass drei Fahrer auf derselben Tour dieselbe Pause zu kurz machen. Diese Teile kann ein Sprachmodell entwerfen, während feste Regeln die Fristen zählen. Was ein Verstoß bedeutet und was daraus folgt, entscheidet weiter die Person, die im Betrieb für die Disposition und die Fahrer verantwortlich ist.
+
+Die Fristen stehen in der Fahrpersonalverordnung.
+
+<Stats title="Was das Unternehmen mit den Daten tun muss">
+  <Stat value="28 Tage" label="spätestens nach Aufzeichnung eines Ereignisses müssen die Daten der Fahrerkarte im Betrieb kopiert sein" source="§ 2 Abs. 5 FPersV" href="https://www.gesetze-im-internet.de/fpersv/__2.html" />
+  <Stat value="90 Tage" label="spätestens nach Aufzeichnung müssen die Daten aus dem Massenspeicher des Fahrtenschreibers kopiert sein" source="§ 2 Abs. 5 FPersV" href="https://www.gesetze-im-internet.de/fpersv/__2.html" />
+  <Stat value="1. Juli 2026" label="seitdem brauchen Fahrzeuge über 2,5 bis 3,5 t im grenzüberschreitenden Güterverkehr und in der Kabotage einen intelligenten Fahrtenschreiber" source="BALM, Fragen und Antworten zur Fahrtenschreiberpflicht ab 1. Juli 2026" href="https://www.balm.bund.de/SharedDocs/Standardartikel_Buehne/2026/06_Juni/Fahrtsenschreiberpflicht_ab_Juli_2026.html" />
+</Stats>
+
+Dieselbe Vorschrift verlangt, dass das Unternehmen von allen kopierten Daten unverzüglich Sicherheitskopien auf einem gesonderten Datenträger anlegt und sie der Behörde auf Verlangen zur Verfügung stellt. Die neue Pflicht für leichte Nutzfahrzeuge trifft vor allem Kurier- und Expressbetriebe, die zum ersten Mal mit Fahrerkarten, Downloads und Auswertungen zu tun haben. Für Transporter, die ein deutsches Unternehmen nur im Inland einsetzt, gilt sie nach Auskunft des BALM nicht; dort bleibt es bei der Fahrpersonalverordnung ab 2,8 t.
+
+## Weniger Fahrer, gleiche Pflichten
+
+Das Kraftfahrt-Bundesamt zählt jedes Jahr, wie viele Fahrtenschreiberkarten gültig sind. Am 1. Januar 2026 waren es 1.315.414 Fahrerkarten und 175.676 Unternehmenskarten. Die Zahl der Fahrerkarten ist seit 2017 um fast 14 Prozent gesunken und stieg 2026 zum ersten Mal wieder leicht ([KBA, Bestand an Fahrtenschreiberkarten, Zeitreihe 2017 bis 2026](https://www.kba.de/DE/Statistik/Kraftfahrer/Fahrtenschreiberkarten/Bestand_Fahrtenschreiberkarten/2026/2026_b_fk_zeitreihen.html)).
+
+<Bars title="Gültige Fahrerkarten in Deutschland, jeweils am 1. Januar" unit=" Tsd." caption="Bestand an Fahrerkarten im Zentralen Fahrtenschreiberkartenregister, gerundet auf Tausend." source="Kraftfahrt-Bundesamt, Bestand an Fahrtenschreiberkarten 2017 bis 2026" href="https://www.kba.de/DE/Statistik/Kraftfahrer/Fahrtenschreiberkarten/Bestand_Fahrtenschreiberkarten/2026/2026_b_fk_zeitreihen.html" data={[
+  { label: "2017", value: 1526, display: "1.526 Tsd." },
+  { label: "2020", value: 1444, display: "1.444 Tsd." },
+  { label: "2023", value: 1347, display: "1.347 Tsd." },
+  { label: "2025", value: 1311, display: "1.311 Tsd." },
+  { label: "2026", value: 1315, display: "1.315 Tsd.", highlight: true }
+]} />
+
+Zwei Drittel der Karten gehören Männern ab 45 Jahren (867.252), nur 25.723 Karteninhaber sind jünger als 25. Für einen kleinen Betrieb heißt das: Jeder Fahrer zählt, jeder Ausfall wird mit Aushilfen oder Leihfahrern überbrückt, und genau bei denen gehen Downloads und Belehrungen am leichtesten verloren.
+
+## Wo es heute hakt
+
+- **Downloads rutschen durch.** Ein Fahrer ist auf Fernverkehr, im Urlaub oder krank, und die Karte war nicht im Büro. Auffällig wird es erst, wenn die Auswertung eine Lücke zeigt oder der Leihfahrer schon weg ist.
+- **Die Auswertung ist eine Liste, keine Antwort.** Die Software listet jeden Verstoß mit Code und Uhrzeit. Ob es eine Gewohnheit des Fahrers ist, ein Fehler der Disposition oder ein sauber dokumentierter Notfall, steht dort nicht.
+- **Belehrungen kommen spät.** Das Gespräch mit dem Fahrer ist geplant, findet aber Wochen später statt, und die unterschriebene Belehrung liegt in einem anderen Ordner als die Auswertung.
+- **Muster bleiben unsichtbar.** Drei Fahrer, die auf derselben Tour 40 statt 45 Minuten Pause machen, sind ein Problem der Tourenplanung. Einzeln betrachtet sehen sie aus wie drei nachlässige Fahrer.
+- **Nachweise sind verstreut.** Downloads, Sicherheitskopien, Auswertungen, Belehrungen und Schulungen liegen an vier Orten. Eine Betriebskontrolle bedeutet dann ein Wochenende Papier suchen.
+
+## Wo KI hilft
+
+**Jede Frist zählen.** Feste Regeln, nicht das Modell, führen für jede Fahrerkarte und jeden Fahrtenschreiber das Datum des letzten Downloads. Sie melden Karten, die in den nächsten Tagen fällig werden, Fahrer, die diese Woche ausscheiden, und Fahrzeuge, die verkauft oder zurückgegeben werden. So wird die Karte ausgelesen, bevor sie den Betrieb verlässt.
+
+**Jeden Verstoß verständlich erklären.** Das Modell liest den Export der Auswertungssoftware und schreibt pro Verstoß eine kurze Zeile: welche Regel, um wie viel, an welchem Tag und auf welcher Tour. „4 Stunden 52 Minuten Lenkzeit vor der Pause, Dienstag, Tour Köln nach Antwerpen“ lässt sich besser besprechen als ein Fehlercode. Die Regeln dahinter stehen in der [Verordnung (EG) Nr. 561/2006](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02006R0561-20240522): höchstens 4,5 Stunden Lenkzeit vor 45 Minuten Pause und in der Regel höchstens 9 Stunden Lenkzeit am Tag, zweimal pro Woche 10.
+
+**Die Belehrung entwerfen.** Für jeden Fahrer entsteht ein Entwurf mit den Verstößen, den Fragen für das Gespräch und Platz für die Stellungnahme und beide Unterschriften. Das Gespräch führt der Disponent oder die Geschäftsführung, das Ergebnis tragen sie selbst ein. Der Entwurf entscheidet nie, ob eine Abmahnung fällig ist.
+
+**Die Ursache in der Disposition finden.** Über alle Fahrer hinweg gruppiert das Modell Verstöße nach Tour, Kunde, Startzeit und Disponent. Wenn derselbe Verstoß immer wieder auf derselben Tour auftaucht, entsteht eine Notiz für die Disposition: das Zeitfenster ist zu knapp, die Ladezeit länger als geplant oder die Tour braucht einen zweiten Fahrer.
+
+**Eine Akte pro Fahrer.** Jeder Download, jede Sicherheitskopie, Auswertung, Belehrung und Schulung hängt mit Datum an der Akte des Fahrers. Fragt das BALM oder die Gewerbeaufsicht, liegt alles an einer Stelle.
+
+<Flow title="Vom Download bis zum erledigten Verstoß" caption="Regeln zählen die Fristen. KI entwirft Erklärungen, Belehrungen und Notizen für die Disposition. Entscheiden und unterschreiben tun Menschen.">
+<Step title="Rechtzeitig auslesen" who="Büro" tone="human" time="28 / 90 Tage">Fahrerkarten und Fahrtenschreiber vor jeder Frist kopieren, ausscheidende Fahrer vor dem letzten Tag.</Step>
+<Step title="Auswerten" who="Auswertungssoftware" tone="ai" time="Minuten">Ihr bestehendes Programm findet Verstöße und fehlende Kilometer.</Step>
+<Step title="Erklären und bündeln" who="KI" tone="ai" time="Sekunden">Schreibt jeden Verstoß verständlich auf und bündelt Wiederholungen nach Tour, Kunde und Disponent.</Step>
+<Step title="Belehren" who="Disposition oder Geschäftsführung" tone="human" time="innerhalb einer Woche">Gespräch mit dem Fahrer, Stellungnahme und Ergebnis festhalten, beide unterschreiben.</Step>
+<Step title="Ursache beheben" who="Disposition" tone="human" time="nächste Planung">Zeitfenster, Tour oder Ladezeit ändern, wenn die Planung die Ursache ist.</Step>
+</Flow>
+
+## Die Rechnung für einen kleinen Fuhrpark
+
+<Calc title="Überschlag: Nachbereitung der Lenkzeiten bei 12 Fahrern" caption="Annahmen, keine Messwerte. Zählen Sie zuerst drei Monate lang Ihre eigenen Verstöße und Belehrungen." rows={[
+  ["Fahrer und Fahrzeuge", "12 und 12"],
+  ["Downloads von Fahrerkarten pro Jahr (alle 28 Tage)", "etwa 156"],
+  ["Downloads von Fahrtenschreibern pro Jahr (alle 90 Tage)", "etwa 49"],
+  ["Zu prüfende Verstöße pro Monat (Annahme)", "20"],
+  ["Minuten pro Verstoß heute: lesen, bewerten, belehren, ablegen", "× 15"],
+  ["Stunden pro Jahr heute", "60"],
+  ["Minuten pro Verstoß mit Erklärungen und Entwürfen", "× 6"],
+  ["Stunden pro Jahr mit KI", "24"]
+]} result={["Gewonnene Stunden pro Jahr", "etwa 36"]} />
+
+Die Stunden sind nicht der Hauptgewinn. Eine Belehrung innerhalb einer Woche, unterschrieben und neben der Auswertung abgelegt, zeigt bei einer Betriebskontrolle, dass das Unternehmen mit seinen Daten arbeitet. Eine geänderte Tour, nach der derselbe Verstoß nicht mehr auftaucht, zeigt es noch deutlicher.
+
+## Wo es schiefgehen kann
+
+<Callout title="Das Modell beurteilt keinen Fahrer" tone="warning">
+Ob ein Verstoß geringfügig ist, ob die Stellungnahme des Fahrers trägt und ob eine Abmahnung oder Schulung folgt, entscheidet der Betrieb. Das Modell entwirft Erklärungen, Fragen und Notizen. Es verschickt keine Abmahnung, ändert keine Daten oder manuellen Nachträge und schließt keinen Verstoß ohne unterschriebene Belehrung.
+</Callout>
+
+**Fahrtenschreiberdaten sind personenbezogen.** Sie zeigen, wann und wo jemand gearbeitet hat. Informieren Sie die Fahrer, was das System tut, und sprechen Sie mit dem Betriebsrat, wenn es einen gibt, denn eine Auswertung von Verhalten kann mitbestimmungspflichtig sein. Zugriff haben nur die Personen, die ihn brauchen, und gelöscht wird nach den gesetzlichen Fristen.
+
+**Die Auswertungssoftware bleibt die Quelle.** Das Modell liest nur ihren Export. Wenn beide sich bei einem Verstoß widersprechen, gelten die Software und die Rohdaten, und der Widerspruch geht an einen Menschen.
+
+**Notizen für die Disposition brauchen einen Empfänger.** Eine Notiz, dass eine Tour zu knapp ist, nützt nur, wenn der Disponent sie vor der nächsten Wochenplanung sieht. Schicken Sie sie direkt, nicht in einen Bericht, den niemand öffnet.
+
+## Werkzeuge, die passen
+
+Auswertungsprogramme und Dienstleister für Fahrtenschreiberdaten lesen Karten aus, finden Verstöße, erstellen Sicherheitskopien und drucken Fahrerberichte, manche bieten auch Belehrungsformulare. Wenn Ihres das kann, fehlt meist die Fristenübersicht über Leihfahrer und ausscheidende Fahrer, die verständliche Erklärung, die Bündelung nach Tour und Disponent und die eine Akte pro Fahrer. Eine eigene Ergänzung lohnt sich, wenn Sie gemischte Fuhrparks mit mehreren Programmen fahren, viele Leihfahrer einsetzen oder in einem System disponieren, das mit der Auswertung nicht spricht.
+
+<Checklist title="So fangen Sie an" items={[
+  "Exportieren Sie die Verstoßberichte der letzten drei Monate aus Ihrer Auswertungssoftware",
+  "Erfassen Sie jeden Verstoß einmal von Hand: Regel, Fahrer, Tour, Kunde und Disponent",
+  "Prüfen Sie, wie viele Belehrungen stattgefunden haben, wie lange danach und wo sie liegen",
+  "Listen Sie jede Fahrerkarte und jeden Fahrtenschreiber mit dem letzten Download auf, Leihfahrer eingeschlossen",
+  "Testen Sie Fristenübersicht, Erklärungen und Belehrungsentwürfe einen Monat lang",
+  "Vergleichen Sie verpasste Downloads, Dauer bis zur Belehrung und wiederholte Verstöße vorher und nachher"
+]} />
+
+## Fragen aus Transportunternehmen
+
+### Ersetzt KI die Auswertungssoftware für den Fahrtenschreiber?
+
+Nein, und das soll sie auch nicht. Die Auswertungssoftware liest die Dateien von Karte und Fahrtenschreiber und wendet die Regeln exakt an. KI ist danach nützlich: für verständliche Erklärungen, Belehrungsentwürfe, Notizen für die Disposition und eine vollständige Fahrerakte.
+
+### Brauche ich das schon für zwei Transporter im Auslandsverkehr?
+
+Wenn Ihre Transporter seit dem 1. Juli 2026 unter die Fahrtenschreiberpflicht fallen, haben Sie dieselben Download-Fristen wie ein Lkw-Betrieb. Bei zwei Fahrzeugen reicht oft eine einfache Fristenübersicht mit Erinnerung. Erklärungen und Belehrungsentwürfe lohnen sich, sobald jeden Monat Verstöße zu besprechen sind.
+
+### Muss eine Belehrung unterschrieben sein?
+
+Eine datierte Belehrung mit Unterschrift von Fahrer und Betrieb, abgelegt neben der Auswertung, ist der klarste Nachweis, dass Sie die Daten geprüft und gehandelt haben. Fragen Sie Ihren Verband oder Ihre Beratung, was bei Kontrollen in Ihrem Bundesland erwartet wird.
+
+## Eine Regel für jeden Verstoß
+
+Jeder Verstoß sollte mit einer verständlichen Erklärung, einer unterschriebenen Belehrung innerhalb einer Woche und, wenn die Planung die Ursache war, einer geänderten Tour enden. Lassen Sie KI die Texte entwerfen und die Muster finden, und behalten Sie jede Entscheidung über Fahrer und Sicherheit im Betrieb.
+
+Wenn Auswertungen bei Ihnen bis zur nächsten Kontrolle ungelesen liegen, [schreiben Sie mir, wie Downloads und Belehrungen heute laufen](/de/kontakt?intent=improve) und wie viele Fahrer Sie ungefähr einsetzen. Ich schlage Ihnen vor, ob eine Fristenübersicht, Belehrungsentwürfe oder die Auswertung nach Touren der richtige erste Schritt sind. Umzugsunternehmen planen Wagen und Teams mit der [Umzugsgutliste](/de/posts/ki-umzugsunternehmen-umzugsgutliste), Schädlingsbekämpfer ihre Touren mit der [Einsatzvorbereitung](/de/posts/ki-schaedlingsbekaempfung-einsatzplanung), und ambulante Pflegedienste jonglieren Dienstzeiten in der [Tourenplanung](/de/posts/ki-ambulanter-pflegedienst-tourenplanung).
