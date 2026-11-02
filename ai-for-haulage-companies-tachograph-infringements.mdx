@@ -1,0 +1,124 @@
+---
+id: "ai-for-haulage-companies-tachograph-infringements"
+title: "AI for Haulage Companies: Tachograph Downloads, Drivers' Hours Infringements and Driver Debriefs"
+authorName: "Josip Ledić"
+date: "2026-11-02"
+tags: ["Transport & logistics", "Haulage companies", "Drivers' hours compliance", "AI for small business"]
+description: "Operators must download every driver card at least every 28 days and every vehicle unit at least every 90, then check the data and act on what it shows. How small haulage companies can use AI to track every download deadline, turn infringement reports into driver debriefs and fix the planning that caused them."
+excerpt: "Operators must download every driver card at least every 28 days and every vehicle unit at least every 90, then check the data and act on what it shows. How small haulage companies can use AI to track every download deadline, turn infringement reports into driver debriefs and fix the planning that caused them."
+---
+
+AI can help a small haulage company turn tachograph data into finished follow-up: every download done on time, every infringement explained to the driver, and every planning cause fixed before it repeats. Your tachograph analysis software already finds the infringements. What it does not do is chase the card that has not been downloaded, write the debrief, notice that three drivers broke the same rule on the same route, or keep the evidence together for the day a traffic examiner asks. A language model can draft those parts, while plain rules count down the deadlines. Your transport manager still decides what an infringement means and what happens next.
+
+The rules leave no gap between downloads.
+
+<Stats title="What the operator has to do with tachograph data in Great Britain">
+  <Stat value="28 days" label="maximum time between downloads of each driver card, and also before a driver leaves, agency drivers included" source="DVSA, Drivers' hours: goods vehicles, section 5" href="https://www.gov.uk/guidance/drivers-hours-goods-vehicles/5-responsibilities-of-vehicle-operators" />
+  <Stat value="90 days" label="maximum time between downloads of each vehicle unit, and before the vehicle is sold or off-hired" source="DVSA, Drivers' hours: goods vehicles, section 5" href="https://www.gov.uk/guidance/drivers-hours-goods-vehicles/5-responsibilities-of-vehicle-operators" />
+  <Stat value="12 months" label="how long the operator must be able to produce records to enforcement officers" source="DVSA, Drivers' hours: goods vehicles, section 5" href="https://www.gov.uk/guidance/drivers-hours-goods-vehicles/5-responsibilities-of-vehicle-operators" />
+</Stats>
+
+The same DVSA guidance asks operators to "make regular checks of charts, manual records and digital data to ensure compliance" and to "take all reasonable steps to prevent breaches of the rules". The driver card itself only holds about 28 days of average activity before the oldest data is overwritten, which is why the deadline is set where it is.
+
+Most operators who carry this duty are small. In 2025-26 there were 64,246 goods vehicle operator licences in Great Britain with 376,017 vehicles specified on them, about six vehicles per licence ([Traffic Commissioners for Great Britain, Annual Report 2025-26, tables 1 and 2](https://assets.publishing.service.gov.uk/media/6abcf68426660e5f62a7f13e/TCs_Annual_Report_2025-26.pdf)). At that size, the transport manager is often also the planner, the person who answers the phone and sometimes a driver.
+
+## What happens when it goes wrong
+
+When an examiner finds repeated infringements, DVSA can refer the operator to the Traffic Commissioner, who decides whether the operator still has the good repute to hold a licence ([DVSA, enforcement and penalties](https://www.gov.uk/guidance/drivers-hours-goods-vehicles/6-enforcement-and-penalties)). Those cases are rising.
+
+<Bars title="Goods vehicle operators: action at public inquiry, Great Britain" caption="Public inquiries completed for non-compliance and selected outcomes. One inquiry can lead to more than one outcome." source="Traffic Commissioners for Great Britain, Annual Report 2025-26, table 6" href="https://assets.publishing.service.gov.uk/media/6abcf68426660e5f62a7f13e/TCs_Annual_Report_2025-26.pdf" data={[
+  { label: "Public inquiries completed, 2024-25", value: 682, display: "682" },
+  { label: "Public inquiries completed, 2025-26", value: 783, display: "783", highlight: true },
+  { label: "Licences revoked, 2025-26", value: 201, display: "201" },
+  { label: "Transport managers disqualified, 2025-26", value: 87, display: "87" }
+]} />
+
+Not every inquiry is about drivers' hours, and the report does not split them by cause. But the question at an inquiry is usually the same: what did the operator do once the data showed a problem? An analysis report nobody acted on is evidence against you, not for you.
+
+## Where it breaks today
+
+- **Downloads slip.** A driver on nights, on holiday or on a long run abroad misses the depot download. Nobody notices until the analysis report has a gap, or until the agency driver has already left.
+- **The report is a list, not an answer.** Analysis software lists every infringement with a code and a time. It does not say which ones are a driver habit, which ones the planner caused and which ones were an emergency the driver recorded properly.
+- **Debriefs are late or missing.** The transport manager means to talk to the driver, but the conversation happens weeks later, if at all, and the signed record sits in a different folder from the report.
+- **Patterns stay hidden.** Three drivers taking a 40-minute break on the same delivery is a schedule problem. Seen one report at a time, it looks like three careless drivers.
+- **Evidence is scattered.** Downloads, reports, debriefs, warnings and training records live in four places, so an audit or a public inquiry means a weekend of collecting paper.
+
+## Where AI fits
+
+**Count down every download.** Plain rules, not the model, track the last download date of every driver card and vehicle unit. They flag cards due within a week, any driver whose employment ends this week and any vehicle being sold or off-hired, so the leaver download happens before the card walks out of the door.
+
+**Explain each infringement in plain words.** The model reads the analysis export and writes one short line per infringement: what rule, by how much, on which shift and route. "Drove 4 hours 52 minutes before a 45-minute break, Tuesday, Leeds to Felixstowe" is easier to discuss than an infringement code. The underlying rules are fixed: no more than 4.5 hours of driving before a 45-minute break, and a daily driving limit of 9 hours, extendable to 10 twice a week ([DVSA, assimilated and AETR rules](https://www.gov.uk/guidance/drivers-hours-goods-vehicles/1-assimilated-and-aetr-rules-on-drivers-hours)).
+
+**Draft the debrief.** For each driver, the model drafts a debrief sheet with the infringements, the questions to ask and space for the driver's explanation and signature. The transport manager has the conversation, edits the outcome and signs it. The draft never decides whether a warning is due.
+
+**Find the planning cause.** Across all drivers, the model groups infringements by route, customer, start time and planner. When the same infringement keeps landing on the same job, it drafts a note for the planner: the slot is too tight, the loading time is longer than planned, or the run needs a second driver.
+
+**Keep one file per driver.** Each download, report, debrief, warning and training record is attached to the driver's file with a date. When an examiner or auditor asks, the evidence is already in one place.
+
+<Flow title="From tachograph download to a closed infringement" caption="Rules track deadlines. AI drafts the explanations, debriefs and planning notes. The transport manager decides and signs.">
+<Step title="Download on time" who="Office" tone="human" time="28 / 90 days">Driver cards and vehicle units are downloaded before each deadline, and leavers before they go.</Step>
+<Step title="Analyse" who="Analysis software" tone="ai" time="minutes">Your existing tool finds infringements and missing mileage.</Step>
+<Step title="Explain and group" who="AI" tone="ai" time="seconds">Writes each infringement in plain words and groups repeats by route, customer and planner.</Step>
+<Step title="Debrief" who="Transport manager" tone="human" time="within a week">Talks to the driver, records the explanation and the outcome, both sign.</Step>
+<Step title="Fix the cause" who="Planner" tone="human" time="next schedule">Changes the slot, the run or the loading time when the cause is planning.</Step>
+</Flow>
+
+## The numbers for a small fleet
+
+<Calc title="Napkin math: drivers' hours follow-up for a 12-driver fleet" caption="Assumptions, not measurements. Count your own infringements and debriefs for three months first." rows={[
+  ["Drivers and vehicles", "12 and 12"],
+  ["Driver card downloads per year (one every 28 days)", "about 156"],
+  ["Vehicle unit downloads per year (one every 90 days)", "about 49"],
+  ["Infringements to review per month (assumption)", "20"],
+  ["Minutes per infringement today: read, decide, debrief, file", "× 15"],
+  ["Hours per year today", "60"],
+  ["Minutes per infringement with explanations and drafts", "× 6"],
+  ["Hours per year with AI", "24"]
+]} result={["Hours back per year", "about 36"]} />
+
+The hours are not the point. A debrief that happens within a week, with a signed record next to the report, is what shows a Traffic Commissioner that the operator acts on its data. So is a planning change that makes the same infringement stop.
+
+## Where it goes wrong
+
+<Callout title="The model never judges a driver" tone="warning">
+Whether an infringement is minor, whether the driver's explanation stands and whether a warning or training follows is the transport manager's decision. The model drafts explanations, questions and notes. It never sends a warning, never edits tachograph data or manual entries and never closes an infringement without a signed debrief.
+</Callout>
+
+**Drivers' data is personal data.** Tachograph records show where and when someone worked. Tell drivers what the system does, keep access to the transport manager and the planner, and keep records for the period the rules need, not forever.
+
+**Your analysis tool stays the source.** The model reads its export. If the tool and the model disagree about an infringement, the tool and the raw data win, and the mismatch goes to a person.
+
+**Planning fixes need the planner.** A note that a run is too tight is only useful if the planner sees it before the next week's schedule. Send it to them directly, not into a report nobody opens.
+
+## Tools that fit
+
+Tachograph analysis services such as those from trade associations and fleet software vendors already download cards, find infringements and print driver reports, and some offer debrief forms. If yours does, the gap is usually the countdown across leavers and agency drivers, the plain-language explanation, the grouping by route and planner, and one file per driver. A custom layer pays off when you run mixed fleets on several tools, use many agency drivers, or plan in a system that does not talk to the analysis software.
+
+<Checklist title="How to start" items={[
+  "Export the last three months of infringement reports from your analysis tool",
+  "List each infringement once by hand: rule, driver, route, customer and planner",
+  "Check how many debriefs happened, how long after the infringement and where the record is",
+  "List every driver card and vehicle unit with its last download date, including agency drivers",
+  "Pilot the countdown, plain-language explanations and debrief drafts for one month",
+  "Compare missed downloads, debrief delay and repeat infringements before and after"
+]} />
+
+## Questions haulage operators ask
+
+### Can AI replace tachograph analysis software?
+
+No, and it should not try. Analysis software decodes the card and vehicle unit files and applies the rules exactly. AI is useful after that step, turning the result into explanations, debriefs, planning notes and a complete driver file.
+
+### Does a debrief have to be signed?
+
+The guidance asks operators to check records regularly and take all reasonable steps to prevent breaches. A dated debrief signed by both the driver and the transport manager, kept next to the report, is the clearest proof that you did. Ask your trade association or adviser what your auditor expects.
+
+### Is this worth it for a fleet of five?
+
+Often, because the transport manager in a five-truck firm is usually also the planner and the office. Start with the download countdown and the plain-language explanations. Add debrief drafts and route grouping once you see how many infringements a month you really handle.
+
+## A rule for every infringement
+
+Every infringement should end up with a plain explanation, a signed debrief within a week and, where planning caused it, a change to the schedule. Let AI draft the words and spot the patterns, and keep every judgement about drivers and safety with your transport manager.
+
+If tachograph reports still pile up unread until audit time, [tell me how downloads and debriefs work in your office today](/contact?intent=improve) and roughly how many drivers you run. I'll suggest whether a download countdown, debrief drafts or route grouping is the right first step. Moving companies plan crews and vans in [video inventories and estimates](/posts/ai-for-moving-companies-inventory), pest control firms plan technician routes in [route briefs](/posts/ai-for-pest-control-routing), and home care providers juggle shift rules in [care scheduling](/posts/ai-for-home-care-scheduling).
