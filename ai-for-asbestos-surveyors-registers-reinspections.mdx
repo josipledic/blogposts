@@ -1,0 +1,120 @@
+---
+id: "ai-for-asbestos-surveyors-registers-reinspections"
+title: "AI for Asbestos Surveyors: Survey Reports, Asbestos Registers and Re-inspections"
+authorName: "Josip Ledić"
+date: "2026-11-03"
+tags: ["Trades & construction", "Asbestos surveyors", "Registers and re-inspections", "AI for small business"]
+description: "Any building finished before 2000 should be presumed to contain asbestos, and the management plan behind it should be reviewed at least every 12 months. How small asbestos surveying firms can use AI to turn survey reports into live registers, plan re-inspections and brief contractors before they start work."
+excerpt: "Any building finished before 2000 should be presumed to contain asbestos, and the management plan behind it should be reviewed at least every 12 months. How small asbestos surveying firms can use AI to turn survey reports into live registers, plan re-inspections and brief contractors before they start work."
+---
+
+AI can help a small asbestos surveying firm keep every client's register alive after the survey: each material entered once with its score and photo, each re-inspection booked before it is due, and each contractor told what is in the wall before they drill it. The survey itself, the sampling and the lab result stay exactly where they are. What usually breaks is everything after the PDF goes out: the register in a spreadsheet the client never opens, the re-inspection nobody booked, the electrician who never saw page 34. A language model can draft those parts from your own report data, while plain rules count down the dates. Your surveyors still decide what a material is and how it scores.
+
+The duty to keep that information current sits with your clients, and it does not end with the survey.
+
+<Stats title="What the duty to manage asks of building owners in Great Britain">
+  <Stat value="before 2000" label="premises finished before then should always be presumed to contain asbestos unless there is strong evidence they do not" source="HSE, L143 Managing and working with asbestos, paragraph 118" href="https://www.hse.gov.uk/pubns/priced/l143.pdf" />
+  <Stat value="12 months" label="minimum review interval for the management plan, including records and drawings" source="HSE, L143, paragraph 143" href="https://www.hse.gov.uk/pubns/priced/l143.pdf" />
+  <Stat value="2.14 million" label="non-domestic rateable properties in England and Wales at 31 March 2026, the kind of premises the duty covers" source="VOA, Non-domestic rating: stock of properties, March 2026" href="https://www.gov.uk/government/statistics/non-domestic-rating-stock-of-properties-march-2026/non-domestic-rating-stock-of-properties-statistical-commentary" />
+</Stats>
+
+[Regulation 4 of the Control of Asbestos Regulations 2012](https://www.legislation.gov.uk/uksi/2012/632/regulation/4/made) requires the dutyholder to record the assessment, write a plan that covers monitoring the condition of every known or presumed asbestos-containing material (ACM), and make sure information about its location and condition is "provided to every person liable to disturb it". The plan has to be "reviewed and revised at regular intervals". The duty also covers the common parts of blocks of flats: foyers, corridors, lift shafts, roof spaces and garages ([L143, paragraph 89](https://www.hse.gov.uk/pubns/priced/l143.pdf)).
+
+## Why the follow-up matters
+
+Asbestos still kills thousands of people in Britain every year, decades after its use stopped, and the people most at risk are the ones who worked on buildings.
+
+<Bars title="Asbestos-related deaths in Great Britain" caption="Mesothelioma deaths by year of death. HSE estimates around 5,000 asbestos-related deaths a year in total, including lung cancer and asbestosis." source="HSE, Mesothelioma statistics for Great Britain, 2026" href="https://www.hse.gov.uk/statistics/assets/docs/mesothelioma.pdf" data={[
+  { label: "Average per year, 2011 to 2020", value: 2508, display: "2,508" },
+  { label: "Mesothelioma deaths, 2023", value: 2255, display: "2,255" },
+  { label: "Mesothelioma deaths, 2024", value: 2146, display: "2,146", highlight: true }
+]} />
+
+HSE's summary says that "men who worked in the building industry when asbestos was used extensively in the past continue to be most at risk", and its [asbestos-related disease statistics](https://www.hse.gov.uk/statistics/assets/docs/asbestos-related-disease.pdf) put the yearly total at around 5,000 deaths. Today's exposure happens when a maintenance worker drills, cuts or lifts something nobody told them about. That is a records problem as much as a survey problem.
+
+## Where it breaks today
+
+- **The register is a PDF.** The client gets a 60-page report with a register table at the back. When a tenant changes or a ceiling tile breaks, nobody can find the entry, so nobody updates it.
+- **Re-inspections are not booked.** L143 says the plan must be reviewed at least every 12 months and that the frequency of condition checks depends on where the ACM is and how the building is used ([paragraph 144](https://www.hse.gov.uk/pubns/priced/l143.pdf)). In practice the date lives in the surveyor's calendar or nowhere.
+- **Re-inspection reports are retyped.** The surveyor walks the building with last year's register on paper, then retypes every entry with a new condition note and score.
+- **Contractors are not told.** L143 says that where ACMs are not labelled, the dutyholder must make sure those who might work on them "know that it contains or may contain asbestos, before they start work" ([paragraph 138](https://www.hse.gov.uk/pubns/priced/l143.pdf)). The facilities manager has to extract that from the report, by hand, every time.
+- **Refurbishment surveys come too late.** A management survey does not cover intrusive work. HSG264 says a refurbishment and demolition survey "is needed before any refurbishment or demolition work is carried out" ([HSG264, paragraph 51](https://www.hse.gov.uk/pubns/priced/hsg264.pdf)). Clients often find out when the builder is already booked.
+
+## Where AI fits
+
+**Turn the report into a register once.** The model reads your survey report and lab certificate and fills a structured register: location, material, sample reference or "presumed", extent, photo, the four material assessment scores and the total. Plain code checks that every sample reference matches the lab result and that every score adds up. HSG264 scores product type, damage, surface treatment and asbestos type from 1 to 3 each, and treats presumed ACMs as crocidolite unless there is strong evidence otherwise; 10 or more is high potential for fibre release, 7 to 9 medium, 5 to 6 low ([paragraphs 125 to 127](https://www.hse.gov.uk/pubns/priced/hsg264.pdf)). The model never assigns a score the surveyor did not record.
+
+**Count down every re-inspection.** Rules, not the model, set the next date per item from your risk rating and the 12-month plan review, then send the client a booking request a month before. High-scoring items in busy areas come round sooner.
+
+**Pre-fill the re-inspection sheet.** Before the visit, the surveyor gets last year's entries with photos, scores and locations on a tablet. On site they confirm, change or add. The model drafts the condition notes from their dictation and highlights every score that went up.
+
+**Brief the contractor.** When the client logs a job ("replace the boiler flue in plant room 2"), the model pulls every register entry for that room, drafts a one-page briefing with photos and locations, and flags when the job is intrusive enough to need a refurbishment survey first. The facilities manager checks and sends it.
+
+**Draft the annual review.** For each site, the model drafts the plan review: what changed, which items were removed or repaired, which scores rose, what is due next year. The surveyor edits and signs it.
+
+<Flow title="From survey report to a briefed contractor" caption="Rules count dates and check data. AI drafts registers, sheets and briefings. Surveyors and dutyholders decide.">
+<Step title="Survey and sample" who="Surveyor and lab" tone="human" time="as today">Management or refurbishment survey, samples, lab certificate.</Step>
+<Step title="Build the register" who="AI" tone="ai" time="minutes">Reads the report into one entry per material, checked against the lab results.</Step>
+<Step title="Book re-inspections" who="Rules" tone="ai" time="per item">Next date per material from its risk, with a reminder to the client.</Step>
+<Step title="Re-inspect" who="Surveyor" tone="human" time="on site">Confirms or changes each entry on a pre-filled sheet.</Step>
+<Step title="Brief contractors" who="Dutyholder" tone="human" time="before each job">Sends the drafted briefing for the room and stops intrusive jobs without a refurbishment survey.</Step>
+</Flow>
+
+## The numbers for a small consultancy
+
+<Calc title="Napkin math: re-inspection admin for 60 managed sites" caption="Assumptions, not measurements. Time your own last ten re-inspection reports first." rows={[
+  ["Sites under annual re-inspection (assumption)", "60"],
+  ["Register entries per site (assumption)", "× 30"],
+  ["Entries to re-inspect per year", "1,800"],
+  ["Minutes per entry today: retype, note, score, photo", "× 4"],
+  ["Hours per year today", "120"],
+  ["Minutes per entry with a pre-filled sheet and drafted notes", "× 1.5"],
+  ["Hours per year with AI", "45"]
+]} result={["Office hours back per year", "about 75"]} />
+
+The hours matter less than two things that are easy to miss today: a re-inspection booked before the date passes, and a contractor who saw the briefing before they started. Both are what a client pays a surveying firm to get right, and both are good reasons for the client to stay with you.
+
+## Where it goes wrong
+
+<Callout title="The model never identifies asbestos" tone="warning">
+Whether a material contains asbestos is a lab result or a surveyor's presumption, never a model's guess from a photo. The model copies scores and results from your records, drafts text around them and flags gaps. It never changes a score, removes an entry or tells anyone a material is safe.
+</Callout>
+
+**Presumed stays presumed.** An entry without a sample stays "presumed" with the crocidolite score until a sample says otherwise. The register software should make that the default, not a choice.
+
+**The register is the client's record.** Your client remains the dutyholder. Give them read access to their live register and briefings, keep your survey reports as the source and log every change with a name and date.
+
+**Briefings need the right room.** A briefing for the wrong floor is worse than none. Tie every entry to a drawing reference and room number, and send anything ambiguous back to the surveyor.
+
+## Tools that fit
+
+Asbestos management platforms already hold registers, risk scores and re-inspection dates, and several offer site apps for surveyors. If you use one, the gaps are usually turning legacy PDF reports into entries, drafting notes from dictation, contractor briefings by room and the annual review draft. A custom layer pays off when your clients' registers are spread across old reports from several firms, or when facilities managers need briefings in their own job system rather than another login.
+
+<Checklist title="How to start" items={[
+  "Pick one client with several sites and old PDF reports",
+  "Convert their registers into one entry per material and check every entry against the lab certificates",
+  "Set a re-inspection date per entry and a reminder to the client a month ahead",
+  "Pre-fill next month's re-inspection sheets and time the visits",
+  "Draft contractor briefings for the next five jobs the client logs",
+  "Compare missed re-inspections, report turnaround and briefings sent before and after"
+]} />
+
+## Questions asbestos surveyors ask
+
+### Can AI read asbestos from a photo?
+
+No. A photo can suggest a material looks like a known ACM, but only sampling and lab analysis, or a recorded presumption by a competent surveyor, decide what goes in the register. Use AI for the paperwork around that decision.
+
+### How often should asbestos be re-inspected?
+
+The regulations require monitoring at regular intervals without fixing a number. HSE's approved code of practice says the management plan, including records and drawings, should be reviewed at least every 12 months, and that the frequency of condition checks depends on the location of the ACMs and how the building is used. A sensible default is to check every item at least at the annual review and higher-risk items more often.
+
+### Is this worth it for a two-surveyor firm?
+
+Often, because the same two people survey, write reports and answer clients' "where is the asbestos in room 4?" calls. Start with turning reports into live registers and the re-inspection countdown. Add contractor briefings once clients are using the register.
+
+## A rule for every register
+
+Every material should have one entry with its score and photo, a booked next re-inspection and a briefing ready for anyone who works near it. Let AI do the retyping and drafting, and keep every judgement about what a material is and how dangerous it is with your surveyors.
+
+If your registers still live in PDFs nobody opens, [tell me how surveys, registers and re-inspections work in your firm today](/contact?intent=improve) and roughly how many sites you manage. I'll suggest whether report conversion, the re-inspection countdown or contractor briefings is the right first step. Scaffolders run statutory checks on [inspections and hire](/posts/ai-for-scaffolding-companies-inspections-hire), electricians on [inspection reports](/posts/ai-for-electricians-inspection-reports), and water hygiene firms on [legionella monitoring](/posts/ai-for-water-hygiene-companies-legionella-monitoring).
