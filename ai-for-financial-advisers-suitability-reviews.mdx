@@ -1,0 +1,120 @@
+---
+id: "ai-for-financial-advisers-suitability-reviews"
+title: "AI for Financial Advisers: Ongoing Reviews, Suitability Reports and Meeting Notes"
+authorName: "Josip Ledić"
+date: "2026-11-04"
+tags: ["Professional services", "Financial advisers", "Ongoing reviews and suitability reports", "AI for small business"]
+description: "A typical UK adviser looks after about 150 clients worth around £2,000 a year each, and almost all of them pay for ongoing advice. How small advice firms can use AI to prepare every review, draft suitability reports from the meeting and prove the service clients pay for was delivered."
+excerpt: "A typical UK adviser looks after about 150 clients worth around £2,000 a year each, and almost all of them pay for ongoing advice. How small advice firms can use AI to prepare every review, draft suitability reports from the meeting and prove the service clients pay for was delivered."
+---
+
+AI can help a small financial advice firm deliver every ongoing review clients pay for: a prepared pack before each meeting, notes and fact-find updates drafted from the conversation, a first draft of the suitability report in your own template, and a record that shows the review happened. The advice stays with the adviser. What the model takes over is the reading, retyping and chasing that fill the week around the meetings, which is where small firms without a paraplanner lose most of their time.
+
+This is a high-value book of business, and the regulator wants to see that the ongoing fee buys something.
+
+<Stats title="The UK advice market in the FCA's 2025 survey">
+  <Stat value="£2,000" label="revenue per client for a typical adviser, who looks after about 150 clients with around £250,000 each" source="FCA, Understanding the advice market: financial advice firms survey 2025" href="https://www.fca.org.uk/data/understanding-financial-advice-market" />
+  <Stat value="88%" label="of retail clients of advice firms receive ongoing advice" source="FCA, financial advice firms survey 2025" href="https://www.fca.org.uk/data/understanding-financial-advice-market" />
+  <Stat value="£1tn" label="assets under advice, served by about 31,000 advisers in around 5,500 firms" source="FCA, financial advice firms survey 2025" href="https://www.fca.org.uk/data/understanding-financial-advice-market" />
+</Stats>
+
+Small firms with one to five advisers are still a large part of that market, and they are the ones least likely to have help with the paperwork. The FCA found that only 31% of small firms employ paraplanners, against 77% of medium-sized and 89% of large firms, and 36% of small firms neither employ nor use third-party paraplanners ([FCA survey, section 3.4](https://www.fca.org.uk/data/understanding-financial-advice-market)).
+
+## Why the ongoing review matters
+
+In February 2025 the FCA published data from 22 of the largest advice firms on whether the reviews clients paid for were actually delivered. Suitability reviews were delivered in around 83% of cases, in a further 15% clients declined or did not respond, and in fewer than 2% firms made no effort at all ([FCA press release, 24 February 2025](https://www.fca.org.uk/news/press-releases/fca-finds-vast-majority-ongoing-suitability-reviews-delivered)). The FCA asked every advice firm to check whether it had met its regulatory and contractual obligations, and to put things right where it had not.
+
+<Bars title="What happened to paid-for suitability reviews" caption="Share of cases in data from 22 large advice firms covering the previous seven years." source="FCA, press release on ongoing advice services, 24 February 2025" href="https://www.fca.org.uk/news/press-releases/fca-finds-vast-majority-ongoing-suitability-reviews-delivered" data={[
+  { label: "Review delivered", value: 83, display: "around 83%", highlight: true },
+  { label: "Client declined or did not respond", value: 15, display: "15%" },
+  { label: "No attempt made", value: 2, display: "under 2%" }
+]} />
+
+The rules are now moving. In [CP26/10](https://www.fca.org.uk/publications/consultation-papers/cp26-10-simplifying-pensions-investment-advice-rules), published on 25 March 2026, the FCA proposes replacing the annual suitability review with periodic reviews based on clients' needs, aligning the timing and content of suitability reports across business types, and clarifying how firms support disengaged clients under the Consumer Duty. The consultation closed on 22 May 2026 and the policy statement is still to come. Either way, a firm will have to decide how often each client needs a review and show that it happened. That is a records problem as much as an advice problem.
+
+## Where it breaks today
+
+- **Review prep is a scramble.** Before each meeting someone pulls valuations from three platforms, finds last year's report and recommendations, and checks what changed. Without a paraplanner, that someone is the adviser, the evening before.
+- **Notes are written twice.** The adviser takes notes in the meeting, then retypes them into the back office system and updates the fact find by hand.
+- **The report takes longer than the meeting.** A suitability report repeats the client's circumstances, objectives, attitude to risk and capacity for loss, then explains the recommendation. Much of it is copied from last year and edited.
+- **Declines are not chased.** A client who does not answer the invitation drops off the list. The FCA's 15% figure is exactly that group, and a firm still charging them an ongoing fee needs a record of what it tried.
+- **Oversight samples a few files.** The FCA found that 19% of small firms did not undertake reviews of ongoing advice files at all ([survey, section 6.3](https://www.fca.org.uk/data/understanding-financial-advice-market)). Nobody has time to read every report.
+
+## Where AI fits
+
+**Prepare the review pack.** Before each meeting, the model gathers the latest valuations, last year's recommendations, changes the client has told you about since, and anything that looks off, such as a withdrawal rate above what was agreed. Plain code fetches the numbers; the model writes the one-page summary the adviser reads before the client arrives.
+
+**Draft notes and fact-find changes.** With the client's consent to record, the model turns the meeting into structured notes and proposes fact-find updates: new job, inheritance, change in health, new grandchild. The adviser confirms each change. Nothing reaches the record unconfirmed.
+
+**Draft the suitability report.** The model fills your own report template from the confirmed notes, the fact find, last year's report and the recommendation the adviser made. It writes plainly, explains why the recommendation fits this client and flags any section where the evidence is missing. The adviser edits and signs it.
+
+**Track every review, including the silent ones.** Rules, not the model, set each client's next review from their service level and needs, send the invitation, and escalate when there is no answer: a second message, a call task for the adviser, then a note of every attempt. That record is what you need if the FCA, or the client, asks what the ongoing fee bought.
+
+**Check every file, not a sample.** The model reads each finished report against a checklist: objectives stated, risk and capacity for loss consistent with the fact find, charges disclosed, recommendation explained. It flags gaps for whoever does compliance, so a small firm can review all files lightly instead of a few deeply.
+
+<Flow title="From invitation to signed suitability report" caption="Rules schedule and chase. AI prepares and drafts. The adviser advises and signs.">
+<Step title="Invite" who="Rules" tone="ai" time="per client">Next review date from service level and needs, with reminders and a log of every attempt.</Step>
+<Step title="Prepare" who="AI" tone="ai" time="the day before">One-page pack: valuations, last year's advice, changes and flags.</Step>
+<Step title="Meet" who="Adviser and client" tone="human" time="as today">The conversation and the advice, recorded with consent.</Step>
+<Step title="Draft" who="AI" tone="ai" time="minutes">Notes, fact-find changes and the suitability report in your template.</Step>
+<Step title="Approve" who="Adviser" tone="human" time="per file">Confirms the changes, edits and signs the report, then the file check runs.</Step>
+</Flow>
+
+## The numbers for a two-adviser firm
+
+<Calc title="Napkin math: admin around ongoing reviews" caption="Assumptions, not measurements, except the client figures from the FCA survey. Time your own last ten reviews first." rows={[
+  ["Clients per adviser (FCA typical)", "150"],
+  ["Advisers (assumption)", "× 2"],
+  ["Clients on ongoing advice, at 88%", "264"],
+  ["Hours of prep, notes and report per review today (assumption)", "× 3"],
+  ["Hours per year today", "792"],
+  ["Hours per review with a prepared pack and drafted report (assumption)", "× 1.25"],
+  ["Hours per year with AI", "330"]
+]} result={["Hours back per year", "about 460"]} />
+
+At around £2,000 a year per client, that time is worth more as capacity for new clients than as a saving. The FCA found 18% of small firms planning or considering growing revenue by more than 25% within two years ([survey, section 3.3](https://www.fca.org.uk/data/understanding-financial-advice-market)). Growth on that scale needs reviews that do not each cost the adviser an evening.
+
+## Where it goes wrong
+
+<Callout title="The model never gives the advice" tone="warning">
+The recommendation, the risk assessment and the decision that a product is suitable are the adviser's. The model drafts from what the adviser decided and the client said, and flags gaps. It never picks a fund, changes a risk profile or sends a report without a named adviser approving it.
+</Callout>
+
+**Recording needs consent and a policy.** Tell clients the meeting is recorded and why, keep recordings for as long as your policy says and no longer, and give the transcript the same protection as the fact find.
+
+**Drafts can sound right and be wrong.** A report that quotes last year's objectives for a client who has since retired is worse than a short one. Build the template so every section cites the note or fact-find field it came from, and make the adviser confirm changes before the report is drafted.
+
+**Client data stays in your systems.** Use a model provider with a data processing agreement and no training on your data, keep the documents in your back office system, and log who approved what.
+
+## Tools that fit
+
+Back office platforms and specialist note-taking tools for advisers now offer meeting transcription and suitability report drafting, and several work inside the major UK adviser systems. If you use one, the gaps are usually the chase for clients who do not respond, review frequency per client instead of one date for everyone, the file check across every report and a review pack that pulls from several platforms. A custom layer pays off when your report templates are your own, when your back office and platforms do not talk to each other, or when you want one record of every review attempt for the whole book.
+
+<Checklist title="How to start" items={[
+  "Pick the next 20 reviews in the diary",
+  "Build a one-page review pack for each and time the prep against last year",
+  "Record five meetings with consent and compare drafted notes and fact-find changes with your own",
+  "Draft the suitability reports in your template and count the edits",
+  "List every client with no review in the last 12 months and log each attempt from now on",
+  "Run the file check over every report and compare it with your last sample review"
+]} />
+
+## Questions financial advisers ask
+
+### Can AI write a suitability report?
+
+It can write the first draft from your notes, the fact find and the recommendation, in your template. It cannot decide the recommendation or confirm it is suitable. The adviser reads, edits and signs every report, and the file should show that.
+
+### Do suitability reviews still have to be annual?
+
+Under the current rules, a firm that offers a periodic suitability review for MiFID or IDD business has to carry it out at least annually, and any firm has to deliver the ongoing service its client agreement promises. CP26/10 proposes replacing the annual review with periodic reviews based on clients' needs; the FCA's survey report describes this as removing the at-least-annual requirement. Until the policy statement is published, plan on the current rules.
+
+### Is this worth it for a one-adviser firm?
+
+Usually, because the same person advises, writes the reports and chases the clients. Start with the review pack and report drafts, which save the most evenings. Add the chase log and file check once the drafts are good enough that you edit rather than rewrite.
+
+## A rule for every client on ongoing advice
+
+Every client paying for ongoing advice should have a next review date that fits their needs, a record of every invitation, a prepared pack before the meeting and a signed report after it. Let AI do the gathering and the drafting, and keep every judgement about what is suitable with your advisers.
+
+If your reviews still start with an evening of copying valuations, [tell me which back office system and platforms you use](/contact?intent=improve) and roughly how many clients are on ongoing advice. I'll suggest whether review packs, report drafts or the review chase is the right first step. Insurance brokers prepare a similar conversation at [policy renewals](/posts/ai-for-insurance-brokers-renewals), bookkeepers handle a steady stream of [client questions](/posts/ai-for-bookkeepers-client-questions), and accountants collect paperwork in [document intake](/posts/ai-for-accounting-document-intake).
