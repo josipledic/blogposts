@@ -1,0 +1,118 @@
+---
+id: "ai-for-swim-schools-progress-move-ups"
+title: "AI for Swim Schools: Progress Notes, Stage Move-ups and Waiting Lists"
+authorName: "Josip Ledić"
+date: "2026-11-04"
+tags: ["Education & community", "Swim schools", "Progress and move-ups", "AI for small business"]
+description: "Only 73% of children in England can swim 25 metres unaided when they start secondary school, and parents want to know where their child stands. How small swim schools can use AI to turn poolside notes into stage progress, parent updates and move-ups that fill places from the waiting list."
+excerpt: "Only 73% of children in England can swim 25 metres unaided when they start secondary school, and parents want to know where their child stands. How small swim schools can use AI to turn poolside notes into stage progress, parent updates and move-ups that fill places from the waiting list."
+---
+
+AI can help a small swim school turn what teachers see on poolside into three things parents and the office need: a clear record of which stage outcomes each child has met, a short progress update for every family each term, and a move-up list that frees places for the children on the waiting list. Teachers still decide whether a child has met an outcome. The model turns a few spoken words after each lesson into tidy records and drafts, and plain rules match freed places to the waiting list.
+
+The demand is not in doubt. The national curriculum says every school must teach pupils to "swim competently, confidently and proficiently over a distance of at least 25 metres" ([Department for Education, PE programmes of study](https://www.gov.uk/government/publications/national-curriculum-in-england-physical-education-programmes-of-study/national-curriculum-in-england-physical-education-programmes-of-study)), and a large share of children still leave primary school without it.
+
+<Stats title="Children's swimming in England, academic year 2024-25">
+  <Stat value="73%" label="of children in Year 7 (ages 11 to 12) meet the guideline of swimming 25 metres competently, confidently and proficiently" source="Sport England, Active Lives Children and Young People Survey 2024-25" href="https://sportengland-production-files.s3.eu-west-2.amazonaws.com/s3fs-public/2025-12/Active%20Lives%20Children%20and%20Young%20People%20Survey%20-%20academic%20year%202024-25%20report--.pdf?VersionId=IVi8OQWOGdjAiHq7IIuzIQv1JPiojXdz" />
+  <Stat value="61%" label="of all children in Years 1 to 11 (ages 5 to 16) can swim 25 metres unaided, 30,000 fewer than in 2017-18" source="Sport England, Active Lives Children and Young People Survey 2024-25" href="https://sportengland-production-files.s3.eu-west-2.amazonaws.com/s3fs-public/2025-12/Active%20Lives%20Children%20and%20Young%20People%20Survey%20-%20academic%20year%202024-25%20report--.pdf?VersionId=IVi8OQWOGdjAiHq7IIuzIQv1JPiojXdz" />
+  <Stat value="6.5%" label="fewer children in Years 1 and 2 (ages 5 to 7) can swim 25 metres unaided than in 2017-18, with no recovery in the last 12 months" source="Sport England, Active Lives Children and Young People Survey 2024-25" href="https://sportengland-production-files.s3.eu-west-2.amazonaws.com/s3fs-public/2025-12/Active%20Lives%20Children%20and%20Young%20People%20Survey%20-%20academic%20year%202024-25%20report--.pdf?VersionId=IVi8OQWOGdjAiHq7IIuzIQv1JPiojXdz" />
+</Stats>
+
+Most private swim schools teach to a staged framework such as [Swim England's Learn to Swim Programme](https://www.swimming.org/learntoswim/learn-to-swim-stage-7-award/), where by the end of Stage 7 "swimmers will be able to swim 25 metres of all four strokes" to Swim England's Expected Standards and complete a continuous 100 metre swim using three strokes. Each stage has a list of outcomes. Tracking which child has met which outcome, in which class, is where small schools lose their evenings.
+
+## Why it matters
+
+Drowning is rare, but it is the reason parents pay for lessons, and it has not gone away.
+
+<Bars title="Accidental drowning deaths in the UK" caption="Accidental water-related fatalities. The 2025 figure may rise, because many 2025 cases are still recorded as not recorded or inconclusive." source="National Water Safety Forum, WAID UK 2025 Summary" href="https://nationalwatersafety.org.uk/media/1514/nwsf-waid-uk-2025-summary-final.pdf" data={[
+  { label: "UK Drowning Prevention Strategy baseline", value: 395, display: "395" },
+  { label: "Review average, 2019 to 2023", value: 282, display: "282" },
+  { label: "2025", value: 202, display: "202", highlight: true }
+]} />
+
+The same summary counts 587 water-related fatalities in the UK in 2025 from all causes. For a swim school, the business case is simpler: parents who can see progress stay for the next term, and parents who cannot see it start asking whether the lessons are working.
+
+## Where it breaks today
+
+- **Outcomes live on a clipboard.** The teacher ticks a sheet in a wet folder, or remembers. The office only finds out at the end of term, if at all.
+- **Parents ask the same question.** "Why is she still in Stage 3?" arrives by email, text and at reception. The answer is on the teacher's sheet, which nobody at the desk can read.
+- **Move-ups happen late.** A child who met every outcome in week six waits until the new term to move, so the class stays full and the waiting list stays long.
+- **Freed places are filled by hand.** When a child moves up or leaves, someone scrolls a spreadsheet to find the next child of the right stage, age and free time slot, then rings three families.
+- **Reports are a weekend job.** End-of-term certificates and reports are written in one go, with the same sentence copied into fifty of them.
+
+## Where AI fits
+
+**Capture outcomes in seconds.** After each class, the teacher opens the register on a phone and says something like "Amira did her 10 metre front crawl with breathing, Leo still lifts his head on backstroke". The model maps each comment to the right child and the outcome on your stage list and marks it as proposed. The teacher confirms with one tap. The model never ticks an outcome on its own.
+
+**Draft the parent update.** From the confirmed outcomes and the teacher's own words, the model drafts a short note per child: what they did this term, what they are working on next, and one thing to practise. The teacher reads it before it goes out. Questions from parents get a drafted reply from the same record, so the desk answers "why Stage 3" with facts.
+
+**Build the move-up list.** Plain rules list every child who has met all outcomes for their stage, together with the classes at the next stage that have space. The teacher or head of school approves each move.
+
+**Fill places from the waiting list.** When a place frees up, rules rank the waiting list by stage, age, preferred days and time on the list, and the model drafts the offer with a reply deadline. If nobody takes it in time, the next family gets it.
+
+**Write the term report.** The model drafts each certificate and report from the term's records, in the teacher's style. The teacher edits and signs off.
+
+<Flow title="From poolside note to a filled place" caption="Teachers judge. Rules match and count. AI drafts.">
+<Step title="Teach the class" who="Teacher" tone="human" time="as today">Watches each child against the stage outcomes.</Step>
+<Step title="Say what you saw" who="Teacher and AI" tone="ai" time="1 to 2 minutes">Spoken notes become proposed outcomes per child, confirmed with a tap.</Step>
+<Step title="Update parents" who="AI, then teacher" tone="ai" time="per term or on request">Drafted progress notes and replies, read before sending.</Step>
+<Step title="Approve move-ups" who="Head of school" tone="human" time="weekly">Rules list who is ready and where there is space.</Step>
+<Step title="Offer the place" who="Rules and AI" tone="ai" time="same day">Next family on the waiting list gets a drafted offer with a deadline.</Step>
+</Flow>
+
+## The numbers for a small swim school
+
+<Calc title="Napkin math: progress admin for 400 children" caption="Assumptions, not measurements. Time your own last term first." rows={[
+  ["Children in lessons per term (assumption)", "400"],
+  ["Minutes per child per term today: tick sheets, retype, write report, answer progress questions (assumption)", "× 15"],
+  ["Hours per term today", "100"],
+  ["Minutes per child with spoken notes, drafted updates and reports (assumption)", "× 5"],
+  ["Hours per term with AI", "about 33"]
+]} result={["Hours back per term", "about 67"]} />
+
+The bigger number is usually places. If children move up as soon as they are ready rather than at the end of term, places open earlier, and every place filled from the waiting list a few weeks sooner is a few more weeks of paid lessons. Count how many children met all their outcomes before the last week of term, and you will know how much that is worth in your school.
+
+## Where it goes wrong
+
+<Callout title="The model never passes a child" tone="warning">
+Whether a child has met an outcome is the teacher's judgement, made in the water. The model only proposes from what the teacher said and never moves a child up, ticks an outcome or tells a parent their child is safe in water.
+</Callout>
+
+**This is children's data.** Keep it to what you need for lessons: name, age, stage, outcomes, a short note and a parent's contact. Medical notes such as epilepsy or asthma stay in the register where teachers need them and never go into a model prompt unless you have decided that with care. Tell parents in your privacy notice what you record and why.
+
+**Offers are not progress updates.** A progress note about a child's lessons is a service message. An email selling holiday crash courses or a new class is marketing, and the [ICO's rules on electronic mail marketing](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/) apply. Existing customers can be contacted about similar lessons under the soft opt-in only if they were given a simple way to opt out when you collected their details and in every message.
+
+**Safe in a pool is not safe in open water.** Parents read "Stage 7" as "can swim". Say plainly in each report what the child can do, in what water, and what comes next.
+
+## Tools that fit
+
+Swim school booking platforms already handle classes, payments and waiting lists, and several have a teacher app with stage tracking. If you use one, the gaps are usually spoken notes on poolside, drafted parent updates and reports, and offers from the waiting list that run without someone ringing round. A custom layer pays off when your stages differ from the standard framework, when you teach in hired pools with changing slots, or when teachers will not type on a wet phone.
+
+<Checklist title="How to start" items={[
+  "Write down every outcome for each stage you teach, one line each",
+  "Pick two teachers and four classes for one term",
+  "Have them speak their notes after every lesson and confirm proposed outcomes with a tap",
+  "Send drafted progress updates mid-term and track parent questions at the desk",
+  "Move children up as soon as all outcomes are met and fill the places from the waiting list",
+  "Compare report time, parent questions, move-up timing and waiting list length with the term before"
+]} />
+
+## Questions swim school owners ask
+
+### Can AI watch a lesson and judge a child's stroke?
+
+Not reliably enough to decide a child's progress, and filming children in a pool raises questions most schools would rather avoid. Use AI for the records and messages around the teacher's judgement, not for the judgement.
+
+### What should a swim school progress report include?
+
+The stage, the outcomes met this term in plain words, what the child is working on next and one thing to practise. Add what the stage does not mean, for example that a child who can swim 25 metres in a warm pool may still struggle in cold open water.
+
+### Is this worth it for a school with three teachers?
+
+Often, because in a small school the owner also teaches, runs the desk and writes the reports. Start with spoken notes and drafted parent updates. Add the waiting list offers once your stage records are complete.
+
+## A rule for every class
+
+Every child should have a current record of outcomes met, a parent who knows where they stand and a move-up the week they are ready. Let AI do the writing and matching, and keep every judgement about a child in the water with your teachers.
+
+If progress at your school still lives on clipboards, [tell me how classes, stages and your waiting list work today](/contact?intent=improve) and roughly how many children you teach. I'll suggest whether spoken notes, parent updates or the waiting list is the right first step. Music schools manage a similar timetable in [school administration](/posts/ai-for-music-schools-administration), childcare providers write to families every day in [parent updates](/posts/ai-for-childcare-parent-updates), and driving schools decide when a learner is ready in [test readiness](/posts/ai-for-driving-schools-test-readiness).
