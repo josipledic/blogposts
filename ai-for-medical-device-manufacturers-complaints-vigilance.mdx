@@ -1,0 +1,124 @@
+---
+id: "ai-for-medical-device-manufacturers-complaints-vigilance"
+title: "AI for Medical Device Manufacturers: Complaint Handling, Vigilance Clocks and Trend Reports"
+authorName: "Josip Ledić"
+date: "2026-11-05"
+tags: ["Manufacturing", "Medical device manufacturers", "Complaint handling and vigilance", "AI for small business"]
+description: "Since 16 June 2025, a GB medical device manufacturer has 15 days, 10 for a death and 2 for a public health threat, to report a serious incident, and must spot trends with a stated statistical method. How small manufacturers can use AI to triage every complaint the day it arrives, draft the reports and keep the trend data ready."
+excerpt: "Since 16 June 2025, a GB medical device manufacturer has 15 days, 10 for a death and 2 for a public health threat, to report a serious incident, and must spot trends with a stated statistical method. How small manufacturers can use AI to triage every complaint the day it arrives, draft the reports and keep the trend data ready."
+---
+
+AI can help a small medical device manufacturer handle complaints the way the post-market surveillance rules now expect: every email, call note and distributor return read and structured the day it arrives, a first reportability assessment for the regulatory lead, drafts of the incident report and the investigation summary, and complaint data clean enough to run the trend method your PMS plan promises. The decision whether something is a serious incident stays with a person. What the model takes over is the reading, coding and copying between inbox, complaint log and CAPA system, which is where the reporting clock quietly runs down.
+
+This is a high-value industry with a heavy compliance load per product, and small teams carry it.
+
+<Stats title="UK medical technology in 2024/25">
+  <Stat value="4,500" label="companies in the UK medical technology subsector, 31% of them manufacturers" source="Office for Life Sciences, Bioscience and health technology sector statistics 2024 to 2025" href="https://www.gov.uk/government/statistics/bioscience-and-health-technology-sector-statistics-2024-to-2025/bioscience-and-health-technology-sector-statistics-2024-to-2025" />
+  <Stat value="£44.2bn" label="turnover in the subsector, roughly £9.8m per company on average (my calculation from the two OLS figures)" source="Office for Life Sciences, sector statistics 2024 to 2025" href="https://www.gov.uk/government/statistics/bioscience-and-health-technology-sector-statistics-2024-to-2025/bioscience-and-health-technology-sector-statistics-2024-to-2025" />
+  <Stat value="56,000" label="adverse incident reports for medical devices assessed by the MHRA since July 2024, plus 677 field safety notices reviewed" source="MHRA Annual Report and Accounts 2024 to 2025, page 42" href="https://assets.publishing.service.gov.uk/media/687fae8177a3acd9f4d0e24e/MHRA_Annual_Report_2024_25.pdf" />
+</Stats>
+
+## What changed on 16 June 2025
+
+[The Medical Devices (Post-market Surveillance Requirements) (Amendment) (Great Britain) Regulations 2024](https://www.legislation.gov.uk/uksi/2024/1368/contents/made) added a new Part 4A to the Medical Devices Regulations 2002. They were made on 16 December 2024 and came into force six months later. The parts that land on the complaint desk:
+
+- **A PMS plan with real processes.** It has to cover how you collect and assess serious incidents, other incidents, side effects, and "feedback and complaints provided by users and suppliers", with "effective and appropriate processes to investigate complaints" and the statistical method you will use to decide that incidents have significantly increased.
+- **Serious incident clocks.** Report to the MHRA no later than 15 days after you become aware of a serious incident, 10 days if there is a death or an unanticipated serious deterioration in health, and 2 days for a serious public health threat (regulation 44ZH).
+- **Trend reports.** Report significant increases in the frequency or severity of incidents, judged against the method in your PMS plan, and answer MHRA requests for updates within 3 working days (regulation 44ZN).
+- **Periodic safety update reports.** For most devices above class I, a PSUR within a year of placing on the market and at least yearly after that; class IIa every two years (regulation 44ZM).
+
+<Timeline title="The clocks after a complaint arrives" caption="Days from the moment the manufacturer becomes aware. Source: Medical Devices Regulations 2002, Part 4A, regulation 44ZH, as inserted by SI 2024/1368.">
+<Phase when="Day 0" title="Awareness">The complaint reaches anyone in the company, including a distributor or the sales team. The clock starts here, not when quality reads it.</Phase>
+<Phase when="Day 2" title="Public health threat">Latest report date if the incident involves a serious public health threat.</Phase>
+<Phase when="Day 10" title="Death or serious deterioration">Latest report date for a death or an unanticipated serious deterioration in health.</Phase>
+<Phase when="Day 15" title="Other serious incidents">Latest report date for any other serious incident.</Phase>
+</Timeline>
+
+None of this is unusual for a medical device company. What is hard for a team of 20 is that the clock starts when anyone in the business learns of the incident, and complaints do not arrive through one door.
+
+## Where it breaks today
+
+- **Complaints arrive everywhere.** A hospital emails sales, a distributor sends a returns spreadsheet, a field engineer mentions a fault in a service report, a nurse writes a review. Each of them can start a clock that nobody in quality knows about yet.
+- **Triage is done when someone has time.** The regulatory lead reads the queue twice a week. A complaint that mentions a patient being readmitted waits behind ten about late deliveries.
+- **Coding is inconsistent.** One person codes "display froze" as software, another as hardware. A year later the trend analysis counts two small problems instead of one growing one.
+- **Reports are retyped.** The same facts go into the complaint log, the MHRA report, the investigation, the CAPA and the PSUR, by hand, each time slightly differently.
+- **Trend checks happen at PSUR time.** The plan promises a statistical method, but the data is only pulled together once a year, which is late for a trend the rules want reported when it appears.
+
+## Where AI fits
+
+**Read every inbound channel.** The model reads the complaints inbox, distributor files, service reports and the shared sales address, and picks out anything that describes a device problem, a user problem or harm to a person. It records the date and channel the company first received it, because that date is the one the clock uses.
+
+**Structure and code the complaint.** It extracts the device, lot or serial, the unique device identifier where given, what happened, what harm was reported and who reported it, and proposes codes from your own problem and harm code list. A person confirms the codes. Consistent coding is what makes the trend method work.
+
+**Flag the possible serious incidents first.** It compares each complaint with your reportability criteria and the definitions in the regulations (death, serious deterioration in health, serious public health threat, or something that might have led to one) and puts anything that might qualify at the top of the queue with the earliest deadline shown. The regulatory lead decides. The model only makes sure nothing waits.
+
+**Draft the paperwork.** From the confirmed complaint and the investigation notes, it drafts the initial incident report fields, the final report summary, the CAPA description and the complaint closure letter. Every field cites the record it came from, so the reviewer can check it quickly.
+
+**Keep the trend data current.** Plain code, not the model, runs the statistical method from your PMS plan each week over the coded complaints and sales volumes, and alerts the team when a threshold is crossed. The PSUR then starts from a year of clean data instead of a scramble.
+
+<Flow title="From inbox to closed complaint" caption="AI reads, codes and drafts. Rules run the clock and the trend method. People decide what is reportable and sign.">
+<Step title="Capture" who="AI" tone="ai" time="same day">Every channel read; awareness date and source recorded.</Step>
+<Step title="Code" who="AI, then quality" tone="ai" time="same day">Device, lot, event and harm extracted; codes proposed and confirmed.</Step>
+<Step title="Decide" who="Regulatory lead" tone="human" time="within the clock">Possible serious incidents first, with the deadline shown. A person decides what to report.</Step>
+<Step title="Report and investigate" who="AI drafts, people sign" tone="human" time="per case">Incident report, investigation summary, CAPA and closure letter drafted from the record.</Step>
+<Step title="Trend" who="Rules" tone="ai" time="weekly">The PMS plan's statistical method run over coded data, with alerts on thresholds.</Step>
+</Flow>
+
+## The numbers for a small manufacturer
+
+<Calc title="Napkin math: complaint handling admin" caption="Assumptions, not measurements. Count your own complaints and time your last twenty files before you decide anything." rows={[
+  ["Complaints per month (assumption)", "60"],
+  ["Months", "× 12"],
+  ["Complaints per year", "720"],
+  ["Minutes to read, code, log and close a routine complaint today (assumption)", "× 45"],
+  ["Hours per year today", "540"],
+  ["Minutes per complaint with capture, coding and drafts prepared (assumption)", "× 15"],
+  ["Hours per year with AI", "180"]
+]} result={["Hours back per year", "about 360"]} />
+
+The hours matter, but the bigger value is the miss you avoid. One serious incident found on day 12 because it sat in a sales inbox puts a 10-day report out of time, and every complaint that is coded differently from its neighbours weakens the trend analysis your PMS plan relies on. For a company turning over several million pounds a year from a handful of device families, a clean complaint file is part of keeping those products on the market.
+
+## Where it goes wrong
+
+<Callout title="The model never decides reportability" tone="warning">
+Whether an event is a serious incident, whether a trend is significant and what goes into a report to the MHRA are decisions for named people in your quality system. The model reads, codes, flags and drafts. Build the workflow so a possible serious incident can only be closed as not reportable by a person, with the reason recorded.
+</Callout>
+
+**False negatives are the real risk.** Tune the flagging to over-flag. A queue with a few extra false alarms costs minutes; a missed death report costs far more. Test the model on your last two years of complaints, including every one you reported, before you rely on it.
+
+**Validate it like any QMS software.** A tool that touches complaint handling is part of your quality system. Document its intended use, test it against known cases, control changes to prompts and code lists, and keep the evidence for your approved body audit.
+
+**Patient data needs care.** Complaints often contain health data. Use a model provider with a data processing agreement and no training on your data, strip identifiers you do not need, and keep the records in your own QMS.
+
+## Tools that fit
+
+Electronic QMS platforms for medical device companies include complaint, CAPA and vigilance modules, and some now offer AI-assisted intake. If you use one, the gaps are usually the channels outside it, such as sales inboxes, distributor spreadsheets and service reports, consistent coding across people, and a trend method that runs every week instead of at PSUR time. A custom layer pays off when complaints arrive in many formats, when your code lists are your own, or when the QMS, ERP and service system do not share data.
+
+<Checklist title="How to start" items={[
+  "List every place a complaint can reach the company, including sales and distributors",
+  "Take the last 200 complaints and check how long each took from first receipt to triage",
+  "Run the model over the same 200 and compare its flags with what you actually reported",
+  "Fix your problem and harm code list before automating the coding",
+  "Write down the statistical method from your PMS plan as code and run it on last year's data",
+  "Decide who signs off each step and record it in your QMS procedures"
+]} />
+
+## Questions medical device manufacturers ask
+
+### When does the 15-day clock start?
+
+When the manufacturer becomes aware of the serious incident, and the regulation sets shorter limits of 10 days for a death or unanticipated serious deterioration in health and 2 days for a serious public health threat. In practice that means when anyone acting for the company learns of it, so a complaint sitting in a sales inbox is already counting.
+
+### Can AI decide whether an incident is reportable?
+
+No. It can read the complaint, compare it with your criteria and the legal definitions, and put possible serious incidents at the top of the queue with the deadline. The decision, and the reason for it, belong to a named person in your quality system.
+
+### Does this apply to devices sold in the EU too?
+
+The EU Medical Device Regulation uses the same 15, 10 and 2 day limits in Article 87, and Article 88 covers trend reporting. If you sell in both markets, one complaint process can feed both, but the reports go to different authorities and you should check each set of rules.
+
+## A rule for every complaint
+
+Every complaint should have a recorded date of first receipt, a confirmed code, a reportability decision made by a person within the clock, and a place in the trend data the same week. Let AI do the reading, coding and drafting for every one of them, and keep the judgements about patient safety with your quality team.
+
+If complaints still reach your quality team through five inboxes, [tell me which QMS and ERP you use](/contact?intent=improve) and roughly how many complaints you log a month. I'll suggest whether capture, coding or the trend check is the right first step. Contract manufacturers face a similar reading problem when [turning RFQs into quotes](/posts/ai-for-manufacturing-quotations), machine shops [capture shop-floor knowledge](/posts/ai-for-machine-shops-knowledge) before it retires, and dental laboratories check every [case at intake](/posts/ai-for-dental-labs-case-intake).
