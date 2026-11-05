@@ -1,0 +1,124 @@
+---
+id: "ki-medizinproduktehersteller-reklamationen-vigilanz"
+translationOf: "ai-for-medical-device-manufacturers-complaints-vigilance"
+title: "KI für Medizinproduktehersteller: Reklamationsmanagement, Vigilanzfristen und Trendmeldungen"
+authorName: "Josip Ledić"
+date: "2026-11-05"
+tags: ["Produktion", "Medizinproduktehersteller", "Reklamationen und Vigilanz", "KI für kleine Unternehmen"]
+description: "Nach Artikel 87 MDR bleiben einem Hersteller höchstens 15 Tage für die Meldung eines schwerwiegenden Vorkommnisses, zehn bei einem Todesfall und zwei bei einer Gefahr für die öffentliche Gesundheit. Wie mittelständische Medizinproduktehersteller mit KI jede Reklamation am Tag des Eingangs erfassen, die Bewertung vorbereiten und ihre Trenddaten aktuell halten."
+excerpt: "Nach Artikel 87 MDR bleiben einem Hersteller höchstens 15 Tage für die Meldung eines schwerwiegenden Vorkommnisses, zehn bei einem Todesfall und zwei bei einer Gefahr für die öffentliche Gesundheit. Wie mittelständische Medizinproduktehersteller mit KI jede Reklamation am Tag des Eingangs erfassen, die Bewertung vorbereiten und ihre Trenddaten aktuell halten."
+---
+
+KI kann einem mittelständischen Medizinproduktehersteller die Lese- und Schreibarbeit im Reklamationsmanagement abnehmen: Jede E-Mail, jede Rücksendung vom Händler und jeder Servicebericht wird am Tag des Eingangs erfasst und strukturiert, mögliche schwerwiegende Vorkommnisse stehen mit Frist oben in der Liste, Meldung, Untersuchungsbericht und CAPA liegen als Entwurf vor, und die Trendauswertung läuft auf sauber codierten Daten. Ob ein Vorkommnis meldepflichtig ist, entscheidet weiterhin ein Mensch. Sinnvoll ist ein kleiner, validierter erster Schritt, nicht der Umbau des ganzen Qualitätsmanagementsystems.
+
+Die Branche ist umsatzstark und mittelständisch, und die Pflichten nach der MDR tragen oft kleine Teams.
+
+<Stats title="Die deutsche Medizintechnik">
+  <Stat value="1.508" label="Betriebe mit 20 und mehr Beschäftigten, dazu rund 12.000 Kleinstunternehmen" source="BVMed, MedTech-Marktpräsentation, Stand 10/2026, nach Statistischem Bundesamt und Spectaris" href="https://www.bvmed.de/download/charts-medtech-markt.pdf" />
+  <Stat value="41,4 Mrd. €" label="Umsatz 2023 der Betriebe ab 20 Beschäftigten, im Schnitt rund 27 Mio. € je Betrieb (eigene Rechnung)" source="BVMed, MedTech-Marktpräsentation, nach Statistischem Bundesamt und Spectaris" href="https://www.bvmed.de/download/charts-medtech-markt.pdf" />
+  <Stat value="93 %" label="der Unternehmen haben weniger als 250 Beschäftigte, die Exportquote liegt bei rund 68 %" source="BVMed, MedTech-Marktpräsentation" href="https://www.bvmed.de/download/charts-medtech-markt.pdf" />
+</Stats>
+
+## Was die MDR vom Reklamationseingang verlangt
+
+Die [Verordnung (EU) 2017/745](http://data.europa.eu/eli/reg/2017/745/oj) gilt in Deutschland unmittelbar, das [Medizinprodukterecht-Durchführungsgesetz](https://www.gesetze-im-internet.de/mpdg/) ergänzt sie. Für den Eingang von Reklamationen sind vor allem drei Regeln wichtig:
+
+- **Fristen nach Artikel 87.** Ein schwerwiegendes Vorkommnis meldet der Hersteller unverzüglich, spätestens jedoch 15 Tage, nachdem er Kenntnis davon erhalten hat. Bei einer schwerwiegenden Gefahr für die öffentliche Gesundheit sind es höchstens zwei Tage, bei einem Todesfall oder einer unvorhergesehenen schwerwiegenden Verschlechterung des Gesundheitszustands höchstens zehn Tage.
+- **Trendmeldungen nach Artikel 88.** Ein statistisch signifikanter Anstieg der Häufigkeit oder des Schweregrades nicht schwerwiegender Vorkommnisse ist zu melden. Was „statistisch signifikant“ heißt, legt der Hersteller nach den [FAQ des Bundesgesundheitsministeriums zur Vigilanz](https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/N/NAKI/NAKI_02-05_FAQ_UG_5_Vigilanz.pdf) selbst im Risikomanagement fest, einschließlich der Statistikregeln und Vertrauensintervalle.
+- **Ergänzende Pflichten nach § 73 MPDG.** Sicherheitsanweisungen im Feld sind [auf Deutsch abzufassen](https://www.gesetze-im-internet.de/mpdg/__73.html), Hersteller mit Sitz in Deutschland dokumentieren die Durchführung von Sicherheitskorrekturmaßnahmen und überprüfen regelmäßig ihre Wirksamkeit.
+
+Auch auf der anderen Seite gibt es Meldepflichten: Wer Medizinprodukte beruflich betreibt oder anwendet, meldet mutmaßliche schwerwiegende Vorkommnisse unverzüglich an die Bundesoberbehörde ([§ 3 MPAMIV](https://www.gesetze-im-internet.de/mpamiv/__3.html)). Eine Klinik kann also beim BfArM melden, während die Reklamation beim Hersteller noch im Postfach des Vertriebs liegt.
+
+<Timeline title="Die Fristen nach einer Reklamation" caption="Tage ab Kenntnis des Herstellers. Quelle: Artikel 87 Absätze 3 bis 5 der Verordnung (EU) 2017/745.">
+<Phase when="Tag 0" title="Kenntnis">Die Reklamation erreicht das Unternehmen, auch über Vertrieb, Händler oder Außendienst. Ab hier läuft die Frist, nicht erst ab der Bewertung im QM.</Phase>
+<Phase when="Tag 2" title="Gefahr für die öffentliche Gesundheit">Späteste Meldung bei einer schwerwiegenden Gefahr für die öffentliche Gesundheit.</Phase>
+<Phase when="Tag 10" title="Tod oder schwerwiegende Verschlechterung">Späteste Meldung bei einem Todesfall oder einer unvorhergesehenen schwerwiegenden Verschlechterung des Gesundheitszustands.</Phase>
+<Phase when="Tag 15" title="Andere schwerwiegende Vorkommnisse">Späteste Meldung für jedes andere schwerwiegende Vorkommnis.</Phase>
+</Timeline>
+
+## Wo es heute hakt
+
+- **Reklamationen kommen über viele Wege.** Eine Klinik schreibt dem Außendienst, ein Händler schickt eine Rücksendeliste, ein Servicetechniker vermerkt einen Fehler im Einsatzbericht. Jede dieser Nachrichten kann eine Frist auslösen, von der das QM noch nichts weiß.
+- **Die Bewertung wartet auf freie Zeit.** Die Verantwortliche Person liest den Eingang zweimal pro Woche. Eine Reklamation, in der von einer erneuten Operation die Rede ist, steht hinter zehn Lieferverzögerungen.
+- **Codierung ist uneinheitlich.** Der eine ordnet „Anzeige friert ein“ der Software zu, die andere der Hardware. Ein Jahr später zählt die Trendauswertung zwei kleine Probleme statt eines wachsenden.
+- **Dieselben Angaben werden mehrfach abgetippt.** Reklamationsliste, Meldeformular, Untersuchungsbericht, CAPA und PSUR enthalten dieselben Fakten, jedes Mal leicht anders formuliert.
+- **Trends werden erst zum PSUR ausgewertet.** Die Methode steht im Plan zur Überwachung nach dem Inverkehrbringen, die Daten werden aber nur einmal im Jahr zusammengetragen.
+
+## Wo KI hilft
+
+**Alle Eingangskanäle lesen.** Das Modell liest das Reklamationspostfach, Händlerlisten, Serviceberichte und das allgemeine Vertriebspostfach und erkennt, wo ein Produktproblem, ein Anwendungsproblem oder ein Schaden für eine Person beschrieben wird. Es hält fest, wann und über welchen Weg das Unternehmen zuerst davon erfahren hat, denn ab diesem Datum läuft die Frist.
+
+**Strukturieren und codieren.** Es entnimmt Produkt, Charge oder Seriennummer, UDI soweit angegeben, den Hergang, den gemeldeten Schaden und den Melder und schlägt Codes aus Ihrer eigenen Fehler- und Schadensliste vor. Ein Mensch bestätigt die Codes. Erst einheitliche Codes machen die Trendmethode belastbar.
+
+**Mögliche schwerwiegende Vorkommnisse zuerst.** Das Modell vergleicht jede Reklamation mit Ihren Kriterien und den Begriffen der MDR und stellt alles, was in Frage kommt, mit der frühesten Frist an den Anfang der Liste. Die Entscheidung trifft die zuständige Person. Das Modell sorgt nur dafür, dass nichts liegen bleibt.
+
+**Unterlagen vorbereiten.** Aus der bestätigten Reklamation und den Untersuchungsnotizen entwirft es die Felder der Erstmeldung, die Zusammenfassung für den Abschlussbericht, die CAPA-Beschreibung und das Antwortschreiben an den Kunden. Jedes Feld verweist auf den Datensatz, aus dem es stammt.
+
+**Trenddaten laufend aktuell halten.** Die statistische Methode aus Ihrem Plan rechnet einfacher Code, nicht das Modell, jede Woche über die codierten Reklamationen und die Absatzzahlen. Wird ein Schwellenwert überschritten, bekommt das Team einen Hinweis. Der PSUR beginnt dann mit einem Jahr sauberer Daten.
+
+<Flow title="Vom Posteingang zur abgeschlossenen Reklamation" caption="KI liest, codiert und entwirft. Regeln überwachen Fristen und Trends. Menschen entscheiden über die Meldepflicht und zeichnen frei.">
+<Step title="Erfassen" who="KI" tone="ai" time="am selben Tag">Alle Kanäle gelesen, Datum der Kenntnis und Quelle festgehalten.</Step>
+<Step title="Codieren" who="KI, dann QM" tone="ai" time="am selben Tag">Produkt, Charge, Ereignis und Schaden entnommen, Codes vorgeschlagen und bestätigt.</Step>
+<Step title="Bewerten" who="Verantwortliche Person" tone="human" time="innerhalb der Frist">Mögliche schwerwiegende Vorkommnisse zuerst, mit Frist. Ein Mensch entscheidet über die Meldung.</Step>
+<Step title="Melden und untersuchen" who="KI entwirft, Menschen zeichnen" tone="human" time="je Fall">Erstmeldung, Untersuchungsbericht, CAPA und Kundenantwort aus dem Datensatz entworfen.</Step>
+<Step title="Trend" who="Regeln" tone="ai" time="wöchentlich">Die Methode aus dem Plan über codierte Daten, mit Hinweis bei Schwellenwerten.</Step>
+</Flow>
+
+## Eine überschlägige Rechnung
+
+<Calc title="Aufwand im Reklamationsmanagement" caption="Annahmen, keine Messwerte. Zählen Sie Ihre eigenen Reklamationen und messen Sie die letzten zwanzig Vorgänge, bevor Sie entscheiden." rows={[
+  ["Reklamationen pro Monat (Annahme)", "60"],
+  ["Monate", "× 12"],
+  ["Reklamationen pro Jahr", "720"],
+  ["Minuten für Lesen, Codieren, Erfassen und Abschließen heute (Annahme)", "× 45"],
+  ["Stunden pro Jahr heute", "540"],
+  ["Minuten mit vorbereiteter Erfassung, Codierung und Entwürfen (Annahme)", "× 15"],
+  ["Stunden pro Jahr mit KI", "180"]
+]} result={["Gewonnene Stunden pro Jahr", "rund 360"]} />
+
+Die Stunden sind das Eine. Wichtiger ist die versäumte Frist, die gar nicht erst entsteht. Ein Todesfall, der erst an Tag zwölf aus dem Vertriebspostfach auftaucht, lässt sich nicht mehr fristgerecht melden. Und jede Reklamation, die anders codiert ist als ihre Nachbarn, schwächt die Trendauswertung, auf die sich der Plan stützt.
+
+## Wo Vorsicht geboten ist
+
+<Callout title="Die Meldeentscheidung trifft kein Modell" tone="warning">
+Ob ein schwerwiegendes Vorkommnis vorliegt, ob ein Trend signifikant ist und was an das BfArM geht, entscheiden benannte Personen in Ihrem QM-System. Das Modell liest, codiert, markiert und entwirft. Ein mögliches schwerwiegendes Vorkommnis darf nur ein Mensch als nicht meldepflichtig schließen, mit dokumentierter Begründung.
+</Callout>
+
+**Übersehene Fälle sind das eigentliche Risiko.** Stellen Sie die Markierung lieber zu vorsichtig ein. Ein paar Fehlalarme kosten Minuten. Prüfen Sie das Modell vor dem Einsatz an den Reklamationen der letzten zwei Jahre, einschließlich aller gemeldeten Fälle.
+
+**Validieren wie jede QM-Software.** Ein Werkzeug im Reklamationsprozess gehört zum Qualitätsmanagementsystem. Zweckbestimmung dokumentieren, an bekannten Fällen testen, Änderungen an Prompts und Codelisten lenken und die Nachweise für das Audit der Benannten Stelle aufbewahren.
+
+**Gesundheitsdaten schützen.** Reklamationen enthalten oft Gesundheitsdaten im Sinne von Art. 9 DSGVO. Nutzen Sie einen Anbieter mit Auftragsverarbeitungsvertrag, ohne Training auf Ihren Daten und mit Verarbeitung in der EU, entfernen Sie nicht benötigte Personenbezüge und behalten Sie die Datensätze in Ihrem eigenen System.
+
+## Welche Werkzeuge passen
+
+Elektronische QM-Systeme für Medizinproduktehersteller bringen Module für Reklamationen, CAPA und Vigilanz mit, einige auch KI-gestützte Erfassung. Die Lücken liegen meist außerhalb des Systems: Vertriebspostfächer, Händlerlisten und Serviceberichte, einheitliche Codierung über mehrere Personen und eine Trendauswertung, die jede Woche läuft statt nur zum PSUR. Eine eigene Ergänzung lohnt sich, wenn Reklamationen in vielen Formaten kommen, wenn Ihre Codelisten eigene sind oder wenn QM-System, ERP und Service-Software keine Daten teilen.
+
+<Checklist title="So fangen Sie an" items={[
+  "Alle Wege auflisten, auf denen Reklamationen ins Unternehmen kommen, auch Vertrieb und Händler",
+  "Bei den letzten 200 Reklamationen messen, wie lange es vom ersten Eingang bis zur Bewertung gedauert hat",
+  "Das Modell über dieselben 200 laufen lassen und seine Markierungen mit den tatsächlichen Meldungen vergleichen",
+  "Fehler- und Schadenscodes bereinigen, bevor die Codierung automatisiert wird",
+  "Die statistische Methode aus dem Plan als Code schreiben und an den Daten des Vorjahres prüfen",
+  "Festlegen, wer jeden Schritt freigibt, und das in den QM-Verfahrensanweisungen festhalten"
+]} />
+
+## Häufige Fragen von Medizinprodukteherstellern
+
+### Ab wann läuft die 15-Tage-Frist?
+
+Ab dem Zeitpunkt, an dem der Hersteller Kenntnis von dem Vorkommnis erhält. Für einen Todesfall oder eine unvorhergesehene schwerwiegende Verschlechterung des Gesundheitszustands gelten höchstens zehn Tage, für eine schwerwiegende Gefahr für die öffentliche Gesundheit höchstens zwei. Eine Reklamation im Vertriebspostfach zählt deshalb schon mit.
+
+### Darf eine KI entscheiden, ob ein Vorkommnis meldepflichtig ist?
+
+Nein. Sie kann die Reklamation lesen, mit Ihren Kriterien und den Begriffen der MDR abgleichen und mögliche schwerwiegende Vorkommnisse mit Frist nach oben stellen. Die Entscheidung und ihre Begründung gehören zu einer benannten Person in Ihrem QM-System. Ist der Hersteller unsicher, sieht die MDR vor, trotzdem fristgerecht zu melden.
+
+### Lohnt sich das für einen Hersteller mit wenigen Produktfamilien?
+
+Meist ja, weil dieselben zwei oder drei Personen Reklamationen bewerten, Meldungen schreiben und den PSUR erstellen. Beginnen Sie mit der Erfassung aus allen Kanälen und der Fristübersicht. Codierung und Trendauswertung folgen, wenn die Erfassung verlässlich läuft.
+
+## Eine Regel für jede Reklamation
+
+Jede Reklamation sollte ein festgehaltenes Datum des ersten Eingangs, einen bestätigten Code, eine Meldeentscheidung durch einen Menschen innerhalb der Frist und noch in derselben Woche einen Platz in den Trenddaten haben. Die KI übernimmt Lesen, Codieren und Entwerfen, die Beurteilung der Patientensicherheit bleibt beim Qualitätsteam.
+
+Wenn Reklamationen bei Ihnen über fünf Postfächer ins QM kommen, [schreiben Sie mir, mit welchem QM-System und welchem ERP Sie arbeiten](/de/kontakt?intent=improve) und wie viele Reklamationen Sie im Monat erfassen. Ich schlage Ihnen vor, ob Erfassung, Codierung oder Trendauswertung der richtige erste Schritt ist. Lohnfertiger kennen ein ähnliches Leseproblem bei der [Angebotskalkulation](/de/posts/ki-fertigung-angebotskalkulation), Zerspanungsbetriebe sichern ihr [Erfahrungswissen](/de/posts/ki-zerspanung-erfahrungswissen), und Dentallabore prüfen jeden Fall schon beim [Auftragseingang](/de/posts/ki-dentallabor-auftragseingang).
