@@ -1,0 +1,119 @@
+---
+id: "ai-for-freight-forwarders-customs-declarations"
+title: "AI for Freight Forwarders and Customs Brokers: Commodity Codes, Declaration Checks and Client Instructions"
+authorName: "Josip Ledić"
+date: "2026-11-07"
+tags: ["Logistics", "Freight forwarders", "Customs declarations", "AI for small business"]
+description: "HMRC cleared 91.3 million customs declarations in 2025, and 81% were made by a third party such as a freight forwarder or customs broker. As an indirect representative you share the duty debt. How forwarders can use AI to read commercial invoices, suggest commodity codes with reasons and check every entry before it goes to CDS."
+excerpt: "HMRC cleared 91.3 million customs declarations in 2025, and 81% were made by a third party such as a freight forwarder or customs broker. As an indirect representative you share the duty debt. How forwarders can use AI to read commercial invoices, suggest commodity codes with reasons and check every entry before it goes to CDS."
+---
+
+AI can do most of the reading behind a customs declaration for a freight forwarder or customs broker: pull the lines out of a messy commercial invoice and packing list, suggest a commodity code for each line with the reasoning and the past entries it relied on, check the entry against the client's standing instructions and previous declarations, and flag what does not add up before anything is submitted to the Customs Declaration Service. Your customs staff still choose the code and sign off the entry. What changes is that they spend their time on the lines that are actually hard.
+
+The work is high volume, concentrated in few hands and carries real liability.
+
+<Stats title="UK customs declarations in 2025">
+  <Stat value="91.3m" label="customs declarations for international trade cleared by HMRC in 2025, up 7.9% on 2024" source="HMRC, Customs declarants and declaration volumes 2025, 14 May 2026" href="https://www.gov.uk/government/statistics/customs-declarants-and-declaration-volumes-for-international-trade-in-2025/customs-declarants-and-declaration-volumes-for-international-trade-in-2025-commentary" />
+  <Stat value="4,880" label="declarants submitted all of them, down from 5,650 in 2024" source="HMRC, Customs declarants and declaration volumes 2025" href="https://www.gov.uk/government/statistics/customs-declarants-and-declaration-volumes-for-international-trade-in-2025/customs-declarants-and-declaration-volumes-for-international-trade-in-2025-commentary" />
+  <Stat value="81.1%" label="of declarations were made by a third party rather than the trader (94% of exports)" source="HMRC, Customs declarants and declaration volumes 2025" href="https://www.gov.uk/government/statistics/customs-declarants-and-declaration-volumes-for-international-trade-in-2025/customs-declarants-and-declaration-volumes-for-international-trade-in-2025-commentary" />
+</Stats>
+
+That is roughly 18,700 declarations per declarant per year on average, and the number of firms doing the work fell by 13.7% in a year while the volume grew. Import declarations alone went from 63.3 million to 70.3 million. Most of that load lands on freight forwarders, who made up 53% of customs intermediaries in [HMRC's survey of the sector](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/968978/HMRC_Research_Report_610_Customs_Intermediaries_Wave_2.pdf).
+
+## What you are liable for
+
+HMRC's guidance on [customs debt liability](https://www.gov.uk/guidance/customs-debt-liability) is short and worth reading again:
+
+- **Direct representation** (code 2 in box 14): you act in the client's name, and the client is solely liable for the debt, unless you make a deliberate or unreasonable error on clear instructions, in which case you become jointly and severally liable.
+- **Indirect representation** (code 3): you act in your own name for the client, and you are **jointly and severally liable** with them. HMRC can collect from either of you.
+- **No representation stated, or no authority to act**: you are treated as acting in your own name and on your own behalf.
+- **Three years and longer.** HMRC normally has three years from the date of the entry to notify a debt. For entries from 1 January 2021 that can be extended up to 20 years.
+
+HMRC also expects you to [agree the type of representation in writing](https://www.gov.uk/guidance/appoint-someone-to-deal-with-customs-on-your-behalf), to get enough information in writing to be sure the declaration is accurate, and to agree how duty and import VAT will be paid, using postponed VAT accounting only on the trader's instruction ([due diligence guidance](https://www.gov.uk/guidance/due-diligence-when-making-customs-declarations)).
+
+So every wrong commodity code, undervalued invoice or missed preference claim on an indirect entry is partly your debt, possibly years later, with interest.
+
+## Where it breaks today
+
+- **Invoices arrive as PDFs and photos.** Descriptions like "spare parts", "accessories" or a supplier's own part number, in English, Chinese or German, with lines that do not match the packing list.
+- **Classification lives in people's heads.** The senior entry clerk knows that this client's "brackets" are steel and go under a particular heading. When she is on holiday, the same goods get a different code.
+- **Client instructions are scattered.** Representation type, deferment account, postponed VAT, preference claims, licences and the "always call us before you clear X" rules sit in emails, a spreadsheet and memory.
+- **Checks happen after submission.** Inconsistencies between this entry and the last twenty for the same client and product are found by HMRC, not by you.
+- **Rulings come too late.** An [Advance Tariff Ruling](https://www.gov.uk/guidance/apply-for-an-advance-tariff-ruling) takes 30 to 120 days and cannot be applied retrospectively, so nobody applies for one while the goods are on the quay.
+
+## Where AI fits
+
+**Read the documents.** The model extracts every invoice line: description, quantity, unit, value, currency, origin, supplier part number and Incoterm, and matches it to the packing list and the bill of lading or air waybill. Mismatches in quantities, weights or values are listed for a person before anyone keys the entry.
+
+**Suggest a commodity code with its reasons.** For each line it proposes a code and shows why: which words in the description it relied on, the past entries for the same client and part number, and any Advance Tariff Ruling you hold for those goods. If the description is too vague to classify (HMRC's [commodity code guidance](https://www.gov.uk/guidance/finding-commodity-codes-for-imports-or-exports) lists ceramics, electrical equipment, footwear, textiles, vehicle parts and more as hard cases), it says so and drafts the question to send to the client instead of guessing. Remember that only the first six digits are shared worldwide, so a code from an overseas supplier is a hint, not an answer.
+
+**Apply the client's standing instructions.** Representation type, payment route, postponed VAT, preference and licence rules are kept per client in one place. The draft entry is checked against them by plain rules, not by the model, so an indirect entry never goes out for a client who only authorised direct representation.
+
+**Compare with history.** Before submission, the entry is compared with the client's previous declarations: same part number with a different code, unit value far below the usual range, a new origin country for a product that used to come from elsewhere. Each difference is shown with the old entry next to it.
+
+**Keep the file.** Invoices, instructions, the code reasoning, the person who approved each line and any client answers are stored with the entry, ready for a post-clearance query three years later.
+
+<Flow title="From client email to cleared entry" caption="AI reads, suggests and compares. Your customs staff choose codes, approve entries and talk to clients and HMRC.">
+<Step title="Read" who="AI" tone="ai" time="on arrival">Invoice, packing list and transport document read and matched; mismatches listed.</Step>
+<Step title="Classify" who="AI suggests, clerk decides" tone="human" time="per line">Code suggested with reasons and past entries; vague lines turned into client questions.</Step>
+<Step title="Instruct" who="Rules" tone="ai" time="per entry">Representation, payment, VAT and preference checked against the client's written instructions.</Step>
+<Step title="Check" who="AI flags, clerk reviews" tone="human" time="before submission">Entry compared with the client's history; differences shown side by side.</Step>
+<Step title="Submit and file" who="Clerk, then system" tone="human" time="per entry">Entry approved and submitted; documents and reasoning stored with it.</Step>
+</Flow>
+
+## The numbers for a mid-sized forwarder
+
+<Calc title="Napkin math: entry desk time" caption="Assumptions, not measurements. Count last month's entries and time twenty of them from first email to submission before deciding anything." rows={[
+  ["Import entries per year (assumption)", "15,000"],
+  ["Minutes per entry today, reading, classifying and keying (assumption)", "× 20"],
+  ["Hours per year today", "5,000"],
+  ["Minutes per entry with documents read and codes suggested (assumption)", "× 12"],
+  ["Hours per year with AI", "3,000"]
+]} result={["Hours back per year", "about 2,000"]} />
+
+That is roughly one full-time entry clerk, at a time when declaration volumes are rising and experienced customs staff are hard to hire. The bigger number is the one you do not see: a single misclassified product line repeated across three years of indirect entries can turn into a post-clearance demand larger than your margin on that client.
+
+## Where it goes wrong
+
+<Callout title="The model does not classify your goods" tone="warning">
+A commodity code is a legal decision with duty, VAT, licences and trade remedies hanging on it. The model suggests a code and shows its reasons; a trained person chooses it. If nobody on the desk can explain why a code is right, the entry is not ready.
+</Callout>
+
+**Confident wrong codes are the main risk.** Language models are good at sounding sure. Never let a code go out on the model's word alone, require the reasoning to point at the description and at sources you can check (your own past entries, your rulings, the tariff), and track how often clerks change the suggestion. If that rate does not fall, stop and look at why.
+
+**Client data is commercially sensitive.** Invoices show prices, suppliers and margins. Use a model provider with a data processing agreement, no training on your data and storage in the UK or EU, and keep each client's history separate.
+
+**Instructions must be explicit.** The rules engine only works if every client's representation type and payment arrangements are on file in writing. Building the workflow is a good reason to tidy those up.
+
+## Tools that fit
+
+Customs software already submits to CDS, holds product libraries and handles deferment. Several vendors now offer classification suggestions. The gaps are usually reading unstructured invoices well, explaining a suggested code with your own history behind it, and checking each entry against the client's past declarations and written instructions. A custom layer pays off when that history sits in your customs system, a shared drive and inboxes that no single tool reads.
+
+<Checklist title="How to start" items={[
+  "Export last year's entries for your ten largest import clients, with codes and descriptions",
+  "Write down each of those clients' representation type, payment route, VAT and preference instructions",
+  "Run code suggestions on last month's entries and measure how often they match what your team chose",
+  "Turn every mismatch into a rule, a client question or a product note",
+  "Decide who approves codes, who talks to the client and who handles HMRC queries",
+  "Review the change rate every month before widening the scope"
+]} />
+
+## Questions forwarders ask about AI for customs
+
+### Can AI classify goods for customs declarations?
+
+It can suggest a commodity code for each invoice line and show why, based on the description, your past entries and any rulings you hold. A trained person still chooses the code, because a wrong code can mean underpaid duty that you, as an indirect representative, share liability for.
+
+### Who is liable if a customs broker makes a mistake?
+
+Under direct representation the importer is solely liable unless the agent makes a deliberate or unreasonable error on clear instructions. Under indirect representation the agent and the importer are jointly and severally liable, and HMRC can collect from either. HMRC normally has three years to notify the debt, extendable for entries from 2021.
+
+### How long does an Advance Tariff Ruling take?
+
+HMRC replies in 30 to 120 days, and a ruling cannot be applied to goods already cleared. Use AI to spot the products where your codes keep changing or clients keep asking, and apply for rulings on those before the next shipment, not while the goods are waiting.
+
+## A rule for every entry
+
+Every declaration you submit should have its documents read and matched, a code for each line chosen by a person who can explain it, the client's written instructions applied, a comparison with that client's history, and the whole file stored with the entry. Let AI do the reading and the comparing, and keep the classification and the signature with your customs team.
+
+If your entry desk spends its day retyping invoices, [tell me which customs software you use and roughly how many entries you make a month](/contact?intent=improve). I'll suggest whether document reading, code suggestions or history checks are the right first step. Hauliers face a similar compliance trail in [tachograph infringements](/posts/ai-for-haulage-companies-tachograph-infringements), wholesalers use the same reading step in [order entry](/posts/ai-for-wholesale-order-entry), and manufacturers in [quotations](/posts/ai-for-manufacturing-quotations).
