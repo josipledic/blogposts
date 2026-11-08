@@ -1,0 +1,116 @@
+---
+id: "ai-for-patent-attorneys-deadline-docketing"
+title: "AI for Patent Attorneys: Docketing Office Deadlines and Renewal Fees Without Missing One"
+authorName: "Josip Ledić"
+date: "2026-11-08"
+tags: ["Professional services", "Patent attorneys", "Docketing", "AI for small business"]
+description: "The EPO received a record 201,974 patent applications in 2025 and the UK IPO 22,701, a ten-year high. Every one of them creates years of office deadlines and renewal fees, and a Unitary Patent alone carries €35,270 in official renewal fees for years 5 to 20. How patent firms can use AI to read office communications, propose docket entries and double-check every date."
+excerpt: "The EPO received a record 201,974 patent applications in 2025 and the UK IPO 22,701, a ten-year high. Every one of them creates years of office deadlines and renewal fees, and a Unitary Patent alone carries €35,270 in official renewal fees for years 5 to 20. How patent firms can use AI to read office communications, propose docket entries and double-check every date."
+---
+
+AI can do the reading behind patent docketing for a patent attorney firm: open each communication from the EPO, the UK IPO or a foreign associate, work out what kind of action it is, propose the docket entry with the date it runs from and the deadline it creates, and check that date against the rules and against what is already in your records management system. Your formalities team still confirms every entry, and your attorneys still decide what to file. What changes is that nobody keys a deadline from a PDF by hand without a second, independent calculation next to it.
+
+The volume keeps growing and the stakes per case are large.
+
+<Stats title="Patent filings in 2025">
+  <Stat value="201,974" label="patent applications at the European Patent Office, a record and up 1.4% on 2024" source="EPO press release, Technology Dashboard 2025, 24 March 2026" href="https://www.epo.org/en/news-events/press-centre/press-release/2026/1362106" />
+  <Stat value="22,701" label="patent applications at the UK IPO, up 19.8% and a ten-year high" source="UK IPO, Facts and figures 2025, 30 July 2026" href="https://www.gov.uk/government/publications/facts-and-figures-patents-trade-marks-designs-and-hearings-2025/facts-and-figures-patents-trade-marks-designs-and-hearings-2025" />
+  <Stat value="€35,270" label="official renewal fees for years 5 to 20 of one Unitary Patent; €123,517 for a classic European patent kept in the same 18 countries" source="EPO, Cost of a Unitary Patent" href="https://www.epo.org/en/applying/european/unitary/unitary-patent/cost" />
+</Stats>
+
+Those are official fees only. The EPO's own estimate puts the total cost of keeping a European patent validated in 18 Unitary Patent countries to year 20, with attorney and translation costs, at €219,412. A client with a portfolio of fifty families is trusting your docket with millions of euros of protection. That is the business case for getting the dates right, and the reason most of the work in a patent firm's back office is deadline work.
+
+## The deadlines that matter most
+
+A few rules account for most of the risk:
+
+- **EPO communications are dated, not posted.** Since 1 November 2023, [Rule 126(2)](https://www.epo.org/en/legal/epc/2020/r126.html) and [Rule 127(2) EPC](https://www.epo.org/en/legal/epc/2020/r127.html) deem a document, posted or electronic, delivered on the date it bears. The old ten-day posting allowance is gone. Any template, spreadsheet or habit that still adds ten days computes the wrong deadline.
+- **Intention to grant.** Under [Rule 71(3) EPC](https://www.epo.org/en/legal/epc/2020/r71.html) the applicant has four months to approve the text, pay the grant and publishing fee and file the claims translations.
+- **European renewal fees** fall due on the last day of the month containing the filing anniversary, from the third year. Missed, they can still be paid within six months with an additional fee, and then the application is deemed withdrawn ([Rule 51 EPC](https://www.epo.org/en/legal/epc/2020/r51.html)).
+- **UK renewals.** The first UK renewal date is the fourth anniversary of filing, with a three-month window ending on the last day of that month ([Patents Rules 2007, rule 37](https://www.legislation.gov.uk/uksi/2007/3291/rule/37)). Different rules apply when grant comes late. After the window there is a six-month late period with an additional fee ([Patents Act 1977, section 25](https://www.legislation.gov.uk/ukpga/1977/37/section/25)), and only then restoration, which needs evidence and must be applied for within 13 months after that late period ends ([rule 40](https://www.legislation.gov.uk/uksi/2007/3291/rule/40)).
+- **Re-establishment is strict.** The EPO restores a missed time limit only if "all due care required by the circumstances" was taken ([Article 122 EPC](https://www.epo.org/en/legal/epc/2020/a122.html)). A firm that cannot show a reliable, independently checked docketing system will struggle to argue that.
+
+## Where it breaks today
+
+- **Communications arrive in many forms.** The EPO Mailbox, the IPO, letters from foreign associates and client emails all land in different places, and someone has to recognise what each one is.
+- **One letter, many dates.** A single communication can set a response deadline, start a fee period and change an existing renewal date. Entering one and missing the others is the classic error.
+- **Rules change.** The ten-day rule change, fee changes, the short window for requesting unitary effect after grant. Every change has to reach every person who keys dates.
+- **The second check is often the same person.** Many small firms have one formalities clerk per attorney team. When she enters and checks her own entry, the "double check" is not independent.
+- **Reminders depend on the docket being right.** A perfectly reminded wrong date is still a missed deadline.
+
+## Where AI fits
+
+**Read and classify every communication.** The model reads each incoming document, names the procedure (EP, UK, PCT national phase, Unitary Patent), the application number, the type of action and the date the communication bears. If it cannot match the application number to a case in your system, it says so instead of guessing.
+
+**Propose the docket entry with its source.** For each action it proposes the deadline and quotes the sentence of the communication it relied on: "within four months", "the time limit is extended to". For dates the rules set rather than the letter, such as renewal fees, it states the rule.
+
+**Calculate independently, then compare.** The date calculation itself should not be left to the language model. A plain, tested rules engine computes the deadline from the extracted facts, the model's proposal is compared with it, and any disagreement goes to a person. Two independent paths that agree is your double check; two that disagree is exactly the case a person should look at.
+
+**Check against the existing docket.** Does this communication replace an open deadline, close one, or conflict with one? Is a renewal due within the response period? The comparison is shown side by side so the clerk can confirm or correct in one step.
+
+**Draft the reporting letter.** Once the entry is confirmed, the model drafts the client report: what arrived, what it means, the deadline and the decision the client needs to make, in your firm's standard wording. The attorney edits and sends it.
+
+<Flow title="From office communication to confirmed docket entry" caption="AI reads, proposes and compares. Your formalities team confirms every date, and your attorneys decide what to file.">
+<Step title="Receive" who="System" tone="ai" time="on arrival">Communication collected from the mailbox or inbox and matched to the case.</Step>
+<Step title="Read" who="AI" tone="ai" time="minutes">Type of action, date of the communication and every period it sets extracted, with the quoted source sentence.</Step>
+<Step title="Calculate" who="Rules engine" tone="ai" time="instant">Deadlines computed independently from the extracted facts and compared with the proposal.</Step>
+<Step title="Confirm" who="Formalities clerk" tone="human" time="same day">Entry confirmed or corrected; every disagreement reviewed with the document open.</Step>
+<Step title="Report" who="AI drafts, attorney sends" tone="human" time="within days">Client letter drafted with the deadline and the decision needed.</Step>
+</Flow>
+
+## The numbers for a small patent firm
+
+<Calc title="Napkin math: formalities time" caption="Assumptions, not measurements. Count last month's incoming communications and time twenty of them from arrival to confirmed entry and sent report before deciding anything." rows={[
+  ["Incoming office communications per year (assumption)", "6,000"],
+  ["Minutes per communication today, reading, docketing, checking and reporting (assumption)", "× 25"],
+  ["Hours per year today", "2,500"],
+  ["Minutes per communication with reading, calculation and draft report done (assumption)", "× 12"],
+  ["Hours per year with AI", "1,200"]
+]} result={["Hours back per year", "about 1,300"]} />
+
+That is most of one formalities post, which in a small firm is often the difference between a real second check and none. The number that matters more is the one you hope never to see: a single lost patent in a portfolio where the client has already paid tens of thousands of euros in fees.
+
+## Where it goes wrong
+
+<Callout title="The model is not the docket" tone="warning">
+Never let a deadline enter the docket on the model's word alone. Extraction is checked by a rules engine and by a person, and the source sentence is stored with every entry. If nobody can say where a date came from, it is not confirmed.
+</Callout>
+
+**Confident wrong dates are the main risk.** A language model can read "four months" correctly and still add them to the wrong starting date. That is why the arithmetic lives in tested rules, not in the model, and why every disagreement is reviewed.
+
+**Unusual communications need a fallback.** Oral proceedings summons, loss-of-rights notices, communications under rarely used rules. The model should mark anything it does not recognise as "unclassified" and route it to an attorney, never force it into the nearest known type.
+
+**Client files are confidential.** Unpublished applications are among the most sensitive documents a business owns. Use a provider with a data processing agreement, no training on your data and storage in the UK or EU, or a model running on your own infrastructure.
+
+## Tools that fit
+
+Patent records systems already hold the docket, send reminders and in some cases import data from the large offices. Several vendors now offer AI docketing on top. The gaps for small and mid-sized firms are usually price, communications that come from associates and clients rather than office feeds, a calculation that is genuinely independent of the extraction, and client reports in the firm's own voice. A custom layer pays off when your communications arrive through several channels that no single tool reads.
+
+<Checklist title="How to start" items={[
+  "Pull last quarter's incoming communications and the docket entries made from them",
+  "Check every template and spreadsheet for the old ten-day rule and remove it",
+  "Run extraction on those communications and compare each proposed date with what was docketed",
+  "Turn every disagreement into a rule, a test case or a note for the team",
+  "Decide who confirms entries and make sure it is never the only check",
+  "Review the disagreement rate every month before widening the scope"
+]} />
+
+## Questions patent attorneys ask about AI docketing
+
+### Can AI docket patent deadlines automatically?
+
+It can read the communication, propose every deadline it creates and quote the sentence it relied on. The deadline itself should be computed by a tested rules engine and confirmed by a person, because re-establishment at the EPO requires showing all due care, and an unchecked automated entry is hard to defend.
+
+### Does the EPO still add ten days to communications?
+
+No. Since 1 November 2023, Rules 126(2) and 127(2) EPC deem a communication delivered on the date it bears, and periods run from that date. In a dispute the EPO has to establish delivery, and if a document arrived more than seven days after its date, the period ends later by the extra days. Docket from the date on the document and record when it actually arrived.
+
+### What happens if a European renewal fee is missed?
+
+It can still be paid within six months of the due date with an additional fee. If that period also passes, the application is deemed withdrawn. Re-establishment is possible only if all due care was taken, so the reminder system has to be reliable before that point.
+
+## A rule for every communication
+
+Every office communication your firm receives should be read and matched to its case, every period it sets proposed with its source sentence, every date computed independently and compared, every entry confirmed by a person, and the client told what it means. Let AI do the reading, the comparison and the first draft, and keep the dates and the decisions with your team.
+
+If your formalities team spends its day retyping deadlines from PDFs, [tell me which records system you use and roughly how many communications arrive a month](/contact?intent=improve). I'll suggest whether reading, independent calculation or client reports are the right first step. Law firms use a similar reading step for [client intake](/posts/ai-for-law-firm-intake), translation agencies for [project intake](/posts/ai-for-translation-agencies-project-intake), and medical device makers keep a similar deadline trail in [complaints and vigilance](/posts/ai-for-medical-device-manufacturers-complaints-vigilance).
