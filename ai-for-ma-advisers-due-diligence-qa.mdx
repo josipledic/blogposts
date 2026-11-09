@@ -1,0 +1,108 @@
+---
+id: "ai-for-ma-advisers-due-diligence-qa"
+title: "AI for M&A Advisers: Answering Due Diligence Questions Faster Without Losing Control"
+authorName: "Josip Ledić"
+date: "2026-11-09"
+tags: ["Professional services", "M&A advisers", "Due diligence", "AI for small business"]
+description: "UK companies bought 130 other UK companies for £4.2 billion in the second quarter of 2026, and 1,324 deals went to the government for national security screening in a year. Every sale runs through hundreds of buyer due diligence questions. How sell-side M&A advisers can use AI to sort the Q&A, draft answers from the data room and keep every answer consistent."
+excerpt: "UK companies bought 130 other UK companies for £4.2 billion in the second quarter of 2026, and 1,324 deals went to the government for national security screening in a year. Every sale runs through hundreds of buyer due diligence questions. How sell-side M&A advisers can use AI to sort the Q&A, draft answers from the data room and keep every answer consistent."
+---
+
+AI can take most of the sorting and first drafting out of the due diligence Q&A on a sale: read each buyer question as it arrives, spot the ones already answered, find the documents in the data room that answer the rest, draft an answer with a link to its source, and send each question to the person at the client who owns the topic. Your deal team still approves every answer, and the client still decides what to disclose. What changes is that the team spends its days on the questions that move the price, not on retyping the same answer for the third bidder.
+
+The deals are large and the timetable is tight.
+
+<Stats title="UK deals in 2025 and 2026">
+  <Stat value="130" label="UK companies acquired by other UK companies in Q2 2026, worth £4.2 billion together" source="ONS, Mergers and acquisitions involving UK companies, April to June 2026" href="https://www.ons.gov.uk/businessindustryandtrade/changestobusiness/mergersandacquisitions/bulletins/mergersandacquisitionsinvolvingukcompanies/apriltojune2026" />
+  <Stat value="£25.4bn" label="paid by foreign companies for UK companies in the same quarter" source="ONS, Mergers and acquisitions involving UK companies, April to June 2026" href="https://www.ons.gov.uk/businessindustryandtrade/changestobusiness/mergersandacquisitions/bulletins/mergersandacquisitionsinvolvingukcompanies/apriltojune2026" />
+  <Stat value="1,324" label="notifications under the National Security and Investment Act from April 2025 to March 2026, up from 1,143" source="NSI Act Annual Report 2025-26" href="https://www.gov.uk/government/publications/national-security-and-investment-act-2021-annual-report-2025-26/national-security-and-investment-act-2021-annual-report-2025-26-html" />
+</Stats>
+
+On average that is about £32 million per domestic deal, though a few acquisitions worth more than £1 billion pull the figure up, as the ONS notes. Even at the small end of the market, a success fee on one completed sale pays for months of an adviser's team. A deal that slips because the Q&A stalls, or loses value because two answers contradict each other, costs far more than any tool.
+
+## Why the Q&A is the bottleneck
+
+Once the data room opens, each bidder's lawyers, accountants and specialists send questions in batches. The same question arrives in four wordings from four bidders. Many are already answered by a document in the room that nobody linked. Others need the client's finance director, HR lead or operations manager, who are also running the business. The adviser sits in the middle, chasing, editing and checking that today's answer does not contradict last week's.
+
+Some questions carry more weight than the rest:
+
+- **Mandatory national security filings.** An acquisition of an entity active in one of 17 sensitive areas, from defence to data infrastructure, has to be notified before completion ([NSI Act, section 14](https://www.legislation.gov.uk/ukpga/2021/25/section/14)). Completing without approval makes the deal void ([section 13](https://www.legislation.gov.uk/ukpga/2021/25/section/13)) and is an offence ([section 32](https://www.legislation.gov.uk/ukpga/2021/25/section/32)), with fines up to 5% of worldwide turnover or £10 million, whichever is higher ([section 41](https://www.legislation.gov.uk/ukpga/2021/25/section/41)).
+- **Screening takes time.** The government took a median of 11 working days just to accept a mandatory notification in 2025-26, up from 7, before the 30 working day review period starts. 4.4% of reviewed notifications were called in for a full assessment ([NSI Act Annual Report 2025-26](https://www.gov.uk/government/publications/national-security-and-investment-act-2021-annual-report-2025-26/national-security-and-investment-act-2021-annual-report-2025-26-html)). A buyer's question about what the target actually does can decide whether that clock starts in week two or week ten.
+- **Answers become warranties.** What the seller says in the Q&A often ends up disclosed against the warranties in the sale agreement. An inconsistent or careless answer is a negotiation problem later.
+
+## Where AI fits
+
+**Sort and deduplicate every incoming question.** The model reads each new batch, tags it by workstream (finance, legal, HR, commercial, IT, tax), and marks questions that match one already answered or already asked by another bidder. Your team sees "new", "duplicate of Q-114" or "answered by document 3.2.4" before anyone writes a word.
+
+**Draft answers from the data room, with sources.** For questions the documents answer, it drafts a short reply and links the exact document and page. If the room does not contain the answer, it says so and drafts the request to the client owner instead of guessing.
+
+**Check consistency.** Every draft is compared with earlier answers, the information memorandum and the disclosure list. Revenue figures, headcounts, contract terms and dates that differ are flagged side by side for the deal lead.
+
+**Route to the right person at the client.** Questions that need the client go to the named owner for that workstream with a due date, and the tracker shows what is overdue by person, not just by bidder.
+
+**Flag regulatory triggers early.** Questions and documents that touch the 17 NSI areas, export controls or government contracts are flagged for the lawyers on day one, so the notification question is settled before the timetable depends on it.
+
+<Flow title="From buyer question to approved answer" caption="AI sorts, drafts and checks. Your deal team approves every answer, and the client decides what is disclosed.">
+<Step title="Receive" who="System" tone="ai" time="on arrival">Question batch imported from the data room Q&A or a bidder's spreadsheet.</Step>
+<Step title="Sort" who="AI" tone="ai" time="minutes">Workstream, priority and duplicates marked; regulatory and sensitive topics flagged.</Step>
+<Step title="Draft" who="AI" tone="ai" time="minutes">Answer drafted from data room documents with links, or a request drafted to the client owner.</Step>
+<Step title="Check" who="AI" tone="ai" time="minutes">Draft compared with earlier answers, the information memorandum and the disclosure list.</Step>
+<Step title="Approve" who="Deal team and client" tone="human" time="same or next day">Answer edited, approved and released to the bidder.</Step>
+</Flow>
+
+## The numbers for a small advisory firm
+
+<Calc title="Napkin math: Q&A time on one sale" caption="Assumptions, not measurements. Count the questions on your last two sell-side mandates and time twenty of them from arrival to release before deciding anything." rows={[
+  ["Buyer questions on one sale with three bidders (assumption)", "600"],
+  ["Minutes of adviser time per question today, sorting, chasing, drafting and checking (assumption)", "× 20"],
+  ["Hours per sale today", "200"],
+  ["Minutes per question with sorting, duplicates and first drafts done (assumption)", "× 8"],
+  ["Hours per sale with AI", "80"]
+]} result={["Hours back per sale", "about 120"]} />
+
+That is three weeks of an analyst's time per mandate. The bigger effect is on the calendar: bidders who get clean, consistent answers within a day keep their offers firm, and a firm with the same team can run one more mandate a year.
+
+## Where it goes wrong
+
+<Callout title="The model never releases an answer" tone="warning">
+Every answer a bidder sees is approved by a person on the deal team and, where it states a fact about the business, by the client. The model drafts and checks. It does not decide what the seller discloses.
+</Callout>
+
+**Plausible but wrong answers are the main risk.** A model can summarise a contract confidently and miss the change of control clause in a side letter. Drafts carry their source links so the reviewer checks the document, not the summary.
+
+**Data room permissions matter.** Some documents are only visible to certain bidders or held back to a later phase. The model must work only with what that bidder is allowed to see, or it will leak information between bidders in its drafts.
+
+**Confidentiality is the whole business.** Deal information is inside information for listed parties and commercially sensitive for everyone. Use a provider with a data processing agreement, no training on your data and storage in the UK or EU, or a model running on infrastructure you control.
+
+## Tools that fit
+
+Virtual data room providers now ship AI features for search, redaction and Q&A, and buy-side law firms use legal AI tools for review. The gaps for a small sell-side adviser are usually cost per deal, questions that arrive by email and spreadsheet rather than inside the room, consistency checks against your own information memorandum, and client routing that matches how your client's team actually works. A custom layer pays off when you run several mandates a year on different data rooms and want the same Q&A discipline on all of them.
+
+<Checklist title="How to start" items={[
+  "Export the Q&A log from your last completed sale with the final answers",
+  "Mark which questions were duplicates and which were answered by documents already in the room",
+  "Run sorting and drafting on that log and compare the drafts with what was actually sent",
+  "Write down the workstream owners on the client side for the next mandate",
+  "Agree with the client who approves factual answers before the room opens",
+  "Review duplicate rate and turnaround after the first bidder round"
+]} />
+
+## Questions M&A advisers ask about AI in due diligence
+
+### Can AI answer due diligence questions automatically?
+
+It can draft answers from the documents in the data room, mark duplicates and route the rest to the right person at the client. It should not release answers. What the seller says can end up disclosed against the warranties in the sale agreement, so every answer needs a person who knows the deal to approve it.
+
+### Which UK deals need a national security notification?
+
+Acquisitions of control of an entity active in one of 17 sensitive areas specified under the National Security and Investment Act need a mandatory notification before completion. Completing without approval makes the deal void and is an offence. Voluntary notifications are possible for other deals that may raise concerns. Take legal advice on whether a specific target falls inside the areas.
+
+### How long does NSI screening take?
+
+In 2025-26 the government took a median of 11 working days to accept a mandatory notification. The review period after acceptance is 30 working days, and the government took all call-in decisions within it. Called-in deals then go into a longer assessment.
+
+## A rule for every question
+
+Every buyer question should be sorted and checked for duplicates, every answer drafted with a source, every draft compared with what the seller has already said, every factual answer approved by the client, and every regulatory trigger flagged on day one. Let AI do the sorting, the first draft and the comparison, and keep the judgement and the disclosure with your team.
+
+If your analysts spend their evenings copying answers between bidder spreadsheets, [tell me which data room you use and how many mandates you run a year](/contact?intent=improve). I'll suggest whether sorting, drafting or consistency checks are the right first step. Law firms use a similar reading step for [client intake](/posts/ai-for-law-firm-intake), accountants for [document intake](/posts/ai-for-accounting-document-intake), and financial advisers for [suitability reviews](/posts/ai-for-financial-advisers-suitability-reviews).
