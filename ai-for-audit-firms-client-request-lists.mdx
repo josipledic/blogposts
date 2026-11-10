@@ -1,0 +1,115 @@
+---
+id: "ai-for-audit-firms-client-request-lists"
+title: "AI for Audit Firms: Getting the Client Request List Closed Before Fieldwork Stalls"
+authorName: "Josip Ledić"
+date: "2026-11-10"
+tags: ["Professional services", "Audit firms", "Audit evidence requests", "AI for small business"]
+description: "The UK had 3,421 registered audit firms at the end of 2025, 9% fewer than a year before, and since April 2025 a private company generally needs an audit only once it passes two of three lines: £15 million turnover, £7.5 million balance sheet and 50 employees. How small and mid-tier audit firms can use AI to build the request list from last year's file, check every upload against it and chase the right person with a precise message."
+excerpt: "The UK had 3,421 registered audit firms at the end of 2025, 9% fewer than a year before, and since April 2025 a private company generally needs an audit only once it passes two of three lines: £15 million turnover, £7.5 million balance sheet and 50 employees. How small and mid-tier audit firms can use AI to build the request list from last year's file, check every upload against it and chase the right person with a precise message."
+---
+
+AI can take most of the admin out of an audit's client request list, the "prepared by client" list every engagement runs on: draft this year's list from last year's file and the new trial balance, read each document the client uploads, check whether it actually answers the request it was sent against, and write the chaser to the named person at the client with exactly what is still missing. The engagement team still decides what evidence is enough, and the responsible individual still signs. What changes is that seniors stop spending the first two weeks of fieldwork opening PDFs and ticking spreadsheets.
+
+The firms are fewer, and the work is not getting smaller.
+
+<Stats title="UK audit in 2025">
+  <Stat value="3,421" label="firms registered for statutory audit in the UK and Ireland at the end of 2025, down 9% in a year and from 4,745 in 2021" source="FRC, Key Facts and Trends in the Accountancy Profession 2026" href="https://www.frc.org.uk/library/supervision/professional-bodies-supervision/key-facts-and-trends-in-the-accountancy-profession/key-facts-and-trends-in-the-accountancy-profession-2026/" />
+  <Stat value="+9.7%" label="audit fee income growth in 2025 at PIE audit firms outside the Big Four, against 1.9% at the Big Four" source="FRC, Key Facts and Trends 2026" href="https://www.frc.org.uk/library/supervision/professional-bodies-supervision/key-facts-and-trends-in-the-accountancy-profession/key-facts-and-trends-in-the-accountancy-profession-2026/" />
+  <Stat value="£1.66m" label="average audit fee income per responsible individual at non-Big Four firms with PIE clients in 2025" source="FRC, Key Facts and Trends 2026" href="https://www.frc.org.uk/library/supervision/professional-bodies-supervision/key-facts-and-trends-in-the-accountancy-profession/key-facts-and-trends-in-the-accountancy-profession-2026/" />
+</Stats>
+
+The clients are not small either. Since 6 April 2025 a company counts as small, and can skip the audit, if it stays under two of three limits: £15 million turnover, £7.5 million balance sheet total and 50 employees ([Companies Act 2006, section 382](https://www.legislation.gov.uk/ukpga/2006/46/section/382), as amended by SI 2024/1303, and [section 477](https://www.legislation.gov.uk/ukpga/2006/46/section/477)). Statutory audit clients are therefore businesses past at least two of those lines, often well past. Each one is a recurring engagement that a firm keeps for years if the audit runs well, and loses if it drags.
+
+<Bars title="Registered audit firms, UK and Ireland" unit="" caption="82% of the firms registered at the end of 2025 had one to three principals. Consolidation, not a smaller market, explains most of the fall." source="FRC, Key Facts and Trends 2026, figure 21" href="https://www.frc.org.uk/library/supervision/professional-bodies-supervision/key-facts-and-trends-in-the-accountancy-profession/key-facts-and-trends-in-the-accountancy-profession-2026/" data={[
+  { label: "End of 2021", value: 4745, display: "4,745" },
+  { label: "End of 2022", value: 4310, display: "4,310" },
+  { label: "End of 2023", value: 4038, display: "4,038" },
+  { label: "End of 2024", value: 3760, display: "3,760" },
+  { label: "End of 2025", value: 3421, display: "3,421", highlight: true }
+]} />
+
+## Why the request list is where audits stall
+
+Every audit starts with a list: bank confirmations, the fixed asset register, aged debtors, the payroll reconciliation, board minutes, the lease schedule, a sample of invoices for testing. The list goes to the finance director. Over the next weeks documents come back through a portal, email and shared drives, named `scan0012.pdf` or `FINAL v3 (2).xlsx`. Someone on the audit team opens each one, works out which request it answers, checks whether it is the right period and actually reconciles, and marks it received. Then they write to the client about what is still open.
+
+Three things make this harder than ordinary document collection:
+
+- **The law gives you the right to ask, not a working inbox.** An auditor can require information and explanations from any officer or employee ([section 499](https://www.legislation.gov.uk/ukpga/2006/46/section/499)), and failing to provide them without delay is an offence unless it was not reasonably practicable ([section 501(3)](https://www.legislation.gov.uk/ukpga/2006/46/section/501)). No firm wants to quote that to a client. What works is a request so precise that the client cannot misread it.
+- **"Received" is not "sufficient".** A bank reconciliation for November instead of the year end, or an aged debtors report that does not agree to the trial balance, gets ticked as received and found three days later by the person who needed it.
+- **The deadline is fixed.** A private company has to file its accounts nine months after the year end ([section 442](https://www.legislation.gov.uk/ukpga/2006/46/section/442)). Every week lost waiting for documents comes out of review and partner time at the end, which is where quality problems come from.
+
+## Where AI fits
+
+**Draft the list from last year's file.** The model reads last year's request list, which items came in late or wrong, the new trial balance and the planning notes. It drafts this year's list with new items for what changed: a new loan, a new subsidiary, a lease that started mid-year. The senior edits it rather than copying last year's spreadsheet.
+
+**Read every upload and match it to a request.** Each file is classified, matched to the request it answers and checked for the obvious: the right entity, the right date, the right period, totals that agree to the trial balance where they should. The tracker shows "received and agrees", "received, period wrong" or "received, does not reconcile by £4,210", not just a tick.
+
+**Write precise chasers to the right person.** Instead of "please send outstanding items", the payroll manager gets "We have the P32 summary to March but not the year-end payroll reconciliation to the nominal ledger. Last year it came from you in week two." Requests are grouped by owner at the client, not by audit area.
+
+**Flag what the team needs to know.** Board minutes that mention a dispute, a bank letter that shows a facility nobody listed, a contract with a change of control clause: the model marks the passage and the page for the senior, who decides what it means for the audit.
+
+<Flow title="From request list to closed file" caption="AI drafts, matches, checks and chases. The engagement team decides what evidence is sufficient.">
+<Step title="Plan" who="AI and senior" tone="ai" time="before fieldwork">Request list drafted from last year's file, the trial balance and planning notes; senior edits and sends.</Step>
+<Step title="Receive" who="System" tone="ai" time="on upload">Each document classified and matched to a request.</Step>
+<Step title="Check" who="AI" tone="ai" time="minutes">Entity, period and totals checked against the request and the trial balance; gaps described in plain words.</Step>
+<Step title="Chase" who="AI drafts, team sends" tone="ai" time="daily">Chasers grouped by client owner, with exactly what is missing and why.</Step>
+<Step title="Judge" who="Engagement team" tone="human" time="during fieldwork">Evidence reviewed, tested and signed off in the audit file.</Step>
+</Flow>
+
+## The numbers for a small audit practice
+
+<Calc title="Napkin math: request list admin across a season" caption="Assumptions, not measurements. Count the requests on three of last season's files and time how long the team spent matching and chasing before deciding anything." rows={[
+  ["Statutory audits a year (assumption)", "40"],
+  ["Requests per audit (assumption)", "× 120"],
+  ["Minutes per request today, opening, matching, checking and chasing (assumption)", "× 6"],
+  ["Hours a year today", "480"],
+  ["Minutes per request with matching, checks and chaser drafts done (assumption)", "× 2"],
+  ["Hours a year with AI", "160"]
+]} result={["Hours back a year", "about 320"]} />
+
+That is two months of a senior's time. The larger effect is on the calendar: an audit that starts fieldwork with 90% of the list closed finishes on time, leaves room for proper review and keeps the client for next year.
+
+## Where it goes wrong
+
+<Callout title="The model never concludes on evidence" tone="warning">
+Whether a document is sufficient and appropriate audit evidence is a judgement for the engagement team, recorded in the file. The model matches, checks arithmetic and flags. It does not sign anything off or decide what testing is needed.
+</Callout>
+
+**A confident match can be wrong.** A model can match a bank statement to the wrong account or read a draft as a final. Every match links to the page it relied on, and the senior checks the document, not the summary.
+
+**Independence and confidentiality come first.** Client records are confidential, and some of them are inside information. Use a provider with a data processing agreement, no training on your data and storage in the UK or EU, or a model running on infrastructure you control. Keep the AI working only on documents inside the engagement it belongs to.
+
+**It must fit the audit file, not replace it.** Most firms already run an audit methodology tool and a client portal. The useful part is the layer between them: reading what arrives and writing what is still missing. If it creates a second place where evidence lives, it makes the file worse.
+
+## Tools that fit
+
+Audit software vendors now sell AI request portals that draft lists from the trial balance and check uploads against requests. They are worth a look if you are choosing a portal anyway. For a small or mid-tier firm the gaps are usually cost per engagement, clients who send everything by email regardless of the portal, chasers that sound like your firm, and checks against your own planning notes and last year's file. A custom layer pays off when you run dozens of audits a season on the tools you already have.
+
+<Checklist title="How to start" items={[
+  "Export the request lists from three audits you finished last season, with the date each item arrived",
+  "Mark which items arrived late, which arrived wrong and which needed more than one chaser",
+  "Run matching and checks on one of those files and compare the result with what the team found",
+  "Name the owner at the client for each group of requests on the next engagement",
+  "Agree in the engagement letter which channel documents should come through",
+  "Measure the share of the list closed on the first day of fieldwork, before and after"
+]} />
+
+## Questions audit firms ask about AI for client requests
+
+### Can AI decide whether audit evidence is sufficient?
+
+No. It can check that a document is the one requested, covers the right entity and period, and agrees to the trial balance where it should. Whether it is sufficient and appropriate evidence for the audit is a judgement the engagement team makes and records in the file.
+
+### Which UK companies need an audit?
+
+Since 6 April 2025, a company that stays under two of three limits, £15 million turnover, £7.5 million balance sheet total and 50 employees, qualifies as small and is exempt from audit, with exceptions such as public companies and some group and regulated companies. Companies above the limits need a statutory audit.
+
+### What can an auditor require from the client?
+
+Under section 499 of the Companies Act 2006, an auditor has a right of access to the company's books, accounts and vouchers and can require information and explanations from officers and employees. A misleading statement to the auditor, or failing to provide information without delay, can be an offence under section 501.
+
+## A rule for every request
+
+Every request should go to a named person, every upload should be matched and checked the day it arrives, every gap should be described in plain words, and every chaser should say exactly what is missing. Let AI do the matching, the arithmetic and the first draft of the chaser, and keep the evidence judgement with your team.
+
+If your seniors spend fieldwork chasing bank letters, [tell me which audit software and client portal you use](/contact?intent=improve) and roughly how many audits you run a season. I'll suggest whether list drafting, upload checks or chasers are the right first step. Accounting firms run the same chase for tax returns in [document intake](/posts/ai-for-accounting-document-intake), bookkeepers answer [the same client questions every month](/posts/ai-for-bookkeepers-client-questions), and M&A advisers keep a sale's answers consistent in [due diligence Q&A](/posts/ai-for-ma-advisers-due-diligence-qa).
