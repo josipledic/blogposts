@@ -1,0 +1,115 @@
+---
+id: "ai-for-commercial-landlords-lease-events"
+title: "AI for Commercial Landlords: A Lease Event Register That Catches Every Break, Review and Section 25 Window"
+authorName: "Josip Ledić"
+date: "2026-11-11"
+tags: ["Property", "Commercial landlords", "Lease management", "AI for small business"]
+description: "England and Wales have 2.14 million rateable business properties with £70.9 billion of rateable value, and the 5% rated at £100,000 or more carry 61% of it. How commercial landlords and small property companies can use AI to read every lease and side letter into one dated event register, so rent reviews, break options, Section 25 windows and the coming upwards-only review ban never surprise them."
+excerpt: "England and Wales have 2.14 million rateable business properties with £70.9 billion of rateable value, and the 5% rated at £100,000 or more carry 61% of it. How commercial landlords and small property companies can use AI to read every lease and side letter into one dated event register, so rent reviews, break options, Section 25 windows and the coming upwards-only review ban never surprise them."
+---
+
+AI can read a commercial landlord's leases, deeds of variation, side letters and licences, and turn them into one register of dated events: every rent review, break option, expiry, Section 25 window and notice condition, each linked to the clause it came from. It then drafts the reminder, the review letter or the instruction to your solicitor in time. Your surveyor still agrees the rent and your solicitor still serves the notice. What changes is that a review date in a 2017 side letter no longer depends on somebody remembering it.
+
+The money sits in a small number of leases, which is exactly why each one matters.
+
+<Stats title="Business property in England and Wales, 31 March 2026">
+  <Stat value="2.14m" label="rateable non-domestic properties on the local rating lists, with £70.9 billion of rateable value" source="HMRC Valuation Office, Non-domestic rating: stock of properties, March 2026" href="https://www.gov.uk/government/statistics/non-domestic-rating-stock-of-properties-march-2026/non-domestic-rating-stock-of-properties-statistical-commentary" />
+  <Stat value="61%" label="of all rateable value sits in the 114,550 properties rated at £100,000 or more, 5% of the stock" source="VOA, NDR stock of properties table SOP2.1" href="https://www.gov.uk/government/statistics/non-domestic-rating-stock-of-properties-march-2026" />
+  <Stat value="£37,300" label="average rateable value of the 428,270 office properties (£16.0 billion in total)" source="VOA, NDR stock of properties tables SOP2.1 and SOP5" href="https://www.gov.uk/government/statistics/non-domestic-rating-stock-of-properties-march-2026" />
+</Stats>
+
+Rateable value is the VOA's estimate of the annual open-market rent a property could have been let for at a set date ([background information](https://www.gov.uk/government/statistics/non-domestic-rating-stock-of-properties-march-2026/non-domestic-rating-stock-of-properties-background-information)), so it is a fair proxy for rent. A landlord with twenty units at office averages collects about three quarters of a million pounds a year, on leases that run for five, ten or fifteen years. One missed event on one of them can cost more than a year of the tools that would have caught it.
+
+<Bars title="Rateable value by property sector, England and Wales" unit="£bn" caption="Rateable value broadly reflects open-market annual rent at the valuation date of the 2023 rating list." source="VOA, Non-domestic rating: stock of properties, March 2026, tables SOP4 to SOP7" href="https://www.gov.uk/government/statistics/non-domestic-rating-stock-of-properties-march-2026" data={[
+  { label: "Retail (512,500 properties)", value: 14.6, display: "£14.6bn" },
+  { label: "Office (428,270)", value: 16.0, display: "£16.0bn", highlight: true },
+  { label: "Industrial (566,240)", value: 19.2, display: "£19.2bn" },
+  { label: "Other (631,250)", value: 21.0, display: "£21.0bn" }
+]} />
+
+## Why lease dates get missed
+
+A lease is not one document. It is the original lease, a rent review memorandum from 2019, a deed of variation that moved the break date, a side letter that waived the break penalty, a licence to assign and an email from the tenant's agent about the review. The dates that matter are spread across all of them, and some are not dates at all but conditions: "on not less than six months' written notice", "provided there are no arrears".
+
+The law adds its own windows on top:
+
+- **Section 25 and section 26 notices run on a fixed window.** A landlord's notice to end a business tenancy only has effect if given not more than twelve and not less than six months before the termination date it names ([Landlord and Tenant Act 1954, section 25](https://www.legislation.gov.uk/ukpga/Eliz2/2-3/56/section/25)). A tenant's request for a new tenancy works the same way in the other direction ([section 26](https://www.legislation.gov.uk/ukpga/Eliz2/2-3/56/section/26)).
+- **Court applications have a hard stop.** An application to renew or to end the tenancy cannot be made after the date in the notice or request ([section 29A](https://www.legislation.gov.uk/ukpga/Eliz2/2-3/56/section/29A)), unless the parties agree in writing to extend it under section 29B.
+- **Whether any of this applies depends on the paperwork.** A lease contracted out of security of tenure is only valid if the landlord served the prescribed warning notice and the tenant made the required declaration before the lease was granted ([section 38A](https://www.legislation.gov.uk/ukpga/Eliz2/2-3/56/section/38A)). The register needs to know which leases are contracted out and where the evidence is.
+
+And a new rule is coming. The [English Devolution and Community Empowerment Act 2026](https://www.legislation.gov.uk/ukpga/2026/23/schedule/37), which received Royal Assent on 29 April 2026, inserts Schedules 7A and 7B into the 1954 Act to stop upwards-only rent reviews in new business tenancies in England and Wales once the provisions are brought into force. It also lets a tenant trigger a review where the lease makes the landlord do it. Leases granted before commencement keep their terms, but a renewal granted under an option or agreement entered into on or after 17 March 2026 can fall under the new rules. That is a date a landlord has to record for every renewal arrangement signed this year.
+
+## What the register does
+
+**Read every document for each lease, not just the lease.** The model reads the lease, variations, side letters, licences and review memoranda, and builds one record per tenancy: parties, term, rent and review basis, break options with their conditions, repair and reinstatement obligations, service charge cap, insurance rent, contracted-out status and where the evidence for it is.
+
+**Turn clauses into dated events, with the source attached.** "Break on the fifth anniversary of the term commencement date on six months' notice" becomes two dates: the break date and the last day the tenant can serve, each linked to the page and clause. Where a later document changes a date, the event shows both and which one wins.
+
+**Mark what is a condition, not a date.** A break that needs vacant possession and no arrears is flagged with its conditions, because the date is only half of the question. A review that "may be initiated by either party" is flagged differently from one where time is of the essence.
+
+**Draft the work in good time.** Nine months before a review the surveyor gets a note with the review basis, comparables to pull and the last agreed rent. Fourteen months before an expiry the asset manager gets a decision note: renew, re-gear or recover, with the Section 25 window already calculated. Your solicitor gets the facts and the clause references, and decides what to serve.
+
+<Flow title="From lease bundle to dated events" caption="AI reads, dates and drafts. People decide the rent, the strategy and the notice.">
+<Step title="Collect" who="Landlord" tone="human" time="once per lease">Lease, variations, side letters, licences and memoranda scanned into one folder per tenancy.</Step>
+<Step title="Read" who="AI" tone="ai" time="minutes">Terms, dates and conditions extracted, each linked to its clause and page.</Step>
+<Step title="Check" who="Asset manager" tone="human" time="20 minutes per lease">Extracted events checked against the documents; conflicts between documents resolved.</Step>
+<Step title="Remind" who="AI" tone="ai" time="months ahead">Reviews, breaks, expiries and 1954 Act windows put in the calendar with drafted notes.</Step>
+<Step title="Act" who="Surveyor and solicitor" tone="human" time="on the date">Rent negotiated, notices served, outcome written back to the register.</Step>
+</Flow>
+
+## The numbers for a small portfolio
+
+<Calc title="Napkin math: what one missed review costs" caption="Assumptions, not measurements. Use your own rent roll and the review clauses in your leases." rows={[
+  ["Annual rent on one unit (assumption)", "£100,000"],
+  ["Uplift at review, open market or index (assumption)", "× 4%"],
+  ["Extra rent a year once the review is settled", "£4,000"],
+  ["Reviews falling due a year on a 30-lease portfolio (assumption)", "× 6"],
+  ["Review delay before anyone notices (assumption)", "12 months"]
+]} result={["Rent collected a year late if every review slips", "about £24,000"]} />
+
+Many review clauses let the landlord recover the uplift back to the review date, so a late review often costs cash flow rather than the uplift itself. The expensive misses are the ones without a second chance: a break option that passed unopposed, a Section 25 notice served outside its window, a court deadline under section 29A, or a renewal option signed after 17 March 2026 without anyone noticing the new rules may apply.
+
+## Where it goes wrong
+
+<Callout title="The register informs. It does not serve notices." tone="warning">
+Whether a break was validly exercised, which notice to serve and when, and what the rent should be are questions for your surveyor and solicitor. The model's job is to make sure they are asked in time, with the right documents in front of them.
+</Callout>
+
+**A clean extraction of the wrong document is still wrong.** If the deed of variation is missing from the folder, the register will show the original break date with total confidence. Every record lists the documents it was built from, and the first check compares that list with your files and, for registered leases, the HM Land Registry title.
+
+**Conditions are where models slip.** "Six months' notice" and "not less than six months' notice expiring on the break date" are different. The model flags every notice clause for a human read rather than computing the last date silently.
+
+**Lease data is confidential.** Rents, incentives and tenant covenants are commercially sensitive. Use a provider with a data processing agreement, no training on your data and storage in the UK or EU, or run the model on infrastructure you control.
+
+## Tools that fit
+
+Large landlords use property management platforms with lease abstraction modules, often with an outsourced abstraction team behind them. If you already pay for one, start there. For a family property company, a small fund or a landlord with ten to a hundred leases the gaps are usually the price, side letters and email agreements the platform never sees, and reminders that reach the people who act on them. A custom register on top of your existing folders and calendar is often enough, and it can feed whatever accounting or rent collection system you already use.
+
+<Checklist title="How to start" items={[
+  "Pick ten leases, including the oldest and the one with the most side letters",
+  "Put every document for each tenancy in one folder, including email agreements on rent or breaks",
+  "Run extraction on those ten and check every date against the documents",
+  "Mark which leases are contracted out and where the section 38A evidence is",
+  "List every renewal option or agreement for lease signed on or after 17 March 2026",
+  "Agree who receives the 14-month, 9-month and 6-month notes before you switch reminders on"
+]} />
+
+## Questions commercial landlords ask about AI and leases
+
+### Can AI work out the last date to serve a Section 25 notice?
+
+It can calculate the window from the lease and the Act: a notice under section 25 of the Landlord and Tenant Act 1954 must be given not more than twelve and not less than six months before the termination date it specifies, and that date cannot be earlier than the lease would otherwise end. Whether to serve, and in which form, is your solicitor's call.
+
+### Does the upwards-only rent review ban affect my existing leases?
+
+The ban in the English Devolution and Community Empowerment Act 2026 applies to business tenancies granted or varied after it comes into force, and the commencement date has not been set. Leases granted before then keep their terms. The exception to watch is a renewal granted under an option or arrangement entered into on or after 17 March 2026.
+
+### What should a lease event register contain?
+
+One record per tenancy with the documents it was built from, and a dated event for every review, break, expiry, notice deadline and 1954 Act window, each linked to the clause it came from and the conditions attached to it. Contracted-out status and who acts on each event belong in it too.
+
+## Every date has a source
+
+A lease register is only trusted if every date points to the clause it came from and every conflict between documents is visible. Let AI do the reading, the dating and the first draft of each note, and keep the rent, the strategy and the notices with your surveyor and solicitor.
+
+If your lease dates live in a spreadsheet someone updates when they remember, [tell me how many leases you hold and where the documents are](/contact?intent=improve). I'll suggest whether extraction, the reminder layer or the renewal check is the right first step. Residential landlords get the maintenance side covered in [maintenance requests for property managers](/posts/ai-for-property-managers-maintenance), coworking operators run shorter licences through [member sales](/posts/ai-for-coworking-spaces-sales), and buyers of a property company read the same leases under deadline in [due diligence Q&A](/posts/ai-for-ma-advisers-due-diligence-qa).
