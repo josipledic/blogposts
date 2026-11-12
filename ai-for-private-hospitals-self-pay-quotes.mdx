@@ -1,0 +1,112 @@
+---
+id: "ai-for-private-hospitals-self-pay-quotes"
+title: "AI for Private Hospitals and Clinics: Self-Pay Quotes That Go Out Within Two Working Days"
+authorName: "Josip Ledić"
+date: "2026-11-12"
+tags: ["Healthcare", "Private hospitals", "Self-pay patients", "AI for small business"]
+description: "UK self-pay admissions rose 7.7% to their highest level ever in Q1 2026, and a private hip replacement now starts at about £17,600. How private hospitals and clinics can use AI to turn the consultant's clinic letter into a complete written quote within the two working days the CMA order allows, so self-pay enquiries become booked treatment instead of lost patients."
+excerpt: "UK self-pay admissions rose 7.7% to their highest level ever in Q1 2026, and a private hip replacement now starts at about £17,600. How private hospitals and clinics can use AI to turn the consultant's clinic letter into a complete written quote within the two working days the CMA order allows, so self-pay enquiries become booked treatment instead of lost patients."
+---
+
+AI can read a consultant's clinic letter and the hospital's price list, and draft the written quote a self-pay patient needs before treatment: the recommended procedure, the package price or each consultant's fee, what is excluded, and the PHIN statement the rules require. A person in the self-pay team checks it and sends it the same day. The consultant still decides the treatment and the hospital still sets the price. What changes is that a £17,000 decision no longer waits a week for someone to assemble the paperwork.
+
+That matters because self-pay is the part of private healthcare that is growing.
+
+<Stats title="UK private healthcare, Q1 2026 compared with Q1 2025">
+  <Stat value="247,495" label="private hospital and clinic admissions in one quarter, level with the record set a year earlier" source="PHIN, Private healthcare market update, September 2026" href="https://www.phin.org.uk/news/private-market-update-sept-2026-uk" />
+  <Stat value="+7.7%" label="self-pay admissions, to their highest level ever, while insured admissions fell 2.6%" source="PHIN, Private healthcare market update, September 2026" href="https://www.phin.org.uk/news/private-market-update-sept-2026-uk" />
+  <Stat value="31%" label="of private admissions were paid for by the patient, 69% by insurance" source="PHIN, Private healthcare market update, September 2026" href="https://www.phin.org.uk/news/private-market-update-sept-2026-uk" />
+</Stats>
+
+The tickets are large. Spire Norwich Hospital lists a private hip replacement from £17,591, including a £231 first consultation ([Spire Norwich, hip replacement prices](https://www.spirehealthcare.com/spire-norwich-hospital/treatments/a-z/hip-replacement-surgery)). Spire's hospitals alone took £328.6 million from self-pay patients in 2025, and the group said self-pay revenue was growing about 6% early in 2026 ([Spire Healthcare, full year results 2025](https://www.investegate.co.uk/announcement/rns/spire-healthcare-group--spi/preliminary-results/9459209)). Every self-pay patient who goes quiet between the consultation and the booking is a five-figure decision that went somewhere else.
+
+## The rule that sets the clock
+
+Self-pay patients in the UK do not just want a quote. They are owed one, in writing, on a deadline. Article 22 of the CMA's [Private Healthcare Market Investigation Order 2014](https://assets.publishing.service.gov.uk/media/5a7f9183e5274a2e8ab4cf7a/Private_Healthcare_Market_Investigation_Order_2014.pdf), brought into force by the [2017 variation order](https://assets.publishing.service.gov.uk/media/5a81f3ed40f0b6230269a0d4/private-healthcare-variation-order-2017.pdf), requires:
+
+- **Before an outpatient consultation**, the estimated cost of the consultation, the consultant's financial interests in the facility, the insurers who recognise them and the PHIN website, sent when the appointment is confirmed (articles 22.3 and 22.6).
+- **Before further tests or treatment**, the reason for them, an estimate of the cumulative consultant cost of the recommended pathway or the total package price where the consultant has agreed one with the hospital, anything not included, and the PHIN statement (article 22.4).
+- **The deadline**: within the two working days following the final pre-treatment consultation, or before surgery if that comes sooner (article 22.6).
+- **The proof**: the hospital asks every privately funded patient having a procedure to sign a form confirming the consultant provided the information, and must act where they did not (article 22.7, as varied).
+
+Most hospitals handle this with templates, a self-pay coordinator and a lot of chasing: the clinic letter arrives as dictation, the anaesthetist's fee is a phone call, the implant is a line on a different price list. The rule sets a two-day clock, and a patient comparing three hospitals sets a faster one.
+
+<Bars title="Spire Healthcare hospital revenue by payer, 2025" unit="£m" caption="One listed group, not the whole market. Self-pay was 23% of its hospital revenue." source="Spire Healthcare, full year results 2025, revenue by location and payor" href="https://www.investegate.co.uk/announcement/rns/spire-healthcare-group--spi/preliminary-results/9459209" data={[
+  { label: "Private medical insurance", value: 681.5, display: "£681.5m" },
+  { label: "NHS", value: 407.9, display: "£407.9m" },
+  { label: "Self-pay", value: 328.6, display: "£328.6m", highlight: true }
+]} />
+
+## What the quote assistant does
+
+**Read the clinic letter, not a form.** The model reads the consultant's letter or dictation and pulls out the recommended procedure, laterality, likely length of stay, anaesthetic type, implants or devices named, and any tests still to do. Each item points back to the sentence it came from.
+
+**Match it to your price list.** It maps the procedure to your package prices or your hospital fee schedule, adds the consultant's and anaesthetist's fees where they bill separately, and lists what the package excludes: pre-assessment tests, unplanned extra nights, complications. Where the letter leaves a choice open, such as an operation decided during surgery, it drafts both options with their prices, which is what article 22.4(c) asks for.
+
+**Fill the required statements.** The PHIN wording, the exclusions, the validity date and the finance options go in every time, so no quote leaves without them.
+
+**Track the clock and the reply.** Each quote carries its due date, counted in working days from the consultation. The coordinator sees what is due today, what was sent and which patients have not answered in five days, with a drafted follow-up that answers the questions patients usually ask: when the date is, what happens if they need an extra night, whether they can pay in instalments.
+
+<Flow title="From consultation to signed quote" caption="AI reads and drafts. The consultant, the coordinator and the patient decide.">
+<Step title="Consult" who="Consultant" tone="human" time="day 0">Recommends treatment and dictates the clinic letter.</Step>
+<Step title="Draft" who="AI" tone="ai" time="minutes">Procedure, fees, exclusions and required statements drafted into the quote template.</Step>
+<Step title="Check" who="Self-pay coordinator" tone="human" time="10 minutes">Prices, options and exclusions checked; consultant asked only where the letter is unclear.</Step>
+<Step title="Send" who="Coordinator" tone="human" time="by day 2">Quote sent by email with booking and finance options.</Step>
+<Step title="Follow up" who="AI" tone="ai" time="day 5 onwards">Unanswered quotes flagged with a drafted reply to the patient's likely questions.</Step>
+</Flow>
+
+## The numbers for one hospital
+
+<Calc title="Napkin math: what a faster quote is worth" caption="Assumptions, not measurements. Use your own enquiry, conversion and price data." rows={[
+  ["Self-pay quotes sent a month after a surgical consultation (assumption)", "120"],
+  ["Average package value (assumption, hip replacement guide prices start near £17,600)", "× £9,000"],
+  ["Quoted value per month", "£1,080,000"],
+  ["Conversion gained by quoting in two days instead of seven (assumption)", "× 3 points"]
+]} result={["Extra treatment revenue a month", "about £32,400"]} />
+
+The assumption that carries the result is the conversion gain. Measure it before you believe it: log the date of each consultation, the date the quote went out and whether the patient booked, for three months, then compare. If quotes already go out in a day, the gain is in follow-up and in fewer quotes with missing fees, not speed.
+
+## Where it goes wrong
+
+<Callout title="The assistant quotes. It never decides the treatment or the price." tone="warning">
+What treatment is recommended is the consultant's call, and what it costs is the hospital's. The model drafts from what they have written and set. Where the letter is ambiguous, the draft says so instead of guessing.
+</Callout>
+
+**A wrong price is worse than a slow one.** If the price list in the system is out of date, the quote will be confidently wrong. Keep one owned price list with a version date, and have the coordinator check every figure before sending until the error rate over a few hundred quotes says otherwise.
+
+**Clinic letters are special category health data.** Use a provider with a data processing agreement, no training on your data and UK or EU hosting, or run the model on infrastructure you control. Your DPIA should name the tool before the first letter goes through it.
+
+**Consultants bill differently.** Some include the anaesthetist, some do not; some offer a package, some a fee per stage. Store each consultant's billing pattern so the draft asks the right question instead of assuming.
+
+## Tools that fit
+
+Large groups run patient administration systems with self-pay modules and central contact centres. If yours already produces quotes automatically, start by measuring how long they take and how many are incomplete. For an independent hospital, a private clinic, a day-surgery centre or an NHS private patient unit, the gap is usually between the clinic letter and the quote template, which a person still bridges by hand. A small assistant on top of your existing letters, price list and email is often enough, and it writes the result back to the system you already use.
+
+<Checklist title="How to start" items={[
+  "Pull fifty recent self-pay consultations and record the days from consultation to quote",
+  "Count how many quotes went out missing a consultant or anaesthetist fee",
+  "Put your package prices and exclusions into one versioned list",
+  "Run drafts on those fifty letters and check every line against what was actually sent",
+  "Agree who signs off a quote and what the model must flag rather than fill",
+  "Track booked, declined and silent for three months before and after"
+]} />
+
+## Questions private hospitals ask about AI and self-pay quotes
+
+### How quickly must a private patient receive a written quote in the UK?
+
+Under article 22.6 of the CMA's Private Healthcare Market Investigation Order 2014, the consultant must give the information about further tests or treatment, including the estimated cost or package price, within the two working days following the final pre-treatment outpatient consultation, or before surgery if that is sooner. Treatment on the same day as the consultation can be explained orally.
+
+### What has to be in a self-pay quote?
+
+The reason for the recommended tests or treatment, an estimate of all consultant fees charged separately from the hospital fee or the total package price where one is agreed, any services not included, the options and fees where the treatment can only be decided during surgery, and the PHIN website with the agreed statement about performance information.
+
+### Can AI send quotes to patients without a person checking?
+
+It can, but it should not at first. The model is good at reading letters and filling templates, and weak exactly where a wrong quote is costly: an outdated price, an unusual implant, a consultant who bills differently. Start with a person checking every quote and relax that only when the error log supports it.
+
+## Two days is the floor, not the target
+
+A self-pay patient who has just been told they need a new hip is ready to decide. A complete quote the same day, with the price, the exclusions and the date, is what turns that readiness into a booking. Let AI read the letter and draft the quote, and keep the treatment with the consultant and the price with the hospital.
+
+If your self-pay quotes still start from a dictated letter and a spreadsheet, [tell me how quotes are put together today and how many you send a month](/contact?intent=improve). I'll suggest whether drafting, the price list or follow-up is the right first step. Specialist practices face the same reading problem on the way in with [referral letters](/posts/ai-for-medical-practices-referrals), physiotherapy clinics check cover before the visit in [authorizations and coverage checks](/posts/ai-for-physical-therapy-clinics-authorizations), and dental practices win private patients on the phone first in [AI for dentists](/posts/ai-for-dentists).
