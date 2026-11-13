@@ -1,0 +1,120 @@
+---
+id: "ai-for-rd-tax-advisers-claim-narratives"
+title: "AI for R&D Tax Advisers: Project Narratives Drafted From the Engineers' Own Records"
+authorName: "Josip Ledić"
+date: "2026-11-13"
+tags: ["Professional services", "R&D tax relief", "Tax advisers", "AI for small business"]
+description: "UK companies claimed £8.2 billion of R&D tax relief for 2024 to 2025, about £203,000 per claim, while HMRC still puts error and fraud in SME claims at 11%. How R&D tax advisers and accounting firms can use AI to draft the additional information form's project descriptions from tickets, test logs and timesheets, with every sentence traced to evidence a competent professional signs off."
+excerpt: "UK companies claimed £8.2 billion of R&D tax relief for 2024 to 2025, about £203,000 per claim, while HMRC still puts error and fraud in SME claims at 11%. How R&D tax advisers and accounting firms can use AI to draft the additional information form's project descriptions from tickets, test logs and timesheets, with every sentence traced to evidence a competent professional signs off."
+---
+
+AI can read a client's engineering tickets, test logs, design reviews and timesheets, and draft the project descriptions HMRC's additional information form asks for: the field of science or technology, the baseline, the advance sought, the uncertainties and how the team tried to resolve them. Every sentence links back to the record it came from. The client's competent professional confirms the technical story and the adviser decides what is claimed. What changes is that a technical interview starts from a draft built on evidence, instead of a blank page and a director's memory of last year.
+
+That matters because the claims are large and HMRC is reading them closely.
+
+<Stats title="UK R&D tax relief, financial year 2024 to 2025 (provisional)">
+  <Stat value="£8.2bn" label="of relief claimed, up 5%, on £51.0bn of qualifying R&D expenditure" source="HMRC, Research and Development Tax Credits Statistics, September 2026" href="https://www.gov.uk/government/statistics/corporate-tax-research-and-development-tax-credit/research-and-development-tax-credits-statistics-september-2026" />
+  <Stat value="40,325" label="claims, down 17%, with the additional information form named as a key driver of the fall" source="HMRC, Research and Development Tax Credits Statistics, September 2026" href="https://www.gov.uk/government/statistics/corporate-tax-research-and-development-tax-credit/research-and-development-tax-credits-statistics-september-2026" />
+  <Stat value="69%" label="of the relief went to the 6% of claims in the £500,000-and-above bands" source="HMRC, Research and Development Tax Credits Statistics, September 2026" href="https://www.gov.uk/government/statistics/corporate-tax-research-and-development-tax-credit/research-and-development-tax-credits-statistics-september-2026" />
+</Stats>
+
+Divide £8.2 billion by 40,325 claims and the average claim is worth about £203,000 of relief. The average claim value rose 27% while the number of claims fell, so the market is shifting to fewer, larger and better-documented claims. For an adviser that means each client is worth more, and each weak narrative puts more at risk.
+
+## What HMRC now asks for, before it accepts a claim
+
+Since 8 August 2023 every R&D claim needs an additional information form. HMRC's guidance on [the additional information you must submit](https://www.gov.uk/guidance/submit-detailed-information-before-you-claim-research-and-development-rd-tax-relief) sets the rules:
+
+- **Timing.** The form goes in before or on the same day as the Company Tax Return. If the return arrives first, the claim is rejected and may be removed from the return.
+- **Who helped.** It names the senior internal R&D contact and every agent involved, including anyone who advised, analysed costs or helped prepare technical assessments.
+- **Which projects.** With 1 to 3 projects, every one is described. With 4 or more, the company picks at least 3 that together cover at least half of the qualifying expenditure, capped at the 10 largest.
+- **What each description says.** The main field of science or technology, the baseline the company set out to advance, the advance sought, the scientific or technological uncertainties (ones a competent professional could not resolve by asking peers), how the project tried to overcome them and whether it did, and the qualifying costs per project.
+
+First-time claimants and companies that have not claimed for three years also have to send a [claim notification](https://www.gov.uk/guidance/tell-hmrc-that-youre-planning-to-claim-research-and-development-rd-tax-relief) within six months of the end of the period of account, or the claim is invalid. HMRC updated that page on 29 October 2026: the notification is no longer needed for claims made on or after 1 April 2027. Until then, the deadline is still in force.
+
+## Why the narrative is where claims fail
+
+HMRC's own figures say where the risk sits. In its [annual report and accounts 2025 to 2026](https://assets.publishing.service.gov.uk/media/6a4f66c406e7256c331df8a2/HMRC_annual_report_and_accounts_2025_to_2026.pdf) (pages 107 and 251 to 252), HMRC estimates error and fraud at 6.4% of the cost of the reliefs in 2023 to 2024, £493 million, and illustrates 5.3% for 2025 to 2026. The Comptroller and Auditor General qualified his opinion on the accounts because of it.
+
+<Bars title="Estimated error and fraud in R&D relief, 2025 to 2026 (illustrative)" unit="%" caption="SME claims, whether under ERIS or the merged scheme, are estimated at 11%. Large business claims at 1.3%." source="HMRC annual report and accounts 2025 to 2026, Resource Accounts note 3.1.4" href="https://assets.publishing.service.gov.uk/media/6a4f66c406e7256c331df8a2/HMRC_annual_report_and_accounts_2025_to_2026.pdf" data={[
+  { label: "SME scheme / ERIS", value: 11.0, display: "11.0%", highlight: true },
+  { label: "Merged RDEC, SME claims", value: 11.0, display: "11.0%", highlight: true },
+  { label: "Merged RDEC, large businesses", value: 1.3, display: "1.3%" }
+]} />
+
+Large companies have engineers who write things down. Smaller ones, where most advisers work, often do not, so the narrative is reconstructed months later in an interview. That is where routine work gets described as an advance, the baseline is left vague, and the uncertainty turns out to be one any competent developer could have solved in an afternoon. AI does not fix that by writing more fluently. It fixes it by making the adviser start from what the client's records actually show.
+
+## What the narrative assistant does
+
+**Read the records the client already has.** Tickets and pull requests, test results, design review notes, lab books, supplier correspondence and timesheets, for the accounting period only. The model groups them into candidate projects and shows how many hours and which people each one involves.
+
+**Separate the R&D from the work around it.** For each candidate it proposes the baseline (what existed when the work started), the advance (what the team was trying to make possible) and the uncertainties, each with the tickets or test results behind them. Routine work, such as configuration, bug fixes in released code or cosmetic changes, is labelled as likely not qualifying instead of being smoothed into the story.
+
+**Draft the form, field by field.** It writes each project description in the order the form asks for it and within its structure, and proposes which projects to describe when there are more than three, by qualifying expenditure. Where the records are thin, the draft says what is missing instead of filling the gap.
+
+**Prepare the interview.** It turns the gaps into the five or six questions the adviser needs to ask the competent professional, so the hour with the CTO is spent confirming and correcting, not discovering.
+
+<Flow title="From records to a filed narrative" caption="AI reads and drafts. The client's engineers confirm, the adviser decides what is claimed.">
+<Step title="Collect" who="Client" tone="human" time="day 1">Tickets, test logs, review notes and timesheets for the period exported.</Step>
+<Step title="Map" who="AI" tone="ai" time="hours">Candidate projects, people and hours, with routine work flagged.</Step>
+<Step title="Draft" who="AI" tone="ai" time="hours">Baseline, advance, uncertainties and resolution per project, each line linked to its source.</Step>
+<Step title="Interview" who="Adviser and competent professional" tone="human" time="1 hour">Gaps closed, overstatements cut, technical facts confirmed.</Step>
+<Step title="File" who="Adviser" tone="human" time="before the CT600">Form submitted first, then the return, with the evidence pack kept for enquiry.</Step>
+</Flow>
+
+## The numbers for one advisory practice
+
+<Calc title="Napkin math: what faster narratives are worth" caption="Assumptions, not measurements. Use your own claim volumes, hours and rates." rows={[
+  ["Claims prepared a year (assumption)", "60"],
+  ["Projects described per claim (assumption, the form asks for at least 3 when there are more)", "× 3"],
+  ["Hours of drafting and rework per project description today (assumption)", "× 6"],
+  ["Hours spent on narratives a year", "1,080"],
+  ["Share of drafting time saved by starting from an evidence-linked draft (assumption)", "× 40%"],
+  ["Cost per adviser hour (assumption)", "× £85"]
+]} result={["Capacity freed a year", "about £36,700, or 430 hours"]} />
+
+The time saved is the smaller prize. The larger one is that each narrative rests on records you can hand to HMRC if it opens an enquiry, which protects the client's relief and your firm's name on the form.
+
+## Where it goes wrong
+
+<Callout title="The assistant drafts. It never decides what counts as R&D." tone="warning">
+Whether a project seeks an advance in science or technology, and whether an uncertainty is real, is a judgement for the client's competent professional and for you. The model proposes and cites. Where the records do not support a claim, the draft says so.
+</Callout>
+
+**Fluent text is not evidence.** A model can make any project sound like research. That is the risk HMRC is measuring. Require a source link for every factual sentence in the draft and delete any sentence without one.
+
+**Client records are confidential.** Source code, product roadmaps and unreleased designs go through the tool. Use a provider with a data processing agreement, no training on client data and UK or EU hosting, or run the model on infrastructure you control, and agree that in the engagement letter.
+
+**Costs need their own check.** Apportioning staff time, subcontractors, externally provided workers, data and cloud costs follows rules the narrative does not settle. Let the model propose hours per project from timesheets, and keep the cost schedule with the person who signs the computation.
+
+## Tools that fit
+
+Specialist R&D tax software helps with claim workflow, cost calculation and filing, and some packages now offer AI writing help. If yours already drafts from client records, start by measuring how often its drafts survive the technical interview unchanged. For a smaller specialist firm or an accounting practice with a handful of R&D clients, the gap is usually between the client's engineering tools and the narrative template, which an adviser still bridges by hand. A small assistant that reads exports from Jira, GitHub, Azure DevOps or a lab system and writes into your existing template is often enough.
+
+<Checklist title="How to start" items={[
+  "Take five claims you filed last year and list which records each narrative was actually built from",
+  "Ask those clients for the same exports for the current period: tickets, test logs, review notes, timesheets",
+  "Run drafts on them and mark every sentence as supported, unsupported or wrong",
+  "Agree which project types your firm will not describe as R&D, and teach the assistant to flag them",
+  "Keep the competent professional's sign-off on every project description",
+  "Track interview time, rework rounds and HMRC questions per claim before and after"
+]} />
+
+## Questions R&D tax advisers ask about AI and claim narratives
+
+### What must an R&D additional information form describe for each project?
+
+The main field of science or technology, the baseline level of knowledge or capability the company set out to advance, the advance it aimed to achieve, the scientific or technological uncertainties it faced, how the project tried to overcome them and whether it did, and the qualifying costs for that project. With more than three projects, the company describes at least three that cover at least half of the qualifying expenditure, up to the ten largest.
+
+### When does the additional information form have to be submitted?
+
+Before or on the same day as the Company Tax Return that makes the claim. If both go in on the same day, the form must go first. If the return arrives first, HMRC rejects the R&D claim and may remove it from the return.
+
+### Can AI write an R&D claim on its own?
+
+It can produce text, and that is the problem. HMRC's estimate of 11% error and fraud in SME claims shows what happens when narratives describe what a claim needs rather than what the team did. Use AI to read the records and draft from them, and keep the judgement with the competent professional and the adviser.
+
+## Start from the records, not the template
+
+A good R&D narrative is a summary of work the client can prove they did. Let AI read the tickets, tests and timesheets and turn them into a draft where every claim has a source, and keep the judgement about what counts as R&D with the people whose names go on the form.
+
+If your team still builds narratives from interview notes, [tell me which R&D tax software you use and roughly how many claims you prepare a year](/contact?intent=improve). I'll suggest whether reading client records, drafting, or the interview pack is the right first step. Audit firms face the same evidence chase in [client request lists](/posts/ai-for-audit-firms-client-request-lists), patent attorneys turn technical documents into deadlines in [deadline docketing](/posts/ai-for-patent-attorneys-deadline-docketing), and machine shops capture the engineering knowledge such claims depend on in [shop floor knowledge](/posts/ai-for-machine-shops-knowledge).
