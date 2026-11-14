@@ -1,0 +1,124 @@
+---
+id: "ai-for-construction-subcontractors-payment-applications"
+title: "AI for Construction Subcontractors: Interim Payment Applications, Payment Notices and Pay Less Deadlines"
+authorName: "Josip Ledić"
+date: "2026-11-14"
+tags: ["Trades & construction", "Construction subcontractors", "Payment applications", "AI for small business"]
+description: "Construction firms in Great Britain did £227 billion of work in 2025, and every interim payment on it runs on Construction Act deadlines: a payment notice within 5 days of the due date, a pay less notice at least 7 days before the final date. How subcontractors and their commercial teams can use AI to build each month's application from site records and track every notice and deadline on every contract."
+excerpt: "Construction firms in Great Britain did £227 billion of work in 2025, and every interim payment on it runs on Construction Act deadlines: a payment notice within 5 days of the due date, a pay less notice at least 7 days before the final date. How subcontractors and their commercial teams can use AI to build each month's application from site records and track every notice and deadline on every contract."
+---
+
+AI can build a subcontractor's monthly payment application from the records the site already keeps: daily diaries, photos, delivery notes, signed-off variations and the contract's schedule of rates. It can also read the payment notice or pay less notice that comes back, compare it line by line with what you applied for, and put every Construction Act deadline on the calendar for every contract. Your quantity surveyor still decides what to apply for and a director still decides whether to suspend or adjudicate. What changes is that no application goes in late, no undervaluation goes unanswered, and no missed notice from the other side goes unnoticed.
+
+For a specialist contractor, cash flow is the business, and the sums are large.
+
+<Stats title="Construction work and firms in Great Britain, 2025">
+  <Stat value="£227bn" label="value of work done by construction firms in 2025, current prices" source="ONS, Construction statistics annual tables 2025, Table 1.5" href="https://www.ons.gov.uk/businessindustryandtrade/constructionindustry/datasets/constructionstatisticsannualtables" />
+  <Stat value="39,976" label="construction firms with a turnover of £1 million or more, of 376,518 in total" source="ONS, Construction statistics annual tables 2025, Table 3.10" href="https://www.ons.gov.uk/businessindustryandtrade/constructionindustry/datasets/constructionstatisticsannualtables" />
+  <Stat value="5 days" label="after the payment due date, the latest a payer's payment notice can be given" source="Housing Grants, Construction and Regeneration Act 1996, section 110A" href="https://www.legislation.gov.uk/ukpga/1996/53/section/110A" />
+</Stats>
+
+Construction new orders grew 16.2% in 2025 to £83.3 billion, according to the [ONS construction statistics for 2025](https://www.ons.gov.uk/businessindustryandtrade/constructionindustry/articles/constructionstatistics/2025). More work means more applications, more variations and more contracts running at the same time, each with its own dates.
+
+## The Construction Act deadlines every application runs on
+
+Part II of the [Housing Grants, Construction and Regeneration Act 1996](https://www.legislation.gov.uk/ukpga/1996/53/part/II/crossheading/payment) sets the payment rules for construction contracts in England, Wales and Scotland. Where a contract leaves a gap, the [Scheme for Construction Contracts](https://www.legislation.gov.uk/uksi/1998/649/schedule/part/II) fills it. For England and Wales the Scheme's fallback timeline looks like this:
+
+<Timeline title="One interim payment under the Scheme for Construction Contracts (England and Wales)" caption="Your contract can set different periods. Where it is silent, these apply.">
+<Phase title="Due date" when="day 0">The later of 7 days after the end of the relevant period or the date of your claim (Scheme Part II, para. 4).</Phase>
+<Phase title="Payment notice" when="by day 5">The payer states the sum it considers due and how it is calculated (s. 110A, Scheme para. 9).</Phase>
+<Phase title="Pay less notice" when="by day 10">At least 7 days before the final date, with the sum and its basis (s. 111(3) to (5), Scheme para. 10).</Phase>
+<Phase title="Final date for payment" when="day 17">17 days after the due date (Scheme para. 8). The notified sum must be paid by then (s. 111(1)).</Phase>
+</Timeline>
+
+Three rules matter most for a subcontractor:
+
+- **The notified sum must be paid.** Under [section 111](https://www.legislation.gov.uk/ukpga/1996/53/part/II/crossheading/payment), the payer must pay the notified sum by the final date unless it gives a valid pay less notice in time, stating the sum it considers due and the basis of the calculation.
+- **Your application can become the notified sum.** If the payer's payment notice does not arrive, [section 110B](https://www.legislation.gov.uk/ukpga/1996/53/section/110B) lets your application, if the contract allowed you to make it before the notice date, stand as the notice. That only works if your application stated the sum and how you calculated it, and if you can prove when you sent it.
+- **You can suspend, after notice.** If the notified sum is not paid, [section 112](https://www.legislation.gov.uk/ukpga/1996/53/section/112) gives you the right to suspend any or all of your work after at least 7 days' notice, with reasonable costs and an extension of time for the suspension. Any dispute can go to adjudication, with a decision due within 28 days of referral ([section 108](https://www.legislation.gov.uk/ukpga/1996/53/section/108)).
+
+None of this is hard to understand. It is hard to keep track of across 15 live contracts with different payment cycles, cut-off dates and notice addresses, while the people who know the numbers are on site.
+
+## Where the money gets lost
+
+**The application is late or thin.** A QS who spends the last two days of the month chasing site managers for progress and variation sign-offs ends up applying for less than was done, or after the cut-off. Work that is not in this month's application waits a month.
+
+**The undervaluation goes unanswered.** A payment notice arrives with £40,000 knocked off for "incomplete work" and a line of text as the basis. Nobody compares it with the application line by line before the next valuation, and the gap becomes the starting point for the final account.
+
+**The other side's missed notice goes unnoticed.** If no payment notice and no pay less notice arrive in time, the sum you applied for may already be the notified sum. That only helps if someone checks the dates the day they pass.
+
+## What the payment assistant does
+
+**Read the contract once.** It extracts the payment cycle, application dates, due date and final date rules, who gives which notice, retention, and the notice addresses, and turns them into a calendar for the whole contract. Where the contract is silent, it applies the Scheme and says so.
+
+**Build the application from site records.** It reads the month's diaries, photos, delivery notes, labour returns and approved variation instructions, maps them to the schedule of rates or contract sum analysis, and drafts the application with the sum, the basis of calculation and the evidence behind each line. Lines without evidence are flagged, not rounded up.
+
+**Compare what comes back.** When the payment notice or pay less notice arrives, it compares each line with your application, lists the deductions with the reasons given, and drafts a response for the QS. If no valid notice arrived by its deadline, it says so the same day.
+
+**Prepare the next step, for a person to decide.** Where the notified sum is not paid by the final date, it drafts the notice of intention to suspend and the chronology an adjudicator would need. It never sends either.
+
+<Flow title="One month's interim payment" caption="AI reads records and tracks dates. The QS values, a director decides on suspension or adjudication.">
+<Step title="Collect" who="Site team" tone="human" time="daily">Diaries, photos, delivery notes and signed variations, as they already do.</Step>
+<Step title="Draft" who="AI" tone="ai" time="before cut-off">Application per contract with sum, basis and evidence per line.</Step>
+<Step title="Review" who="QS" tone="human" time="1 hour per contract">Values checked, unsupported lines removed or evidenced, application sent.</Step>
+<Step title="Check" who="AI" tone="ai" time="on receipt and on each deadline">Payment notice and pay less notice compared, missed notices flagged.</Step>
+<Step title="Act" who="Commercial director" tone="human" time="after the final date">Accept, negotiate, suspend with 7 days' notice, or adjudicate.</Step>
+</Flow>
+
+## The numbers for one specialist contractor
+
+<Calc title="Napkin math: what faster, better-evidenced applications are worth" caption="Assumptions, not measurements. Use your own contract values, rates and payment history." rows={[
+  ["Live contracts at any time (assumption)", "15"],
+  ["Average monthly application per contract (assumption)", "× £60,000"],
+  ["Value applied for each month", "£900,000"],
+  ["Share undervalued or delayed by a month for missing evidence (assumption)", "× 5%"],
+  ["Cash held back a month, every month", "£45,000"],
+  ["Cost of that cash at an overdraft or invoice finance rate of 10% a year (assumption)", "÷ 12 × 10%"]
+]} result={["Finance cost of one month's lag, every month", "about £375, plus the £45,000 itself if the gap is never recovered"]} />
+
+The finance cost is small. The real loss is the part of each undervaluation nobody challenges, which compounds into the final account. Recovering even a fraction of one month's gap a year pays for the tool.
+
+## Where it goes wrong
+
+<Callout title="The assistant tracks and drafts. It never sends a notice." tone="warning">
+Whether a notice is valid, whether to suspend and whether to refer a dispute are legal and commercial decisions with consequences for the relationship and the programme. The model shows the dates and drafts the paperwork. A person decides and signs.
+</Callout>
+
+**Contract terms beat the Scheme.** JCT, NEC and bespoke subcontracts set their own periods and notice rules, and amendments change them again. The assistant has to read the actual contract and show which clause each date comes from, and the QS checks the calendar for each new contract once.
+
+**Evidence has to be real.** A photo with the wrong date or a variation instruction that was never signed is worse than no line at all. Keep the link from each application line to its record, and keep the records.
+
+**Proof of sending matters.** Under section 110B and in adjudication, the date and route of each application and notice can decide the outcome. Send through the channel the contract names and keep the record the tool produces.
+
+## Tools that fit
+
+Commercial and QS software for subcontractors handles valuations, variations and applications, and many contractors still run applications in spreadsheets. If yours already holds the schedule of rates, the cheapest win is an assistant that fills it from site records and reads the notices that come back by email. If your site team already writes diaries by voice or on a phone, [construction daily reports](/posts/ai-for-construction-daily-reports) are the input this workflow needs.
+
+<Checklist title="How to start" items={[
+  "List every live contract with its payment cycle, due date rule, final date rule and notice address",
+  "Take last month's applications and mark which lines had evidence attached and which did not",
+  "Pull the payment notices and pay less notices you received and compare them with what you applied for",
+  "Check whether any notice arrived late or not at all, and what that would have meant under sections 110B and 111",
+  "Run the assistant on one contract for two cycles, with the QS reviewing every line",
+  "Track days from cut-off to application, undervaluation per month and cash received by the final date"
+]} />
+
+## Questions subcontractors ask about AI and payment applications
+
+### When does a pay less notice have to be given under the Construction Act?
+
+Not later than the period before the final date for payment that the contract sets. If the contract sets none, the Scheme for Construction Contracts applies, and in England and Wales the pay less notice must be given at least 7 days before the final date for payment. It must state the sum the payer considers due and the basis of the calculation.
+
+### What happens if the main contractor does not send a payment notice?
+
+If the contract allowed you to apply before the payment notice date and your application stated the sum and its basis, your application is treated as the payment notice under section 110B. Unless a valid pay less notice follows in time, the payer must pay that notified sum by the final date for payment.
+
+### Can AI decide whether to suspend work or go to adjudication?
+
+No. It can tell you that the final date has passed without payment of the notified sum, draft the 7-day notice of intention to suspend and assemble the chronology. Whether to use those rights is a commercial and legal decision for the business, ideally with advice.
+
+## Apply on time, with the evidence attached
+
+A payment application is only as good as the records behind it and the date it went in. Let AI turn the site's records into a draft application with evidence for every line and watch every deadline on both sides, and keep the valuation and the hard decisions with your QS and directors.
+
+If your applications still come together in the last two days of the month, [tell me which commercial software you use and how many contracts you run at once](/contact?intent=improve). I'll suggest whether contract dates, application drafting or notice checking is the right first step. Contractors bidding for public work face the same deadline pressure in [public tenders](/posts/ai-for-construction-contractors-public-tenders), cabinet makers price changes before they become disputes in [change orders](/posts/ai-for-cabinet-makers-change-orders), and scaffolding firms track hire periods that feed straight into their applications in [inspections and hire](/posts/ai-for-scaffolding-companies-inspections-hire).
