@@ -1,0 +1,126 @@
+---
+id: "ki-insolvenzverwalter-forderungsanmeldung"
+translationOf: "ai-for-insolvency-practitioners-creditor-claims"
+title: "KI für Insolvenzverwalter: Forderungsanmeldungen prüfen, Tabelle führen, Prüfungstermin vorbereiten"
+authorName: "Josip Ledić"
+date: "2026-11-15"
+tags: ["Kanzleien & Dienstleister", "Insolvenzverwaltung", "Forderungsprüfung", "KI für kleine Unternehmen"]
+description: "Die Amtsgerichte registrierten im 1. Halbjahr 2026 12.812 Unternehmensinsolvenzen mit rund 18,5 Mrd. Euro Gläubigerforderungen, im Schnitt also rund 1,4 Mio. Euro je Verfahren. Jede angemeldete Forderung muss in die Tabelle und bis zum Prüfungstermin geprüft sein. Wie Insolvenzverwalter mit KI Anmeldungen gegen die Buchhaltung des Schuldners abgleichen und alle Fristen nach InsO im Blick behalten."
+excerpt: "Die Amtsgerichte registrierten im 1. Halbjahr 2026 12.812 Unternehmensinsolvenzen mit rund 18,5 Mrd. Euro Gläubigerforderungen, im Schnitt also rund 1,4 Mio. Euro je Verfahren. Jede angemeldete Forderung muss in die Tabelle und bis zum Prüfungstermin geprüft sein. Wie Insolvenzverwalter mit KI Anmeldungen gegen die Buchhaltung des Schuldners abgleichen und alle Fristen nach InsO im Blick behalten."
+---
+
+KI kann die erste Durchsicht jeder Forderungsanmeldung übernehmen: die Anmeldung und ihre Anlagen lesen, prüfen, ob Grund und Betrag nach § 174 InsO angegeben und Belege beigefügt sind, die Forderung mit Kreditorenbuchhaltung, offenen Posten und Kontoauszügen des Schuldners abgleichen und Doppelanmeldungen, Aufrechnungslagen und Aussonderungs- oder Absonderungsrechte markieren. Sie kann außerdem für jedes Verfahren die Termine führen: Anmeldefrist, Niederlegung der Tabelle, Prüfungstermin und Verteilung. Ob eine Forderung festgestellt oder bestritten wird, entscheidet weiterhin der Verwalter. Was sich ändert: Das Sachbearbeitungsteam beginnt mit einer abgeglichenen Tabelle, in der die offenen Fragen schon stehen, statt mit einem Stapel PDFs.
+
+Insolvenzverfahren über Unternehmen sind große Mandate, und die Forderungsprüfung bindet in jedem davon viel Zeit.
+
+<Stats title="Unternehmensinsolvenzen in Deutschland, 1. Halbjahr 2026">
+  <Stat value="12.812" label="beantragte Unternehmensinsolvenzen, 6,7 % mehr als im Vorjahreszeitraum und so viele wie seit dem 1. Halbjahr 2013 nicht mehr" source="Destatis, Pressemitteilung Nr. 325 vom 11. September 2026" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26_325_52411.html" />
+  <Stat value="18,5 Mrd. €" label="Forderungen der Gläubiger aus diesen Verfahren laut Amtsgerichten, rund 1,4 Mio. Euro je Verfahren im Durchschnitt" source="Destatis, Pressemitteilung Nr. 325 vom 11. September 2026" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26_325_52411.html" />
+  <Stat value="62.250 €" label="Regelvergütung des Verwalters bei einer Insolvenzmasse von 1 Mio. Euro, vor Zu- und Abschlägen" source="§ 2 Abs. 1 InsVV, eigene Berechnung" href="https://www.gesetze-im-internet.de/insvv/__2.html" />
+</Stats>
+
+Im 1. Halbjahr 2025 lagen die Forderungen sogar bei rund 28,2 Mrd. Euro, weil damals mehr wirtschaftlich bedeutende Unternehmen Insolvenz beantragt hatten, so [Destatis](https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/09/PD26_325_52411.html). Hinter jedem dieser Verfahren stehen Dutzende bis Hunderte Gläubiger, deren Anmeldungen geprüft, eingetragen und im Prüfungstermin erörtert werden müssen.
+
+## Die Fristen der Insolvenzordnung
+
+Der Eröffnungsbeschluss setzt den Rahmen, die §§ 174 bis 178 InsO regeln die Prüfung im Einzelnen:
+
+<Timeline title="Von der Anmeldefrist bis zur Verteilung" caption="Die konkreten Daten stehen im Eröffnungsbeschluss. Paragrafen beziehen sich auf die Insolvenzordnung.">
+<Phase title="Anmeldefrist" when="2 Wochen bis 3 Monate">Das Gericht fordert die Gläubiger auf, ihre Forderungen beim Verwalter anzumelden (§ 28 Abs. 1).</Phase>
+<Phase title="Tabelle niederlegen" when="im ersten Drittel">Der Verwalter trägt jede Anmeldung in die Tabelle ein und legt sie mit den Urkunden bei Gericht nieder, im ersten Drittel der Zeit zwischen Anmeldefrist und Prüfungstermin (§ 175 Abs. 1).</Phase>
+<Phase title="Prüfungstermin" when="1 Woche bis 2 Monate nach Fristablauf">Die Forderungen werden nach Betrag und Rang geprüft, bestrittene einzeln erörtert (§ 29 Abs. 1 Nr. 2, § 176).</Phase>
+<Phase title="Feststellung" when="im Termin">Ohne Widerspruch gilt die Forderung als festgestellt, die Eintragung wirkt wie ein rechtskräftiges Urteil (§ 178).</Phase>
+<Phase title="Verteilung" when="nach dem Prüfungstermin">Verteilungsverzeichnis, öffentliche Bekanntmachung und zwei Wochen Ausschlussfrist für bestrittene Forderungen (§§ 187 bis 189).</Phase>
+</Timeline>
+
+Drei Punkte machen den größten Teil der Arbeit aus:
+
+- **Was die Anmeldung enthalten muss.** Nach [§ 174 InsO](https://www.gesetze-im-internet.de/inso/__174.html) melden Gläubiger schriftlich beim Verwalter an, mit Grund und Betrag der Forderung, und sollen die Urkunden in Abdruck beifügen. Fehlt das, ist eine Rückfrage nötig, bevor sich die Forderung sinnvoll prüfen lässt.
+- **Die Tabelle muss rechtzeitig bei Gericht liegen.** [§ 175 InsO](https://www.gesetze-im-internet.de/inso/__175.html) verlangt die Niederlegung mit allen Anmeldungen und Urkunden im ersten Drittel des Zeitraums bis zum Prüfungstermin. Bei einem Prüfungstermin sechs Wochen nach Fristablauf sind das zwei Wochen.
+- **Die Feststellung ist endgültig.** Was im Prüfungstermin unwidersprochen bleibt, gilt nach [§ 178 InsO](https://www.gesetze-im-internet.de/inso/__178.html) als festgestellt und wirkt gegenüber Verwalter und allen Gläubigern wie ein rechtskräftiges Urteil. Ein Fehler in der Prüfung lässt sich danach kaum noch korrigieren.
+
+Bei einem Verfahren ist das gut zu schaffen. Bei vierzig gleichzeitig laufenden Verfahren, jeweils mit 50 bis 500 Gläubigern, neben Verwertung, Anfechtungsprüfung und Berichten, wird es eng.
+
+## Wo Zeit und Risiko liegen
+
+**Anmeldungen kommen in jeder Form.** Formular mit Rechnungsliste, formloses Schreiben mit Kontoauszug, Inkassobüro mit Sammelanmeldung, dazu Nachmeldungen nach Fristablauf (§ 177 InsO). Jemand muss herausfinden, was genau angemeldet ist und ob es vollständig ist.
+
+**Buchhaltung und Anmeldung passen nicht zusammen.** Die offenen Posten zeigen 18.400 Euro, angemeldet sind 26.900 Euro mit Zinsen, Kosten, zwei Gutschriften und einer strittigen Lieferung. Dieser Abgleich ist der langsame Teil jeder Forderungsprüfung.
+
+**Doppelte Anmeldungen und Sicherungsrechte.** Factoring-Gesellschaft und Lieferant melden dieselbe Rechnung an, ein Lieferant mit Eigentumsvorbehalt meldet die volle Forderung zur Tabelle an, ein Vermieter verrechnet mit der Kaution. All das muss vor dem Prüfungstermin auffallen.
+
+## Was der KI-Assistent übernimmt
+
+**Anmeldungen lesen und erfassen.** Gläubiger, Betrag, Grund, Zinsen, Kosten, beanspruchte Sicherheiten und beigefügte Belege werden je Forderung in eine Zeile übernommen, fehlende Angaben nach § 174 InsO markiert.
+
+**Mit den Unterlagen des Schuldners abgleichen.** Jede Forderung wird mit Kreditorenkonto, offenen Posten, Zahlungen und Gutschriften verglichen, die Differenz mit den Belegen beider Seiten gezeigt. Gegenforderungen des Schuldners, die eine Aufrechnung möglich machen, werden angezeigt.
+
+**Markieren, was ein Mensch entscheiden muss.** Doppelanmeldungen, auch über verbundene Verfahren hinweg, Abtretungen, Zinsen über die Eröffnung hinaus, Forderungen mit beanspruchtem Absonderungsrecht, Anmeldungen mit Hinweis auf eine vorsätzlich begangene unerlaubte Handlung (§ 174 Abs. 2 InsO) und alles über einer Betragsgrenze, die der Verwalter festlegt. Jeder Hinweis nennt die Fundstelle.
+
+**Termine führen und Schreiben vorbereiten.** Anmeldefrist, Niederlegung der Tabelle, Prüfungstermin und die Ausschlussfrist nach § 189 InsO werden für jedes Verfahren geführt. Rückfragen an Gläubiger und Begründungen für bestrittene Forderungen entstehen als Entwurf für die Sachbearbeitung. Der Assistent stellt nichts fest, bestreitet nichts und zahlt nichts aus.
+
+<Flow title="Forderungsprüfung in einem Verfahren" caption="Die KI liest und gleicht ab. Die Sachbearbeitung prüft, der Verwalter entscheidet.">
+<Step title="Eingang" who="Gläubiger" tone="human" time="bis zum Ende der Anmeldefrist">Anmeldungen per Post, E-Mail oder Gläubigerportal, wie bisher.</Step>
+<Step title="Abgleich" who="KI" tone="ai" time="bei Eingang">Anmeldung gelesen, Angaben nach § 174 geprüft, Forderung mit Buchhaltung und Zahlungen abgeglichen.</Step>
+<Step title="Sachbearbeitung" who="Sachbearbeiterin oder Sachbearbeiter" tone="human" time="Minuten je eindeutiger Forderung">Abgeglichene Forderungen bestätigt, markierte geklärt, Rückfragen verschickt.</Step>
+<Step title="Prüfung" who="Verwalter" tone="human" time="vor dem Prüfungstermin">Anerkennen oder bestreiten, ganz oder teilweise, mit Begründung.</Step>
+<Step title="Nachlauf" who="KI" tone="ai" time="bis zur Verteilung">Nachmeldungen, Feststellungsklagen und Fristen nach § 189 im Blick.</Step>
+</Flow>
+
+## Eine Rechnung für eine Verwalterkanzlei
+
+<Calc title="Überschlag: Zeit für die Forderungsprüfung in einem Quartal" caption="Annahmen, keine Messwerte. Setzen Sie Ihre eigenen Verfahrenszahlen und Zeiterfassung ein." rows={[
+  ["Verfahren mit Prüfungstermin in diesem Quartal (Annahme)", "10"],
+  ["Anmeldungen je Verfahren (Annahme)", "× 120"],
+  ["Zu prüfende Anmeldungen", "1.200"],
+  ["Zeit je Anmeldung heute, lesen und abgleichen (Annahme)", "× 20 Minuten"],
+  ["Stunden heute", "400 Stunden"],
+  ["Zeit je Anmeldung, wenn der Abgleich vorliegt und nur Hinweise zu klären sind (Annahme)", "× 7 Minuten"]
+]} result={["Freie Zeit in der Sachbearbeitung je Quartal", "rund 260 Stunden, ohne entdeckte Doppelanmeldungen"]} />
+
+Die Vergütung nach InsVV hängt an der Masse, nicht an den Stunden. Jede Stunde, die nicht in den Abgleich fließt, steht also für Verwertung, Anfechtung oder das nächste Verfahren zur Verfügung. Und eine unberechtigt festgestellte Forderung von 50.000 Euro geht direkt zulasten aller anderen Gläubiger.
+
+## Wo es schiefgehen kann
+
+<Callout title="Der Assistent gleicht ab und entwirft. Der Verwalter entscheidet." tone="warning">
+Ob eine Forderung anerkannt oder bestritten wird, welcher Rang ihr zukommt und wann verteilt wird, entscheidet der Insolvenzverwalter, und er haftet dafür. Die KI zeigt Belege und Fristen. Ein Mensch entscheidet und unterschreibt.
+</Callout>
+
+**Die Buchhaltung des Schuldners ist oft unvollständig.** Gerade in der Krise wird nicht mehr sauber gebucht. Eine Abweichung ist eine Frage an den Gläubiger, kein Beweis gegen ihn, und der Assistent muss angeben, auf welche Unterlage er sich stützt.
+
+**Datenschutz und Verschwiegenheit.** Anmeldungen enthalten Arbeitnehmerforderungen, Bankdaten und persönliche Bürgschaften. Setzen Sie den Assistenten nur dort ein, wo Ihre Datenregeln es erlauben, mit Zugriff nur für das Verfahrensteam, und legen Sie das Protokoll zur Akte.
+
+**Jedes Verfahren hat Besonderheiten.** Eigenverwaltung, Insolvenzplan, Konzernverfahren oder gerichtliche Anordnungen ändern Abläufe und Termine. Die Termine, die der Assistent aus dem Eröffnungsbeschluss übernimmt, prüft die Sachbearbeitung beim Anlegen des Verfahrens einmal.
+
+## Was technisch passt
+
+Die meisten Verwalterkanzleien arbeiten mit einer spezialisierten Insolvenzsoftware mit Tabellenführung und oft einem Gläubigerportal. Der kleinste sinnvolle Schritt ist ein Assistent, der Anmeldungen und den Buchhaltungsexport des Schuldners liest und die abgeglichene Tabelle in dem Format zurückgibt, das Ihre Software ohnehin importiert. Klein anfangen, mit einem Verfahren, mit klaren Regeln für die Daten.
+
+<Checklist title="So fangen Sie an" items={[
+  "Ein Verfahren mit anstehendem Prüfungstermin wählen und Anmeldungen, Kreditorenkonten und offene Posten exportieren",
+  "Die Sachbearbeitung prüft wie gewohnt und notiert Zeit je Anmeldung und den Grund jeder Abweichung",
+  "Den Assistenten auf dieselben Anmeldungen ansetzen und seine Treffer und Hinweise mit dem Ergebnis vergleichen",
+  "Jeden Hinweis auf Doppelanmeldung, Aufrechnung oder Sicherungsrecht an den Belegen nachprüfen",
+  "Die Betragsgrenze festlegen, ab der der Verwalter jede Forderung selbst ansieht",
+  "Zeit je Anmeldung, Tage bis zur Niederlegung der Tabelle und Zahl der Feststellungsklagen verfolgen"
+]} />
+
+## Häufige Fragen zur KI in der Forderungsprüfung
+
+### Welche Angaben muss eine Forderungsanmeldung nach § 174 InsO enthalten?
+
+Die Anmeldung erfolgt schriftlich beim Insolvenzverwalter und muss Grund und Betrag der Forderung angeben. Die Urkunden, aus denen sich die Forderung ergibt, sollen in Abdruck beigefügt werden. Wer geltend macht, dass eine vorsätzlich begangene unerlaubte Handlung, eine vorsätzlich verletzte Unterhaltspflicht oder eine Steuerstraftat zugrunde liegt, muss auch die Tatsachen dafür angeben.
+
+### Bis wann muss die Insolvenztabelle beim Gericht liegen?
+
+Nach § 175 Abs. 1 InsO legt der Verwalter die Tabelle mit den Anmeldungen und Urkunden im ersten Drittel des Zeitraums zwischen dem Ablauf der Anmeldefrist und dem Prüfungstermin in der Geschäftsstelle des Insolvenzgerichts nieder. Der Prüfungstermin liegt nach § 29 InsO in der Regel eine Woche bis zwei Monate nach dem Ende der Anmeldefrist.
+
+### Kann KI entscheiden, ob eine Forderung bestritten wird?
+
+Nein. Ob der Verwalter eine Forderung im Prüfungstermin anerkennt oder bestreitet, ist seine Entscheidung, und eine unwidersprochene Forderung gilt nach § 178 InsO als festgestellt. Die KI bereitet den Abgleich vor, markiert Auffälligkeiten und entwirft die Begründung, die der Verwalter prüft und verantwortet.
+
+## Jeden Prüfungstermin mit einer abgeglichenen Tabelle beginnen
+
+Forderungsprüfung ist Lesen, Abgleichen und Fristen, für jeden Gläubiger in jedem Verfahren. Überlassen Sie der KI das Lesen und den Abgleich mit Belegen und den Blick auf die Termine, und behalten Sie die Entscheidung und die Unterschrift beim Verwalter.
+
+Wenn Ihre Sachbearbeitung Anmeldungen heute Zeile für Zeile in einer Tabelle abgleicht, [schreiben Sie mir, mit welcher Insolvenzsoftware Sie arbeiten und wie viele Prüfungstermine im Quartal anstehen](/de/kontakt?intent=improve). Ich schlage Ihnen einen kleinen ersten Schritt vor, schrittweise und mit klaren Regeln für die Verfahrensdaten. Wirtschaftsprüfer führen eine ähnliche Belegspur in der [PBC-Liste](/de/posts/ki-wirtschaftspruefung-pbc-liste), M&A-Berater halten die Antworten eines Verkaufs in den [Due-Diligence-Fragen](/de/posts/ki-ma-berater-due-diligence-fragen) einheitlich, und Nachunternehmer sichern die Zahlungen, an denen oft hängt, ob sie überhaupt Gläubiger werden, mit sauberen [Abschlagsrechnungen](/de/posts/ki-nachunternehmer-abschlagsrechnung).

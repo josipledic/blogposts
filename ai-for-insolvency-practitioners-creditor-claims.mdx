@@ -1,0 +1,125 @@
+---
+id: "ai-for-insolvency-practitioners-creditor-claims"
+title: "AI for Insolvency Practitioners: Proofs of Debt, Claims Adjudication and Dividend Deadlines"
+authorName: "Josip Ledić"
+date: "2026-11-15"
+tags: ["Professional services", "Insolvency practitioners", "Creditor claims", "AI for small business"]
+description: "1,882 companies entered insolvency in England and Wales in September 2026, and every case with a dividend runs on the Insolvency Rules 2016: proofs must be admitted or rejected within 14 days of the last date for proving, and a rejected creditor has 21 days to appeal. How insolvency practitioners can use AI to check each proof against the company's books and keep every adjudication and dividend deadline across the caseload."
+excerpt: "1,882 companies entered insolvency in England and Wales in September 2026, and every case with a dividend runs on the Insolvency Rules 2016: proofs must be admitted or rejected within 14 days of the last date for proving, and a rejected creditor has 21 days to appeal. How insolvency practitioners can use AI to check each proof against the company's books and keep every adjudication and dividend deadline across the caseload."
+---
+
+AI can do the first pass on every proof of debt an insolvency practitioner receives: read the proof and its attachments, check that it contains what rule 14.4 of the Insolvency Rules 2016 requires, match the claim against the company's purchase ledger, statement of affairs and bank records, and flag duplicates, set-off and retention of title. It can also keep the dates for every case: the last date for proving, the 14 days to adjudicate after it, and the 21 days a rejected creditor has to appeal. The IP still admits or rejects each proof and declares each dividend. What changes is that the case manager starts from a reconciled claims schedule with the questions already listed, instead of a pile of PDFs.
+
+Insolvency work is high value per case, and claims adjudication is where much of the time goes.
+
+<Stats title="UK insolvency work, 2025 to 2026">
+  <Stat value="1,882" label="registered company insolvencies in England and Wales in September 2026, including 1,420 creditors' voluntary liquidations and 102 administrations" source="Insolvency Service, Company Insolvency Statistics September 2026" href="https://www.gov.uk/government/statistics/company-insolvencies-september-2026/commentary-company-insolvency-statistics-september-2026" />
+  <Stat value="1,262" label="insolvency practitioners able to take appointments in the UK on 1 January 2026, of 1,480 authorised" source="Insolvency Service, Annual Review of Insolvency Practitioner Regulation 2025, Table 1" href="https://www.gov.uk/government/publications/insolvency-practitioner-regulation-process-review-2025/annual-review-of-insolvency-practitioner-regulation-2025" />
+  <Stat value="£116.8m" label="restructuring and advisory revenue at BTG Consulting, the UK's largest firm by corporate appointments, in the year to April 2026" source="BTG Consulting plc, final results, 6 July 2026" href="https://www.investegate.co.uk/announcement/rns/btg-consulting-plc--btg/final-results/9652936" />
+</Stats>
+
+That is about 15 company insolvencies a month in England and Wales alone for every 10 appointment-taking IPs in the UK, and each of them can bring tens or hundreds of creditors. BTG Consulting, the former Begbies Traynor, reported its restructuring order book up to £88.2 million at 30 April 2026 and cited 23,616 national insolvency appointments in the year, drawing on Insolvency Service figures, in its [final results](https://www.investegate.co.uk/announcement/rns/btg-consulting-plc--btg/final-results/9652936).
+
+## The Insolvency Rules deadlines every dividend runs on
+
+Part 14 of the [Insolvency Rules 2016](https://www.legislation.gov.uk/uksi/2016/1024/part/14) sets out how creditors prove and how the office-holder deals with their proofs. For a dividend in an administration, a CVL or a compulsory liquidation, the sequence looks like this:
+
+<Timeline title="One dividend under Part 14 of the Insolvency Rules 2016" caption="Rule references are to the Insolvency Rules 2016 (England and Wales). Check the current text and any case-specific court orders.">
+<Phase title="Notice of intended dividend" when="day 0">The office-holder gives notice and sets one last date for proving for all creditors (r. 14.29, 14.30).</Phase>
+<Phase title="Last date for proving" when="day 21 or later">Not less than 21 days from the date of the notice (r. 14.30(c)).</Phase>
+<Phase title="Adjudication" when="within 14 days">Proofs delivered by the last date are admitted, rejected in whole or part, or provided for (r. 14.32(1)).</Phase>
+<Phase title="Appeal window" when="21 days">A creditor can apply to court within 21 days of receiving the statement of reasons for a rejection (r. 14.8(2)).</Phase>
+<Phase title="Dividend declared" when="within 2 months">Within two months of the last date for proving, with the notice of declaration under r. 14.35 (r. 14.30(a)).</Phase>
+</Timeline>
+
+Three rules decide most of the work:
+
+- **What a proof must contain.** [Rule 14.4](https://www.legislation.gov.uk/uksi/2016/1024/rule/14.4) lists it: the creditor's details, the total claim at the relevant date less payments and set-off, whether it includes uncapitalised interest, how and when the debt was incurred, any security and its value, any retention of title, and the documents that substantiate it. A proof that leaves these out is a question back to the creditor, not an admission.
+- **Reasons for every rejection.** Under [rule 14.7](https://www.legislation.gov.uk/uksi/2016/1024/rule/14.7) the office-holder may admit or reject a proof in whole or in part, and must send the creditor a statement of reasons for any rejection as soon as reasonably practicable. That statement starts the creditor's 21 days under [rule 14.8](https://www.legislation.gov.uk/uksi/2016/1024/rule/14.8).
+- **Fourteen days after the last date.** [Rule 14.32](https://www.legislation.gov.uk/uksi/2016/1024/rule/14.32) requires the office-holder to deal with every proof received by the last date for proving within 14 days of it, and forbids paying the same debt twice.
+
+None of this is complicated on one case. It is a lot of reading and matching across 40 cases with 50 to 500 creditors each, while the same team also runs realisations, investigations and statutory reports.
+
+## Where the time and the risk sit
+
+**Proofs arrive in every format.** Portal submissions, emailed PDFs, scanned forms with an invoice list stapled on, statements of account with no proof form at all. Someone has to work out what each one claims and whether it is complete.
+
+**The books disagree with the claim.** The purchase ledger shows £18,400, the creditor claims £26,900 including interest, two credit notes and a disputed delivery. Reconciling that by hand is the slow part of every adjudication.
+
+**Duplicates and assignments slip through.** A finance company proves for the same debt as the original supplier, a factored invoice turns up twice, a creditor proves in the administration and again in the following liquidation. Rule 14.32(3) says a debt is paid once, and the schedule has to show it.
+
+## What the claims assistant does
+
+**Read and classify each proof.** It extracts the creditor, the amount, the relevant date, interest, security, retention of title and the supporting documents into one row per claim, and marks which rule 14.4 items are missing.
+
+**Match against the company's records.** It compares each claim with the purchase ledger, the statement of affairs, bank payments after the relevant date and any credit notes, and shows the difference with the documents on each side. It looks for set-off where the creditor also owes the company money.
+
+**Flag what needs a person.** Duplicates across creditors and across connected cases, assignments, claims that include post-relevant-date interest, preferential or secondary preferential elements, and anything over a threshold the IP sets. Each flag cites the page it came from.
+
+**Keep the dates and draft the letters.** It holds the last date for proving, the 14-day adjudication date and each creditor's 21-day appeal window for every case, and drafts requests for information and statements of reasons for the case manager to edit. It never admits, rejects or pays anything.
+
+<Flow title="Claims adjudication for one dividend" caption="AI reads and reconciles. The case manager reviews, the IP decides and signs.">
+<Step title="Receive" who="Creditors" tone="human" time="until the last date for proving">Proofs by portal, email or post, as now.</Step>
+<Step title="Reconcile" who="AI" tone="ai" time="on receipt">Proof read, rule 14.4 items checked, claim matched to ledger, statement of affairs and bank.</Step>
+<Step title="Review" who="Case manager" tone="human" time="minutes per straightforward claim">Matched claims confirmed, flagged claims investigated, information requests sent.</Step>
+<Step title="Adjudicate" who="IP" tone="human" time="within 14 days of the last date">Admit or reject in whole or part, statement of reasons for every rejection.</Step>
+<Step title="Track" who="AI" tone="ai" time="until the dividend">Appeal windows, late proofs and the two-month dividend date per case.</Step>
+</Flow>
+
+## The numbers for one insolvency practice
+
+<Calc title="Napkin math: case manager time on one dividend round" caption="Assumptions, not measurements. Use your own case mix and time records." rows={[
+  ["Cases reaching a dividend this quarter (assumption)", "10"],
+  ["Proofs per case (assumption)", "× 120"],
+  ["Proofs to adjudicate", "1,200"],
+  ["Case manager time per proof today, read and reconcile (assumption)", "× 20 minutes"],
+  ["Hours today", "400 hours"],
+  ["Time per proof when the reconciliation arrives done and only flags need work (assumption)", "× 7 minutes"]
+]} result={["Case manager time freed per quarter", "about 260 hours, before any duplicate caught"]} />
+
+The hours matter because time costs are charged against the estate and scrutinised by creditors, and because a dividend paid two months earlier is the outcome creditors notice. One duplicate claim caught on a £2 million estate can be worth more to the other creditors than the tool costs for the year.
+
+## Where it goes wrong
+
+<Callout title="The assistant reconciles and drafts. The office-holder decides." tone="warning">
+Admitting or rejecting a proof, valuing security and declaring a dividend are the office-holder's decisions under the Insolvency Rules, and the IP answers for them. The model shows the evidence and the dates. A person decides, signs and keeps the record.
+</Callout>
+
+**The books are often wrong.** A failed company's ledger can be months out of date or incomplete. A mismatch is a question, not proof that the creditor is wrong, and the assistant should say which record it relied on.
+
+**Personal data and confidentiality.** Proofs carry employee claims, personal guarantees and bank details. Run the assistant where your firm's data rules allow, with access limited to the case team, and keep the audit trail with the case file.
+
+**Each case has its own facts.** Connected companies, court directions, a prescribed part, a moratorium or a scheme can change the rules for a case. The case manager confirms the dates the assistant proposes when the case is set up.
+
+## Tools that fit
+
+Most UK practices run cases in dedicated insolvency case management software with a creditor portal, and many still adjudicate in spreadsheets exported from it. The cheapest first step is an assistant that reads the proofs and the company's ledger export and writes a reconciled schedule back in the format your system already imports. If your team also prepares statutory reports from the same records, the reading step carries over.
+
+<Checklist title="How to start" items={[
+  "Pick one case with a dividend coming up and export its proofs, ledger and statement of affairs",
+  "Have a case manager adjudicate as usual and log time per proof and the reason for each adjustment",
+  "Run the assistant on the same proofs and compare its matches and flags with the manual result",
+  "Check every duplicate, set-off and retention of title flag against the source documents",
+  "Set the threshold above which the IP reviews every claim personally",
+  "Track hours per proof, days from last date for proving to adjudication and appeals received"
+]} />
+
+## Questions insolvency practitioners ask about AI and claims
+
+### How long does an office-holder have to adjudicate proofs before a dividend?
+
+Under rule 14.32 of the Insolvency Rules 2016, the office-holder must admit or reject, in whole or in part, every proof delivered by the last date for proving within 14 days of that date, unless already dealt with, or make such provision for it as they think fit. The last date for proving must be at least 21 days after the notice of intended dividend.
+
+### What must a proof of debt contain?
+
+Rule 14.4 requires the creditor's name and address, the total claim at the relevant date less later payments, deductions and set-off, whether it includes uncapitalised interest, how and when the debt was incurred, details of any security and its value, any retention of title, the documents that substantiate the debt, and an authenticated date and signatory.
+
+### Can AI admit or reject a creditor's claim?
+
+No. The decision under rule 14.7 belongs to the office-holder, who must give reasons for any rejection. AI can prepare the reconciliation, flag the issues and draft the statement of reasons, which the IP reviews, edits and signs.
+
+## Start every dividend from a reconciled schedule
+
+Claims adjudication is reading, matching and dates, repeated across every creditor of every case. Let AI do the reading and matching with the evidence attached and keep the dates, and keep the judgement and the signature with the IP.
+
+If your case managers still reconcile proofs line by line in a spreadsheet, [tell me which case management system you use and how many cases reach a dividend each quarter](/contact?intent=improve). I'll suggest whether proof reading, ledger matching or deadline tracking is the right first step. Auditors run a similar evidence trail in [audit request lists](/posts/ai-for-audit-firms-client-request-lists), M&A advisers keep a sale's answers consistent in [due diligence Q&A](/posts/ai-for-ma-advisers-due-diligence-qa), and subcontractors protect the payments that often decide whether a creditor ends up proving at all in [interim payment applications](/posts/ai-for-construction-subcontractors-payment-applications).
