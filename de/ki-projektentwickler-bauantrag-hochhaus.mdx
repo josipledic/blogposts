@@ -1,0 +1,124 @@
+---
+id: "ki-projektentwickler-bauantrag-hochhaus"
+translationOf: "ai-for-property-developers-gateway-2-applications"
+title: "KI für Projektentwickler: Der vollständige Bauantrag für Hochhaus und Sonderbau"
+authorName: "Josip Ledić"
+date: "2026-11-16"
+tags: ["Immobilien", "Projektentwicklung", "Bauantrag", "KI für kleine Unternehmen"]
+description: "Von der Baugenehmigung bis zur Fertigstellung eines Wohngebäudes vergehen inzwischen 27 Monate, 2020 waren es 20. Ein Hochhaus ist Sonderbau, für den es in Bayern keine Genehmigungsfiktion gibt, und schon die Vollständigkeitsprüfung des Bauantrags kann ihn um Wochen zurückwerfen. Wie Projektentwickler und Entwurfsverfasser mit KI Bauvorlagen, Brandschutznachweis und Baubeschreibung vor der Einreichung gegeneinander prüfen."
+excerpt: "Von der Baugenehmigung bis zur Fertigstellung eines Wohngebäudes vergehen inzwischen 27 Monate, 2020 waren es 20. Ein Hochhaus ist Sonderbau, für den es in Bayern keine Genehmigungsfiktion gibt, und schon die Vollständigkeitsprüfung des Bauantrags kann ihn um Wochen zurückwerfen. Wie Projektentwickler und Entwurfsverfasser mit KI Bauvorlagen, Brandschutznachweis und Baubeschreibung vor der Einreichung gegeneinander prüfen."
+---
+
+KI kann einen Bauantrag so lesen, wie ihn die Bauaufsichtsbehörde liest: alle Bauvorlagen nebeneinander, abgeglichen mit den Plänen. Sie findet die Gebäudehöhe, die im Brandschutznachweis anders steht als in den Schnitten, die Wohnungszahl, die sich in der Baubeschreibung geändert hat, aber nicht in der Stellplatzberechnung, und den Abschnitt, der nur auf ein anderes Dokument verweist, wo die Behörde eine Aussage braucht. Der Entwurfsverfasser und die Fachplaner bleiben für die Planung verantwortlich und unterschreiben. Was sich ändert: Lücken und Widersprüche fallen im eigenen Büro auf, nach ein bis zwei Tagen, und nicht erst mit der Nachforderung der Behörde.
+
+Für einen Projektentwickler ist die Baugenehmigung das Tor zwischen Grundstückskauf und Baubeginn. Jede Woche davor kostet Finanzierung und verschiebt den Vertrieb.
+
+<Stats title="Wohnungsbau in Deutschland, Genehmigung bis Fertigstellung">
+  <Stat value="169.400" label="genehmigte Wohnungen von Januar bis August 2026, +12,1 % zum Vorjahreszeitraum" source="Destatis, Pressemitteilung Nr. 370 vom 16. Oktober 2026" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_370_3111.html" />
+  <Stat value="27 Monate" label="durchschnittlich von der Genehmigung bis zur Fertigstellung, 2020 waren es 20" source="Destatis, Pressemitteilung Nr. 174 vom 22. Mai 2026" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/05/PD26_174_31121.html" />
+  <Stat value="35.700" label="erloschene Baugenehmigungen für Wohnungen 2025, der höchste Wert seit 2002" source="Destatis, Pressemitteilung Nr. 174 vom 22. Mai 2026" href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/05/PD26_174_31121.html" />
+</Stats>
+
+Die Genehmigungen ziehen an: In neuen Mehrfamilienhäusern wurden von Januar bis August 2026 90.600 Wohnungen genehmigt, 14,5 % mehr als im Vorjahreszeitraum ([Destatis, PM 370](https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_370_3111.html)). Gleichzeitig stiegen die Preise für den Neubau von Wohngebäuden im August 2026 um 5,5 % gegenüber dem Vorjahresmonat ([Destatis, PM 360](https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/10/PD26_360_61261.html)). Wer genehmigt ist, will bauen, bevor die Kalkulation nicht mehr stimmt. Und mehr Anträge bedeuten bei den Bauämtern mehr Arbeit für dieselben Prüfer.
+
+## Was die Bauaufsicht beim Hochhaus prüft
+
+Das Bauordnungsrecht ist Landesrecht. Ich nehme hier die [Bayerische Bauordnung](https://www.gesetze-bayern.de/Content/Document/BayBO) als Beispiel; die anderen Länder regeln dasselbe in ihren eigenen Bauordnungen, mit eigenen Fristen und Details.
+
+- **Sonderbau ab 22 Metern.** Ein Gebäude, dessen oberstes Geschoss mit Aufenthaltsräumen mehr als 22 m über dem Gelände liegt, ist ein Hochhaus und damit Sonderbau ([Art. 2 Abs. 4 Nr. 1 BayBO](https://www.gesetze-bayern.de/Content/Document/BayBO-2)). Für Sonderbauten gilt das volle Baugenehmigungsverfahren, in dem die Behörde Bauplanungsrecht, Bauordnungsrecht und weitere öffentlich-rechtliche Anforderungen prüft ([Art. 60 BayBO](https://www.gesetze-bayern.de/Content/Document/BayBO-60)).
+- **Brandschutz mit Prüfung.** Bei Sonderbauten und Gebäuden der Gebäudeklasse 5 muss der Brandschutznachweis von einem Prüfsachverständigen bescheinigt oder bauaufsichtlich geprüft werden ([Art. 62b Abs. 2 BayBO](https://www.gesetze-bayern.de/Content/Document/BayBO-62b)).
+- **Alle Bauvorlagen mit dem Antrag.** Mit dem Bauantrag sind alle Unterlagen einzureichen, die für die Beurteilung nötig sind. Bauherr und Entwurfsverfasser unterschreiben ([Art. 64 Abs. 2 und 4 BayBO](https://www.gesetze-bayern.de/Content/Document/BayBO-64)).
+- **Drei Wochen Vollständigkeitsprüfung.** Die Behörde prüft den Antrag innerhalb von drei Wochen auf Vollständigkeit. Fehlt etwas oder hat er sonstige erhebliche Mängel, setzt sie eine Frist. Werden die Mängel nicht rechtzeitig behoben, gilt der Antrag als zurückgenommen, wenn darauf hingewiesen wurde. Die Gemeinde wird beteiligt, sobald die Unterlagen für ihr Einvernehmen hinreichend vollständig sind ([Art. 65 Abs. 1 BayBO](https://www.gesetze-bayern.de/Content/Document/BayBO-65)).
+
+Und ein Punkt, den viele übersehen: Die Genehmigungsfiktion für Wohngebäude in [Art. 68 Abs. 2 BayBO](https://www.gesetze-bayern.de/Content/Document/BayBO-68) gilt nur im vereinfachten Verfahren nach Art. 59. Ein Hochhaus als Sonderbau hat sie nicht. Wie schnell es geht, hängt dort vor allem daran, wie vollständig und stimmig die Unterlagen sind.
+
+<Timeline title="Bauantrag für einen Sonderbau in Bayern" caption="Vereinfachte Darstellung. Beteiligung von Fachstellen, Prüfsachverständigen und Nachbarn kommt hinzu.">
+<Phase title="Einreichung" when="Tag 0">Bauantrag mit allen Bauvorlagen, unterschrieben von Bauherr und Entwurfsverfasser (Art. 64).</Phase>
+<Phase title="Vollständigkeitsprüfung" when="bis 3 Wochen">Bei Mängeln Aufforderung mit Frist (Art. 65 Abs. 1 Satz 2).</Phase>
+<Phase title="Nachreichung" when="Frist der Behörde">Werden die Mängel nicht behoben, gilt der Antrag nach Hinweis als zurückgenommen (Art. 65 Abs. 1 Satz 3).</Phase>
+<Phase title="Prüfung und Beteiligung" when="danach">Gemeinde, Fachstellen, Brandschutznachweis über Prüfsachverständigen oder Behörde (Art. 62b, 65 Abs. 2).</Phase>
+</Timeline>
+
+## Wo Bauanträge hängen bleiben
+
+**Die Unterlagen widersprechen sich.** Nach einer Abstimmung mit dem Stadtplanungsamt verliert das Gebäude ein Geschoss. Die Pläne sind angepasst, das Brandschutzkonzept nennt noch die alte Höhe, die Baubeschreibung die alte Wohnungszahl. Jedes Dokument für sich ist in Ordnung. Zusammen beschreiben sie nicht dasselbe Gebäude.
+
+**Verweise statt Aussagen.** „Siehe Brandschutzkonzept“ hilft dem Prüfer nur, wenn dort tatsächlich steht, was er sucht, und zwar für genau dieses Gebäude.
+
+**Abweichungen ohne Antrag.** Eine Abweichung ist gesondert schriftlich zu beantragen und zu begründen, bei genehmigungspflichtigen Vorhaben zusammen mit dem Bauantrag ([Art. 63 Abs. 2 BayBO](https://www.gesetze-bayern.de/Content/Document/BayBO-63)), soweit nicht ein Prüfsachverständiger die bautechnischen Nachweise bescheinigt (Abs. 1 Satz 3). Steht die Abweichung nur im Brandschutzkonzept und fehlt der Antrag, kommt eine Nachforderung.
+
+**Nachforderungen gehen im Kreis.** Das Schreiben der Behörde landet beim Bauherrn, geht an den Entwurfsverfasser, von dort an drei Fachplaner. Jede Antwort entsteht neu, und niemand prüft, ob sie zum Rest des Antrags passt.
+
+## Was der Antragsprüfer macht
+
+**Er baut die Prüfliste.** Aus Landesbauordnung, Bauvorlagenverordnung des Landes und den Anforderungen an Sonderbauten entsteht eine Liste für dieses Vorhaben, mit dem Dokument und der Seite, die jeden Punkt beantworten sollen.
+
+**Er liest jedes Dokument gegen jedes andere.** Er zieht die Fakten heraus, die in mehreren Unterlagen vorkommen: Höhe, Geschosse, Nutzung je Geschoss, Wohnungs- und Stellplatzzahl, Rettungswege, Beteiligte und ihre Rollen. Jede Abweichung steht mit Seitenangabe in einer Liste.
+
+**Er markiert dünne Stellen.** Wo ein Punkt nur mit einem Verweis beantwortet wird oder der verwiesene Abschnitt ihn nicht abdeckt, sagt er es.
+
+**Er bereitet Antworten an die Behörde vor.** Bei einer Nachforderung findet er alle Stellen im eingereichten Antrag, die die Frage berühren, entwirft eine Antwort für den zuständigen Fachplaner und prüft sie gegen den Rest der Unterlagen, bevor sie rausgeht.
+
+<Flow title="Ein Bauantrag mit KI-Vorprüfung" caption="Die KI liest und vergleicht. Entwurfsverfasser und Fachplaner entscheiden und unterschreiben.">
+<Step title="Zusammenstellen" who="Entwurfsverfasser" tone="human" time="wie bisher">Pläne, Baubeschreibung, Brandschutznachweis, Standsicherheit und weitere Bauvorlagen der Fachplaner.</Step>
+<Step title="Vorprüfen" who="KI" tone="ai" time="1 bis 2 Tage">Abdeckung der Prüfliste, Widersprüche zwischen Dokumenten, reine Verweise, jeweils mit Seitenangabe.</Step>
+<Step title="Korrigieren" who="Planungsteam" tone="human" time="1 bis 2 Wochen">Jeder Fachplaner bearbeitet seine Punkte, der Entwurfsverfasser entscheidet, was eine echte Lücke ist.</Step>
+<Step title="Erneut prüfen und einreichen" who="KI, dann Bauherr" tone="ai" time="1 Tag">Der vollständige Satz wird noch einmal verglichen, bevor Bauherr und Entwurfsverfasser unterschreiben.</Step>
+<Step title="Nachforderung beantworten" who="Fachplaner" tone="human" time="je Schreiben">Die KI entwirft aus den eingereichten Unterlagen, der zuständige Fachplaner ergänzt und gibt frei.</Step>
+</Flow>
+
+## Was eine Woche kostet
+
+<Calc title="Überschlag: Was eine Nachforderung weniger wert ist" caption="Annahmen, keine Messwerte. Rechnen Sie mit Ihren eigenen Finanzierungskosten und Ihrem Zeitplan." rows={[
+  ["Bereits finanzierte Grundstücks- und Planungskosten (Annahme)", "20.000.000 €"],
+  ["Finanzierungszins (Annahme)", "× 6 % im Jahr"],
+  ["Finanzierungskosten je Woche", "rund 23.000 €"],
+  ["Wochen, die eine Nachforderungsrunde kostet (Annahme)", "× 6"]
+]} result={["Finanzierungskosten einer vermiedenen Nachforderung", "rund 138.000 €, ohne Baupreissteigerung und Vertriebsverzug"]} />
+
+Die Baupreise für Wohngebäude lagen im August 2026 um 5,5 % über dem Vorjahr. Wer ein halbes Jahr später baut als geplant, zahlt das zusätzlich. Ein Werkzeug garantiert keine schnellere Genehmigung. Aber ein Widerspruch, den man vor der Einreichung findet, kostet einen Tag statt einer Nachforderungsrunde.
+
+## Wo es schiefgehen kann
+
+<Callout title="Der Prüfer liest Unterlagen. Er plant nicht das Gebäude." tone="warning">
+Ob ein Brandschutzkonzept trägt, ob eine Abweichung vertretbar ist und ob ein Rettungsweg funktioniert, beurteilen qualifizierte, verantwortliche Fachleute. Die KI findet Lücken und Widersprüche in dem, was sie geschrieben haben. Sie füllt keine Lücke mit eigenen Planungsaussagen, und nichts geht ohne Freigabe des zuständigen Fachplaners an die Behörde.
+</Callout>
+
+**Die Prüfliste muss stimmen.** Landesbauordnungen, Bauvorlagenverordnungen und Sonderbauvorschriften ändern sich; die aktuelle Fassung der BayBO gilt seit 1. Mai 2026. Jemand im Büro des Entwurfsverfassers ist für die Liste verantwortlich und gleicht sie vor jeder Einreichung mit den geltenden Fassungen ab.
+
+**Vertrauliche Unterlagen bleiben geschützt.** Brandschutzkonzepte und Tragwerksdetails eines Hochhauses sind sensibel. Die Prüfung läuft im Projektraum oder bei einem Anbieter, dessen Datenregeln der Bauherr zustimmt, mit Protokoll, was verarbeitet wurde.
+
+**Nach der Genehmigung geht es weiter.** Jede Tektur und jeder Änderungsantrag muss wieder zum genehmigten Stand passen. Derselbe Abgleich lohnt sich vor jeder Änderung.
+
+## Welche Werkzeuge passen
+
+Projekträume und Dokumentenmanagement halten die Dateien, und einige Prüfwerkzeuge gleichen Modelle mit Regelwerken ab. Wo noch nichts alle Unterlagen gemeinsam liest, ist ein Prüfer, der nur Widersprüche und die Abdeckung der Prüfliste zeigt, ein kleines, klar umrissenes erstes Projekt. Architekturbüros, die schon ein [Entscheidungsprotokoll aus Besprechungen](/de/posts/ki-architekturbuero-besprechungsprotokoll) führen, haben die halbe Nachweiskette dafür.
+
+<Checklist title="So fangen Sie an" items={[
+  "Nehmen Sie Ihren letzten Bauantrag für einen Sonderbau und die Nachforderungen der Behörde dazu",
+  "Listen Sie jede Angabe, die in mehr als einem Dokument steht: Höhe, Geschosse, Nutzung, Wohnungen, Stellplätze, Beteiligte",
+  "Lassen Sie den Abgleich über diesen Antrag laufen und vergleichen Sie die Funde mit dem, was die Behörde tatsächlich nachgefordert hat",
+  "Legen Sie fest, wer die Prüfliste pflegt und wer welche Art von Fund freigibt",
+  "Nutzen Sie ihn beim nächsten Antrag vor der Unterschrift und bei jeder Nachforderung danach",
+  "Messen Sie Tage bis zur Vollständigkeit und die Zahl der Nachforderungen je Antrag"
+]} />
+
+## Häufige Fragen von Projektentwicklern zu KI und Bauantrag
+
+### Wie lange hat die Bauaufsicht in Bayern für die Vollständigkeitsprüfung?
+
+Nach Art. 65 Abs. 1 BayBO prüft die Bauaufsichtsbehörde Bauantrag und Bauvorlagen innerhalb von drei Wochen nach Eingang auf Vollständigkeit. Bei Mängeln fordert sie den Bauherrn auf, sie innerhalb einer angemessenen Frist zu beheben. Geschieht das nicht und wurde auf die Folge hingewiesen, gilt der Antrag als zurückgenommen.
+
+### Gilt die Genehmigungsfiktion auch für ein Hochhaus?
+
+In Bayern nicht. Die Fiktion nach Art. 68 Abs. 2 BayBO betrifft Wohngebäude im vereinfachten Genehmigungsverfahren nach Art. 59. Ein Hochhaus über 22 m ist Sonderbau und läuft im Baugenehmigungsverfahren nach Art. 60. Andere Länder regeln die Fiktion unterschiedlich; maßgeblich ist die jeweilige Landesbauordnung.
+
+### Kann KI den Bauantrag für uns schreiben?
+
+Das sollte sie nicht. Die Bauvorlagen müssen Ihr Gebäude beschreiben und werden von Bauherr und Entwurfsverfasser unterschrieben. Nützlich ist KI beim Prüfen: Widersprüche zwischen Dokumenten finden, Punkte ohne klare Antwort markieren und Antworten auf Nachforderungen aus den eingereichten Unterlagen vorbereiten, die der zuständige Fachplaner ergänzt und freigibt.
+
+## Ein Gebäude einreichen, nicht sechs Dokumente
+
+Viele Nachforderungen beginnen mit einem Antrag, der das Gebäude an verschiedenen Stellen unterschiedlich beschreibt. Lassen Sie die KI alle Unterlagen gegeneinander lesen, bevor es die Behörde tut, und lassen Sie Planung, Unterschrift und Entscheidungen bei den Verantwortlichen.
+
+Wenn bei Ihnen ein Sonderbau vor der Einreichung steht oder ein Antrag an einer Nachforderung hängt, [schreiben Sie mir, wie Ihr Planungsteam heute Unterlagen austauscht](/de/kontakt?intent=improve). Ich schlage Ihnen einen kleinen ersten Schritt vor, schrittweise und mit klaren Regeln für vertrauliche Pläne. Ist das Vorhaben auf der Baustelle, entstehen die Nachweise im [Bautagebuch per Sprachnachricht](/de/posts/ki-bautagebuch-sprachnachricht), und Nachunternehmer rechnen sie in [Abschlagsrechnungen](/de/posts/ki-nachunternehmer-abschlagsrechnung) ab. Wer danach vermietet, behält die Fristen in [Indexmiete und Vertragsfristen](/de/posts/ki-gewerbevermieter-indexmiete-fristen) im Blick.

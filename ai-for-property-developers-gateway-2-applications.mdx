@@ -1,0 +1,124 @@
+---
+id: "ai-for-property-developers-gateway-2-applications"
+title: "AI for Property Developers: Gateway 2 Applications That Pass Validation the First Time"
+authorName: "Josip Ledić"
+date: "2026-11-16"
+tags: ["Property", "Property developers", "Gateway 2", "AI for small business"]
+description: "183 new high-rise residential schemes with 39,843 homes were waiting at Gateway 2 on 1 November 2026, with a median approval time of 20 weeks against a 12-week statutory period, and 35 weeks for complex cases. How developers and principal designers can use AI to check a Gateway 2 application for gaps and contradictions before the Building Safety Regulator does, and answer its questions faster."
+excerpt: "183 new high-rise residential schemes with 39,843 homes were waiting at Gateway 2 on 1 November 2026, with a median approval time of 20 weeks against a 12-week statutory period, and 35 weeks for complex cases. How developers and principal designers can use AI to check a Gateway 2 application for gaps and contradictions before the Building Safety Regulator does, and answer its questions faster."
+---
+
+AI can read a Gateway 2 application the way the Building Safety Regulator will: every document regulation 4 requires, checked against each other and against the drawings. It finds the storey count that differs between the fire strategy and the plans, the flat count that changed in one document but not in the others, the competence declaration that names a principal designer the construction control plan doesn't mention, and the compliance statement that says "see strategy" where the regulator needs detail. Your principal designer and fire engineer still own the design and sign the declarations. What changes is that the gaps are found in your office, in days, instead of by the regulator, in weeks.
+
+For a developer, Gateway 2 is the gate between planning permission and starting on site. Every week in the queue is a week of land finance and an idle programme.
+
+<Stats title="Gateway 2 for new higher-risk buildings, England, August to October 2026">
+  <Stat value="39,843" label="homes in 183 new build and conversion applications in progress on 1 November 2026" source="Building Safety Regulator, application data August to October 2026" href="https://www.gov.uk/government/publications/building-safety-regulator-building-control-approval-application-data-august-to-october-2026" />
+  <Stat value="20 weeks" label="median approval time for new build applications, against a 12-week statutory period" source="Building Safety Regulator, application data August to October 2026" href="https://www.gov.uk/government/publications/building-safety-regulator-building-control-approval-application-data-august-to-october-2026" />
+  <Stat value="35 weeks" label="median approval time for applications the regulator tracks as complex cases" source="Building Safety Regulator, application data August to October 2026" href="https://www.gov.uk/government/publications/building-safety-regulator-building-control-approval-application-data-august-to-october-2026" />
+</Stats>
+
+The regulator's own figures show that quality decides the speed. Of the 41 new build applications that arrived from 21 September 2026, in the rush before the building safety levy started on 1 October, 18 were assessed as poor quality and paused, and 8 more were recommended for rejection. For external remediation, the regulator says better quality applications can now be determined in around 15 weeks, against a 32-week median ([BSR application data, August to October 2026](https://www.gov.uk/government/publications/building-safety-regulator-building-control-approval-application-data-august-to-october-2026)).
+
+<Bars title="New build Gateway 2 applications received per month, 2026" caption="The September spike came before the building safety levy started on 1 October 2026. Applications that arrived from 21 September went through enhanced validation." source="Building Safety Regulator, application data August to October 2026" href="https://www.gov.uk/government/publications/building-safety-regulator-building-control-approval-application-data-august-to-october-2026" data={[
+  { label: "July", value: 17, display: "17" },
+  { label: "August", value: 34, display: "34" },
+  { label: "September", value: 64, display: "64", highlight: true },
+  { label: "October", value: 6, display: "6" }
+]} />
+
+## What the regulator checks
+
+The rules are in the [Building (Higher-Risk Buildings Procedures) (England) Regulations 2023](https://www.legislation.gov.uk/uksi/2023/909/contents). Three regulations decide whether an application moves:
+
+- **[Regulation 4](https://www.legislation.gov.uk/uksi/2023/909/regulation/4)** lists what the application must contain: the client, principal contractor and principal designer, the building's height, storeys and intended use of each storey, the number of flats, residential rooms and commercial units, and the levy information where it applies. It must come with plans showing compliance with the building regulations, a competence declaration, a construction control plan, a change control plan, a mandatory occurrence reporting plan, a Building Regulations compliance statement, a fire and emergency file and, where parts will be occupied early, a partial completion strategy.
+- **[Regulation 5](https://www.legislation.gov.uk/uksi/2023/909/regulation/5)** says a valid application must be decided within 12 weeks, or a longer period the regulator and the applicant agree in writing. An application that doesn't comply with regulation 4 is not valid, and the clock doesn't start.
+- **[Regulation 7](https://www.legislation.gov.uk/uksi/2023/909/regulation/7)** says the regulator must approve unless the application is missing something regulation 4 requires, is "not sufficiently detailed" to judge compliance, shows a contravention, or shows plans for change control, occurrence reporting, competence or the golden thread that would breach the rules. It can then reject, or approve with your written consent subject to requirements, such as a revised document by a set date or a hold point on site.
+
+The second ground is the one that costs months. "Not sufficiently detailed" is a judgement about a few hundred pages of documents written by different consultants at different times.
+
+## Where applications fall apart
+
+**The documents disagree.** The architect revised the scheme from 31 to 29 storeys after a planning condition. The drawings changed, the fire strategy didn't, and the compliance statement still quotes the old height. Each document is fine on its own. Together they don't describe one building.
+
+**The compliance statement points instead of explains.** A line that says "refer to fire strategy section 7" for a functional requirement, where section 7 doesn't address that requirement for this building, is exactly the gap that ends in a request for information.
+
+**The people don't match.** The competence declaration, the construction control plan and the change control plan are often drafted by different firms. If one names a different principal contractor, a former employee or a role nobody holds, the regulator asks who is actually responsible.
+
+**Questions take weeks to answer.** The regulator's request lands with the developer, goes to the principal designer, then to three consultants. Each answer is written from scratch, and nobody checks that it agrees with what was submitted.
+
+## What the application checker does
+
+**Builds the requirement list.** It turns regulation 4, the functional requirements of the building regulations that apply to this building, and the regulator's published guidance into a checklist for this scheme, with the document and page that should answer each item.
+
+**Reads every document against every other.** It extracts the facts each document states (height, storeys, use per storey, flat and room counts, evacuation strategy, named dutyholders and their roles, dates) and lists every place two documents disagree, with page references.
+
+**Flags thin answers.** For each requirement, it shows where the compliance statement answers it and how. Where the answer is only a cross-reference, or the referenced section doesn't cover the point, it says so.
+
+**Drafts responses to the regulator.** When a request for information arrives, it finds every passage in the submitted documents that touches the question, drafts an answer for the right consultant to complete, and checks the answer against the rest of the application before it goes back.
+
+<Flow title="One Gateway 2 submission with an AI pre-check" caption="AI reads and compares. The principal designer and the consultants decide what changes and sign.">
+<Step title="Assemble" who="Principal designer" tone="human" time="as today">Drawings, fire strategy, compliance statement and the regulation 4 documents from each consultant.</Step>
+<Step title="Pre-check" who="AI" tone="ai" time="1 to 2 days">Requirement coverage, contradictions between documents, thin answers and dutyholder mismatches, each with page references.</Step>
+<Step title="Fix" who="Design team" tone="human" time="1 to 2 weeks">Each consultant fixes their findings, the principal designer decides what is a real gap.</Step>
+<Step title="Re-check and submit" who="AI, then client" tone="ai" time="1 day">The full set is compared again before the client signs and submits.</Step>
+<Step title="Answer" who="Consultants" tone="human" time="per request">AI drafts each response from the submitted documents, the responsible consultant completes and signs it off.</Step>
+</Flow>
+
+## The numbers for one scheme
+
+The average new build application in London covers about 200 homes: 21,997 units across 110 applications in progress on 1 November 2026 ([BSR data](https://www.gov.uk/government/publications/building-safety-regulator-building-control-approval-application-data-august-to-october-2026)). At the August 2026 London average flat price of £427,000 ([UK House Price Index, August 2026](https://www.gov.uk/government/news/uk-house-price-index-for-august-2026)), that is roughly £85 million of homes waiting on one decision. New build values differ from that average, but the order of magnitude is the point.
+
+<Calc title="Napkin math: what a shorter Gateway 2 wait is worth" caption="Assumptions, not measurements. Use your own finance terms, programme and the regulator's current figures." rows={[
+  ["Land and pre-construction costs already financed (assumption)", "£20,000,000"],
+  ["Finance rate (assumption)", "× 8% a year"],
+  ["Finance cost per week of waiting", "about £30,800"],
+  ["Weeks saved by avoiding the complex-case route: 35 weeks minus 20 weeks (BSR medians)", "× 15"]
+]} result={["Finance cost avoided on one scheme", "about £460,000, before programme and preliminaries"]} />
+
+No tool guarantees a scheme lands in the 20-week group rather than the 35-week one. But the regulator says itself that application quality drives how fast cases move, and a contradiction found before submission costs a day, not a request for information and a pause.
+
+## Where it goes wrong
+
+<Callout title="The checker reads documents. It doesn't design the building." tone="warning">
+Whether a fire strategy is adequate, whether a wall build-up complies and whether a deviation is acceptable are engineering judgements by competent, named people. The model finds gaps and contradictions in what they wrote. It never fills a gap with its own design statement, and nothing it drafts goes to the regulator without the responsible consultant's sign-off.
+</Callout>
+
+**It is only as good as the requirement list.** The regulations, the approved documents and the regulator's guidance change. Someone in the principal designer's team owns the list and checks it against the current versions before each submission.
+
+**Confidential documents stay controlled.** Fire strategies and structural details for a tower are sensitive. Run the checker inside the project's document environment or with a provider whose data terms your client accepts, and keep a record of what was processed.
+
+**The golden thread doesn't end at approval.** After approval, changes run through change control under regulations 18 to 26 of the same regulations, and the approved documents become the baseline. The same contradiction check is worth running on every change before it is notified.
+
+## Tools that fit
+
+Common data environments and document management systems hold the files, and some compliance checking tools already compare design information against the building regulations. If your design team works in one, start there. Where nothing reads across all the documents at once, a checker that only does cross-document comparison and requirement coverage is a small, well-defined first project. Architects who already keep a [decision log from design meetings](/posts/ai-for-architects-meeting-decisions) have half the evidence trail this needs.
+
+<Checklist title="How to start" items={[
+  "Take your last submitted Gateway 2 application and the regulator's requests for information on it",
+  "List every fact that appears in more than one document: height, storeys, use per storey, flat count, dutyholders",
+  "Run the cross-document check on that application and compare its findings with what the regulator actually asked",
+  "Agree who owns the requirement list and who signs off each kind of finding",
+  "Use it on the next submission before the client signs, and on every request for information after",
+  "Track days from request to response and the number of requests per application"
+]} />
+
+## Questions developers ask about AI and Gateway 2
+
+### How long does Gateway 2 approval take?
+
+The statutory period is 12 weeks from receipt of a valid application, unless you agree a longer period in writing. In practice, the Building Safety Regulator reported a median of 20 weeks for new build applications decided in the 12 weeks to 1 November 2026, and 35 weeks for those it tracks as complex cases.
+
+### What has to be in a Gateway 2 application?
+
+Regulation 4 of the Higher-Risk Buildings Procedures Regulations 2023 requires details of the client, principal designer and principal contractor, the building's height, storeys, uses and number of flats, plans showing compliance with the building regulations, and six core documents: a competence declaration, construction control plan, change control plan, mandatory occurrence reporting plan, Building Regulations compliance statement and fire and emergency file, plus a partial completion strategy if parts will be occupied early.
+
+### Can AI write the Gateway 2 application for us?
+
+It shouldn't. The documents have to describe your building and be signed by the people responsible for it. AI is useful for checking what they wrote: finding contradictions between documents, requirements without a clear answer and mismatched dutyholders, and for drafting responses to the regulator from the submitted material for a consultant to complete.
+
+## Submit one building, not six documents
+
+Most Gateway 2 delays start with an application that describes the building differently in different places. Let AI read every document against every other before the regulator does, and keep the design, the declarations and the decisions with the people who sign them.
+
+If you have a high-rise scheme heading for Gateway 2, or one waiting on a request for information, [tell me how your design team shares documents today](/contact?intent=improve). I'll suggest whether a pre-submission check or a response tracker is the right first step. Once the scheme is on site, contractors face their own document deadlines in [interim payment applications](/posts/ai-for-construction-subcontractors-payment-applications), and site teams build the evidence trail in [daily reports](/posts/ai-for-construction-daily-reports). Commercial owners track the dates that follow completion in [lease events](/posts/ai-for-commercial-landlords-lease-events).
