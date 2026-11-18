@@ -1,0 +1,122 @@
+---
+id: "ai-for-exporters-dual-use-classification"
+title: "AI for Exporters: Dual-Use Classification, Control List Ratings and Export Licence Files"
+authorName: "Josip Ledić"
+date: "2026-11-18"
+tags: ["Manufacturing", "Industrial exporters", "Export control classification", "AI for small business"]
+description: "The UK government paused its control list classification advice on 12 October 2026, and new control lists are due to apply from 1 December, so exporters now rate their own products against a list that is about to change. How manufacturers and distributors of dual-use goods can use AI to read datasheets against the control entries, keep a rating file a person signs, find which products a list amendment touches and keep the licence records HMRC checks."
+excerpt: "The UK government paused its control list classification advice on 12 October 2026, and new control lists are due to apply from 1 December, so exporters now rate their own products against a list that is about to change. How manufacturers and distributors of dual-use goods can use AI to read datasheets against the control entries, keep a rating file a person signs, find which products a list amendment touches and keep the licence records HMRC checks."
+---
+
+AI can prepare the export control rating of every product you sell: read the datasheet, drawings and software notes, compare the performance figures with the control list entries that could apply, write down which parameters were checked against which threshold, and propose a rating or "not listed" for a person to confirm. When the list changes, it can show which products sit under an amended entry. When you export under a licence, it can keep the records the licence conditions ask for. Your export control manager still decides the rating and signs it. What changes is that the decision starts from a worked file, not a blank form.
+
+This matters now because the UK is changing the rules in both directions at once. On 12 October 2026 the Export Control Joint Unit (ECJU) [paused its Control List Classification service](https://www.gov.uk/government/publications/notice-to-exporters-202622-temporary-pause-of-the-control-list-classification-clc-service/notice-to-exporters-202622-temporary-pause-of-the-control-list-classification-clc-service) and asked exporters not to send new requests, because licence applications have become more complex. And the [Export Control (Amendment) Regulations 2026](https://www.gov.uk/government/publications/notice-to-exporters-202624-proposed-amendments-to-uk-strategic-export-controls/notice-to-exporters-202624-proposed-amendments-to-uk-strategic-export-controls) are due to bring new military and dual-use lists into force on 1 December 2026. You rate your own goods, against a list that is about to move.
+
+<Stats title="UK strategic export licensing">
+  <Stat value="£3.53bn" label="declared value of the 2,594 standard individual export licences (SIELs) issued in January to March 2026, about £1.4m per licence on paper" source="ECJU, Strategic export controls commentary, 1 January to 31 March 2026" href="https://www.gov.uk/government/statistics/strategic-export-controls-licensing-statistics-1-january-to-31-march-2026/strategic-export-controls-commentary-1-january-to-31-march-2026" />
+  <Stat value="51%" label="of SIEL applications closed in the SPIRE system in 2025 were closed within 20 working days, down from 60% in 2024" source="ECJU, Strategic export controls commentary, 1 January to 31 March 2026" href="https://www.gov.uk/government/statistics/strategic-export-controls-licensing-statistics-1-january-to-31-march-2026/strategic-export-controls-commentary-1-january-to-31-march-2026" />
+  <Stat value="£6.4m" label="paid by Airbus Operations Limited in July 2026, the highest compound settlement HMRC has reached for strategic export offences, mostly for record keeping under open licences" source="HMRC, 30 July 2026" href="https://www.gov.uk/government/news/aircraft-manufacturer-breached-strategic-export-controls" />
+</Stats>
+
+The licence values are declared by exporters, and the ECJU warns that some are set high to avoid running out of licence, so treat the £1.4m as an order of magnitude, not an average sale. The order of magnitude is the point: the companies doing this work ship machine tools, sensors, lasers, test equipment, aerospace parts, encryption products and specialist materials, often in six- and seven-figure orders. The European Commission's [report on 2024 data](https://data.consilium.europa.eu/doc/document/ST-12011-2026-INIT/en/pdf) (COM(2026) 296) shows the same picture across the EU: €77.6 billion of authorised dual-use trade, 3% of all goods exported outside the EU. Individual export authorisations covered €24 billion of it, and member states issued 18,549 individual licences.
+
+## What changed this autumn
+
+<Timeline title="UK export control changes, autumn 2026" caption="From the ECJU notices to exporters. Dates for the amendment regulations are subject to parliamentary procedure.">
+<Phase title="Classification advice paused" when="12 October 2026">ECJU stops taking new Control List Classification requests. Requests already received are still answered, more slowly. Exporters remain responsible for deciding whether their goods are controlled.</Phase>
+<Phase title="Open licences widened" when="14 October 2026">The dual-use open general export licence and the military goods OGELs cover more destinations, so more shipments can go without an individual licence, if the goods are rated correctly.</Phase>
+<Phase title="Amendment regulations laid" when="3 November 2026">SI 2026/1150 updates Schedule 2 of the Export Control Order 2008 and Annex I of the assimilated Dual-Use Regulation to the 2025 regime reviews, including semiconductor manufacturing equipment, advanced computing and specialised materials.</Phase>
+<Phase title="New lists in force" when="1 December 2026">The amended lists apply. Exporters registered for General Export Authorisation No 001 can keep using it until 1 April 2027 and then need the UK dual-use OGEL.</Phase>
+</Timeline>
+
+Every one of those changes lands on the same piece of work: the rating of each product. A wider open licence only helps if you know which entry your goods fall under. A list update only affects you if one of your products sits under an amended entry. Without classification advice from ECJU, the evidence for the rating has to be yours.
+
+## Why the rating file is the slow part
+
+**The information sits in five places.** Performance figures are in the datasheet, the real tolerances are in the drawings, the encryption functions are in a software release note, and the customer's intended use is in an email to sales. The control entries are written as technical thresholds with notes, decontrol notes and definitions in a separate section.
+
+**Most products are "not listed", and nobody wrote down why.** A rating of "not listed" is still a decision. If HMRC or a customer's compliance team asks why a product needs no licence, "we checked once" is not an answer.
+
+**Lists move every year.** The multilateral regimes agree changes, the EU and UK update their lists, and each update may touch a handful of your products or none. Finding out which means rereading every rating against the new text.
+
+**Licences come with records.** [Article 29 of the Export Control Order 2008](https://www.legislation.gov.uk/uksi/2008/3231/article/29) requires anyone using a general licence to keep registers with a description of the goods, dates, quantities, consignee and, where known, end user, for at least three years from the end of the calendar year (four for some licences). Airbus's settlement was mostly for failing to keep exactly those records.
+
+## What the classification assistant does
+
+**Reads the product evidence.** It pulls the specification figures from datasheets, drawings, test reports and software notes into one sheet per product, each figure with the page it came from.
+
+**Proposes candidate entries.** It searches the consolidated list for entries whose wording and parameters could apply, and shows each threshold next to your figure: above, below, or not stated in your documents. Missing figures become questions for engineering, not guesses.
+
+**Drafts the rating record.** For a person to confirm: the proposed rating or "not listed", the entries considered and why each was ruled in or out, the decontrol notes relied on, and the date and list version checked.
+
+**Finds what a list amendment touches.** When new list text arrives, it compares old and new entries and returns the products whose ratings cite a changed entry, or whose figures sit near a changed threshold.
+
+**Keeps the licence records.** For each shipment under an open licence, it fills the register from the order, the delivery note and the rating, and flags missing end-user details before the goods leave.
+
+<Flow title="From datasheet to signed rating" caption="AI reads and compares. The export control manager decides and signs.">
+<Step title="Collect" who="AI" tone="ai" time="per product">Datasheet, drawings, test reports and software notes read into one specification sheet with sources.</Step>
+<Step title="Compare" who="AI" tone="ai" time="minutes">Candidate list entries with each threshold next to your figure, and open questions for engineering.</Step>
+<Step title="Answer" who="Engineering" tone="human" time="as needed">Missing parameters measured or confirmed.</Step>
+<Step title="Decide" who="Export control manager" tone="human" time="per product">Rating or not listed confirmed, reasoning edited, record signed with the list version.</Step>
+<Step title="Maintain" who="AI" tone="ai" time="each list change and shipment">Affected products flagged on amendments; licence registers filled from orders.</Step>
+</Flow>
+
+## The numbers for one mid-size exporter
+
+<Calc title="Napkin math: re-rating a catalogue after a list amendment" caption="Assumptions, not measurements. Use your own catalogue size and time records." rows={[
+  ["Products and variants in the export catalogue (assumption)", "400"],
+  ["Time to reread one rating against the new list today (assumption)", "× 30 minutes"],
+  ["Hours today", "200 hours"],
+  ["Products the comparison flags for a person to review (assumption)", "40 × 45 minutes = 30 hours"]
+]} result={["Specialist time saved on one list update", "about 170 hours, and every product gets a dated check"]} />
+
+The hours are only half of it. A product rated wrongly can ship without a licence it needed, which is an offence under the Customs and Excise Management Act and the Export Control Order. HMRC offers compound settlements only where the breach was inadvertent or due to weak internal controls and the exporter told HMRC about it, and since 2026 [it publishes the names](https://www.gov.uk/government/publications/businesses-agreeing-to-a-compound-settlement-for-strategic-export-and-sanction-offences/agreed-compound-settlements-for-strategic-export-and-sanction-offences). A rating file that shows what was checked, by whom and against which list version is what turns a mistake into a weakness in controls rather than something worse.
+
+## Where it goes wrong
+
+<Callout title="The assistant proposes. A named person rates." tone="warning">
+A control list rating is a legal judgement about your goods. The model shows the entries, the thresholds and your figures side by side. Your export control manager decides, signs, and answers for it. When in doubt, ask a specialist adviser, especially while ECJU's classification service is paused.
+</Callout>
+
+**The list text is the authority, not the model's memory.** The assistant must work from the current consolidated list you load, quote the entry text it compared, and record the version. A model that "knows" the list from training will be out of date by 1 December.
+
+**Catch-all controls are not on any list.** A product that is not listed can still need a licence if you know or suspect a military or weapons of mass destruction end use. That is a check on the customer and the order, not the product, and it belongs in your order screening, with a person deciding.
+
+**Technical data is sensitive.** Drawings and source code are often the controlled technology themselves. Run the assistant where your company's security rules allow, never by pasting controlled technical data into a public chatbot, where the upload itself may count as a transfer of controlled technology.
+
+## Tools that fit
+
+Most exporters keep ratings in a column of the ERP item master and the evidence in someone's folder. Start there: an assistant that writes a rating record per item, links the evidence, and fills the ERP field only after a person signs. Global trade management systems can hold the ratings and screen orders, but they still need someone to produce the rating in the first place.
+
+<Checklist title="How to start before 1 December" items={[
+  "Export your item master with current ratings and list the products with no recorded reasoning",
+  "Load the current UK consolidated list and the published amendment text as the only reference",
+  "Have the assistant draft rating records for 20 products your team already knows well",
+  "Compare with your existing ratings and fix the prompt or the evidence until they agree",
+  "Run the amendment comparison across the catalogue and review every flagged product",
+  "Fill the open licence register from the next month of shipments and check it against the dispatch records"
+]} />
+
+## Questions exporters ask about AI and export controls
+
+### Can I still get a control list classification from ECJU?
+
+Not for new requests at the moment. Notice to Exporters 2026/22 paused the Control List Classification service from 12 October 2026. Requests received before then are still answered, and ECJU said it would give an update before the end of 2026. Exporters remain responsible for deciding whether their goods are controlled.
+
+### When do the new UK control lists apply?
+
+The Export Control (Amendment) Regulations 2026 (SI 2026/1150) were laid before Parliament on 3 November 2026 and are due to come into force on 1 December 2026, subject to parliamentary procedure. They update the military list in Schedule 2 of the Export Control Order 2008 and Annex I of the assimilated Dual-Use Regulation.
+
+### Can AI decide whether my product needs an export licence?
+
+It should not. AI can compare your product's figures with each candidate entry and show where a threshold is met, missed or unknown, but the rating is a decision the exporter is responsible for and a named person should make it.
+
+### What records do I need when I export under an open general licence?
+
+Article 29 of the Export Control Order 2008 requires registers that identify the goods, the dates, the quantities, your name and address, the consignee and, so far as known, the end user, plus anything the licence itself requires. They must be kept for at least three years from the end of the calendar year of the export, four for some licences, or longer if the licence says so.
+
+## Rate from evidence, not memory
+
+Every product you export needs a rating someone can defend: the entries considered, the figures compared, the list version, a name and a date. Let AI read the datasheets and do the comparison, and keep the decision with the person who signs.
+
+If your ratings live in an ERP column with no reasoning behind them, [tell me roughly how many products you export and which system holds your item master](/contact?intent=improve). I'll suggest whether the rating records, the amendment check or the licence register is the right first step. The same orders go on to your forwarder for [customs declarations and commodity codes](/posts/ai-for-freight-forwarders-customs-declarations), the same drawings drive [quotations](/posts/ai-for-manufacturing-quotations), and medical device makers keep a similar signed trail for [complaints and vigilance](/posts/ai-for-medical-device-manufacturers-complaints-vigilance).
