@@ -1,0 +1,131 @@
+---
+id: "ai-for-pharmaceutical-manufacturers-deviation-investigations"
+title: "AI for Pharmaceutical Deviation Investigations: Faster GMP Reports Without Handing Over the Root Cause"
+authorName: "Josip Ledić"
+date: "2026-11-20"
+tags: ["Manufacturing", "Pharmaceuticals", "GMP quality", "AI for small business"]
+description: "Investigations of discrepancies under 21 CFR 211.192 were cited 236 times on FDA Form 483s in fiscal 2025, up from 173, and the EU's draft GMP Annex 22 says large language models should not be used in critical GMP applications. How pharmaceutical manufacturers and CDMOs can use AI to gather the batch evidence, check which other batches are affected and draft the investigation report, while QA owns the classification, the root cause and the CAPA."
+excerpt: "Investigations of discrepancies under 21 CFR 211.192 were cited 236 times on FDA Form 483s in fiscal 2025, up from 173, and the EU's draft GMP Annex 22 says large language models should not be used in critical GMP applications. How pharmaceutical manufacturers and CDMOs can use AI to gather the batch evidence, check which other batches are affected and draft the investigation report, while QA owns the classification, the root cause and the CAPA."
+---
+
+AI can take the slow, clerical half of a GMP deviation investigation off your quality team: collect the batch record pages, logbook entries, alarms and lab results around the event, list every other batch and product that shared the equipment, material or analyst, find similar deviations from the past three years, and draft the report in your template with each statement linked to its record. Your QA investigator still classifies the deviation, decides the root cause, sets the CAPA and signs. The time saved is the hours spent searching and copying, and the gain is a report that shows the inspector how far the investigation looked.
+
+That second part is where firms get cited. FDA's own [inspection observation data](https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-references/inspection-observations) for fiscal 2025 lists the drug citations on every Form 483 issued from its system, and [21 CFR 211.192](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-211/subpart-J/section-211.192), production record review and investigations, sits near the top again.
+
+<Stats title="FDA drug inspections, fiscal year 2025 (1 Oct 2024 to 30 Sep 2025)">
+  <Stat value="713" label="Form 483s with drug citations issued from FDA's system, up from 561 in fiscal 2024" source="FDA, Inspection Observations, FY 2025 and FY 2024 Excel files" href="https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-references/inspection-observations" />
+  <Stat value="236" label="citations of 21 CFR 211.192 across its five standard observations, up from 173; the main one, failure to thoroughly review discrepancies and failures, was cited 164 times" source="FDA, Inspection Observations, FY 2025 Excel file, Drugs sheet" href="https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-references/inspection-observations" />
+  <Stat value="2nd" label="rank of the thorough-investigation observation among all drug citations in each fiscal year from 2020 to 2025, behind quality unit procedures under 211.22(d)" source="FDA, Inspection Observations, FY 2020 to FY 2025 Excel files" href="https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-references/inspection-observations" />
+</Stats>
+
+FDA notes that the files leave out manually prepared 483s and that one 483 can cite several program areas, so the counts are a floor, not a census. They still show a pattern that has held for six years: investigators keep finding investigations that were not thorough, did not reach other batches, or were never written up with conclusions and follow-up.
+
+<Bars title="FDA Form 483 citations of 21 CFR 211.192, by fiscal year" unit="" caption="Sum of the five standard 211.192 observations in FDA's drug inspection data. Fiscal years run October to September." source="FDA, Inspection Observations, FY 2020 to FY 2025 Excel files" href="https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-references/inspection-observations" data={[
+  { label: "FY 2020", value: 128 },
+  { label: "FY 2021", value: 86 },
+  { label: "FY 2022", value: 170 },
+  { label: "FY 2023", value: 175 },
+  { label: "FY 2024", value: 173 },
+  { label: "FY 2025", value: 236, highlight: true }
+]} />
+
+The businesses carrying this work are not small. Germany's pharmaceutical industry alone reported €61.9bn in revenue from 350 plants in 2025, according to the [VCI industry portrait 2026](https://www.vci.de/ergaenzende-downloads/branchenportraet-2026.pdf) built on Destatis data, an average of about €177m per plant. A single rejected or recalled batch can cost more than a year of an investigator's salary. The people doing the work sit in QA departments of manufacturers, contract development and manufacturing organisations (CDMOs) and contract labs, usually with more open deviations than investigators.
+
+## What the rules ask an investigation to show
+
+**In the US**, 211.192 says any unexplained discrepancy or failure to meet a specification "shall be thoroughly investigated, whether or not the batch has already been distributed", that the investigation "shall extend to other batches of the same drug product and other drug products that may have been associated", and that the written record "shall include the conclusions and followup". FDA's data counts each of those as its own observation: in fiscal 2025 it recorded 22 observations of no written record, 32 of records without conclusions and follow-up, and 9 of investigations that did not reach other batches.
+
+**In the EU and UK**, [Chapter 1 of the EU GMP Guide](https://health.ec.europa.eu/system/files/2016-11/vol4-chap1_2013-01_en_0.pdf) asks in 1.4(xiv) for "an appropriate level of root cause analysis", allows the most likely root causes where the true one cannot be found, and says that where human error is suspected "this should be justified having taken care to ensure that process, procedural or system-based errors or problems have not been overlooked". Section 1.10 then makes every significant deviation, its investigation and the effectiveness of the CAPA part of the yearly product quality review. A revision of Chapter 1 went to [stakeholder consultation](https://health.ec.europa.eu/consultations/stakeholders-consultation-eudralex-volume-4-good-manufacturing-practice-guidelines-chapter-1_en) from September to December 2025; the 2013 text is still the one in force.
+
+**On AI itself**, the Commission's draft [Annex 22 on artificial intelligence](https://health.ec.europa.eu/consultations/stakeholders-consultation-eudralex-volume-4-good-manufacturing-practice-guidelines-chapter-4-annex_en), consulted on from July to October 2025, is blunt: generative AI and large language models "should not be used in critical GMP applications". Where they are used in non-critical applications, qualified personnel must be responsible for checking that the outputs are suitable, a human in the loop. That draws the line for this workflow. The model gathers and drafts. The decisions that affect product quality stay with QA.
+
+## Why investigations take weeks
+
+**The evidence is spread across five systems.** The batch record is in the MES or on paper, alarms are in the building management or SCADA system, lab data in the LIMS, training records in the QMS, and maintenance in another tool. The investigator collects screenshots and exports by hand.
+
+**The extent check is done from memory.** Which other batches ran on that filling line after the last calibration? Which products used the same lot of excipient? Answering it properly means queries across systems, so it is often answered with "no other batches affected" and a short reason.
+
+**Past deviations are hard to find.** Similar events are filed under different titles and categories. Recurrence, the thing an inspector looks for first, is spotted late.
+
+**"Human error" closes the file.** When the deadline approaches, operator error plus retraining is the fastest root cause to write. Chapter 1 asks for the justification behind it, and repeat deviations show when it was missing.
+
+## What the investigation assistant does
+
+**Builds the evidence pack.** From the deviation number it pulls the batch record pages, logbook entries, alarm and audit trail extracts, lab results and training status of the people involved for the relevant time window, and lists what it could not find.
+
+**Drafts the timeline.** It orders every event with its source, so the investigator reads one page instead of six exports, and every line can be checked back to the record.
+
+**Runs the extent check.** It lists all batches and products that shared the equipment, room, material lot, method or analyst in a window QA defines, with their status: released, in stock, distributed. QA decides which are in scope.
+
+**Finds similar deviations.** It searches past deviation and CAPA records by meaning, not by category code, and shows the closest matches with their root causes and whether the CAPA worked.
+
+**Drafts the report and flags gaps.** It fills your template, marks every sentence that has no supporting record, and flags a human-error conclusion that has no assessment of the procedure, equipment or system behind it.
+
+<Flow title="From deviation to signed investigation" caption="AI collects and drafts in a non-critical, supporting role. QA decides and signs.">
+<Step title="Record" who="Operator or analyst" tone="human" time="same shift">Deviation raised in the QMS with what happened, where and which batch.</Step>
+<Step title="Classify" who="QA" tone="human" time="1 day">Minor, major or critical, and whether batches go on hold.</Step>
+<Step title="Gather" who="AI" tone="ai" time="hours">Evidence pack, timeline, list of potentially affected batches and similar past deviations, each with its source.</Step>
+<Step title="Investigate" who="QA investigator" tone="human" time="days">Interviews, root cause analysis, scope of affected batches decided and justified.</Step>
+<Step title="Draft" who="AI" tone="ai" time="hours">Report in the site template, unsupported statements and unjustified human-error conclusions flagged.</Step>
+<Step title="Approve" who="QA head and Qualified Person" tone="human" time="per deviation">Conclusions, CAPA and batch disposition approved and signed.</Step>
+</Flow>
+
+## The numbers for one site
+
+<Calc title="Napkin math: one site's major deviations" caption="Assumptions, not measurements. Use your own deviation log and time records." rows={[
+  ["Major deviations investigated per year (assumption)", "120"],
+  ["Investigator hours per deviation spent gathering records and writing (assumption)", "× 10 hours"],
+  ["Hours today", "1,200 hours"],
+  ["With an evidence pack and a draft report (assumption)", "120 × 4 hours = 480 hours"]
+]} result={["Investigator time freed per year", "about 720 hours, moved from searching to root cause work"]} />
+
+The hours matter, but the bigger effect is on the overdue list. Deviations that stay open past their target hold batches in quarantine, and the inspector reads the age of open investigations before reading any single report.
+
+## Where it goes wrong
+
+<Callout title="The model is a research assistant, not an investigator." tone="warning">
+Under the draft Annex 22, a large language model should not make or automate a GMP decision. It can collect, sort and draft, with a qualified person checking every output. Classification, root cause, batch disposition and CAPA are QA decisions, signed by people.
+</Callout>
+
+**Every claim needs a record.** A drafted timeline is only useful if each line links to the batch record page, audit trail entry or logbook it came from. Anything the model cannot source is marked, not filled in.
+
+**The tool becomes part of your computerised systems.** Even in a supporting role, document the intended use, the data it reads, who checks its output and how, under Annex 11 and your validation procedures. Keep it read-only on your GMP systems.
+
+**Data stays inside.** Batch records, formulations and deviation history are confidential and often covered by client agreements at a CDMO. Run the assistant in your own environment or under contracts your QA and IT functions approve, never through a public chatbot.
+
+## Tools that fit
+
+Most sites already have the data in an electronic QMS such as Veeva, MasterControl or TrackWise, a LIMS and an MES or paper batch records. Several QMS vendors are adding AI features for classification and search. Smaller manufacturers and CDMOs often run deviations in a lighter QMS or spreadsheets with scanned records. Start with search over past deviations and the extent check, because both are read-only, easy to verify and directly answer the observations FDA cites most.
+
+<Checklist title="How to start this quarter" items={[
+  "Export the last three years of deviations and CAPAs with their root causes and effectiveness checks",
+  "Pick one product line and map where its batch, alarm, lab and training records live",
+  "Have the assistant find similar past deviations for ten closed cases and compare with what your investigators found",
+  "Run the extent check on those ten cases and review every batch it lists that the original report did not",
+  "Write the intended use, data sources and human checks for the tool before using it on open deviations",
+  "Draft the next five reports with it and track time to closure against your target"
+]} />
+
+## Questions QA teams ask about AI and deviations
+
+### What does 21 CFR 211.192 require?
+
+QA must review and approve all production and control records before a batch is released. Any unexplained discrepancy or specification failure must be thoroughly investigated, even if the batch has been distributed, the investigation must extend to other batches and products that may be associated, and a written record must include the conclusions and follow-up.
+
+### Can AI be used for GMP deviation investigations under EU rules?
+
+The draft Annex 22 says generative AI and large language models should not be used in critical GMP applications. In non-critical uses, such as searching records or drafting text that a qualified person reviews, they can be used with a human in the loop. The final Annex 22 had not been adopted when this article was written.
+
+### How often is 211.192 cited by FDA?
+
+In fiscal 2025, FDA's inspection data shows 236 citations of 211.192 across its five standard observations, up from 173 in fiscal 2024. The main observation, failure to thoroughly review discrepancies and failures, has been the second most cited drug observation every year since fiscal 2020.
+
+### Can we write "human error" as the root cause?
+
+EU GMP Chapter 1 allows it only when it is justified and you have checked that process, procedural or system-based causes were not overlooked. An assistant can flag a human-error conclusion that lacks that assessment, but the investigator has to do the assessment.
+
+## Let the record speak first
+
+Most weak investigations are not weak because the investigator lacked skill. They are weak because the evidence was too scattered to look at in the time allowed. Let AI bring the records, the related batches and the history to one page, and let your QA team spend its time on the cause.
+
+If your investigators spend their days collecting exports, [tell me which QMS, LIMS and MES you use](/contact?intent=improve) and roughly how many deviations you open a month. I'll suggest whether the history search, the extent check or the draft report is the right first step. Medical device makers face the same discipline in [complaint handling and vigilance](/posts/ai-for-medical-device-manufacturers-complaints-vigilance), food producers keep batch traceability in [HACCP records](/posts/ai-for-food-producers-compliance), and pharmacies see the other end of supply problems in [medicine shortages](/posts/ai-for-pharmacies-medicine-shortages).
