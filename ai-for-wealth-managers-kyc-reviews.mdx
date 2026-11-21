@@ -1,0 +1,128 @@
+---
+id: "ai-for-wealth-managers-kyc-reviews"
+title: "AI for Wealth Managers: KYC Reviews and Source of Wealth Files That Stay Current"
+authorName: "Josip Ledić"
+date: "2026-11-21"
+tags: ["Financial services", "Wealth management", "KYC and AML", "AI for small business"]
+description: "The FCA's 2026 wealth management survey found that around 10% of firms do not verify source of wealth and some do not refresh checks on higher-risk clients after a trigger event or at least once a year. How discretionary managers can use AI to prepare each KYC review from the client file, test the source of wealth story against the evidence and keep reviews on schedule."
+excerpt: "The FCA's 2026 wealth management survey found that around 10% of firms do not verify source of wealth and some do not refresh checks on higher-risk clients after a trigger event or at least once a year. How discretionary managers can use AI to prepare each KYC review from the client file, test the source of wealth story against the evidence and keep reviews on schedule."
+---
+
+AI can prepare most of a periodic KYC review for a wealth manager: read the client file, list what has expired or changed since the last review, compare the source of wealth narrative with the documents behind it, check recent transactions against the expected activity on file, and draft the questions for the relationship manager to ask. Your compliance team still decides the risk rating, approves PEP relationships and makes any report to the MLRO. What changes is that a review starts from a prepared file with the gaps marked, instead of a blank checklist and three systems to search.
+
+The regulator has just said where the gaps are. The FCA's [wealth management survey report](https://www.fca.org.uk/data/wealth-management-survey-report-2026), published on 18 August 2026 and based on around 400 firms whose main business is wealth management, found that some firms "do not refresh checks for higher-risk clients after a trigger event or at least once a year".
+
+<Stats title="UK wealth management, FCA survey 2026">
+  <Stat value="around £650k" label="typical holding of a client using discretionary or advisory services, against around £325k for execution-only clients" source="FCA, Wealth management survey report 2026" href="https://www.fca.org.uk/data/wealth-management-survey-report-2026" />
+  <Stat value="around 10%" label="of surveyed firms do not verify source of wealth; 13% do not record expected investment amounts" source="FCA, Wealth management survey report 2026" href="https://www.fca.org.uk/data/wealth-management-survey-report-2026" />
+  <Stat value="26%" label="of firms do not collect expected transaction frequency, and around 6% do not check whether clients are politically exposed persons" source="FCA, Wealth management survey report 2026" href="https://www.fca.org.uk/data/wealth-management-survey-report-2026" />
+</Stats>
+
+The same report puts the sector at more than 5.5 million retail clients and almost £1 trillion of assets, with portfolio management clients up 20% since 2022 to 1.3 million. At around £650k per discretionary client, one relationship is worth years of fees. It is also exactly the kind of relationship where an incomplete source of wealth file is a real risk.
+
+## What the rules ask for
+
+The [Money Laundering Regulations 2017](https://www.legislation.gov.uk/uksi/2017/692/contents) make the review a continuing duty, not a one-off at onboarding.
+
+**Ongoing monitoring.** [Regulation 28(11)](https://www.legislation.gov.uk/uksi/2017/692/regulation/28) requires scrutiny of transactions "including, where necessary, the source of funds" to check they fit what you know of the client, and reviews of existing records to keep the due diligence documents "up-to-date".
+
+**Reviews at the right time.** [Regulation 27(8) and (9)](https://www.legislation.gov.uk/uksi/2017/692/regulation/27) require due diligence on existing clients at appropriate times on a risk-based approach and when their circumstances change, taking into account changes in identity or beneficial ownership, transactions that don't fit, and changes in the purpose of the relationship.
+
+**Enhanced checks for higher risk.** [Regulation 33](https://www.legislation.gov.uk/uksi/2017/692/regulation/33) requires enhanced due diligence and enhanced ongoing monitoring for high-risk cases, including PEPs, unusually large or complex transactions and unusual patterns. For a PEP, [regulation 35(5)](https://www.legislation.gov.uk/uksi/2017/692/regulation/35) adds senior management approval, "adequate measures to establish the source of wealth and source of funds" and enhanced ongoing monitoring.
+
+**Five years of records.** [Regulation 40](https://www.legislation.gov.uk/uksi/2017/692/regulation/40) keeps the due diligence documents for five years after the relationship ends.
+
+Firms in the EU will get fixed outer limits. Article 26 of the [EU Anti-Money Laundering Regulation (EU) 2024/1624](http://data.europa.eu/eli/reg/2024/1624/oj), which applies from 10 July 2027, says the gap between updates of customer information must depend on risk and must not exceed one year for higher-risk customers and five years for all others. My German version of this article covers that side.
+
+## Why reviews slip
+
+A periodic review is mostly assembly. Someone has to find the last review, the onboarding form, the passport scan and its expiry date, the source of wealth note and whatever evidence backs it, the PEP and sanctions screening results, and a year of transactions from the custody or portfolio system. Then they compare all of it with what the client said they would do.
+
+Banks show the scale of that work. In the FCA's aggregate data from the annual financial crime return, released under [Freedom of Information on 12 January 2026](https://www.fca.org.uk/freedom-information/information-aggregate-data-rep-crim-responses-january-2026), banks and building societies reported 20,009 full-time staff in UK financial crime roles in 2024/25, nearly double the 11,256 of 2019/20.
+
+<Bars title="UK staff in financial crime roles, banks and building societies" unit="" caption="Full-time equivalents at the end of each reporting year, from firms' annual financial crime returns (REP-CRIM). Wealth managers are not included in these totals." source="FCA, FOI2025/01717, aggregate REP-CRIM data, 12 January 2026" href="https://www.fca.org.uk/freedom-information/information-aggregate-data-rep-crim-responses-january-2026" data={[
+  { label: "2019/20", value: 11256, display: "11,256" },
+  { label: "2020/21", value: 11610, display: "11,610" },
+  { label: "2021/22", value: 14247, display: "14,247" },
+  { label: "2022/23", value: 17388, display: "17,388" },
+  { label: "2023/24", value: 18158, display: "18,158" },
+  { label: "2024/25", value: 20009, display: "20,009", highlight: true }
+]} />
+
+A wealth manager with 40 staff cannot double its compliance team. So reviews get batched, the higher-risk ones get done late, and the source of wealth note written at onboarding ("proceeds of business sale, 2019") stays in the file without the sale agreement or the completion statement that would prove it.
+
+## What the review assistant does
+
+**Builds the review pack.** For each client due for review, the assistant pulls the last review, onboarding data, identity documents, screening results and the period's transactions into one pack, and lists what is missing or expired: an ID that ran out in March, a company whose beneficial owners changed at Companies House, a trust deed never received.
+
+**Tests the source of wealth story.** It reads the narrative and the evidence and checks that they agree: the amount on the completion statement against the amount said to come from the sale, the dates against the employment history, the inheritance against the grant of probate. Where the story has no document behind it, it says so in plain words.
+
+**Compares activity with the profile.** Expected investment amounts and transaction frequency are compared with what actually happened. A client profiled as "adds £50k a year from salary" who paid in £1.2m from an overseas account in one quarter is flagged with the transactions attached. Hard thresholds and date checks run as code, not as a language model, so they give the same answer every time.
+
+**Drafts the questions.** For each gap, it drafts the question for the relationship manager to ask in the next meeting, in the firm's tone, and the list of documents to request.
+
+**Watches for triggers between reviews.** New screening hits, a change of address to another country, a large unexpected withdrawal or a new power of attorney moves the client's review forward instead of waiting for the next cycle.
+
+<Flow title="From review due to signed-off review" caption="AI assembles, compares and drafts. Compliance decides the rating, and the MLRO decides any report.">
+<Step title="Due" who="System" tone="ai" time="on schedule or trigger">Client enters the review queue by risk-based date or by a trigger event.</Step>
+<Step title="Assemble" who="AI" tone="ai" time="minutes">Review pack built from CRM, documents, screening and transactions, with gaps listed.</Step>
+<Step title="Compare" who="AI and rules" tone="ai" time="minutes">Source of wealth narrative tested against evidence; activity tested against expected amounts and frequency.</Step>
+<Step title="Ask" who="Relationship manager" tone="human" time="next client contact">Drafted questions and document requests raised with the client.</Step>
+<Step title="Decide" who="Compliance" tone="human" time="per review">Risk rating confirmed or changed, PEP approval renewed, concerns referred to the MLRO.</Step>
+</Flow>
+
+## The numbers for one firm
+
+<Calc title="Napkin math: one year of periodic reviews" caption="Assumptions, not measurements. Use your own client numbers and time records." rows={[
+  ["Client relationships (assumption)", "1,200"],
+  ["Reviewed each year: higher risk yearly, others on a longer cycle (assumption)", "350 reviews"],
+  ["Analyst time per review today, assembly to sign-off (assumption)", "× 2.5 hours = 875 hours"],
+  ["Time per review with a prepared pack and gaps listed (assumption)", "350 × 1 hour = 350 hours"]
+]} result={["Analyst time saved per year", "about 525 hours, moved from searching files to judging the gaps"]} />
+
+The hours are not the main gain. A firm that knows, every Monday, which higher-risk reviews are overdue and which source of wealth files have no evidence can show the FCA a working control. A firm that finds out during a supervisory visit cannot.
+
+## Where it goes wrong
+
+<Callout title="The assistant prepares. Compliance decides." tone="warning">
+A risk rating, a PEP approval and a suspicion are judgements with personal accountability attached. The model assembles evidence and marks gaps. It never closes a review, lowers a rating or decides whether something is suspicious.
+</Callout>
+
+**Don't let it explain away a gap.** A language model is good at writing a plausible story. The assistant's job is to show where the story has no document, not to fill it in. Every statement in the pack should point to the document it came from.
+
+**Tipping off is still an offence.** If the review raises a suspicion, the questions to the client must not reveal it. Route those cases to the MLRO before any drafted question goes out.
+
+**Client data stays under your control.** Passports, bank statements and inheritance papers are as sensitive as data gets. Run the assistant in your own environment or under contracts your compliance and IT teams accept, never through a public chatbot.
+
+## Tools that fit
+
+Most firms already have the pieces: a CRM or client onboarding system, a document store, a screening provider for PEPs and sanctions, and a portfolio or custody system with the transactions. Specialist KYC platforms handle onboarding and screening well, but the periodic review often still happens in a spreadsheet next to them. Start by connecting the review queue to the documents and transactions you already hold. That is where the assembly time goes.
+
+<Checklist title="How to start this quarter" items={[
+  "Export the list of clients with their risk rating and last review date",
+  "Pick 20 higher-risk clients and have the assistant build review packs for them",
+  "Compare its gap list with what your analysts found in the last review of the same clients",
+  "Add expected investment amounts and transaction frequency to every profile that lacks them",
+  "Set trigger rules for screening hits, large unexpected flows and changes of country",
+  "Report overdue higher-risk reviews to the board every month"
+]} />
+
+## Questions wealth managers ask about AI and KYC
+
+### Can AI verify source of wealth?
+
+It can check whether the evidence supports the story: amounts, dates and names in the documents against what the client told you. Whether the evidence is enough for that client's risk is a judgement your compliance team makes and records.
+
+### How often should a wealth manager refresh KYC?
+
+In the UK, on a risk-based approach and whenever circumstances change, under regulations 27 and 28 of the Money Laundering Regulations 2017; the FCA's 2026 survey criticised firms that do not refresh higher-risk clients after a trigger event or at least once a year. In the EU, from 10 July 2027, at most every year for higher-risk customers and every five years for all others.
+
+### Do PEPs always need senior management approval?
+
+Yes. Regulation 35(5) requires senior management approval to establish or continue a relationship with a PEP, a family member or a known close associate, plus measures to establish source of wealth and source of funds and enhanced ongoing monitoring. Domestic PEPs start from a lower level of risk under regulation 35(3A).
+
+## Keep the file as current as the portfolio
+
+Your portfolio system values every client daily. The KYC file should not be five years older than that. Let AI assemble each review, mark what is missing and watch for triggers, and keep the ratings and the reports with the people who are accountable for them.
+
+If your periodic reviews still start from a blank checklist, [tell me how many clients you review each year and which systems hold their documents and transactions](/contact?intent=improve). I'll suggest whether the review pack, the source of wealth check or the trigger monitoring is the right first step. Financial advisers face similar file reviews in [suitability reviews](/posts/ai-for-financial-advisers-suitability-reviews), M&A advisers answer buyers from the data room in [due diligence Q&A](/posts/ai-for-ma-advisers-due-diligence-qa), and insurance brokers prepare [renewals](/posts/ai-for-insurance-brokers-renewals) from the same kind of client file.
