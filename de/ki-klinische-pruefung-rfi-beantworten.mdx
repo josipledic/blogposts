@@ -1,0 +1,156 @@
+---
+id: "ki-klinische-pruefung-rfi-beantworten"
+translationOf: "ai-for-clinical-trial-sponsors-rfi-responses"
+title: "KI für Sponsoren klinischer Prüfungen: Weniger Rückfragen im Genehmigungsverfahren, RFIs fristgerecht beantworten"
+authorName: "Josip Ledić"
+date: "2026-11-22"
+tags: ["Life Sciences", "Klinische Prüfung", "Regulatory Affairs", "KI für kleine Unternehmen"]
+description: "Nach Artikel 6 Absatz 8 der EU-Verordnung 536/2014 hat der Sponsor höchstens zwölf Tage, um ein Informationsersuchen zu beantworten, sonst ist der Antrag in allen betroffenen Mitgliedstaaten hinfällig. Wie Sponsoren und CROs mit KI den Antrag vor der Einreichung auf typische Beanstandungen prüfen und ein RFI im Zeitrahmen vorbereiten, während die fachliche Antwort bei Ihren Expertinnen und Experten bleibt."
+excerpt: "Nach Artikel 6 Absatz 8 der EU-Verordnung 536/2014 hat der Sponsor höchstens zwölf Tage, um ein Informationsersuchen zu beantworten, sonst ist der Antrag in allen betroffenen Mitgliedstaaten hinfällig. Wie Sponsoren und CROs mit KI den Antrag vor der Einreichung auf typische Beanstandungen prüfen und ein RFI im Zeitrahmen vorbereiten, während die fachliche Antwort bei Ihren Expertinnen und Experten bleibt."
+---
+
+KI kann Sponsoren klinischer Prüfungen an zwei Stellen entlasten. Vor der Einreichung liest sie Prüfplan, Prüferinformation, Anschreiben und Aufklärungsunterlagen gegen bekannte Beanstandungsgründe und markiert die Sätze, die erfahrungsgemäß eine Rückfrage auslösen. Kommt dann doch ein Informationsersuchen (Request for Information, RFI), zerlegt sie es in einzelne Fragen, findet alle betroffenen Dokumentstellen, entwirft die Antwort mit den nötigen Änderungen und behält die Frist im Blick. Was geantwortet wird, entscheiden und zeichnen weiterhin Ihre Fachleute aus Medizin, Pharmazie und Regulatory Affairs. Der Gewinn: weniger vermeidbare Fragen, und für die übrigen ein vorbereiteter Entwurf statt eines leeren Dokuments.
+
+## Zwölf Tage für die Antwort
+
+Unter der [Verordnung (EU) Nr. 536/2014](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32014R0536) ist das Zeitfenster eng. Nach Artikel 6 Absatz 8 übermittelt der Sponsor die angeforderten Informationen zu Teil I „innerhalb einer vom berichterstattenden Mitgliedstaat gesetzten Frist, die zwölf Tage ab dem Eingang des Informationsersuchens nicht überschreiten darf“. Legt er sie nicht fristgerecht vor, „gilt der Antrag in allen betroffenen Mitgliedstaaten als hinfällig“. Für Teil II, also Einwilligung, Rekrutierung, Vergütung, Datenschutz und Proben, gilt nach Artikel 7 Absatz 3 dieselbe Höchstfrist von zwölf Tagen.
+
+| Schritt | Frist nach VO 536/2014 |
+|---|---|
+| Validierung | Berichterstattender Mitgliedstaat validiert innerhalb von 10 Tagen (Art. 5 Abs. 3) |
+| Unvollständiger Antrag | Sponsor hat höchstens 10 Tage zur Ergänzung, sonst ist der Antrag hinfällig (Art. 5 Abs. 5) |
+| Bewertung Teil I | Bewertungsbericht innerhalb von 45 Tagen ab Validierung (Art. 6 Abs. 4), bei Rückfragen um bis zu 31 Tage verlängerbar (Art. 6 Abs. 8) |
+| Antwort auf ein RFI | Höchstens 12 Tage ab Eingang, für Teil I und Teil II (Art. 6 Abs. 8, Art. 7 Abs. 3) |
+| Entscheidung | Innerhalb von 5 Tagen ab Berichtstag oder letztem Bewertungstag (Art. 8 Abs. 1) |
+
+Zwölf Tage sind wenig, wenn ein einziges RFI eine Statistikfrage, eine Frage zum IMPD und eine Frage zur Referenzsicherheitsinformation enthält, jede mit einer anderen zuständigen Person, oft bei einem anderen Unternehmen.
+
+## Wie viele Anträge beim BfArM eingehen
+
+Das BfArM veröffentlicht in seiner [Bearbeitungsstatistik](https://www.bfarm.de/DE/Arzneimittel/Klinische-Pruefung/Genehmigungsverfahren/statistik.html) die Zahl der dort eingereichten Anträge auf Genehmigung klinischer Prüfungen nach der EU-Verordnung. Arzneimittel, für die das Paul-Ehrlich-Institut zuständig ist, etwa Impfstoffe und Arzneimittel für neuartige Therapien, kommen noch hinzu.
+
+<Stats title="Klinische Prüfungen beim BfArM">
+  <Stat value="487" label="Anträge auf Genehmigung nach VO 536/2014 im Jahr 2024, nach 426 im Jahr 2023" source="BfArM, Bearbeitungsstatistik" href="https://www.bfarm.de/DE/Arzneimittel/Klinische-Pruefung/Genehmigungsverfahren/statistik.html" />
+  <Stat value="187" label="davon Phase III im Jahr 2024, die größte Gruppe; 117 waren Phase I" source="BfArM, Bearbeitungsstatistik" href="https://www.bfarm.de/DE/Arzneimittel/Klinische-Pruefung/Genehmigungsverfahren/statistik.html" />
+  <Stat value="624" label="Überführungsanträge laufender Prüfungen in das neue Recht im Jahr 2024, vor dem Ende der Übergangsfrist am 30. Januar 2025" source="BfArM, Bearbeitungsstatistik" href="https://www.bfarm.de/DE/Arzneimittel/Klinische-Pruefung/Genehmigungsverfahren/statistik.html" />
+</Stats>
+
+<Bars title="Anträge auf Genehmigung klinischer Prüfungen beim BfArM" unit="" caption="2016 bis 2022 nach Richtlinie 2001/20/EG, 2023 und 2024 nach VO 536/2014 (ohne Überführungsanträge). Im Januar 2023 gingen zusätzlich 84 Anträge nach altem Recht ein." source="BfArM, Bearbeitungsstatistik" href="https://www.bfarm.de/DE/Arzneimittel/Klinische-Pruefung/Genehmigungsverfahren/statistik.html" data={[
+  { label: "2016", value: 771 },
+  { label: "2018", value: 650 },
+  { label: "2020", value: 593 },
+  { label: "2022", value: 534 },
+  { label: "2023", value: 426 },
+  { label: "2024", value: 487, highlight: true }
+]} />
+
+Hinter jedem dieser Anträge steht viel Geld. Eine Auswertung der Zulassungsstudien für 59 von der FDA 2015 und 2016 zugelassene Arzneimittel schätzt die [mittleren Kosten einer Zulassungsstudie auf 19,0 Millionen US-Dollar](https://pmc.ncbi.nlm.nih.gov/articles/PMC6248200/), bei einem Interquartilsabstand von 12,2 bis 33,1 Millionen. Jede Woche Verzögerung bei der Genehmigung verschiebt Zentrumseröffnung, ersten Patienten und alle Meilensteine dahinter.
+
+## Wonach Behörden am häufigsten fragen
+
+Eine besonders konkrete Liste veröffentlicht die britische Arzneimittelbehörde MHRA. Sie schreibt in ihrer Übersicht zu [häufigen Problemen bei Anträgen](https://www.gov.uk/government/publications/common-issues-identified-during-clinical-trial-applications), dass bei mehr als der Hälfte der jährlich 950 bis 1.000 Anträge Informationen nachgereicht werden müssen und viele dieser Rückfragen vermeidbar wären. Viele der [klinischen Punkte](https://www.gov.uk/government/publications/common-issues-identified-during-clinical-trial-applications/common-issues-clinical) beruhen auf Empfehlungen der europäischen Clinical Trials Facilitation and Coordination Group und taugen deshalb auch als Prüfliste für einen Antrag in CTIS:
+
+**Referenzsicherheitsinformation.** Eine einzige Tabelle der erwarteten schwerwiegenden Nebenwirkungen nach Systemorganklasse und Preferred Term, nur mehrfach berichtete Reaktionen, tödliche und lebensbedrohliche Ereignisse immer als unerwartet. Das Anschreiben nennt, wo die RSI steht.
+
+**Erfassung und Meldung unerwünschter Ereignisse.** Erfassung ab Einwilligung, mindestens bis zum Ende der systemischen Exposition. SAEs „innerhalb von 24 Stunden“; „ein Werktag“ wird beanstandet.
+
+**Entblindung im Notfall.** Die Prüfärztin oder der Prüfarzt braucht sofortigen Zugang. Muss vorher der Sponsor kontaktiert werden, folgt eine Rückfrage.
+
+**Verhütung und Ein- und Ausschlusskriterien.** Methoden, Dauer und Schwangerschaftstests müssen zur Prüferinformation passen. Kriterien, die eine Einzelfallabsprache mit dem Sponsor erlauben, gelten als unzulässige Ausnahme.
+
+**Abbruchkriterien bei Dosissteigerung** in First-in-Human-Studien und Studien mit Gesunden, dazu ein **Kommunikationsplan** zwischen den Zentren.
+
+Die MHRA geht selbst in diese Richtung: Ihr [Clinical-Trials-Hub](https://www.gov.uk/government/collections/medicines-clinical-trials) kündigt einen KI-gestützten Protocol Checker an, der Prüfplanentwürfe in vier dieser Bereiche auf typische RFI-Gründe prüft; die Registrierung soll Ende November 2026 schrittweise beginnen.
+
+## Warum die Antwort so viel Zeit kostet
+
+**Ein Schreiben, viele Zuständige.** Ein RFI berührt Prüfplan, Prüferinformation, IMPD, Aufklärung und Statistischen Analyseplan. Jemand muss es aufteilen, zuweisen und nachhalten.
+
+**Jede Änderung zieht weitere nach sich.** Wird die Verhütungsanforderung im Prüfplan verschärft, ändern sich Aufklärung, Verweis auf die Prüferinformation und manchmal die Einschlusskriterien. Wer eine Stelle übersieht, erhält die nächste Frage.
+
+**Frühere Antworten liegen in Postfächern.** Dieselbe Frage zur RSI oder zur Entblindung wurde oft schon bei einer früheren Prüfung beantwortet, nur findet niemand das Schreiben.
+
+**Die Freigabe frisst die Frist.** Der Entwurf dauert vielleicht zwei Tage. Die Freigabe durch Medizin, Pharmazie, Statistik und QS ist es, die in zwölf Tagen knapp wird.
+
+## Was der Assistent übernimmt
+
+**Prüfung vor der Einreichung.** Er liest das gesamte Antragsdossier gegen die bekannten Beanstandungsgründe, die von Ihrem Team genutzten Empfehlungen und Ihre eigenen früheren RFIs und nennt zu jedem Befund Satz, Dokument und Regel. Dazu prüft er die Stimmigkeit zwischen den Dokumenten: Passt der Verhütungsabschnitt zur Prüferinformation, verweist das Anschreiben auf die richtige RSI-Version, decken sich Einschlusskriterien und Aufklärung?
+
+**Vollständigkeit.** Er bestätigt, dass alle Pflichtdokumente vorhanden, unterschrieben und durchsuchbar sind, bevor eingereicht wird, damit die zehntägige Ergänzungsfrist gar nicht erst läuft.
+
+**RFI-Aufteilung.** Kommt das Ersuchen, zerlegt er es in nummerierte Fragen, ordnet sie Teil I oder Teil II und dem Fachgebiet zu, nennt die betroffenen Dokumentstellen und legt eine Liste mit Zuständigen und internen Terminen an, rückwärts gerechnet von der Behördenfrist.
+
+**Antwortentwürfe.** Zu jeder Frage entwirft er eine Antwort und die vorgeschlagene Textänderung in jedem betroffenen Dokument, zitiert die einschlägige Leitlinie und zeigt, wie Sie eine ähnliche Frage früher beantwortet haben.
+
+**Schlussprüfung.** Vor dem Versand prüft er, ob jede Frage beantwortet ist, jede zugesagte Änderung in jedem Dokument steht und Versionsnummern und Daten zusammenpassen.
+
+<Flow title="Vom Prüfplanentwurf zum beantworteten RFI" caption="Die KI liest, gleicht ab und entwirft. Ihre Fachleute entscheiden und zeichnen.">
+<Step title="Prüfen" who="KI" tone="ai" time="Stunden">Prüfplan, Prüferinformation, IMPD, Aufklärung und Anschreiben gegen typische Beanstandungen und frühere RFIs geprüft.</Step>
+<Step title="Überarbeiten" who="Medical Writing und Regulatory Affairs" tone="human" time="Tage">Befunde mit Begründung angenommen oder verworfen, Dokumente angepasst.</Step>
+<Step title="Einreichen" who="Regulatory Affairs" tone="human" time="1 Tag">Vollständigkeit bestätigt, Antrag in CTIS eingereicht.</Step>
+<Step title="Aufteilen" who="KI" tone="ai" time="am selben Tag">RFI in Fragen, Zuständige, betroffene Abschnitte und interne Termine zerlegt.</Step>
+<Step title="Beantworten" who="KI und Fachleute" tone="human" time="Tage">Entwürfe und Änderungen geprüft, wo nötig neu geschrieben, freigegeben.</Step>
+<Step title="Übermitteln" who="Regulatory Affairs" tone="human" time="vor Fristablauf">Schlussprüfung bestanden, Antwort über CTIS übermittelt.</Step>
+</Flow>
+
+## Eine Überschlagsrechnung
+
+<Calc title="Überschlag: Sponsor oder CRO mit laufender Studienpipeline" caption="Annahmen, keine Messwerte. Rechnen Sie mit Ihrem eigenen Einreichungs- und RFI-Verlauf." rows={[
+  ["Erstanträge pro Jahr (Annahme)", "12"],
+  ["Davon mit mindestens einem RFI (Annahme, angelehnt an die MHRA-Angabe „mehr als die Hälfte“)", "× 55 % = etwa 7"],
+  ["Stunden je RFI für Aufteilen, Suchen, Entwerfen und Abgleichen (Annahme)", "× 40 Stunden = 280 Stunden"],
+  ["Mit vorbereitetem Entwurf und Abgleich (Annahme)", "7 × 15 Stunden = 105 Stunden"]
+]} result={["Gewonnene Zeit pro Jahr", "etwa 175 Stunden, vor allem in den zwölf Tagen, in denen sie am knappsten sind"]} />
+
+Wichtiger als die Stunden ist der Puffer: Ein Entwurf am zweiten Tag lässt Zeit für eine echte fachliche Freigabe, statt am elften Tag unter Druck zu zeichnen.
+
+## Worauf Sie achten sollten
+
+<Callout title="Der Assistent entwirft. Über Sicherheit entscheidet er nicht." tone="warning">
+Ob ein Abbruchkriterium ausreicht, was in die RSI gehört oder wie eine Frage zur pharmazeutischen Qualität beantwortet wird, sind medizinische und wissenschaftliche Urteile. Sie bleiben bei Ihrer medizinischen Leitung, der Pharmazie und Regulatory Affairs, die die Antwort zeichnen.
+</Callout>
+
+**Jeder Befund braucht eine Quelle.** Jede Markierung und jeder Entwurf verweist auf Dokumentstelle und Leitlinie. Ein Vorschlag ohne Beleg schadet mehr, als er nützt, weil er überzeugend klingt.
+
+**Vertrauliche Daten bleiben im Haus.** Prüfplan, Prüferinformation und IMPD enthalten unveröffentlichte Ergebnisse und Herstellungsdetails. Betreiben Sie den Assistenten in Ihrer eigenen Umgebung oder unter Bedingungen, die QS und Rechtsabteilung freigegeben haben, nie in einem öffentlichen Chatbot.
+
+**Die Regeln des Auftraggebers gelten.** CROs arbeiten nach den SOPs und Qualitätsvereinbarungen ihrer Sponsoren. Halten Sie schriftlich fest, welche Dokumente das Werkzeug lesen darf und wer seine Ergebnisse prüft.
+
+**Leitlinien ändern sich.** Führen Sie die Prüfregeln versioniert und datiert, damit nachvollziehbar bleibt, gegen welchen Stand eine Prüfung lief.
+
+## Welche Werkzeuge passen
+
+Die meisten Sponsoren schreiben in Word mit einem Dokumentenmanagementsystem wie Veeva Vault und reichen über CTIS ein. Der Assistent arbeitet daneben: Er liest exportierte Dokumente und das Informationsersuchen, schreibt seine Befunde in eine Prüftabelle und entwirft im Änderungsmodus. Beginnen Sie schrittweise mit der Prüfung vor der Einreichung. Sie verändert nichts, lässt sich gut gegen veröffentlichte Beanstandungsgründe prüfen und zahlt sich schon beim nächsten Antrag aus.
+
+<Checklist title="So fangen Sie in diesem Quartal an" items={[
+  "Sammeln Sie die RFIs Ihrer letzten 20 Anträge mit Ihren Antworten",
+  "Ordnen Sie jede Frage einem Typ zu und markieren Sie, welche einem bekannten Beanstandungsgrund entsprechen",
+  "Lassen Sie drei frühere Dossiers prüfen und vergleichen Sie die Befunde mit den tatsächlich gestellten Fragen",
+  "Legen Sie fest, welche Dokumente das Werkzeug lesen darf und wer welche Befunde prüft",
+  "Setzen Sie es beim nächsten Antrag und beim nächsten RFI ein und messen Sie die Tage bis zur Antwort",
+  "Führen Sie die Prüfregeln datiert, damit jede Prüfung ihren Stand dokumentiert"
+]} />
+
+## Häufige Fragen von Sponsoren
+
+### Wie lange habe ich Zeit, ein RFI in CTIS zu beantworten?
+
+Die Frist setzt der zuständige Mitgliedstaat, sie darf nach Artikel 6 Absatz 8 (Teil I) und Artikel 7 Absatz 3 (Teil II) der Verordnung (EU) Nr. 536/2014 zwölf Tage ab Eingang des Ersuchens nicht überschreiten. Ohne fristgerechte Antwort gilt der Antrag als hinfällig, bei Teil I in allen betroffenen Mitgliedstaaten.
+
+### Was passiert, wenn der Antrag unvollständig ist?
+
+Stellt der berichterstattende Mitgliedstaat bei der Validierung fest, dass Unterlagen fehlen, setzt er dem Sponsor nach Artikel 5 Absatz 5 eine Frist von höchstens zehn Tagen zur Ergänzung. Wird der Antrag nicht fristgerecht ergänzt, ist er in allen betroffenen Mitgliedstaaten hinfällig.
+
+### Wie viele klinische Prüfungen werden in Deutschland beantragt?
+
+Beim BfArM gingen 2024 laut seiner Bearbeitungsstatistik 487 Anträge nach der EU-Verordnung ein, 2023 waren es 426. Hinzu kamen 2024 624 Überführungsanträge laufender Prüfungen. Anträge beim Paul-Ehrlich-Institut sind darin nicht enthalten.
+
+### Darf KI eine RFI-Antwort schreiben?
+
+Sie darf einen Entwurf vorbereiten, den Ihre Fachleute prüfen, ändern und verantworten. Die Verantwortung für den Inhalt des Antrags liegt beim Sponsor. Entscheidend ist, dass jeder Entwurf belegt ist und vor dem Versand fachlich freigegeben wird.
+
+## Erst sich selbst fragen
+
+Die meisten Rückfragen betreffen etwas, das längst als typischer Beanstandungsgrund bekannt ist, oder eine Änderung, die in einem zweiten Dokument vergessen wurde. Lassen Sie die KI diese Stellen vor der Einreichung finden und die Unterlagen vorbereiten, wenn doch eine Frage kommt, mit Augenmaß und klaren Datenregeln. Dann bleibt Ihren Fachleuten die Zeit für die Fragen, die nur sie beantworten können.
+
+Wenn Ihr Regulatory-Team gerade einen Antrag vorbereitet oder ein RFI auf dem Tisch hat, [schreiben Sie mir, mit welchen Dokumenten und Systemen Sie arbeiten](/de/kontakt?intent=improve). Ich schlage Ihnen vor, ob die Prüfung vor der Einreichung oder die RFI-Aufteilung der richtige erste Schritt ist. Arzneimittelhersteller kennen dieselbe Belegpflicht im [Abweichungsmanagement](/de/posts/ki-pharmahersteller-abweichungsmanagement), Medizinproduktehersteller bei [Reklamationen und Vigilanz](/de/posts/ki-medizinproduktehersteller-reklamationen-vigilanz), und die Forschung hinter einer Studie braucht oft eine eigene [Vorhabenbeschreibung für die Forschungszulage](/de/posts/ki-forschungszulage-vorhabenbeschreibung).
