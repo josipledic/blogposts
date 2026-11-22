@@ -1,0 +1,144 @@
+---
+id: "ai-for-clinical-trial-sponsors-rfi-responses"
+title: "AI for Clinical Trial Sponsors: Fewer Requests for Information and Faster RFI Responses"
+authorName: "Josip Ledić"
+date: "2026-11-22"
+tags: ["Life sciences", "Clinical trials", "Regulatory affairs", "AI for small business"]
+description: "The MHRA says more than half of the 950 to 1,000 clinical trial applications it receives each year need further information before they can be approved, and most of the questions are common and avoidable. How sponsors and CROs can use AI to check a submission against the known issues before it goes in, and to answer an RFI inside the 12-day EU or 60-day UK window."
+excerpt: "The MHRA says more than half of the 950 to 1,000 clinical trial applications it receives each year need further information before they can be approved, and most of the questions are common and avoidable. How sponsors and CROs can use AI to check a submission against the known issues before it goes in, and to answer an RFI inside the 12-day EU or 60-day UK window."
+---
+
+AI can do two jobs for a clinical trial sponsor around the regulator's request for information (RFI). Before submission, it reads the protocol, investigator's brochure, cover letter and consent documents against the regulator's published list of common issues and flags the sentences that usually draw a question. After an RFI arrives, it splits the letter into single questions, finds every document section each one touches, drafts the response with the proposed changes, and keeps the clock in view. Your medical, CMC and regulatory people still decide what the answer is and sign it. What changes is that fewer avoidable questions are asked, and the ones that are asked start from a prepared draft instead of a blank page.
+
+The regulator has said plainly where the time goes. In its guidance on [common issues identified during clinical trial applications](https://www.gov.uk/government/publications/common-issues-identified-during-clinical-trial-applications), updated when the amended UK regulations took effect on 28 April 2026, the MHRA writes that it receives between 950 and 1,000 applications a year, that up to 95% are approved, but that "more than half of all applications require additional information to be submitted before they are considered approvable". It adds that many of these requests "are common and are avoidable if available guidance is followed".
+
+<Stats title="UK clinical trial applications, MHRA">
+  <Stat value="950 to 1,000" label="clinical trial authorisation applications for investigational medicinal products received per year" source="MHRA, Common issues identified during clinical trial applications" href="https://www.gov.uk/government/publications/common-issues-identified-during-clinical-trial-applications" />
+  <Stat value="more than half" label="of applications need additional information before they are approvable, although up to 95% are approved in the end" source="MHRA, Common issues identified during clinical trial applications" href="https://www.gov.uk/government/publications/common-issues-identified-during-clinical-trial-applications" />
+  <Stat value="up to 23 days" label="added to final approval when questions are raised (up to 21 days for phase 1), depending on how fast the sponsor responds" source="MHRA, Common issues identified during clinical trial applications" href="https://www.gov.uk/government/publications/common-issues-identified-during-clinical-trial-applications" />
+</Stats>
+
+Three weeks sounds small until you price it. A study of the pivotal trials behind 59 drugs approved by FDA in 2015 and 2016 put the [median estimated cost of a pivotal trial at $19.0 million](https://pmc.ncbi.nlm.nih.gov/articles/PMC6248200/), with an interquartile range of $12.2 million to $33.1 million. Sponsors and CROs run these programmes on fixed timelines, and a delay at authorisation pushes back site activation, first patient in and every milestone payment behind it.
+
+## The clock you are working against
+
+The UK and the EU give sponsors very different windows to answer, and the EU one is short enough that a slow internal review alone can kill an application.
+
+| | UK (from 28 April 2026) | EU Clinical Trials Regulation |
+|---|---|---|
+| Validation | Outcome within 7 calendar days; deficiencies notified by day 5 and must be fixed inside the 7 days, or the application is invalid | Reporting Member State validates within 10 days; sponsor gets at most 10 days to complete the dossier, or the application lapses |
+| Assessment | Combined MHRA and ethics decision within 30 days of validation | Part I assessment report within 45 days of validation |
+| Responding to questions | 60 calendar days to provide the further information, extensions on request; decision within 10 days of the response | Deadline set by the reporting Member State, at most 12 days from receipt; no answer means the application lapses in all Member States concerned |
+| Source | [MHRA guidance, apply for approval](https://www.gov.uk/guidance/clinical-trials-for-medicines-apply-for-approval-in-the-uk) | [Regulation (EU) No 536/2014](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0536), Articles 5 and 6(8) |
+
+Twelve days is not much when one RFI holds a statistics question, a CMC question about the IMPD and a safety question about the reference safety information, each owned by a different person, sometimes at a different company.
+
+## What regulators ask about most
+
+The MHRA lists the [most common clinical grounds for non-acceptance](https://www.gov.uk/government/publications/common-issues-identified-during-clinical-trial-applications/common-issues-clinical). Most of them are checkable against fixed wording rules:
+
+**Reference safety information.** The RSI must be a single table of expected serious adverse reactions by system organ class and preferred term, listing only reactions reported more than once, and fatal or life-threatening events are always unexpected. The cover letter must say where the RSI is.
+
+**Adverse event recording and reporting.** Recording starts at consent and runs at least to the end of systemic exposure. SAEs are reported "within 24 hours"; the MHRA says "one business day" is not acceptable.
+
+**Unblinding.** The investigator needs immediate access to emergency unblinding. A protocol that says the investigator "must" contact the sponsor or medical monitor first draws a question.
+
+**Contraception and eligibility.** Methods, duration and pregnancy testing must match the investigator's brochure. Eligibility criteria must be absolute; criteria that allow a case-by-case discussion with the sponsor are treated as a waiver.
+
+**Dose escalation stopping rules** for first-in-human and healthy volunteer trials, and a **communication plan** across sites.
+
+Validation failures are a separate group. The MHRA says they have fallen from about 15% to 6% since 2017, and the [most frequent causes](https://www.gov.uk/government/publications/common-issues-identified-during-clinical-trial-applications/common-issues-validation) are clerical: a missing XML of the application form, the wrong submission category, scanned PDFs without text recognition, missing signed forms.
+
+The regulator is moving the same way. The [MHRA clinical trials hub](https://www.gov.uk/government/collections/medicines-clinical-trials) announces an AI-powered Clinical Trial Protocol Checker that tests draft protocols for likely RFI causes in four of these areas: emergency unblinding, eligibility criteria, contraception, and AE and SAE reporting. Registration is planned to open in late November 2026, phased. The MHRA [already uses AI internally](https://www.gov.uk/government/news/uk-clinical-trial-approval-times-twice-as-fast-with-ai-and-reforms) to help assessors spot issues seen in past applications. Your own check can go wider, because it can read your whole dossier and your own history of questions.
+
+## Why answering an RFI takes so long
+
+**One letter, many owners.** A single RFI can touch the protocol, IB, IMPD, consent form and statistical analysis plan. Someone has to split it, assign each point and chase the answers.
+
+**Every change ripples.** Tightening a contraception requirement in the protocol means the consent form, the IB cross-reference and sometimes the eligibility criteria change too. Missing one creates the next question.
+
+**Past answers are in someone's inbox.** The same RSI or unblinding question has often been answered on an earlier trial, but the response letter sits in a shared drive under a trial number nobody remembers.
+
+**Review cycles eat the window.** Drafting may take two days; getting medical, CMC, statistics and QA sign-off on a twelve-day clock is what runs out.
+
+## What the assistant does
+
+**Pre-submission check.** It reads the full package against the MHRA common issues, the Clinical Trial Facilitation Group recommendations your team uses, and your own past RFIs, and lists each finding with the sentence, the document and the rule behind it. It also checks consistency across documents: does the protocol's contraception section match the IB, does the cover letter point to the right RSI version, do the eligibility criteria match the consent form.
+
+**Validation check.** It confirms every mandatory form and document is present, signed, in the right category and text-searchable before anyone clicks submit.
+
+**RFI triage.** When the letter arrives, it splits it into numbered questions, tags each one as clinical, non-clinical, quality or statistics, names the documents and sections involved, and builds a tracker with an owner and a due date counted back from the regulator's deadline.
+
+**Draft responses.** For each question it drafts an answer and the proposed text change in every affected document, quotes the relevant guidance, and shows how you answered a similar question before.
+
+**Final cross-check.** Before the response goes back, it checks that every question has an answer, every promised change was made in every document, and version numbers and dates line up.
+
+<Flow title="From draft protocol to answered RFI" caption="AI reads, matches and drafts. Your experts decide and sign.">
+<Step title="Check" who="AI" tone="ai" time="hours">Protocol, IB, IMPD, consent and cover letter checked against common issues, guidance and your past RFIs.</Step>
+<Step title="Fix" who="Medical writing and regulatory" tone="human" time="days">Findings accepted or rejected with a reason; documents updated.</Step>
+<Step title="Submit" who="Regulatory affairs" tone="human" time="1 day">Validation checklist confirmed, package submitted.</Step>
+<Step title="Triage" who="AI" tone="ai" time="same day">RFI split into questions, owners, affected sections and internal deadlines.</Step>
+<Step title="Answer" who="AI and subject experts" tone="human" time="days">Draft answers and tracked changes reviewed, rewritten where needed, approved.</Step>
+<Step title="Send" who="Regulatory affairs" tone="human" time="before deadline">Cross-check passed, response submitted in IRAS or CTIS.</Step>
+</Flow>
+
+## The numbers for one sponsor
+
+<Calc title="Napkin math: a sponsor or CRO with a steady trial pipeline" caption="Assumptions, not measurements. Use your own submission log and RFI history." rows={[
+  ["Initial applications per year (assumption)", "12"],
+  ["Share that receive an RFI (MHRA: more than half)", "× 55% = about 7"],
+  ["Days added per RFI round (MHRA: up to 21 to 23)", "× 20 days"],
+  ["Days of delay today", "about 140 days a year"],
+  ["If pre-submission checks avoid a third of RFIs (assumption)", "about 2 to 3 fewer rounds"]
+]} result={["Delay avoided per year", "roughly 40 to 60 trial-days, plus hours saved on every RFI still received"]} />
+
+## Where it goes wrong
+
+<Callout title="The assistant drafts. It does not decide what is safe." tone="warning">
+Whether a stopping rule is adequate, what the RSI should contain or how a CMC question is answered are scientific and medical judgments. They belong to your medical monitor, CMC lead and regulatory head, who sign the response. The model finds, matches and writes first drafts.
+</Callout>
+
+**It must cite.** Every finding and every draft answer should point to the document section and the guidance it relies on. An unsourced suggestion is worse than none, because it reads as confident.
+
+**Confidential data stays in your environment.** Protocols, IBs and IMPDs hold unpublished results and manufacturing details. Run the assistant in your own cloud tenancy or under terms your QA and legal teams approve, never in a consumer chatbot.
+
+**Check the sponsor's own rules.** CROs work under each sponsor's SOPs and quality agreements. Agree in writing which documents the tool may read and how its output is reviewed before you use it on a client's trial.
+
+**Guidance changes.** The MHRA updated its common issues list for the new regulations, and the EU regime has its own CTIS practice. Keep the rule set versioned and dated so you know which guidance a check ran against.
+
+## Tools that fit
+
+Most sponsors already write in Word with a document management system such as Veeva Vault, and submit through IRAS in the UK or CTIS in the EU. The assistant sits beside these: it reads exported documents and the RFI letter, writes its findings into a review table, and drafts in tracked changes. Start with the pre-submission check, because it is read-only, easy to verify against the published common issues, and pays back on the very next submission.
+
+<Checklist title="How to start this quarter" items={[
+  "Collect the RFIs and grounds for non-acceptance from your last 20 applications, with your responses",
+  "Tag each question by type and note which ones match the MHRA common issues list",
+  "Run the pre-submission check on three past dossiers and compare its findings with the questions you actually received",
+  "Write down which documents the tool may read and who reviews each type of finding",
+  "Use it on the next submission and on the next RFI tracker, and measure days from RFI to response",
+  "Keep a dated rule set so each check records which guidance it used"
+]} />
+
+## Questions sponsors ask about AI and RFIs
+
+### How long do I have to answer an RFI in the EU?
+
+Under Article 6(8) of Regulation (EU) No 536/2014, the reporting Member State sets the deadline for Part I questions, and it may not exceed 12 days from receipt of the request. If the sponsor does not answer in time, the application lapses in all Member States concerned.
+
+### How long do I have to respond to the MHRA?
+
+Under the UK regulations in force from 28 April 2026, if an application is not approved, the sponsor has 60 calendar days from the decision letter to provide the further information, and can ask for an extension. The MHRA and ethics committee then decide within 10 calendar days of the response.
+
+### What are the most common MHRA questions on clinical trial applications?
+
+The MHRA says the most common clinical grounds for non-acceptance concern the reference safety information and the recording and reporting of adverse events and serious adverse events, followed by risk mitigation such as contraception, dose escalation stopping criteria and eligibility, and emergency unblinding procedures.
+
+### Will the MHRA's AI protocol checker replace this?
+
+The MHRA tool checks a draft protocol in four areas, and registration is planned to open in late November 2026. It is a useful first screen. A sponsor's own assistant can also read the IB, IMPD, consent documents and its own past RFIs, check consistency between them and help draft the actual response.
+
+## Ask fewer questions of yourself first
+
+Most RFIs ask for something the regulator has already published as a common issue, or for a change that should have been made in a second document as well. Let AI find those before submission, and let it prepare the paperwork when a question still comes, so your experts spend their days on the questions only they can answer.
+
+If your regulatory team is preparing a submission or holding an RFI right now, [tell me which documents you work with and where you submit](/contact?intent=improve). I'll suggest whether the pre-submission check or RFI triage is the right first step. Manufacturers face the same evidence discipline in [GMP deviation investigations](/posts/ai-for-pharmaceutical-manufacturers-deviation-investigations), device makers in [complaint handling and vigilance](/posts/ai-for-medical-device-manufacturers-complaints-vigilance), and the R&D behind a trial often has its own paperwork in [R&D tax relief claim narratives](/posts/ai-for-rd-tax-advisers-claim-narratives).
