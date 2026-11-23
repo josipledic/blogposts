@@ -1,0 +1,143 @@
+---
+id: "ai-for-machine-builders-machinery-regulation-technical-file"
+title: "AI for Machine Builders: Getting Technical Files Ready for the EU Machinery Regulation"
+authorName: "Josip Ledić"
+date: "2026-11-23"
+tags: ["Manufacturing", "Machinery", "Compliance", "AI for small business"]
+description: "From 20 January 2027, every machine placed on the EU market needs a technical file under Regulation (EU) 2023/1230 instead of the Machinery Directive. How machine builders can use AI to map existing files against Annex IV, find the gaps for new requirements such as protection against corruption and digital instructions, and keep the file current with every design change, while engineers keep the risk assessment."
+excerpt: "From 20 January 2027, every machine placed on the EU market needs a technical file under Regulation (EU) 2023/1230 instead of the Machinery Directive. How machine builders can use AI to map existing files against Annex IV, find the gaps for new requirements such as protection against corruption and digital instructions, and keep the file current with every design change, while engineers keep the risk assessment."
+---
+
+AI can take most of the reading and cross-checking out of moving a machine builder's technical files to the new EU Machinery Regulation. It reads the existing technical file, risk assessment, drawings index, test reports and instructions for each machine type, maps every document to the elements Annex IV now requires, and lists what is missing or out of date: no evidence for protection against corruption, no description of sensor-fed safety functions, instructions that do not meet the new digital format rules. After the switch, it watches engineering changes and tells you which parts of which file a change touches. Your engineers still carry out the risk assessment, choose the protective measures and sign the declaration of conformity. What changes is that they start from a gap list with page references instead of a shelf of folders.
+
+The date is fixed. [Regulation (EU) 2023/1230](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1230-20260727) applies from 20 January 2027, when Directive 2006/42/EC is repealed. The Official Journal text first said 14 January; a [corrigendum](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1230R(01)) moved it to the 20th, and the consolidated text of 27 July 2026, which includes the latest amendment, still has that date. Machines placed on the market under the Directive before then can still be sold. Every machine placed on the market from that day needs to meet the Regulation.
+
+<Stats title="Who has to be ready: machinery manufacturing (NACE C28), 2024">
+  <Stat value="77,416" label="enterprises in the EU, with a combined turnover of €881.8 billion, about €11.4 million per enterprise on average" source="Eurostat, sbs_ovw_act" href="https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table?lang=en" />
+  <Stat value="3.09 million" label="people employed in EU machinery manufacturing" source="Eurostat, sbs_ovw_act" href="https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table?lang=en" />
+  <Stat value="15,528" label="of those enterprises are in Germany, with €368.6 billion turnover, about €23.7 million each" source="Eurostat, sbs_ovw_act" href="https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table?lang=en" />
+</Stats>
+
+These are businesses with eight-figure revenue on average, but with only around 40 employees per enterprise across the EU. Most do not have a compliance department. The technical file is written by the design engineer who also has a customer acceptance test next week.
+
+## What the technical file must contain now
+
+[Article 10](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1230-20260727) requires the manufacturer to draw up the technical documentation in Annex IV, Part A, before placing the machine on the market, and to keep it for at least 10 years. Annex IV lists at least these elements:
+
+| Annex IV, Part A | What it means in practice |
+|---|---|
+| (a) | Complete description of the machine and its intended use |
+| (b) | Risk assessment documentation: the applicable essential health and safety requirements, the protective measure for each, and residual risks |
+| (c), (d) | Design and manufacturing drawings and schemes, with the explanations needed to understand them and how the machine works |
+| (e), (f) | Harmonised standards or common specifications applied, including which parts where only partly applied, and other specifications where they were not |
+| (g) | Reports and results of design calculations, tests, inspections and examinations |
+| (h), (l) | How production keeps conformity, and for series machines the internal measures that keep them conforming |
+| (i) | A copy of the instructions for use |
+| (k) | Declarations of conformity for incorporated machinery and other regulated products |
+| (m) | Source code or programming logic of safety-related software, on reasoned request from an authority |
+| (n) | For sensor-fed, remotely driven or autonomous machines, the characteristics, capabilities and limitations of the system, and the data, development, testing and validation processes |
+| (o) | Results of research and tests showing the machine can be assembled and put into service safely |
+
+Most of that existed under the Directive. The new parts are where existing files fall short: point (m) on safety software, point (n) on sensor-fed and autonomous machines, and the new essential requirement 1.1.9 in Annex III, **protection against corruption**. It says a connected device or remote access must not lead to a hazardous situation, hardware that gives access to safety-critical software must be protected against accidental or intentional corruption, and the machine must collect evidence of legitimate or illegitimate interventions. If your machine has a remote service port, a cloud connection or a USB update path, the file needs to show how that requirement is met.
+
+Two other changes reach the file. [Annex I, Part A](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02023R1230-20260727) now lists safety components and embedded systems with fully or partly self-evolving behaviour using machine learning that ensure safety functions; those go to a notified body. And Article 10(7) allows the instructions for use to be supplied in digital format, provided the machine shows how to access them, they can be printed, downloaded and saved, and they stay online for the machine's expected lifetime and at least 10 years. A user can still ask for paper at the time of purchase, free of charge, within one month.
+
+<Timeline title="The dates that matter" caption="From the consolidated text of Regulation (EU) 2023/1230, including the corrigendum and the amendment of July 2026.">
+<Phase when="20 Jan 2024" title="Notified bodies">Articles 26 to 42 apply, so bodies for Annex I assessments can be notified under the Regulation.</Phase>
+<Phase when="Jul 2026" title="AI amendment">Regulation (EU) 2026/1744 of 8 July 2026 empowers the Commission to add requirements for high-risk AI systems to Annex III.</Phase>
+<Phase when="20 Oct 2026" title="Penalties">Member States had to notify their penalty rules to the Commission.</Phase>
+<Phase when="20 Jan 2027" title="Regulation applies">Directive 2006/42/EC is repealed. Every machine placed on the market needs a file and declaration under the Regulation.</Phase>
+</Timeline>
+
+## Why the update takes longer than it looks
+
+**The file is spread out.** The risk assessment is in a spreadsheet or a specialist tool, drawings in PDM, test reports on a share, the standards list in the declaration, and the instructions in a desktop publishing tool. Nobody holds the whole picture for one machine type, let alone forty.
+
+**Variants multiply the work.** A builder rarely has one machine. It has a base model with options, customer-specific versions and software releases. Each needs to be traceable to a file that covers it.
+
+**Standards references drift.** The file cites the harmonised standards applied, with editions. A standard that has been revised since the last review, or that is not yet listed under the Regulation, is easy to miss.
+
+**Software sits outside the paperwork.** Safety functions now live in PLC logic and firmware that changes with every release. The documents describing them often describe the release before last.
+
+**Every change is a compliance question.** A new sensor, a remote access module or a faster cycle can create a new hazard. Someone has to ask, for every change request, which hazards, which requirements and which documents it touches.
+
+## What the assistant does
+
+**File inventory.** For each machine type, it reads the folder and the document register and sorts every document into the Annex IV elements. Missing elements are listed, not guessed.
+
+**Gap check against the Regulation.** It reads the risk assessment against the Annex III requirements and lists each one with the protective measure and the evidence the file gives, or a flag where the file says nothing. New requirements such as 1.1.9 on protection against corruption and the Annex IV (n) description for sensor-fed machines are checked explicitly.
+
+**Standards check.** It extracts every standard and edition cited in the file and the declaration and compares them with your current standards list, so a revised or withdrawn edition shows up before an auditor finds it.
+
+**Instructions check.** It reads the instructions for use against the content list in Annex III section 1.7.4.2 and the digital format conditions in Article 10(7), and flags missing items with the section where they belong.
+
+**Change impact.** When an engineering change request is raised, it reads the change against the risk assessment and suggests which hazards, requirements and documents may be affected. The engineer confirms or rejects each suggestion.
+
+<Flow title="From folder to file the engineer signs" caption="AI reads, sorts and flags. Your engineers assess risk and decide.">
+<Step title="Collect" who="Engineering" tone="human" time="1 day per type">Export the technical file, risk assessment, drawing list, test reports and instructions for one machine type.</Step>
+<Step title="Map" who="AI" tone="ai" time="hours">Every document assigned to an Annex IV element, missing elements listed.</Step>
+<Step title="Check" who="AI" tone="ai" time="hours">Risk assessment, standards and instructions compared with Annex III, your standards list and Article 10(7).</Step>
+<Step title="Assess" who="Design and safety engineers" tone="human" time="days">Gaps reviewed, risk assessment updated, protective measures decided.</Step>
+<Step title="Sign" who="Authorised signatory" tone="human" time="1 day">Declaration of conformity under the Regulation issued.</Step>
+<Step title="Maintain" who="AI and engineering" tone="human" time="every change">Change requests checked for affected hazards and documents.</Step>
+</Flow>
+
+## The numbers for one builder
+
+<Calc title="Napkin math: a builder moving its machine types to the Regulation" caption="Assumptions, not measurements. Use your own type list and review times." rows={[
+  ["Machine types and main variants still being sold (assumption)", "25"],
+  ["Engineer hours to read and map one file by hand (assumption)", "× 16 hours"],
+  ["Mapping and gap finding by hand", "about 400 hours"],
+  ["If AI does the first pass and engineers review (assumption: a third of the time)", "about 130 hours"]
+]} result={["Engineering time freed before January 2027", "roughly 270 hours, spent on the risk assessment changes instead of finding them"]} />
+
+## Where it goes wrong
+
+<Callout title="The assistant reads the file. It does not decide whether a machine is safe." tone="warning">
+The risk assessment, the choice of protective measures and the decision that a requirement is met belong to your engineers, and the declaration of conformity is signed by your company. The model finds documents, compares text and lists gaps. Treat its output as a review list, not as evidence.
+</Callout>
+
+**It must point to the page.** Every finding should cite the document, the page and the requirement. A gap list without references sends an engineer searching again.
+
+**It cannot test.** Whether a guard is adequate or a safety function reaches the required performance level comes from calculation and testing. The assistant can tell you a test report is missing, not what it would say.
+
+**Drawings and code stay inside.** Technical files hold your design. Run the assistant in your own environment or under contract terms you control, never in a consumer chatbot.
+
+**Some questions need a notified body.** If a machine falls under Annex I, or uses machine learning in a safety function, talk to a notified body early. The assistant can prepare the documentation they will ask for, not replace their assessment.
+
+## Tools that fit
+
+Most builders already have the pieces: a PDM or PLM system for drawings and change requests, a risk assessment tool or spreadsheet, a standards subscription, and an authoring tool for instructions. The assistant sits beside them. It reads exports, writes its findings into a review table per machine type, and later reads change requests as they are raised. Start with the inventory and gap check on one machine type you sell often, because it is read-only, easy to check against what your engineers already know, and gives you a realistic estimate for the rest before January.
+
+<Checklist title="How to start before January 2027" items={[
+  "List every machine type and variant you expect to place on the market after 20 January 2027",
+  "Pick one type with a complete Directive-era file and export it",
+  "Run the Annex IV inventory and Annex III gap check, and compare the result with your engineers' own review",
+  "Check connected machines for protection against corruption evidence, and sensor-fed machines for the Annex IV (n) description",
+  "Decide how instructions will be delivered, paper or digital under Article 10(7)",
+  "Connect the change request process so every change is checked against the file"
+]} />
+
+## Questions machine builders ask about the Machinery Regulation
+
+### When does the EU Machinery Regulation apply?
+
+Regulation (EU) 2023/1230 applies from 20 January 2027, according to the corrected and consolidated text. Directive 2006/42/EC is repealed on the same date. Machines placed on the market in conformity with the Directive before then can still be made available afterwards.
+
+### What has to be in the technical file under the Machinery Regulation?
+
+Annex IV, Part A lists at least: a description and intended use, the risk assessment with the applicable requirements and protective measures, drawings and explanations, the standards applied, calculation and test reports, production conformity measures, the instructions for use, declarations for incorporated products, safety software source code on request, and for sensor-fed or autonomous machines a description of the system and its data, testing and validation.
+
+### How long must the technical file be kept?
+
+At least 10 years after the machine has been placed on the market or put into service, under Article 10(3). Digital instructions for use must stay accessible online for the machine's expected lifetime and at least 10 years.
+
+### Can instructions for use be digital under the Machinery Regulation?
+
+Yes. Article 10(7) allows digital instructions if the machine or its packaging shows how to access them, they can be printed, downloaded and saved, and they stay online long enough. A user can ask for paper at the time of purchase and must receive it free of charge within one month. For machines that non-professional users may use, the essential safety information must be supplied on paper.
+
+## Find the gaps while there is time
+
+Most of a technical file under the Regulation is the same work your engineers already did under the Directive. The hard part is finding, across many machine types, the few places where the file is now short. Let AI do the reading and the sorting, and give your engineers the eight weeks that are left for the decisions only they can make.
+
+If you build machines and want to know how far your files are from the Regulation, [tell me which machine types you sell and where your files live](/contact?intent=improve). I'll suggest whether a file inventory or a change-impact check is the right first step. Machine builders also use AI for [shop-floor knowledge](/posts/ai-for-machine-shops-knowledge) and [quotations](/posts/ai-for-manufacturing-quotations), and those who export face similar documentation work in [dual-use classification](/posts/ai-for-exporters-dual-use-classification).
