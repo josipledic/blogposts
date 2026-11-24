@@ -1,0 +1,133 @@
+---
+id: "ai-for-chemical-manufacturers-safety-data-sheet-updates"
+title: "AI for Chemical Manufacturers: Keeping Safety Data Sheets Up to Date Under REACH and CLP"
+authorName: "Josip Ledić"
+date: "2026-11-24"
+tags: ["Chemicals", "Manufacturing", "Compliance", "AI for small business"]
+description: "REACH requires suppliers to update a safety data sheet without delay when new hazard information appears, and to send the revision to every customer supplied in the last 12 months. With the new CLP hazard classes for endocrine disruptors, PBT and PMT substances phasing in until 2028, how chemical manufacturers and formulators can use AI to spot which of their SDSs a change affects, draft the revision and build the recipient list, while their regulatory staff keep the classification."
+excerpt: "REACH requires suppliers to update a safety data sheet without delay when new hazard information appears, and to send the revision to every customer supplied in the last 12 months. With the new CLP hazard classes for endocrine disruptors, PBT and PMT substances phasing in until 2028, how chemical manufacturers and formulators can use AI to spot which of their SDSs a change affects, draft the revision and build the recipient list, while their regulatory staff keep the classification."
+---
+
+AI can take the tracking and the first draft out of keeping safety data sheets current. It reads every incoming supplier SDS and every change to the CLP annexes, works out which of your raw materials changed and which of your own mixtures contain them, and drafts the sections of each affected SDS that need a new entry: a new hazard class in section 2, a changed concentration in section 3, new endocrine disruptor information in sections 11 and 12. It then pulls from your ERP the list of customers who received the product in the last 12 months, because that is who the revision has to go to. Your regulatory staff still decide the classification and sign off every revision. What changes is that they start from a list of affected products with the reason for each, instead of from a supplier email they might not have opened.
+
+The obligation is old, but the volume of changes is not. [Article 31(9) of REACH](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02006R1907-20250623) says suppliers shall update the safety data sheet without delay as soon as new information on hazards, or new information that may affect risk management measures, becomes available, and once an authorisation is granted or refused or a restriction imposed. The revised, dated version goes free of charge to all recipients supplied with the substance or mixture within the preceding 12 months. Between 2025 and 2028, the CLP Regulation adds four new hazard classes and changes its labelling rules, so most formulators will face that obligation for a large part of their portfolio.
+
+<Stats title="Who has to keep up: manufacture of chemicals and chemical products (NACE C20), 2024">
+  <Stat value="31,749" label="enterprises in the EU, with a combined turnover of €660.8 billion, about €20.8 million per enterprise on average" source="Eurostat, sbs_ovw_act" href="https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table?lang=en" />
+  <Stat value="1.26 million" label="people employed in EU chemical manufacturing, about 40 per enterprise" source="Eurostat, sbs_ovw_act" href="https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table?lang=en" />
+  <Stat value="3,615" label="of those enterprises are in Germany, with €192.8 billion turnover, about €53.3 million each" source="Eurostat, sbs_ovw_act" href="https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table?lang=en" />
+</Stats>
+
+These are businesses with eight-figure revenue on average and a few dozen staff. A typical paint, adhesive, cleaning agent or coatings formulator has hundreds of products, each with an SDS in several languages, and one or two people who own all of them.
+
+## What is changing in 2025 to 2028
+
+[Delegated Regulation (EU) 2023/707](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0707) added four hazard classes to CLP: endocrine disruption for human health, endocrine disruption for the environment, PBT and vPvB properties, and PMT and vPvM properties. They come with new hazard statements, EUH380 and EUH381, EUH430 and EUH431, EUH440 and EUH441, EUH450 and EUH451, which belong on the label and in section 2 of the SDS. The deadlines are staggered:
+
+<Timeline title="The dates that reach your safety data sheets" caption="From Delegated Regulation (EU) 2023/707, Regulation (EU) 2024/2865 and Delegated Regulation (EU) 2025/1222, as published on EUR-Lex.">
+<Phase when="1 May 2025" title="New substances">Substances placed on the market from this date are classified for the new hazard classes.</Phase>
+<Phase when="1 May 2026" title="New mixtures">Mixtures placed on the market from this date are classified for the new hazard classes.</Phase>
+<Phase when="1 Jul 2026" title="Update deadlines">Most of the CLP revision applies, including fixed deadlines for updating labels after a classification change, and label elements in distance sales offers.</Phase>
+<Phase when="1 Nov 2026" title="Existing substances">Substances already on the market before 1 May 2025 must now be classified and labelled for the new hazard classes.</Phase>
+<Phase when="1 Jan 2027" title="Label format">Minimum label, pictogram and font sizes of the CLP revision apply.</Phase>
+<Phase when="1 Feb 2027" title="New harmonised entries">The harmonised classifications added by Delegated Regulation (EU) 2025/1222 apply.</Phase>
+<Phase when="1 May 2028" title="Existing mixtures">Mixtures already on the market before 1 May 2026 must be classified and labelled for the new hazard classes.</Phase>
+</Timeline>
+
+The substance deadline of 1 November 2026 has just passed. For a formulator, that means supplier SDSs for raw materials are arriving with new hazard statements now, and each one is a trigger to check the mixtures that contain it.
+
+The revised CLP Regulation, [Regulation (EU) 2024/2865](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R2865), also put a clock on the label. Since 1 July 2026, a change that adds a new hazard class or makes a classification more severe must be on the label without undue delay and within 6 months of the supplier obtaining or receiving the new evaluation; other changes within 18 months. A change from a harmonised classification follows the date set in that delegated act. The SDS has no such grace period: Article 31(9) of REACH asks for it without delay, and the label and the SDS have to tell the same story.
+
+## Why SDS updates fall behind
+
+**The trigger arrives as an attachment.** A raw material supplier sends a revised SDS, often with a cover email that says only "please find attached". Whether section 2 or 3 actually changed has to be read.
+
+**One raw material sits in many products.** A preservative, a solvent or a pigment can be in a hundred recipes. Finding them all means a query in the formulation system, and then a judgement for each product on whether the concentration crosses a threshold.
+
+**Mixtures need recalculation.** The new hazard classes for mixtures use concentration limits, so the same raw material change can reclassify one product and leave another untouched.
+
+**Sixteen sections, many languages.** A change in classification touches section 2, often 3, 8, 11, 12, 15 and 16, and every language version.
+
+**The 12-month recipient list lives in another system.** The obligation to send the revision to everyone supplied in the last 12 months needs sales data, not regulatory data. That list is easy to forget and hard to prove later.
+
+## What the assistant does
+
+**Reads incoming supplier SDSs.** For each new revision, it compares section by section with the previous one on file and lists what changed: classification, hazard statements, composition, exposure limits, physical data. A revision that only changes a phone number is marked as such.
+
+**Watches regulatory changes.** It reads new delegated acts adapting CLP, such as new harmonised classifications, and matches the listed substances, by CAS and EC number, against your raw material list.
+
+**Finds affected products.** For each changed raw material, it lists your mixtures that contain it with the concentration from the recipe, and flags those where the change may alter the classification, with the reason.
+
+**Drafts the revision.** For each product your regulatory staff confirm, it drafts the changed sections in the format of [Annex II to REACH](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0878), including the endocrine disruptor information required in sections 2.3, 11.2 and 12.6, and a change note for section 16.
+
+**Builds the recipient list.** It pulls the customers who received each revised product in the preceding 12 months from the ERP and prepares the dispatch, so the revision goes out and the record shows that it did.
+
+<Flow title="From supplier email to revised SDS sent to every customer" caption="AI reads, compares and drafts. Your regulatory staff classify and approve.">
+<Step title="Detect" who="AI" tone="ai" time="minutes">New supplier SDS or CLP amendment compared with the version on file; changes listed.</Step>
+<Step title="Trace" who="AI" tone="ai" time="minutes">Affected raw materials matched to every recipe that contains them, with concentrations.</Step>
+<Step title="Classify" who="Regulatory affairs" tone="human" time="hours">Classification of each flagged mixture confirmed or changed, using your authoring tool's calculation.</Step>
+<Step title="Draft" who="AI" tone="ai" time="hours">Changed SDS sections and section 16 note drafted in each language you supply.</Step>
+<Step title="Approve" who="Regulatory affairs" tone="human" time="hours">Draft reviewed, revision issued with a new date.</Step>
+<Step title="Send" who="AI and sales admin" tone="human" time="1 day">Revision sent to every customer supplied in the last 12 months, dispatch logged.</Step>
+</Flow>
+
+## The numbers for one formulator
+
+<Calc title="Napkin math: a formulator checking its portfolio for the new hazard classes" caption="Assumptions, not measurements. Use your own product count and review times." rows={[
+  ["Own mixtures with an SDS on the market (assumption)", "400"],
+  ["Raw material SDS revisions received in a year (assumption)", "150"],
+  ["Hours to read a supplier revision and trace it through recipes by hand (assumption)", "× 3 hours"],
+  ["Tracing by hand", "about 450 hours a year"],
+  ["If AI compares and traces first and staff review (assumption: a quarter of the time)", "about 110 hours a year"]
+]} result={["Regulatory time freed each year", "roughly 340 hours, before counting the drafting of revised sections"]} />
+
+## Where it goes wrong
+
+<Callout title="The assistant reads and drafts. It does not classify your products." tone="warning">
+The classification of a mixture, the decision that a change is relevant and the content of the SDS are your company's responsibility as supplier. Use your established calculation method or authoring software for the classification, and treat the assistant's flags as a review list. Nothing goes to a customer without a person approving it.
+</Callout>
+
+**It must show the source.** Every flag should name the supplier SDS, its revision date, the section that changed and the recipe line. A flag without a reference makes someone search again.
+
+**Recipes are trade secrets.** Formulations are the most valuable data a formulator has. Run the assistant in your own environment or under contract terms you control, never in a consumer chatbot, and keep recipe data out of any training.
+
+**Supplier SDSs can be wrong.** If a supplier has not yet classified for the new hazard classes, a comparison will show no change. The assistant can list raw materials whose SDS has not been revised since 1 May 2025, so you can ask.
+
+**Languages need a native check.** Hazard and precautionary statements have fixed official wording in every EU language. Take those phrases from your phrase library, not from the model, and let the model handle only the free text.
+
+## Tools that fit
+
+Most formulators already have the pieces: an SDS authoring system with a phrase library and classification engine, a formulation or PLM system with the recipes, an ERP with deliveries, and a shared mailbox where supplier SDSs arrive. The assistant sits between them. It reads the mailbox and the regulatory updates, queries recipes and deliveries, and writes its findings into a review queue in the authoring system. Start with the supplier SDS comparison and the recipe trace, because it is read-only and you can check it against the last few changes your team handled by hand.
+
+<Checklist title="How to start" items={[
+  "Collect the current supplier SDS for every raw material, with its revision date",
+  "List raw materials whose SDS has not been revised since 1 May 2025",
+  "Run the section-by-section comparison on the last 20 supplier revisions you received, and compare with what your team found",
+  "Connect the recipe trace for one product family",
+  "Agree who approves a revision and how the 12-month recipient list is pulled from the ERP",
+  "Plan the mixtures that must be reviewed for the new hazard classes before 1 May 2028"
+]} />
+
+## Questions about safety data sheet updates
+
+### When must a safety data sheet be updated under REACH?
+
+Under Article 31(9) of REACH, without delay as soon as new information on hazards, or new information that may affect risk management measures, becomes available, and once an authorisation has been granted or refused or a restriction imposed. The new version is dated and marked "Revision: (date)".
+
+### Who must receive an updated safety data sheet?
+
+All recipients to whom you supplied the substance or mixture within the preceding 12 months, free of charge, on paper or electronically. Any update after registration includes the registration number.
+
+### What are the new CLP hazard classes?
+
+Delegated Regulation (EU) 2023/707 added endocrine disruption for human health and for the environment, PBT and vPvB properties, and PMT and vPvM properties. Substances placed on the market from 1 May 2025 and mixtures from 1 May 2026 must be classified for them. Substances already on the market had until 1 November 2026, mixtures already on the market have until 1 May 2028.
+
+### How quickly must a label be updated after a classification change?
+
+Since 1 July 2026, under Article 30 of CLP as revised by Regulation (EU) 2024/2865: within 6 months for a new hazard class, a more severe classification or new supplemental information, and within 18 months for other changes. Changes from a harmonised classification follow the date in the delegated act that sets it.
+
+## Let the trigger find the products
+
+Most SDS work is not writing. It is noticing that something changed, finding every product it touches and making sure the right customers get the new version. Let AI do the noticing and the finding, and keep your regulatory staff on the classification decisions that the next two years will bring in large numbers.
+
+If you make or formulate chemicals and SDS updates are falling behind, [tell me which authoring, recipe and ERP systems you use](/contact?intent=improve) and roughly how many products you supply. I'll suggest whether the supplier SDS comparison or the recipe trace is the right first step. Chemical companies that export face a similar classification job in [dual-use export control](/posts/ai-for-exporters-dual-use-classification), pharmaceutical plants trace raw material lots through batches when they [investigate GMP deviations](/posts/ai-for-pharmaceutical-manufacturers-deviation-investigations), and food producers keep their own supplier records in [HACCP documentation](/posts/ai-for-food-producers-compliance).
