@@ -1,0 +1,138 @@
+---
+id: "ai-for-commercial-lenders-covenant-monitoring"
+title: "AI for Commercial Lenders: Covenant Monitoring and Annual Credit Reviews"
+authorName: "Josip Ledić"
+date: "2026-11-26"
+tags: ["Banking", "Commercial lending", "Credit risk", "AI for small business"]
+description: "EU banks have to monitor borrowers' financial covenants, treat a late compliance certificate as an early warning sign and review every corporate credit at least once a year. How commercial lenders, regional banks and credit teams can use AI to read compliance certificates and annual accounts, recalculate the covenant ratios from the agreement's own definitions, flag breaches and warning signs and draft the annual review, while credit officers keep the rating and the decision."
+excerpt: "EU banks have to monitor borrowers' financial covenants, treat a late compliance certificate as an early warning sign and review every corporate credit at least once a year. How commercial lenders, regional banks and credit teams can use AI to read compliance certificates and annual accounts, recalculate the covenant ratios from the agreement's own definitions, flag breaches and warning signs and draft the annual review, while credit officers keep the rating and the decision."
+---
+
+AI can do the first pass of covenant monitoring for a commercial loan book. It reads each compliance certificate and set of accounts as they arrive, recalculates net debt to EBITDA, interest cover or DSCR from the definitions in that borrower's credit agreement rather than from the borrower's own arithmetic, compares the result with the covenant level, and tells the credit officer which borrowers are fine, which are close, which are in breach and whose certificate has not arrived. It then drafts the annual credit review from the same numbers. The credit officer still sets the rating, decides on waivers and signs the review. What changes is that the officer's time goes to the ten borrowers that moved, not to retyping figures for the two hundred that did not.
+
+This is not optional work for a bank. The [EBA Guidelines on loan origination and monitoring](https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring) (EBA/GL/2020/06), which apply from 30 June 2021, say in paragraph 267 that institutions should monitor borrowers' adherence to covenants and use both that adherence and the timely delivery of covenant compliance certificates as early warning tools, covering all ratios in the covenants, such as net debt to EBITDA, interest coverage and DSCR. Paragraph 274(o) lists the late delivery of a certificate, a waiver request or a covenant breach among the signals of deteriorating credit quality.
+
+<Stats title="The size of the book: bank loans to non-financial corporations, euro area">
+  <Stat value="€5.47 trillion" label="outstanding loans from euro area banks to euro area companies at the end of September 2026, €1.39 trillion of it from banks in Germany" source="ECB Data Portal, BSI" href="https://data.ecb.europa.eu/data/datasets/BSI/BSI.M.U2.N.A.A20.A.1.U2.2240.Z01.E" />
+  <Stat value="74 %" label="of new corporate loan volume in the euro area from October 2025 to September 2026 was in loans over €1 million: €2.57 trillion of €3.46 trillion (83 % in Germany)" source="ECB Data Portal, MIR" href="https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.U2.B.A2A.A.B.1.2240.EUR.N" />
+  <Stat value="1,327" label="credit institutions in Germany at the end of 2025, among them 342 savings banks and 634 primary cooperative banks" source="Deutsche Bundesbank, Bankstellenbericht 2025" href="https://www.bundesbank.de/resource/blob/1013590/dbf9a8266a7ce454879fbdc4e24e8c94/472B63F073F071307366337C94F8C870/bankstellenbericht-2025-data.pdf" />
+</Stats>
+
+The ECB new business figures include renegotiated loans, so they overstate fresh lending, but the share is the point: most corporate lending by value sits in loans above €1 million, and almost all of those carry financial covenants and a reporting schedule. A regional bank or savings bank with a few hundred such borrowers is the typical case, with a small credit team that spreads accounts by hand.
+
+## What the rules ask for
+
+<Timeline title="The monitoring cycle for one covenanted corporate loan" caption="From EBA/GL/2020/06 sections 8.2 to 8.5 and, for German institutions, MaRisk BTO 1.2.2 and § 18 KWG.">
+<Phase when="Each test date" title="Compliance certificate">Borrower delivers the certificate, usually quarterly or half-yearly, with the ratio calculation and supporting accounts.</Phase>
+<Phase when="Within days" title="Covenant test">Bank checks the ratios against the agreement's definitions and levels; late delivery or a breach is an early warning signal (EBA para. 274(o)).</Phase>
+<Phase when="On a trigger" title="Watch list">Triggered warning indicators lead to closer monitoring and, where needed, a watch list with escalation (EBA paras. 270 to 272).</Phase>
+<Phase when="Annually" title="Accounts received">Audited annual accounts arrive; in Germany § 18 KWG requires ongoing disclosure for credits over €1.5 million or 10 % of Tier 1 capital.</Phase>
+<Phase when="At least yearly" title="Credit review">Rating updated and risk reassessed, with intensity depending on the risk of the exposure (MaRisk BTO 1.2.2, EBA section 8.3).</Phase>
+</Timeline>
+
+In Germany the BaFin circular [MaRisk](https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Rundschreiben/2023/rs_05_2023_MaRisk_BA.html) (Rundschreiben 05/2023) requires in BTO 1.2.2 that the bank monitors whether the borrower keeps to the contractual agreements, assesses the credit risk at least once a year, and follows section 8.3 of the EBA Guidelines for that review. [Section 18 of the German Banking Act](https://www.gesetze-im-internet.de/kredwg/__18.html) adds that a credit of more than €1.5 million in total, or more than 10 % of the institution's Tier 1 capital, may only be granted if the borrower discloses its financial circumstances, in particular by presenting annual accounts, and the bank has to keep that disclosure current.
+
+## The numbers for one credit team
+
+The cost is staff time, and it is easy to estimate with your own figures. The numbers below are assumptions to replace, not measurements.
+
+<Calc title="Napkin math: a regional bank with 300 covenanted corporate borrowers" caption="All inputs are assumptions for illustration. Replace them with your own borrower count, test frequency and timings." rows={[
+  ["Covenanted borrowers (assumption)", "300"],
+  ["Compliance certificates a year, quarterly testing", "1,200"],
+  ["Hours to spread, recalculate and document one certificate (assumption)", "1.5"],
+  ["Hours for one annual review from new accounts (assumption)", "6"],
+  ["Certificate work a year", "1,800 hours"],
+  ["Annual review work a year", "1,800 hours"],
+  ["Total, at about 1,600 productive hours per analyst", "about 2.25 analysts"]
+]} result={["If AI does the first pass and halves the hours (assumption)", "about 1,800 hours a year back for borrowers that need judgement"]} />
+
+The bigger cost is not on the timesheet. The guidelines treat a late certificate and a breach as early warnings because the weeks between a borrower slipping and the bank noticing are the weeks in which the bank can still negotiate a waiver fee, more security or a tighter reporting schedule. A certificate that sits unread in a relationship manager's inbox for a month gives that time away.
+
+## Why the work is hard
+
+**Every agreement defines EBITDA differently.** Add-backs for one-off costs, pro forma acquisitions, leases under IFRS 16 or the German HGB, cash pooling: the definitions run to pages, and a covenant test is only right if it follows them.
+
+**Borrowers calculate their own ratios.** The certificate states a number and says the covenant is met. The bank's job is to check the number, not copy it.
+
+**Documents arrive in every shape.** Signed PDFs, scanned accounts, management accounts in Excel, auditor's reports in German or English, sometimes a year-end that differs from the calendar year.
+
+**The facts live in three places.** The agreement sits in the document archive, the accounts in the spreading tool or core banking system, and the delivery dates and correspondence in the relationship manager's email.
+
+**Non-financial covenants are easy to forget.** Insurance, negative pledges, change of control, delivery of budgets. The EBA guidelines (paragraph 268) expect banks to watch these too, not only through the certificate.
+
+## What the assistant does
+
+**Keeps the covenant register.** From each credit agreement it extracts the financial covenants, their definitions, levels, test dates and reporting deadlines, and the non-financial undertakings, each with the clause it came from, for the credit officer to confirm once.
+
+**Watches the deadlines.** It knows which certificate is due when, and drafts the reminder to the borrower when one is late, while the late delivery is logged as the warning signal it is.
+
+**Reads and spreads.** It reads compliance certificates, annual accounts and management accounts, maps the figures into the bank's spreading template and shows where each number came from on the page.
+
+**Recalculates the covenant.** It applies the agreement's definitions to the spread figures and compares its result with the borrower's. Differences, ratios within a set margin of the level, breaches and missing figures go on a review list with the reason.
+
+**Flags warning signs.** Beyond the covenants it looks for the other signals the guidelines list: falling turnover, narrowing margins, results far from the plan, an auditor's qualification, a lost major customer named in the notes.
+
+**Drafts the annual review.** It writes the first draft of the review in the bank's format: financial development, covenant history, debt service capacity, collateral notes and open points, for the credit officer to correct, rate and sign.
+
+<Flow title="From compliance certificate to credit decision" caption="AI reads, recalculates and drafts. The credit officer rates and decides.">
+<Step title="Register" who="AI and credit officer" tone="human" time="once per agreement">Covenants, definitions, levels and deadlines extracted from the agreement and confirmed.</Step>
+<Step title="Receive" who="AI" tone="ai" time="on arrival">Certificate and accounts read, spread and matched to the borrower and test date; late deliveries flagged.</Step>
+<Step title="Test" who="AI" tone="ai" time="minutes">Ratios recalculated from the agreement's definitions and compared with the borrower's figures and the covenant levels.</Step>
+<Step title="Review" who="Credit officer" tone="human" time="per flagged borrower">Differences, near misses and breaches checked; waiver, reset or watch list decided.</Step>
+<Step title="Annual review" who="AI, then credit officer" tone="human" time="days, not weeks">Draft review prepared from the year's numbers; rating set and review signed by the officer.</Step>
+</Flow>
+
+## Where it goes wrong
+
+<Callout title="The assistant checks the numbers. It does not decide the credit." tone="warning">
+Rating, waivers, watch list decisions and the annual review stay with the credit officer and the bank's approval levels. Treat the assistant's tests as a review list, keep every figure traceable to its page, and have a person look at every breach and near miss before anything is said to the borrower.
+</Callout>
+
+**Definitions beat formulas.** A generic net debt to EBITDA formula will give a wrong answer for most agreements. The assistant has to work from the confirmed definitions of each agreement, and the first set of tests should be checked by hand against last year's.
+
+**Borrower data is confidential.** Accounts, budgets and credit agreements are covered by banking secrecy and outsourcing rules. Run the assistant inside the bank's environment or under an outsourcing arrangement your compliance function has approved, never in a consumer chatbot.
+
+**The model is part of the process.** If the bank relies on automated covenant tests, its risk control and internal audit will want to know how they are checked. Keep the review list, the officer's decision and the source page together, so the trail exists when they ask.
+
+**A covenant is not the whole credit.** A borrower can pass every test and still be in trouble. The qualitative factors in paragraph 265 of the guidelines, such as management quality or a weakening market, still need the person who knows the borrower.
+
+## Tools that fit
+
+Most banks already have the pieces: a document archive with the credit agreements, a spreading tool or rating system, the core banking system with limits and payments, and the relationship managers' mailboxes. The assistant reads from them and writes into a covenant register and review list that the credit team opens like a spreadsheet. Start with the covenant register and the certificate deadlines, because they are read-only and show within a week how many certificates are late today.
+
+<Checklist title="How to start" items={[
+  "Pick one segment, for example corporate borrowers above €1.5 million, and export the list with limits and ratings",
+  "Pull the credit agreements and let the assistant extract covenants and deadlines for the team to confirm",
+  "Load last year's certificates and compare the assistant's recalculation with the tests the team actually did",
+  "Agree the margin at which a ratio counts as close to the level",
+  "Route late certificates and breaches into the existing early warning and watch list process",
+  "Move the annual review drafts over only once the covenant tests match for a full quarter"
+]} />
+
+## Questions about covenant monitoring
+
+### What do the EBA guidelines require for covenant monitoring?
+
+Section 8.4 of EBA/GL/2020/06 says institutions should monitor borrowers' adherence to covenants, use adherence and the timely delivery of compliance certificates as early warning tools, and cover all relevant ratios, such as net debt to EBITDA, interest coverage and DSCR. Non-financial covenants should be monitored too.
+
+### Is a late compliance certificate a warning sign?
+
+Yes. Paragraph 274(o) of the guidelines lists the late delivery of a certificate of adherence, a waiver request or a breach of the financial covenants among the credit quality deterioration signals banks should consider.
+
+### How often does a bank have to review a corporate credit?
+
+In Germany at least once a year under MaRisk BTO 1.2.2, with the intensity depending on the risk of the exposure. The EBA guidelines (section 8.3) ask for regular reviews of medium-sized and large corporate borrowers and more frequent reviews when credit quality deteriorates.
+
+### When does § 18 KWG require a borrower's annual accounts?
+
+The current text of § 18 KWG requires disclosure of the borrower's financial circumstances, in particular through annual accounts, for credits of more than €1.5 million in total or more than 10 % of the bank's Tier 1 capital, with exceptions for certain secured and public sector credits.
+
+### Can AI decide whether a covenant is breached?
+
+It can recalculate the ratio from the agreement's definitions and show where it differs from the borrower's figure. Whether a breach is declared, waived or reset is the credit officer's decision under the bank's approval rules.
+
+## Spend the time on the borrowers that moved
+
+Most of covenant monitoring is reading documents and redoing arithmetic for borrowers who are fine. Let AI do that reading and the arithmetic, with every figure traced to its page, and keep your credit officers on the borrowers whose numbers changed.
+
+If your team still spreads certificates by hand, [tell me which rating and spreading tools you use and roughly how many covenanted borrowers you monitor](/contact?intent=improve). I'll suggest whether the covenant register, the certificate check or the annual review draft is the right first step. Wealth managers keep a different kind of client file current in [KYC reviews](/posts/ai-for-wealth-managers-kyc-reviews), auditors test the same accounts from the other side in [audit request lists](/posts/ai-for-audit-firms-client-request-lists), and when a borrower does fail, the bank's claim goes through [creditor claims and proofs of debt](/posts/ai-for-insolvency-practitioners-creditor-claims).

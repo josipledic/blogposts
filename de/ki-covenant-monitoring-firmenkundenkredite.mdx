@@ -1,0 +1,139 @@
+---
+id: "ki-covenant-monitoring-firmenkundenkredite"
+translationOf: "ai-for-commercial-lenders-covenant-monitoring"
+title: "KI für Banken im Firmenkundengeschäft: Covenant-Monitoring und Offenlegung nach § 18 KWG"
+authorName: "Josip Ledić"
+date: "2026-11-26"
+tags: ["Banken", "Firmenkundenkredit", "Kreditrisiko", "KI für kleine Unternehmen"]
+description: "Banken müssen die Einhaltung von Financial Covenants überwachen, eine verspätete Covenant-Bescheinigung als Frühwarnsignal behandeln, die Adressenausfallrisiken mindestens jährlich beurteilen und bei Krediten über 1,5 Millionen Euro die wirtschaftlichen Verhältnisse laufend offenlegen lassen. Wie Sparkassen, Genossenschaftsbanken und Regionalbanken mit KI Bescheinigungen und Jahresabschlüsse lesen, die Kennzahlen nach den Definitionen des Kreditvertrags nachrechnen, Abweichungen und Warnsignale markieren und die Jahresbeurteilung vorbereiten, während Rating und Entscheidung bei der Marktfolge bleiben."
+excerpt: "Banken müssen die Einhaltung von Financial Covenants überwachen, eine verspätete Covenant-Bescheinigung als Frühwarnsignal behandeln, die Adressenausfallrisiken mindestens jährlich beurteilen und bei Krediten über 1,5 Millionen Euro die wirtschaftlichen Verhältnisse laufend offenlegen lassen. Wie Sparkassen, Genossenschaftsbanken und Regionalbanken mit KI Bescheinigungen und Jahresabschlüsse lesen, die Kennzahlen nach den Definitionen des Kreditvertrags nachrechnen, Abweichungen und Warnsignale markieren und die Jahresbeurteilung vorbereiten, während Rating und Entscheidung bei der Marktfolge bleiben."
+---
+
+KI kann im Firmenkundenkredit die erste Durchsicht des Covenant-Monitorings übernehmen. Sie liest jede Covenant-Bescheinigung und jeden Jahresabschluss, sobald er eingeht, rechnet Nettoverschuldung zu EBITDA, Zinsdeckung oder Kapitaldienstfähigkeit nach den Definitionen im Kreditvertrag dieses Kreditnehmers nach, nicht nach der Rechnung des Kreditnehmers, vergleicht das Ergebnis mit der vereinbarten Grenze und zeigt der Sachbearbeitung, welche Engagements unauffällig sind, welche knapp liegen, wo ein Bruch vorliegt und welche Unterlagen fehlen. Aus denselben Zahlen entwirft sie die jährliche Kreditbeurteilung. Rating, Entscheidung über Waiver und Votum bleiben bei der Marktfolge. Der Unterschied: Die Zeit Ihrer Kreditanalysten geht in die zehn Engagements, die sich bewegt haben, und nicht ins Abtippen für die zweihundert, bei denen alles beim Alten ist.
+
+Diese Arbeit ist für ein Institut Pflicht. Nach [MaRisk BTO 1.2.2](https://www.bafin.de/SharedDocs/Veroeffentlichungen/DE/Rundschreiben/2023/rs_05_2023_MaRisk_BA.html) (BaFin-Rundschreiben 05/2023) ist im Rahmen der Kreditweiterbearbeitung zu überwachen, ob der Kreditnehmer die vertraglichen Vereinbarungen einhält, und die Adressenausfallrisiken sind mindestens jährlich zu beurteilen, wobei die Intensität vom Risikogehalt des Engagements abhängt. Die MaRisk verweisen dafür ausdrücklich auf Abschnitt 8.3 der [EBA-Leitlinien für die Kreditvergabe und Überwachung](https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring) (EBA/GL/2020/06). Deren Tz. 267 verlangt, dass die Einhaltung der Zusatzklauseln, wie die deutsche Fassung Covenants nennt, und die fristgerechte Vorlage der Bescheinigungen als Frühwarninstrumente genutzt werden, für alle vereinbarten Kennzahlen wie Nettoverschuldung/EBITDA, Zinsdeckungsquote und DSCR.
+
+<Stats title="Die Größenordnung: Bankkredite an nichtfinanzielle Unternehmen">
+  <Stat value="1,39 Bio. €" label="Kredite von Banken in Deutschland an Unternehmen im Euroraum Ende September 2026, im ganzen Euroraum 5,47 Billionen Euro" source="EZB Data Portal, BSI" href="https://data.ecb.europa.eu/data/datasets/BSI/BSI.M.DE.N.A.A20.A.1.U2.2240.Z01.E" />
+  <Stat value="83 %" label="des Neugeschäftsvolumens an Unternehmenskrediten in Deutschland von Oktober 2025 bis September 2026 entfiel auf Kredite über 1 Million Euro: 988 von 1.191 Milliarden Euro" source="EZB Data Portal, MIR" href="https://data.ecb.europa.eu/data/datasets/MIR/MIR.M.DE.B.A2A.A.B.1.2240.EUR.N" />
+  <Stat value="1.327" label="Kreditinstitute in Deutschland Ende 2025, darunter 342 Sparkassen und 634 Primärgenossenschaften" source="Deutsche Bundesbank, Bankstellenbericht 2025" href="https://www.bundesbank.de/resource/blob/1013590/dbf9a8266a7ce454879fbdc4e24e8c94/472B63F073F071307366337C94F8C870/bankstellenbericht-2025-data.pdf" />
+</Stats>
+
+Das Neugeschäft der EZB-Statistik enthält auch neu verhandelte Kredite und überzeichnet damit die echte Neukreditvergabe. Die Richtung ist trotzdem klar: Der größte Teil des Firmenkundenkredits nach Volumen liegt in Krediten über einer Million Euro, und fast alle davon tragen Financial Covenants und Berichtspflichten. Eine Sparkasse oder Volksbank mit einigen hundert solcher Engagements und einem kleinen Team in der Marktfolge Aktiv, das Jahresabschlüsse von Hand erfasst, ist der typische Fall.
+
+## Was die Regeln verlangen
+
+<Timeline title="Der Überwachungszyklus eines Firmenkundenkredits mit Covenants" caption="Nach MaRisk BTO 1.2.2 und BTO 1.2.4, § 18 KWG und den EBA-Leitlinien EBA/GL/2020/06, Abschnitte 8.2 bis 8.5.">
+<Phase when="Zum Stichtag" title="Covenant-Bescheinigung">Der Kreditnehmer reicht die Bescheinigung mit der Kennzahlenberechnung ein, meist quartalsweise oder halbjährlich.</Phase>
+<Phase when="Binnen Tagen" title="Prüfung">Die Bank prüft die Kennzahlen gegen Definitionen und Grenzen des Vertrags; eine verspätete Vorlage oder ein Bruch ist ein Frühwarnsignal (EBA Tz. 274 Buchst. o).</Phase>
+<Phase when="Bei Auslösung" title="Engere Überwachung">Ausgelöste Frühwarnindikatoren führen zu engerer Beobachtung und, wo nötig, zur Intensivbetreuung nach den Kriterien des Instituts (MaRisk BTO 1.2.4).</Phase>
+<Phase when="Jährlich" title="Offenlegung">Der Jahresabschluss geht ein; § 18 KWG verlangt die laufende Offenlegung bei Krediten über 1,5 Millionen Euro oder 10 % des Kernkapitals.</Phase>
+<Phase when="Mindestens jährlich" title="Beurteilung">Rating aktualisiert und Adressenausfallrisiko neu beurteilt, in der Intensität je nach Risikogehalt (MaRisk BTO 1.2.2).</Phase>
+</Timeline>
+
+Nach dem aktuellen Wortlaut von [§ 18 KWG](https://www.gesetze-im-internet.de/kredwg/__18.html) darf ein Kreditinstitut einen Kredit, der insgesamt 1.500.000 Euro oder 10 Prozent seines Kernkapitals überschreitet, nur gewähren, wenn es sich die wirtschaftlichen Verhältnisse des Kreditnehmers, insbesondere durch Vorlage der Jahresabschlüsse, offenlegen lässt. Davon absehen kann es nur, wenn das Verlangen im Hinblick auf die Sicherheiten oder Mitverpflichteten offensichtlich unbegründet wäre, sowie in den im Gesetz genannten Fällen. Die Offenlegung ist laufend, also jedes Jahr, nicht nur bei der Kreditvergabe.
+
+## Die Rechnung für ein Kreditteam
+
+Der Aufwand ist Arbeitszeit, und er lässt sich mit Ihren eigenen Zahlen schnell schätzen. Die Werte unten sind Annahmen zum Ersetzen, keine Messungen.
+
+<Calc title="Überschlag: eine Regionalbank mit 300 Firmenkunden unter Covenant-Überwachung" caption="Alle Eingaben sind Annahmen zur Veranschaulichung. Setzen Sie Ihre eigene Zahl an Engagements, Prüfrhythmus und Bearbeitungszeiten ein." rows={[
+  ["Engagements mit Covenants (Annahme)", "300"],
+  ["Bescheinigungen im Jahr bei quartalsweiser Prüfung", "1.200"],
+  ["Stunden für Erfassung, Nachrechnung und Dokumentation je Bescheinigung (Annahme)", "1,5"],
+  ["Stunden für eine Jahresbeurteilung aus dem neuen Abschluss (Annahme)", "6"],
+  ["Bescheinigungen im Jahr", "1.800 Stunden"],
+  ["Jahresbeurteilungen im Jahr", "1.800 Stunden"],
+  ["Gesamt, bei etwa 1.600 produktiven Stunden je Analyst", "etwa 2,25 Analysten"]
+]} result={["Wenn KI die erste Durchsicht übernimmt und die Zeit halbiert (Annahme)", "etwa 1.800 Stunden im Jahr frei für Engagements, die Urteil brauchen"]} />
+
+Der größere Schaden steht in keiner Zeiterfassung. Die EBA-Leitlinien behandeln eine verspätete Bescheinigung und einen Covenant-Bruch als Frühwarnung, weil die Wochen zwischen dem Abrutschen eines Kreditnehmers und dem Bemerken durch die Bank genau die Wochen sind, in denen die Bank noch über Waiver-Gebühr, zusätzliche Sicherheiten oder engere Berichtspflichten verhandeln kann. Eine Bescheinigung, die einen Monat ungelesen im Postfach der Firmenkundenbetreuung liegt, verschenkt diese Zeit.
+
+## Warum die Arbeit schwierig ist
+
+**Jeder Vertrag definiert EBITDA anders.** Bereinigungen um Einmaleffekte, Pro-forma-Zukäufe, Leasing nach HGB oder IFRS 16, Cash-Pooling: Die Definitionen füllen Seiten, und eine Covenant-Prüfung stimmt nur, wenn sie ihnen folgt.
+
+**Kreditnehmer rechnen ihre Kennzahlen selbst.** Die Bescheinigung nennt eine Zahl und bestätigt die Einhaltung. Aufgabe der Bank ist es, die Zahl zu prüfen, nicht abzuschreiben.
+
+**Unterlagen kommen in jeder Form.** Unterschriebene PDFs, eingescannte Jahresabschlüsse, BWA und Summen- und Saldenlisten aus DATEV, Prüfungsberichte, abweichende Wirtschaftsjahre.
+
+**Die Fakten liegen an drei Orten.** Der Vertrag im Dokumentenarchiv, die Zahlen im Bilanzanalyse- oder Ratingsystem, die Eingangsdaten und die Korrespondenz im Postfach der Betreuerin oder des Betreuers.
+
+**Nicht-finanzielle Auflagen geraten leicht aus dem Blick.** Versicherungsnachweise, Negativerklärung, Change of Control, Vorlage der Planung. Die EBA-Leitlinien (Tz. 268) erwarten, dass auch diese überwacht werden, nicht nur über die Bescheinigung.
+
+## Was der Assistent übernimmt
+
+**Führt das Covenant-Register.** Aus jedem Kreditvertrag liest er die Financial Covenants mit Definitionen, Grenzen, Stichtagen und Vorlagefristen sowie die sonstigen Auflagen heraus, jeweils mit der Fundstelle im Vertrag, damit die Marktfolge sie einmal bestätigt.
+
+**Achtet auf die Fristen.** Er weiß, welche Bescheinigung wann fällig ist, entwirft die Erinnerung an den Kreditnehmer, wenn sie ausbleibt, und vermerkt die verspätete Vorlage als das Frühwarnsignal, das sie ist.
+
+**Liest und erfasst.** Er liest Bescheinigungen, Jahresabschlüsse und BWA, überträgt die Werte in das Erfassungsschema der Bank und zeigt zu jeder Zahl die Stelle im Dokument.
+
+**Rechnet nach.** Er wendet die Vertragsdefinitionen auf die erfassten Werte an und vergleicht sein Ergebnis mit dem des Kreditnehmers. Abweichungen, Kennzahlen knapp an der Grenze, Brüche und fehlende Angaben kommen mit Begründung auf eine Prüfliste.
+
+**Markiert Warnsignale.** Über die Covenants hinaus sucht er nach den übrigen Signalen aus den Leitlinien: sinkender Umsatz, schrumpfende Marge, Ergebnis weit unter Plan, eingeschränkter Bestätigungsvermerk, ein im Anhang genannter Verlust eines Großkunden.
+
+**Entwirft die Jahresbeurteilung.** Er schreibt den ersten Entwurf im Format des Hauses: wirtschaftliche Entwicklung, Covenant-Historie, Kapitaldienstfähigkeit, Hinweise zu Sicherheiten und offene Punkte, zum Korrigieren, Raten und Votieren durch die Marktfolge.
+
+<Flow title="Von der Covenant-Bescheinigung zur Kreditentscheidung" caption="Die KI liest, rechnet nach und entwirft. Die Marktfolge ratet und entscheidet.">
+<Step title="Register" who="KI und Marktfolge" tone="human" time="einmal je Vertrag">Covenants, Definitionen, Grenzen und Fristen aus dem Vertrag gelesen und bestätigt.</Step>
+<Step title="Eingang" who="KI" tone="ai" time="bei Eingang">Bescheinigung und Abschluss gelesen, erfasst und Kreditnehmer und Stichtag zugeordnet; verspätete Vorlagen markiert.</Step>
+<Step title="Prüfung" who="KI" tone="ai" time="Minuten">Kennzahlen nach den Vertragsdefinitionen nachgerechnet und mit den Werten des Kreditnehmers und den Grenzen verglichen.</Step>
+<Step title="Durchsicht" who="Marktfolge" tone="human" time="je markiertem Engagement">Abweichungen, knappe Werte und Brüche geprüft; über Waiver, Anpassung oder Intensivbetreuung entschieden.</Step>
+<Step title="Jahresbeurteilung" who="KI, dann Marktfolge" tone="human" time="Tage statt Wochen">Entwurf aus den Zahlen des Jahres vorbereitet; Rating gesetzt und Beurteilung votiert.</Step>
+</Flow>
+
+## Wo es schiefgeht
+
+<Callout title="Der Assistent prüft Zahlen. Er entscheidet nicht über den Kredit." tone="warning">
+Rating, Waiver, Intensivbetreuung und Jahresbeurteilung bleiben bei der Marktfolge und in der Kompetenzordnung des Hauses. Behandeln Sie die Prüfungen des Assistenten als Prüfliste, halten Sie jede Zahl bis zur Fundstelle nachvollziehbar, und lassen Sie jeden Bruch und jeden knappen Wert von einem Menschen ansehen, bevor der Kreditnehmer etwas hört.
+</Callout>
+
+**Definitionen gehen vor Formeln.** Eine allgemeine Formel für Nettoverschuldung zu EBITDA liefert für die meisten Verträge ein falsches Ergebnis. Der Assistent muss mit den bestätigten Definitionen jedes einzelnen Vertrags arbeiten, und die ersten Prüfungen sollten von Hand gegen die des Vorjahres gehalten werden.
+
+**Kreditnehmerdaten sind vertraulich.** Jahresabschlüsse, Planungen und Kreditverträge fallen unter das Bankgeheimnis, und der Einsatz externer Dienste kann eine Auslagerung im Sinne der MaRisk sein. Betreiben Sie den Assistenten in der Umgebung der Bank oder in einer Auslagerung, die Ihre Compliance und Ihr Auslagerungsmanagement freigegeben haben, nie in einem Verbraucher-Chatbot.
+
+**Das Verfahren gehört zum Prozess.** Wenn die Bank sich auf automatisierte Covenant-Prüfungen stützt, werden Risikocontrolling und Interne Revision wissen wollen, wie diese kontrolliert werden. Halten Sie Prüfliste, Entscheidung der Marktfolge und Fundstelle zusammen, dann ist die Spur da, wenn danach gefragt wird.
+
+**Ein Covenant ist nicht der ganze Kredit.** Ein Kreditnehmer kann jede Prüfung bestehen und trotzdem in Schwierigkeiten sein. Die qualitativen Faktoren aus Tz. 265 der Leitlinien, etwa die Qualität der Geschäftsführung oder ein schwächer werdender Markt, brauchen weiter den Menschen, der den Kunden kennt.
+
+## Welche Werkzeuge passen
+
+Die meisten Häuser haben die Bausteine schon: ein Dokumentenarchiv mit den Kreditverträgen, ein Bilanzanalyse- und Ratingsystem, das Kernbankensystem mit Linien und Zahlungen und die Postfächer der Firmenkundenbetreuung. Der Assistent liest aus diesen Quellen und schreibt in ein Covenant-Register und eine Prüfliste, die das Team wie eine Tabelle öffnet. Beginnen Sie mit dem Register und den Vorlagefristen, denn beides ist rein lesend und zeigt innerhalb einer Woche, wie viele Bescheinigungen heute schon überfällig sind.
+
+<Checklist title="So fangen Sie an" items={[
+  "Ein Segment wählen, etwa Firmenkunden mit Krediten über 1,5 Millionen Euro, und die Liste mit Linien und Ratings exportieren",
+  "Die Kreditverträge bereitstellen und Covenants und Fristen vom Assistenten auslesen und vom Team bestätigen lassen",
+  "Die Bescheinigungen des Vorjahres einlesen und die Nachrechnung des Assistenten mit den tatsächlichen Prüfungen vergleichen",
+  "Festlegen, ab welchem Abstand zur Grenze eine Kennzahl als knapp gilt",
+  "Verspätete Bescheinigungen und Brüche in das bestehende Frühwarnverfahren leiten",
+  "Die Entwürfe der Jahresbeurteilung erst übernehmen, wenn die Covenant-Prüfungen ein volles Quartal übereinstimmen"
+]} />
+
+## Fragen zum Covenant-Monitoring
+
+### Was verlangen die MaRisk für die Überwachung von Firmenkundenkrediten?
+
+Nach BTO 1.2.2 ist im Rahmen der Kreditweiterbearbeitung zu überwachen, ob der Kreditnehmer die vertraglichen Vereinbarungen einhält, und das Adressenausfallrisiko ist mindestens jährlich zu beurteilen. Dabei sind die Anforderungen aus Abschnitt 8.3 der EBA-Leitlinien EBA/GL/2020/06 zu beachten.
+
+### Ab welchem Kreditbetrag gilt die Offenlegung nach § 18 KWG?
+
+Nach dem aktuellen Wortlaut bei Krediten, die insgesamt 1.500.000 Euro oder 10 Prozent des Kernkapitals des Instituts überschreiten. Ausnahmen gibt es unter anderem für Kredite an öffentliche Stellen, und von der laufenden Offenlegung kann bei bestimmten durch selbst genutztes Wohneigentum gesicherten Krediten abgesehen werden.
+
+### Ist eine verspätete Covenant-Bescheinigung ein Frühwarnsignal?
+
+Ja. Tz. 274 Buchst. o der EBA-Leitlinien nennt die verspätete Vorlage einer Bescheinigung, einen Antrag auf Verzicht und einen Bruch der finanziellen Zusatzklauseln ausdrücklich als Signale einer Verschlechterung der Kreditqualität.
+
+### Kann KI entscheiden, ob ein Covenant gebrochen ist?
+
+Sie kann die Kennzahl nach den Vertragsdefinitionen nachrechnen und zeigen, wo sie von der Zahl des Kreditnehmers abweicht. Ob ein Bruch festgestellt, ein Waiver erteilt oder die Grenze angepasst wird, entscheidet die Marktfolge nach der Kompetenzordnung des Hauses.
+
+### Darf eine Bank für die Kreditüberwachung einen externen KI-Dienst nutzen?
+
+Das hängt davon ab, ob es sich um eine Auslagerung handelt und wie sie gesteuert wird. Klären Sie das mit Compliance und Auslagerungsmanagement, bevor Kreditnehmerdaten das Haus verlassen, und beginnen Sie im Zweifel mit einer Lösung in der eigenen Umgebung.
+
+## Die Zeit gehört den Engagements, die sich bewegt haben
+
+Der größte Teil des Covenant-Monitorings ist Lesen und Nachrechnen für Kreditnehmer, bei denen alles in Ordnung ist. Überlassen Sie das Lesen und Rechnen der KI, mit jeder Zahl bis zur Fundstelle belegt, und halten Sie Ihrer Marktfolge den Rücken frei für die Engagements, deren Zahlen sich verändert haben.
+
+Wenn Ihr Team Bescheinigungen heute noch von Hand erfasst, [schreiben Sie mir, mit welchem Rating- und Bilanzanalysesystem Sie arbeiten und wie viele Engagements mit Covenants Sie ungefähr überwachen](/de/kontakt?intent=improve). Ich schlage Ihnen einen kleinen ersten Schritt vor, schrittweise und mit klaren Regeln für vertrauliche Kreditnehmerdaten. Vermögensverwalter halten eine andere Art Kundenakte bei der [KYC-Aktualisierung](/de/posts/ki-vermoegensverwalter-kyc-mittelherkunft) aktuell, Wirtschaftsprüfer prüfen dieselben Abschlüsse von der anderen Seite mit der [PBC-Liste](/de/posts/ki-wirtschaftspruefung-pbc-liste), und wenn ein Kreditnehmer doch scheitert, läuft die Forderung der Bank über die [Forderungsanmeldung](/de/posts/ki-insolvenzverwalter-forderungsanmeldung).
