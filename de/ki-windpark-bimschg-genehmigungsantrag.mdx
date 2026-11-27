@@ -1,0 +1,140 @@
+---
+id: "ki-windpark-bimschg-genehmigungsantrag"
+translationOf: "ai-for-wind-farm-developers-permit-applications"
+title: "KI für Windprojektierer: BImSchG-Genehmigungsantrag und Nachforderungen"
+authorName: "Josip Ledić"
+date: "2026-11-27"
+tags: ["Erneuerbare Energien", "Windenergie", "Genehmigung", "KI für kleine Unternehmen"]
+description: "Eine Genehmigung für Windenergieanlagen an Land dauerte 2026 im Schnitt 18 Monate, und nur genehmigte Anlagen dürfen an den Ausschreibungen der Bundesnetzagentur teilnehmen. Wie Projektierer mit KI die Antragsunterlagen nach BImSchG zusammenstellen, vor der Behörde auf Lücken und Widersprüche prüfen, Nachforderungen in Tagen beantworten und Anlagendaten bis zum Gebot stimmig halten, während Gutachter und Projektleitung Fachbeiträge, Unterschriften und Entscheidungen verantworten."
+excerpt: "Eine Genehmigung für Windenergieanlagen an Land dauerte 2026 im Schnitt 18 Monate, und nur genehmigte Anlagen dürfen an den Ausschreibungen der Bundesnetzagentur teilnehmen. Wie Projektierer mit KI die Antragsunterlagen nach BImSchG zusammenstellen, vor der Behörde auf Lücken und Widersprüche prüfen, Nachforderungen in Tagen beantworten und Anlagendaten bis zum Gebot stimmig halten, während Gutachter und Projektleitung Fachbeiträge, Unterschriften und Entscheidungen verantworten."
+---
+
+KI kann Projektierern von Windparks die Dokumentenarbeit im BImSchG-Genehmigungsantrag abnehmen. Sie stellt die Antragsunterlagen aus Datenblättern, Lageplänen und Gutachten zusammen, prüft jedes Dokument gegen die Checkliste der Genehmigungsbehörde und gegen alle anderen Dokumente (gleicher Anlagentyp, gleiche Nabenhöhe, gleiche Koordinaten, gleicher Betriebsmodus) und entwirft die Antwort, wenn die Behörde Unterlagen nachfordert. Schallprognose, Schattenwurf, Artenschutz und Landschaftsbild bleiben bei den Gutachtern, die sie unterschreiben, und was an die Behörde geht, entscheidet die Projektleitung. Der Unterschied: Der Antrag ist beim ersten Mal vollständig, und eine Nachforderung ist in Tagen statt in Wochen beantwortet.
+
+Das zählt, weil ein Windprojekt ohne Genehmigung kein Gebot abgeben kann. Nach [§ 36 EEG](https://www.gesetze-im-internet.de/eeg_2014/__36.html) muss die Genehmigung nach dem Bundes-Immissionsschutzgesetz für alle Anlagen vier Wochen vor dem Gebotstermin erteilt und die Anlagen müssen bis dahin als genehmigt im Marktstammdatenregister gemeldet sein. Jeder Monat im Genehmigungsverfahren ist ein Monat ohne Gebotsmöglichkeit.
+
+<Stats title="Genehmigungen für Windenergie an Land, 2026" caption="Genehmigungszahlen Januar bis Oktober 2026, vorläufig. Dauer von der Antragstellung bis zur (Erst-)Genehmigung.">
+  <Stat value="17.413 MW" label="neu genehmigte Windenergieleistung von Januar bis Oktober 2026, 10 % mehr als im gleichen Zeitraum 2025" source="FA Wind und Solar, Status Herbst 2026" href="https://www.fachagentur-wind-solar.de/veroeffentlichungen/mediathek/detail/status-des-windenergieausbaus-an-land-im-herbst-2026" />
+  <Stat value="18,0 Monate" label="mittlere Genehmigungsdauer 2026 (Median 14,6 Monate); nur 31,8 % der Anlagen wurden innerhalb von 12 Monaten genehmigt" source="FA Wind und Solar, Status Herbst 2026" href="https://www.fachagentur-wind-solar.de/fileadmin/Veroeffentlichungen/Wind/Daten/FA_Wind_und_Solar_Windenergie-Situation_Herbst_2026.pdf" />
+  <Stat value="1.793 € je kW" label="Investition für die Referenzanlage mit 5,8 MW: 1.243 € Hauptinvestition inkl. Fundament und 550 € Nebenkosten, davon Planung mit 30 % der größte Posten" source="Deutsche WindGuard im Auftrag des BMWE, Kostensituation 2025" href="https://www.windguard.de/files/cto_layout/img/unternehmen/veroeffentlichungen/2025/Kostensituation%20der%20Windenergie%20an%20Land%20%E2%80%93%20Stand%202025.pdf" />
+</Stats>
+
+Bei diesen Kosten ist eine einzelne Referenzanlage ein Projekt von rund 10 Millionen Euro. Ein Zuschlag in den Ausschreibungsrunden 2026 umfasste im Mittel etwa 9 MW, also rund 16 Millionen Euro Investition je erfolgreichem Gebot. Die Planungskosten, zu denen Genehmigung und Gutachten gehören, liegen bei etwa 165 € je kW, knapp einer Million Euro je Anlage. Die WindGuard-Studie weist darauf hin, dass ein Teil davon auch bei Projekten anfällt, die später verworfen werden.
+
+## Genehmigungen sind nicht mehr knapp. Zeit und Preis schon.
+
+Die Ausschreibungen haben sich gedreht. 2023 war jede Runde unterzeichnet, und der mittlere Zuschlagswert lag wenige Hundertstel Cent unter dem Höchstwert. 2026 zeigen die [Ergebnisse der Bundesnetzagentur](https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Wind_Onshore/BeendeteAusschreibungen/start.html) in den ersten drei Runden 19,5 GW Gebotsmenge für 8,5 GW Zuschläge, und der mittlere Zuschlagswert fiel von 7,00 Cent je kWh im Februar 2025 auf 4,79 Cent im August 2026.
+
+<Bars title="Mittlerer Zuschlagswert, Ausschreibungen Windenergie an Land" unit=" ct/kWh" caption="Mengengewichteter durchschnittlicher Zuschlagswert je Runde. Der Höchstwert lag 2025 bei 7,35 ct/kWh und liegt 2026 bei 7,25 ct/kWh." source="Bundesnetzagentur, beendete Ausschreibungen Wind an Land" href="https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Wind_Onshore/BeendeteAusschreibungen/start.html" data={[
+  { label: "Februar 2025", value: 7.00, display: "7,00" },
+  { label: "August 2025", value: 6.57, display: "6,57" },
+  { label: "November 2025", value: 6.06, display: "6,06" },
+  { label: "Februar 2026", value: 5.54, display: "5,54" },
+  { label: "Mai 2026", value: 5.06, display: "5,06" },
+  { label: "August 2026", value: 4.79, display: "4,79", highlight: true }
+]} />
+
+Die FA Wind und Solar zählte im Oktober 2026 23.150 MW genehmigte Leistung ohne Zuschlag. Für Projektierer ändert das den Wert einer schnellen Genehmigung. Wer sechs Monate früher genehmigt ist, hat zwei Gebotstermine mehr, und in einem Markt, in dem der Preis von Runde zu Runde sinkt, kann er mit besserem Preis bieten oder auf eine günstigere Runde warten. Eine langsame Genehmigung ist nicht mehr nur eine Verzögerung, sondern ein niedrigeres Gebot.
+
+## Was das Verfahren vom Antragsteller verlangt
+
+<Timeline title="Eine Genehmigung für Windenergieanlagen nach BImSchG" caption="Nach § 10 und § 10a BImSchG, § 7 der 9. BImSchV und § 36 EEG.">
+<Phase when="Vor Antragstellung" title="Antragskonferenz">Projektierer und Behörde klären Verfahrensart und, falls nötig, den Untersuchungsrahmen der UVP.</Phase>
+<Phase when="30 oder 45 Tage" title="Vollständigkeit">Die Behörde bestätigt die Vollständigkeit oder fordert nach: 30 Tage im Beschleunigungsgebiet, 45 Tage außerhalb (§ 10a Abs. 4 BImSchG).</Phase>
+<Phase when="7 Monate" title="Entscheidung">Die Genehmigungsfrist beträgt sieben Monate, im vereinfachten Verfahren drei, einmalig um bis zu drei Monate verlängerbar (§ 10 Abs. 6a BImSchG).</Phase>
+<Phase when="4 Wochen vorher" title="Gebot">Genehmigung erteilt und Anlagen als genehmigt im Register gemeldet, vier Wochen vor dem Gebotstermin (§ 36 EEG).</Phase>
+<Phase when="Nach dem Zuschlag" title="Änderungen">Ein Wechsel des Anlagentyps oder der Standorte braucht oft eine Änderungsanzeige oder Änderungsgenehmigung mit aktualisierten Gutachten.</Phase>
+</Timeline>
+
+Seit dem 21. November 2025 ist das Verfahren elektronisch durchzuführen ([§ 10a Abs. 5 BImSchG](https://www.gesetze-im-internet.de/bimschg/__10a.html)). Nach [§ 7 der 9. BImSchV](https://www.gesetze-im-internet.de/bimschv_9/__7.html) beginnt die Genehmigungsfrist erst mit Eingang der von der Behörde erstmalig nachgeforderten Unterlagen. Die eigene Antwortzeit des Projektierers steckt also in den 18 Monaten. In ausgewiesenen Windenergiegebieten entfallen nach [§ 6 WindBG](https://www.gesetze-im-internet.de/windbg/__6.html) Umweltverträglichkeitsprüfung und artenschutzrechtliche Prüfung, aber die Behörde ordnet auf Grundlage vorhandener Daten Minderungsmaßnahmen an, etwa Abschaltungen für Fledermäuse. Die Daten müssen also in der Akte stehen.
+
+Auf EU-Ebene begrenzen [Artikel 16a und 16b der Erneuerbare-Energien-Richtlinie](https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32023L2413) das Genehmigungsverfahren auf 12 Monate in Beschleunigungsgebieten und zwei Jahre außerhalb, für Repowering in Beschleunigungsgebieten auf sechs Monate. Der Durchschnitt von 18 Monaten im Jahr 2026 zeigt, wie viel von diesem Rahmen noch ausgeschöpft wird.
+
+## Warum die Antragsunterlagen schwierig sind
+
+**Dutzende Dokumente von verschiedenen Verfassern.** Schallprognose, Schattenwurfgutachten, Turbulenz- und Standsicherheitsnachweis, Brut- und Rastvogel- sowie Fledermauserfassung, Landschaftsbild, Stellungnahmen zu Luftfahrt und Radar, Eiswurf, Brandschutz, Lage- und Zuwegungspläne, Typenprüfung des Herstellers. Jeder Gutachter arbeitet mit einer Projektbeschreibung, die vielleicht schon veraltet ist.
+
+**Eine Änderung wirkt überall.** Ein Wechsel vom 163-Meter- auf den 175-Meter-Rotor, eine um 40 Meter verschobene Anlage wegen eines Flächeneigentümers, ein neuer schallreduzierter Betriebsmodus: Jedes Gutachten, jeder Plan und jedes Formular mit dem alten Wert muss angepasst werden, und die Behörde findet das eine, das vergessen wurde.
+
+**Jedes Land hat eigene Vorgaben.** Hessen veröffentlicht zum Beispiel eine eigene [Anleitung zur Erstellung der Antragsunterlagen für Windenergieanlagen](https://www.hlnug.de/fileadmin/downloads/luft/Anleitung_zur_Erstellung_der_Antragsunterlagen_fuer_Windenergieanlagen_Stand_10.04.2025.pdf) mit eigenen Formularen; andere Länder haben eigene Handbücher und Portale.
+
+**Nachforderungen kommen als Schreiben, nicht als Liste.** Das Nachforderungsschreiben der Behörde und die Stellungnahmen der beteiligten Fachbehörden nennen fehlende oder unklare Punkte im Fließtext, oft über mehrere Schreiben verteilt, und jeder Punkt gehört jemandem in einem Gutachterbüro.
+
+**Das Gebot hängt am Bescheid.** Anlagennummern, Registereinträge, Aktenzeichen und Genehmigungsbehörde müssen im Gebot genau stimmen. Ein Fehler führt zum Ausschluss; in den drei Runden 2026 wurden 54 Gebote ausgeschlossen.
+
+## Was der Assistent übernimmt
+
+**Führt eine Projektakte.** Aus Layout, Datenblättern und Flächenverträgen führt er eine Tabelle je Anlage: Koordinaten, Typ, Nabenhöhe, Rotordurchmesser, Gesamthöhe, Betriebsmodi und Registernummer. Gegen diese Tabelle wird jedes Dokument geprüft.
+
+**Prüft die Unterlagen vor dem Einreichen.** Er liest jedes Gutachten und Formular, vergleicht es mit der Projektakte und der Checkliste der Behörde und listet auf, was fehlt, veraltet ist oder sich widerspricht, mit Seite und Wert.
+
+**Verfolgt die Nachforderungen.** Er zerlegt jedes Nachforderungsschreiben und jede Stellungnahme in einzelne Punkte, ordnet sie dem zuständigen Gutachter oder Team zu und entwirft das Begleitschreiben, sobald die Antworten vorliegen.
+
+**Zieht Änderungen durch die Akte.** Ändern sich Anlagentyp oder Standort, listet er jedes Dokument mit dem alten Wert, damit Schall-, Schatten- und Standsicherheitsgutachten gemeinsam aktualisiert werden und die Änderungsanzeige vollständig ist.
+
+**Behält die Fristen im Blick.** Er verfolgt die Vollständigkeitsfrist von 30 oder 45 Tagen, die Genehmigungsfrist und jede Verlängerung sowie den Stichtag vier Wochen vor jedem Gebotstermin, und meldet, wenn Zeitplan der Behörde und Gebotsplanung nicht mehr zusammenpassen.
+
+**Bereitet die Gebotsdaten vor.** Aus dem Bescheid übernimmt er Aktenzeichen, Behörde, Anlagennummern und Leistung je Anlage und gleicht sie vor dem Gebot mit den Registereinträgen ab.
+
+<Flow title="Vom Lageplan zum Gebot" caption="Die KI stellt zusammen, gleicht ab und verfolgt. Gutachter, Ingenieure und Projektleitung schreiben, unterschreiben und entscheiden.">
+<Step title="Projektakte" who="KI und Projektleitung" tone="human" time="einmal, dann bei jeder Änderung">Standorte, Typen, Abmessungen und Betriebsmodi in einer Tabelle bestätigt.</Step>
+<Step title="Vollständigkeitsprüfung" who="KI" tone="ai" time="Stunden">Jedes Gutachten und Formular gegen Projektakte und Checkliste geprüft; Lücken und Widersprüche gelistet.</Step>
+<Step title="Korrigieren und einreichen" who="Gutachter und Projektleitung" tone="human" time="Tage">Gutachten von ihren Verfassern korrigiert und unterschrieben; Antrag über das Landesportal eingereicht.</Step>
+<Step title="Nachforderungen" who="KI, dann die Zuständigen" tone="human" time="Tage statt Wochen">Schreiben in Punkte zerlegt, zugeordnet, beantwortet und mit entworfenem Begleitschreiben zurückgegeben.</Step>
+<Step title="Gebot" who="KI, dann das Gebotsteam" tone="human" time="vor jedem Gebotstermin">Bescheiddaten gegen Register und Gebotsformular geprüft; den Gebotswert legt das Gebotsteam fest.</Step>
+</Flow>
+
+## Wo es schiefgehen kann
+
+<Callout title="Der Assistent prüft die Akte. Die Gutachten schreibt er nicht." tone="warning">
+Schallprognose, Schattenwurf, Standsicherheit, Artenschutz und Landschaftsbild sind Arbeit qualifizierter Gutachter, die sie unterschreiben. Setzen Sie den Assistenten ein, um Fehlendes und Widersprüchliches zu finden, nie um ein unterschriebenes Gutachten zu schreiben oder zu ändern, und lassen Sie jede Antwort an die Behörde von der Projektleitung freigeben.
+</Callout>
+
+**Widersprüche verstecken sich in Tabellen und Plänen.** Eine Nabenhöhe in der Legende eines Lageplans oder ein Schallleistungspegel in einer Anhangtabelle übersieht man leicht. Testen Sie den Assistenten an einem früheren Antrag mit bekanntem Nachforderungsschreiben und prüfen Sie, ob er dieselben Punkte findet.
+
+**Landesrecht unterscheidet sich.** Abstandsregeln, Höhenbegrenzungen und Checklisten sind von Land zu Land verschieden und ändern sich oft. Die Checkliste, gegen die geprüft wird, muss die aktuelle der zuständigen Behörde sein, bestätigt von jemandem, der sie kennt.
+
+**Manche Daten sind sensibel.** Horst- und Quartierstandorte geschützter Arten, Konditionen der Flächenverträge und Netzanschlusszusagen sind vertraulich. Betreiben Sie den Assistenten in Ihrer eigenen Umgebung oder bei einem Anbieter, den Ihre Datenschutzregeln zulassen, mit klaren Regeln, welche Daten er sehen darf.
+
+**Eine schnelle Akte macht keinen schwachen Standort stark.** Hat der Standort ein Radar-, Bundeswehr- oder Artenschutzproblem, bringt ein vollständiger Antrag nur die Ablehnung früher. Der Assistent spart Zeit bei genehmigungsfähigen Projekten; welche das sind, entscheidet weiterhin der Projektierer.
+
+## Werkzeuge, die passen
+
+Die Bausteine sind meist schon da: ein GIS mit dem Layout, ein Dokumentenmanagement oder Projektlaufwerk mit den Gutachten, ein Projekttracker und das Antragsportal des Landes. Der Assistent liest daraus und schreibt in die Projektakte und eine Nachforderungsliste, die das Projektteam abarbeitet. Beginnen Sie schrittweise mit der Vollständigkeitsprüfung für einen Antrag kurz vor dem Einreichen. Sie verändert nichts und zeigt innerhalb eines Tages, ob die Unterlagen zueinander passen.
+
+<Checklist title="So fangen Sie an" items={[
+  "Ein Projekt kurz vor dem Einreichen und eines mit vorliegendem Nachforderungsschreiben auswählen",
+  "Die Anlagentabelle aus dem aktuellen Layout erstellen und von der Projektleitung bestätigen lassen",
+  "Die Prüfung am eingereichten Projekt laufen lassen und mit dem Schreiben der Behörde vergleichen",
+  "Die aktuelle Checkliste der zuständigen Genehmigungsbehörde für das neue Projekt hinterlegen",
+  "Die Befunde mit Seite und Wert an die Gutachter weitergeben, denen die Dokumente gehören",
+  "Gebotstermine und den Stichtag vier Wochen vorher in die Fristenliste aufnehmen"
+]} />
+
+## Fragen zum BImSchG-Genehmigungsantrag
+
+### Wie lange dauert eine Genehmigung für Windenergieanlagen an Land?
+
+2026 lag die mittlere Dauer von der Antragstellung bis zur Genehmigung bei 18,0 Monaten, der Median bei 14,6 Monaten, ausgewertet für 2.667 von Januar bis Oktober genehmigte Anlagen durch die FA Wind und Solar. Etwa ein Drittel wurde innerhalb von 12 Monaten genehmigt.
+
+### Wann beginnt die Genehmigungsfrist nach BImSchG?
+
+Die Frist von sieben Monaten nach § 10 Abs. 6a BImSchG beginnt mit der Vollständigkeit der Unterlagen. Nach § 10a Abs. 4 BImSchG muss die Behörde die Vollständigkeit innerhalb von 30 Tagen im Beschleunigungsgebiet und 45 Tagen außerhalb bestätigen oder nachfordern. Fordert sie nach, beginnt die Frist mit Eingang der erstmalig nachgeforderten Unterlagen.
+
+### Brauche ich die Genehmigung vor dem Gebot?
+
+Ja. Nach § 36 EEG muss die BImSchG-Genehmigung für alle Anlagen im Gebot vier Wochen vor dem Gebotstermin erteilt sein, und die Anlagen müssen bis dahin als genehmigt im Marktstammdatenregister gemeldet sein.
+
+### Was ändert sich in einem Windenergiegebiet?
+
+Nach § 6 WindBG entfallen in einem Windenergiegebiet, das mit Umweltprüfung ausgewiesen wurde und nicht in einem Natura-2000-Gebiet, Naturschutzgebiet oder Nationalpark liegt, die Umweltverträglichkeitsprüfung und die artenschutzrechtliche Prüfung. Die Behörde ordnet Minderungsmaßnahmen auf Grundlage vorhandener Daten an oder setzt eine jährliche Zahlung je Megawatt fest.
+
+### Kann KI Schall- oder Artenschutzgutachten schreiben?
+
+Nein. Diese Gutachten sind Facharbeit und werden von ihren Verfassern unterschrieben. KI kann prüfen, ob sie dieselben Anlagendaten verwenden wie der Rest der Akte, die Nachforderungen der Behörde auflisten und das Begleitschreiben entwerfen. Der Inhalt jedes Gutachtens bleibt beim Gutachter.
+
+## Die Akte in Tagen statt Wochen zurückgeben
+
+Wie lange ein Antrag bei der Behörde liegt, hat der Projektierer oft nicht in der Hand. Die Zeit für fehlende Seiten, veraltete Gutachten und Schreiben, die wochenlang liegen bleiben, schon. Überlassen Sie der KI das Abgleichen und Nachhalten, und halten Sie Ihrer Projektleitung den Rücken frei für Standorte und Gebote.
+
+Wenn Sie Windprojekte an Land entwickeln und Monate an Nachforderungen verlieren, [schreiben Sie mir, mit welchen Antragsportalen und Dokumentensystemen Sie arbeiten und wie viele Projekte gerade im Verfahren sind](/de/kontakt?intent=improve). Ich schlage Ihnen einen kleinen ersten Schritt vor, mit Augenmaß und klaren Regeln für vertrauliche Projektdaten. Projektentwickler im Hochbau kennen eine ähnliche Prüfung aus dem [Bauantrag für Hochhäuser](/de/posts/ki-projektentwickler-bauantrag-hochhaus), Bauunternehmen, die Fundamente und Zuwegungen bauen, lesen ihre Unterlagen in [öffentlichen Ausschreibungen](/de/posts/ki-bauunternehmen-oeffentliche-ausschreibungen), und Banken, die solche Projekte finanzieren, prüfen die Zahlen im [Covenant-Monitoring](/de/posts/ki-covenant-monitoring-firmenkundenkredite).

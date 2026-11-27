@@ -1,0 +1,139 @@
+---
+id: "ai-for-wind-farm-developers-permit-applications"
+title: "AI for Wind Farm Developers: Permit Applications and Authority Requests"
+authorName: "Josip Ledić"
+date: "2026-11-27"
+tags: ["Renewable energy", "Wind energy", "Permitting", "AI for small business"]
+description: "In Germany an onshore wind permit took 18 months on average in 2026, and only a permitted project may bid in the federal auctions. How wind farm developers can use AI to assemble the permit dossier, check it for gaps and contradictions before the authority does, answer completeness requests within days and keep turbine and report data consistent through to the auction bid, while engineers and specialist consultants keep the assessments and the signatures."
+excerpt: "In Germany an onshore wind permit took 18 months on average in 2026, and only a permitted project may bid in the federal auctions. How wind farm developers can use AI to assemble the permit dossier, check it for gaps and contradictions before the authority does, answer completeness requests within days and keep turbine and report data consistent through to the auction bid, while engineers and specialist consultants keep the assessments and the signatures."
+---
+
+AI can take the document work out of a wind farm permit application. It assembles the dossier from the turbine data sheets, site plans and specialist reports, checks every document against the authority's checklist and against every other document (same turbine type, same hub height, same coordinates, same noise mode), and drafts the answer when the authority sends a request for missing information. The noise, shadow flicker, wildlife and landscape assessments stay with the consultants who sign them, and the project manager decides what goes to the authority. What changes is that the application arrives complete the first time, and a completeness request is answered in days instead of weeks.
+
+That matters because in Germany a project without a permit cannot earn anything. Under [section 36 of the Renewable Energy Sources Act (EEG)](https://www.gesetze-im-internet.de/eeg_2014/__36.html), a bid in the federal onshore wind auctions is only valid if the permit under the Federal Immission Control Act (BImSchG) was granted four weeks before the bid date and the turbines are registered as permitted in the market master data register. Every month the permit takes is a month the project cannot bid.
+
+<Stats title="Onshore wind permitting in Germany, 2026" caption="Permit figures January to October 2026, preliminary. Duration is from application to first permit.">
+  <Stat value="17,413 MW" label="of onshore wind capacity newly permitted from January to October 2026, 10 % more than in the same months of 2025" source="FA Wind und Solar, Status Herbst 2026" href="https://www.fachagentur-wind-solar.de/veroeffentlichungen/mediathek/detail/status-des-windenergieausbaus-an-land-im-herbst-2026" />
+  <Stat value="18.0 months" label="average time from application to permit in 2026 (median 14.6 months); only 31.8 % of turbines were permitted within 12 months" source="FA Wind und Solar, Status Herbst 2026" href="https://www.fachagentur-wind-solar.de/fileadmin/Veroeffentlichungen/Wind/Daten/FA_Wind_und_Solar_Windenergie-Situation_Herbst_2026.pdf" />
+  <Stat value="€1,793 per kW" label="investment for the reference turbine of 5.8 MW: €1,243 for the turbine and foundation plus €550 of ancillary costs, of which planning is the largest share at 30 %" source="Deutsche WindGuard for BMWE, Kostensituation 2025" href="https://www.windguard.de/files/cto_layout/img/unternehmen/veroeffentlichungen/2025/Kostensituation%20der%20Windenergie%20an%20Land%20%E2%80%93%20Stand%202025.pdf" />
+</Stats>
+
+At those costs one reference turbine is a project of about €10 million, and the average award in the 2026 auction rounds was about 9 MW, so roughly €16 million of investment per winning bid. Planning, which includes the permit work and the expert reports, comes to about €165 per kW, close to €1 million per turbine, and the WindGuard study notes that much of it is spent even on projects that are later dropped.
+
+## Permits are no longer scarce. Time and price are.
+
+The auctions have turned. In 2023 every round was undersubscribed and the average award sat within a few hundredths of a cent of the ceiling price. In 2026 the [Federal Network Agency's results](https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Wind_Onshore/BeendeteAusschreibungen/start.html) show 19.5 GW bid for 8.5 GW of awards in the first three rounds, and the average award value falling from 7.00 cents per kWh in February 2025 to 4.79 cents in August 2026.
+
+<Bars title="Average award value, onshore wind auctions in Germany" unit=" ct/kWh" caption="Volume-weighted average award value per round. The ceiling was 7.35 ct/kWh in 2025 and is 7.25 ct/kWh in 2026." source="Bundesnetzagentur, completed onshore wind auctions" href="https://www.bundesnetzagentur.de/DE/Fachthemen/ElektrizitaetundGas/Ausschreibungen/Wind_Onshore/BeendeteAusschreibungen/start.html" data={[
+  { label: "February 2025", value: 7.00, display: "7.00" },
+  { label: "August 2025", value: 6.57, display: "6.57" },
+  { label: "November 2025", value: 6.06, display: "6.06" },
+  { label: "February 2026", value: 5.54, display: "5.54" },
+  { label: "May 2026", value: 5.06, display: "5.06" },
+  { label: "August 2026", value: 4.79, display: "4.79", highlight: true }
+]} />
+
+FA Wind und Solar counted 23,150 MW of permitted capacity without an award in October 2026. For a developer that changes what a fast permit is worth. A project that reaches its permit six months earlier gets two more auction rounds to bid in, and in a market where the price drops round by round, it can bid at a better price or wait for one. A slow permit is not a delay anymore; it is a lower bid.
+
+## What the rules ask of the applicant
+
+<Timeline title="One onshore wind permit under the BImSchG" caption="From § 10 and § 10a BImSchG, § 7 of the 9th BImSchV and § 36 EEG. The EU deadlines come from Articles 16a and 16b of the Renewable Energy Directive as amended in 2023.">
+<Phase when="Before filing" title="Scoping">Developer and authority agree the procedure and, where needed, the scope of the environmental impact assessment.</Phase>
+<Phase when="30 or 45 days" title="Completeness">Authority confirms the application is complete or asks for missing documents: 30 days inside a renewables acceleration area, 45 days outside (§ 10a(4) BImSchG).</Phase>
+<Phase when="7 months" title="Decision">The decision period starts with completeness and runs seven months, three in the simplified procedure, extendable once by up to three months (§ 10(6a) BImSchG).</Phase>
+<Phase when="4 weeks before" title="Auction bid">Permit granted and turbines registered as permitted four weeks before the bid date (§ 36 EEG).</Phase>
+<Phase when="After the award" title="Changes">A change of turbine type or layout after the permit often needs a change notice or change permit, with the same reports updated.</Phase>
+</Timeline>
+
+Since 21 November 2025 the procedure has to run electronically ([§ 10a(5) BImSchG](https://www.gesetze-im-internet.de/bimschg/__10a.html)), and the [9th BImSchV, § 7](https://www.gesetze-im-internet.de/bimschv_9/__7.html) says the decision period starts only when the documents the authority first asked for have arrived. The developer's own response time therefore sits inside the 18 months. In designated wind energy areas, [§ 6 of the Wind Area Requirements Act (WindBG)](https://www.gesetze-im-internet.de/windbg/__6.html) drops the environmental impact assessment and the species protection assessment, but the authority still orders mitigation, such as bat curtailment, based on existing data, so the data has to be in the file.
+
+At EU level, [Articles 16a and 16b of the Renewable Energy Directive](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32023L2413) cap the permit-granting procedure at 12 months inside renewables acceleration areas and two years outside, and six months for repowering in acceleration areas. Germany's 2026 average of 18 months shows how much of that limit is still used.
+
+## Why the dossier is hard
+
+**It is dozens of documents from different authors.** Noise forecast, shadow flicker report, turbulence and stability assessment, bird and bat surveys, landscape assessment, aviation and radar statements, ice throw, fire protection, site and access plans, the manufacturer's type certificate. Each consultant works from a project description that may already be out of date.
+
+**One change ripples through everything.** A switch from a 163-metre to a 175-metre rotor, a turbine moved 40 metres for a landowner, a new noise-reduced operating mode: every report, plan and form that names the old value has to change, and the authority will notice the one that did not.
+
+**Every state, sometimes every district, has its own checklist.** Hesse publishes a [guide to the application documents for wind turbines](https://www.hlnug.de/fileadmin/downloads/luft/Anleitung_zur_Erstellung_der_Antragsunterlagen_fuer_Windenergieanlagen_Stand_10.04.2025.pdf) with its own forms; other states have their own handbooks and portals.
+
+**Requests arrive as letters, not tickets.** The authority's completeness request and the statements of the agencies it consults list missing or unclear points in prose, often across several letters, and each point has an owner somewhere in a consultant's team.
+
+**The bid depends on the permit text.** Turbine numbers, register entries, permit reference and authority have to match exactly in the auction bid. A mismatch excludes the bid; the 2026 rounds excluded 54 of them.
+
+## What the assistant does
+
+**Builds one project record.** From the layout, turbine data sheets and land agreements it keeps one table per turbine: coordinates, type, hub height, rotor diameter, total height, operating modes and register number, which every document is checked against.
+
+**Checks the dossier before filing.** It reads every report and form, compares each against the project record and the authority's checklist, and lists what is missing, out of date or contradictory, with the page and the value.
+
+**Tracks the authority's requests.** It turns each completeness letter and agency statement into a list of individual points, assigns each to the consultant or team who owns it, and drafts the cover letter for the reply once the answers are in.
+
+**Follows a change through the file.** When the turbine type or a position changes, it lists every document that names the old value, so the noise, shadow and stability reports are updated together and the change notice is complete.
+
+**Watches the deadlines.** It tracks the 30- or 45-day completeness period, the seven-month decision period and any extension, and the four-week cut-off before each auction date, and flags when the authority's timetable and the bid plan no longer fit.
+
+**Prepares the bid data.** From the permit it extracts the reference, authority, turbine numbers and capacity per turbine and checks them against the register entries before the bid goes out.
+
+<Flow title="From site plan to auction bid" caption="AI assembles, cross-checks and tracks. Engineers, consultants and the project manager write, sign and decide.">
+<Step title="Project record" who="AI and project manager" tone="human" time="once, then on every change">Turbine positions, types, dimensions and operating modes confirmed in one table.</Step>
+<Step title="Dossier check" who="AI" tone="ai" time="hours">Every report and form checked against the record and the authority's checklist; gaps and contradictions listed.</Step>
+<Step title="Fix and file" who="Consultants and project manager" tone="human" time="days">Reports corrected and signed by their authors; application filed through the state's portal.</Step>
+<Step title="Requests" who="AI, then the owner of each point" tone="human" time="days, not weeks">Completeness letter split into points, assigned, answered and sent back with a drafted cover letter.</Step>
+<Step title="Bid" who="AI, then the bid manager" tone="human" time="before each auction">Permit data checked against the register and the bid form; the bid manager sets the price.</Step>
+</Flow>
+
+## Where it goes wrong
+
+<Callout title="The assistant checks the file. It does not do the assessments." tone="warning">
+Noise forecasts, shadow flicker, stability, wildlife and landscape assessments are the work of qualified consultants, and they sign them. Use the assistant to find what is missing and what does not match, never to write or alter a signed report, and have the project manager approve every reply before it goes to the authority.
+</Callout>
+
+**Contradictions hide in tables and drawings.** A hub height in a site plan legend or a sound power level in an appendix table is easy to miss. Test the assistant on a past dossier with a known completeness letter, and see whether it finds the same points.
+
+**State rules differ.** Distance rules, height limits and checklists vary between states and change often. The checklist the assistant checks against has to be the current one for the authority in question, confirmed by someone who knows it.
+
+**Some data is sensitive.** Locations of protected species' nests and roosts, landowner terms and grid connection offers are confidential. Keep the assistant inside your own environment or with a provider your data protection rules allow.
+
+**A fast file does not make a weak site strong.** If the site has a radar, military or species problem, a complete application only gets the refusal sooner. The assistant saves time on projects that can be permitted; deciding which ones those are stays with the developer.
+
+## Tools that fit
+
+Developers already have the pieces: a GIS with the layout, a document management system or shared drive with the reports, a project tracker, and the state's permit portal. The assistant reads from them and writes into the project record and a request list that the project team works through. Start with the dossier check on an application that is about to be filed, because it is read-only and shows within a day whether the documents agree with each other.
+
+<Checklist title="How to start" items={[
+  "Pick one project close to filing and one already filed with a completeness letter",
+  "Build the turbine table from the current layout and confirm it with the project manager",
+  "Run the dossier check on the filed project and compare the findings with the authority's letter",
+  "Load the current checklist of the permit authority for the new project",
+  "Route the findings to the consultants who own the reports, with page and value",
+  "Add the auction dates and the four-week cut-off to the deadline tracker"
+]} />
+
+## Questions about wind permit applications
+
+### How long does an onshore wind permit take in Germany?
+
+In 2026 the average from application to permit was 18.0 months and the median 14.6 months, based on 2,667 turbines permitted from January to October, according to FA Wind und Solar. About a third were permitted within 12 months.
+
+### When does the BImSchG decision period start?
+
+The seven-month decision period in § 10(6a) BImSchG starts once the application is complete. Under § 10a(4) BImSchG the authority has to confirm completeness, or ask for missing documents, within 30 days inside a renewables acceleration area and 45 days outside. If it asks for documents, the period starts when the documents it first asked for arrive.
+
+### Do I need a permit before bidding in the German onshore wind auction?
+
+Yes. Section 36 EEG requires the BImSchG permit for all turbines in the bid to have been granted four weeks before the bid date, and the turbines to be registered as permitted in the market master data register by then.
+
+### What changes in a designated wind energy area?
+
+Under § 6 WindBG, in a wind energy area designated after an environmental assessment and outside Natura 2000 sites, nature reserves and national parks, no environmental impact assessment or species protection assessment is carried out. The authority orders mitigation based on existing data or sets an annual payment per megawatt.
+
+### Can AI write the noise or wildlife reports?
+
+No. Those assessments are specialist work signed by their authors. AI can check that the reports use the same turbine data as the rest of the file, list what the authority has asked for and draft the cover letter, but the content of each report stays with its consultant.
+
+## Turn the file around in days
+
+Most of the time an application spends with the authority is out of a developer's hands. The time spent on missing pages, outdated reports and letters that sit for weeks is not. Let AI keep the file consistent and the requests moving, and keep your project managers on the sites and the bids.
+
+If you develop onshore wind projects and lose months to completeness requests, [tell me which permit portals and document systems you use and how many projects you have in permitting](/contact?intent=improve). I'll suggest whether the dossier check, the request tracker or the bid data check is the right first step. Developers of other large schemes face a similar regulator check in [Gateway 2 building control applications](/posts/ai-for-property-developers-gateway-2-applications), contractors who build the foundations and roads read their packs in [public tenders](/posts/ai-for-construction-contractors-public-tenders), and lenders who finance the projects test the borrower's numbers in [covenant monitoring](/posts/ai-for-commercial-lenders-covenant-monitoring).
